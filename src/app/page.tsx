@@ -132,7 +132,7 @@ export default function Home() {
         <p className="hero-sub">
           Every tip you need — ride-by-ride ratings for ages 2–8,
           hour-by-hour itineraries built around nap schedules, and food
-          strategy from a dad who's done this dozens of times.
+          strategy from a dad who's done this a few times before.
         </p>
         <div className="hero-author">
           ✍️ Written by a real parent, not a Disney influencer
