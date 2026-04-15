@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     description: 'The no-fluff Disneyland guide for families with kids ages 2–8.',
     type: 'website',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ride or Naptime' }],
   },
 }
 

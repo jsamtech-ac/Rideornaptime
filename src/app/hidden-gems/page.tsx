@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -13,7 +16,9 @@ export const metadata: Metadata = {
     title: 'Disneyland Hidden Gems & Parent Survival Tips (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland hidden gems' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -35,10 +40,24 @@ const faqs = [
 export default function HiddenGemsPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Hidden Gems", path: '/hidden-gems' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/hidden-gems"
+        headline={"Disneyland Hidden Gems for Families (2026)"}
+        description={"Underrated Disneyland experiences families miss — quiet spots, sleeper rides, and moments kids love."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">✨ Parent-Tested Secrets</div>
         <h1>Disneyland Hidden Gems & Parent Survival Tips</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           The stuff the blog posts miss — where real parents hide, where the good fireworks spots are,
           and the tricks that save the day at 4 PM when everyone's melting down.

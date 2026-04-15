@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
+import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -14,7 +19,9 @@ export const metadata: Metadata = {
     title: 'Best Strollers for Disneyland 2026 — Budget to Best Picks',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Best Disneyland strollers 2026' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -201,11 +208,13 @@ function PickCard({ p }: { p: Pick }) {
           textAlign: 'center',
         }}
       >
-        <img
+        <Image
           src={p.image}
-          alt={`${p.name} stroller`}
-          loading="lazy"
-          style={{ maxWidth: '100%', height: 'auto', maxHeight: '260px' }}
+          alt={`${p.name} — ${p.tier.toLowerCase()} ${p.category} stroller for Disneyland, ${p.price}`}
+          width={480}
+          height={260}
+          sizes="(max-width: 768px) 90vw, 480px"
+          style={{ maxWidth: '100%', height: 'auto', maxHeight: '260px', objectFit: 'contain' }}
         />
       </a>
 
@@ -238,10 +247,32 @@ function PickCard({ p }: { p: Pick }) {
 export default function BestStrollersPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Best Strollers", path: '/best-strollers' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/best-strollers"
+        headline={"Best Strollers for Disneyland (2026)"}
+        description={"A parent-tested ranking of the best Disneyland strollers — single and double picks for long park days with kids 2–8."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
+      <ItemListJsonLd
+        path="/best-strollers"
+        name="Best Disneyland strollers for families 2026"
+        items={picks.map((p) => ({
+          name: p.name,
+          description: `${p.tier} — ${p.category} stroller, ${p.price}. ${p.honest}`,
+        }))}
+      />
       <header className="hero">
         <div className="hero-badge">👶 Top 6 Strollers</div>
         <h1>Best Strollers for Disneyland 2026</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Six real picks — three singles, three doubles, budget to best — from a
           parent who's pushed strollers through Disneyland a few times before.

@@ -2,8 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import RideMatrix from '@/components/RideMatrix'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
+import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import { SITE_URL } from '@/lib/content'
+import { RIDES, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
@@ -14,7 +18,9 @@ export const metadata: Metadata = {
     title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland rides for kids' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -36,10 +42,32 @@ const faqs = [
 export default function RidesPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Rides for Kids", path: '/rides' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/rides"
+        headline={"Disneyland Rides for Kids: Age-by-Age Guide (2026)"}
+        description={"Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
+      <ItemListJsonLd
+        path="/rides"
+        name="Disneyland rides ranked for kids"
+        items={RIDES.map(r => ({
+          name: r.name,
+          description: `${r.land} — ${r.take}`,
+        }))}
+      />
       <header className="hero">
         <div className="hero-badge">🎢 Age-by-Age Ratings</div>
         <h1>Disneyland Rides for Kids: An Age-by-Age Guide</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Forget height requirements — here's whether each ride is actually worth your time
           at ages 2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.

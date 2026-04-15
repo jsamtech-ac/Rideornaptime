@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -13,7 +16,9 @@ export const metadata: Metadata = {
     title: 'Disneyland Character Meet-and-Greets: A Family Guide (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland characters and meet-and-greets' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -39,10 +44,24 @@ const faqs = [
 export default function CharactersPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Characters", path: '/characters' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/characters"
+        headline={"Disneyland Character Meet-and-Greets (2026)"}
+        description={"How character meet-and-greets work at Disneyland — where to find favorites, how long lines run, and what kids really remember."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🐭 Character Meet-and-Greets</div>
         <h1>Where to Meet Characters at Disneyland</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Where to find Mickey, the princesses, Anna &amp; Elsa, and the Pixar
           gang — and how to meet them without burning 45 minutes of your day

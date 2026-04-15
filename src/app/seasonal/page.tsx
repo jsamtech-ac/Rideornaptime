@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SEASONS, SITE_URL } from '@/lib/content'
 
@@ -13,7 +16,9 @@ export const metadata: Metadata = {
     title: 'Best Time to Visit Disneyland with Kids (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Best time to visit Disneyland' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -35,10 +40,24 @@ const faqs = [
 export default function SeasonalPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Best Time to Visit", path: '/seasonal' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/seasonal"
+        headline={"Best Time to Visit Disneyland (2026)"}
+        description={"Month-by-month breakdown of crowds, weather, and events at Disneyland — when to go and when to avoid with kids."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🌤 Month-by-Month</div>
         <h1>Best Time to Visit Disneyland with Kids</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Not all months are created equal. Here's the honest breakdown of
           crowds, weather, and whether it's worth the trip.

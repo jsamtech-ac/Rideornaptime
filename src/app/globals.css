@@ -311,7 +311,7 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  padding: calc(72px + var(--space-2xl)) var(--space-md) var(--space-2xl);
+  padding: calc(72px + var(--space-lg)) var(--space-md) var(--space-lg);
   text-align: center;
   background: linear-gradient(180deg, var(--sky-light) 0%, var(--sand) 100%);
   position: relative;
@@ -387,7 +387,7 @@ body {
 
 /* ===== SECTIONS ===== */
 .section {
-  padding: var(--space-2xl) var(--space-md);
+  padding: var(--space-xl) var(--space-md);
   max-width: 720px;
   margin: 0 auto;
 }

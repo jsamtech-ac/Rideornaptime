@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -13,7 +16,9 @@ export const metadata: Metadata = {
     title: 'Disneyland Lightning Lane Strategy for Families (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland Lightning Lane strategy' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -35,10 +40,24 @@ const faqs = [
 export default function LightningLanePage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Lightning Lane", path: '/lightning-lane' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/lightning-lane"
+        headline={"Disneyland Lightning Lane Strategy (2026)"}
+        description={"When to buy Lightning Lane Multi Pass, which rides to book first, and how to actually save time at Disneyland with kids."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">⚡ Lightning Lane</div>
         <h1>Disneyland Lightning Lane Strategy for Families</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Lightning Lane starts at $30/person/day at Disneyland and changes with demand.
           Here's when it's worth it and when you should save your money.

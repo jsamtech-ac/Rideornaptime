@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -14,7 +17,9 @@ export const metadata: Metadata = {
     title: 'Best Disneyland Fireworks Viewing Spots (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland fireworks spots' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -36,10 +41,24 @@ const faqs = [
 export default function FireworksPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Fireworks", path: '/fireworks' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/fireworks"
+        headline={"Best Disneyland Fireworks Viewing Spots (2026)"}
+        description={"Where to watch Disneyland fireworks with kids — the best viewing spots, timing, and what to do when the baby is asleep."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🎆 Fireworks Viewing</div>
         <h1>The Two Best Fireworks Spots at Disneyland</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Main Street gets packed shoulder-to-shoulder an hour before showtime.
           With kids, it's miserable. These are the two spots I actually use —

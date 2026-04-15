@@ -2,8 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import PackingChecklist from '@/components/PackingChecklist'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
+import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import { SITE_URL } from '@/lib/content'
+import { PACKING_LIST, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Packing List for Kids (2026)',
@@ -14,7 +18,9 @@ export const metadata: Metadata = {
     title: 'Disneyland Packing List for Kids (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland packing list for kids' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -36,10 +42,29 @@ const faqs = [
 export default function PackingListPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Packing List", path: '/packing-list' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/packing-list"
+        headline={"Disneyland Packing List for Kids (2026)"}
+        description={"The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to skip, and why."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
+      <HowToJsonLd
+        name="How to pack for Disneyland with kids"
+        description="A parent-tested packing list for a Disneyland day with kids ages 2–8."
+        steps={PACKING_LIST.map((p) => ({ name: p.item, text: p.why }))}
+      />
       <header className="hero">
         <div className="hero-badge">🎒 Pack Smart</div>
         <h1>Disneyland Packing List for Kids</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Everything on this list costs under $15 and will save you money,
           time, or tears. Tap items to check them off as you pack.

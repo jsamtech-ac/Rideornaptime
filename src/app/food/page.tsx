@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { FOOD_SPOTS, SITE_URL } from '@/lib/content'
 
@@ -13,7 +16,9 @@ export const metadata: Metadata = {
     title: 'Best Disneyland Food for Families (2026 — Dad-Tested)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Best Disneyland food for families' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -35,10 +40,24 @@ const faqs = [
 export default function FoodPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Food & Snacks", path: '/food' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/food"
+        headline={"Best Disneyland Food for Families (2026)"}
+        description={"What to eat at Disneyland with picky kids — quick-service picks, snacks worth the line, and sit-downs that actually work."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🍽 Food Strategy</div>
         <h1>Where to Eat at Disneyland (From a Dad Who's Tried Everything)</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Mobile order everything. Seriously — open the Disneyland app 30 minutes before
           you want to eat, order ahead, and skip the line. Here are the spots worth your time and money.

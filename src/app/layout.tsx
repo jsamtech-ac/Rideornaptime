@@ -29,7 +29,10 @@ export const metadata: Metadata = {
     'Disneyland with a 2 year old',
     'Disneyland packing list',
   ],
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    languages: { 'en-US': SITE_URL, 'x-default': SITE_URL },
+  },
   openGraph: {
     siteName: 'Ride or Naptime',
     type: 'website',
@@ -37,13 +40,11 @@ export const metadata: Metadata = {
     title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
     description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8.',
     locale: 'en_US',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ride or Naptime — Disneyland family guide' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
     description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8.',
-    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -56,12 +57,6 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
   category: 'travel',
 }
 

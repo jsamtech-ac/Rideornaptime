@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ItineraryTabs from '@/components/ItineraryTabs'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -14,7 +17,9 @@ export const metadata: Metadata = {
     title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland itineraries with kids' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -36,10 +41,24 @@ const faqs = [
 export default function ItinerariesPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "Itineraries", path: '/itineraries' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/itineraries"
+        headline={"Disneyland Itineraries with Kids (2026)"}
+        description={"Hour-by-hour Disneyland itineraries for families — 1-day, 2-day, and 3-day plans built around kids ages 2–8."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
         <h1>Disneyland Itineraries with Kids — Hour-by-Hour</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Three plans built around nap schedules and meltdown prevention.
           The #1 mistake families make is trying to do everything — these plans

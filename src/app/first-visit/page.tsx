@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import ArticleJsonLd from '@/components/ArticleJsonLd'
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -13,7 +16,9 @@ export const metadata: Metadata = {
     title: 'First Visit to Disneyland: A Family Guide (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'First visit to Disneyland family guide' }],
+    publishedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: '2026-04-15T00:00:00.000Z',
+    authors: ['Ride or Naptime'],
   },
 }
 
@@ -39,10 +44,24 @@ const faqs = [
 export default function FirstVisitPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: "First Visit Guide", path: '/first-visit' },
+        ]}
+      />
+      <ArticleJsonLd
+        path="/first-visit"
+        headline={"First Visit to Disneyland with Kids (2026)"}
+        description={"A first-timer's guide to Disneyland with kids — what to expect, what to book, and what every rookie parent gets wrong."}
+        datePublished="2026-04-15"
+        dateModified="2026-04-15"
+      />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🏰 Start Here</div>
         <h1>Your First Visit to Disneyland: A Family Guide</h1>
+        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Everything a first-time family needs to know before setting foot in the park — which park is which,
           how many days, what to book, and the rookie mistakes that ruin day one.

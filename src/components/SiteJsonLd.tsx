@@ -18,7 +18,7 @@ export default function SiteJsonLd() {
       '@type': 'Organization',
       name: 'Ride or Naptime',
       url: SITE_URL,
-      logo: `${SITE_URL}/og-image.png`,
+      logo: `${SITE_URL}/apple-icon`,
     },
   ]
   return (
