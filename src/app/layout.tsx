@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 
 const GTM_ID = 'GTM-5W84PMZ8'
+const GA_ID = 'G-4EMFL5HDQE'
 
 export const metadata: Metadata = {
   title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
@@ -34,6 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');`}
+        </Script>
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
