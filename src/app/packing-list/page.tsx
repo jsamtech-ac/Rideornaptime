@@ -55,6 +55,12 @@ export default function PackingListPage() {
           </p>
         </div>
 
+        <p style={{ fontSize: '0.85rem', opacity: 0.75, marginBottom: '1rem' }}>
+          This page contains affiliate links. If you buy through them, we earn a
+          small commission at no extra cost to you. We only recommend stuff we
+          actually use with our own kids at the parks.
+        </p>
+
         <PackingChecklist />
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
