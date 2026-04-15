@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Hidden Gems & Parent Survival Tips (2026)',
   description: 'The Disneyland secrets locals and pro parents actually use — best fireworks spot, the AC-cooled afternoon reset, Rider Switch, and more. Read these first.',
   alternates: { canonical: `${SITE_URL}/hidden-gems` },
-  openGraph: { url: `${SITE_URL}/hidden-gems`, title: 'Disneyland Hidden Gems & Parent Survival Tips (2026)' },
+  openGraph: {
+    url: `${SITE_URL}/hidden-gems`,
+    title: 'Disneyland Hidden Gems & Parent Survival Tips (2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland hidden gems' }],
+  },
 }
 
 const faqs = [
@@ -41,11 +48,11 @@ export default function HiddenGemsPage() {
       <section className="section">
         <div className="section-header">
           <span className="section-icon">✨</span>
-          <h2>The Survival Kit</h2>
+          <h2>Survival Kit &amp; Tips</h2>
         </div>
 
         <div className="tip-card">
-          <p><strong>🎆 Fireworks from Star Wars: Galaxy's Edge.</strong> Everyone packs Main Street. Head to Galaxy's Edge instead — same fireworks, less crowded, and they play John Williams music. If you have 3 days, do Galaxy's Edge first, Main Street on day 3 for the projections.</p>
+          <p><strong>🎆 Skip Main Street for fireworks.</strong> Main Street gets packed shoulder-to-shoulder an hour before showtime — with kids, it's miserable. Two better spots: <strong>Star Wars: Galaxy's Edge</strong> (same fireworks with John Williams music piped in, way less crowded) or <strong>right by the entrance to It's a Small World</strong> (open sky, room to breathe, easy exit afterward). You miss the castle projections, but you keep your sanity.</p>
         </div>
 
         <div className="tip-card">
@@ -57,11 +64,35 @@ export default function HiddenGemsPage() {
         </div>
 
         <div className="tip-card">
+          <p><strong>🌲 Redwood Creek Challenge Trail (DCA).</strong> The outdoor playground tucked into Grizzly Peak — rope bridges, climbing nets, rock walls, tire climbs, zip lines, slides, and a little hidden cave. Walk-through, no line, no reservation. Kids roughly 5-12 will burn an hour of energy here while you park on a shaded bench. It's never slammed like Toontown, and it's a perfect mid-afternoon energy release between DCA rides.</p>
+        </div>
+
+        <div className="tip-card">
           <p><strong>👸 Meet characters efficiently.</strong> Check the Disneyland app map for character locations and times. The princess meet-and-greet by the castle is the best single stop. Anna and Elsa have their own meet-and-greet at DCA. Toontown for Mickey and friends. Or just walk around — you'll bump into characters constantly.</p>
         </div>
 
         <div className="tip-card">
+          <p><strong>🚂 Ride the Disneyland Railroad.</strong> Grand Circle Tour around the whole park — ~20 minutes if you stay on, and you can hop off at any of the four stations. Sit down, cool off, eat a snack, and let tired legs recover while the kids get a break from walking. Bonus: the ride passes through the Grand Canyon and Primeval World dioramas. <em>Note: the Monorail is currently closed for refurbishment, so the train is your best loop-around-the-park option.</em></p>
+        </div>
+
+        <div className="tip-card">
+          <p><strong>🚪 Enter through Downtown Disney, not Harbor Blvd.</strong> The Harbor Blvd entrance is a sea of people — stroller traffic jams, long security lines, slow-moving crowds. The Downtown Disney security checkpoint (on the west side, near the hotels) is almost always quicker and more manageable. You'll walk through Downtown Disney to the esplanade between the two parks — same destination, way less stress.</p>
+        </div>
+
+        <div className="tip-card">
+          <p><strong>✂️ Silhouette Studio (personal fav).</strong> A cast member hand-cuts a black-paper silhouette of your kid in about a minute — it's one of the coolest Disney keepsakes and cheaper than most souvenirs. The main Silhouette Studio on Main Street almost always has a long line. The workaround: they added a <strong>second silhouette artist inside the Disneyana store</strong> (also on Main Street, a few doors down) — same service, way shorter wait.</p>
+        </div>
+
+        <div className="tip-card">
           <p><strong>🔄 Rider Switch is a game-changer.</strong> One parent rides while the other waits with the little one. Then you swap — the second parent skips the line entirely. Ask the ride attendant at the entrance. Works on any ride with a height requirement.</p>
+        </div>
+
+        <div className="tip-card">
+          <p><strong>🚼 Bring a stroller — even if you think you don't need one.</strong> I bring one for my kids every time and it's a total game-changer: faster getting around the parks, less whining from tired legs, and — most importantly — it lets them nap mid-day so you can keep going past their usual bedtime for fireworks. Even kids who've "outgrown" strollers at home will use it by hour four at Disneyland. Worth every bit of the hassle.</p>
+        </div>
+
+        <div className="tip-card">
+          <p><strong>📏 The "too short" return card.</strong> If your kid gets measured at a ride and doesn't make the height, ask the cast member at the entrance for a return card. It lets them come back and ride without waiting in line once they hit the height requirement — whether that's later in the trip or on a future visit. Softens the disappointment and genuinely makes their day.</p>
         </div>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
@@ -69,6 +100,8 @@ export default function HiddenGemsPage() {
           <p>Adding soon: best fireworks viewing spots, best places to sit and eat, and what to do when it rains. Got a hidden gem? <Link href="/">Back to the guide hub</Link>.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

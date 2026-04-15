@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SEASONS, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Best Time to Visit Disneyland with Kids (2026)',
   description: 'Month-by-month Disneyland crowd guide for families — when to go, what to avoid, and where the secret low-crowd windows are hiding. Plan your trip.',
   alternates: { canonical: `${SITE_URL}/seasonal` },
-  openGraph: { url: `${SITE_URL}/seasonal`, title: 'Best Time to Visit Disneyland with Kids (2026)' },
+  openGraph: {
+    url: `${SITE_URL}/seasonal`,
+    title: 'Best Time to Visit Disneyland with Kids (2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Best time to visit Disneyland' }],
+  },
 }
 
 const faqs = [
@@ -62,6 +69,8 @@ export default function SeasonalPage() {
           <p>Once you've picked a month, lock in your <Link href="/itineraries">day-by-day plan</Link> and check the <Link href="/saving-money">money-saving tips</Link> — off-peak trips let you stretch the budget into a second day.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

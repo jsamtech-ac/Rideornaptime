@@ -2,13 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import PackingChecklist from '@/components/PackingChecklist'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Packing List for Kids (2026)',
   description: 'The Disneyland packing list for families with young kids — every item under $15, each one explained, tap to check off. Start packing the smart way.',
   alternates: { canonical: `${SITE_URL}/packing-list` },
-  openGraph: { url: `${SITE_URL}/packing-list`, title: 'Disneyland Packing List for Kids (2026)' },
+  openGraph: {
+    url: `${SITE_URL}/packing-list`,
+    title: 'Disneyland Packing List for Kids (2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland packing list for kids' }],
+  },
 }
 
 const faqs = [
@@ -52,9 +59,11 @@ export default function PackingListPage() {
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pair With</div>
-          <p>See the <Link href="/saving-money">money-saving tips</Link> for where to buy this stuff cheap, and the <Link href="/top-5">Top 5</Link> picks for our favorite gear — strollers, chargers, stroller fans, and more.</p>
+          <p>See the <Link href="/saving-money">money-saving tips</Link> for where to buy this stuff cheap, and the <Link href="/best-strollers">Top 6 Disneyland-friendly strollers</Link> for our ranked stroller picks.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

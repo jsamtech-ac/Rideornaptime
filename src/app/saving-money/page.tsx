@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'How to Save Money at Disneyland (Family Guide 2026)',
   description: 'Real money-saving tips for families at Disneyland — cheaper tickets, cheaper hotels, free parking hacks, and free celebration buttons. Start saving now.',
   alternates: { canonical: `${SITE_URL}/saving-money` },
-  openGraph: { url: `${SITE_URL}/saving-money`, title: 'How to Save Money at Disneyland (Family Guide 2026)' },
+  openGraph: {
+    url: `${SITE_URL}/saving-money`,
+    title: 'How to Save Money at Disneyland (Family Guide 2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Save money at Disneyland' }],
+  },
 }
 
 const faqs = [
@@ -102,6 +109,8 @@ export default function SavingMoneyPage() {
           <p>Go during a low-crowd month from the <Link href="/seasonal">seasonal guide</Link> to knock another 20-30% off hotels and tickets.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

@@ -8,6 +8,10 @@ function RideCard({ ride }: { ride: Ride }) {
     <div className="ride-card">
       <div className="ride-name">{ride.name}</div>
       <div className="ride-land">{ride.land}</div>
+      <div className="ride-meta">
+        <span className="ride-height">📏 {ride.height}</span>
+        {ride.closing && <span className="ride-closing">⚠ {ride.closing}</span>}
+      </div>
       <div className="ride-ages">
         {(['age2', 'age4', 'age6', 'age8'] as const).map((age) => (
           <div key={age} className={`ride-age ${ride[age] as Verdict}`}>

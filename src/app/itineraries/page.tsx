@@ -2,13 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ItineraryTabs from '@/components/ItineraryTabs'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)',
   description: 'Three Disneyland itineraries built around nap schedules and meltdown prevention — 1-day blitz, 2-day relaxed, and 3-day complete. Start planning your trip.',
   alternates: { canonical: `${SITE_URL}/itineraries` },
-  openGraph: { url: `${SITE_URL}/itineraries`, title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)' },
+  openGraph: {
+    url: `${SITE_URL}/itineraries`,
+    title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland itineraries with kids' }],
+  },
 }
 
 const faqs = [
@@ -61,6 +68,8 @@ export default function ItinerariesPage() {
           <p>Decide which rides you'll prioritize using the <Link href="/rides">age-based ride guide</Link>, pre-book <Link href="/lightning-lane">Lightning Lane</Link> for the rides worth it, and mobile order from the <Link href="/food">food spots</Link> 30 minutes before each meal.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

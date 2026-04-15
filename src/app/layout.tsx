@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ScrollTop from '@/components/ScrollTop'
+import SiteJsonLd from '@/components/SiteJsonLd'
 import { SITE_URL } from '@/lib/content'
 import './globals.css'
 
@@ -16,18 +17,59 @@ export const metadata: Metadata = {
     template: '%s | Ride or Naptime',
   },
   description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8. Opinionated ride ratings, hour-by-hour itineraries, food strategy, Lightning Lane tips, and packing lists.',
+  applicationName: 'Ride or Naptime',
+  authors: [{ name: 'Ride or Naptime' }],
+  keywords: [
+    'Disneyland with kids',
+    'Disneyland family guide',
+    'Disneyland rides for toddlers',
+    'Disneyland itinerary',
+    'Lightning Lane strategy',
+    'Disney California Adventure',
+    'Disneyland with a 2 year old',
+    'Disneyland packing list',
+  ],
+  alternates: { canonical: SITE_URL },
   openGraph: {
     siteName: 'Ride or Naptime',
     type: 'website',
     url: SITE_URL,
+    title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
+    description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8.',
+    locale: 'en_US',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ride or Naptime — Disneyland family guide' }],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
+    description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
+  category: 'travel',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
@@ -55,6 +97,7 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
+        <SiteJsonLd />
       </head>
       <body>
         <noscript>

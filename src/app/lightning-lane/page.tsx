@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Lightning Lane Strategy for Families (2026)',
   description: 'When Lightning Lane Multi Pass is worth it, which rides to book first, and where families waste money. Book smart at Disneyland — start here.',
   alternates: { canonical: `${SITE_URL}/lightning-lane` },
-  openGraph: { url: `${SITE_URL}/lightning-lane`, title: 'Disneyland Lightning Lane Strategy for Families (2026)' },
+  openGraph: {
+    url: `${SITE_URL}/lightning-lane`,
+    title: 'Disneyland Lightning Lane Strategy for Families (2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland Lightning Lane strategy' }],
+  },
 }
 
 const faqs = [
@@ -69,16 +76,6 @@ export default function LightningLanePage() {
 
         <div className="tip-card">
           <div className="tip-card-header">
-            <div className="tip-card-icon coral">🌊</div>
-            <div>
-              <h3>World of Color — book early or miss it</h3>
-            </div>
-          </div>
-          <p>The World of Color show at DCA is worth seeing, but the viewing area gets packed. Use a Lightning Lane pass for it. Book this early in the day — spots run out, especially during busy periods.</p>
-        </div>
-
-        <div className="tip-card">
-          <div className="tip-card-header">
             <div className="tip-card-icon mint">📸</div>
             <div>
               <h3>Your Lightning Lane includes PhotoPass</h3>
@@ -96,7 +93,13 @@ export default function LightningLanePage() {
           <div className="callout-label">Pair With</div>
           <p>Use Lightning Lane around your day plan. See the <Link href="/itineraries">hour-by-hour itineraries</Link> for where to slot it in, and the <Link href="/saving-money">money-saving tips</Link> for ways to offset the cost.</p>
         </div>
+
+        <p className="footnote">
+          <strong>Note on World of Color:</strong> Virtual Queue (free) opens at 12:00 PM in the app and is separate from Lightning Lane Multi Pass/Single Pass. You must have entered California Adventure (or Disneyland with a Park Hopper) to join. You can also guarantee a viewing spot by booking a World of Color Dining Package at select restaurants. A non-reserved, first-come-first-served standby area is usually available but fills up fast.
+        </p>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

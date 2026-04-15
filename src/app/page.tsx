@@ -1,13 +1,21 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
   description: 'The no-fluff Disneyland guide for families with kids ages 2–8 — ride ratings, itineraries, Lightning Lane, food, packing, seasons, saving money, and more.',
   alternates: { canonical: SITE_URL },
-  openGraph: { url: SITE_URL, title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps' },
+  openGraph: {
+    url: SITE_URL,
+    title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
+    description: 'The no-fluff Disneyland guide for families with kids ages 2–8.',
+    type: 'website',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ride or Naptime' }],
+  },
 }
 
 const faqs = [
@@ -27,11 +35,39 @@ const faqs = [
 
 const sections = [
   {
-    href: '/rides',
-    icon: '🎢',
-    title: 'Age-Based Ride Guide',
-    summary: 'Is your 4-year-old ready for Pirates? Should your 2-year-old try Dumbo? A verdict on every major ride for ages 2, 4, 6, and 8 — from a real parent.',
-    cta: 'See the ride matrix →',
+    href: '/first-visit',
+    icon: '🏰',
+    title: 'Your First Visit to Disneyland',
+    summary: 'Never been? Start here. Which park is which, how many days, what to book, the rope-drop play, and the rookie mistakes that ruin day one — in one read.',
+    cta: 'Read the guide →',
+  },
+  {
+    href: '/characters',
+    icon: '🐭',
+    title: 'Characters & Meet-and-Greets',
+    summary: 'Where to find Mickey, the princesses, Anna & Elsa, and the Pixar gang — and how to meet them without burning 45 minutes on a single line.',
+    cta: 'Meet the characters →',
+  },
+  {
+    href: '/hidden-gems',
+    icon: '✨',
+    title: 'Hidden Gems & Survival Tips',
+    summary: 'The fireworks spot locals use. The AC-cooled afternoon reset. Rider Switch. The toddler playground with only one exit. Stuff the big blogs skip.',
+    cta: 'See the secrets →',
+  },
+  {
+    href: '/fireworks',
+    icon: '🎆',
+    title: 'Best Fireworks Spots',
+    summary: "My two favorite spots to watch fireworks with kids — Star Wars: Galaxy's Edge and It's a Small World — with maps. Way better than fighting the Main Street crush.",
+    cta: 'See the spots →',
+  },
+  {
+    href: '/packing-list',
+    icon: '🎒',
+    title: 'Packing List for Kids',
+    summary: 'Everything under $15 that saves money, time, or tears — from the right phone charger to stroller fans to why you cannot wear new shoes. Tap to check off.',
+    cta: 'Start packing →',
   },
   {
     href: '/itineraries',
@@ -39,6 +75,13 @@ const sections = [
     title: 'Hour-by-Hour Itineraries',
     summary: 'Three plans — 1-day blitz, 2-day relaxed, 3-day complete — built around nap schedules, meal timing, and the midday break that saves your trip.',
     cta: 'Plan your day →',
+  },
+  {
+    href: '/rides',
+    icon: '🎢',
+    title: 'Age-Based Ride Guide',
+    summary: 'Is your 4-year-old ready for Pirates? Should your 2-year-old try Dumbo? A verdict on every major ride for ages 2, 4, 6, and 8 — from a real parent.',
+    cta: 'See the ride matrix →',
   },
   {
     href: '/lightning-lane',
@@ -55,13 +98,6 @@ const sections = [
     cta: 'See the food list →',
   },
   {
-    href: '/packing-list',
-    icon: '🎒',
-    title: 'Packing List for Kids',
-    summary: 'Everything under $15 that saves money, time, or tears — from the right phone charger to stroller fans to why you cannot wear new shoes. Tap to check off.',
-    cta: 'Start packing →',
-  },
-  {
     href: '/seasonal',
     icon: '🌤',
     title: 'Best Time to Visit',
@@ -76,17 +112,10 @@ const sections = [
     cta: 'Cut costs →',
   },
   {
-    href: '/hidden-gems',
-    icon: '✨',
-    title: 'Hidden Gems & Survival Tips',
-    summary: 'The fireworks spot locals use. The AC-cooled afternoon reset. Rider Switch. The toddler playground with only one exit. Stuff the big blogs skip.',
-    cta: 'See the secrets →',
-  },
-  {
-    href: '/top-5',
-    icon: '⭐',
-    title: 'Top 5 Gear Picks',
-    summary: 'Best Disney-friendly strollers, phone chargers, stroller fans, kid water bottles, and parent backpacks — parent-tested Top 5 lists.',
+    href: '/best-strollers',
+    icon: '👶',
+    title: 'Top 6 Disneyland Strollers',
+    summary: "Three singles and three doubles that fit Disneyland's 31\" x 52\" rule, fold fast for rides and security, and survive a full park day.",
     cta: 'See the picks →',
   },
 ]
@@ -130,6 +159,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

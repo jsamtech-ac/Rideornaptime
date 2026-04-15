@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { FOOD_SPOTS, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Best Disneyland Food for Families (2026 — Dad-Tested)',
   description: 'The Disneyland and DCA food spots worth your money — from Plaza Inn fried chicken to Dole Whip to birria tacos. Mobile order everything. See the list.',
   alternates: { canonical: `${SITE_URL}/food` },
-  openGraph: { url: `${SITE_URL}/food`, title: 'Best Disneyland Food for Families (2026 — Dad-Tested)' },
+  openGraph: {
+    url: `${SITE_URL}/food`,
+    title: 'Best Disneyland Food for Families (2026 — Dad-Tested)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Best Disneyland food for families' }],
+  },
 }
 
 const faqs = [
@@ -72,6 +79,8 @@ export default function FoodPage() {
           <p>Time your meals around crowd waves — see the <Link href="/itineraries">hour-by-hour itineraries</Link> for suggested lunch and dinner windows that dodge the rushes.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

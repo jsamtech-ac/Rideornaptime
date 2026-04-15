@@ -2,13 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import RideMatrix from '@/components/RideMatrix'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
   description: 'Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent. See the full list.',
   alternates: { canonical: `${SITE_URL}/rides` },
-  openGraph: { url: `${SITE_URL}/rides`, title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)' },
+  openGraph: {
+    url: `${SITE_URL}/rides`,
+    title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
+    type: 'article',
+    siteName: 'Ride or Naptime',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Disneyland rides for kids' }],
+  },
 }
 
 const faqs = [
@@ -61,6 +68,8 @@ export default function RidesPage() {
           <p>Once you know what you're riding, build the day around it. See the <Link href="/itineraries">hour-by-hour itineraries</Link> and decide which rides are worth a <Link href="/lightning-lane">Lightning Lane</Link> booking.</p>
         </div>
       </section>
+
+      <TicketsCTA />
     </>
   )
 }

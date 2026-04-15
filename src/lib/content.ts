@@ -4,6 +4,8 @@ export interface Ride {
   name: string
   land: string
   park: 'DL' | 'DCA'
+  height: string
+  closing?: string
   age2: Verdict
   age4: Verdict
   age6: Verdict
@@ -37,36 +39,75 @@ export interface SeasonMonth {
   desc: string
 }
 
-export const NAV_ITEMS = [
-  { href: '/rides', label: 'Rides', icon: '🎢' },
-  { href: '/itineraries', label: 'Itineraries', icon: '🗓' },
-  { href: '/lightning-lane', label: 'Lightning Lane', icon: '⚡' },
-  { href: '/food', label: 'Food', icon: '🍽' },
-  { href: '/packing-list', label: 'Packing', icon: '🎒' },
-  { href: '/seasonal', label: 'Seasonal', icon: '🌤' },
-  { href: '/saving-money', label: 'Save Money', icon: '💰' },
-  { href: '/hidden-gems', label: 'Hidden Gems', icon: '✨' },
-  { href: '/top-5', label: 'Top 5', icon: '⭐' },
+export interface NavItem {
+  href: string
+  label: string
+  icon: string
+}
+
+export interface NavGroup {
+  label: string
+  items: NavItem[]
+}
+
+export const NAV_GROUPS: NavGroup[] = [
+  {
+    label: 'Plan',
+    items: [
+      { href: '/first-visit', label: 'First Visit', icon: '🏰' },
+      { href: '/itineraries', label: 'Itineraries', icon: '🗓' },
+      { href: '/seasonal', label: 'Seasonal', icon: '🌤' },
+      { href: '/lightning-lane', label: 'Lightning Lane', icon: '⚡' },
+      { href: '/saving-money', label: 'Save Money', icon: '💰' },
+    ],
+  },
+  {
+    label: 'Guides',
+    items: [
+      { href: '/rides', label: 'Rides', icon: '🎢' },
+      { href: '/characters', label: 'Characters', icon: '🐭' },
+      { href: '/food', label: 'Food', icon: '🍽' },
+      { href: '/packing-list', label: 'Packing', icon: '🎒' },
+    ],
+  },
+  {
+    label: 'Tips & Gear',
+    items: [
+      { href: '/hidden-gems', label: 'Hidden Gems', icon: '✨' },
+      { href: '/fireworks', label: 'Fireworks', icon: '🎆' },
+      { href: '/best-strollers', label: 'Best Strollers', icon: '👶' },
+    ],
+  },
 ]
+
+export const NAV_ITEMS: NavItem[] = NAV_GROUPS.flatMap(g => g.items)
 
 export const SITE_URL = 'https://rideornaptime.com'
 
 export const RIDES: Ride[] = [
-  { name: 'Dumbo the Flying Elephant', land: 'Fantasyland · Disneyland', park: 'DL', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Pure magic for toddlers. By age 8, they\'re over it. Ride early — the line gets absurd for a 90-second ride.' },
-  { name: "It's a Small World", land: 'Fantasyland · Disneyland', park: 'DL', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'The ultimate toddler ride. Air-conditioned, 15 minutes long, and the line moves fast. Use it as a reset button when everyone\'s melting down.' },
-  { name: 'Buzz Lightyear Astro Blasters', land: 'Tomorrowland · Disneyland', park: 'DL', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'Kids go nuts competing for high scores. Even a 2-year-old can spin the car and smash the trigger. The whole family will want to ride again.' },
-  { name: 'Pirates of the Caribbean', land: 'New Orleans Square · Disneyland', park: 'DL', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'One small drop in the dark — some 2-year-olds cry, most love it. The queue itself is half the fun. Go after lunch when the line dips.' },
-  { name: 'Haunted Mansion', land: 'New Orleans Square · Disneyland', park: 'DL', age2: 'skip', age4: 'maybe', age6: 'must-do', age8: 'must-do', take: 'Know your kid. If they handle mild spooky stuff, a brave 4-year-old will love it. If not, the stretching room alone will end your day.' },
-  { name: 'Autopia', land: 'Tomorrowland · Disneyland', park: 'DL', age2: 'skip', age4: 'skip', age6: 'maybe', age8: 'maybe', take: 'The line is 40+ minutes for 4 minutes of driving a car that barely steers. Unless your kid is car-obsessed, skip it and spend that time on 3 better rides.' },
-  { name: 'Big Thunder Mountain Railroad', land: 'Frontierland · Disneyland', park: 'DL', age2: 'skip', age4: 'skip', age6: 'must-do', age8: 'must-do', take: 'The perfect "first roller coaster." 40" height req. It\'s fast but not scary — more like a fun bumpy train. If they\'re tall enough, do it.' },
-  { name: 'Jungle Cruise', land: 'Adventureland · Disneyland', park: 'DL', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'The dad jokes are the real ride. Little ones love the animals, bigger kids groan at the puns. Use Lightning Lane if the standby is over 30 min.' },
-  { name: 'Finding Nemo Submarine Voyage', land: 'Tomorrowland · Disneyland', park: 'DL', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'Great for hot days — it\'s air-conditioned and easygoing. The submarine entrance is a tight spiral staircase with a stroller, so plan accordingly.' },
-  { name: "Mickey & Minnie's Runaway Railway", land: 'Mickey\'s Toontown · Disneyland', park: 'DL', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'No height requirement, incredible visuals, and the whole family genuinely enjoys it. The trackless ride system surprises everyone. Lightning Lane this one.' },
-  { name: 'Radiator Springs Racers', land: 'Cars Land · DCA', park: 'DCA', age2: 'skip', age4: 'maybe', age6: 'must-do', age8: 'must-do', take: 'The best ride at DCA. 40" height req. Rope-drop this or get Lightning Lane — the standby line hits 60-90 min by mid-morning.' },
-  { name: 'Monsters, Inc.', land: 'Hollywood Land · DCA', park: 'DCA', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'No height requirement, gentle ride, and the Monsters characters are a hit. Great when you need a quick win between bigger attractions.' },
-  { name: 'Inside Out Emotional Whirlwind', land: 'Pixar Pier · DCA', park: 'DCA', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Basically a rebranded tea cups. Toddlers love it, older kids find it boring. Keep it in your pocket for when the little one needs a win.' },
-  { name: 'Incredicoaster', land: 'Pixar Pier · DCA', park: 'DCA', age2: 'skip', age4: 'skip', age6: 'skip', age8: 'must-do', take: '48" height req — most kids under 8 won\'t make it. If your 8-year-old is a thrill seeker, this is their moment. Use Rider Switch so both parents can ride.' },
-  { name: 'The Little Mermaid', land: 'Hollywood Land · DCA', park: 'DCA', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Walk-on most of the day, air-conditioned, and the Ariel fans in your group will lose their minds. Perfect low-effort ride when energy is fading.' },
+  { name: 'Dumbo the Flying Elephant', land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Pure magic for toddlers. By age 8, they\'re over it. Ride early — the line gets absurd for a 90-second ride.' },
+  { name: "It's a Small World", land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'The ultimate toddler ride. Air-conditioned, 15 minutes long, and the line moves fast. Use it as a reset button when everyone\'s melting down.' },
+  { name: 'King Arthur Carrousel', land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Classic carousel right behind the castle. Toddlers love it, adults get a 2-minute sit-down. Short lines most of the day.' },
+  { name: 'Mad Tea Party (Tea Cups)', land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'The spinning cups never get old for little kids. Let them control the wheel — they\'ll giggle through the whole thing. Skip if anyone in your group gets motion sick.' },
+  { name: "Peter Pan's Flight", land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'The crown jewel of Fantasyland. Ride early — the line gets to 60+ min by 10 AM and it never drops. Lightning Lane or rope-drop are your only options.' },
+  { name: 'Alice in Wonderland', land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'Gentle outdoor-then-indoor dark ride. Great for little ones. Lines stay manageable most of the day.' },
+  { name: 'Casey Jr. Circus Train', land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Tiny train ride through miniature storybook scenes. Pair it with Storybook Land Canal Boats next door — same story, two angles.' },
+  { name: 'Storybook Land Canal Boats', land: 'Fantasyland · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'A cast member narrates while you boat through miniature Disney villages. Quiet, slow, weirdly magical. Toddlers are mesmerized.' },
+  { name: 'Buzz Lightyear Astro Blasters', land: 'Tomorrowland · Disneyland', park: 'DL', height: 'Any height', closing: 'Closing April 2026', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'Kids go nuts competing for high scores. Even a 2-year-old can spin the car and smash the trigger. Ride it before it closes in April 2026.' },
+  { name: 'Space Mountain', land: 'Tomorrowland · Disneyland', park: 'DL', height: '40" / 102 cm', age2: 'skip', age4: 'skip', age6: 'maybe', age8: 'must-do', take: 'Indoor coaster in the dark — speed is moderate but pitch-black tunnels can terrify a nervous 6-year-old. If they\'ve handled Big Thunder, they\'re ready.' },
+  { name: 'Pirates of the Caribbean', land: 'New Orleans Square · Disneyland', park: 'DL', height: 'Any height', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'One small drop in the dark — some 2-year-olds cry, most love it. The queue itself is half the fun. Go after lunch when the line dips.' },
+  { name: 'Haunted Mansion', land: 'New Orleans Square · Disneyland', park: 'DL', height: 'Any height', age2: 'skip', age4: 'maybe', age6: 'must-do', age8: 'must-do', take: 'Know your kid. If they handle mild spooky stuff, a brave 4-year-old will love it. If not, the stretching room alone will end your day.' },
+  { name: 'Autopia', land: 'Tomorrowland · Disneyland', park: 'DL', height: '32" with adult / 54" to drive alone', age2: 'skip', age4: 'skip', age6: 'maybe', age8: 'maybe', take: 'The line is 40+ minutes for 4 minutes of driving a car that barely steers. Unless your kid is car-obsessed, skip it and spend that time on 3 better rides.' },
+  { name: 'Big Thunder Mountain Railroad', land: 'Frontierland · Disneyland', park: 'DL', height: '40" / 102 cm', age2: 'skip', age4: 'skip', age6: 'must-do', age8: 'must-do', take: 'The perfect "first roller coaster." Fast but not scary — more like a fun bumpy train. If they\'re tall enough, do it.' },
+  { name: "Tiana's Bayou Adventure", land: 'Critter Country · Disneyland', park: 'DL', height: '40" / 102 cm', age2: 'skip', age4: 'skip', age6: 'must-do', age8: 'must-do', take: 'The reimagined Splash Mountain. Gorgeous music, beautiful New Orleans vibes, one big drop at the end. Use Rider Switch for kids under 40".' },
+  { name: 'Jungle Cruise', land: 'Adventureland · Disneyland', park: 'DL', height: 'Any height', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'The dad jokes are the real ride. Little ones love the animals, bigger kids groan at the puns. Use Lightning Lane if the standby is over 30 min.' },
+  { name: 'Finding Nemo Submarine Voyage', land: 'Tomorrowland · Disneyland', park: 'DL', height: 'Any height', age2: 'maybe', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'Great for hot days — it\'s air-conditioned and easygoing. The submarine entrance is a tight spiral staircase with a stroller, so plan accordingly.' },
+  { name: "Mickey & Minnie's Runaway Railway", land: 'Mickey\'s Toontown · Disneyland', park: 'DL', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'must-do', take: 'Incredible visuals, and the whole family genuinely enjoys it. The trackless ride system surprises everyone. Lightning Lane this one.' },
+  { name: 'Radiator Springs Racers', land: 'Cars Land · DCA', park: 'DCA', height: '40" / 102 cm', age2: 'skip', age4: 'maybe', age6: 'must-do', age8: 'must-do', take: 'The best ride at DCA. Rope-drop this or get Lightning Lane — the standby line hits 60-90 min by mid-morning.' },
+  { name: 'Monsters, Inc.', land: 'Hollywood Land · DCA', park: 'DCA', height: 'Any height', closing: 'Closing sometime in 2027', age2: 'must-do', age4: 'must-do', age6: 'must-do', age8: 'maybe', take: 'Gentle ride, Monsters characters are a hit. Closing in 2027, so ride it while you still can.' },
+  { name: 'Inside Out Emotional Whirlwind', land: 'Pixar Pier · DCA', park: 'DCA', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Basically a rebranded tea cups. Toddlers love it, older kids find it boring. Keep it in your pocket for when the little one needs a win.' },
+  { name: 'Incredicoaster', land: 'Pixar Pier · DCA', park: 'DCA', height: '48" / 122 cm', age2: 'skip', age4: 'skip', age6: 'skip', age8: 'must-do', take: 'Most kids under 8 won\'t make it. If your 8-year-old is a thrill seeker, this is their moment. Use Rider Switch so both parents can ride.' },
+  { name: 'The Little Mermaid', land: 'Hollywood Land · DCA', park: 'DCA', height: 'Any height', age2: 'must-do', age4: 'must-do', age6: 'maybe', age8: 'skip', take: 'Walk-on most of the day, air-conditioned, and the Ariel fans in your group will lose their minds. Perfect low-effort ride when energy is fading.' },
 ]
 
 export const ITINERARIES: Record<string, { label: string; events: TimelineEvent[] }> = {
