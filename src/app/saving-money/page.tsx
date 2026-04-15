@@ -3,7 +3,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -57,7 +56,6 @@ export default function SavingMoneyPage() {
       <header className="hero">
         <div className="hero-badge">💰 Save Real Money</div>
         <h1>How to Save Money at Disneyland (Family Guide)</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Disneyland is expensive. These tips won't make it cheap,
           but they'll keep you from bleeding money on things that don't matter.

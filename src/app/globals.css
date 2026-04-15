@@ -392,18 +392,6 @@ body {
   margin: 0 auto;
 }
 
-.section:nth-child(even) {
-  background: var(--white);
-  max-width: 100%;
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
-}
-
-.section:nth-child(even) .section-content {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
 .section-header {
   margin-bottom: var(--space-xl);
 }
@@ -459,10 +447,6 @@ body {
   transition: box-shadow 0.2s;
 }
 
-.section:nth-child(even) .ride-card {
-  background: var(--sand);
-  border-color: var(--sand-dark);
-}
 
 .ride-card:hover {
   box-shadow: var(--shadow-md);
@@ -645,9 +629,6 @@ body {
   margin-bottom: var(--space-md);
 }
 
-.section:nth-child(even) .tip-card {
-  background: var(--sand);
-}
 
 .tip-card-header {
   display: flex;
@@ -752,9 +733,6 @@ body {
   user-select: none;
 }
 
-.section:nth-child(even) .checklist-item {
-  background: var(--sand);
-}
 
 .checklist-item:hover {
   border-color: var(--sky);
@@ -879,9 +857,6 @@ body {
   background: var(--white);
 }
 
-.section:nth-child(even) .season-card {
-  background: var(--sand);
-}
 
 .season-month {
   font-family: var(--font-display);

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SEASONS, SITE_URL } from '@/lib/content'
 
@@ -57,7 +56,6 @@ export default function SeasonalPage() {
       <header className="hero">
         <div className="hero-badge">🌤 Month-by-Month</div>
         <h1>Best Time to Visit Disneyland with Kids</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Not all months are created equal. Here's the honest breakdown of
           crowds, weather, and whether it's worth the trip.

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -57,7 +56,6 @@ export default function HiddenGemsPage() {
       <header className="hero">
         <div className="hero-badge">✨ Parent-Tested Secrets</div>
         <h1>Disneyland Hidden Gems & Parent Survival Tips</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           The stuff the blog posts miss — where real parents hide, where the good fireworks spots are,
           and the tricks that save the day at 4 PM when everyone's melting down.

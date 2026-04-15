@@ -3,7 +3,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { FOOD_SPOTS, SITE_URL } from '@/lib/content'
 
@@ -57,7 +56,6 @@ export default function FoodPage() {
       <header className="hero">
         <div className="hero-badge">🍽 Food Strategy</div>
         <h1>Where to Eat at Disneyland (From a Dad Who's Tried Everything)</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Mobile order everything. Seriously — open the Disneyland app 30 minutes before
           you want to eat, order ahead, and skip the line. Here are the spots worth your time and money.

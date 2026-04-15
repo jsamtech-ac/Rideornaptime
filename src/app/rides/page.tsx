@@ -4,7 +4,6 @@ import RideMatrix from '@/components/RideMatrix'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { RIDES, SITE_URL } from '@/lib/content'
@@ -67,7 +66,6 @@ export default function RidesPage() {
       <header className="hero">
         <div className="hero-badge">🎢 Age-by-Age Ratings</div>
         <h1>Disneyland Rides for Kids: An Age-by-Age Guide</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Forget height requirements — here's whether each ride is actually worth your time
           at ages 2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.

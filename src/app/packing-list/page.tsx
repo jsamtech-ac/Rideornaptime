@@ -4,7 +4,6 @@ import PackingChecklist from '@/components/PackingChecklist'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { PACKING_LIST, SITE_URL } from '@/lib/content'
@@ -64,7 +63,6 @@ export default function PackingListPage() {
       <header className="hero">
         <div className="hero-badge">🎒 Pack Smart</div>
         <h1>Disneyland Packing List for Kids</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Everything on this list costs under $15 and will save you money,
           time, or tears. Tap items to check them off as you pack.

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -57,7 +56,6 @@ export default function LightningLanePage() {
       <header className="hero">
         <div className="hero-badge">⚡ Lightning Lane</div>
         <h1>Disneyland Lightning Lane Strategy for Families</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Lightning Lane starts at $30/person/day at Disneyland and changes with demand.
           Here's when it's worth it and when you should save your money.

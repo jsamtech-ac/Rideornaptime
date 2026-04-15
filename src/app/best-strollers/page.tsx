@@ -4,7 +4,6 @@ import Image from 'next/image'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
@@ -272,7 +271,6 @@ export default function BestStrollersPage() {
       <header className="hero">
         <div className="hero-badge">👶 Top 6 Strollers</div>
         <h1>Best Strollers for Disneyland 2026</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Six real picks — three singles, three doubles, budget to best — from a
           parent who's pushed strollers through Disneyland a few times before.

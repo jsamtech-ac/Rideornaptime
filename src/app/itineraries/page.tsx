@@ -4,7 +4,6 @@ import ItineraryTabs from '@/components/ItineraryTabs'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -58,7 +57,6 @@ export default function ItinerariesPage() {
       <header className="hero">
         <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
         <h1>Disneyland Itineraries with Kids — Hour-by-Hour</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Three plans built around nap schedules and meltdown prevention.
           The #1 mistake families make is trying to do everything — these plans

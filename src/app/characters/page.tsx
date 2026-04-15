@@ -3,7 +3,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -61,7 +60,6 @@ export default function CharactersPage() {
       <header className="hero">
         <div className="hero-badge">🐭 Character Meet-and-Greets</div>
         <h1>Where to Meet Characters at Disneyland</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Where to find Mickey, the princesses, Anna &amp; Elsa, and the Pixar
           gang — and how to meet them without burning 45 minutes of your day

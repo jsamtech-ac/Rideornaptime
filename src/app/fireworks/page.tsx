@@ -4,7 +4,6 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
-import ArticleMeta from '@/components/ArticleMeta'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -58,7 +57,6 @@ export default function FireworksPage() {
       <header className="hero">
         <div className="hero-badge">🎆 Fireworks Viewing</div>
         <h1>The Two Best Fireworks Spots at Disneyland</h1>
-        <ArticleMeta datePublished="2026-04-15" dateModified="2026-04-15" />
         <p className="hero-sub">
           Main Street gets packed shoulder-to-shoulder an hour before showtime.
           With kids, it's miserable. These are the two spots I actually use —
