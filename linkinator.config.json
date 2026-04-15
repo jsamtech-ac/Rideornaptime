@@ -1,0 +1,18 @@
+{
+  "recurse": true,
+  "concurrency": 4,
+  "timeout": 15000,
+  "retry": true,
+  "retryErrors": true,
+  "retryErrorsCount": 2,
+  "skip": [
+    "^mailto:",
+    "^tel:",
+    "^#",
+    "localhost:3000/api",
+    "linkedin.com",
+    "twitter.com/intent",
+    "getawaytoday.com"
+  ],
+  "format": "json"
+}

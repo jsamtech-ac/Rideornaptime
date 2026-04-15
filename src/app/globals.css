@@ -12,8 +12,10 @@
   --castle-light: #EDE9FE;
   --coral: #F43F5E;
   --coral-light: #FFF1F2;
+  --coral-ink: #BE123C;
   --mint: #10B981;
   --mint-light: #ECFDF5;
+  --mint-ink: #047857;
   --sand: #FAF5EF;
   --sand-dark: #F0E6D6;
   --ink: #1C1917;
@@ -385,6 +387,80 @@ body {
   }
 }
 
+/* ===== HERO — HOME (image variant) ===== */
+.hero--home {
+  padding: calc(72px + var(--space-xl)) var(--space-md) var(--space-xl);
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.hero--home::before {
+  display: none;
+}
+
+.hero--home .hero-image {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero--home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 30, 50, 0.55) 0%,
+    rgba(12, 30, 50, 0.35) 50%,
+    rgba(12, 30, 50, 0.7) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero--home .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero--home .hero-badge {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hero--home h1 {
+  font-size: 2.4rem;
+  color: var(--white);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hero--home h1 .highlight {
+  color: var(--sun-light);
+}
+
+.hero--home .hero-sub {
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero--home .hero-author {
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 768px) {
+  .hero--home {
+    min-height: 620px;
+  }
+
+  .hero--home h1 {
+    font-size: 3rem;
+  }
+}
+
 /* ===== SECTIONS ===== */
 .section {
   padding: var(--space-xl) var(--space-md);
@@ -487,12 +563,12 @@ body {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.7rem;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
 }
 
 .ride-age.must-do {
   background: var(--mint-light);
-  color: var(--mint);
+  color: var(--mint-ink);
 }
 
 .ride-age.maybe {
@@ -502,7 +578,7 @@ body {
 
 .ride-age.skip {
   background: var(--coral-light);
-  color: var(--coral);
+  color: var(--coral-ink);
 }
 
 .ride-take {
@@ -604,7 +680,7 @@ body {
 }
 
 .timeline-item.food .timeline-time {
-  color: var(--coral);
+  color: var(--coral-ink);
 }
 
 .timeline-title {
@@ -812,9 +888,9 @@ body {
   margin-bottom: var(--space-xs);
 }
 
-.callout.pro .callout-label { color: var(--mint); }
+.callout.pro .callout-label { color: var(--mint-ink); }
 .callout.warning .callout-label { color: #B45309; }
-.callout.hot .callout-label { color: var(--coral); }
+.callout.hot .callout-label { color: var(--coral-ink); }
 
 .callout p {
   font-size: 0.9rem;
@@ -877,12 +953,12 @@ body {
 
 .season-verdict.go {
   background: var(--mint-light);
-  color: var(--mint);
+  color: var(--mint-ink);
 }
 
 .season-verdict.avoid {
   background: var(--coral-light);
-  color: var(--coral);
+  color: var(--coral-ink);
 }
 
 .season-verdict.maybe {

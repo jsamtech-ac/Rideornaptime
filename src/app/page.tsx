@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
@@ -123,18 +124,28 @@ export default function Home() {
   return (
     <>
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">🏰 Updated for 2026 Season</div>
-        <h1>
-          The Disneyland Guide for Families Who Don't Have Time for <span className="highlight">50 Blog Posts</span>
-        </h1>
-        <p className="hero-sub">
-          Every tip you need — ride-by-ride ratings for ages 2–8,
-          hour-by-hour itineraries built around nap schedules, and food
-          strategy from a dad who's done this a few times before.
-        </p>
-        <div className="hero-author">
-          ✍️ Written by a real parent, not a Disney influencer
+      <header className="hero hero--home">
+        <Image
+          src="/hero.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
+        <div className="hero-content">
+          <div className="hero-badge">🏰 Updated for 2026 Season</div>
+          <h1>
+            The Disneyland Guide for Families Who Don't Have Time for <span className="highlight">50 Blog Posts</span>
+          </h1>
+          <p className="hero-sub">
+            Every tip you need — ride-by-ride ratings for ages 2–8,
+            hour-by-hour itineraries built around nap schedules, and food
+            strategy from a dad who's done this a few times before.
+          </p>
+          <div className="hero-author">
+            ✍️ Written by a real parent, not a Disney influencer
+          </div>
         </div>
       </header>
 
