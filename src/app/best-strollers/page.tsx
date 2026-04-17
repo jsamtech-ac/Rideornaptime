@@ -327,7 +327,7 @@ export default function BestStrollersPage() {
           </p>
         </div>
 
-        <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
+        <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }} tabIndex={0} role="region" aria-label="Stroller comparison table">
           <table
             style={{
               width: '100%',

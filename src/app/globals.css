@@ -620,8 +620,8 @@ body {
 }
 
 .itinerary-tab.active {
-  background: var(--sky);
-  border-color: var(--sky);
+  background: var(--sky-deep);
+  border-color: var(--sky-deep);
   color: var(--white);
 }
 
@@ -776,7 +776,7 @@ body {
 
 .food-location {
   font-size: 0.75rem;
-  color: var(--ink-muted);
+  color: var(--ink-soft);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -997,7 +997,7 @@ body {
 
 .footer-disclaimer {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.6);
   max-width: 500px;
   margin: var(--space-lg) auto 0;
 }
@@ -1128,8 +1128,11 @@ body {
   margin: var(--space-md) 0;
 }
 
+.footer a {
+  color: var(--sky);
+}
+
 .footer-links a {
-  color: var(--sky-deep);
   text-decoration: none;
   font-size: 0.95rem;
 }
