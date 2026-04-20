@@ -86,8 +86,8 @@ const sections = [
   {
     href: '/lightning-lane',
     icon: '⚡',
-    title: 'Lightning Lane Strategy',
-    summary: 'Multi Pass or Premier? What to book the second the gates open, which rides are worth it with little kids, and where families waste hundreds of dollars.',
+    title: 'Lightning Lane & Rope Drop',
+    summary: 'What to rope drop, when Multi Pass is worth it, the Rider Switch hack, and the 2026 rule changes that actually matter — tuned for families with kids 2–8.',
     cta: 'Book smart →',
   },
   {
