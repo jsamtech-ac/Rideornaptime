@@ -7,7 +7,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: '/characters', lastModified: '2026-04-15' },
   { path: '/rides', lastModified: '2026-04-15' },
   { path: '/itineraries', lastModified: '2026-04-15' },
-  { path: '/lightning-lane', lastModified: '2026-04-15' },
+  { path: '/lightning-lane', lastModified: '2026-04-20' },
   { path: '/food', lastModified: '2026-04-15' },
   { path: '/packing-list', lastModified: '2026-04-15' },
   { path: '/seasonal', lastModified: '2026-04-15' },
