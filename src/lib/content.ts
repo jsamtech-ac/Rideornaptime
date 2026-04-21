@@ -36,10 +36,48 @@ export interface PackingItem {
   related?: { text: string; href: string }
 }
 
+export type EventSlug =
+  | 'disneyland-70th'
+  | 'lunar-new-year'
+  | 'celebrate-gospel'
+  | 'food-and-wine'
+  | 'bluey'
+  | 'after-dark'
+  | 'halloween-time'
+  | 'oogie-boogie-bash'
+  | 'plaza-de-la-familia'
+  | 'holidays'
+  | 'festival-of-holidays'
+
+export type FamilyVerdict = 'must-see' | 'worth-it' | 'bonus' | 'skip-with-littles'
+export type EventTheme = 'coral' | 'sun' | 'castle' | 'sky' | 'mint'
+
+export interface SeasonalEvent {
+  slug: EventSlug
+  name: string
+  park: 'Disneyland' | 'DCA' | 'Both' | 'Downtown Disney'
+  start: string
+  end: string
+  dateLabel: string
+  ticketed: boolean
+  priceHint?: string
+  bookWhen?: string
+  familyVerdict: FamilyVerdict
+  theme: EventTheme
+  whatItIs: string
+  kidNotes: string
+  ctaCampaign?: string
+  ctaLabel?: string
+}
+
 export interface SeasonMonth {
   month: string
   verdict: 'go' | 'avoid' | 'maybe' | 'must-go'
   crowds: string
+  weather: { highF: number; lowF: number; note: string }
+  eventsActive: EventSlug[]
+  avoidDates?: string
+  bestWindow?: string
   desc: string
 }
 
@@ -224,17 +262,285 @@ export const PACKING_LIST: PackingItem[] = [
   },
 ]
 
+export const SEASONAL_LAST_REVIEWED = '2026-04-21'
+
+export const EVENTS_2026: SeasonalEvent[] = [
+  {
+    slug: 'disneyland-70th',
+    name: 'Disneyland 70th Celebration (Finale)',
+    park: 'Both',
+    start: '2026-01-01',
+    end: '2026-08-09',
+    dateLabel: 'Jan 1 – Aug 9, 2026',
+    ticketed: false,
+    familyVerdict: 'must-see',
+    theme: 'sky',
+    whatItIs: 'The final months of the 70th anniversary: Tapestry of Happiness projections on "it\'s a small world," Paint the Night parade, World of Color — Happiness, and the Celebrate Happy Cavalcade.',
+    kidNotes: 'Kids love Paint the Night — it\'s floats, lights, and music in one. Stake out a Main Street curb spot 45 minutes before showtime. Tapestry of Happiness runs multiple times nightly, so you can catch it after the parade without rushing.',
+    ctaCampaign: 'event_70th',
+    ctaLabel: 'Book a 70th finale trip',
+  },
+  {
+    slug: 'lunar-new-year',
+    name: 'Lunar New Year at Disney California Adventure',
+    park: 'DCA',
+    start: '2026-01-23',
+    end: '2026-02-22',
+    dateLabel: 'Jan 23 – Feb 22, 2026',
+    ticketed: false,
+    familyVerdict: 'worth-it',
+    theme: 'coral',
+    whatItIs: 'Year of the Horse. Mulan\'s Lunar New Year Procession, Asian-inspired food marketplaces around Paradise Gardens, and character meet-and-greets with Mulan, Mushu, and friends.',
+    kidNotes: 'Stroller-friendly and low-crowd — January and early February are the calmest months of the year. Kids who\'ve watched Mulan will flip for the procession. Food booths are small-plate style, great for sharing.',
+    ctaCampaign: 'event_lunar',
+    ctaLabel: 'Plan a Lunar New Year trip',
+  },
+  {
+    slug: 'celebrate-gospel',
+    name: 'Celebrate Gospel',
+    park: 'Downtown Disney',
+    start: '2026-02-20',
+    end: '2026-02-28',
+    dateLabel: 'Feb 20–21 & 27–28, 2026',
+    ticketed: false,
+    familyVerdict: 'bonus',
+    theme: 'castle',
+    whatItIs: 'Gospel music performances in Downtown Disney — community choirs and headlining artists across two weekends. Free to attend (no park admission needed).',
+    kidNotes: 'Open-air and family-friendly. A nice 30-minute add-on if you\'re already at the resort — not worth building a trip around with small kids.',
+  },
+  {
+    slug: 'food-and-wine',
+    name: 'Disney California Adventure Food & Wine Festival',
+    park: 'DCA',
+    start: '2026-03-06',
+    end: '2026-04-27',
+    dateLabel: 'Mar 6 – Apr 27, 2026',
+    ticketed: false,
+    familyVerdict: 'worth-it',
+    theme: 'sun',
+    whatItIs: 'Walk-around food marketplaces lining DCA with small plates and sips from California cuisine, plus culinary demos and live music. Included with park admission; food is à la carte ($7–$12 per plate).',
+    kidNotes: 'There\'s a kid-focused "Jr. Chef" booth every year with simple bites. The pacing is slower than a ride-heavy day — build in a stroller nap between marketplaces. Overlaps with spring break mid-March to mid-April; aim for the first week of March or the last week of April for lower crowds.',
+    ctaCampaign: 'event_foodwine',
+    ctaLabel: 'Book a Food & Wine trip',
+  },
+  {
+    slug: 'bluey',
+    name: 'Bluey\'s Best Day Ever!',
+    park: 'Disneyland',
+    start: '2026-03-22',
+    end: '2026-12-31',
+    dateLabel: 'Debuts Mar 22, 2026',
+    ticketed: false,
+    familyVerdict: 'must-see',
+    theme: 'mint',
+    whatItIs: 'Fantasyland Theatre transforms into Bluey\'s school — live stage show with Bluey and Bingo, musical segments, Keepy Uppy, and a walk-through Gnome Village and Fairy Garden play space.',
+    kidNotes: 'Absolute must for ages 2–6 who watch the show. The new kids meal combo is $5.99 at Troubadour Tavern. Show runs multiple times daily — check the app the morning-of and queue 20 minutes early for a front seat.',
+    ctaCampaign: 'event_bluey',
+    ctaLabel: 'Plan a Bluey trip',
+  },
+  {
+    slug: 'after-dark',
+    name: 'Disneyland After Dark Nights',
+    park: 'Disneyland',
+    start: '2026-01-02',
+    end: '2026-06-30',
+    dateLabel: 'Jan – Jun 2026 (select nights)',
+    ticketed: true,
+    priceHint: '~$139–$179 per ticket',
+    bookWhen: 'Tickets usually drop 8–10 weeks before each event',
+    familyVerdict: 'skip-with-littles',
+    theme: 'castle',
+    whatItIs: 'Separately-ticketed after-hours parties (9pm–1am) with themed entertainment: Sweethearts\' Nite, 70 Years of Favorites, Disney Channel Nite, Star Wars Nite, Pride Nite.',
+    kidNotes: 'Starts at 9pm and runs past midnight — not a toddler event. Best if your kids are 10+ and can handle a late night. Disney Channel Nite is the most kid-leaning of the lineup.',
+  },
+  {
+    slug: 'halloween-time',
+    name: 'Halloween Time',
+    park: 'Both',
+    start: '2026-08-21',
+    end: '2026-10-31',
+    dateLabel: 'Aug 21 – Oct 31, 2026',
+    ticketed: false,
+    familyVerdict: 'must-see',
+    theme: 'coral',
+    whatItIs: 'Included with park admission. Haunted Mansion Holiday overlay (Nightmare Before Christmas takeover), the giant Mickey jack-o\'-lantern on Main Street, Cars Land Haul-O-Ween, pumpkin beignets, Space Mountain Ghost Galaxy.',
+    kidNotes: 'Not scary — decorations are festive, not creepy. Haunted Mansion Holiday is the single best ride overlay Disney does. Weekdays in September and early October are the sweet spot: full Halloween vibes, manageable crowds.',
+    ctaCampaign: 'event_halloween',
+    ctaLabel: 'Book a Halloween Time trip',
+  },
+  {
+    slug: 'oogie-boogie-bash',
+    name: 'Oogie Boogie Bash – A Disney Halloween Party',
+    park: 'DCA',
+    start: '2026-08-18',
+    end: '2026-10-31',
+    dateLabel: '33 select nights, Aug 18 – Oct 31, 2026',
+    ticketed: true,
+    priceHint: '~$139–$199 per ticket (based on 2025 pricing)',
+    bookWhen: 'Tickets typically drop late June; Magic Key pre-sale first',
+    familyVerdict: 'worth-it',
+    theme: 'castle',
+    whatItIs: 'Separately-ticketed hard-ticket Halloween party at DCA, 6pm–11pm. Trick-or-treat trails, villains cavalcade, rare character meets (Oogie Boogie himself, villains you never see in the regular park), and the Frightfully Fun Parade.',
+    kidNotes: 'Best for ages 5+. Costumes are encouraged — kids can wear them inside the park (adults have rules, check the app). Expect to walk 3–5 miles in 5 hours; bring snacks for early-evening hunger before the candy stations open. Sells out early — book day-one of the on-sale window.',
+    ctaCampaign: 'event_oogieboogie',
+    ctaLabel: 'Plan an Oogie Boogie Bash trip',
+  },
+  {
+    slug: 'plaza-de-la-familia',
+    name: 'Plaza de la Familia (Día de los Muertos)',
+    park: 'DCA',
+    start: '2026-08-21',
+    end: '2026-11-02',
+    dateLabel: 'Aug 21 – Nov 2, 2026',
+    ticketed: false,
+    familyVerdict: 'bonus',
+    theme: 'sun',
+    whatItIs: 'Coco-inspired music, storytelling, and crafts near Paradise Gardens. Free Miguel & Dante meet-and-greet. Runs simultaneously with Halloween Time.',
+    kidNotes: 'A beautiful, calm corner of the park — great for a midday reset. Kids who love Coco will want to sit through the full musical storytelling set (about 25 minutes).',
+  },
+  {
+    slug: 'holidays',
+    name: 'Holidays at the Disneyland Resort',
+    park: 'Both',
+    start: '2026-11-18',
+    end: '2027-01-06',
+    dateLabel: 'Nov 18, 2026 – early Jan 2027',
+    ticketed: false,
+    familyVerdict: 'must-see',
+    theme: 'castle',
+    whatItIs: 'Holiday overlays on it\'s a small world and Haunted Mansion, Sleeping Beauty Castle snowfall, "A Christmas Fantasy" parade, Believe... in Holiday Magic fireworks, and Santa meet-and-greets.',
+    kidNotes: 'Magical but crowded. Go Mon–Thu between Nov 18 and Dec 18 — those are the best-value holiday weeks. Avoid Dec 20 – Jan 1: the parks routinely hit capacity and phase-close entry. Note: the 2026 holiday window is compressed (4 fewer days than prior years).',
+    ctaCampaign: 'event_holidays',
+    ctaLabel: 'Book a Holidays trip',
+  },
+  {
+    slug: 'festival-of-holidays',
+    name: 'Disney Festival of Holidays',
+    park: 'DCA',
+    start: '2026-11-18',
+    end: '2027-01-06',
+    dateLabel: 'Concurrent with Holidays',
+    ticketed: false,
+    familyVerdict: 'worth-it',
+    theme: 'mint',
+    whatItIs: '¡Viva Navidad!, Hanukkah and Kwanzaa celebrations, and food marketplaces around DCA similar to Food & Wine. Included with admission; food is à la carte.',
+    kidNotes: 'The ¡Viva Navidad! street party is one of the best kid experiences at the resort — Donald, Daisy, Panchito, and José dance with families in Paradise Gardens. Don\'t miss it.',
+  },
+]
+
 export const SEASONS: SeasonMonth[] = [
-  { month: 'January', verdict: 'go', crowds: 'Low', desc: 'Post-holiday lull. Short lines, cool weather. Best value month of the year.' },
-  { month: 'February', verdict: 'maybe', crowds: 'Low–Med', desc: 'Great until Presidents\' Day week. Avoid that week specifically — it\'s a zoo.' },
-  { month: 'March', verdict: 'avoid', crowds: 'High', desc: 'Spring break. All of it. Prices spike, lines are brutal, Lightning Lane sells out.' },
-  { month: 'April', verdict: 'maybe', crowds: 'Med–High', desc: 'First two weeks are still spring break overflow. Late April is solid — crowds thin and weather is perfect.' },
-  { month: 'May', verdict: 'go', crowds: 'Low–Med', desc: 'Sweet spot. School\'s still in, weather is warm but not brutal. Weekdays are golden.' },
-  { month: 'June', verdict: 'maybe', crowds: 'High', desc: 'Summer kicks in hard. Hot, crowded, expensive. Go early in the month if you must.' },
-  { month: 'July', verdict: 'avoid', crowds: 'Very High', desc: 'Peak everything. 100°F days, 60+ min lines for everything, cranky toddlers everywhere (including yours).' },
-  { month: 'August', verdict: 'avoid', crowds: 'High', desc: 'Still summer crowds plus the heat. Late August eases slightly as schools restart.' },
-  { month: 'September', verdict: 'go', crowds: 'Low', desc: 'Best-kept secret. Schools are back, Halloween decorations go up mid-month. Low crowds + festive vibes.' },
-  { month: 'October', verdict: 'must-go', crowds: 'Med', desc: 'Halloween at Disneyland is magical. Haunted Mansion overlay, pumpkin beignets, special parades. Weekdays are manageable.' },
-  { month: 'November', verdict: 'maybe', crowds: 'Med–High', desc: 'Great before Thanksgiving. Holiday decorations go up mid-month. Thanksgiving week itself is packed.' },
-  { month: 'December', verdict: 'maybe', crowds: 'Med–Very High', desc: 'First two weeks are decent. Christmas decorations are incredible. Avoid Dec 20–Jan 1 — it hits capacity.' },
+  {
+    month: 'January',
+    verdict: 'go',
+    crowds: 'Low',
+    weather: { highF: 68, lowF: 48, note: 'Cool, occasionally rainy — layers + poncho' },
+    eventsActive: ['disneyland-70th', 'lunar-new-year', 'after-dark'],
+    bestWindow: 'Jan 5 – Jan 20 (after New Year\'s crash, before Lunar New Year opens)',
+    desc: 'Post-holiday lull. Short lines, cool weather. Best value month of the year. Lunar New Year opens Jan 23 at DCA.',
+  },
+  {
+    month: 'February',
+    verdict: 'maybe',
+    crowds: 'Low–Med',
+    weather: { highF: 70, lowF: 50, note: 'Cool but sunny — light jacket weather' },
+    eventsActive: ['disneyland-70th', 'lunar-new-year', 'celebrate-gospel', 'after-dark'],
+    avoidDates: 'Feb 14–16 (Presidents\' Day weekend) — Valentine\'s + holiday combine',
+    bestWindow: 'Feb 2 – Feb 13, then Feb 18 – Feb 22',
+    desc: 'Great until Presidents\' Day week. Lunar New Year runs all month — weekdays in early Feb are low-crowd with festive food at DCA.',
+  },
+  {
+    month: 'March',
+    verdict: 'avoid',
+    crowds: 'High',
+    weather: { highF: 72, lowF: 53, note: 'Mild and sunny — ideal weather, brutal crowds' },
+    eventsActive: ['disneyland-70th', 'food-and-wine', 'bluey', 'after-dark'],
+    avoidDates: 'All of March (rolling spring break across US school districts)',
+    desc: 'Spring break. All of it. Prices spike, lines are brutal, Lightning Lane sells out. Bluey\'s Best Day Ever debuts Mar 22 — if you can tolerate crowds, this is the newest draw at the resort.',
+  },
+  {
+    month: 'April',
+    verdict: 'maybe',
+    crowds: 'Med–High',
+    weather: { highF: 75, lowF: 55, note: 'Warm days, cool evenings — perfect park weather' },
+    eventsActive: ['disneyland-70th', 'food-and-wine', 'bluey', 'after-dark'],
+    avoidDates: 'Apr 1 – Apr 12 (Easter + spring break overflow)',
+    bestWindow: 'Apr 20 – Apr 30 (crowds thin, Food & Wine + Bluey still running)',
+    desc: 'First two weeks are still spring break overflow. Late April is golden — Food & Wine in full swing, crowds thin, weather peaks.',
+  },
+  {
+    month: 'May',
+    verdict: 'go',
+    crowds: 'Low–Med',
+    weather: { highF: 78, lowF: 58, note: 'Warm but not hot — peak springtime' },
+    eventsActive: ['disneyland-70th', 'bluey', 'after-dark'],
+    bestWindow: 'May 4 – May 22 (weekdays especially) — skip Memorial Day weekend',
+    avoidDates: 'May 23 – May 25 (Memorial Day weekend)',
+    desc: 'Sweet spot. School\'s still in, weather is warm but not brutal. Weekdays are golden. Bluey running daily + 70th nighttime shows at peak production.',
+  },
+  {
+    month: 'June',
+    verdict: 'maybe',
+    crowds: 'High',
+    weather: { highF: 82, lowF: 62, note: '"June Gloom" mornings, hot afternoons' },
+    eventsActive: ['disneyland-70th', 'bluey'],
+    bestWindow: 'Jun 1 – Jun 12 (before most schools release)',
+    desc: 'Summer kicks in hard. Hot, crowded, expensive. Go early in the month if you must — last chance to catch the 70th nighttime shows before they retire Aug 9.',
+  },
+  {
+    month: 'July',
+    verdict: 'avoid',
+    crowds: 'Very High',
+    weather: { highF: 88, lowF: 65, note: 'Hot, occasionally 95°F+ inland' },
+    eventsActive: ['disneyland-70th', 'bluey'],
+    avoidDates: 'Jul 1 – Jul 7 (Independence Day week)',
+    desc: 'Peak everything. 100°F days, 60+ min lines for everything, cranky toddlers everywhere (including yours).',
+  },
+  {
+    month: 'August',
+    verdict: 'maybe',
+    crowds: 'Med–High',
+    weather: { highF: 88, lowF: 65, note: 'Hot; heat peaks early-to-mid month' },
+    eventsActive: ['disneyland-70th', 'bluey', 'halloween-time', 'oogie-boogie-bash', 'plaza-de-la-familia'],
+    bestWindow: 'Aug 24 – Aug 31 (school-restart lull, Halloween Time already up)',
+    desc: 'Late August is surprisingly good. Halloween Time opens Aug 21, Oogie Boogie Bash begins Aug 18, and schools restart in most districts — the last week is the under-rated sweet spot. Avoid early August heat if you can.',
+  },
+  {
+    month: 'September',
+    verdict: 'must-go',
+    crowds: 'Low',
+    weather: { highF: 86, lowF: 63, note: 'Warm but cooling — best weather of fall' },
+    eventsActive: ['bluey', 'halloween-time', 'oogie-boogie-bash', 'plaza-de-la-familia'],
+    bestWindow: 'Mid-Sep to late Sep (Tue–Thu are lightest)',
+    desc: 'Best-kept secret. Schools are back, full Halloween Time decor up, Oogie Boogie Bash running select nights. The lowest-crowd month outside of January with the best vibes of the year.',
+  },
+  {
+    month: 'October',
+    verdict: 'must-go',
+    crowds: 'Med',
+    weather: { highF: 80, lowF: 58, note: 'Ideal — warm days, cool evenings, dry' },
+    eventsActive: ['bluey', 'halloween-time', 'oogie-boogie-bash', 'plaza-de-la-familia'],
+    avoidDates: 'Oct 30 – Oct 31 (Halloween weekend peak)',
+    bestWindow: 'Oct 5 – Oct 22 (weekdays, especially Tue–Wed)',
+    desc: 'Halloween at Disneyland is magical. Haunted Mansion Holiday in full effect, pumpkin beignets everywhere, Oogie Boogie Bash nights. Weekdays are manageable; weekends crowd hard.',
+  },
+  {
+    month: 'November',
+    verdict: 'maybe',
+    crowds: 'Med–High',
+    weather: { highF: 74, lowF: 52, note: 'Cool, layered clothing weather' },
+    eventsActive: ['bluey', 'plaza-de-la-familia', 'holidays', 'festival-of-holidays'],
+    avoidDates: 'Nov 23 – Nov 29 (Thanksgiving week)',
+    bestWindow: 'Nov 18 – Nov 22 (holiday decor up, pre-Thanksgiving low crowds)',
+    desc: 'Holidays at the Resort begin Nov 18 with fresh decor + Festival of Holidays marketplaces at DCA. The five days before Thanksgiving are the secret window — holiday magic without Thanksgiving crowds.',
+  },
+  {
+    month: 'December',
+    verdict: 'maybe',
+    crowds: 'Med–Very High',
+    weather: { highF: 68, lowF: 48, note: 'Cool, possible rain — bring layers + poncho' },
+    eventsActive: ['bluey', 'holidays', 'festival-of-holidays'],
+    avoidDates: 'Dec 20 – Jan 1 (parks regularly hit capacity and phase-close)',
+    bestWindow: 'Dec 1 – Dec 18 (Mon–Thu are the holy grail of holiday visits)',
+    desc: 'First three weeks are decent with full holiday decor. Haunted Mansion Holiday and it\'s a small world Holiday are spectacular. Avoid Dec 20 – Jan 1 at all costs — the parks literally stop letting people in.',
+  },
 ]

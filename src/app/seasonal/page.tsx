@@ -3,70 +3,302 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import { SEASONS, SITE_URL } from '@/lib/content'
+import EventCTA from '@/components/EventCTA'
+import UpdatedBadge from '@/components/UpdatedBadge'
+import { SEASONS, EVENTS_2026, SEASONAL_LAST_REVIEWED, SITE_URL, type EventSlug, type SeasonalEvent } from '@/lib/content'
 
 export const metadata: Metadata = {
-  title: 'Best Time to Visit Disneyland with Kids (2026)',
-  description: 'Month-by-month Disneyland crowd guide for families — when to go, what to avoid, and where the secret low-crowd windows are hiding. Plan your trip.',
+  title: 'Disneyland 2026 Events Calendar & Best Time to Visit with Kids',
+  description: 'The 2026 Disneyland family planner: every seasonal event (Lunar New Year, Food & Wine, Halloween Time, Oogie Boogie Bash, Holidays) with exact dates, crowd + weather month-by-month, and when to book. Reviewed quarterly.',
   alternates: { canonical: `${SITE_URL}/seasonal` },
   openGraph: {
     url: `${SITE_URL}/seasonal`,
-    title: 'Best Time to Visit Disneyland with Kids (2026)',
+    title: 'Disneyland 2026 Events Calendar & Best Time to Visit with Kids',
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: `${SEASONAL_LAST_REVIEWED}T00:00:00.000Z`,
     authors: ['Ride or Naptime'],
   },
 }
 
 const faqs = [
   {
-    q: 'When is the best time to go to Disneyland with kids?',
-    a: 'September, early May, and late January are the best value windows — low crowds, manageable weather, and no school-break surge. October is a must-go if you can handle medium crowds: Halloween decorations, Haunted Mansion overlay, and pumpkin beignets.',
+    q: 'When is the best time to go to Disneyland with kids in 2026?',
+    a: 'Late September and October weekdays are the sweet spot — Halloween Time decor is fully up, Oogie Boogie Bash runs select nights, and crowds are among the lowest of the year now that schools are back. Honorable mentions: early May (pre-summer warmth, weekdays), late April (after spring break), and Jan 5–20 (the post-holiday lull with the 70th finale still running).',
   },
   {
-    q: 'What months should I avoid Disneyland?',
-    a: 'July and August (peak heat, peak crowds, peak prices) and all of March (spring break). Dec 20 to Jan 1 hits capacity and the parks physically stop letting people in.',
+    q: 'What months should I avoid Disneyland in 2026?',
+    a: 'July and August (peak heat plus summer crowds), all of March (rolling spring break across the US), Thanksgiving week (Nov 23–29), and especially Dec 20 through Jan 1 — the parks regularly hit capacity and phase-close entry. Presidents\' Day weekend (Feb 14–16) is a stealth-crowded week too.',
   },
   {
-    q: 'Is Disneyland crowded in September?',
-    a: 'No — September is the best-kept secret. Schools are back in session, Halloween decorations go up mid-month, and crowds are the lowest they get outside of January.',
+    q: 'What are the 2026 Oogie Boogie Bash dates and how much are tickets?',
+    a: 'Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It\'s a separately-ticketed hard-ticket party (6pm–11pm). Based on 2025 pricing, tickets ran $139–$199 depending on date. Tickets typically drop in late June with a Magic Key pre-sale first. Popular dates sell out within days — book day-one of the on-sale window.',
+  },
+  {
+    q: 'When does Halloween Time start at Disneyland in 2026?',
+    a: 'Halloween Time runs Aug 21 through Oct 31, 2026 and is included with park admission — no separate ticket needed. You\'ll get the Haunted Mansion Holiday overlay, the giant Mickey jack-o\'-lantern on Main Street, Cars Land Haul-O-Ween, pumpkin beignets, and Space Mountain Ghost Galaxy. Mid-September weekdays are the highest-value window.',
+  },
+  {
+    q: 'When does the Disneyland holiday season start in 2026?',
+    a: 'Holidays at the Disneyland Resort begin Nov 18, 2026 and run through early January 2027. Note: the 2026 holiday window is about 4 days shorter than prior years. The best-value holiday week is Nov 18–22 (decor up, pre-Thanksgiving crowds). Avoid Dec 20 through Jan 1 — the parks will phase-close.',
+  },
+  {
+    q: 'What is Bluey\'s Best Day Ever at Disneyland?',
+    a: 'A new live show debuting March 22, 2026 at Fantasyland Theatre. Bluey and Bingo appear with a live cast for musical numbers, Keepy Uppy, and a walk-through Gnome Village and Fairy Garden play space. Included with park admission. It\'s an absolute must for ages 2–6 who watch the show.',
+  },
+  {
+    q: 'Is the Food & Wine Festival at Disneyland good for kids?',
+    a: 'Yes — it\'s included with DCA admission, and food is à la carte at small-plate booths ($7–$12). There\'s a "Jr. Chef" booth each year with kid-focused bites. The festival runs March 6 – April 27, 2026. It overlaps with spring break mid-March to mid-April, so aim for the first week of March or the last week of April.',
+  },
+  {
+    q: 'Is the 70th anniversary still running in 2026?',
+    a: 'Yes, but it ends August 9, 2026. Tapestry of Happiness (projections on "it\'s a small world"), Paint the Night parade, and World of Color — Happiness all retire at that point. If you want to catch the 70th nighttime shows, book a trip before early August.',
+  },
+  {
+    q: 'Is September really the best-kept secret for Disneyland?',
+    a: 'Yes. Schools across the US are back in session, Halloween Time opens Aug 21 so the decor is already up, and Oogie Boogie Bash nights keep the park energy high. Tuesday through Thursday in mid-to-late September consistently rank as the lowest-crowd weekdays of the year outside of January.',
+  },
+  {
+    q: 'How often is this page updated?',
+    a: `This page is reviewed quarterly and before each major event window. It was last reviewed ${new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}. When Disney updates the 2026 calendar or confirms new dates, we refresh the event cards, dates, and month-by-month notes.`,
   },
 ]
 
+const eventBySlug: Record<EventSlug, SeasonalEvent> = EVENTS_2026.reduce(
+  (acc, e) => ({ ...acc, [e.slug]: e }),
+  {} as Record<EventSlug, SeasonalEvent>,
+)
+
+const VERDICT_LABEL: Record<SeasonalEvent['familyVerdict'], string> = {
+  'must-see': 'Must-see',
+  'worth-it': 'Worth it',
+  bonus: 'Nice bonus',
+  'skip-with-littles': 'Skip with littles',
+}
+
+const DEEP_DIVE_SLUGS: EventSlug[] = [
+  'disneyland-70th',
+  'lunar-new-year',
+  'food-and-wine',
+  'bluey',
+  'halloween-time',
+  'oogie-boogie-bash',
+  'holidays',
+  'festival-of-holidays',
+]
+
 export default function SeasonalPage() {
+  const reviewedFormatted = new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
+
   return (
     <>
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: "Best Time to Visit", path: '/seasonal' },
+          { name: 'Best Time to Visit', path: '/seasonal' },
         ]}
       />
       <ArticleJsonLd
         path="/seasonal"
-        headline={"Best Time to Visit Disneyland (2026)"}
-        description={"Month-by-month breakdown of crowds, weather, and events at Disneyland — when to go and when to avoid with kids."}
+        headline={"Disneyland 2026 Events Calendar & Best Time to Visit with Kids"}
+        description={"Month-by-month 2026 Disneyland planner — every seasonal event with dates, family verdicts, and crowd + weather notes."}
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={SEASONAL_LAST_REVIEWED}
       />
       <FaqJsonLd items={faqs} />
+      <ItemListJsonLd
+        path="/seasonal"
+        name="Disneyland 2026 Seasonal Events"
+        items={[...EVENTS_2026]
+          .sort((a, b) => a.start.localeCompare(b.start))
+          .map((e) => ({
+            name: e.name,
+            description: `${e.dateLabel} at ${e.park === 'Both' ? 'Disneyland Resort' : e.park}. ${e.whatItIs}`,
+            url: `${SITE_URL}/seasonal#event-${e.slug}`,
+          }))}
+      />
+
       <header className="hero">
-        <div className="hero-badge">🌤 Month-by-Month</div>
-        <h1>Best Time to Visit Disneyland with Kids</h1>
+        <div className="hero-badge">📅 2026 Planner</div>
+        <h1>Disneyland 2026: Events, Crowds & Best Months to Visit</h1>
         <p className="hero-sub">
-          Not all months are created equal. Here's the honest breakdown of
-          crowds, weather, and whether it's worth the trip.
+          Every seasonal event with exact 2026 dates, family-specific verdicts, and
+          the crowd + weather truth for every month. The planner we wish we&apos;d had.
         </p>
+        <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
       </header>
 
       <section className="section">
         <div className="section-header">
-          <span className="section-icon">🌤</span>
-          <h2>Month-by-Month Guide</h2>
+          <span className="section-icon">🎯</span>
+          <h2>The 2026 Picture</h2>
         </div>
+        <p className="section-intro">
+          Before the month-by-month grind, here&apos;s the big-picture read on the year.
+        </p>
+
+        <div className="tip-card">
+          <div className="tip-card-header">
+            <div className="tip-card-icon mint">✅</div>
+            <h3>Best months to book</h3>
+          </div>
+          <p>
+            <strong>Late September and October weekdays</strong> — lowest crowds of the year
+            paired with full Halloween Time decor. Runner-ups: <strong>Jan 5–20</strong>{' '}
+            (post-holiday lull, 70th finale still running), <strong>late April</strong>{' '}
+            (after spring break, Food &amp; Wine in full swing), and <strong>early May weekdays</strong>.
+          </p>
+        </div>
+
+        <div className="tip-card">
+          <div className="tip-card-header">
+            <div className="tip-card-icon coral">🚫</div>
+            <h3>Months to skip</h3>
+          </div>
+          <p>
+            <strong>All of March</strong> (rolling US spring break), <strong>July</strong>{' '}
+            (peak heat + peak crowds), and <strong>Dec 20 – Jan 1</strong> — the parks
+            regularly hit capacity and stop letting people in. Also watch out for{' '}
+            <strong>Presidents&apos; Day weekend (Feb 14–16)</strong> and{' '}
+            <strong>Thanksgiving week (Nov 23–29)</strong>.
+          </p>
+        </div>
+
+        <div className="tip-card">
+          <div className="tip-card-header">
+            <div className="tip-card-icon sky">✨</div>
+            <h3>What&apos;s new in 2026</h3>
+          </div>
+          <p>
+            <strong>Bluey&apos;s Best Day Ever!</strong> debuts March 22 at Fantasyland
+            Theatre. <strong>Oogie Boogie Bash expands to 33 nights</strong> (Aug 18 – Oct 31).
+            The <strong>Disneyland 70th Celebration wraps Aug 9</strong> — last chance for
+            Paint the Night, Tapestry of Happiness, and World of Color — Happiness.
+            The <strong>2026 holiday window is compressed</strong> (starts Nov 18, about 4 days
+            shorter than prior years).
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">🗓️</span>
+          <h2>2026 Event Timeline</h2>
+        </div>
+        <p className="section-intro">
+          Every seasonal event at the Disneyland Resort in 2026, in chronological order.
+          Click any event for the deep-dive below.
+        </p>
+
+        <div className="event-timeline">
+          {[...EVENTS_2026].sort((a, b) => a.start.localeCompare(b.start)).map((e) => (
+            <a
+              key={e.slug}
+              className="event-timeline-item"
+              data-theme={e.theme}
+              href={`#event-${e.slug}`}
+            >
+              <div className="event-timeline-date">
+                <span className="event-timeline-date-ribbon" aria-hidden="true" />
+                {e.dateLabel}
+              </div>
+              <div className="event-timeline-body">
+                <div className="event-timeline-name">{e.name}</div>
+                <div className="event-timeline-meta">
+                  <span>{e.park === 'Both' ? 'Disneyland Resort' : e.park}</span>
+                  <span className="sep" aria-hidden="true">•</span>
+                  <span>{e.ticketed ? 'Separately ticketed' : 'Included with admission'}</span>
+                </div>
+              </div>
+              <span className={`verdict-chip ${e.familyVerdict}`}>
+                {VERDICT_LABEL[e.familyVerdict]}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">🎪</span>
+          <h2>Special Events: Deep Dive</h2>
+        </div>
+        <p className="section-intro">
+          The headline events — what they actually are, the family verdict, and when to book.
+        </p>
+
+        {DEEP_DIVE_SLUGS.map((slug) => {
+          const e = eventBySlug[slug]
+          if (!e) return null
+          return (
+            <article key={e.slug} id={`event-${e.slug}`} className="event-card" data-theme={e.theme}>
+              <div className="event-card-ribbon" aria-hidden="true" />
+              <div className="event-card-body">
+                <div className="event-card-head">
+                  <h3 className="event-card-title">{e.name}</h3>
+                  <span className={`verdict-chip ${e.familyVerdict}`}>
+                    {VERDICT_LABEL[e.familyVerdict]}
+                  </span>
+                </div>
+                <div className="event-card-dates">
+                  <span>📅 {e.dateLabel}</span>
+                  <span className="event-card-park">
+                    {e.park === 'Both' ? 'Disneyland + DCA' : e.park}
+                  </span>
+                </div>
+
+                {e.ticketed && (
+                  <div className="event-card-ticketed">
+                    <span><strong>Ticket:</strong> {e.priceHint ?? 'Separately ticketed'}</span>
+                    {e.bookWhen && <span><strong>Book when:</strong> {e.bookWhen}</span>}
+                  </div>
+                )}
+
+                <div className="event-card-section">
+                  <div className="event-card-label">What it is</div>
+                  <p>{e.whatItIs}</p>
+                </div>
+
+                <div className="event-card-section">
+                  <div className="event-card-label">For families</div>
+                  <p>{e.kidNotes}</p>
+                </div>
+
+                {e.ctaCampaign && e.ctaLabel && (
+                  <EventCTA
+                    campaign={e.ctaCampaign}
+                    label={e.ctaLabel}
+                    sub="via Get Away Today — $10 off packages with RIDETIME"
+                  />
+                )}
+              </div>
+            </article>
+          )
+        })}
+
+        <p className="section-intro" style={{ fontSize: '0.82rem', color: 'var(--ink-muted)', marginTop: 'var(--space-md)' }}>
+          Event CTAs are affiliate links to Get Away Today (Disney&apos;s authorized ticket seller).
+          We earn a small commission if you book — at no extra cost to you. Prices and dates are
+          the most current we can verify; confirm on the official Disney site before booking.
+        </p>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">🌤</span>
+          <h2>Month-by-Month Breakdown</h2>
+        </div>
+        <p className="section-intro">
+          Crowds, weather, and active events for every month of 2026 — the real planning view.
+        </p>
 
         <div className="season-grid">
           {SEASONS.map((s, i) => (
@@ -76,14 +308,74 @@ export default function SeasonalPage() {
                 {s.verdict === 'go' || s.verdict === 'must-go' ? '👍 ' : s.verdict === 'avoid' ? '👎 ' : '🤷 '}
                 {s.crowds} crowds
               </div>
+              <div className="month-weather">
+                <span className="month-weather-icon" aria-hidden="true">🌡️</span>
+                <span>
+                  {s.weather.highF}° / {s.weather.lowF}°F — {s.weather.note}
+                </span>
+              </div>
+              {s.eventsActive.length > 0 && (
+                <div className="season-chips">
+                  {s.eventsActive.map((slug) => {
+                    const e = eventBySlug[slug]
+                    if (!e) return null
+                    return (
+                      <a
+                        key={slug}
+                        href={`#event-${slug}`}
+                        className={`event-chip ${e.theme}`}
+                      >
+                        {e.name.split(' – ')[0].split(' (')[0]}
+                      </a>
+                    )
+                  })}
+                </div>
+              )}
               <div className="season-desc">{s.desc}</div>
+              {s.bestWindow && (
+                <div className="season-micro best">
+                  <strong>Best window:</strong> {s.bestWindow}
+                </div>
+              )}
+              {s.avoidDates && (
+                <div className="season-micro avoid">
+                  <strong>Avoid:</strong> {s.avoidDates}
+                </div>
+              )}
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="callout pro" style={{ marginTop: '1.5rem' }}>
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">🧭</span>
+          <h2>Turn This Into a Trip</h2>
+        </div>
+        <p className="section-intro">
+          You&apos;ve picked a month. Now stack the rest of the planning.
+        </p>
+
+        <div className="callout pro">
           <div className="callout-label">Pair With</div>
-          <p>Once you've picked a month, lock in your <Link href="/itineraries">day-by-day plan</Link> and check the <Link href="/saving-money">money-saving tips</Link> — off-peak trips let you stretch the budget into a second day.</p>
+          <p>
+            Map out the day with a <Link href="/itineraries">1-, 2-, or 3-day itinerary</Link>,
+            decide if <Link href="/lightning-lane">Lightning Lane</Link> is worth it for your ages,
+            and check the <Link href="/saving-money">money-saving playbook</Link> — off-peak
+            months let you stretch the budget into an extra day. First trip? Start with the{' '}
+            <Link href="/first-visit">first-visit guide</Link>, then grab the{' '}
+            <Link href="/packing-list">packing list</Link>.
+          </p>
+        </div>
+
+        <div className="callout warning">
+          <div className="callout-label">How we keep this fresh</div>
+          <p>
+            Dates come from the official Disneyland 2026 press calendar, cross-checked with
+            Disney Parks Blog and Disney Tourist Blog. We review this page quarterly and
+            before each major event window. Last reviewed: <strong>{reviewedFormatted}</strong>.
+            Always confirm on the official Disney site before booking.
+          </p>
         </div>
       </section>
 

@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import { getAwayTodayUrl } from '@/lib/affiliate'
 
 type Props = {
   location: string
 }
 
 export default function TicketsCTA({ location }: Props) {
-  const href = `https://www.getawaytoday.com?referrerid=9474&utm_source=rideornaptime&utm_medium=affiliate&utm_campaign=${location}`
+  const href = getAwayTodayUrl(location)
 
   return (
     <section className="tickets-section" aria-label="Disneyland tickets affiliate offer">
