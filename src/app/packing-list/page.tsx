@@ -92,7 +92,7 @@ export default function PackingListPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="packinglist" />
     </>
   )
 }

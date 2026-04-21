@@ -170,7 +170,7 @@ export default function Home() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="home" />
     </>
   )
 }

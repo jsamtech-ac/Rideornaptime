@@ -108,6 +108,14 @@ export default function Header() {
           {NAV_GROUPS.map(group => (
             <DesktopGroup key={group.label} group={group} pathname={pathname} />
           ))}
+          <a
+            href="https://www.getawaytoday.com?referrerid=9474&utm_source=rideornaptime&utm_medium=affiliate&utm_campaign=navbar"
+            target="_blank"
+            rel="sponsored noopener"
+            className="nav-cta"
+          >
+            Buy Cheap Tix
+          </a>
         </div>
 
         <div className={`nav-mobile ${navOpen ? 'open' : ''}`}>
@@ -135,6 +143,16 @@ export default function Header() {
               ))}
             </section>
           ))}
+          <section className="nav-mobile-group">
+            <a
+              href="https://www.getawaytoday.com?referrerid=9474&utm_source=rideornaptime&utm_medium=affiliate&utm_campaign=navbar"
+              target="_blank"
+              rel="sponsored noopener"
+              className="nav-cta nav-cta-mobile"
+            >
+              Buy Cheap Tix
+            </a>
+          </section>
         </div>
       </div>
     </nav>

@@ -142,7 +142,7 @@ export default function FireworksPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="fireworks" />
     </>
   )
 }

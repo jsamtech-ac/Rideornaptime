@@ -97,7 +97,7 @@ export default function FoodPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="food" />
     </>
   )
 }

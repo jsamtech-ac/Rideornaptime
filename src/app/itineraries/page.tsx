@@ -86,7 +86,7 @@ export default function ItinerariesPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="itineraries" />
     </>
   )
 }

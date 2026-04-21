@@ -127,7 +127,7 @@ export default function SavingMoneyPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="savingmoney" />
     </>
   )
 }

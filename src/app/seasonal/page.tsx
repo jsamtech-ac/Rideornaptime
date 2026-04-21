@@ -87,7 +87,7 @@ export default function SeasonalPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="seasonal" />
     </>
   )
 }

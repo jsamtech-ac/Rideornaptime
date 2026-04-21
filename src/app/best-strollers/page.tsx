@@ -452,7 +452,7 @@ export default function BestStrollersPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="beststrollers" />
     </>
   )
 }

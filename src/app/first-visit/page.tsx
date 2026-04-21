@@ -351,7 +351,7 @@ export default function FirstVisitPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="firstvisit" />
     </>
   )
 }

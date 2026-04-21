@@ -95,7 +95,7 @@ export default function RidesPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="rides" />
     </>
   )
 }

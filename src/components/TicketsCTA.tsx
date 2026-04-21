@@ -1,32 +1,35 @@
-export default function TicketsCTA() {
+import Image from 'next/image'
+
+type Props = {
+  location: string
+}
+
+export default function TicketsCTA({ location }: Props) {
+  const href = `https://www.getawaytoday.com?referrerid=9474&utm_source=rideornaptime&utm_medium=affiliate&utm_campaign=${location}`
+
   return (
-    <section className="tickets-section">
-      <div className="tickets-cta">
-        <div className="tickets-cta-badge">🎟 Tickets</div>
-        <h2>Get Disneyland Tickets for Less</h2>
-        <p>
-          The first time I looked into these resellers, I was skeptical. But I&apos;ve
-          since only bought tickets from these two — cheaper than anywhere else, same exact tickets.
-        </p>
-        <div className="tickets-cta-buttons">
-          <a
-            href="https://www.getawaytoday.com/?referrerid=REPLACE_ME"
-            target="_blank"
-            rel="sponsored noopener"
-            className="tickets-cta-btn primary"
-          >
-            Get Away Today →
-          </a>
-          <a
-            href="https://www.undercovertourist.com/disneyland/?aid=REPLACE_ME"
-            target="_blank"
-            rel="sponsored noopener"
-            className="tickets-cta-btn secondary"
-          >
-            Undercover Tourist →
-          </a>
+    <section className="tickets-section" aria-label="Disneyland tickets affiliate offer">
+      <a
+        href={href}
+        target="_blank"
+        rel="sponsored noopener"
+        className="tickets-cta"
+      >
+        <div className="tickets-cta-promo" role="note">
+          <span className="tickets-cta-promo-label">Promo Code</span>
+          <span className="tickets-cta-promo-code">RIDETIME</span>
+          <span className="tickets-cta-promo-desc">$10 off packages</span>
         </div>
-      </div>
+        <div className="tickets-cta-image">
+          <Image
+            src="/getaway.jpg"
+            alt="Get Away Today — Disneyland authorized ticket seller, your vacation now for less"
+            width={1080}
+            height={1350}
+            sizes="(min-width: 768px) 520px, 100vw"
+          />
+        </div>
+      </a>
     </section>
   )
 }

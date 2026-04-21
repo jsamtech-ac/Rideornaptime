@@ -162,7 +162,7 @@ export default function HiddenGemsPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="hiddengems" />
     </>
   )
 }

@@ -918,7 +918,7 @@ export default function LightningLanePage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="lightninglane" />
     </>
   )
 }

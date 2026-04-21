@@ -261,7 +261,7 @@ export default function CharactersPage() {
         </div>
       </section>
 
-      <TicketsCTA />
+      <TicketsCTA location="characters" />
     </>
   )
 }
