@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL, SEASONAL_LAST_REVIEWED } from '@/lib/content'
+import { SITE_URL, SEASONAL_LAST_REVIEWED, PRIVACY_LAST_REVIEWED } from '@/lib/content'
 
 const routes: { path: string; lastModified: string }[] = [
   { path: '', lastModified: '2026-04-15' },
@@ -15,6 +15,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: '/hidden-gems', lastModified: '2026-04-15' },
   { path: '/fireworks', lastModified: '2026-04-15' },
   { path: '/best-strollers', lastModified: '2026-04-15' },
+  { path: '/privacy', lastModified: PRIVACY_LAST_REVIEWED },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1780,6 +1780,40 @@ body {
   overflow: hidden;
 }
 
+.footer-contact-consent {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.55;
+  margin-top: var(--space-xs);
+}
+
+.footer-contact-consent a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.footer-contact-consent a:hover {
+  text-decoration: none;
+}
+
+.footer-legal-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.footer-legal-links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+  text-decoration: underline;
+  color: var(--white);
+}
+
 .footer-contact-submit {
   align-self: flex-start;
   margin-top: var(--space-xs);
@@ -1961,5 +1995,118 @@ body {
 @media (min-width: 768px) {
   .tickets-cta-image {
     max-width: 520px;
+  }
+}
+
+/* ===== CONSENT BANNER ===== */
+.consent-banner {
+  position: fixed;
+  left: var(--space-md);
+  right: var(--space-md);
+  bottom: var(--space-md);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .consent-banner {
+    animation: consent-banner-in 0.25s ease-out;
+  }
+}
+
+@keyframes consent-banner-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.consent-banner-text {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.consent-banner-link {
+  color: var(--sky-deep);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.consent-banner-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.consent-banner-btn {
+  padding: var(--space-sm) var(--space-lg);
+  min-height: 44px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 2px solid var(--ink);
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.consent-banner-btn.primary {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.consent-banner-btn.primary:hover {
+  transform: translateY(-1px);
+  background: #000;
+}
+
+.consent-banner-btn.secondary {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.consent-banner-btn.secondary:hover {
+  background: var(--sand);
+}
+
+@media (min-width: 720px) {
+  .consent-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+  }
+  .consent-banner-text {
+    flex: 1;
+  }
+  .consent-banner-actions {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .consent-banner-actions {
+    flex-direction: column-reverse;
+  }
+  .consent-banner-btn {
+    width: 100%;
   }
 }

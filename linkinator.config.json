@@ -12,7 +12,10 @@
     "localhost:3000/api",
     "linkedin.com",
     "twitter.com/intent",
-    "getawaytoday.com"
+    "getawaytoday.com",
+    "amazon.com",
+    "amzn.to",
+    "rideornaptime.com"
   ],
   "format": "json"
 }

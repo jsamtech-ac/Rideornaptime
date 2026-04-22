@@ -16,6 +16,9 @@ export default function Footer() {
           </Link>
         ))}
       </div>
+      <div className="footer-legal-links">
+        <Link href="/privacy">Privacy</Link>
+      </div>
       <div className="footer-disclaimer">
         This site is not affiliated with, endorsed by, or sponsored by The Walt Disney Company or
         Disneyland Resort. All Disney-related trademarks are property of The Walt Disney Company.

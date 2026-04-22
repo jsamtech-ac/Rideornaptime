@@ -713,6 +713,8 @@ export const PACKING_LIST: PackingItem[] = [
 
 export const SEASONAL_LAST_REVIEWED = '2026-04-21'
 
+export const PRIVACY_LAST_REVIEWED = '2026-04-22'
+
 export const EVENTS_2026: SeasonalEvent[] = [
   {
     slug: 'disneyland-70th',

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import Link from 'next/link'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -35,7 +36,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="footer-contact" aria-labelledby="footer-contact-heading">
+    <section id="contact" className="footer-contact" aria-labelledby="footer-contact-heading">
       <h2 id="footer-contact-heading" className="footer-contact-heading">
         Got a tip or question? We&rsquo;d love to hear from you.
       </h2>
@@ -102,6 +103,11 @@ export default function ContactForm() {
               onChange={(e) => setWebsite(e.target.value)}
             />
           </div>
+
+          <p className="footer-contact-consent">
+            By submitting, you agree to our <Link href="/privacy">Privacy Policy</Link>. Messages
+            are sent via Resend and retained so we can reply.
+          </p>
 
           <button
             type="submit"
