@@ -10,12 +10,7 @@ interface Props {
   steps: Step[]
 }
 
-export default function HowToJsonLd({
-  name,
-  description,
-  totalTime,
-  steps,
-}: Props) {
+export default function HowToJsonLd({ name, description, totalTime, steps }: Props) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -30,9 +25,6 @@ export default function HowToJsonLd({
     })),
   }
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   )
 }

@@ -24,6 +24,7 @@ You are a design-consistency reviewer for the rideornaptime-project.
 ## Output
 
 Return findings as a JSON array:
+
 ```json
 [
   {"severity": "blocker|warning|info", "area": "design", "file": "<path>", "line": <n>, "message": "<what>", "fix": "<how to fix>"}

@@ -38,10 +38,7 @@ export async function POST(req: Request) {
   const messageStr = typeof message === 'string' ? message.trim() : ''
 
   if (!nameStr || !emailStr || !messageStr) {
-    return NextResponse.json(
-      { error: 'Name, email, and message are required.' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 })
   }
   if (!EMAIL_RE.test(emailStr) || emailStr.length > 254) {
     return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })

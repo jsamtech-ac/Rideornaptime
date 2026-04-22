@@ -34,6 +34,7 @@ You are the SEO reviewer for the rideornaptime-project (Next.js 14 App Router).
 ## Output
 
 Return findings as JSON array:
+
 ```json
 [{"severity": "blocker|warning|info", "area": "seo", "file": "<path>", "line": <n>, "message": "<what>", "fix": "<how>"}]
 ```

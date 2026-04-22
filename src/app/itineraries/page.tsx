@@ -9,7 +9,8 @@ import { SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)',
-  description: 'Three Disneyland itineraries built around nap schedules and meltdown prevention — 1-day blitz, 2-day relaxed, and 3-day complete. Start planning your trip.',
+  description:
+    'Three Disneyland itineraries built around nap schedules and meltdown prevention — 1-day blitz, 2-day relaxed, and 3-day complete. Start planning your trip.',
   alternates: { canonical: `${SITE_URL}/itineraries` },
   openGraph: {
     url: `${SITE_URL}/itineraries`,
@@ -43,13 +44,15 @@ export default function ItinerariesPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: "Itineraries", path: '/itineraries' },
+          { name: 'Itineraries', path: '/itineraries' },
         ]}
       />
       <ArticleJsonLd
         path="/itineraries"
-        headline={"Disneyland Itineraries with Kids (2026)"}
-        description={"Hour-by-hour Disneyland itineraries for families — 1-day, 2-day, and 3-day plans built around kids ages 2–8."}
+        headline={'Disneyland Itineraries with Kids (2026)'}
+        description={
+          'Hour-by-hour Disneyland itineraries for families — 1-day, 2-day, and 3-day plans built around kids ages 2–8.'
+        }
         datePublished="2026-04-15"
         dateModified="2026-04-15"
       />
@@ -58,9 +61,8 @@ export default function ItinerariesPage() {
         <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
         <h1>Disneyland Itineraries with Kids — Hour-by-Hour</h1>
         <p className="hero-sub">
-          Three plans built around nap schedules and meltdown prevention.
-          The #1 mistake families make is trying to do everything — these plans
-          tell you exactly what to skip.
+          Three plans built around nap schedules and meltdown prevention. The #1 mistake families
+          make is trying to do everything — these plans tell you exactly what to skip.
         </p>
       </header>
 
@@ -77,12 +79,21 @@ export default function ItinerariesPage() {
 
         <div className="callout warning">
           <div className="callout-label">Real Talk</div>
-          <p>Your plan will fall apart by 11 AM. That's fine. These itineraries give you a framework so you're not wandering aimlessly. The most important thing on here is the midday break — skip it and you'll pay for it at 4 PM.</p>
+          <p>
+            Your plan will fall apart by 11 AM. That's fine. These itineraries give you a framework
+            so you're not wandering aimlessly. The most important thing on here is the midday break
+            — skip it and you'll pay for it at 4 PM.
+          </p>
         </div>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
-          <p>Decide which rides you'll prioritize using the <Link href="/rides">age-based ride guide</Link>, pre-book <Link href="/lightning-lane">Lightning Lane</Link> for the rides worth it, and mobile order from the <Link href="/food">food spots</Link> 30 minutes before each meal.</p>
+          <p>
+            Decide which rides you'll prioritize using the{' '}
+            <Link href="/rides">age-based ride guide</Link>, pre-book{' '}
+            <Link href="/lightning-lane">Lightning Lane</Link> for the rides worth it, and mobile
+            order from the <Link href="/food">food spots</Link> 30 minutes before each meal.
+          </p>
         </div>
       </section>
 

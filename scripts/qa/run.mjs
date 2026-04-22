@@ -172,14 +172,29 @@ async function main() {
   const results = []
   let server
 
-  for (const check of checks) {
+  const fast = process.argv.includes('--fast') || process.env.SKIP_LHCI === '1'
+  const skip = new Set()
+  if (fast) skip.add('lhci')
+
+  const activeChecks = checks.filter((c) => !skip.has(c.id))
+  if (fast) {
+    log(`\n▶ --fast mode: skipping ${[...skip].join(', ')}`, COLOR.yellow)
+  }
+
+  for (const check of activeChecks) {
     log(`\n═══ ${check.label} (${check.severity}) ═══`, COLOR.bold + COLOR.cyan)
 
     if (check.needsServer && !server) {
       try {
         server = await startServer()
       } catch (e) {
-        results.push({ id: check.id, label: check.label, severity: check.severity, passed: false, error: e.message })
+        results.push({
+          id: check.id,
+          label: check.label,
+          severity: check.severity,
+          passed: false,
+          error: e.message,
+        })
         continue
       }
     }
@@ -195,7 +210,9 @@ async function main() {
       durationMs: r.durationMs,
     })
     log(
-      passed ? `✓ ${check.label} passed (${(r.durationMs / 1000).toFixed(1)}s)` : `✗ ${check.label} FAILED`,
+      passed
+        ? `✓ ${check.label} passed (${(r.durationMs / 1000).toFixed(1)}s)`
+        : `✗ ${check.label} FAILED`,
       passed ? COLOR.green : COLOR.red
     )
   }
@@ -238,10 +255,16 @@ async function main() {
     process.exit(1)
   }
   if (warnings.length) {
-    log('\n⚠  Layer 1 passed with warnings — run Layer 2 (/qa in Claude Code) before deciding to push.\n', COLOR.yellow)
+    log(
+      '\n⚠  Layer 1 passed with warnings — run Layer 2 (/qa in Claude Code) before deciding to push.\n',
+      COLOR.yellow
+    )
     process.exit(2)
   }
-  log('\n✅ Layer 1 clean — run /qa in Claude Code for qualitative Layer 2 review.\n', COLOR.green + COLOR.bold)
+  log(
+    '\n✅ Layer 1 clean — run /qa in Claude Code for qualitative Layer 2 review.\n',
+    COLOR.green + COLOR.bold
+  )
   process.exit(0)
 }
 

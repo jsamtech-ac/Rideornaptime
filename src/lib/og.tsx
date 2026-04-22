@@ -17,8 +17,7 @@ export function ogTemplate({ emoji, title, subtitle }: OgOpts) {
         flexDirection: 'column',
         justifyContent: 'space-between',
         padding: 80,
-        background:
-          'linear-gradient(135deg, #FFFBEB 0%, #FDE68A 35%, #FFF1F2 70%, #EDE9FE 100%)',
+        background: 'linear-gradient(135deg, #FFFBEB 0%, #FDE68A 35%, #FFF1F2 70%, #EDE9FE 100%)',
         fontFamily: 'system-ui, sans-serif',
         color: '#1C1917',
       }}
@@ -40,9 +39,7 @@ export function ogTemplate({ emoji, title, subtitle }: OgOpts) {
         >
           R
         </div>
-        <div style={{ fontSize: 32, fontWeight: 600, color: '#44403C' }}>
-          Ride or Naptime
-        </div>
+        <div style={{ fontSize: 32, fontWeight: 600, color: '#44403C' }}>Ride or Naptime</div>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -58,9 +55,7 @@ export function ogTemplate({ emoji, title, subtitle }: OgOpts) {
         >
           {title}
         </div>
-        <div style={{ fontSize: 30, color: '#44403C', maxWidth: 980 }}>
-          {subtitle}
-        </div>
+        <div style={{ fontSize: 30, color: '#44403C', maxWidth: 980 }}>{subtitle}</div>
       </div>
 
       <div

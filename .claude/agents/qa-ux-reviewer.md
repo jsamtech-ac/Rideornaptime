@@ -21,7 +21,7 @@ If Layer 1 wasn't run, say so in your output and proceed with a code-only review
    - Correct ARIA: `aria-expanded`, `aria-haspopup`, `aria-controls`, `role="menu"/"menuitem"` where applicable
    - Keyboard support (Escape to close, arrow keys within menus, Tab doesn't trap)
    - Visible focus states (check `globals.css` for `:focus-visible` styles)
-   Missing keyboard support or focus styles → **blocker**.
+     Missing keyboard support or focus styles → **blocker**.
 2. **Tap targets** — Lighthouse audit `tap-targets` (mobile) must pass. From `qa-report/lhci/`, any URL failing → **blocker**.
 3. **Horizontal scroll on mobile** — Playwright spec includes this; failures → **blocker**.
 4. **CLS / LCP** — From Lighthouse: CLS > 0.1 or LCP > 2.5s on any route → **warning** (perf regression).
@@ -33,6 +33,7 @@ If Layer 1 wasn't run, say so in your output and proceed with a code-only review
 ## Output
 
 Return findings as JSON array:
+
 ```json
 [{"severity": "blocker|warning|info", "area": "ux", "file": "<path>", "line": <n>, "message": "<what>", "fix": "<how>"}]
 ```

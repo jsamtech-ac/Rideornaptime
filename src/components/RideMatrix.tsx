@@ -27,12 +27,12 @@ function RideCard({ ride }: { ride: Ride }) {
 
 export default function RideMatrix() {
   const [rideFilter, setRideFilter] = useState<'all' | 'DL' | 'DCA'>('all')
-  const filteredRides = rideFilter === 'all' ? RIDES : RIDES.filter(r => r.park === rideFilter)
+  const filteredRides = rideFilter === 'all' ? RIDES : RIDES.filter((r) => r.park === rideFilter)
 
   return (
     <>
       <div className="itinerary-tabs" style={{ marginBottom: '1.5rem' }}>
-        {(['all', 'DL', 'DCA'] as const).map(f => (
+        {(['all', 'DL', 'DCA'] as const).map((f) => (
           <button
             key={f}
             className={`itinerary-tab ${rideFilter === f ? 'active' : ''}`}

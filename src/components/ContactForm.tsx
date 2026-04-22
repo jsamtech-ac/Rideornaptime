@@ -56,7 +56,7 @@ export default function ContactForm() {
               required
               maxLength={100}
               value={name}
-              onChange={e => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               disabled={status === 'submitting'}
             />
           </div>
@@ -71,7 +71,7 @@ export default function ContactForm() {
               required
               maxLength={254}
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'submitting'}
             />
           </div>
@@ -85,7 +85,7 @@ export default function ContactForm() {
               required
               maxLength={5000}
               value={message}
-              onChange={e => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
               disabled={status === 'submitting'}
             />
           </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
               tabIndex={-1}
               autoComplete="off"
               value={website}
-              onChange={e => setWebsite(e.target.value)}
+              onChange={(e) => setWebsite(e.target.value)}
             />
           </div>
 

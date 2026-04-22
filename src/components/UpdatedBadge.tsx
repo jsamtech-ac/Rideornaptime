@@ -12,11 +12,19 @@ export default function UpdatedBadge({ date, label = 'Updated for 2026' }: Props
   })
 
   return (
-    <div className="updated-badge" role="status" aria-label={`${label}, last reviewed ${formatted}`}>
+    <div
+      className="updated-badge"
+      role="status"
+      aria-label={`${label}, last reviewed ${formatted}`}
+    >
       <span className="updated-badge-dot" aria-hidden="true" />
       <span className="updated-badge-label">{label}</span>
-      <span className="updated-badge-sep" aria-hidden="true">·</span>
-      <time className="updated-badge-date" dateTime={date}>Reviewed {formatted}</time>
+      <span className="updated-badge-sep" aria-hidden="true">
+        ·
+      </span>
+      <time className="updated-badge-date" dateTime={date}>
+        Reviewed {formatted}
+      </time>
     </div>
   )
 }

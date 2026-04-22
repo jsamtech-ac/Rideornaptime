@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "qa": "node scripts/qa/run.mjs",
+    "qa:fast": "node scripts/qa/run.mjs --fast",
     "qa:types": "tsc --noEmit",
     "qa:lint": "next lint --max-warnings=0",
     "qa:format": "prettier --check .",

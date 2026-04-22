@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: 'Did Early Entry really go away in 2026?',
-    a: "Yes. As of January 5, 2026, Early Entry (the 30-minute head-start for Disneyland Resort hotel guests) is gone. Rope drop is now the only free way to get ahead of crowds — be outside the turnstiles 45 minutes before the posted park open.",
+    a: 'Yes. As of January 5, 2026, Early Entry (the 30-minute head-start for Disneyland Resort hotel guests) is gone. Rope drop is now the only free way to get ahead of crowds — be outside the turnstiles 45 minutes before the posted park open.',
   },
   {
     q: "What's the hotel guest Lightning Lane bonus?",
@@ -66,6 +66,7 @@ function verdictCell(v: Verdict) {
   return (
     <span
       className={`ride-age ${v}`}
+      role="img"
       aria-label={label}
       style={{
         display: 'inline-flex',
@@ -92,7 +93,7 @@ const bookItCall: Record<string, string> = {
   "Tiana's Bayou Adventure": 'Book — Rider Switch if under 40"',
   'Buzz Lightyear Astro Blasters': 'Book only if line > 30 min',
   'Finding Nemo Submarine Voyage': 'Book only if line > 30 min',
-  'Autopia': 'Skip — bad payoff',
+  Autopia: 'Skip — bad payoff',
 }
 
 export default function LightningLanePage() {
@@ -119,8 +120,9 @@ export default function LightningLanePage() {
         <div className="hero-badge">⚡ Lightning Lane + Rope Drop</div>
         <h1>Lightning Lane &amp; Rope Drop Strategies for Families (Ages 2–8)</h1>
         <p className="hero-sub">
-          The actual playbook — what to book, when to arrive, who rides what, and where parents burn money.
-          Built around the reality that your kid might be 36 inches tall and need a nap at noon.
+          The actual playbook — what to book, when to arrive, who rides what, and where parents burn
+          money. Built around the reality that your kid might be 36 inches tall and need a nap at
+          noon.
         </p>
       </header>
 
@@ -144,9 +146,9 @@ export default function LightningLanePage() {
           <p>
             Rope drop does 80% of the work for free. Most Multi Pass rides are headliners your kid
             can't ride (Space Mountain, Big Thunder, Tiana's) and the Fantasyland classics they love
-            are mostly <strong>standby-only</strong> — Dumbo, Small World, Alice, Tea Cups, Carrousel,
-            Storybook Land. Be at the gates 45 minutes early, head to Fantasyland, and knock out
-            4 rides in the first hour.
+            are mostly <strong>standby-only</strong> — Dumbo, Small World, Alice, Tea Cups,
+            Carrousel, Storybook Land. Be at the gates 45 minutes early, head to Fantasyland, and
+            knock out 4 rides in the first hour.
           </p>
           <p>
             <strong>Weekends &amp; holidays:</strong> flip the call. Lines hit 40+ minutes for
@@ -163,8 +165,8 @@ export default function LightningLanePage() {
           </div>
           <p>
             Sweet spot. Now they can ride Peter Pan, Pirates, Jungle Cruise, Haunted Mansion (if
-            brave), Runaway Railway, Buzz, and Finding Nemo — all on Multi Pass. You'll clear
-            6–8 Lightning Lane rides in a day. Worth the $34/person.
+            brave), Runaway Railway, Buzz, and Finding Nemo — all on Multi Pass. You'll clear 6–8
+            Lightning Lane rides in a day. Worth the $34/person.
           </p>
           <p>
             <strong>Don't buy Single Pass.</strong> Rise of the Resistance is intense for this age;
@@ -194,25 +196,27 @@ export default function LightningLanePage() {
           <span className="section-icon">📅</span>
           <h2>What Changed in 2026</h2>
           <p className="section-intro">
-            The rules you read on a 2025 blog post are wrong — the playbook changed on January 5, 2026.
+            The rules you read on a 2025 blog post are wrong — the playbook changed on January 5,
+            2026.
           </p>
         </div>
 
         <div className="callout warning">
           <div className="callout-label">Gone: Early Entry</div>
           <p>
-            As of January 5, 2026, Early Entry (the 30-minute head-start for hotel guests) has ended.
-            No more sneaking into Fantasyland at 7:30 AM while the park opens at 8. Rope drop is now
-            the only free head-start available to anyone.
+            As of January 5, 2026, Early Entry (the 30-minute head-start for hotel guests) has
+            ended. No more sneaking into Fantasyland at 7:30 AM while the park opens at 8. Rope drop
+            is now the only free head-start available to anyone.
           </p>
         </div>
 
         <div className="callout pro">
           <div className="callout-label">New: Hotel Guest Bonus LL</div>
           <p>
-            Staying at a Disneyland Resort hotel? You get <strong>one free Lightning Lane Multi Pass
-            entry per person, per stay</strong> (new Jan 5, 2026). Spend it on a ride everyone can do —
-            Peter Pan's Flight or Mickey &amp; Minnie's Runaway Railway — so no one feels left out.
+            Staying at a Disneyland Resort hotel? You get{' '}
+            <strong>one free Lightning Lane Multi Pass entry per person, per stay</strong> (new Jan
+            5, 2026). Spend it on a ride everyone can do — Peter Pan's Flight or Mickey &amp;
+            Minnie's Runaway Railway — so no one feels left out.
           </p>
         </div>
 
@@ -249,8 +253,8 @@ export default function LightningLanePage() {
           <span className="section-icon">🌅</span>
           <h2>The Rope Drop Playbook</h2>
           <p className="section-intro">
-            With Early Entry gone, rope drop is the single best free tool in the park.
-            The first 45 minutes of operating hours are faster than any Lightning Lane the rest of the day.
+            With Early Entry gone, rope drop is the single best free tool in the park. The first 45
+            minutes of operating hours are faster than any Lightning Lane the rest of the day.
           </p>
         </div>
 
@@ -263,8 +267,9 @@ export default function LightningLanePage() {
           </div>
           <p>
             Parking tram or Uber drop-off + security + esplanade walk = 30–45 minutes of friction
-            between your car and the gate. If the park opens at 8:00 AM, <strong>you're parking at 7:00 AM</strong>.
-            Eat breakfast before you leave — anything you try to eat inside eats into rope-drop time.
+            between your car and the gate. If the park opens at 8:00 AM,{' '}
+            <strong>you're parking at 7:00 AM</strong>. Eat breakfast before you leave — anything
+            you try to eat inside eats into rope-drop time.
           </p>
           <p>
             Have the app open with your party linked and a payment method saved <em>before</em> you
@@ -281,10 +286,10 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Head straight through the castle to Fantasyland. <strong>Peter Pan's Flight first</strong> —
-            the line hits 60+ minutes by 10 AM and never drops. Then Dumbo (90-second ride, absurd
-            lines later), then Small World, then Alice. Four rides in the first 45 minutes, all
-            toddler-friendly, all for free.
+            Head straight through the castle to Fantasyland.{' '}
+            <strong>Peter Pan's Flight first</strong> — the line hits 60+ minutes by 10 AM and never
+            drops. Then Dumbo (90-second ride, absurd lines later), then Small World, then Alice.
+            Four rides in the first 45 minutes, all toddler-friendly, all for free.
           </p>
           <p>
             If the line for Peter Pan is already 20+ at rope drop, flip the order: Dumbo first, loop
@@ -300,9 +305,9 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Go to Toontown for <strong>Mickey &amp; Minnie's Runaway Railway</strong>. Trackless ride,
-            incredible visuals, everyone loves it, and the 8 AM wait is 10 minutes vs. 60+ by 10 AM.
-            Then backtrack to Fantasyland for Peter Pan before the wall hits.
+            Go to Toontown for <strong>Mickey &amp; Minnie's Runaway Railway</strong>. Trackless
+            ride, incredible visuals, everyone loves it, and the 8 AM wait is 10 minutes vs. 60+ by
+            10 AM. Then backtrack to Fantasyland for Peter Pan before the wall hits.
           </p>
         </div>
 
@@ -331,7 +336,8 @@ export default function LightningLanePage() {
           </div>
           <p>
             Go straight to <strong>Radiator Springs Racers</strong>. 10–20 minute wait at rope drop
-            vs. 75–90 minutes by 11 AM. This single move can save a family of 4 the <strong>$60–120</strong>
+            vs. 75–90 minutes by 11 AM. This single move can save a family of 4 the{' '}
+            <strong>$60–120</strong>
             you'd otherwise spend on Single Passes.
           </p>
           <p>
@@ -408,14 +414,15 @@ export default function LightningLanePage() {
             You can book your <em>next</em> Lightning Lane when one of these happens first:
           </p>
           <p>
-            <strong>1.</strong> You tap in to use your current one, OR<br />
+            <strong>1.</strong> You tap in to use your current one, OR
+            <br />
             <strong>2.</strong> 120 minutes pass since your booking.
           </p>
           <p>
             <strong>Always Modify, never Cancel.</strong> Canceling a Lightning Lane resets your
-            2-hour clock from scratch. Modifying swaps it for a different ride in the same park
-            with your current eligibility preserved. If your 4-year-old is melting down and you
-            want to pivot from Big Thunder to Small World, Modify.
+            2-hour clock from scratch. Modifying swaps it for a different ride in the same park with
+            your current eligibility preserved. If your 4-year-old is melting down and you want to
+            pivot from Big Thunder to Small World, Modify.
           </p>
         </div>
 
@@ -435,12 +442,17 @@ export default function LightningLanePage() {
           <span className="section-icon">🎢</span>
           <h2>Disneyland Multi Pass: Ride-by-Ride for Ages 2–8</h2>
           <p className="section-intro">
-            Which of the Multi Pass rides are worth a booking for your kid's age. Green = go,
-            yellow = maybe, red = skip.
+            Which of the Multi Pass rides are worth a booking for your kid's age. Green = go, yellow
+            = maybe, red = skip.
           </p>
         </div>
 
-        <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }} tabIndex={0} role="region" aria-label="Disneyland Multi Pass ride-by-ride matrix">
+        <div
+          style={{ overflowX: 'auto', marginBottom: '1.5rem' }}
+          tabIndex={0}
+          role="region"
+          aria-label="Disneyland Multi Pass ride-by-ride matrix"
+        >
           <table
             style={{
               width: '100%',
@@ -463,13 +475,25 @@ export default function LightningLanePage() {
             <tbody>
               {dlMpRides.map((r: Ride) => (
                 <tr key={r.name} style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                  <td style={{ padding: '0.6rem 0.5rem' }}><strong>{r.name}</strong></td>
+                  <td style={{ padding: '0.6rem 0.5rem' }}>
+                    <strong>{r.name}</strong>
+                  </td>
                   <td style={{ padding: '0.6rem 0.5rem', whiteSpace: 'nowrap' }}>{r.height}</td>
-                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>{verdictCell(r.age2)}</td>
-                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>{verdictCell(r.age4)}</td>
-                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>{verdictCell(r.age6)}</td>
-                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>{verdictCell(r.age8)}</td>
-                  <td style={{ padding: '0.6rem 0.5rem' }}>{bookItCall[r.name] ?? 'Book if standby > 30 min'}</td>
+                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>
+                    {verdictCell(r.age2)}
+                  </td>
+                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>
+                    {verdictCell(r.age4)}
+                  </td>
+                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>
+                    {verdictCell(r.age6)}
+                  </td>
+                  <td style={{ padding: '0.6rem 0.5rem', textAlign: 'center' }}>
+                    {verdictCell(r.age8)}
+                  </td>
+                  <td style={{ padding: '0.6rem 0.5rem' }}>
+                    {bookItCall[r.name] ?? 'Book if standby > 30 min'}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -527,8 +551,8 @@ export default function LightningLanePage() {
           </div>
           <p>
             Weekday visits with kids 2–5. You're arriving after noon. You only plan a half-day at
-            DCA. Rope-drop RSR, standby the rest, and take the $136 you saved to dinner at
-            Lamplight Lounge instead.
+            DCA. Rope-drop RSR, standby the rest, and take the $136 you saved to dinner at Lamplight
+            Lounge instead.
           </p>
         </div>
 
@@ -540,11 +564,14 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            <strong>Weekday + you can rope-drop</strong> → Don't buy Single Pass. Rope drop. 15-minute wait.
+            <strong>Weekday + you can rope-drop</strong> → Don't buy Single Pass. Rope drop.
+            15-minute wait.
             <br />
-            <strong>Weekend + kid is 40"+</strong> → Buy Single Pass for qualifying riders. Rider Switch for the toddler.
+            <strong>Weekend + kid is 40"+</strong> → Buy Single Pass for qualifying riders. Rider
+            Switch for the toddler.
             <br />
-            <strong>Kid under 40"</strong> → Buy one Single Pass, one adult rides, use Rider Switch for the second adult.
+            <strong>Kid under 40"</strong> → Buy one Single Pass, one adult rides, use Rider Switch
+            for the second adult.
             <br />
             <strong>Arriving after 11 AM any day</strong> → Single Pass or Single Rider line.
           </p>
@@ -553,15 +580,16 @@ export default function LightningLanePage() {
         <div className="callout pro">
           <div className="callout-label">World of Color Virtual Queue (FREE)</div>
           <p>
-            Opens at <strong>12:00 PM</strong> in the Disneyland app. You must have entered DCA
-            (or Disneyland with a Park Hopper) to join. Kids 3+ each need their own virtual queue
-            slot; under 3 do not. Have the app open at 11:59 and hit refresh — slots can run out
-            in under a minute on busy days.
+            Opens at <strong>12:00 PM</strong> in the Disneyland app. You must have entered DCA (or
+            Disneyland with a Park Hopper) to join. Kids 3+ each need their own virtual queue slot;
+            under 3 do not. Have the app open at 11:59 and hit refresh — slots can run out in under
+            a minute on busy days.
           </p>
           <p>
             Alternative guaranteed spot: <strong>dining package</strong> at Wine Country Trattoria
             (DCA) or Storytellers Café (Grand Californian Hotel). Book 60 days out on Disneyland.com
-            — check current pricing at booking time; it's usually the pricier side of sit-down dining.
+            — check current pricing at booking time; it's usually the pricier side of sit-down
+            dining.
           </p>
         </div>
       </section>
@@ -586,8 +614,9 @@ export default function LightningLanePage() {
           </div>
           <p>
             Adult A waits outside with non-riders. Adult B rides with the big kids via standby or
-            Lightning Lane. When Adult B finishes, they swap — Adult B takes Adult A plus <strong>up to
-            one additional kid</strong> through the Lightning Lane entrance. No second wait.
+            Lightning Lane. When Adult B finishes, they swap — Adult B takes Adult A plus{' '}
+            <strong>up to one additional kid</strong> through the Lightning Lane entrance. No second
+            wait.
           </p>
           <p>
             <strong>Unique to Disneyland:</strong> every attraction supports Rider Switch, unlike
@@ -602,17 +631,15 @@ export default function LightningLanePage() {
               <h3>The script</h3>
             </div>
           </div>
-          <p>
-            Walk up to the cast member at the attraction entrance (not in advance) and say:
-          </p>
+          <p>Walk up to the cast member at the attraction entrance (not in advance) and say:</p>
           <p>
             <em>"Can we do Rider Switch? Two adults, three kids — one's too short."</em>
           </p>
           <p>
-            They'll tag it in the app. Adult A waits in a designated area (usually near the exit
-            or a shaded bench). When Adult B is done, Adult A goes through the LL entrance. The
-            big kid who already rode can ride a second time by going with Adult A — Rider Switch
-            lets one "re-rider" tag along.
+            They'll tag it in the app. Adult A waits in a designated area (usually near the exit or
+            a shaded bench). When Adult B is done, Adult A goes through the LL entrance. The big kid
+            who already rode can ride a second time by going with Adult A — Rider Switch lets one
+            "re-rider" tag along.
           </p>
         </div>
 
@@ -625,19 +652,19 @@ export default function LightningLanePage() {
           </div>
           <p>
             Big Thunder, Space Mountain, Indiana Jones, Matterhorn, Tiana's Bayou Adventure,
-            Radiator Springs Racers, and Incredicoaster. Anything with a 40"+ height requirement
-            and a non-rider in your party. Less useful on Fantasyland staples your whole family
-            can already ride together.
+            Radiator Springs Racers, and Incredicoaster. Anything with a 40"+ height requirement and
+            a non-rider in your party. Less useful on Fantasyland staples your whole family can
+            already ride together.
           </p>
         </div>
 
         <div className="callout pro">
           <div className="callout-label">The Multiplier</div>
           <p>
-            Combine Rider Switch with Lightning Lane and you effectively get <strong>two rides for
-            one booking</strong>. Adult B rides with the big kid via LL. Adult A then uses Rider
-            Switch to go through the LL entrance with the same big kid (who gets to ride twice).
-            On Radiator Springs Racers, this move alone saves ~$60.
+            Combine Rider Switch with Lightning Lane and you effectively get{' '}
+            <strong>two rides for one booking</strong>. Adult B rides with the big kid via LL. Adult
+            A then uses Rider Switch to go through the LL entrance with the same big kid (who gets
+            to ride twice). On Radiator Springs Racers, this move alone saves ~$60.
           </p>
         </div>
       </section>
@@ -648,8 +675,8 @@ export default function LightningLanePage() {
           <span className="section-icon">🏨</span>
           <h2>Park Hopper Stacking: The Nap-Window Play</h2>
           <p className="section-intro">
-            If you have Park Hoppers and your hotel is walkable, the midday nap is your highest-leverage
-            window of the day.
+            If you have Park Hoppers and your hotel is walkable, the midday nap is your
+            highest-leverage window of the day.
           </p>
         </div>
 
@@ -666,8 +693,8 @@ export default function LightningLanePage() {
           </p>
           <p>
             <strong>10:30 AM</strong> — Book a Lightning Lane in Disneyland (your second park). You
-            can only do this when the ride's first available window is <strong>11:00 AM or later</strong> —
-            the park-hopper rule.
+            can only do this when the ride's first available window is{' '}
+            <strong>11:00 AM or later</strong> — the park-hopper rule.
           </p>
           <p>
             <strong>12:00 PM</strong> — Leave for the hotel. Kids nap. You keep booking from your
@@ -695,9 +722,9 @@ export default function LightningLanePage() {
         <div className="callout warning">
           <div className="callout-label">Park Hopper Reality Check</div>
           <p>
-            You cannot book a Lightning Lane in your second park until its first available window
-            is 11:00 AM or later. If you're trying to hop by 9 AM, you can't stack — hopping makes
-            most sense <em>after</em> your morning rope drop and first-park LL is done.
+            You cannot book a Lightning Lane in your second park until its first available window is
+            11:00 AM or later. If you're trying to hop by 9 AM, you can't stack — hopping makes most
+            sense <em>after</em> your morning rope drop and first-park LL is done.
           </p>
         </div>
       </section>
@@ -723,8 +750,8 @@ export default function LightningLanePage() {
             Free. You get split from your party and slotted into odd single seats. Available at:
             <strong> Matterhorn Bobsleds</strong> (DL), <strong>Indiana Jones Adventure</strong>
             (DL), <strong>Radiator Springs Racers</strong> (DCA), and sometimes Incredicoaster,
-            Grizzly River Run, and Web Slingers (DCA). Ask a cast member if it's open that day —
-            it comes and goes.
+            Grizzly River Run, and Web Slingers (DCA). Ask a cast member if it's open that day — it
+            comes and goes.
           </p>
           <p>
             <strong>Parent hack:</strong> while one parent takes the toddler on Dumbo (20-minute
@@ -741,10 +768,11 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            One free Multi Pass entry per person, per stay. Spend it on a ride your <em>whole family</em>
+            One free Multi Pass entry per person, per stay. Spend it on a ride your{' '}
+            <em>whole family</em>
             can do so no one feels left out — Peter Pan's Flight or Mickey &amp; Minnie's Runaway
-            Railway are the safest picks. Don't burn it on Big Thunder if your 3-year-old has to
-            sit out.
+            Railway are the safest picks. Don't burn it on Big Thunder if your 3-year-old has to sit
+            out.
           </p>
         </div>
 
@@ -757,12 +785,12 @@ export default function LightningLanePage() {
           </div>
           <p>
             Wait times drop 30–50% during Magic Happens (afternoon parade) and during nighttime
-            spectaculars. If your kids don't care about the parade, this is pure alpha —
-            Fantasyland becomes a ghost town for 25 minutes.
+            spectaculars. If your kids don't care about the parade, this is pure alpha — Fantasyland
+            becomes a ghost town for 25 minutes.
           </p>
           <p>
-            For fireworks, watching from Galaxy's Edge (they play John Williams music) lets you
-            ride the land's attractions right after with short waits — see the{' '}
+            For fireworks, watching from Galaxy's Edge (they play John Williams music) lets you ride
+            the land's attractions right after with short waits — see the{' '}
             <Link href="/fireworks">fireworks guide</Link> for specific viewing spots.
           </p>
         </div>
@@ -788,7 +816,8 @@ export default function LightningLanePage() {
           <span className="section-icon">💸</span>
           <h2>Where Families Waste Money</h2>
           <p className="section-intro">
-            The easiest money you'll save is the money you don't spend on things that don't work for families.
+            The easiest money you'll save is the money you don't spend on things that don't work for
+            families.
           </p>
         </div>
 
@@ -796,8 +825,8 @@ export default function LightningLanePage() {
           <div className="callout-label">Skip: Premier Pass</div>
           <p>
             $150–400+ per person. Built for adult sprinters doing every headliner in one day. With
-            kids 2–8 you physically cannot ride enough attractions to justify it. Multi Pass is
-            the right product for families, full stop.
+            kids 2–8 you physically cannot ride enough attractions to justify it. Multi Pass is the
+            right product for families, full stop.
           </p>
         </div>
 
@@ -846,7 +875,8 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            <strong>Cost:</strong> $34 × 4 = $136 Multi Pass.<br />
+            <strong>Cost:</strong> $34 × 4 = $136 Multi Pass.
+            <br />
             <strong>Value:</strong> 7–8 Lightning Lane rides across a full day. Each saves 30–45
             minutes of line time = <strong>~4 hours saved</strong>. That's the difference between a
             great day and a meltdown. Buy.
@@ -862,7 +892,8 @@ export default function LightningLanePage() {
           </div>
           <p>
             <strong>Cost:</strong> $136 Multi Pass for 3 eligible rides (2 after Monsters closes).
-            Radiator Springs Racers isn't included; it's a separate Single Pass.<br />
+            Radiator Springs Racers isn't included; it's a separate Single Pass.
+            <br />
             <strong>Better play:</strong> Rope drop RSR ($0). Standby Monsters, Inc. and Toy Story
             Midway Mania (each ~25–40 min on a weekday). Spend the $136 on dinner at Lamplight
             Lounge and a Cars Land churro run.
@@ -879,9 +910,9 @@ export default function LightningLanePage() {
           <p>
             <strong>Cost:</strong> $40 × 4 = $160 Multi Pass + $25 × 4 Rise of the Resistance Single
             Pass = <strong>$260 total</strong>.<br />
-            <strong>Value:</strong> A one-day sprint hitting every headliner. If it's your only
-            day, worth it. If you have two or more days, skip Rise of the Resistance Single Pass
-            and standby it first thing on day two instead (saves $100).
+            <strong>Value:</strong> A one-day sprint hitting every headliner. If it's your only day,
+            worth it. If you have two or more days, skip Rise of the Resistance Single Pass and
+            standby it first thing on day two instead (saves $100).
           </p>
         </div>
 
@@ -902,18 +933,24 @@ export default function LightningLanePage() {
         <div className="tip-card">
           <p>
             If your child has a developmental disability (autism spectrum, similar cognitive
-            conditions) and can't wait in a standard queue, <strong>DAS is a free alternative</strong>.
-            You request a return time comparable to the current standby, then come back to ride
-            without the physical wait. Register via video chat 2–60 days before your visit; party
-            size is capped at 4 (exceptions for small children). Details and eligibility at{' '}
-            <a href="https://disneyland.disney.go.com/guest-services/disability-access-service/" target="_blank" rel="noopener noreferrer">
+            conditions) and can't wait in a standard queue,{' '}
+            <strong>DAS is a free alternative</strong>. You request a return time comparable to the
+            current standby, then come back to ride without the physical wait. Register via video
+            chat 2–60 days before your visit; party size is capped at 4 (exceptions for small
+            children). Details and eligibility at{' '}
+            <a
+              href="https://disneyland.disney.go.com/guest-services/disability-access-service/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Disney's official DAS page
-            </a>.
+            </a>
+            .
           </p>
           <p>
-            DAS is separate from Lightning Lane — you can use both. This page isn't a DAS
-            authority; Disney's policies change and the registration flow is where you'll get
-            the most current information.
+            DAS is separate from Lightning Lane — you can use both. This page isn't a DAS authority;
+            Disney's policies change and the registration flow is where you'll get the most current
+            information.
           </p>
         </div>
       </section>

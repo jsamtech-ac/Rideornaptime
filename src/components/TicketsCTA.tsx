@@ -10,12 +10,7 @@ export default function TicketsCTA({ location }: Props) {
 
   return (
     <section className="tickets-section" aria-label="Disneyland tickets affiliate offer">
-      <a
-        href={href}
-        target="_blank"
-        rel="sponsored noopener"
-        className="tickets-cta"
-      >
+      <a href={href} target="_blank" rel="sponsored noopener" className="tickets-cta">
         <div className="tickets-cta-promo" role="note">
           <span className="tickets-cta-promo-label">Promo Code</span>
           <span className="tickets-cta-promo-code">RIDETIME</span>

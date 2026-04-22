@@ -19,7 +19,9 @@ export default function EventCTA({ campaign, label, sub }: Props) {
     >
       <span className="event-cta-label">{label}</span>
       {sub && <span className="event-cta-sub">{sub}</span>}
-      <span className="event-cta-arrow" aria-hidden="true">→</span>
+      <span className="event-cta-arrow" aria-hidden="true">
+        →
+      </span>
     </a>
   )
 }

@@ -27,6 +27,7 @@ You are the compliance reviewer for the rideornaptime-project.
 ## Output
 
 Return findings as JSON array:
+
 ```json
 [{"severity": "blocker|warning|info", "area": "compliance", "file": "<path>", "line": <n>, "message": "<what>", "fix": "<how>"}]
 ```

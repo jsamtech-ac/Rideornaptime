@@ -7,7 +7,10 @@ import { PACKING_LIST, type PackingItem } from '@/lib/content'
 function ChecklistItem({ item }: { item: PackingItem }) {
   const [checked, setChecked] = useState(false)
   return (
-    <div className={`checklist-item ${checked ? 'checked' : ''}`} onClick={() => setChecked(!checked)}>
+    <div
+      className={`checklist-item ${checked ? 'checked' : ''}`}
+      onClick={() => setChecked(!checked)}
+    >
       <div className="checklist-check">{checked ? '✓' : ''}</div>
       <div className="checklist-text">
         <strong>{item.item}</strong>
@@ -35,7 +38,10 @@ function ChecklistItem({ item }: { item: PackingItem }) {
         )}
 
         {item.related && (
-          <div style={{ marginTop: '0.5rem', fontSize: '0.9rem' }} onClick={(e) => e.stopPropagation()}>
+          <div
+            style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}
+            onClick={(e) => e.stopPropagation()}
+          >
             <Link href={item.related.href}>{item.related.text}</Link>
           </div>
         )}

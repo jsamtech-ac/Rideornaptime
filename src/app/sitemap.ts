@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL } from '@/lib/content'
+import { SITE_URL, SEASONAL_LAST_REVIEWED } from '@/lib/content'
 
 const routes: { path: string; lastModified: string }[] = [
   { path: '', lastModified: '2026-04-15' },
@@ -10,7 +10,7 @@ const routes: { path: string; lastModified: string }[] = [
   { path: '/lightning-lane', lastModified: '2026-04-20' },
   { path: '/food', lastModified: '2026-04-15' },
   { path: '/packing-list', lastModified: '2026-04-15' },
-  { path: '/seasonal', lastModified: '2026-04-15' },
+  { path: '/seasonal', lastModified: SEASONAL_LAST_REVIEWED },
   { path: '/saving-money', lastModified: '2026-04-15' },
   { path: '/hidden-gems', lastModified: '2026-04-15' },
   { path: '/fireworks', lastModified: '2026-04-15' },

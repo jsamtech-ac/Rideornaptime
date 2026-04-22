@@ -15,5 +15,12 @@
     "react/jsx-key": "error",
     "react/no-unescaped-entities": "off"
   },
-  "ignorePatterns": ["node_modules/", ".next/", "out/", "qa-report/", "playwright-report/", "test-results/"]
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "out/",
+    "qa-report/",
+    "playwright-report/",
+    "test-results/"
+  ]
 }

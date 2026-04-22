@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     default: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
     template: '%s | Ride or Naptime',
   },
-  description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8. Opinionated ride ratings, hour-by-hour itineraries, food strategy, Lightning Lane tips, and packing lists.',
+  description:
+    "A real parent's guide to Disneyland Resort & DCA with kids ages 2–8. Opinionated ride ratings, hour-by-hour itineraries, food strategy, Lightning Lane tips, and packing lists.",
   applicationName: 'Ride or Naptime',
   authors: [{ name: 'Ride or Naptime' }],
   keywords: [
@@ -38,13 +39,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
-    description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8.',
+    description: "A real parent's guide to Disneyland Resort & DCA with kids ages 2–8.",
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
-    description: 'A real parent\'s guide to Disneyland Resort & DCA with kids ages 2–8.',
+    description: "A real parent's guide to Disneyland Resort & DCA with kids ages 2–8.",
   },
   robots: {
     index: true,
@@ -67,11 +68,7 @@ export const viewport: Viewport = {
   colorScheme: 'light',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

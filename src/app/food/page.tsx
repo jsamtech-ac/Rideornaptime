@@ -8,7 +8,8 @@ import { FOOD_SPOTS, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Best Disneyland Food for Families (2026 — Dad-Tested)',
-  description: 'The Disneyland and DCA food spots worth your money — from Plaza Inn fried chicken to Dole Whip to birria tacos. Mobile order everything. See the list.',
+  description:
+    'The Disneyland and DCA food spots worth your money — from Plaza Inn fried chicken to Dole Whip to birria tacos. Mobile order everything. See the list.',
   alternates: { canonical: `${SITE_URL}/food` },
   openGraph: {
     url: `${SITE_URL}/food`,
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'What is the best food at Disneyland?',
-    a: 'Plaza Inn fried chicken on Main Street is the single best meal in the park — crispy, juicy, with real sides. Dole Whip in Adventureland is non-negotiable. Ronto Wraps in Galaxy\'s Edge are a top-5 park food.',
+    a: "Plaza Inn fried chicken on Main Street is the single best meal in the park — crispy, juicy, with real sides. Dole Whip in Adventureland is non-negotiable. Ronto Wraps in Galaxy's Edge are a top-5 park food.",
   },
   {
     q: 'How does mobile order work at Disneyland?',
@@ -42,13 +43,15 @@ export default function FoodPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: "Food & Snacks", path: '/food' },
+          { name: 'Food & Snacks', path: '/food' },
         ]}
       />
       <ArticleJsonLd
         path="/food"
-        headline={"Best Disneyland Food for Families (2026)"}
-        description={"What to eat at Disneyland with picky kids — quick-service picks, snacks worth the line, and sit-downs that actually work."}
+        headline={'Best Disneyland Food for Families (2026)'}
+        description={
+          'What to eat at Disneyland with picky kids — quick-service picks, snacks worth the line, and sit-downs that actually work.'
+        }
         datePublished="2026-04-15"
         dateModified="2026-04-15"
       />
@@ -57,8 +60,8 @@ export default function FoodPage() {
         <div className="hero-badge">🍽 Food Strategy</div>
         <h1>Where to Eat at Disneyland (From a Dad Who's Tried Everything)</h1>
         <p className="hero-sub">
-          Mobile order everything. Seriously — open the Disneyland app 30 minutes before
-          you want to eat, order ahead, and skip the line. Here are the spots worth your time and money.
+          Mobile order everything. Seriously — open the Disneyland app 30 minutes before you want to
+          eat, order ahead, and skip the line. Here are the spots worth your time and money.
         </p>
       </header>
 
@@ -83,17 +86,31 @@ export default function FoodPage() {
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Free Water</div>
-          <p>Don't buy bottled water — it's $5+. There are free water refill stations throughout both parks. Ask any quick-service restaurant for a free cup of ice water too. Bring reusable bottles and save $30+ per day for a family of four. See the <Link href="/packing-list">packing list</Link> for our favorite bottles.</p>
+          <p>
+            Don't buy bottled water — it's $5+. There are free water refill stations throughout both
+            parks. Ask any quick-service restaurant for a free cup of ice water too. Bring reusable
+            bottles and save $30+ per day for a family of four. See the{' '}
+            <Link href="/packing-list">packing list</Link> for our favorite bottles.
+          </p>
         </div>
 
         <div className="callout pro">
           <div className="callout-label">Character Dining</div>
-          <p>If your kids want to meet characters, book a character breakfast at Plaza Inn or Storyteller Cafe (Grand Californian Hotel). You'll meet multiple characters during the meal without standing in separate 30-minute lines. Book in advance — but people cancel within 24 hours, so keep checking the app if nothing's available.</p>
+          <p>
+            If your kids want to meet characters, book a character breakfast at Plaza Inn or
+            Storyteller Cafe (Grand Californian Hotel). You'll meet multiple characters during the
+            meal without standing in separate 30-minute lines. Book in advance — but people cancel
+            within 24 hours, so keep checking the app if nothing's available.
+          </p>
         </div>
 
         <div className="callout pro">
           <div className="callout-label">Meal Timing</div>
-          <p>Time your meals around crowd waves — see the <Link href="/itineraries">hour-by-hour itineraries</Link> for suggested lunch and dinner windows that dodge the rushes.</p>
+          <p>
+            Time your meals around crowd waves — see the{' '}
+            <Link href="/itineraries">hour-by-hour itineraries</Link> for suggested lunch and dinner
+            windows that dodge the rushes.
+          </p>
         </div>
       </section>
 

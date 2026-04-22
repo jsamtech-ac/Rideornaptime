@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { NAV_GROUPS, type NavGroup } from '@/lib/content'
 
 function isGroupActive(group: NavGroup, pathname: string) {
-  return group.items.some(item => item.href === pathname)
+  return group.items.some((item) => item.href === pathname)
 }
 
 function DesktopGroup({ group, pathname }: { group: NavGroup; pathname: string }) {
@@ -35,25 +35,35 @@ function DesktopGroup({ group, pathname }: { group: NavGroup; pathname: string }
   }, [pathname])
 
   return (
-    <div className="nav-group" ref={ref} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+    <div
+      className="nav-group"
+      ref={ref}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
       <button
         type="button"
         className={`nav-group-button ${active ? 'active' : ''}`}
         aria-haspopup="true"
         aria-expanded={open}
-        onClick={() => setOpen(o => !o)}
+        onClick={() => setOpen((o) => !o)}
       >
-        {group.label} <span className="nav-group-caret" aria-hidden="true">▾</span>
+        {group.label}{' '}
+        <span className="nav-group-caret" aria-hidden="true">
+          ▾
+        </span>
       </button>
       <div className={`nav-dropdown-panel ${open ? 'open' : ''}`} role="menu">
-        {group.items.map(item => (
+        {group.items.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             role="menuitem"
             className={pathname === item.href ? 'active' : ''}
           >
-            <span className="nav-item-icon" aria-hidden="true">{item.icon}</span>
+            <span className="nav-item-icon" aria-hidden="true">
+              {item.icon}
+            </span>
             {item.label}
           </Link>
         ))}
@@ -97,15 +107,14 @@ export default function Header() {
 
         <div className="nav-desktop">
           <div className="nav-group">
-            <Link
-              href="/"
-              className={`nav-group-button ${pathname === '/' ? 'active' : ''}`}
-            >
-              <span aria-hidden="true" style={{ marginRight: '4px' }}>🏠</span>
+            <Link href="/" className={`nav-group-button ${pathname === '/' ? 'active' : ''}`}>
+              <span aria-hidden="true" style={{ marginRight: '4px' }}>
+                🏠
+              </span>
               Home
             </Link>
           </div>
-          {NAV_GROUPS.map(group => (
+          {NAV_GROUPS.map((group) => (
             <DesktopGroup key={group.label} group={group} pathname={pathname} />
           ))}
           <a
@@ -120,24 +129,25 @@ export default function Header() {
 
         <div className={`nav-mobile ${navOpen ? 'open' : ''}`}>
           <section className="nav-mobile-group">
-            <Link
-              href="/"
-              className={pathname === '/' ? 'active' : ''}
-            >
-              <span className="nav-item-icon" aria-hidden="true">🏠</span>
+            <Link href="/" className={pathname === '/' ? 'active' : ''}>
+              <span className="nav-item-icon" aria-hidden="true">
+                🏠
+              </span>
               Home
             </Link>
           </section>
-          {NAV_GROUPS.map(group => (
+          {NAV_GROUPS.map((group) => (
             <section key={group.label} className="nav-mobile-group">
               <h3 className="nav-group-label">{group.label}</h3>
-              {group.items.map(item => (
+              {group.items.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={pathname === item.href ? 'active' : ''}
                 >
-                  <span className="nav-item-icon" aria-hidden="true">{item.icon}</span>
+                  <span className="nav-item-icon" aria-hidden="true">
+                    {item.icon}
+                  </span>
                   {item.label}
                 </Link>
               ))}

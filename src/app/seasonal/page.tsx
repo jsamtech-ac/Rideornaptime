@@ -7,15 +7,27 @@ import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import EventCTA from '@/components/EventCTA'
 import UpdatedBadge from '@/components/UpdatedBadge'
-import { SEASONS, EVENTS_2026, SEASONAL_LAST_REVIEWED, SITE_URL, type EventSlug, type SeasonalEvent } from '@/lib/content'
+import {
+  SEASONS,
+  EVENTS_2026,
+  SEASONAL_LAST_REVIEWED,
+  SITE_URL,
+  type EventSlug,
+  type SeasonalEvent,
+} from '@/lib/content'
+
+const META_TITLE = 'Disneyland 2026 Events & Best Months to Visit with Kids'
+const META_DESCRIPTION =
+  'The 2026 Disneyland family planner: every seasonal event (Food & Wine, Halloween Time, Oogie Boogie Bash, Holidays) with exact dates and when to book.'
 
 export const metadata: Metadata = {
-  title: 'Disneyland 2026 Events Calendar & Best Time to Visit with Kids',
-  description: 'The 2026 Disneyland family planner: every seasonal event (Lunar New Year, Food & Wine, Halloween Time, Oogie Boogie Bash, Holidays) with exact dates, crowd + weather month-by-month, and when to book. Reviewed quarterly.',
+  title: META_TITLE,
+  description: META_DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/seasonal` },
   openGraph: {
     url: `${SITE_URL}/seasonal`,
-    title: 'Disneyland 2026 Events Calendar & Best Time to Visit with Kids',
+    title: META_TITLE,
+    description: META_DESCRIPTION,
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
@@ -31,23 +43,23 @@ const faqs = [
   },
   {
     q: 'What months should I avoid Disneyland in 2026?',
-    a: 'July and August (peak heat plus summer crowds), all of March (rolling spring break across the US), Thanksgiving week (Nov 23–29), and especially Dec 20 through Jan 1 — the parks regularly hit capacity and phase-close entry. Presidents\' Day weekend (Feb 14–16) is a stealth-crowded week too.',
+    a: "July (peak heat plus peak summer crowds), early-to-mid August before schools restart, all of March (rolling spring break across the US), Thanksgiving week (Nov 23–29), and especially Dec 20 through Jan 1 — the parks regularly hit capacity and phase-close entry. Presidents' Day weekend (Feb 14–16) is a stealth-crowded week too. Late August can actually be a sweet spot once most districts are back in session.",
   },
   {
     q: 'What are the 2026 Oogie Boogie Bash dates and how much are tickets?',
-    a: 'Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It\'s a separately-ticketed hard-ticket party (6pm–11pm). Based on 2025 pricing, tickets ran $139–$199 depending on date. Tickets typically drop in late June with a Magic Key pre-sale first. Popular dates sell out within days — book day-one of the on-sale window.',
+    a: "Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It's a separately-ticketed hard-ticket party (6pm–11pm). Based on 2025 pricing, tickets ran $139–$199 depending on date. Tickets typically drop in late June with a Magic Key pre-sale first. Popular dates sell out within days — book day-one of the on-sale window.",
   },
   {
     q: 'When does Halloween Time start at Disneyland in 2026?',
-    a: 'Halloween Time runs Aug 21 through Oct 31, 2026 and is included with park admission — no separate ticket needed. You\'ll get the Haunted Mansion Holiday overlay, the giant Mickey jack-o\'-lantern on Main Street, Cars Land Haul-O-Ween, pumpkin beignets, and Space Mountain Ghost Galaxy. Mid-September weekdays are the highest-value window.',
+    a: "Halloween Time runs Aug 21 through Oct 31, 2026 and is included with park admission — no separate ticket needed. You'll get the Haunted Mansion Holiday overlay, the giant Mickey jack-o'-lantern on Main Street, Cars Land Haul-O-Ween, pumpkin beignets, and Space Mountain Ghost Galaxy. Mid-September weekdays are the highest-value window.",
   },
   {
     q: 'When does the Disneyland holiday season start in 2026?',
-    a: 'Holidays at the Disneyland Resort begin Nov 18, 2026 and run through early January 2027. Note: the 2026 holiday window is about 4 days shorter than prior years. The best-value holiday week is Nov 18–22 (decor up, pre-Thanksgiving crowds). Avoid Dec 20 through Jan 1 — the parks will phase-close.',
+    a: 'Holidays at the Disneyland Resort begin Nov 18, 2026 and run through early January 2027. Note: the 2026 holiday window is about 4 days shorter than the 2024 and 2025 windows. The best-value holiday week is Nov 18–22 (decor up, pre-Thanksgiving crowds). Avoid Dec 20 through Jan 1 — the parks will phase-close.',
   },
   {
-    q: 'What is Bluey\'s Best Day Ever at Disneyland?',
-    a: 'A new live show debuting March 22, 2026 at Fantasyland Theatre. Bluey and Bingo appear with a live cast for musical numbers, Keepy Uppy, and a walk-through Gnome Village and Fairy Garden play space. Included with park admission. It\'s an absolute must for ages 2–6 who watch the show.',
+    q: "What is Bluey's Best Day Ever at Disneyland?",
+    a: "A new live show debuting March 22, 2026 at Fantasyland Theatre. Bluey and Bingo appear with a live cast for musical numbers, Keepy Uppy, and a walk-through Gnome Village and Fairy Garden play space. Included with park admission. It's an absolute must for ages 2–6 who watch the show.",
   },
   {
     q: 'Is the Food & Wine Festival at Disneyland good for kids?',
@@ -69,7 +81,7 @@ const faqs = [
 
 const eventBySlug: Record<EventSlug, SeasonalEvent> = EVENTS_2026.reduce(
   (acc, e) => ({ ...acc, [e.slug]: e }),
-  {} as Record<EventSlug, SeasonalEvent>,
+  {} as Record<EventSlug, SeasonalEvent>
 )
 
 const VERDICT_LABEL: Record<SeasonalEvent['familyVerdict'], string> = {
@@ -82,21 +94,27 @@ const VERDICT_LABEL: Record<SeasonalEvent['familyVerdict'], string> = {
 const DEEP_DIVE_SLUGS: EventSlug[] = [
   'disneyland-70th',
   'lunar-new-year',
+  'celebrate-gospel',
   'food-and-wine',
   'bluey',
+  'after-dark',
   'halloween-time',
   'oogie-boogie-bash',
+  'plaza-de-la-familia',
   'holidays',
   'festival-of-holidays',
 ]
 
 export default function SeasonalPage() {
-  const reviewedFormatted = new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: 'UTC',
-  })
+  const reviewedFormatted = new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString(
+    'en-US',
+    {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }
+  )
 
   return (
     <>
@@ -108,8 +126,8 @@ export default function SeasonalPage() {
       />
       <ArticleJsonLd
         path="/seasonal"
-        headline={"Disneyland 2026 Events Calendar & Best Time to Visit with Kids"}
-        description={"Month-by-month 2026 Disneyland planner — every seasonal event with dates, family verdicts, and crowd + weather notes."}
+        headline={META_TITLE}
+        description={META_DESCRIPTION}
         datePublished="2026-04-15"
         dateModified={SEASONAL_LAST_REVIEWED}
       />
@@ -122,7 +140,9 @@ export default function SeasonalPage() {
           .map((e) => ({
             name: e.name,
             description: `${e.dateLabel} at ${e.park === 'Both' ? 'Disneyland Resort' : e.park}. ${e.whatItIs}`,
-            url: `${SITE_URL}/seasonal#event-${e.slug}`,
+            ...(DEEP_DIVE_SLUGS.includes(e.slug)
+              ? { url: `${SITE_URL}/seasonal#event-${e.slug}` }
+              : {}),
           }))}
       />
 
@@ -130,8 +150,8 @@ export default function SeasonalPage() {
         <div className="hero-badge">📅 2026 Planner</div>
         <h1>Disneyland 2026: Events, Crowds & Best Months to Visit</h1>
         <p className="hero-sub">
-          Every seasonal event with exact 2026 dates, family-specific verdicts, and
-          the crowd + weather truth for every month. The planner we wish we&apos;d had.
+          Every seasonal event with exact 2026 dates, family-specific verdicts, and the crowd +
+          weather truth for every month. The planner we wish we&apos;d had.
         </p>
         <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
       </header>
@@ -151,10 +171,10 @@ export default function SeasonalPage() {
             <h3>Best months to book</h3>
           </div>
           <p>
-            <strong>Late September and October weekdays</strong> — lowest crowds of the year
-            paired with full Halloween Time decor. Runner-ups: <strong>Jan 5–20</strong>{' '}
-            (post-holiday lull, 70th finale still running), <strong>late April</strong>{' '}
-            (after spring break, Food &amp; Wine in full swing), and <strong>early May weekdays</strong>.
+            <strong>Late September and October weekdays</strong> — lowest crowds of the year paired
+            with full Halloween Time decor. Runner-ups: <strong>Jan 5–20</strong> (post-holiday
+            lull, 70th finale still running), <strong>late April</strong> (after spring break, Food
+            &amp; Wine in full swing), and <strong>early May weekdays</strong>.
           </p>
         </div>
 
@@ -164,9 +184,9 @@ export default function SeasonalPage() {
             <h3>Months to skip</h3>
           </div>
           <p>
-            <strong>All of March</strong> (rolling US spring break), <strong>July</strong>{' '}
-            (peak heat + peak crowds), and <strong>Dec 20 – Jan 1</strong> — the parks
-            regularly hit capacity and stop letting people in. Also watch out for{' '}
+            <strong>All of March</strong> (rolling US spring break), <strong>July</strong> (peak
+            heat + peak crowds), and <strong>Dec 20 – Jan 1</strong> — the parks regularly hit
+            capacity and stop letting people in. Also watch out for{' '}
             <strong>Presidents&apos; Day weekend (Feb 14–16)</strong> and{' '}
             <strong>Thanksgiving week (Nov 23–29)</strong>.
           </p>
@@ -178,12 +198,12 @@ export default function SeasonalPage() {
             <h3>What&apos;s new in 2026</h3>
           </div>
           <p>
-            <strong>Bluey&apos;s Best Day Ever!</strong> debuts March 22 at Fantasyland
-            Theatre. <strong>Oogie Boogie Bash expands to 33 nights</strong> (Aug 18 – Oct 31).
-            The <strong>Disneyland 70th Celebration wraps Aug 9</strong> — last chance for
-            Paint the Night, Tapestry of Happiness, and World of Color — Happiness.
-            The <strong>2026 holiday window is compressed</strong> (starts Nov 18, about 4 days
-            shorter than prior years).
+            <strong>Bluey&apos;s Best Day Ever!</strong> debuts March 22 at Fantasyland Theatre.{' '}
+            <strong>Oogie Boogie Bash expands to 33 nights</strong> (Aug 18 – Oct 31). The{' '}
+            <strong>Disneyland 70th Celebration wraps Aug 9</strong> — last chance for Paint the
+            Night, Tapestry of Happiness, and World of Color — Happiness. The{' '}
+            <strong>2026 holiday window is compressed</strong> (starts Nov 18, about 4 days shorter
+            than the 2024 and 2025 windows).
           </p>
         </div>
       </section>
@@ -194,35 +214,39 @@ export default function SeasonalPage() {
           <h2>2026 Event Timeline</h2>
         </div>
         <p className="section-intro">
-          Every seasonal event at the Disneyland Resort in 2026, in chronological order.
-          Click any event for the deep-dive below.
+          Every seasonal event at the Disneyland Resort in 2026, in chronological order. Click any
+          event for the deep-dive below.
         </p>
 
         <div className="event-timeline">
-          {[...EVENTS_2026].sort((a, b) => a.start.localeCompare(b.start)).map((e) => (
-            <a
-              key={e.slug}
-              className="event-timeline-item"
-              data-theme={e.theme}
-              href={`#event-${e.slug}`}
-            >
-              <div className="event-timeline-date">
-                <span className="event-timeline-date-ribbon" aria-hidden="true" />
-                {e.dateLabel}
-              </div>
-              <div className="event-timeline-body">
-                <div className="event-timeline-name">{e.name}</div>
-                <div className="event-timeline-meta">
-                  <span>{e.park === 'Both' ? 'Disneyland Resort' : e.park}</span>
-                  <span className="sep" aria-hidden="true">•</span>
-                  <span>{e.ticketed ? 'Separately ticketed' : 'Included with admission'}</span>
+          {[...EVENTS_2026]
+            .sort((a, b) => a.start.localeCompare(b.start))
+            .map((e) => (
+              <a
+                key={e.slug}
+                className="event-timeline-item"
+                data-theme={e.theme}
+                href={`#event-${e.slug}`}
+              >
+                <div className="event-timeline-date">
+                  <span className="event-timeline-date-ribbon" aria-hidden="true" />
+                  {e.dateLabel}
                 </div>
-              </div>
-              <span className={`verdict-chip ${e.familyVerdict}`}>
-                {VERDICT_LABEL[e.familyVerdict]}
-              </span>
-            </a>
-          ))}
+                <div className="event-timeline-body">
+                  <div className="event-timeline-name">{e.name}</div>
+                  <div className="event-timeline-meta">
+                    <span>{e.park === 'Both' ? 'Disneyland Resort' : e.park}</span>
+                    <span className="sep" aria-hidden="true">
+                      •
+                    </span>
+                    <span>{e.ticketed ? 'Separately ticketed' : 'Included with admission'}</span>
+                  </div>
+                </div>
+                <span className={`verdict-chip ${e.familyVerdict}`}>
+                  {VERDICT_LABEL[e.familyVerdict]}
+                </span>
+              </a>
+            ))}
         </div>
       </section>
 
@@ -234,12 +258,22 @@ export default function SeasonalPage() {
         <p className="section-intro">
           The headline events — what they actually are, the family verdict, and when to book.
         </p>
+        <p className="section-footnote">
+          Heads up: some event cards include affiliate links to Get Away Today, an authorized
+          Disneyland ticket reseller. We earn a small commission if you book — at no extra cost to
+          you. Confirm all dates on the official Disney site before booking.
+        </p>
 
         {DEEP_DIVE_SLUGS.map((slug) => {
           const e = eventBySlug[slug]
           if (!e) return null
           return (
-            <article key={e.slug} id={`event-${e.slug}`} className="event-card" data-theme={e.theme}>
+            <article
+              key={e.slug}
+              id={`event-${e.slug}`}
+              className="event-card"
+              data-theme={e.theme}
+            >
               <div className="event-card-ribbon" aria-hidden="true" />
               <div className="event-card-body">
                 <div className="event-card-head">
@@ -257,8 +291,14 @@ export default function SeasonalPage() {
 
                 {e.ticketed && (
                   <div className="event-card-ticketed">
-                    <span><strong>Ticket:</strong> {e.priceHint ?? 'Separately ticketed'}</span>
-                    {e.bookWhen && <span><strong>Book when:</strong> {e.bookWhen}</span>}
+                    <span>
+                      <strong>Ticket:</strong> {e.priceHint ?? 'Separately ticketed'}
+                    </span>
+                    {e.bookWhen && (
+                      <span>
+                        <strong>Book when:</strong> {e.bookWhen}
+                      </span>
+                    )}
                   </div>
                 )}
 
@@ -283,12 +323,6 @@ export default function SeasonalPage() {
             </article>
           )
         })}
-
-        <p className="section-intro" style={{ fontSize: '0.82rem', color: 'var(--ink-muted)', marginTop: 'var(--space-md)' }}>
-          Event CTAs are affiliate links to Get Away Today (Disney&apos;s authorized ticket seller).
-          We earn a small commission if you book — at no extra cost to you. Prices and dates are
-          the most current we can verify; confirm on the official Disney site before booking.
-        </p>
       </section>
 
       <section className="section">
@@ -305,11 +339,17 @@ export default function SeasonalPage() {
             <div key={i} className="season-card">
               <div className="season-month">{s.month}</div>
               <div className={`season-verdict ${s.verdict === 'must-go' ? 'go' : s.verdict}`}>
-                {s.verdict === 'go' || s.verdict === 'must-go' ? '👍 ' : s.verdict === 'avoid' ? '👎 ' : '🤷 '}
+                {s.verdict === 'go' || s.verdict === 'must-go'
+                  ? '👍 '
+                  : s.verdict === 'avoid'
+                    ? '👎 '
+                    : '🤷 '}
                 {s.crowds} crowds
               </div>
               <div className="month-weather">
-                <span className="month-weather-icon" aria-hidden="true">🌡️</span>
+                <span className="month-weather-icon" aria-hidden="true">
+                  🌡️
+                </span>
                 <span>
                   {s.weather.highF}° / {s.weather.lowF}°F — {s.weather.note}
                 </span>
@@ -320,11 +360,7 @@ export default function SeasonalPage() {
                     const e = eventBySlug[slug]
                     if (!e) return null
                     return (
-                      <a
-                        key={slug}
-                        href={`#event-${slug}`}
-                        className={`event-chip ${e.theme}`}
-                      >
+                      <a key={slug} href={`#event-${slug}`} className={`event-chip ${e.theme}`}>
                         {e.name.split(' – ')[0].split(' (')[0]}
                       </a>
                     )
@@ -361,8 +397,8 @@ export default function SeasonalPage() {
           <p>
             Map out the day with a <Link href="/itineraries">1-, 2-, or 3-day itinerary</Link>,
             decide if <Link href="/lightning-lane">Lightning Lane</Link> is worth it for your ages,
-            and check the <Link href="/saving-money">money-saving playbook</Link> — off-peak
-            months let you stretch the budget into an extra day. First trip? Start with the{' '}
+            and check the <Link href="/saving-money">money-saving playbook</Link> — off-peak months
+            let you stretch the budget into an extra day. First trip? Start with the{' '}
             <Link href="/first-visit">first-visit guide</Link>, then grab the{' '}
             <Link href="/packing-list">packing list</Link>.
           </p>
@@ -371,11 +407,27 @@ export default function SeasonalPage() {
         <div className="callout warning">
           <div className="callout-label">How we keep this fresh</div>
           <p>
-            Dates come from the official Disneyland 2026 press calendar, cross-checked with
-            Disney Parks Blog and Disney Tourist Blog. We review this page quarterly and
-            before each major event window. Last reviewed: <strong>{reviewedFormatted}</strong>.
-            Always confirm on the official Disney site before booking.
+            Dates come from the official Disneyland 2026 press calendar, cross-checked with Disney
+            Parks Blog and Disney Tourist Blog. We review this page quarterly and before each major
+            event window. Last reviewed: <strong>{reviewedFormatted}</strong>. Always confirm on the
+            official Disney site before booking.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">The 2026 Disneyland questions families ask us most often.</p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

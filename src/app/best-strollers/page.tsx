@@ -64,11 +64,7 @@ const picks: Pick[] = [
     price: '~$70–90',
     weight: '13 lbs',
     capacity: '50 lb',
-    features: [
-      '4-position recline',
-      'Compact fold with carry strap',
-      'Lightweight aluminum frame',
-    ],
+    features: ['4-position recline', 'Compact fold with carry strap', 'Lightweight aluminum frame'],
     honest:
       "Won't handle rough terrain well and the canopy is small, but it's unbeatable for the price.",
     link: 'https://amzn.to/4vClnKU',
@@ -249,13 +245,15 @@ export default function BestStrollersPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: "Best Strollers", path: '/best-strollers' },
+          { name: 'Best Strollers', path: '/best-strollers' },
         ]}
       />
       <ArticleJsonLd
         path="/best-strollers"
-        headline={"Best Strollers for Disneyland (2026)"}
-        description={"A parent-tested ranking of the best Disneyland strollers — single and double picks for long park days with kids 2–8."}
+        headline={'Best Strollers for Disneyland (2026)'}
+        description={
+          'A parent-tested ranking of the best Disneyland strollers — single and double picks for long park days with kids 2–8.'
+        }
         datePublished="2026-04-15"
         dateModified="2026-04-15"
       />
@@ -272,32 +270,29 @@ export default function BestStrollersPage() {
         <div className="hero-badge">👶 Top 6 Strollers</div>
         <h1>Best Strollers for Disneyland 2026</h1>
         <p className="hero-sub">
-          Six real picks — three singles, three doubles, budget to best — from a
-          parent who's pushed strollers through Disneyland a few times before.
-          Not a gear-blog listicle.
+          Six real picks — three singles, three doubles, budget to best — from a parent who's pushed
+          strollers through Disneyland a few times before. Not a gear-blog listicle.
         </p>
       </header>
 
       <section className="section">
         <p>
-          Your stroller is the single most important piece of Disney gear you'll
-          bring. It's a nap pod, a snack cart, a shade tent, a diaper bag on
-          wheels, and — on hour 11 — a lifeboat. Get this one thing right and
-          the rest of the day gets easier.
+          Your stroller is the single most important piece of Disney gear you'll bring. It's a nap
+          pod, a snack cart, a shade tent, a diaper bag on wheels, and — on hour 11 — a lifeboat.
+          Get this one thing right and the rest of the day gets easier.
         </p>
         <p>
-          Disneyland's rule:{' '}
-          <strong>strollers must be 31" wide by 52" long or smaller</strong>{' '}
-          (79 × 132 cm). Wagons and stroller-wagons are not allowed. Every pick
-          below fits comfortably inside the limit.
+          Disneyland's rule: <strong>strollers must be 31" wide by 52" long or smaller</strong> (79
+          × 132 cm). Wagons and stroller-wagons are not allowed. Every pick below fits comfortably
+          inside the limit.
         </p>
 
         <div className="section-header">
           <span className="section-icon">🚼</span>
           <h2>Single Strollers</h2>
           <p className="section-intro">
-            Best for one kid, or one kid plus a buggy-board sibling. Lightweight,
-            compact fold, easy to steer through crowds.
+            Best for one kid, or one kid plus a buggy-board sibling. Lightweight, compact fold, easy
+            to steer through crowds.
           </p>
         </div>
 
@@ -309,8 +304,8 @@ export default function BestStrollersPage() {
           <span className="section-icon">👯</span>
           <h2>Double Strollers</h2>
           <p className="section-intro">
-            Best for two kids under 6. Two nap schedules, one stroller — don't
-            underestimate how much easier this makes the day.
+            Best for two kids under 6. Two nap schedules, one stroller — don't underestimate how
+            much easier this makes the day.
           </p>
         </div>
 
@@ -322,12 +317,16 @@ export default function BestStrollersPage() {
           <span className="section-icon">📊</span>
           <h2>Quick Comparison</h2>
           <p className="section-intro">
-            Scan all six picks side by side. Prices fluctuate — tap through for
-            live Amazon pricing.
+            Scan all six picks side by side. Prices fluctuate — tap through for live Amazon pricing.
           </p>
         </div>
 
-        <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }} tabIndex={0} role="region" aria-label="Stroller comparison table">
+        <div
+          style={{ overflowX: 'auto', marginBottom: '1.5rem' }}
+          tabIndex={0}
+          role="region"
+          aria-label="Stroller comparison table"
+        >
           <table
             style={{
               width: '100%',
@@ -349,7 +348,9 @@ export default function BestStrollersPage() {
             </thead>
             <tbody>
               <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <td style={{ padding: '0.6rem 0.5rem' }}><strong>Summer Infant 3Dlite</strong></td>
+                <td style={{ padding: '0.6rem 0.5rem' }}>
+                  <strong>Summer Infant 3Dlite</strong>
+                </td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~$70–90</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>13 lbs</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>50 lb</td>
@@ -358,7 +359,9 @@ export default function BestStrollersPage() {
                 <td style={{ padding: '0.6rem 0.5rem' }}>Cheapest single that works</td>
               </tr>
               <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <td style={{ padding: '0.6rem 0.5rem' }}><strong>Kolcraft Cloud Plus</strong></td>
+                <td style={{ padding: '0.6rem 0.5rem' }}>
+                  <strong>Kolcraft Cloud Plus</strong>
+                </td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~$70–80</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~12 lbs</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>50 lb</td>
@@ -367,7 +370,9 @@ export default function BestStrollersPage() {
                 <td style={{ padding: '0.6rem 0.5rem' }}>Best features per dollar</td>
               </tr>
               <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <td style={{ padding: '0.6rem 0.5rem' }}><strong>Baby Jogger City Mini GT2</strong></td>
+                <td style={{ padding: '0.6rem 0.5rem' }}>
+                  <strong>Baby Jogger City Mini GT2</strong>
+                </td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~$300–400</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~22 lbs</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>65 lb</td>
@@ -376,7 +381,9 @@ export default function BestStrollersPage() {
                 <td style={{ padding: '0.6rem 0.5rem' }}>The do-everything single</td>
               </tr>
               <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <td style={{ padding: '0.6rem 0.5rem' }}><strong>Kolcraft Cloud Plus Double</strong></td>
+                <td style={{ padding: '0.6rem 0.5rem' }}>
+                  <strong>Kolcraft Cloud Plus Double</strong>
+                </td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~$170–200</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>23 lbs</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>40 lb/seat</td>
@@ -385,7 +392,9 @@ export default function BestStrollersPage() {
                 <td style={{ padding: '0.6rem 0.5rem' }}>Cheapest double worth buying</td>
               </tr>
               <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
-                <td style={{ padding: '0.6rem 0.5rem' }}><strong>Summer Infant 3Dlite Double</strong></td>
+                <td style={{ padding: '0.6rem 0.5rem' }}>
+                  <strong>Summer Infant 3Dlite Double</strong>
+                </td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~$130–160</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>&lt; 22 lbs</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>50 lb/seat</td>
@@ -394,7 +403,9 @@ export default function BestStrollersPage() {
                 <td style={{ padding: '0.6rem 0.5rem' }}>Best travel double</td>
               </tr>
               <tr>
-                <td style={{ padding: '0.6rem 0.5rem' }}><strong>City Mini GT2 Double</strong></td>
+                <td style={{ padding: '0.6rem 0.5rem' }}>
+                  <strong>City Mini GT2 Double</strong>
+                </td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~$550–650</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>~36 lbs</td>
                 <td style={{ padding: '0.6rem 0.5rem' }}>50 lb/seat</td>
@@ -416,38 +427,34 @@ export default function BestStrollersPage() {
 
         <ul>
           <li>
-            <strong>Slap an AirTag on it.</strong> Cast members re-arrange
-            stroller parking constantly — an AirTag saves 20 frustrated minutes
-            when yours has been moved.
+            <strong>Slap an AirTag on it.</strong> Cast members re-arrange stroller parking
+            constantly — an AirTag saves 20 frustrated minutes when yours has been moved.
           </li>
           <li>
-            <strong>Label it visibly.</strong> A bright ribbon, luggage tag, or
-            puffy sticker. There are hundreds of identical black strollers in
-            the parks at any moment.
+            <strong>Label it visibly.</strong> A bright ribbon, luggage tag, or puffy sticker. There
+            are hundreds of identical black strollers in the parks at any moment.
           </li>
           <li>
-            <strong>Bring a clip-on fan and a rain cover</strong> regardless of
-            the forecast. Anaheim weather flips fast.
+            <strong>Bring a clip-on fan and a rain cover</strong> regardless of the forecast.
+            Anaheim weather flips fast.
           </li>
           <li>
-            <strong>Strollers must fold</strong> for the Toy Story trams, ART
-            buses, and the monorail — factor fold speed into your pick.
+            <strong>Strollers must fold</strong> for the Toy Story trams, ART buses, and the
+            monorail — factor fold speed into your pick.
           </li>
           <li>
-            <strong>Free tire air station</strong> near the stroller rental shop
-            at the Disneyland entrance — pump up soft tires before you start
-            the day.
+            <strong>Free tire air station</strong> near the stroller rental shop at the Disneyland
+            entrance — pump up soft tires before you start the day.
           </li>
         </ul>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pair With</div>
           <p>
-            Pair your stroller pick with the full{' '}
-            <Link href="/packing-list">packing list</Link> (fans, rain covers,
-            labels, AirTags) and the{' '}
-            <Link href="/saving-money">saving money guide</Link> for why bringing
-            your own beats renting at the park gate.
+            Pair your stroller pick with the full <Link href="/packing-list">packing list</Link>{' '}
+            (fans, rain covers, labels, AirTags) and the{' '}
+            <Link href="/saving-money">saving money guide</Link> for why bringing your own beats
+            renting at the park gate.
           </p>
         </div>
       </section>

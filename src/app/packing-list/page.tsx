@@ -10,7 +10,8 @@ import { PACKING_LIST, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Packing List for Kids (2026)',
-  description: 'The Disneyland packing list for families with young kids — every item under $15, each one explained, tap to check off. Start packing the smart way.',
+  description:
+    'The Disneyland packing list for families with young kids — every item under $15, each one explained, tap to check off. Start packing the smart way.',
   alternates: { canonical: `${SITE_URL}/packing-list` },
   openGraph: {
     url: `${SITE_URL}/packing-list`,
@@ -44,13 +45,15 @@ export default function PackingListPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: "Packing List", path: '/packing-list' },
+          { name: 'Packing List', path: '/packing-list' },
         ]}
       />
       <ArticleJsonLd
         path="/packing-list"
-        headline={"Disneyland Packing List for Kids (2026)"}
-        description={"The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to skip, and why."}
+        headline={'Disneyland Packing List for Kids (2026)'}
+        description={
+          'The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to skip, and why.'
+        }
         datePublished="2026-04-15"
         dateModified="2026-04-15"
       />
@@ -64,8 +67,8 @@ export default function PackingListPage() {
         <div className="hero-badge">🎒 Pack Smart</div>
         <h1>Disneyland Packing List for Kids</h1>
         <p className="hero-sub">
-          Everything on this list costs under $15 and will save you money,
-          time, or tears. Tap items to check them off as you pack.
+          Everything on this list costs under $15 and will save you money, time, or tears. Tap items
+          to check them off as you pack.
         </p>
       </header>
 
@@ -79,16 +82,20 @@ export default function PackingListPage() {
         </div>
 
         <p style={{ fontSize: '0.85rem', opacity: 0.75, marginBottom: '1rem' }}>
-          This page contains affiliate links. If you buy through them, we earn a
-          small commission at no extra cost to you. We only recommend stuff we
-          actually use with our own kids at the parks.
+          This page contains affiliate links. If you buy through them, we earn a small commission at
+          no extra cost to you. We only recommend stuff we actually use with our own kids at the
+          parks.
         </p>
 
         <PackingChecklist />
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pair With</div>
-          <p>See the <Link href="/saving-money">money-saving tips</Link> for where to buy this stuff cheap, and the <Link href="/best-strollers">Top 6 Disneyland-friendly strollers</Link> for our ranked stroller picks.</p>
+          <p>
+            See the <Link href="/saving-money">money-saving tips</Link> for where to buy this stuff
+            cheap, and the <Link href="/best-strollers">Top 6 Disneyland-friendly strollers</Link>{' '}
+            for our ranked stroller picks.
+          </p>
         </div>
       </section>
 

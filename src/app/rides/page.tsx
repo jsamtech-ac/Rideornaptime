@@ -10,7 +10,8 @@ import { RIDES, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
-  description: 'Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent. See the full list.',
+  description:
+    'Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent. See the full list.',
   alternates: { canonical: `${SITE_URL}/rides` },
   openGraph: {
     url: `${SITE_URL}/rides`,
@@ -44,13 +45,15 @@ export default function RidesPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: "Rides for Kids", path: '/rides' },
+          { name: 'Rides for Kids', path: '/rides' },
         ]}
       />
       <ArticleJsonLd
         path="/rides"
-        headline={"Disneyland Rides for Kids: Age-by-Age Guide (2026)"}
-        description={"Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent."}
+        headline={'Disneyland Rides for Kids: Age-by-Age Guide (2026)'}
+        description={
+          'Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent.'
+        }
         datePublished="2026-04-15"
         dateModified="2026-04-15"
       />
@@ -58,7 +61,7 @@ export default function RidesPage() {
       <ItemListJsonLd
         path="/rides"
         name="Disneyland rides ranked for kids"
-        items={RIDES.map(r => ({
+        items={RIDES.map((r) => ({
           name: r.name,
           description: `${r.land} — ${r.take}`,
         }))}
@@ -67,8 +70,8 @@ export default function RidesPage() {
         <div className="hero-badge">🎢 Age-by-Age Ratings</div>
         <h1>Disneyland Rides for Kids: An Age-by-Age Guide</h1>
         <p className="hero-sub">
-          Forget height requirements — here's whether each ride is actually worth your time
-          at ages 2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.
+          Forget height requirements — here's whether each ride is actually worth your time at ages
+          2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.
         </p>
       </header>
 
@@ -77,8 +80,8 @@ export default function RidesPage() {
           <span className="section-icon">🎢</span>
           <h2>The Ride Matrix</h2>
           <p className="section-intro">
-            Filter by park. Each ride shows a verdict (must-do / maybe / skip) for every
-            age bracket, plus a parent's take on what actually matters.
+            Filter by park. Each ride shows a verdict (must-do / maybe / skip) for every age
+            bracket, plus a parent's take on what actually matters.
           </p>
         </div>
 
@@ -86,12 +89,20 @@ export default function RidesPage() {
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pro Tip</div>
-          <p>Watch POV ride videos on YouTube with your kids before the trip. It helps them pick what they want to ride and cures fear for some kids who are nervous about the dark or loud noises.</p>
+          <p>
+            Watch POV ride videos on YouTube with your kids before the trip. It helps them pick what
+            they want to ride and cures fear for some kids who are nervous about the dark or loud
+            noises.
+          </p>
         </div>
 
         <div className="callout pro">
           <div className="callout-label">Plan Your Day</div>
-          <p>Once you know what you're riding, build the day around it. See the <Link href="/itineraries">hour-by-hour itineraries</Link> and decide which rides are worth a <Link href="/lightning-lane">Lightning Lane</Link> booking.</p>
+          <p>
+            Once you know what you're riding, build the day around it. See the{' '}
+            <Link href="/itineraries">hour-by-hour itineraries</Link> and decide which rides are
+            worth a <Link href="/lightning-lane">Lightning Lane</Link> booking.
+          </p>
         </div>
       </section>
 

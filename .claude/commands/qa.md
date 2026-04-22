@@ -1,6 +1,6 @@
 ---
 description: Full pre-push QA gate. Runs deterministic checks + 5 qualitative reviewer subagents. Produces a tiered BLOCKERS/WARNINGS report and a final push verdict.
-argument-hint: "[--skip-layer1] [--only <agent>]"
+argument-hint: '[--skip-layer1] [--only <agent>]'
 ---
 
 # /qa — Pre-push Quality Gate
@@ -34,6 +34,7 @@ Launch the following 5 subagents **in parallel** (single message, multiple Agent
 5. `qa-content-reviewer` — Copy quality, placeholders, nav-to-route integrity
 
 Each agent should be briefed with:
+
 - The path to `qa-report/layer1.json` (if it exists) so they can cross-reference
 - Their scope and the severity rubric (`blocker` | `warning` | `info`)
 - Instruction to return structured findings: `[{ severity, area, file, line?, message, fix }]`

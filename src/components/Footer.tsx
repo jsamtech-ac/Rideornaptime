@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { NAV_GROUPS } from '@/lib/content'
 import ContactForm from './ContactForm'
 
-const FOOTER_LINKS = NAV_GROUPS.flatMap(g => g.items)
+const FOOTER_LINKS = NAV_GROUPS.flatMap((g) => g.items)
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
       <ContactForm />
       <div className="footer-brand">🎢 Ride or Naptime</div>
       <div className="footer-links">
-        {FOOTER_LINKS.map(item => (
+        {FOOTER_LINKS.map((item) => (
           <Link key={item.href} href={item.href}>
             {item.label}
           </Link>
