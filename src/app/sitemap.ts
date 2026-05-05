@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL, SEASONAL_LAST_REVIEWED, PRIVACY_LAST_REVIEWED } from '@/lib/content'
+import { getAllPostMeta } from '@/lib/news'
 
 const routes: { path: string; lastModified: string }[] = [
   { path: '', lastModified: '2026-04-15' },
@@ -19,10 +20,29 @@ const routes: { path: string; lastModified: string }[] = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map(({ path, lastModified }) => ({
+  const posts = getAllPostMeta()
+  const newsIndexLastMod = posts[0]?.date ?? '2026-05-04'
+
+  const staticEntries: MetadataRoute.Sitemap = routes.map(({ path, lastModified }) => ({
     url: `${SITE_URL}${path}`,
     lastModified,
     changeFrequency: 'weekly',
     priority: path === '' ? 1 : 0.8,
   }))
+
+  const newsIndexEntry: MetadataRoute.Sitemap[number] = {
+    url: `${SITE_URL}/news`,
+    lastModified: newsIndexLastMod,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }
+
+  const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/news/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
+  return [...staticEntries, newsIndexEntry, ...postEntries]
 }
