@@ -1,0 +1,42 @@
+{
+  "weekOf": "2026-05-04",
+  "lastUpdated": "2026-05-05T18:25:42Z",
+  "ticker": [
+    {
+      "id": "1",
+      "headline": "Pirates of the Caribbean closed through early June",
+      "tag": "🚨 Plan Update",
+      "link": "/news/disneyland-news-families-may-4-2026",
+      "priority": 1
+    },
+    {
+      "id": "2",
+      "headline": "Buzz Lightyear still closed — Toy Story 5 drops June 19",
+      "tag": "Watch",
+      "link": "/news/disneyland-news-families-may-4-2026",
+      "priority": 2
+    },
+    {
+      "id": "3",
+      "headline": "Disneyland summer hours extended to midnight starting May 22",
+      "tag": "New",
+      "link": "/news/disneyland-news-families-may-4-2026",
+      "priority": 3
+    },
+    {
+      "id": "4",
+      "headline": "Monorail and Roger Rabbit's Car Toon Spin reopened May 1",
+      "tag": "Reopened",
+      "link": "/news/disneyland-news-families-may-4-2026",
+      "priority": 4
+    },
+    {
+      "id": "5",
+      "headline": "Kids' Summer Ticket Deal — free Park Hopper upgrade",
+      "tag": "💰 Deal",
+      "link": "/news/disneyland-news-families-may-4-2026",
+      "priority": 5
+    }
+  ],
+  "currentPostSlug": "disneyland-news-families-may-4-2026"
+}

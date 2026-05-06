@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
+import NewsTicker from '@/components/NewsTicker'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 
@@ -152,6 +153,8 @@ export default function Home() {
           <div className="hero-author">✍️ Written by a real parent, not a Disney influencer</div>
         </div>
       </header>
+
+      <NewsTicker />
 
       <section className="section">
         <div className="section-header">

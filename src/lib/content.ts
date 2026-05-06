@@ -118,6 +118,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: '/hidden-gems', label: 'Hidden Gems', icon: '✨' },
       { href: '/fireworks', label: 'Fireworks', icon: '🎆' },
       { href: '/best-strollers', label: 'Best Strollers', icon: '👶' },
+      { href: '/news', label: 'Weekly News', icon: '📰' },
     ],
   },
 ]
