@@ -2,11 +2,16 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import AffiliateCTA from '@/components/AffiliateCTA'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import NewsArticleJsonLd from '@/components/NewsArticleJsonLd'
+import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getAllPostMeta, getPostBySlug } from '@/lib/news'
+
+const mdxOptions = { mdxOptions: { remarkPlugins: [remarkGfm] } }
+const mdxComponents = { AffiliateCTA, TicketsCTA }
 
 interface PageProps {
   params: { slug: string }
@@ -78,22 +83,23 @@ export default function NewsPostPage({ params }: PageProps) {
         image={post.heroImage}
       />
 
+      <nav className="news-post-breadcrumb" aria-label="Breadcrumb">
+        <Link href="/news" className="news-post-back">
+          ← All weekly roundups
+        </Link>
+      </nav>
+
       <article className="news-post">
         <header className="news-post-header">
-          <div className="news-post-meta">
-            <Link href="/news" className="news-post-back">
-              ← All weekly roundups
-            </Link>
-            <time dateTime={post.date} className="news-post-date">
-              {formatDate(post.date)}
-            </time>
-          </div>
+          <time dateTime={post.date} className="news-post-date">
+            {formatDate(post.date)}
+          </time>
           <h1 className="news-post-title">{post.title}</h1>
           <p className="news-post-desc">{post.description}</p>
         </header>
 
         <div className="news-post-body">
-          <MDXRemote source={post.content} components={{ AffiliateCTA }} />
+          <MDXRemote source={post.content} components={mdxComponents} options={mdxOptions} />
         </div>
       </article>
     </>

@@ -2324,10 +2324,33 @@ body {
 }
 
 /* ===== NEWS POST ===== */
+.news-post-breadcrumb {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: calc(72px + var(--space-md)) var(--space-md) 0;
+}
+
+.news-post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--sky-deep);
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+  min-height: 36px;
+}
+
+.news-post-back:hover {
+  text-decoration: underline;
+}
+
 .news-post {
   max-width: 720px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  padding: var(--space-md) var(--space-md) var(--space-2xl);
 }
 
 .news-post-header {
@@ -2336,34 +2359,15 @@ body {
   border-bottom: 1px solid var(--sand-dark);
 }
 
-.news-post-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-md);
-}
-
-.news-post-back {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--sky-deep);
-  text-decoration: none;
-}
-
-.news-post-back:hover {
-  text-decoration: underline;
-}
-
 .news-post-date {
+  display: inline-block;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-  letter-spacing: 0.02em;
+  font-size: 0.75rem;
+  color: var(--sky-deep);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin-bottom: var(--space-sm);
 }
 
 .news-post-title {
@@ -2373,12 +2377,13 @@ body {
   color: var(--ink);
   line-height: 1.2;
   margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
 }
 
 .news-post-desc {
   color: var(--ink-soft);
   font-size: 1.05rem;
-  line-height: 1.55;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -2399,6 +2404,11 @@ body {
   color: var(--ink);
   line-height: 1.3;
   margin-top: var(--space-2xl);
+  letter-spacing: -0.01em;
+}
+
+.news-post-body h2:first-child {
+  margin-top: var(--space-lg);
 }
 
 .news-post-body h3 {
@@ -2419,11 +2429,21 @@ body {
   font-weight: 600;
 }
 
+.news-post-body em {
+  color: var(--ink);
+  font-style: italic;
+}
+
 .news-post-body a {
   color: var(--sky-deep);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.news-post-body a:hover {
+  text-decoration-thickness: 2px;
 }
 
 .news-post-body ul,
@@ -2436,10 +2456,78 @@ body {
   margin-top: var(--space-xs);
 }
 
+.news-post-body blockquote {
+  border-left: 4px solid var(--sun);
+  background: var(--sun-glow);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.news-post-body code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--sand-dark);
+  color: var(--ink);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
 .news-post-body hr {
   border: 0;
   border-top: 1px solid var(--sand-dark);
-  margin: var(--space-xl) 0;
+  margin: var(--space-2xl) 0;
+}
+
+/* Table — rendered from GFM markdown. Block + overflow-x lets the table scroll horizontally on narrow screens without breaking column alignment. */
+.news-post-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-top: var(--space-md);
+}
+
+.news-post-body thead {
+  background: var(--sand);
+}
+
+.news-post-body th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-align: left;
+  color: var(--ink);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--sand-dark);
+  white-space: nowrap;
+}
+
+.news-post-body td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--sand-dark);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+
+.news-post-body tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.news-post-body tbody tr:nth-child(even) {
+  background: var(--sun-glow);
+}
+
+/* TicketsCTA dropped inside MDX gets balanced spacing */
+.news-post-body .tickets-section {
+  padding: var(--space-md) 0;
+  margin: var(--space-lg) 0;
 }
 
 @media (min-width: 720px) {
