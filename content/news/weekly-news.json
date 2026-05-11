@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-05-04",
-  "lastUpdated": "2026-05-05T18:25:42Z",
+  "weekOf": "2026-05-11",
+  "lastUpdated": "2026-05-11T17:12:25Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Pirates of the Caribbean closed through early June",
-      "tag": "🚨 Plan Update",
-      "link": "/news/disneyland-news-families-may-4-2026",
+      "headline": "Mando & Grogu launch on Smugglers Run May 22",
+      "tag": "🚨 New",
+      "link": "/news/disneyland-news-families-may-11-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Buzz Lightyear still closed — Toy Story 5 drops June 19",
-      "tag": "Watch",
-      "link": "/news/disneyland-news-families-may-4-2026",
+      "headline": "Hyperspace Mountain is back — but skip it with kids under 6",
+      "tag": "Limited Run",
+      "link": "/news/disneyland-news-families-may-11-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Disneyland summer hours extended to midnight starting May 22",
-      "tag": "New",
-      "link": "/news/disneyland-news-families-may-4-2026",
+      "headline": "Pirates of the Caribbean likely down through late June",
+      "tag": "Still Closed",
+      "link": "/news/disneyland-news-families-may-11-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Monorail and Roger Rabbit's Car Toon Spin reopened May 1",
-      "tag": "Reopened",
-      "link": "/news/disneyland-news-families-may-4-2026",
+      "headline": "Kids' Summer Tickets start May 22 — as low as $50/day",
+      "tag": "💰 Deal",
+      "link": "/news/disneyland-news-families-may-11-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Kids' Summer Ticket Deal — free Park Hopper upgrade",
-      "tag": "💰 Deal",
-      "link": "/news/disneyland-news-families-may-4-2026",
+      "headline": "Nighttime show times shifted May 8 — check the app",
+      "tag": "Heads Up",
+      "link": "/news/disneyland-news-families-may-11-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-may-4-2026"
+  "currentPostSlug": "disneyland-news-families-may-11-2026"
 }
