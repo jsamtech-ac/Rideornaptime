@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-05-11",
-  "lastUpdated": "2026-05-11T17:12:25Z",
+  "weekOf": "2026-05-18",
+  "lastUpdated": "2026-05-18T16:59:42Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Mando & Grogu launch on Smugglers Run May 22",
-      "tag": "🚨 New",
-      "link": "/news/disneyland-news-families-may-11-2026",
+      "headline": "Mando & Grogu hit Smugglers Run May 22 — book Lightning Lane fast",
+      "tag": "🚨 Launches Friday",
+      "link": "/news/disneyland-news-families-may-18-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Hyperspace Mountain is back — but skip it with kids under 6",
-      "tag": "Limited Run",
-      "link": "/news/disneyland-news-families-may-11-2026",
+      "headline": "Crowds spiking May 19-25 — Cal Resident deal + Memorial Day collision",
+      "tag": "Crowd Alert",
+      "link": "/news/disneyland-news-families-may-18-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Pirates of the Caribbean likely down through late June",
-      "tag": "Still Closed",
-      "link": "/news/disneyland-news-families-may-11-2026",
+      "headline": "Soarin' Across America launched early — friendlier pace for young kids",
+      "tag": "✅ Now Open",
+      "link": "/news/disneyland-news-families-may-18-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Kids' Summer Tickets start May 22 — as low as $50/day",
-      "tag": "💰 Deal",
-      "link": "/news/disneyland-news-families-may-11-2026",
+      "headline": "Kids' Summer Tickets: $50/day for ages 3-9",
+      "tag": "💰 Deal Starts May 22",
+      "link": "/news/disneyland-news-families-may-18-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Nighttime show times shifted May 8 — check the app",
-      "tag": "Heads Up",
-      "link": "/news/disneyland-news-families-may-11-2026",
+      "headline": "Luke, Leia, Han & Vader now permanent in Galaxy's Edge",
+      "tag": "New",
+      "link": "/news/disneyland-news-families-may-18-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-may-11-2026"
+  "currentPostSlug": "disneyland-news-families-may-18-2026"
 }
