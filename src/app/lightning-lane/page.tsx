@@ -389,7 +389,9 @@ export default function LightningLanePage() {
           <p>
             App installed and logged in. Everyone in your party linked to the reservation. Payment
             card saved. Multi Pass purchased the day before (not day-of — prices climb). Phone
-            charged. This eliminates 30–60 seconds of friction at the Tip Board.
+            charged — see our <Link href="/packing-list">Disneyland packing list for kids</Link>{' '}
+            for the right portable charger. This eliminates 30–60 seconds of friction at the Tip
+            Board.
           </p>
         </div>
 
@@ -963,6 +965,17 @@ export default function LightningLanePage() {
             DAS is separate from Lightning Lane — you can use both. This page isn't a DAS authority;
             Disney's policies change and the registration flow is where you'll get the most current
             information.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="callout pro">
+          <div className="callout-label">Pair With</div>
+          <p>
+            Slot Lightning Lane bookings into your day with the{' '}
+            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link> so the 2-hour
+            clock actually lines up with what you'd be doing anyway.
           </p>
         </div>
       </section>

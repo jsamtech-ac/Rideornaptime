@@ -100,7 +100,9 @@ export default function FoodPage() {
             If your kids want to meet characters, book a character breakfast at Plaza Inn or
             Storyteller Cafe (Grand Californian Hotel). You'll meet multiple characters during the
             meal without standing in separate 30-minute lines. Book in advance — but people cancel
-            within 24 hours, so keep checking the app if nothing's available.
+            within 24 hours, so keep checking the app if nothing's available. Full character
+            locations and timing in the{' '}
+            <Link href="/characters">Disneyland character meet-and-greets guide</Link>.
           </p>
         </div>
 
@@ -109,7 +111,9 @@ export default function FoodPage() {
           <p>
             Time your meals around crowd waves — see the{' '}
             <Link href="/itineraries">hour-by-hour itineraries</Link> for suggested lunch and dinner
-            windows that dodge the rushes.
+            windows that dodge the rushes. Pair meals with ride priorities from the{' '}
+            <Link href="/rides">age-by-age Disneyland rides for kids</Link> so you're not eating
+            through a Lightning Lane window.
           </p>
         </div>
       </section>

@@ -117,8 +117,12 @@ export default function PackingListPage() {
           <div className="callout-label">Pair With</div>
           <p>
             See the <Link href="/saving-money">money-saving tips</Link> for where to buy this stuff
-            cheap, and the <Link href="/best-strollers">Top 6 Disneyland-friendly strollers</Link>{' '}
-            for our ranked stroller picks.
+            cheap, the <Link href="/best-strollers">Top 6 Disneyland-friendly strollers</Link> for
+            our ranked stroller picks, the{' '}
+            <Link href="/rides">age-by-age Disneyland rides for kids</Link> to preview which rides
+            matter for your kid, and the{' '}
+            <Link href="/first-visit">Disneyland with kids: the first-time guide</Link> if it's
+            your first trip.
           </p>
         </div>
       </section>

@@ -119,9 +119,22 @@ export default function RidesPage() {
         <div className="callout pro">
           <div className="callout-label">Plan Your Day</div>
           <p>
-            Once you know what you're riding, build the day around it. See the{' '}
+            First trip? Start with the{' '}
+            <Link href="/first-visit">first-time Disneyland family guide</Link>. Once you know what
+            you're riding, build the day around it — see the{' '}
             <Link href="/itineraries">hour-by-hour itineraries</Link> and decide which rides are
-            worth a <Link href="/lightning-lane">Lightning Lane</Link> booking.
+            worth a <Link href="/lightning-lane">Lightning Lane</Link> booking. Mobile-order in
+            advance from the <Link href="/food">Disneyland food spots worth your money</Link> so
+            meals don't stall the day.
+          </p>
+        </div>
+
+        <div className="callout pro">
+          <div className="callout-label">Plan the Timing</div>
+          <p>
+            Pick the right month with the{' '}
+            <Link href="/seasonal">best months to visit Disneyland with kids</Link>. Crowd levels
+            swing wildly month to month — the wrong week can double every wait time on this list.
           </p>
         </div>
       </section>

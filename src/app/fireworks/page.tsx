@@ -88,7 +88,8 @@ export default function FireworksPage() {
             Street, but with <strong>John Williams music piped in</strong> over the land's speakers.
             Way less crowded, easier to manage with a stroller, and the Batuu skyline under the
             fireworks is genuinely something else. You give up the castle projections — totally
-            worth it.
+            worth it. Book a post-fireworks ride from the app while you wait — see the{' '}
+            <Link href="/lightning-lane">Lightning Lane playbook for families</Link>.
           </p>
           <div style={{ marginTop: '1rem', borderRadius: '12px', overflow: 'hidden' }}>
             <Image
@@ -117,7 +118,8 @@ export default function FireworksPage() {
             <strong> open sky, room to breathe, and an easy exit</strong> afterward — critical when
             you're pushing a stroller against a wave of 30,000 people leaving Main Street. The view
             is clean, the crowd is chill, and you can sit on the edge of the planters while you
-            wait.
+            wait. First trip? Pair this with the{' '}
+            <Link href="/first-visit">first-time Disneyland family guide</Link>.
           </p>
           <div style={{ marginTop: '1rem', borderRadius: '12px', overflow: 'hidden' }}>
             <Image
@@ -142,7 +144,9 @@ export default function FireworksPage() {
             after the calmer viewings, and you won't feel like you missed anything.
           </p>
           <p style={{ marginTop: '0.75rem' }}>
-            More survival tips on the <Link href="/hidden-gems">Hidden Gems</Link> page, or head
+            Slot fireworks into the evening with the{' '}
+            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link>. More survival
+            tips on the <Link href="/hidden-gems">Hidden Gems</Link> page, or head
             <Link href="/"> back to the guide hub</Link>.
           </p>
         </div>

@@ -160,7 +160,9 @@ export default function SavingMoneyPage() {
           <div className="callout-label">Pair With</div>
           <p>
             Go during a low-crowd month from the <Link href="/seasonal">seasonal guide</Link> to
-            knock another 20-30% off hotels and tickets.
+            knock another 20-30% off hotels and tickets. Bringing your own stroller beats $18/day
+            park rental — see our{' '}
+            <Link href="/best-strollers">best Disneyland strollers for families</Link>.
           </p>
         </div>
       </section>

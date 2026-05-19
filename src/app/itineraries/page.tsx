@@ -89,10 +89,14 @@ export default function ItinerariesPage() {
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
           <p>
-            Decide which rides you'll prioritize using the{' '}
+            First trip? Start with the{' '}
+            <Link href="/first-visit">rookie-mistake roundup for first-time families</Link> before
+            working through these plans. Decide which rides you'll prioritize using the{' '}
             <Link href="/rides">age-based ride guide</Link>, pre-book{' '}
             <Link href="/lightning-lane">Lightning Lane</Link> for the rides worth it, and mobile
-            order from the <Link href="/food">food spots</Link> 30 minutes before each meal.
+            order from the <Link href="/food">food spots</Link> 30 minutes before each meal. And
+            don't pack the night before — use the{' '}
+            <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
         </div>
       </section>
