@@ -3,6 +3,7 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL, RIDES, type Ride, type Verdict } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
@@ -75,6 +76,48 @@ const faqs = [
   },
 ]
 
+const ropeDropSteps = [
+  {
+    name: 'Arrive 45 minutes before posted park opening',
+    text: "Be outside the turnstiles 45 minutes early. Between parking tram or Uber drop-off, security, and the esplanade walk, there's 30–45 minutes of friction between your car and the gate. If the park opens at 8:00 AM, you're parking at 7:00 AM.",
+  },
+  {
+    name: 'Eat breakfast before you arrive',
+    text: 'Eat before you leave the hotel or car — anything you try to eat inside the park eats into rope-drop time.',
+  },
+  {
+    name: 'Have the Disneyland app set up before you tap in',
+    text: 'Open the app with your party linked and a payment method saved before you tap through the gate. The first Lightning Lane booking should be a reflex, not a decision — you have already picked it.',
+  },
+  {
+    name: 'Head straight to your age-appropriate priority ride',
+    text: "Toddlers ages 2–4 head through the castle to Fantasyland for Peter Pan's Flight first, then Dumbo, Small World, and Alice. Elementary kids ages 5–8 go to Toontown for Mickey & Minnie's Runaway Railway. Brave kids ages 6–8 hit Big Thunder Mountain in Frontierland, then Pirates and Haunted Mansion before 10 AM. At DCA, go straight to Radiator Springs Racers.",
+  },
+  {
+    name: 'Book your first Lightning Lane the moment you tap in',
+    text: 'The first Lightning Lane booking is a reflex from the Tip Board. Book it the instant you tap through the gate — windows for popular rides fill within minutes.',
+  },
+]
+
+const riderSwitchSteps = [
+  {
+    name: 'Request Rider Switch at the attraction entrance',
+    text: 'Walk up to the cast member at the attraction entrance (not in advance) and say: "Can we do Rider Switch? Two adults, three kids — one\'s too short." They will tag it in the app.',
+  },
+  {
+    name: 'Adult A waits with non-riders while Adult B rides',
+    text: 'Adult A waits in a designated area (usually near the exit or a shaded bench) with the kid who is too short, too scared, or napping. Adult B rides with the big kids via standby or Lightning Lane.',
+  },
+  {
+    name: 'Swap — Adult A goes through the Lightning Lane entrance',
+    text: 'When Adult B finishes, the two adults swap. Adult A now goes through the Lightning Lane entrance with no second wait.',
+  },
+  {
+    name: 'Bring one re-rider big kid along',
+    text: 'Rider Switch lets one "re-rider" tag along — the big kid who already rode can ride a second time by going with Adult A through the LL entrance. On Radiator Springs Racers, this move alone saves a family ~$60.',
+  },
+]
+
 function verdictCell(v: Verdict) {
   const symbol = v === 'must-do' ? '✓' : v === 'maybe' ? '~' : '✗'
   const label = v === 'must-do' ? 'Must do' : v === 'maybe' ? 'Maybe' : 'Skip'
@@ -130,6 +173,17 @@ export default function LightningLanePage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
+      <HowToJsonLd
+        name="How to Rope Drop Disneyland with Kids"
+        description="With Early Entry gone, rope drop is the single best free tool in the park — the first 45 minutes of operating hours are faster than any Lightning Lane the rest of the day."
+        totalTime="PT45M"
+        steps={ropeDropSteps}
+      />
+      <HowToJsonLd
+        name="How to Use Rider Switch at Disneyland"
+        description="If you have a kid who's too short, too scared, or napping, Rider Switch is the most valuable free tool you're probably not using."
+        steps={riderSwitchSteps}
+      />
 
       <header className="hero">
         <div className="hero-badge">⚡ Lightning Lane + Rope Drop</div>
