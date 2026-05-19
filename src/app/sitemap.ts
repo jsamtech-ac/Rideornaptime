@@ -15,6 +15,28 @@ const staticRoutes: StaticRoute[] = [
   { path: '', file: 'src/app/page.tsx' },
   { path: '/first-visit', file: 'src/app/first-visit/page.tsx' },
   { path: '/itineraries', file: 'src/app/itineraries/page.tsx' },
+  {
+    path: '/itineraries/disneyland-1-day',
+    file: 'src/app/itineraries/disneyland-1-day/page.tsx',
+  },
+  {
+    path: '/itineraries/disneyland-2-day',
+    file: 'src/app/itineraries/disneyland-2-day/page.tsx',
+  },
+  {
+    path: '/itineraries/disneyland-3-day',
+    file: 'src/app/itineraries/disneyland-3-day/page.tsx',
+  },
+  { path: '/itineraries/dca-1-day', file: 'src/app/itineraries/dca-1-day/page.tsx' },
+  { path: '/itineraries/dca-2-day', file: 'src/app/itineraries/dca-2-day/page.tsx' },
+  {
+    path: '/itineraries/park-hopper-2-day',
+    file: 'src/app/itineraries/park-hopper-2-day/page.tsx',
+  },
+  {
+    path: '/itineraries/park-hopper-3-day',
+    file: 'src/app/itineraries/park-hopper-3-day/page.tsx',
+  },
   { path: '/seasonal', file: 'src/app/seasonal/page.tsx', lastModified: SEASONAL_LAST_REVIEWED },
   { path: '/lightning-lane', file: 'src/app/lightning-lane/page.tsx' },
   { path: '/saving-money', file: 'src/app/saving-money/page.tsx' },

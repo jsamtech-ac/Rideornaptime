@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import {
   findDayTemplate,
-  type DayTemplate,
   type Park,
   type Pace,
   type Phase,
@@ -13,11 +12,18 @@ import {
 } from '@/data/itineraries'
 import { findRideById } from '@/data/rides'
 
-interface DayConfig {
+export interface DayConfig {
   park: Park
   lightningLane: boolean
   nap: boolean
   pace: Pace
+}
+
+interface ItineraryConfiguratorProps {
+  /** If provided, the configurator starts in this state and does NOT sync to/from the URL. */
+  initialDayStates?: DayConfig[]
+  /** If false, changing the trip length navigates to a matching sub-route (or /itineraries). Default true. */
+  allowDayCountChange?: boolean
 }
 
 const DEFAULT_DAY: DayConfig = {
@@ -101,17 +107,57 @@ function serializeDays(days: DayConfig[]): string {
   return days.map(serializeDay).join(',')
 }
 
-export default function Configurator() {
+/**
+ * Maps (park, dayCount) → sub-route path if one exists.
+ * Used by sub-routes when the user changes trip length: navigate to the matching
+ * canonical sub-route, or fall through to /itineraries with state preserved.
+ */
+function subRouteFor(park: Park, days: number): string | null {
+  if (park === 'DL' && days === 1) return '/itineraries/disneyland-1-day'
+  if (park === 'DL' && days === 2) return '/itineraries/disneyland-2-day'
+  if (park === 'DL' && days === 3) return '/itineraries/disneyland-3-day'
+  if (park === 'DCA' && days === 1) return '/itineraries/dca-1-day'
+  if (park === 'DCA' && days === 2) return '/itineraries/dca-2-day'
+  if (park === 'HOPPER' && days === 2) return '/itineraries/park-hopper-2-day'
+  if (park === 'HOPPER' && days === 3) return '/itineraries/park-hopper-3-day'
+  return null
+}
+
+export default function ItineraryConfigurator({
+  initialDayStates,
+  allowDayCountChange = true,
+}: ItineraryConfiguratorProps = {}) {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const [days, setDays] = useState<DayConfig[]>(() => parseQuery(searchParams.get('days')))
+  const usingInitialProps = initialDayStates !== undefined
 
+  const [days, setDays] = useState<DayConfig[]>(() => {
+    if (usingInitialProps && initialDayStates) return initialDayStates
+    return parseQuery(searchParams.get('days'))
+  })
+
+  // Only sync to URL on the main /itineraries page (when no initialDayStates are passed)
   useEffect(() => {
+    if (usingInitialProps) return
     const qs = serializeDays(days)
     router.replace(`?days=${qs}`, { scroll: false })
-  }, [days, router])
+  }, [days, router, usingInitialProps])
 
   function setTripLength(target: number) {
+    if (!allowDayCountChange) {
+      // On sub-routes, redirect to matching sub-route or /itineraries with state preserved
+      const primaryPark = days[0]?.park ?? 'DL'
+      const subRoute = subRouteFor(primaryPark, target)
+      if (subRoute) {
+        router.push(subRoute)
+      } else {
+        // Build a state for the target length using the current first day's config
+        const base = days[0] ?? DEFAULT_DAY
+        const next = Array(target).fill(base)
+        router.push(`/itineraries?days=${serializeDays(next)}`)
+      }
+      return
+    }
     setDays((prev) => {
       if (target === prev.length) return prev
       if (target > prev.length) {
@@ -303,9 +349,10 @@ function DayCard({ day, index, total }: { day: DayConfig; index: number; total: 
     <div className="day-card">
       <div className="day-card-header">
         <h3>{template.title}</h3>
-        {template.oneSentenceSummary && template.oneSentenceSummary !== 'TODO — populated in Session 2.' && (
-          <p className="day-card-summary">{template.oneSentenceSummary}</p>
-        )}
+        {template.oneSentenceSummary &&
+          template.oneSentenceSummary !== 'TODO — populated in Session 2.' && (
+            <p className="day-card-summary">{template.oneSentenceSummary}</p>
+          )}
       </div>
 
       {degraded && degradationReason && (
@@ -318,7 +365,7 @@ function DayCard({ day, index, total }: { day: DayConfig; index: number; total: 
       {template.blocks.length === 0 ? (
         <div className="callout">
           <div className="callout-label">Coming soon</div>
-          <p>Itinerary content for this combination lands in Session 2.</p>
+          <p>Itinerary content for this combination lands in a later session.</p>
         </div>
       ) : (
         <Timeline blocks={template.blocks} />

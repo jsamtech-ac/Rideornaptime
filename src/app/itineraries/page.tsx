@@ -7,7 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import Configurator from './Configurator'
+import ItineraryConfigurator from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/page.tsx'
 
@@ -80,7 +80,7 @@ export default function ItinerariesPage() {
             </div>
           }
         >
-          <Configurator />
+          <ItineraryConfigurator />
         </Suspense>
 
         <div className="callout pro">
