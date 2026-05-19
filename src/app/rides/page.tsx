@@ -1,6 +1,7 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import RideMatrix from '@/components/RideMatrix'
+import RidesList from '@/components/RidesList'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
@@ -108,7 +109,16 @@ export default function RidesPage() {
           </p>
         </div>
 
-        <RideMatrix />
+        <Suspense
+          fallback={
+            <div className="callout">
+              <div className="callout-label">Loading</div>
+              <p>Loading the ride matrix…</p>
+            </div>
+          }
+        >
+          <RidesList />
+        </Suspense>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pro Tip</div>

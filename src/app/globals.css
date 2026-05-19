@@ -2844,3 +2844,135 @@ body {
   font-size: 0.85rem;
   color: var(--ink);
 }
+
+/* ===== AGE FILTER ===== */
+.age-filter {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.age-filter-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-sm);
+}
+
+.age-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.age-filter-pill {
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+  border: 1px solid var(--sand-dark);
+  background: var(--sand);
+  color: var(--ink-soft);
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.age-filter-pill:hover {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+
+.age-filter-pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
+.age-filter-pill:focus-visible {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: 2px;
+}
+
+.age-filter-clear {
+  background: transparent;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.age-filter-clear:hover {
+  color: var(--ink);
+}
+
+.age-filter-clear:focus-visible {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.age-filter-show-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  user-select: none;
+}
+
+.age-filter-show-all input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.age-filter-status {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* Dimmed (highlight mode — non-matching) ride card */
+.ride-card.dimmed {
+  opacity: 0.45;
+  transition: opacity 0.15s ease;
+}
+
+.ride-card.dimmed:hover,
+.ride-card.dimmed:focus-within {
+  opacity: 0.85;
+}
+
+.ride-card-skip-badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--sand);
+  color: var(--ink-soft);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ride-filter-empty {
+  padding: var(--space-lg);
+  background: var(--white);
+  border: 1px dashed var(--sand-dark);
+  border-radius: var(--radius-md);
+  color: var(--ink-soft);
+  text-align: center;
+}
