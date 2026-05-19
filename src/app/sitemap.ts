@@ -1,33 +1,47 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL, SEASONAL_LAST_REVIEWED, PRIVACY_LAST_REVIEWED } from '@/lib/content'
+import { SITE_URL, SEASONAL_LAST_REVIEWED } from '@/lib/content'
+import { getLastModifiedDate } from '@/lib/getLastModified'
 import { getAllPostMeta } from '@/lib/news'
 
-const routes: { path: string; lastModified: string }[] = [
-  { path: '', lastModified: '2026-04-15' },
-  { path: '/first-visit', lastModified: '2026-04-15' },
-  { path: '/characters', lastModified: '2026-04-15' },
-  { path: '/rides', lastModified: '2026-04-15' },
-  { path: '/itineraries', lastModified: '2026-04-15' },
-  { path: '/lightning-lane', lastModified: '2026-04-20' },
-  { path: '/food', lastModified: '2026-04-15' },
-  { path: '/packing-list', lastModified: '2026-04-15' },
-  { path: '/seasonal', lastModified: SEASONAL_LAST_REVIEWED },
-  { path: '/saving-money', lastModified: '2026-04-15' },
-  { path: '/hidden-gems', lastModified: '2026-04-15' },
-  { path: '/fireworks', lastModified: '2026-04-15' },
-  { path: '/best-strollers', lastModified: '2026-04-15' },
-  { path: '/privacy', lastModified: PRIVACY_LAST_REVIEWED },
+const PILLARS = new Set(['/lightning-lane', '/rides', '/first-visit', '/itineraries'])
+
+type StaticRoute = {
+  path: string
+  file: string
+  lastModified?: string
+}
+
+const staticRoutes: StaticRoute[] = [
+  { path: '', file: 'src/app/page.tsx' },
+  { path: '/first-visit', file: 'src/app/first-visit/page.tsx' },
+  { path: '/itineraries', file: 'src/app/itineraries/page.tsx' },
+  { path: '/seasonal', file: 'src/app/seasonal/page.tsx', lastModified: SEASONAL_LAST_REVIEWED },
+  { path: '/lightning-lane', file: 'src/app/lightning-lane/page.tsx' },
+  { path: '/saving-money', file: 'src/app/saving-money/page.tsx' },
+  { path: '/rides', file: 'src/app/rides/page.tsx' },
+  { path: '/characters', file: 'src/app/characters/page.tsx' },
+  { path: '/food', file: 'src/app/food/page.tsx' },
+  { path: '/packing-list', file: 'src/app/packing-list/page.tsx' },
+  { path: '/hidden-gems', file: 'src/app/hidden-gems/page.tsx' },
+  { path: '/fireworks', file: 'src/app/fireworks/page.tsx' },
+  { path: '/best-strollers', file: 'src/app/best-strollers/page.tsx' },
 ]
+
+function priorityFor(path: string): number {
+  if (path === '') return 1.0
+  if (PILLARS.has(path)) return 0.9
+  return 0.8
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPostMeta()
-  const newsIndexLastMod = posts[0]?.date ?? '2026-05-04'
+  const newsIndexLastMod = posts[0]?.date ?? getLastModifiedDate('src/app/news/page.tsx')
 
-  const staticEntries: MetadataRoute.Sitemap = routes.map(({ path, lastModified }) => ({
+  const staticEntries: MetadataRoute.Sitemap = staticRoutes.map(({ path, file, lastModified }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified,
-    changeFrequency: 'weekly',
-    priority: path === '' ? 1 : 0.8,
+    lastModified: lastModified ?? getLastModifiedDate(file),
+    changeFrequency: 'monthly',
+    priority: priorityFor(path),
   }))
 
   const newsIndexEntry: MetadataRoute.Sitemap[number] = {
@@ -40,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${SITE_URL}/news/${post.slug}`,
     lastModified: post.date,
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     priority: 0.6,
   }))
 
