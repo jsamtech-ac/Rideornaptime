@@ -6,6 +6,9 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/fireworks/page.tsx'
 
 export const metadata: Metadata = {
   title: "Best Disneyland Fireworks Viewing Spots (2026) — A Dad's Two Favorites",
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -54,7 +57,7 @@ export default function FireworksPage() {
           'Where to watch Disneyland fireworks with kids — the best viewing spots, timing, and what to do when the baby is asleep.'
         }
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">

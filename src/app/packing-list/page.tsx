@@ -7,6 +7,9 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { PACKING_LIST, SITE_URL } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/packing-list/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Disneyland Packing List for Kids (2026)',
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -79,7 +82,7 @@ export default function PackingListPage() {
           'The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to skip, and why.'
         }
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <HowToJsonLd

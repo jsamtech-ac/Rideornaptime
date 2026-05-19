@@ -5,6 +5,9 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL, RIDES, type Ride, type Verdict } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/lightning-lane/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Disneyland Lightning Lane & Rope Drop Guide (2026)',
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Ride or Naptime',
     locale: 'en_US',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-20T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -124,7 +127,7 @@ export default function LightningLanePage() {
         headline="Disneyland Lightning Lane & Rope Drop Guide (2026)"
         description="The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $136, Rider Switch tricks, and the 2026 rules that actually matter."
         datePublished="2026-04-15"
-        dateModified="2026-04-20"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
 
