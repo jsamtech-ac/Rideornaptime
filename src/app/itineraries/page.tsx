@@ -1,23 +1,24 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ItineraryTabs from '@/components/ItineraryTabs'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import Configurator from './Configurator'
 
 const PAGE_FILE = 'src/app/itineraries/page.tsx'
 
 export const metadata: Metadata = {
-  title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)',
+  title: 'Disneyland Itineraries for Families — 1, 2 & 3 Day Plans with Kids (2026)',
   description:
-    'Three Disneyland itineraries built around nap schedules and meltdown prevention — 1-day blitz, 2-day relaxed, and 3-day complete. Start planning your trip.',
+    'Hour-by-hour Disneyland and DCA itineraries built around nap windows, Lightning Lane timing, and real-parent reality. Pick your trip length and pace.',
   alternates: { canonical: `${SITE_URL}/itineraries` },
   openGraph: {
     url: `${SITE_URL}/itineraries`,
-    title: 'Disneyland Itinerary with Kids: Hour-by-Hour Plans (2026)',
+    title: 'Disneyland Itineraries for Families — 1, 2 & 3 Day Plans with Kids (2026)',
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
@@ -62,32 +63,25 @@ export default function ItinerariesPage() {
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
-        <h1>Disneyland Itineraries with Kids — Hour-by-Hour</h1>
+        <h1>Disneyland Itineraries for Families with Kids</h1>
         <p className="hero-sub">
-          Three plans built around nap schedules and meltdown prevention. The #1 mistake families
-          make is trying to do everything — these plans tell you exactly what to skip.
+          Hour-by-hour plans built around the only things that actually matter: when your kid melts
+          down, when the lines spike, and when Lightning Lane pays off. Pick your park, your trip
+          length, and how you roll. We've got you.
         </p>
       </header>
 
       <section className="section">
-        <div className="section-header">
-          <span className="section-icon">🗓</span>
-          <h2>Pick Your Plan</h2>
-          <p className="section-intro">
-            Tap a tab to switch between the 1-day blitz, 2-day relaxed, and 3-day complete plans.
-          </p>
-        </div>
-
-        <ItineraryTabs />
-
-        <div className="callout warning">
-          <div className="callout-label">Real Talk</div>
-          <p>
-            Your plan will fall apart by 11 AM. That's fine. These itineraries give you a framework
-            so you're not wandering aimlessly. The most important thing on here is the midday break
-            — skip it and you'll pay for it at 4 PM.
-          </p>
-        </div>
+        <Suspense
+          fallback={
+            <div className="callout">
+              <div className="callout-label">Loading</div>
+              <p>Loading your trip configurator…</p>
+            </div>
+          }
+        >
+          <Configurator />
+        </Suspense>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
