@@ -45,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
-    description: "A real parent's guide to Disneyland Resort & DCA with kids ages 2–8.",
   },
   robots: {
     index: true,
