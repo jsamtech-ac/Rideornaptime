@@ -37,6 +37,26 @@ const faqs = [
     q: 'Which Disneyland rides should I skip with young kids?',
     a: 'Autopia (long line, bad payoff under age 6) and Incredicoaster (48" height requirement rules out most kids under 8). Haunted Mansion is a maybe — depends on whether your kid handles mild scary content.',
   },
+  {
+    q: 'Which Disneyland rides have no height requirement?',
+    a: 'Dumbo, It\'s a Small World, King Arthur Carrousel, Mad Tea Party, Peter Pan\'s Flight, Alice in Wonderland, Casey Jr., Pirates of the Caribbean, Haunted Mansion, Buzz Lightyear Astro Blasters, Finding Nemo Submarine Voyage, and Mickey & Minnie\'s Runaway Railway. All listed as "Any height" on the ride matrix.',
+  },
+  {
+    q: "What's the best Disneyland ride for any age, from 2 to 8?",
+    a: "Peter Pan's Flight. It's the only ride rated must-do across every age bracket from 2 to 8. The catch: the line hits 60+ minutes by 10 AM and rarely drops, so rope-drop it first or book a Lightning Lane.",
+  },
+  {
+    q: 'Should I watch Disneyland ride videos with my kids before the trip?',
+    a: "Yes — watch POV ride videos on YouTube with your kids before the trip. It helps them pick what they want to ride and cures fear for kids who are nervous about the dark or loud noises.",
+  },
+  {
+    q: 'Are Pirates of the Caribbean and Haunted Mansion too scary for young kids?',
+    a: "Both are 'maybe' calls — depends on the kid. Pirates has a sudden drop and some mild action; Haunted Mansion has Doom Buggies in the dark with ghosts. Most 5+ kids handle them; nervous 4-year-olds may not. Save them for day two if your kid is on the cautious side.",
+  },
+  {
+    q: 'Is Big Thunder Mountain a good first roller coaster for kids?',
+    a: 'Yes — the 40" height requirement fits most 6-year-olds, and Big Thunder is fast without being scary. It feels more like a bumpy train ride than a real coaster, which makes it the best entry-level coaster at Disneyland.',
+  },
 ]
 
 export default function RidesPage() {

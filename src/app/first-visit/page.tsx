@@ -39,6 +39,30 @@ const faqs = [
     q: 'What is the biggest first-timer mistake at Disneyland?',
     a: 'Trying to do everything in one day without a midday break. You will walk 8–12 miles, wait in lines in the sun, and by 3 PM the kids (and you) will melt down. A non-negotiable 90-minute midday break saves the trip.',
   },
+  {
+    q: 'Is a Park Hopper ticket worth it for a first Disneyland visit?',
+    a: "Skip the Park Hopper for a 1-day trip — a single-day ticket only works at one park, and bouncing eats time. For 2+ day trips, the Park Hopper is worth it because it lets you move between Disneyland and DCA after 11 AM and use both parks' rope drop windows across the visit.",
+  },
+  {
+    q: 'Where should I stay for a first Disneyland visit with kids?',
+    a: 'Pick a hotel close enough to walk back midday — that\'s the single biggest trip-saver with kids. Downtown Disney hotels, Harbor Blvd "Good Neighbor" hotels, and the three on-site Disney hotels all qualify. A hotel 20 minutes by car? You won\'t actually use it for naps, and you\'ll regret it.',
+  },
+  {
+    q: 'Which Disneyland entrance is fastest with a stroller?',
+    a: "Enter through the Downtown Disney security checkpoint on the west side near the hotels — not Harbor Blvd. Harbor is the crowded one everyone uses; Downtown Disney is faster, less chaotic, and delivers you to the same esplanade. With a stroller it's a night-and-day difference.",
+  },
+  {
+    q: 'What is the best way to order food at Disneyland?',
+    a: "Mobile-order every meal. Open the Disneyland app, order 30–45 minutes before you want to eat, pick a pickup window, walk up and grab it. You skip the 20-minute register line every single time. Plaza Inn, Jolly Holiday, Galactic Grill, and Cocina Cucamonga all support it.",
+  },
+  {
+    q: 'Should I bring a stroller for a 5-year-old at Disneyland?',
+    a: "Yes. Kids who swore they didn't need a stroller at home will pass out in one by hour four. A stroller doubles as a snack hauler, a nap pod, and a defense against crowd fatigue. Rent one or bring your own — just have one.",
+  },
+  {
+    q: 'Where is the best place to watch Disneyland fireworks with kids?',
+    a: "Galaxy's Edge, not Main Street. Main Street gets packed an hour before showtime and is a nightmare to exit with kids. Galaxy's Edge has the same fireworks overhead with John Williams music piped in, a fraction of the crowd, and a much easier walk back to the gate.",
+  },
 ]
 
 export default function FirstVisitPage() {

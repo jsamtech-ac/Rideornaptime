@@ -58,6 +58,18 @@ const faqs = [
     q: 'Should I buy Single Pass for Radiator Springs Racers?',
     a: "Only if you can't rope-drop it. Rope drop at 8 AM = 10–20 minute wait. Standby by 11 AM = 90 minutes. Single Pass runs $15–30/person and is the right call on weekends or if you're arriving mid-morning with a kid tall enough to ride (40\"+).",
   },
+  {
+    q: 'Modify or Cancel a Lightning Lane — which should I use?',
+    a: 'Always Modify, never Cancel. Canceling a Lightning Lane resets your 2-hour booking clock from scratch. Modifying swaps it for a different ride in the same park with your current eligibility preserved. If your kid is melting down and you want to pivot from Big Thunder to Small World, Modify.',
+  },
+  {
+    q: 'When can I book my next Lightning Lane Multi Pass?',
+    a: 'Whichever happens first: you tap in to use your current Lightning Lane, or 120 minutes pass since your booking. The 2-hour clock matters — book your next LL the second you tap into the first one to keep the rotation going.',
+  },
+  {
+    q: 'Should I buy Lightning Lane Multi Pass the day before or the day of?',
+    a: "Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices hit $40–45/person.",
+  },
 ]
 
 function verdictCell(v: Verdict) {
