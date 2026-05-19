@@ -59,7 +59,7 @@ export default function FireworksPage() {
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🎆 Fireworks Viewing</div>
-        <h1>The Two Best Fireworks Spots at Disneyland</h1>
+        <h1>Best Disneyland Fireworks Viewing Spots for Families</h1>
         <p className="hero-sub">
           Main Street gets packed shoulder-to-shoulder an hour before showtime. With kids, it's
           miserable. These are the two spots I actually use — with maps so you know exactly where to

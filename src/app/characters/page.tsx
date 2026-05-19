@@ -62,7 +62,7 @@ export default function CharactersPage() {
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🐭 Character Meet-and-Greets</div>
-        <h1>Where to Meet Characters at Disneyland</h1>
+        <h1>Disneyland Character Meet &amp; Greets for Families</h1>
         <p className="hero-sub">
           Where to find Mickey, the princesses, Anna &amp; Elsa, and the Pixar gang — and how to
           meet them without burning 45 minutes of your day on a single line.

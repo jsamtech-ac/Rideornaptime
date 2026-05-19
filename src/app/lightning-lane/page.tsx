@@ -118,7 +118,7 @@ export default function LightningLanePage() {
 
       <header className="hero">
         <div className="hero-badge">⚡ Lightning Lane + Rope Drop</div>
-        <h1>Lightning Lane &amp; Rope Drop Strategies for Families (Ages 2–8)</h1>
+        <h1>Disneyland Lightning Lane &amp; Rope Drop Guide for Families (Ages 2–8)</h1>
         <p className="hero-sub">
           The actual playbook — what to book, when to arrive, who rides what, and where parents burn
           money. Built around the reality that your kid might be 36 inches tall and need a nap at
