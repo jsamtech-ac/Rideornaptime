@@ -21,16 +21,6 @@ export const metadata: Metadata = {
     "A real parent's guide to Disneyland Resort & DCA with kids ages 2–8. Opinionated ride ratings, hour-by-hour itineraries, food strategy, Lightning Lane tips, and packing lists.",
   applicationName: 'Ride or Naptime',
   authors: [{ name: 'Ride or Naptime' }],
-  keywords: [
-    'Disneyland with kids',
-    'Disneyland family guide',
-    'Disneyland rides for toddlers',
-    'Disneyland itinerary',
-    'Lightning Lane strategy',
-    'Disney California Adventure',
-    'Disneyland with a 2 year old',
-    'Disneyland packing list',
-  ],
   alternates: {
     canonical: SITE_URL,
     languages: { 'en-US': SITE_URL, 'x-default': SITE_URL },
