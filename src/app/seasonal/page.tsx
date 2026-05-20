@@ -398,8 +398,9 @@ export default function SeasonalPage() {
             Map out the day with a <Link href="/itineraries">1-, 2-, or 3-day itinerary</Link>,
             decide if <Link href="/lightning-lane">Lightning Lane</Link> is worth it for your ages,
             and check the <Link href="/saving-money">money-saving playbook</Link> — off-peak months
-            let you stretch the budget into an extra day. First trip? Start with the{' '}
-            <Link href="/first-visit">first-visit guide</Link>, then grab the{' '}
+            let you stretch the budget into an extra day. Cross-check picks for your kid's age
+            with the <Link href="/rides">age-by-age Disneyland ride guide</Link>. First trip? Start
+            with the <Link href="/first-visit">first-visit guide</Link>, then grab the{' '}
             <Link href="/packing-list">packing list</Link>.
           </p>
         </div>

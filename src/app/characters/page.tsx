@@ -5,6 +5,9 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/characters/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Disneyland Character Meet-and-Greets: A Family Guide (2026)',
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -57,12 +60,12 @@ export default function CharactersPage() {
           'How character meet-and-greets work at Disneyland — where to find favorites, how long lines run, and what kids really remember.'
         }
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
         <div className="hero-badge">🐭 Character Meet-and-Greets</div>
-        <h1>Where to Meet Characters at Disneyland</h1>
+        <h1>Disneyland Character Meet &amp; Greets for Families</h1>
         <p className="hero-sub">
           Where to find Mickey, the princesses, Anna &amp; Elsa, and the Pixar gang — and how to
           meet them without burning 45 minutes of your day on a single line.
