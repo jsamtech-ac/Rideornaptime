@@ -69,6 +69,10 @@ export default function ItinerariesPage() {
           down, when the lines spike, and when Lightning Lane pays off. Pick your park, your trip
           length, and how you roll. We've got you.
         </p>
+        <p className="hero-author">
+          Not sure which rides your kid can do?{' '}
+          <Link href="/rides">Filter rides by age</Link>.
+        </p>
       </header>
 
       <section className="section">

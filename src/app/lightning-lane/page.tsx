@@ -201,7 +201,8 @@ export default function LightningLanePage() {
           <span className="section-icon">⚡</span>
           <h2>The 60-Second Verdict</h2>
           <p className="section-intro">
-            Skip to your kids' age band. The answer changes more than you'd think.
+            Skip to your kids' age band. The answer changes more than you'd think.{' '}
+            <Link href="/rides">See every ride filtered by age</Link>.
           </p>
         </div>
 
