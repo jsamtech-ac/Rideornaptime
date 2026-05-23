@@ -2976,3 +2976,341 @@ body {
   color: var(--ink-soft);
   text-align: center;
 }
+
+/* ===== JUMP-TO NAV (anchor chip row) ===== */
+.jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+  margin: var(--space-md) 0 var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--sand);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
+}
+
+.jump-nav-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: var(--space-xs);
+}
+
+.jump-nav-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.85rem;
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.jump-nav-chip:hover,
+.jump-nav-chip:focus-visible {
+  border-color: var(--sky);
+  color: var(--sky-deep);
+  transform: translateY(-1px);
+}
+
+/* ===== CHARACTER FINDER (search + filter UI) ===== */
+.character-finder {
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.character-finder-search-wrap {
+  position: relative;
+  margin-bottom: var(--space-md);
+}
+
+.character-finder-search-icon {
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.character-finder-search {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--sand);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-full);
+  padding: 0.85rem 1rem 0.85rem 2.4rem;
+  line-height: 1.4;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.character-finder-search::placeholder {
+  color: var(--ink-muted);
+}
+
+.character-finder-search:focus {
+  outline: none;
+  border-color: var(--sky);
+  background: var(--white);
+}
+
+.character-finder-filters {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.character-finder-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.character-finder-filter-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: var(--space-xs);
+  min-width: 5.5rem;
+}
+
+.character-finder-chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.85rem;
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  color: var(--ink-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.character-finder-chip:hover {
+  border-color: var(--sky);
+  color: var(--sky-deep);
+}
+
+.character-finder-chip[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
+.character-finder-select {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 2rem 0.45rem 0.95rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3e%3cpath fill='none' stroke='%2378716c' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' d='M2.5 4.5l3.5 3.5 3.5-3.5'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 12px 12px;
+  transition: border-color 0.15s ease;
+}
+
+.character-finder-select:hover,
+.character-finder-select:focus {
+  border-color: var(--sky);
+  outline: none;
+}
+
+.character-finder-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--sand-dark);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.character-finder-clear {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--coral-ink);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.character-finder-clear:hover {
+  background: var(--coral-light);
+}
+
+.character-finder-results {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.character-finder-card {
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.character-finder-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.character-finder-card-franchise {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.character-finder-card-location {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--sand-dark);
+}
+
+.character-finder-card-location:first-of-type {
+  border-top: 1px dashed var(--sand-dark);
+  padding-top: 0.5rem;
+}
+
+.character-finder-card-park {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+.character-finder-card-park.dl {
+  background: var(--sky-light);
+  color: var(--sky-deep);
+}
+
+.character-finder-card-park.dca {
+  background: var(--castle-light);
+  color: var(--castle);
+}
+
+.character-finder-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.character-finder-card-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: var(--sand);
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.character-finder-card-tag.line-short {
+  background: var(--mint-light);
+  color: var(--mint-ink);
+}
+
+.character-finder-card-tag.line-medium {
+  background: var(--sun-light);
+  color: #92400e;
+}
+
+.character-finder-card-tag.line-long {
+  background: var(--coral-light);
+  color: var(--coral-ink);
+}
+
+.character-finder-card-tag.line-very-long {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.character-finder-card-note {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.character-finder-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 540px) {
+  .character-finder-filter-label {
+    min-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .character-finder-results {
+    grid-template-columns: 1fr;
+  }
+}

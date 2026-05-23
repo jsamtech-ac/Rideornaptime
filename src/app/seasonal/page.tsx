@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -146,14 +147,24 @@ export default function SeasonalPage() {
           }))}
       />
 
-      <header className="hero">
-        <div className="hero-badge">📅 2026 Planner</div>
-        <h1>Disneyland 2026: Events, Crowds & Best Months to Visit</h1>
-        <p className="hero-sub">
-          Every seasonal event with exact 2026 dates, family-specific verdicts, and the crowd +
-          weather truth for every month. The planner we wish we&apos;d had.
-        </p>
-        <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
+      <header className="hero hero--home">
+        <Image
+          src="/seasonal.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
+        <div className="hero-content">
+          <div className="hero-badge">📅 2026 Planner</div>
+          <h1>Disneyland 2026: Events, Crowds & Best Months to Visit</h1>
+          <p className="hero-sub">
+            Every seasonal event with exact 2026 dates, family-specific verdicts, and the crowd +
+            weather truth for every month. The planner we wish we&apos;d had.
+          </p>
+          <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
+        </div>
       </header>
 
       <section className="section">

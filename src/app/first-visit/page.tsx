@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -87,13 +88,23 @@ export default function FirstVisitPage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">🏰 Start Here</div>
-        <h1>Your First Visit to Disneyland: A Family Guide</h1>
-        <p className="hero-sub">
-          Everything a first-time family needs to know before setting foot in the park — which park
-          is which, how many days, what to book, and the rookie mistakes that ruin day one.
-        </p>
+      <header className="hero hero--home">
+        <Image
+          src="/firstvisit.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
+        <div className="hero-content">
+          <div className="hero-badge">🏰 Start Here</div>
+          <h1>Your First Visit to Disneyland: A Family Guide</h1>
+          <p className="hero-sub">
+            Everything a first-time family needs to know before setting foot in the park — which
+            park is which, how many days, what to book, and the rookie mistakes that ruin day one.
+          </p>
+        </div>
       </header>
 
       <section className="section">

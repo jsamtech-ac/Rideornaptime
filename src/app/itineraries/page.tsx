@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -61,18 +62,23 @@ export default function ItinerariesPage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
-        <h1>Disneyland Itineraries for Families with Kids</h1>
-        <p className="hero-sub">
-          Hour-by-hour plans built around the only things that actually matter: when your kid melts
-          down, when the lines spike, and when Lightning Lane pays off. Pick your park, your trip
-          length, and how you roll. We've got you.
-        </p>
-        <p className="hero-author">
-          Not sure which rides your kid can do?{' '}
-          <Link href="/rides">Filter rides by age</Link>.
-        </p>
+      <header className="hero hero--home">
+        <Image
+          src="/itineraries.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
+        <div className="hero-content">
+          <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
+          <h1>Disneyland Itineraries with Kids — Hour-by-Hour</h1>
+          <p className="hero-sub">
+            Three plans built around nap schedules and meltdown prevention. The #1 mistake families
+            make is trying to do everything — these plans tell you exactly what to skip.
+          </p>
+        </div>
       </header>
 
       <section className="section">
