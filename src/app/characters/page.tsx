@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import AffiliateCTA from '@/components/AffiliateCTA'
+import CharacterFinder from '@/components/CharacterFinder'
 import { SITE_URL } from '@/lib/content'
 import {
   characters,
@@ -280,33 +281,54 @@ export default function CharactersPage() {
         items={characterListItems}
       />
 
-      <header className="hero">
-        <div className="hero-badge">🐭 Character Meet-and-Greets</div>
-        <h1>Disneyland Character Meet-and-Greets: Where to Find Every Character (2026)</h1>
-        <p className="hero-sub">
-          The Disneyland app shows you which characters are out today, but it doesn't tell you which
-          ones are worth the wait, which lines balloon by 10 AM, or which characters will scare your
-          3-year-old. This is that guide. Updated for 2026 including Mando &amp; Grogu at Galaxy's
-          Edge and the new Tiana's Bayou Adventure character placements.
-        </p>
+      <header className="hero hero--home">
+        <Image
+          src="/characters.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
+        <div className="hero-content">
+          <div className="hero-badge">🐭 Character Meet-and-Greets</div>
+          <h1>Disneyland Character Meet-and-Greets: Where to Find Every Character (2026)</h1>
+          <p className="hero-sub">
+            The Disneyland app shows you which characters are out today, but it doesn't tell you
+            which ones are worth the wait, which lines balloon by 10 AM, or which characters will
+            scare your 3-year-old. This is that guide. Updated for 2026 including Mando &amp; Grogu
+            at Galaxy's Edge and the new Tiana's Bayou Adventure character placements.
+          </p>
+        </div>
       </header>
 
-      <nav
-        aria-label="On this page"
-        className="tip-card"
-        style={{ marginTop: '1rem', fontSize: '0.95rem' }}
-      >
-        <strong>Jump to:</strong>{' '}
-        <a href="#how-it-works">How meet-and-greets work</a> ·{' '}
-        <a href="#disneyland-by-land">Characters at Disneyland</a> ·{' '}
-        <a href="#dca-by-land">Characters at DCA</a> ·{' '}
-        <a href="#find-specific">Where to find specific characters</a> ·{' '}
-        <a href="#dining">Character dining</a> ·{' '}
-        <a href="#seasonal">Holiday &amp; seasonal characters</a> ·{' '}
-        <a href="#parent-reality">Parent reality</a> ·{' '}
-        <a href="#photo-tips">Better character photos</a> ·{' '}
-        <a href="#faq">FAQ</a>
+      <nav aria-label="On this page" className="jump-nav">
+        <span className="jump-nav-label">Jump to</span>
+        <a className="jump-nav-chip" href="#find-character">🔍 Find a character</a>
+        <a className="jump-nav-chip" href="#how-it-works">📱 How meets work</a>
+        <a className="jump-nav-chip" href="#disneyland-by-land">🏰 Disneyland by land</a>
+        <a className="jump-nav-chip" href="#dca-by-land">🎡 DCA by land</a>
+        <a className="jump-nav-chip" href="#find-specific">📍 Specific characters</a>
+        <a className="jump-nav-chip" href="#dining">🍽 Character dining</a>
+        <a className="jump-nav-chip" href="#seasonal">🎃 Seasonal</a>
+        <a className="jump-nav-chip" href="#parent-reality">😅 Parent reality</a>
+        <a className="jump-nav-chip" href="#photo-tips">📸 Photo tips</a>
+        <a className="jump-nav-chip" href="#faq">❓ FAQ</a>
       </nav>
+
+      {/* ────────────── SECTION: Find a character (interactive) ────────────── */}
+      <section className="section" id="find-character">
+        <div className="section-header">
+          <span className="section-icon">🔍</span>
+          <h2>Find a Character</h2>
+          <p className="section-intro">
+            48 characters across the resort. Search by name, filter by park, or narrow down to who's
+            actually worth a meet for your kid's age. Notes for each are dad-tested.
+          </p>
+        </div>
+
+        <CharacterFinder />
+      </section>
 
       {/* ────────────── SECTION: How it works ────────────── */}
       <section className="section" id="how-it-works">
@@ -671,13 +693,7 @@ export default function CharactersPage() {
           </p>
         </div>
 
-        <AffiliateCTA
-          partner="getawaytoday"
-          headline="Book Disneyland tickets + hotel through Get Away Today"
-          body="Authorized seller. Their packages include the hotel breakfast credit you can use toward Goofy's Kitchen or PCH Grill. Promo code RIDETIME knocks $10 off."
-          cta="See package deals →"
-          campaign="characters"
-        />
+        <TicketsCTA location="characters_dining" />
       </section>
 
       {/* ────────────── SECTION: Holiday & Seasonal Characters ────────────── */}
