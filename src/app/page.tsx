@@ -105,8 +105,8 @@ const sections = [
     icon: '🎢',
     title: 'Age-Based Ride Guide',
     summary:
-      'Is your 4-year-old ready for Pirates? Should your 2-year-old try Dumbo? A verdict on every major ride for ages 2, 4, 6, and 8 — from a real parent.',
-    cta: 'See the ride matrix →',
+      "Is your 4-year-old ready for Pirates? Should your 2-year-old try Dumbo? A verdict on every major ride for ages 2, 4, 6, and 8 — from a real parent.",
+    cta: "Filter by your kid's age →",
   },
   {
     href: '/food',
@@ -142,10 +142,11 @@ export default function Home() {
         <Image src="/hero.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
           <div className="hero-badge">🏰 Updated for 2026 Season</div>
-          <h1>
-            The Disneyland Guide for Families Who Don't Have Time for{' '}
-            <span className="highlight">50 Blog Posts</span>
-          </h1>
+          <h1>Disneyland with Kids: The Family Guide for Ages 2–8</h1>
+          <p className="hero-tagline">
+            The Disneyland guide for families who don't have time for{' '}
+            <span className="highlight">50 blog posts</span>.
+          </p>
           <p className="hero-sub">
             Every tip you need — ride-by-ride ratings for ages 2–8, hour-by-hour itineraries built
             around nap schedules, and food strategy from a dad who's done this a few times before.

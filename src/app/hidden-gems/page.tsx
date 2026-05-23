@@ -5,6 +5,9 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/hidden-gems/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Disneyland Hidden Gems & Parent Survival Tips (2026)',
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -53,7 +56,7 @@ export default function HiddenGemsPage() {
           'Underrated Disneyland experiences families miss — quiet spots, sleeper rides, and moments kids love.'
         }
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -83,7 +86,9 @@ export default function HiddenGemsPage() {
             miserable. Two better spots: <strong>Star Wars: Galaxy's Edge</strong> (same fireworks
             with John Williams music piped in, way less crowded) or{' '}
             <strong>right by the entrance to It's a Small World</strong> (open sky, room to breathe,
-            easy exit afterward). You miss the castle projections, but you keep your sanity.
+            easy exit afterward). You miss the castle projections, but you keep your sanity. Exact
+            standing spots with maps in the{' '}
+            <Link href="/fireworks">best Disneyland fireworks viewing spots for families</Link>.
           </p>
         </div>
 
@@ -142,7 +147,8 @@ export default function HiddenGemsPage() {
             Check the Disneyland app map for character locations and times. The princess
             meet-and-greet by the castle is the best single stop. Anna and Elsa have their own
             meet-and-greet at DCA. Toontown for Mickey and friends. Or just walk around — you'll
-            bump into characters constantly.
+            bump into characters constantly. Where each crew actually lives in the{' '}
+            <Link href="/characters">Disneyland character meet-and-greets guide</Link>.
           </p>
         </div>
 
@@ -207,7 +213,8 @@ export default function HiddenGemsPage() {
           <p>
             One parent rides while the other waits with the little one. Then you swap — the second
             parent skips the line entirely. Ask the ride attendant at the entrance. Works on any
-            ride with a height requirement.
+            ride with a height requirement. Stack Rider Switch with bookings — full playbook in the{' '}
+            <Link href="/lightning-lane">Lightning Lane strategy guide</Link>.
           </p>
         </div>
 
@@ -223,7 +230,8 @@ export default function HiddenGemsPage() {
             the parks, less whining from tired legs, and — most importantly — it lets them nap
             mid-day so you can keep going past their usual bedtime for fireworks. Even kids who've
             "outgrown" strollers at home will use it by hour four at Disneyland. Worth every bit of
-            the hassle.
+            the hassle. Picking one is its own thing — see our{' '}
+            <Link href="/best-strollers">best Disneyland strollers for families</Link>.
           </p>
         </div>
 
@@ -238,7 +246,9 @@ export default function HiddenGemsPage() {
             If your kid gets measured at a ride and doesn't make the height, ask the cast member at
             the entrance for a return card. It lets them come back and ride without waiting in line
             once they hit the height requirement — whether that's later in the trip or on a future
-            visit. Softens the disappointment and genuinely makes their day.
+            visit. Softens the disappointment and genuinely makes their day. Plan around heights
+            ahead of time with the{' '}
+            <Link href="/rides">age-by-age Disneyland rides guide</Link>.
           </p>
         </div>
 

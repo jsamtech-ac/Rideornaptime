@@ -7,6 +7,9 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/best-strollers/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Best Strollers for Disneyland 2026 — Budget to Best Picks for Families',
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -255,7 +258,7 @@ export default function BestStrollersPage() {
           'A parent-tested ranking of the best Disneyland strollers — single and double picks for long park days with kids 2–8.'
         }
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
@@ -279,7 +282,9 @@ export default function BestStrollersPage() {
         <p>
           Your stroller is the single most important piece of Disney gear you'll bring. It's a nap
           pod, a snack cart, a shade tent, a diaper bag on wheels, and — on hour 11 — a lifeboat.
-          Get this one thing right and the rest of the day gets easier.
+          Get this one thing right and the rest of the day gets easier. The{' '}
+          <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link> help line up stroller
+          naps with the afternoon meltdown window.
         </p>
         <p>
           Disneyland's rule: <strong>strollers must be 31" wide by 52" long or smaller</strong> (79
@@ -454,7 +459,10 @@ export default function BestStrollersPage() {
             Pair your stroller pick with the full <Link href="/packing-list">packing list</Link>{' '}
             (fans, rain covers, labels, AirTags) and the{' '}
             <Link href="/saving-money">saving money guide</Link> for why bringing your own beats
-            renting at the park gate.
+            renting at the park gate. First trip? Get the lay of the land in the{' '}
+            <Link href="/first-visit">Disneyland first-visit playbook</Link>, and grab more
+            stroller-pushing survival tricks in the{' '}
+            <Link href="/hidden-gems">Disneyland hidden gems and parent survival tips</Link>.
           </p>
         </div>
       </section>

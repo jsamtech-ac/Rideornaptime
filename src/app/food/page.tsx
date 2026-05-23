@@ -5,6 +5,9 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { FOOD_SPOTS, SITE_URL } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/food/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Best Disneyland Food for Families (2026 — Dad-Tested)',
@@ -17,7 +20,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-15T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -53,7 +56,7 @@ export default function FoodPage() {
           'What to eat at Disneyland with picky kids — quick-service picks, snacks worth the line, and sit-downs that actually work.'
         }
         datePublished="2026-04-15"
-        dateModified="2026-04-15"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -100,7 +103,9 @@ export default function FoodPage() {
             If your kids want to meet characters, book a character breakfast at Plaza Inn or
             Storyteller Cafe (Grand Californian Hotel). You'll meet multiple characters during the
             meal without standing in separate 30-minute lines. Book in advance — but people cancel
-            within 24 hours, so keep checking the app if nothing's available.
+            within 24 hours, so keep checking the app if nothing's available. Full character
+            locations and timing in the{' '}
+            <Link href="/characters">Disneyland character meet-and-greets guide</Link>.
           </p>
         </div>
 
@@ -109,7 +114,9 @@ export default function FoodPage() {
           <p>
             Time your meals around crowd waves — see the{' '}
             <Link href="/itineraries">hour-by-hour itineraries</Link> for suggested lunch and dinner
-            windows that dodge the rushes.
+            windows that dodge the rushes. Pair meals with ride priorities from the{' '}
+            <Link href="/rides">age-by-age Disneyland rides for kids</Link> so you're not eating
+            through a Lightning Lane window.
           </p>
         </div>
       </section>

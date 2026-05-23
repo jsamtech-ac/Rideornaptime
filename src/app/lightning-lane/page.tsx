@@ -3,8 +3,12 @@ import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
+import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL, RIDES, type Ride, type Verdict } from '@/lib/content'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/lightning-lane/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Disneyland Lightning Lane & Rope Drop Guide (2026)',
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'Ride or Naptime',
     locale: 'en_US',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-04-20T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -57,6 +61,60 @@ const faqs = [
   {
     q: 'Should I buy Single Pass for Radiator Springs Racers?',
     a: "Only if you can't rope-drop it. Rope drop at 8 AM = 10–20 minute wait. Standby by 11 AM = 90 minutes. Single Pass runs $15–30/person and is the right call on weekends or if you're arriving mid-morning with a kid tall enough to ride (40\"+).",
+  },
+  {
+    q: 'Modify or Cancel a Lightning Lane — which should I use?',
+    a: 'Always Modify, never Cancel. Canceling a Lightning Lane resets your 2-hour booking clock from scratch. Modifying swaps it for a different ride in the same park with your current eligibility preserved. If your kid is melting down and you want to pivot from Big Thunder to Small World, Modify.',
+  },
+  {
+    q: 'When can I book my next Lightning Lane Multi Pass?',
+    a: 'Whichever happens first: you tap in to use your current Lightning Lane, or 120 minutes pass since your booking. The 2-hour clock matters — book your next LL the second you tap into the first one to keep the rotation going.',
+  },
+  {
+    q: 'Should I buy Lightning Lane Multi Pass the day before or the day of?',
+    a: "Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices hit $40–45/person.",
+  },
+]
+
+const ropeDropSteps = [
+  {
+    name: 'Arrive 45 minutes before posted park opening',
+    text: "Be outside the turnstiles 45 minutes early. Between parking tram or Uber drop-off, security, and the esplanade walk, there's 30–45 minutes of friction between your car and the gate. If the park opens at 8:00 AM, you're parking at 7:00 AM.",
+  },
+  {
+    name: 'Eat breakfast before you arrive',
+    text: 'Eat before you leave the hotel or car — anything you try to eat inside the park eats into rope-drop time.',
+  },
+  {
+    name: 'Have the Disneyland app set up before you tap in',
+    text: 'Open the app with your party linked and a payment method saved before you tap through the gate. The first Lightning Lane booking should be a reflex, not a decision — you have already picked it.',
+  },
+  {
+    name: 'Head straight to your age-appropriate priority ride',
+    text: "Toddlers ages 2–4 head through the castle to Fantasyland for Peter Pan's Flight first, then Dumbo, Small World, and Alice. Elementary kids ages 5–8 go to Toontown for Mickey & Minnie's Runaway Railway. Brave kids ages 6–8 hit Big Thunder Mountain in Frontierland, then Pirates and Haunted Mansion before 10 AM. At DCA, go straight to Radiator Springs Racers.",
+  },
+  {
+    name: 'Book your first Lightning Lane the moment you tap in',
+    text: 'The first Lightning Lane booking is a reflex from the Tip Board. Book it the instant you tap through the gate — windows for popular rides fill within minutes.',
+  },
+]
+
+const riderSwitchSteps = [
+  {
+    name: 'Request Rider Switch at the attraction entrance',
+    text: 'Walk up to the cast member at the attraction entrance (not in advance) and say: "Can we do Rider Switch? Two adults, three kids — one\'s too short." They will tag it in the app.',
+  },
+  {
+    name: 'Adult A waits with non-riders while Adult B rides',
+    text: 'Adult A waits in a designated area (usually near the exit or a shaded bench) with the kid who is too short, too scared, or napping. Adult B rides with the big kids via standby or Lightning Lane.',
+  },
+  {
+    name: 'Swap — Adult A goes through the Lightning Lane entrance',
+    text: 'When Adult B finishes, the two adults swap. Adult A now goes through the Lightning Lane entrance with no second wait.',
+  },
+  {
+    name: 'Bring one re-rider big kid along',
+    text: 'Rider Switch lets one "re-rider" tag along — the big kid who already rode can ride a second time by going with Adult A through the LL entrance. On Radiator Springs Racers, this move alone saves a family ~$60.',
   },
 ]
 
@@ -112,13 +170,24 @@ export default function LightningLanePage() {
         headline="Disneyland Lightning Lane & Rope Drop Guide (2026)"
         description="The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $136, Rider Switch tricks, and the 2026 rules that actually matter."
         datePublished="2026-04-15"
-        dateModified="2026-04-20"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
+      <HowToJsonLd
+        name="How to Rope Drop Disneyland with Kids"
+        description="With Early Entry gone, rope drop is the single best free tool in the park — the first 45 minutes of operating hours are faster than any Lightning Lane the rest of the day."
+        totalTime="PT45M"
+        steps={ropeDropSteps}
+      />
+      <HowToJsonLd
+        name="How to Use Rider Switch at Disneyland"
+        description="If you have a kid who's too short, too scared, or napping, Rider Switch is the most valuable free tool you're probably not using."
+        steps={riderSwitchSteps}
+      />
 
       <header className="hero">
         <div className="hero-badge">⚡ Lightning Lane + Rope Drop</div>
-        <h1>Lightning Lane &amp; Rope Drop Strategies for Families (Ages 2–8)</h1>
+        <h1>Disneyland Lightning Lane &amp; Rope Drop Guide for Families (Ages 2–8)</h1>
         <p className="hero-sub">
           The actual playbook — what to book, when to arrive, who rides what, and where parents burn
           money. Built around the reality that your kid might be 36 inches tall and need a nap at
@@ -132,7 +201,8 @@ export default function LightningLanePage() {
           <span className="section-icon">⚡</span>
           <h2>The 60-Second Verdict</h2>
           <p className="section-intro">
-            Skip to your kids' age band. The answer changes more than you'd think.
+            Skip to your kids' age band. The answer changes more than you'd think.{' '}
+            <Link href="/rides">See every ride filtered by age</Link>.
           </p>
         </div>
 
@@ -377,7 +447,9 @@ export default function LightningLanePage() {
           <p>
             App installed and logged in. Everyone in your party linked to the reservation. Payment
             card saved. Multi Pass purchased the day before (not day-of — prices climb). Phone
-            charged. This eliminates 30–60 seconds of friction at the Tip Board.
+            charged — see our <Link href="/packing-list">Disneyland packing list for kids</Link>{' '}
+            for the right portable charger. This eliminates 30–60 seconds of friction at the Tip
+            Board.
           </p>
         </div>
 
@@ -951,6 +1023,17 @@ export default function LightningLanePage() {
             DAS is separate from Lightning Lane — you can use both. This page isn't a DAS authority;
             Disney's policies change and the registration flow is where you'll get the most current
             information.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="callout pro">
+          <div className="callout-label">Pair With</div>
+          <p>
+            Slot Lightning Lane bookings into your day with the{' '}
+            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link> so the 2-hour
+            clock actually lines up with what you'd be doing anyway.
           </p>
         </div>
       </section>

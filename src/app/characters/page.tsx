@@ -15,6 +15,9 @@ import {
   LINE_LABEL,
   RELIABILITY_LABEL,
 } from '@/data/characters'
+import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+
+const PAGE_FILE = 'src/app/characters/page.tsx'
 
 export const metadata: Metadata = {
   title: 'Disneyland Characters 2026: Where to Meet Every Character with Kids',
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'Ride or Naptime',
     locale: 'en_US',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: '2026-05-22T00:00:00.000Z',
+    modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -272,7 +275,7 @@ export default function CharactersPage() {
         headline="Disneyland Character Meet-and-Greets: Where to Find Every Character (2026)"
         description="Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8."
         datePublished="2026-04-15"
-        dateModified="2026-05-22"
+        dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
