@@ -32,17 +32,44 @@ function updateConsent(decision: Decision) {
   }
 }
 
+type IdleWindow = Window & {
+  requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number
+  cancelIdleCallback?: (handle: number) => void
+}
+
 export default function ConsentManager() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY)
-      if (saved !== 'granted' && saved !== 'denied') {
+    let cancelled = false
+    let timeoutId: ReturnType<typeof setTimeout> | undefined
+    let idleHandle: number | undefined
+
+    const check = () => {
+      if (cancelled) return
+      try {
+        const saved = window.localStorage.getItem(STORAGE_KEY)
+        if (saved !== 'granted' && saved !== 'denied') {
+          setVisible(true)
+        }
+      } catch {
         setVisible(true)
       }
-    } catch {
-      setVisible(true)
+    }
+
+    const idleWindow = window as IdleWindow
+    if (typeof idleWindow.requestIdleCallback === 'function') {
+      idleHandle = idleWindow.requestIdleCallback(check, { timeout: 1000 })
+    } else {
+      timeoutId = setTimeout(check, 500)
+    }
+
+    return () => {
+      cancelled = true
+      if (timeoutId !== undefined) clearTimeout(timeoutId)
+      if (idleHandle !== undefined && typeof idleWindow.cancelIdleCallback === 'function') {
+        idleWindow.cancelIdleCallback(idleHandle)
+      }
     }
   }, [])
 
