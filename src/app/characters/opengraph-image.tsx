@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { ogTemplate, ogSize, ogContentType } from '@/lib/og'
 
-export const alt = 'Disneyland character meet-and-greets'
+export const alt = 'Disneyland character meet-and-greets — where to find every character (2026)'
 export const size = ogSize
 export const contentType = ogContentType
 
@@ -9,8 +9,8 @@ export default function Image() {
   return new ImageResponse(
     ogTemplate({
       emoji: '🐭',
-      title: 'Character Meet-and-Greets',
-      subtitle: 'Where to find favorites and how lines really run',
+      title: 'Disneyland Characters 2026',
+      subtitle: 'Where to meet every character with kids ages 2–8',
     }),
     size
   )
