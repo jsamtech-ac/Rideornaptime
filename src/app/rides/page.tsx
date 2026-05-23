@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import RidesList from '@/components/RidesList'
 import FaqJsonLd from '@/components/FaqJsonLd'
@@ -90,13 +91,23 @@ export default function RidesPage() {
           description: `${r.land} — ${r.take}`,
         }))}
       />
-      <header className="hero">
-        <div className="hero-badge">🎢 Age-by-Age Ratings</div>
-        <h1>Disneyland Rides for Kids: An Age-by-Age Guide</h1>
-        <p className="hero-sub">
-          Forget height requirements — here's whether each ride is actually worth your time at ages
-          2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.
-        </p>
+      <header className="hero hero--home">
+        <Image
+          src="/starwarsride.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
+        <div className="hero-content">
+          <div className="hero-badge">🎢 Age-by-Age Ratings</div>
+          <h1>Disneyland Rides for Kids: An Age-by-Age Guide</h1>
+          <p className="hero-sub">
+            Forget height requirements — here's whether each ride is actually worth your time at
+            ages 2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.
+          </p>
+        </div>
       </header>
 
       <section className="section">
