@@ -9,6 +9,7 @@ import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 import ItineraryConfigurator from '@/components/ItineraryConfigurator'
+import DeferredMount from '@/components/DeferredMount'
 
 const PAGE_FILE = 'src/app/itineraries/page.tsx'
 
@@ -92,7 +93,9 @@ export default function ItinerariesPage() {
             </div>
           }
         >
-          <ItineraryConfigurator />
+          <DeferredMount minHeight={1000}>
+            <ItineraryConfigurator />
+          </DeferredMount>
         </Suspense>
 
         <div className="callout pro">

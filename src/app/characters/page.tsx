@@ -7,6 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import CharacterFinder from '@/components/CharacterFinder'
+import DeferredMount from '@/components/DeferredMount'
 import { SITE_URL } from '@/lib/content'
 import {
   characters,
@@ -330,7 +331,9 @@ export default function CharactersPage() {
           </p>
         </div>
 
-        <CharacterFinder />
+        <DeferredMount minHeight={620}>
+          <CharacterFinder />
+        </DeferredMount>
       </section>
 
       {/* ────────────── SECTION: How it works ────────────── */}
