@@ -99,9 +99,10 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(250, 245, 239, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* Solid bg instead of translucent + backdrop-filter: a sticky-nav blur on a
+     long scrolling page is one of the most expensive paint/layout primitives
+     in the browser. Solid background eliminates that cost entirely. */
+  background: var(--sand);
   border-bottom: 1px solid var(--sand-dark);
   transition: box-shadow 0.3s ease;
 }
@@ -182,7 +183,10 @@ body {
   font-size: 0.9rem;
   white-space: nowrap;
   border-radius: var(--radius-sm);
-  transition: all 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
 }
 
 .nav-group-button:hover,
@@ -242,7 +246,9 @@ body {
   font-weight: 500;
   font-size: 0.9rem;
   border-radius: var(--radius-sm);
-  transition: all 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
 .nav-dropdown-panel a:hover,
@@ -341,7 +347,9 @@ body {
   font-weight: 500;
   font-size: 0.95rem;
   border-radius: var(--radius-sm);
-  transition: all 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .nav-mobile a:hover,
@@ -704,7 +712,10 @@ body {
   color: var(--ink-soft);
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .itinerary-tab:hover {
@@ -907,7 +918,9 @@ body {
   border: 1px solid var(--sand-dark);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s;
+  transition:
+    border-color 0.2s,
+    opacity 0.2s;
   user-select: none;
 }
 
@@ -933,7 +946,10 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 1px;
-  transition: all 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
   font-size: 0.75rem;
   color: transparent;
 }
@@ -1592,7 +1608,10 @@ body {
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: var(--radius-full);
-  transition: all 0.2s;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
   box-shadow: var(--shadow-soft);
 }
 
@@ -1621,7 +1640,10 @@ body {
   box-shadow: var(--shadow-lg);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s;
+  transition:
+    opacity 0.3s,
+    background-color 0.3s,
+    transform 0.3s;
   z-index: 50;
 }
 
@@ -3327,4 +3349,25 @@ body {
   .configurator-placeholder {
     min-height: 720px;
   }
+}
+
+/* ===== PERF: skip rendering off-screen sections to cut main-thread layout cost =====
+   content-visibility: auto lets the browser defer layout/paint for blocks not in
+   the viewport. contain-intrinsic-size gives a placeholder height so scroll
+   anchoring stays stable. Long article pages (1,000+ DOM nodes) benefit most. */
+.section,
+.tip-card,
+.callout,
+.ride-card,
+.character-finder-card,
+.hub-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 320px;
+}
+
+/* Tighter intrinsic size for compact items so scrollbar geometry stays close
+   to actual rendered size. */
+.ride-card,
+.character-finder-card {
+  contain-intrinsic-size: auto 220px;
 }
