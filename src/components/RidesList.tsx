@@ -54,21 +54,37 @@ function RideCard({ ride, dimmed }: { ride: Ride; dimmed: boolean }) {
           Not for selected ages
         </div>
       )}
-      <div className="ride-name">{ride.name}</div>
-      <div className="ride-land">{ride.land}</div>
-      <div className="ride-meta">
-        <span className="ride-height">📏 {ride.height}</span>
-        {ride.closing && <span className="ride-closing">⚠ {ride.closing}</span>}
+      <div className="ride-card-head">
+        <div className="ride-card-head-text">
+          <div className="ride-name">{ride.name}</div>
+          <div className="ride-land">{ride.land}</div>
+        </div>
+        <div className="ride-meta">
+          <span className="ride-height">📏 {ride.height}</span>
+          {ride.closing && <span className="ride-closing">⚠ {ride.closing}</span>}
+        </div>
       </div>
-      <div className="ride-ages">
-        {(['age2', 'age4', 'age6', 'age8'] as const).map((age) => (
-          <div key={age} className={`ride-age ${ride[age] as Verdict}`}>
-            <span className="age-label">{age.replace('age', 'Age ')}</span>
-            {ride[age] === 'must-do' ? '✓' : ride[age] === 'maybe' ? '~' : '✗'}
-          </div>
-        ))}
+      <div className="ride-ages" role="group" aria-label="Verdict by age">
+        {(['age2', 'age4', 'age6', 'age8'] as const).map((age) => {
+          const verdict = ride[age] as Verdict
+          const symbol = verdict === 'must-do' ? '✓' : verdict === 'maybe' ? '~' : '✗'
+          const label =
+            verdict === 'must-do' ? 'must do' : verdict === 'maybe' ? 'maybe' : 'skip'
+          return (
+            <div
+              key={age}
+              className={`ride-age ${verdict}`}
+              aria-label={`Age ${age.replace('age', '')}: ${label}`}
+            >
+              <span className="age-label">{age.replace('age', 'Age ')}</span>
+              <span className="age-verdict" aria-hidden="true">
+                {symbol}
+              </span>
+            </div>
+          )
+        })}
       </div>
-      <div className="ride-take">💬 {ride.take}</div>
+      <p className="ride-take">{ride.take}</p>
     </div>
   )
 }

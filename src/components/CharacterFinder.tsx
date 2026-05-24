@@ -4,17 +4,23 @@ import { useMemo, useState } from 'react'
 import {
   characters,
   type Character,
+  type CharacterLocation,
   type CharacterPark,
   LINE_LABEL,
   RELIABILITY_LABEL,
+  DL_LAND_ORDER,
+  DCA_LAND_ORDER,
+  DL_LAND_INTROS,
+  DCA_LAND_INTROS,
 } from '@/data/characters'
 
 type AgeKey = 'all' | 'age2' | 'age4' | 'age6' | 'age8'
 type ParkKey = 'all' | CharacterPark
+type ViewMode = 'cards' | 'location'
 
 const PARK_OPTIONS: { id: ParkKey; label: string }[] = [
   { id: 'all', label: 'Both Parks' },
-  { id: 'DL', label: 'Disneyland Park' },
+  { id: 'DL', label: 'Disneyland' },
   { id: 'DCA', label: 'California Adventure' },
 ]
 
@@ -24,6 +30,11 @@ const AGE_OPTIONS: { id: AgeKey; label: string }[] = [
   { id: 'age4', label: 'Age 4' },
   { id: 'age6', label: 'Age 6' },
   { id: 'age8', label: 'Age 8' },
+]
+
+const VIEW_OPTIONS: { id: ViewMode; label: string }[] = [
+  { id: 'cards', label: 'Card grid' },
+  { id: 'location', label: 'By location' },
 ]
 
 const FRANCHISES = ['all', ...Array.from(new Set(characters.map((c) => c.franchise))).sort()]
@@ -46,6 +57,7 @@ export default function CharacterFinder() {
   const [park, setPark] = useState<ParkKey>('all')
   const [age, setAge] = useState<AgeKey>('all')
   const [franchise, setFranchise] = useState<string>('all')
+  const [view, setView] = useState<ViewMode>('cards')
 
   const hasActiveFilters =
     query.trim().length > 0 || park !== 'all' || age !== 'all' || franchise !== 'all'
@@ -76,7 +88,7 @@ export default function CharacterFinder() {
         <span className="character-finder-search-icon" aria-hidden="true">
           🔍
         </span>
-        <label htmlFor="character-search" className="visually-hidden" style={visuallyHidden}>
+        <label htmlFor="character-search" style={visuallyHidden}>
           Search characters by name, franchise, land, or spot
         </label>
         <input
@@ -143,6 +155,21 @@ export default function CharacterFinder() {
             ))}
           </select>
         </div>
+
+        <div className="character-finder-filter-row">
+          <span className="character-finder-filter-label">View</span>
+          {VIEW_OPTIONS.map((opt) => (
+            <button
+              key={opt.id}
+              type="button"
+              className="character-finder-chip"
+              aria-pressed={view === opt.id}
+              onClick={() => setView(opt.id)}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="character-finder-meta" aria-live="polite">
@@ -156,21 +183,35 @@ export default function CharacterFinder() {
         )}
       </div>
 
-      <div className="character-finder-results">
-        {filtered.length === 0 ? (
-          <p className="character-finder-empty">
-            No characters match those filters. Try clearing one — or search a different name.
-          </p>
-        ) : (
-          filtered.map((c) => <CharacterCard key={c.id} character={c} />)
-        )}
-      </div>
+      {filtered.length === 0 ? (
+        <p className="character-finder-empty">
+          No characters match those filters. Try clearing one — or search a different name.
+        </p>
+      ) : view === 'cards' ? (
+        <div className="character-finder-results">
+          {filtered.map((c) => (
+            <CharacterCard key={c.id} character={c} parkFilter={park} />
+          ))}
+        </div>
+      ) : (
+        <LocationView characters={filtered} parkFilter={park} />
+      )}
     </div>
   )
 }
 
-function CharacterCard({ character }: { character: Character }) {
+function CharacterCard({
+  character,
+  parkFilter,
+}: {
+  character: Character
+  parkFilter: ParkKey
+}) {
   const lineClass = `line-${character.expectedLine}`
+  const locations =
+    parkFilter === 'all'
+      ? character.locations
+      : character.locations.filter((l) => l.park === parkFilter)
   return (
     <article className="character-finder-card">
       <header>
@@ -184,7 +225,7 @@ function CharacterCard({ character }: { character: Character }) {
         </span>
       </div>
 
-      {character.locations.map((loc, i) => (
+      {locations.map((loc, i) => (
         <div key={`${loc.park}-${loc.land}-${i}`} className="character-finder-card-location">
           <span
             className={`character-finder-card-park ${loc.park === 'DL' ? 'dl' : 'dca'}`}
@@ -193,7 +234,7 @@ function CharacterCard({ character }: { character: Character }) {
             {loc.park === 'DL' ? 'DL' : 'DCA'}
           </span>
           <strong>{loc.spot}</strong>
-          <div style={{ marginTop: '0.2rem', fontSize: '0.82rem', color: 'var(--ink-muted)' }}>
+          <div className="character-finder-card-meta">
             {loc.land} · {RELIABILITY_LABEL[loc.reliability]}
             {loc.typicalTimes ? ` · ${loc.typicalTimes}` : ''}
           </div>
@@ -202,6 +243,130 @@ function CharacterCard({ character }: { character: Character }) {
 
       {character.notes && <p className="character-finder-card-note">{character.notes}</p>}
     </article>
+  )
+}
+
+// ─── By-Location view ────────────────────────────────────────────────────────
+
+interface RowEntry {
+  character: Character
+  location: CharacterLocation
+}
+
+function groupRowsByLand(
+  chars: Character[],
+  park: CharacterPark,
+  landOrder: string[],
+): { land: string; entries: RowEntry[] }[] {
+  const byLand: Record<string, RowEntry[]> = {}
+  for (const c of chars) {
+    for (const loc of c.locations) {
+      if (loc.park !== park) continue
+      ;(byLand[loc.land] ||= []).push({ character: c, location: loc })
+    }
+  }
+  const orderedKeys = [
+    ...landOrder.filter((l) => byLand[l]),
+    ...Object.keys(byLand)
+      .filter((l) => !landOrder.includes(l))
+      .sort(),
+  ]
+  return orderedKeys.map((land) => ({ land, entries: byLand[land] }))
+}
+
+function LocationView({
+  characters: chars,
+  parkFilter,
+}: {
+  characters: Character[]
+  parkFilter: ParkKey
+}) {
+  const showDL = parkFilter === 'all' || parkFilter === 'DL'
+  const showDCA = parkFilter === 'all' || parkFilter === 'DCA'
+
+  const dlGroups = showDL ? groupRowsByLand(chars, 'DL', DL_LAND_ORDER) : []
+  const dcaGroups = showDCA ? groupRowsByLand(chars, 'DCA', DCA_LAND_ORDER) : []
+
+  const dlCount = dlGroups.reduce((n, g) => n + g.entries.length, 0)
+  const dcaCount = dcaGroups.reduce((n, g) => n + g.entries.length, 0)
+
+  return (
+    <div className="character-finder-location-view">
+      {showDL && dlCount > 0 && (
+        <ParkBlock
+          parkLabel="Disneyland Park"
+          parkBadge="DL"
+          parkClass="dl"
+          groups={dlGroups}
+          intros={DL_LAND_INTROS}
+        />
+      )}
+      {showDCA && dcaCount > 0 && (
+        <ParkBlock
+          parkLabel="Disney California Adventure"
+          parkBadge="DCA"
+          parkClass="dca"
+          groups={dcaGroups}
+          intros={DCA_LAND_INTROS}
+        />
+      )}
+    </div>
+  )
+}
+
+function ParkBlock({
+  parkLabel,
+  parkBadge,
+  parkClass,
+  groups,
+  intros,
+}: {
+  parkLabel: string
+  parkBadge: string
+  parkClass: 'dl' | 'dca'
+  groups: { land: string; entries: RowEntry[] }[]
+  intros: Record<string, string>
+}) {
+  return (
+    <div className="park-block">
+      <h3 className="park-block-title">
+        <span className={`park-block-badge ${parkClass}`} aria-hidden="true">
+          {parkBadge}
+        </span>
+        {parkLabel}
+      </h3>
+      {groups.map(({ land, entries }) => (
+        <div key={land} className="land-group">
+          <h4 className="land-group-title">{land}</h4>
+          {intros[land] && <p className="land-group-intro">{intros[land]}</p>}
+          <ul className="land-group-list">
+            {entries.map((r) => (
+              <li
+                key={`${r.character.id}-${r.location.spot}`}
+                className="land-group-row"
+              >
+                <div className="land-group-row-head">
+                  <strong className="land-group-row-name">{r.character.name}</strong>
+                  <span className={`character-finder-card-tag line-${r.character.expectedLine}`}>
+                    {LINE_LABEL[r.character.expectedLine]}
+                  </span>
+                </div>
+                <div className="land-group-row-where">
+                  {r.location.spot}
+                  {r.location.typicalTimes ? ` · ${r.location.typicalTimes}` : ''}
+                </div>
+                <div className="land-group-row-meta">
+                  {RELIABILITY_LABEL[r.location.reliability]}
+                </div>
+                {r.character.notes && (
+                  <p className="land-group-row-note">{r.character.notes}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   )
 }
 
