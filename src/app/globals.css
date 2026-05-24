@@ -3313,3 +3313,18 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== CONFIGURATOR PLACEHOLDER (reserves space to prevent CLS during hydration) ===== */
+.configurator-placeholder {
+  min-height: 1000px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .configurator-placeholder {
+    min-height: 720px;
+  }
+}

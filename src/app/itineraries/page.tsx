@@ -84,9 +84,11 @@ export default function ItinerariesPage() {
       <section className="section">
         <Suspense
           fallback={
-            <div className="callout">
-              <div className="callout-label">Loading</div>
-              <p>Loading your trip configurator…</p>
+            <div className="configurator-placeholder">
+              <div className="callout">
+                <div className="callout-label">Loading</div>
+                <p>Loading your trip configurator…</p>
+              </div>
             </div>
           }
         >
