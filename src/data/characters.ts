@@ -51,6 +51,62 @@ export const VERDICT_LABEL: Record<KidVerdict, string> = {
   skip: 'Skip',
 }
 
+export const DL_LAND_ORDER = [
+  'Main Street, U.S.A.',
+  'Fantasyland',
+  'Fantasyland (Fantasy Faire)',
+  'Adventureland',
+  'Frontierland',
+  'New Orleans Square',
+  'Critter Country',
+  "Star Wars: Galaxy's Edge",
+  "Mickey's Toontown",
+]
+
+export const DCA_LAND_ORDER = [
+  'Buena Vista Street',
+  'Hollywood Land',
+  'Avengers Campus',
+  'Pixar Pier',
+  'Paradise Gardens',
+  'Cars Land',
+]
+
+export const DL_LAND_INTROS: Record<string, string> = {
+  'Main Street, U.S.A.':
+    "Town Square Theater is the headline Mickey meet — be in line by 9:05 AM or come back after 4 PM.",
+  Fantasyland:
+    'The roaming hotspot. Alice, Mad Hatter, Peter Pan, Captain Hook, Fairy Godmother — all walk-ups, no formal lines.',
+  'Fantasyland (Fantasy Faire)':
+    'Royal Hall rotates 3 princesses per visit. Ask the cast member at the door which 3 are inside before joining.',
+  Adventureland:
+    "Moana's spot is still settling in 2026. Tarzan and Indy moments are tied to the attractions, not formal meets.",
+  Frontierland:
+    "Big Thunder Trail is a quiet character corner — Woody, Jessie, Pocahontas all roam. El Zocalo Park hosts Miguel and Mirabel.",
+  'New Orleans Square':
+    "Tiana has a regular presence here since Tiana's Bayou Adventure replaced Splash Mountain. Easier walk-up than Royal Hall.",
+  'Critter Country': 'Chip & Dale roam near Hungry Bear Restaurant. Usually a walk-up.',
+  "Star Wars: Galaxy's Edge":
+    "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, Stormtroopers, and Mando & Grogu (live since May 22, 2026).",
+  "Mickey's Toontown":
+    'The single densest character zone in the resort. Mickey & Minnie\'s Runaway Railway is here, and the playground has one exit so kids can run while you regroup.',
+}
+
+export const DCA_LAND_INTROS: Record<string, string> = {
+  'Buena Vista Street':
+    'Mostly atmosphere characters and cavalcade appearances. Not a destination meet area on most days.',
+  'Hollywood Land':
+    "Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027).",
+  'Avengers Campus':
+    "The Marvel lineup. Spider-Man's rooftop drop is the showstopper — set a reminder in the app and be in position 15 min early.",
+  'Pixar Pier':
+    "The roam-heaviest area in the resort. Buzz, Joy & Sadness, Incredibles, and the Toy Story crew all rotate here.",
+  'Paradise Gardens':
+    'Seasonal meets — Mulan during Lunar New Year (Jan 23 – Feb 22), Miguel & Dante during Plaza de la Familia (Aug 21 – Nov 2).',
+  'Cars Land':
+    'Mostly themed atmosphere — Lightning McQueen and Mater appear rarely. The land itself is the meet.',
+}
+
 export const characters: Character[] = [
   // ─── CLASSIC FAB FIVE & FRIENDS ────────────────────────────────────────────
   {
