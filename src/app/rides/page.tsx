@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import RidesList from '@/components/RidesList'
+import DeferredMount from '@/components/DeferredMount'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
@@ -128,7 +129,9 @@ export default function RidesPage() {
             </div>
           }
         >
-          <RidesList />
+          <DeferredMount minHeight={900}>
+            <RidesList />
+          </DeferredMount>
         </Suspense>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>

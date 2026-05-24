@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import PackingChecklist from '@/components/PackingChecklist'
+import DeferredMount from '@/components/DeferredMount'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
@@ -114,7 +115,9 @@ export default function PackingListPage() {
           parks.
         </p>
 
-        <PackingChecklist />
+        <DeferredMount minHeight={800}>
+          <PackingChecklist />
+        </DeferredMount>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pair With</div>
