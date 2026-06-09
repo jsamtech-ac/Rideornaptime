@@ -627,7 +627,9 @@ body {
   padding: var(--space-md);
   display: grid;
   gap: var(--space-sm);
-  transition: box-shadow 0.2s, border-color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
 }
 
 .ride-card:hover {
@@ -959,8 +961,8 @@ body {
 }
 
 .checklist-check {
-  width: 22px;
-  height: 22px;
+  width: var(--check-size, 22px);
+  height: var(--check-size, 22px);
   border: 2px solid var(--sand-dark);
   border-radius: 6px;
   flex-shrink: 0;
@@ -2790,7 +2792,9 @@ body {
   font-weight: 600;
   color: var(--ink-soft);
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .segmented-btn:hover:not(:disabled) {
@@ -2927,7 +2931,10 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .age-filter-pill:hover {
@@ -3609,4 +3616,230 @@ body {
 
 .character-finder-card {
   contain-intrinsic-size: auto 220px;
+}
+
+/* ===== PACKING CHECKLIST — grouped categories + rich item fields ===== */
+.checklist-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.checklist-group-header {
+  margin-bottom: var(--space-md);
+}
+
+.checklist-group-header h2,
+.checklist-group-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+}
+
+.checklist-group-header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* Item is now a column: the toggle button on top, cross-links below it. */
+.checklist-item {
+  --check-size: 22px;
+  flex-direction: column;
+  cursor: default;
+}
+
+/* The whole check+text region is one borderless toggle button. */
+.checklist-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.checklist-toggle:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* Stack the richer item fields vertically. */
+.checklist-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.checklist-text .checklist-pick {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sky-deep);
+}
+
+.checklist-text .checklist-anchor {
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: var(--sun-light);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.55rem;
+  align-self: flex-start;
+}
+
+.checklist-text .checklist-ages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.checklist-text .checklist-age {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.checklist-text .checklist-age em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--castle);
+}
+
+/* Cross-links sit below the toggle, indented to line up under the text. */
+.checklist-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: 0.6rem;
+  padding-left: calc(var(--check-size, 22px) + var(--space-md));
+  font-size: 0.9rem;
+}
+
+/* Internal cross-link next to the affiliate CTA — styled link, mobile tap target. */
+.checklist-related {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--sky-deep);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.checklist-related:hover {
+  text-decoration: underline;
+}
+
+.affiliate-disclosure {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: var(--space-lg);
+}
+
+/* Scope the pill style to the checklist so it wins over the global mid-article
+   `.affiliate-cta` block (defined later in the cascade) without touching that
+   shared selector, which the /news AffiliateCTA relies on. */
+.checklist-links .affiliate-cta {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: var(--space-sm) var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--sun);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Affiliate link whose real URL hasn't been filled yet — render inert, not a dead link. */
+.checklist-links .affiliate-cta--pending {
+  background: var(--sand-dark);
+  color: var(--ink-soft);
+  cursor: default;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* Buy-ahead and skip lists inside callouts. */
+.buy-ahead-list,
+.skip-list {
+  margin: var(--space-sm) 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.buy-ahead-list li,
+.skip-list li {
+  line-height: 1.5;
+}
+
+/* ===== PRINTABLE CHECKLIST (Pinterest / print asset) ===== */
+.print-checklist .print-group {
+  margin-bottom: var(--space-lg);
+  break-inside: avoid;
+}
+
+.print-checklist .print-group h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 0 0 var(--space-sm);
+  color: var(--ink);
+}
+
+.print-checklist .print-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.print-checklist .print-group li {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.print-checklist .print-box {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+}
+
+@media print {
+  /* Hide every bit of chrome and interactive sell — print only the checklist. */
+  .nav,
+  .footer,
+  .scroll-top,
+  .consent-banner,
+  .tickets-cta,
+  header.hero,
+  .section:not(.print-checklist) {
+    display: none !important;
+  }
+
+  .print-checklist {
+    padding: 0;
+  }
+
+  .print-checklist .print-group {
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: var(--white);
+  }
 }

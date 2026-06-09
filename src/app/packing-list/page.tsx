@@ -7,65 +7,98 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import { PACKING_LIST, SITE_URL } from '@/lib/content'
+import { PACKING_LIST, CATEGORY_ORDER, CATEGORY_META } from '@/data/packingList'
+import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 
 const PAGE_FILE = 'src/app/packing-list/page.tsx'
 
+const TITLE = 'Disneyland Packing List for Families With Young Kids (2026)'
+const DESCRIPTION =
+  'The Disneyland packing list a real parent actually uses with kids 2–8 — what goes in the bag, what to skip, and what to buy before you go.'
+
 export const metadata: Metadata = {
-  title: 'Disneyland Packing List for Kids (2026)',
-  description:
-    'The Disneyland packing list for families with young kids — every item under $15, each one explained, tap to check off. Start packing the smart way.',
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/packing-list` },
   openGraph: {
     url: `${SITE_URL}/packing-list`,
-    title: 'Disneyland Packing List for Kids (2026)',
+    title: TITLE,
+    description: DESCRIPTION,
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
     modifiedTime: getLastModified(PAGE_FILE),
     authors: ['Ride or Naptime'],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Disneyland Packing List for Kids — What to Bring & What to Skip',
+    description:
+      'Real-parent Disneyland packing list for kids 2–8: the 5 non-negotiables, what to buy before you go, and what to leave at home.',
+  },
 }
 
 const faqs = [
   {
     q: 'What should I pack for Disneyland with kids?',
-    a: 'The essentials: portable phone charger (10,000+ mAh), reusable water bottles, pre-packed snacks, SPF 50+ stick sunscreen, disposable rain ponchos, gallon Ziploc bags, a change of clothes per kid, and broken-in comfy shoes.',
+    a: 'Start with the five non-negotiables: a portable power bank (10,000mAh), refillable water bottles, disposable rain ponchos, a clip-on stroller fan, and a kid ID wristband with your phone number. From there, layer in sun protection, snacks, blister care, and a change of clothes per young kid.',
   },
   {
-    q: 'Can I bring snacks into Disneyland?',
-    a: 'Yes — outside food and snacks are allowed in the parks. No glass, no alcohol, and the cooler must be reasonable in size. Pre-packed snacks prevent hangry meltdowns in 45-minute lines.',
+    q: 'Can I bring snacks and food into Disneyland?',
+    a: 'Yes — Disney explicitly allows outside food and snacks. No glass and no loose ice (use ice packs), and keep coolers a reasonable size. Packing your own food is the single biggest spend you can cut at the parks.',
   },
   {
     q: 'What is the #1 packing mistake families make at Disneyland?',
-    a: 'Wearing new shoes. You will walk 8-12 miles per day. New shoes guarantee blisters by noon. Break in your shoes at home for a week before the trip, and pack moleskin for hot spots.',
+    a: 'Wearing brand-new shoes. You will walk 8–12 miles a day and new shoes guarantee blisters by noon. Wear shoes already broken in at home and pack moleskin to tape hot spots before they blister.',
   },
   {
     q: 'Why do I need a portable phone charger at Disneyland?',
-    a: "You'll use the Disneyland app constantly — Lightning Lane, mobile orders, maps, wait times, PhotoPass. Your phone will die by 2 PM without a portable charger. Bring at least a 10,000 mAh pack.",
+    a: "You'll use the Disneyland app all day — Lightning Lane, mobile order, the map, wait times, and PhotoPass. Your phone will die by mid-afternoon without a backup. Bring at least a 10,000mAh power bank, ideally one with a built-in cable.",
   },
   {
     q: 'Can I bring a reusable water bottle into Disneyland?',
-    a: "Yes, and you should. Water in the park runs $5+ a bottle, and free water refill stations are everywhere. Bring a reusable bottle for each person and you'll save $30+ per day for a family.",
+    a: 'Yes, and you should. Bottled water runs $5+ in the park, but every quick-service counter hands out free cups of ice water — just ask. Bring a bottle per person and a family saves $30+ a day.',
   },
   {
-    q: 'Should I bring a rain poncho to Disneyland?',
-    a: "Yes — pack disposable $1 ponchos from Amazon. Park ponchos cost $15 each. They're also useful for water rides at DCA like Grizzly River Run.",
+    q: 'Should I bring rain ponchos to Disneyland?',
+    a: 'Yes — pack disposable ponchos from a multi-pack. Park ponchos cost around $13 each. They also double as water-ride gear for Grizzly River Run and Tiana’s Bayou Adventure.',
   },
   {
-    q: 'Why pack Ziploc bags for Disneyland?',
-    a: 'Gallon-size Ziplocs are the most versatile thing on the list. Use them for wet clothes, half-eaten snacks, and phone protection on water rides.',
+    q: 'What should I NOT pack for Disneyland?',
+    a: 'Skip the full-size hard cooler (size limits and a hassle at security), $20 in-park light-up toys (bring glow sticks instead), oversized strollers that break the 31" × 52" size rule, and brand-new shoes.',
   },
   {
     q: 'Do I need layers at Disneyland even in summer?',
-    a: 'Yes. Mornings and evenings get cold, even in summer. Air conditioning in rides and restaurants will chill sweaty kids fast. Pack a lightweight blanket or jacket layer per kid.',
+    a: 'Yes. Mornings and evenings get cold even in summer, and fireworks crowds wait around for an hour. Air conditioning in rides and restaurants chills sweaty kids fast. Pack a light packable jacket per kid.',
   },
   {
     q: 'Do I need an autograph book for Disneyland characters?',
-    a: "Optional. Characters in gloves can't grip a regular pen — bring a fat Sharpie if you do the autograph book route. Or skip the book entirely and use the Disneyland app's PhotoPass, which is included with Lightning Lane.",
+    a: "Optional. Characters wear gloves and can't grip a skinny pen, so bring a fat marker if you do the autograph route. Or skip the book and use the Disneyland app's PhotoPass, which is included with Lightning Lane.",
   },
 ]
+
+const SKIP_LIST = [
+  {
+    name: 'A full-size hard cooler',
+    why: 'Bulky, breaks the size rules, and a pain at security. A soft insulated bag does everything you need.',
+  },
+  {
+    name: '$20 in-park light-up toys',
+    why: 'Bring a bulk pack of glow sticks and hand them out at the fireworks for pennies each.',
+  },
+  {
+    name: 'An oversized stroller',
+    why: 'Strollers must fit within 31" × 52". An oversized stroller gets turned away at the gate — check the rule first.',
+  },
+  {
+    name: 'Brand-new shoes',
+    why: 'The fastest way to blisters by noon. Wear shoes already broken in and pack moleskin.',
+  },
+]
+
+const buyAhead = PACKING_LIST.filter((i) => i.priceAnchor)
+const mainCategories = CATEGORY_ORDER.filter((c) => c !== 'non-negotiable')
 
 export default function PackingListPage() {
   return (
@@ -78,9 +111,9 @@ export default function PackingListPage() {
       />
       <ArticleJsonLd
         path="/packing-list"
-        headline={'Disneyland Packing List for Kids (2026)'}
+        headline={TITLE}
         description={
-          'The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to skip, and why.'
+          'The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to buy ahead, what to skip, and why.'
         }
         datePublished="2026-04-15"
         dateModified={getLastModifiedDate(PAGE_FILE)}
@@ -89,48 +122,122 @@ export default function PackingListPage() {
       <HowToJsonLd
         name="How to pack for Disneyland with kids"
         description="A parent-tested packing list for a Disneyland day with kids ages 2–8."
-        steps={PACKING_LIST.map((p) => ({ name: p.item, text: p.why }))}
+        steps={PACKING_LIST.map((p) => ({ name: p.name, text: p.why }))}
       />
+
       <header className="hero">
         <div className="hero-badge">🎒 Pack Smart</div>
-        <h1>Disneyland Packing List for Kids</h1>
+        <h1>{TITLE}</h1>
         <p className="hero-sub">
-          Everything on this list costs under $15 and will save you money, time, or tears. Tap items
-          to check them off as you pack.
+          Everything here either saves you money, time, or tears at the parks. Tap items to check
+          them off as you pack.
         </p>
       </header>
 
       <section className="section">
+        <p className="affiliate-disclosure">
+          This page contains affiliate links. If you buy through them, we may earn a small
+          commission at no extra cost to you. We only recommend gear we'd actually pack for our own
+          kids.
+        </p>
+
+        <div className="checklist-group-header">
+          <h2>
+            <span aria-hidden="true">{CATEGORY_META['non-negotiable'].icon}</span>{' '}
+            {CATEGORY_META['non-negotiable'].label}
+          </h2>
+          <p>{CATEGORY_META['non-negotiable'].intro}</p>
+        </div>
+        <PackingChecklist categories={['non-negotiable']} />
+      </section>
+
+      <section className="section">
         <div className="section-header">
           <span className="section-icon">🎒</span>
-          <h2>The Checklist</h2>
+          <h2>The Full Bag, by Moment of Need</h2>
           <p className="section-intro">
-            Stuff the park doesn't sell (or massively overcharges for). Tap to check off.
+            Grouped by when you'll reach for it — not by aisle. Tap to check off.
           </p>
         </div>
 
-        <p style={{ fontSize: '0.85rem', opacity: 0.75, marginBottom: '1rem' }}>
-          This page contains affiliate links. If you buy through them, we earn a small commission at
-          no extra cost to you. We only recommend stuff we actually use with our own kids at the
-          parks.
-        </p>
-
-        <DeferredMount minHeight={800}>
-          <PackingChecklist />
+        <DeferredMount minHeight={1400}>
+          <PackingChecklist categories={mainCategories} />
         </DeferredMount>
+      </section>
+
+      <section className="section">
+        <div className="callout pro">
+          <div className="callout-label">Buy Before You Go — Don't Pay Park Prices</div>
+          <p>The items where buying ahead saves the most versus in-park markup:</p>
+          <ul className="buy-ahead-list">
+            {buyAhead.map((item) => (
+              <li key={item.id}>
+                <strong>{item.name}.</strong> {item.priceAnchor}
+              </li>
+            ))}
+          </ul>
+          <p style={{ marginBottom: 0 }}>
+            See the <Link href="/saving-money">full money-saving playbook</Link> for where to buy it
+            all cheap.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="callout warning">
+          <div className="callout-label">What to Skip</div>
+          <p>Opinionated, and it'll save you space and money:</p>
+          <ul className="skip-list">
+            {SKIP_LIST.map((s) => (
+              <li key={s.name}>
+                <strong>{s.name}.</strong> {s.why}
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pair With</div>
-          <p>
-            See the <Link href="/saving-money">money-saving tips</Link> for where to buy this stuff
-            cheap, the <Link href="/best-strollers">Top 6 Disneyland-friendly strollers</Link> for
-            our ranked stroller picks, the{' '}
-            <Link href="/rides">age-by-age Disneyland rides for kids</Link> to preview which rides
-            matter for your kid, and the{' '}
-            <Link href="/first-visit">Disneyland with kids: the first-time guide</Link> if it's
-            your first trip.
+          <p style={{ marginBottom: 0 }}>
+            Sort your stroller with the{' '}
+            <Link href="/best-strollers">top 6 Disneyland-friendly strollers</Link>, plan meals with
+            the <Link href="/food">park food strategy</Link>, squeeze the budget with our{' '}
+            <Link href="/saving-money">money-saving tips</Link>, and keep that phone alive using the{' '}
+            <Link href="/lightning-lane">Lightning Lane guide</Link>.
           </p>
         </div>
+      </section>
+
+      <section className="section print-checklist">
+        <div className="section-header">
+          <span className="section-icon">🖨️</span>
+          <h2>The Printable Checklist</h2>
+          <p className="section-intro">
+            The whole list, condensed. Print it or pin it — tick the boxes as you pack the bag.
+          </p>
+        </div>
+        {CATEGORY_ORDER.map((category) => {
+          const items = PACKING_LIST.filter((i) => i.category === category)
+          if (items.length === 0) return null
+          return (
+            <div key={category} className="print-group">
+              <h3>
+                <span aria-hidden="true">{CATEGORY_META[category].icon}</span>{' '}
+                {CATEGORY_META[category].label}
+              </h3>
+              <ul>
+                {items.map((item) => (
+                  <li key={item.id}>
+                    <span className="print-box" aria-hidden="true">
+                      ☐
+                    </span>{' '}
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        })}
       </section>
 
       <TicketsCTA location="packinglist" />

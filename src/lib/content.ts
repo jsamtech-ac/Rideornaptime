@@ -37,13 +37,6 @@ export interface FoodSpot {
   desc: string
 }
 
-export interface PackingItem {
-  item: string
-  why: string
-  affiliates?: { label: string; href: string }[]
-  related?: { text: string; href: string }
-}
-
 export type EventSlug =
   | 'disneyland-70th'
   | 'lunar-new-year'
@@ -307,7 +300,7 @@ export const RIDES: Ride[] = [
     age4: 'must-do',
     age6: 'must-do',
     age8: 'must-do',
-    take: 'Chaotic dark ride that ends in hell — yes, actually. It\'s a 90-second weird gem the whole family quotes for the rest of the trip.',
+    take: "Chaotic dark ride that ends in hell — yes, actually. It's a 90-second weird gem the whole family quotes for the rest of the trip.",
     llType: 'standby',
     averageStandbyMin: { earlyMorning: 10, midMorning: 25, afternoon: 30, evening: 20 },
     riderSwitchUseful: false,
@@ -387,7 +380,7 @@ export const RIDES: Ride[] = [
     age4: 'must-do',
     age6: 'must-do',
     age8: 'maybe',
-    take: "Hub-and-spoke rocket spinner. Loads slow, holds maybe 30 people per cycle — the line crawls. Skip unless your kid is screaming for it.",
+    take: 'Hub-and-spoke rocket spinner. Loads slow, holds maybe 30 people per cycle — the line crawls. Skip unless your kid is screaming for it.',
     llType: 'standby',
     averageStandbyMin: { earlyMorning: 10, midMorning: 30, afternoon: 35, evening: 20 },
     riderSwitchUseful: false,
@@ -547,7 +540,8 @@ export const RIDES: Ride[] = [
     height: 'Any height',
     heightInches: null,
     closed: true,
-    closureNote: 'Closed for refurbishment since May 4, 2026. No reopening date confirmed; expected late June or later.',
+    closureNote:
+      'Closed for refurbishment since May 4, 2026. No reopening date confirmed; expected late June or later.',
     age2: 'maybe',
     age4: 'must-do',
     age6: 'must-do',
@@ -666,7 +660,7 @@ export const RIDES: Ride[] = [
     age4: 'must-do',
     age6: 'must-do',
     age8: 'maybe',
-    take: 'Whip-around tractor spinner. More motion than you\'d think — fun for kids 4–7, queasy for adults. Quick line outside peak afternoon.',
+    take: "Whip-around tractor spinner. More motion than you'd think — fun for kids 4–7, queasy for adults. Quick line outside peak afternoon.",
     llType: 'standby',
     averageStandbyMin: { earlyMorning: 10, midMorning: 30, afternoon: 40, evening: 25 },
     riderSwitchUseful: false,
@@ -682,14 +676,14 @@ export const RIDES: Ride[] = [
     age4: 'must-do',
     age6: 'must-do',
     age8: 'maybe',
-    take: 'Self-driving dance partners — gentler than Mater\'s, weirder, more charming. Good post-Radiator Springs Racers landing pad.',
+    take: "Self-driving dance partners — gentler than Mater's, weirder, more charming. Good post-Radiator Springs Racers landing pad.",
     llType: 'standby',
     averageStandbyMin: { earlyMorning: 10, midMorning: 25, afternoon: 35, evening: 20 },
     riderSwitchUseful: false,
   },
   {
     id: 'soarin-across-america',
-    name: 'Soarin\' Across America',
+    name: "Soarin' Across America",
     land: 'Grizzly Peak · DCA',
     park: 'DCA',
     height: '40" / 102 cm',
@@ -877,7 +871,7 @@ export const RIDES: Ride[] = [
     age4: 'must-do',
     age6: 'maybe',
     age8: 'skip',
-    take: 'Vintage swinging-rockets spinner. Closes if there\'s wind — which is most days. Charming when it runs.',
+    take: "Vintage swinging-rockets spinner. Closes if there's wind — which is most days. Charming when it runs.",
     llType: 'standby',
     averageStandbyMin: { earlyMorning: 5, midMorning: 15, afternoon: 20, evening: 10 },
     riderSwitchUseful: false,
@@ -988,97 +982,6 @@ export const FOOD_SPOTS: FoodSpot[] = [
     name: 'Cheesy Garlic Pretzel',
     location: 'Near Castle · Disneyland',
     desc: 'Giant soft pretzel stuffed with cheese. The kids will devour it. Great shareable snack between rides.',
-  },
-]
-
-export const PACKING_LIST: PackingItem[] = [
-  {
-    item: 'Portable phone charger (10,000+ mAh)',
-    why: "You'll use the Disneyland app constantly — Lightning Lane, mobile orders, maps, wait times. Your phone will die by 2pm without this.",
-    affiliates: [
-      { label: 'Anker 10,000mAh Power Bank (USB-C built in)', href: 'https://amzn.to/4mzwCPZ' },
-    ],
-  },
-  {
-    item: 'Stroller fan (clip-on)',
-    why: 'Attaches to the stroller canopy. A lifesaver in summer when the pavement radiates heat.',
-    affiliates: [
-      { label: 'AMACOOL Battery Stroller Fan (flexible tripod)', href: 'https://amzn.to/41xSIJd' },
-    ],
-    related: { text: 'See our top 6 stroller picks →', href: '/best-strollers' },
-  },
-  {
-    item: 'Reusable water bottles (one per person)',
-    why: 'Water is $5+ in the park. Free water refill stations are everywhere. Bring bottles and save $30+ per day.',
-    affiliates: [
-      {
-        label: 'Simple Modern Kids Water Bottle (insulated, leak-proof)',
-        href: 'https://amzn.to/4mzMNwX',
-      },
-    ],
-  },
-  {
-    item: 'Snack container + pre-packed snacks',
-    why: "Goldfish, fruit pouches, granola bars. You're allowed to bring food in. A hangry toddler in a 45-min line is a disaster you can prevent.",
-    affiliates: [
-      { label: 'Bentgo Kids Snack Container (leak-proof)', href: 'https://amzn.to/3QobLTK' },
-    ],
-    related: { text: 'See our full park food strategy →', href: '/food' },
-  },
-  {
-    item: 'Sunscreen (SPF 50+, stick format)',
-    why: 'Stick format so you can reapply without washing hands. You will forget to reapply — set a phone alarm for every 2 hours.',
-    affiliates: [
-      {
-        label: 'Neutrogena Sheer Zinc Kids Sunscreen Stick SPF 50',
-        href: 'https://amzn.to/4vwmtaL',
-      },
-    ],
-  },
-  {
-    item: 'Rain ponchos (disposable)',
-    why: 'Park ponchos cost $15 each. Pack $1 ponchos from Amazon. Also useful for water rides at DCA.',
-    affiliates: [
-      { label: 'SWOGAA Disposable Rain Ponchos — Family 6 Pack', href: 'https://amzn.to/4vyHn9q' },
-    ],
-    related: { text: 'More ways to dodge the $15 park markup →', href: '/saving-money' },
-  },
-  {
-    item: 'Ziploc bags (gallon size)',
-    why: 'Wet clothes, half-eaten snacks, phone protection on water rides. The most versatile item on this list.',
-  },
-  {
-    item: 'Lightweight blanket or jacket layers',
-    why: 'Mornings and evenings get cold, even in summer. AC in rides and restaurants can chill sweaty kids fast.',
-  },
-  {
-    item: 'Change of clothes (one per kid)',
-    why: 'Water rides, spills, blowouts. Keep a change in a dry bag under the stroller.',
-  },
-  {
-    item: 'Portable first-aid basics',
-    why: "Band-aids, children's Tylenol, anti-chafe stick. The Baby Care Center has supplies but the line isn't worth it for a Band-Aid.",
-    affiliates: [
-      {
-        label: 'Johnson & Johnson All-Purpose Travel First Aid Kit',
-        href: 'https://amzn.to/4tP2a6O',
-      },
-    ],
-  },
-  {
-    item: "Moleskin or comfy shoes you've broken in",
-    why: 'You will walk 8-12 miles. New shoes = blisters by noon. This is the #1 mistake families make.',
-    affiliates: [
-      { label: "Dr. Scholl's Moleskin Plus Padding Roll", href: 'https://amzn.to/4vxBZmQ' },
-    ],
-  },
-  {
-    item: 'Autograph book + thick marker',
-    why: "Characters in gloves can't grip a pen. Bring a fat Sharpie. Or skip the book and use the Disneyland app's PhotoPass — photos are included with Lightning Lane.",
-    affiliates: [
-      { label: 'Disney Official Autograph Book', href: 'https://amzn.to/41xcjcq' },
-      { label: 'Sharpie Chisel Tip Permanent Markers', href: 'https://amzn.to/3QbHhnX' },
-    ],
   },
 ]
 
