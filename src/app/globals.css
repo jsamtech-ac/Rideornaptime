@@ -3610,3 +3610,135 @@ body {
 .character-finder-card {
   contain-intrinsic-size: auto 220px;
 }
+
+/* ===== PRINT / SAVE-AS-PDF =====
+   A "Print / Save as PDF" button on the itineraries and packing-list pages.
+   Browsers expose a "Save as PDF" destination through window.print(), so this
+   single control covers both paper printing and saving a clean offline copy to
+   carry into the park. The print stylesheet strips site chrome and interactive
+   controls so only the plan / checklist content reaches the page. */
+
+.print-action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-md);
+}
+
+.print-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    color 0.15s ease;
+}
+
+.print-button:hover {
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.print-button:focus-visible {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: 2px;
+}
+
+/* Print-only context line (site name + URL) — hidden on screen, shown in print. */
+.print-only {
+  display: none;
+}
+
+.print-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media print {
+  /* Strip site chrome and anything tagged no-print. */
+  nav.nav,
+  footer.footer,
+  .scroll-top,
+  .consent-banner,
+  .tickets-section,
+  .hero-image,
+  .hero-badge,
+  .callout,
+  .affiliate-cta,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Hide the interactive itinerary controls; the generated plan still prints. */
+  .configurator-panel {
+    display: none !important;
+  }
+
+  /* Reveal the print-only branding line. */
+  .print-only {
+    display: block !important;
+  }
+
+  /* content-visibility: auto defers off-screen layout and can drop content from
+     the printout — force it visible so the full plan / checklist renders. */
+  .section,
+  .tip-card,
+  .callout,
+  .ride-card,
+  .character-finder-card,
+  .land-group,
+  .seasonal-row,
+  .hub-card {
+    content-visibility: visible !important;
+  }
+
+  /* Ink on white, no decorative backgrounds, full bleed. */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .hero {
+    padding: 0 0 var(--space-md) !important;
+    background: none !important;
+  }
+
+  .hero::before,
+  .hero--home::before,
+  .hero--home::after {
+    display: none !important;
+  }
+
+  .hero-content,
+  .hero-content * {
+    color: #000 !important;
+  }
+
+  .section {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Keep day cards, timeline rows, and checklist items from splitting mid-item. */
+  .day-card,
+  .plan-timeline-row,
+  .checklist-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+}
