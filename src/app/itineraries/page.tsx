@@ -10,6 +10,7 @@ import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 import ItineraryConfigurator from '@/components/ItineraryConfigurator'
 import DeferredMount from '@/components/DeferredMount'
+import PrintButton from '@/components/PrintButton'
 
 const PAGE_FILE = 'src/app/itineraries/page.tsx'
 
@@ -83,6 +84,12 @@ export default function ItinerariesPage() {
       </header>
 
       <section className="section">
+        <PrintButton label="Print / Save plan as PDF" />
+
+        <p className="print-brand print-only">
+          Your Disneyland Itinerary · rideornaptime.com/itineraries
+        </p>
+
         <Suspense
           fallback={
             <div className="configurator-placeholder">

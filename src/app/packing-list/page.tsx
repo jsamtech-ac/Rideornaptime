@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import PackingChecklist from '@/components/PackingChecklist'
+import PrintButton from '@/components/PrintButton'
 import DeferredMount from '@/components/DeferredMount'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -113,6 +114,12 @@ export default function PackingListPage() {
           This page contains affiliate links. If you buy through them, we earn a small commission at
           no extra cost to you. We only recommend stuff we actually use with our own kids at the
           parks.
+        </p>
+
+        <PrintButton label="Print / Save checklist as PDF" />
+
+        <p className="print-brand print-only">
+          Disneyland Packing List for Kids · rideornaptime.com/packing-list
         </p>
 
         <DeferredMount minHeight={800}>
