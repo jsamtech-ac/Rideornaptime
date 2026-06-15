@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-06-08",
-  "lastUpdated": "2026-06-08T15:30:00Z",
+  "weekOf": "2026-06-15",
+  "lastUpdated": "2026-06-15T19:40:11Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "11 AM park hopping rule ends June 9 — any-time hopping is back",
-      "tag": "🚨 New Rule",
-      "link": "/news/disneyland-news-families-june-8-2026",
+      "headline": "Oogie Boogie Bash tickets drop June 18 — October dates sell out fast",
+      "tag": "🚨 On Sale Thursday",
+      "link": "/news/disneyland-news-families-june-15-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Buzz Lightyear reopens June 12 — right before Toy Story 5",
-      "tag": "✅ Reopens Friday",
-      "link": "/news/disneyland-news-families-june-8-2026",
+      "headline": "Toy Story 5 hits theaters June 19 — Buzz Lightyear crowds will spike",
+      "tag": "🎬 Friday",
+      "link": "/news/disneyland-news-families-june-15-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Pirates of the Caribbean still closed — no firm reopen date",
-      "tag": "Ride Status",
-      "link": "/news/disneyland-news-families-june-8-2026",
+      "headline": "Buzz Lightyear is back as of June 12",
+      "tag": "✅ Reopened",
+      "link": "/news/disneyland-news-families-june-15-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Kids' Summer Tickets: $50/day for ages 3-9 through Sept 7",
-      "tag": "💰 Deal",
-      "link": "/news/disneyland-news-families-june-8-2026",
+      "headline": "Pride Nite June 16 & 18 — Disneyland closes early to general public",
+      "tag": "Heads Up",
+      "link": "/news/disneyland-news-families-june-15-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Crowds: June 17-21 is the calm window before summer rush",
-      "tag": "👀 Watching",
-      "link": "/news/disneyland-news-families-june-8-2026",
+      "headline": "Kids' Summer Tickets running through September 7",
+      "tag": "💰 Deal",
+      "link": "/news/disneyland-news-families-june-15-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-june-8-2026"
+  "currentPostSlug": "disneyland-news-families-june-15-2026"
 }
