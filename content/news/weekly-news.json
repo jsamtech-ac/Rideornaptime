@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-06-15",
-  "lastUpdated": "2026-06-15T19:40:11Z",
+  "weekOf": "2026-06-22",
+  "lastUpdated": "2026-06-22T18:35:16Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Oogie Boogie Bash tickets drop June 18 — October dates sell out fast",
-      "tag": "🚨 On Sale Thursday",
-      "link": "/news/disneyland-news-families-june-15-2026",
+      "headline": "Pirates of the Caribbean reopens June 26 after nearly 2 months closed",
+      "tag": "🚨 Friday",
+      "link": "/news/disneyland-news-families-june-22-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Toy Story 5 hits theaters June 19 — Buzz Lightyear crowds will spike",
-      "tag": "🎬 Friday",
-      "link": "/news/disneyland-news-families-june-15-2026",
+      "headline": "Autopia gas-powered cars must retire by February 2027 — ride it now",
+      "tag": "Act Soon",
+      "link": "/news/disneyland-news-families-june-22-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Buzz Lightyear is back as of June 12",
-      "tag": "✅ Reopened",
-      "link": "/news/disneyland-news-families-june-15-2026",
+      "headline": "Soarin' Across America debuts next week — friendlier for young kids",
+      "tag": "✅ Launches July 2",
+      "link": "/news/disneyland-news-families-june-22-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Pride Nite June 16 & 18 — Disneyland closes early to general public",
+      "headline": "King Arthur Carrousel closing July 6-17, Matterhorn closed July 20-23",
       "tag": "Heads Up",
-      "link": "/news/disneyland-news-families-june-15-2026",
+      "link": "/news/disneyland-news-families-june-22-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Kids' Summer Tickets running through September 7",
-      "tag": "💰 Deal",
-      "link": "/news/disneyland-news-families-june-15-2026",
+      "headline": "Oogie Boogie Bash tickets now available — Halloween dates likely gone",
+      "tag": "💰 On Sale",
+      "link": "/news/disneyland-news-families-june-22-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-june-15-2026"
+  "currentPostSlug": "disneyland-news-families-june-22-2026"
 }
