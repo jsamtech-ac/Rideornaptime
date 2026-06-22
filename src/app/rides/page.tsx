@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: 'Which Disneyland rides have no height requirement?',
-    a: 'Dumbo, It\'s a Small World, King Arthur Carrousel, Mad Tea Party, Peter Pan\'s Flight, Alice in Wonderland, Casey Jr., Pirates of the Caribbean, Haunted Mansion, Buzz Lightyear Astro Blasters, Finding Nemo Submarine Voyage, and Mickey & Minnie\'s Runaway Railway. All listed as "Any height" on the ride matrix.',
+    a: "Dumbo, It's a Small World, King Arthur Carrousel, Mad Tea Party, Peter Pan's Flight, Alice in Wonderland, Casey Jr., Pirates of the Caribbean, Haunted Mansion, Buzz Lightyear Astro Blasters, Finding Nemo Submarine Voyage, and Mickey & Minnie's Runaway Railway. All listed as \"Any height\" on the ride matrix.",
   },
   {
     q: "What's the best Disneyland ride for any age, from 2 to 8?",
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: 'Should I watch Disneyland ride videos with my kids before the trip?',
-    a: "Yes — watch POV ride videos on YouTube with your kids before the trip. It helps them pick what they want to ride and cures fear for kids who are nervous about the dark or loud noises.",
+    a: 'Yes — watch POV ride videos on YouTube with your kids before the trip. It helps them pick what they want to ride and cures fear for kids who are nervous about the dark or loud noises.',
   },
   {
     q: 'Are Pirates of the Caribbean and Haunted Mansion too scary for young kids?',
@@ -93,14 +93,7 @@ export default function RidesPage() {
         }))}
       />
       <header className="hero hero--home">
-        <Image
-          src="/starwarsride.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="hero-image"
-        />
+        <Image src="/starwarsride.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
           <div className="hero-badge">🎢 Age-by-Age Ratings</div>
           <h1>Disneyland Rides for Kids: An Age-by-Age Guide</h1>

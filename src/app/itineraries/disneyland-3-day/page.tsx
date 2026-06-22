@@ -7,9 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import ItineraryConfigurator, {
-  type DayConfig,
-} from '@/components/ItineraryConfigurator'
+import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/disneyland-3-day/page.tsx'
 const PAGE_PATH = '/itineraries/disneyland-3-day'
@@ -41,11 +39,11 @@ const initialDayStates: DayConfig[] = [
 const faqs = [
   {
     q: 'Is three days too much for Disneyland with kids?',
-    a: "Three days is the luxury plan, and worth it if you can swing it. Day 1 hits the marquee headliners. Day 2 picks up the second-tier Fantasyland dark rides (Snow White, Pinocchio, Mr. Toad, Storybook Land) plus character meets. Day 3 is the flex day — re-rides of kid favorites, parade, character breakfast, and the castle fireworks finale.",
+    a: 'Three days is the luxury plan, and worth it if you can swing it. Day 1 hits the marquee headliners. Day 2 picks up the second-tier Fantasyland dark rides (Snow White, Pinocchio, Mr. Toad, Storybook Land) plus character meets. Day 3 is the flex day — re-rides of kid favorites, parade, character breakfast, and the castle fireworks finale.',
   },
   {
-    q: 'What\'s a character breakfast and is it worth it for a 3-day trip?',
-    a: "Plaza Inn character breakfast (8:00 AM seating) is the perfect Day 3 anchor — Minnie + rotating Disney friends visit the table for 4–5 character meets in one sitting. Book 60 days out via the Disneyland app. It replaces rope drop on Day 3 and gives you a relaxed start to the closing day.",
+    q: "What's a character breakfast and is it worth it for a 3-day trip?",
+    a: 'Plaza Inn character breakfast (8:00 AM seating) is the perfect Day 3 anchor — Minnie + rotating Disney friends visit the table for 4–5 character meets in one sitting. Book 60 days out via the Disneyland app. It replaces rope drop on Day 3 and gives you a relaxed start to the closing day.',
   },
   {
     q: 'Do we need Lightning Lane on all three days?',
@@ -53,11 +51,11 @@ const faqs = [
   },
   {
     q: 'How should we split fireworks viewing across three nights?',
-    a: 'Day 1: full castle projection show from Main Street. Day 2: easier view from Galaxy\'s Edge with John Williams music. Day 3: castle again from Main Street as the closing send-off. The two viewing experiences are genuinely different — do both.',
+    a: "Day 1: full castle projection show from Main Street. Day 2: easier view from Galaxy's Edge with John Williams music. Day 3: castle again from Main Street as the closing send-off. The two viewing experiences are genuinely different — do both.",
   },
   {
     q: 'Are three full park days too much for young kids?',
-    a: "Yes, if you skip the midday naps. No, if you take them seriously. Out of the park 12:30–3:30 PM every day, with a real hotel reset. Kids running on naps can do 8 PM fireworks three nights in a row. Kids who skip the nap break down by 4 PM Day 2.",
+    a: 'Yes, if you skip the midday naps. No, if you take them seriously. Out of the park 12:30–3:30 PM every day, with a real hotel reset. Kids running on naps can do 8 PM fireworks three nights in a row. Kids who skip the nap break down by 4 PM Day 2.',
   },
 ]
 
@@ -83,9 +81,9 @@ export default function DisneylandThreeDayPage() {
         <div className="hero-badge">🏰 3-Day Plan</div>
         <h1>Disneyland 3-Day Itinerary for Families (2026)</h1>
         <p className="hero-sub">
-          Three days is the luxury Disneyland plan. Day 1 builds the foundation. Day 2 hits the
-          deep cuts. Day 3 is the kid's pick — re-rides, character breakfast, and the castle
-          fireworks finale.
+          Three days is the luxury Disneyland plan. Day 1 builds the foundation. Day 2 hits the deep
+          cuts. Day 3 is the kid's pick — re-rides, character breakfast, and the castle fireworks
+          finale.
         </p>
       </header>
 
@@ -98,17 +96,14 @@ export default function DisneylandThreeDayPage() {
             </div>
           }
         >
-          <ItineraryConfigurator
-            initialDayStates={initialDayStates}
-            allowDayCountChange={false}
-          />
+          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
         </Suspense>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
           <p>
-            Read up on <Link href="/lightning-lane">Lightning Lane strategy</Link>, cross-check
-            the <Link href="/rides">age-by-age Disneyland rides guide</Link>, plan meals from the{' '}
+            Read up on <Link href="/lightning-lane">Lightning Lane strategy</Link>, cross-check the{' '}
+            <Link href="/rides">age-by-age Disneyland rides guide</Link>, plan meals from the{' '}
             <Link href="/food">Disneyland food spots worth your money</Link>, and pack the right
             stuff via the <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>

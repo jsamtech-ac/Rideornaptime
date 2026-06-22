@@ -25,7 +25,7 @@ Frontmatter shape:
 title: 'Disneyland News for Families — Week of May 11, 2026'
 slug: 'disneyland-news-families-may-11-2026'
 date: '2026-05-11'
-description: "One sentence summary used for SEO and social previews."
+description: 'One sentence summary used for SEO and social previews.'
 heroImage: '/images/news/2026-05-11.jpg'
 ---
 ```

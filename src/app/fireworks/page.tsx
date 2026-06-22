@@ -148,8 +148,8 @@ export default function FireworksPage() {
           </p>
           <p style={{ marginTop: '0.75rem' }}>
             Slot fireworks into the evening with the{' '}
-            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link>. More survival
-            tips on the <Link href="/hidden-gems">Hidden Gems</Link> page, or head
+            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link>. More survival tips
+            on the <Link href="/hidden-gems">Hidden Gems</Link> page, or head
             <Link href="/"> back to the guide hub</Link>.
           </p>
         </div>
