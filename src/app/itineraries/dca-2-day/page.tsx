@@ -7,9 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import ItineraryConfigurator, {
-  type DayConfig,
-} from '@/components/ItineraryConfigurator'
+import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/dca-2-day/page.tsx'
 const PAGE_PATH = '/itineraries/dca-2-day'
@@ -43,7 +41,7 @@ const faqs = [
     a: 'Most families do one DCA day and one Disneyland day. But for families with kids 7+ who want Incredicoaster, Guardians: BREAKOUT!, plus all the Multi Pass headliners and Pixar Pier deep cuts — two DCA days makes sense. Day 1 marquee, Day 2 picks up everything Day 1 missed.',
   },
   {
-    q: "Is DCA Multi Pass worth it for a 2-day visit?",
+    q: 'Is DCA Multi Pass worth it for a 2-day visit?',
     a: "On a 2-day DCA visit, Multi Pass works on Day 1 (Soarin', Toy Story Midway Mania, WEB SLINGERS) but is harder to justify Day 2 — most of the second-tier Pixar Pier and Cars Land rides are standby-only anyway. Most families buy it for Day 1 only.",
   },
   {
@@ -83,8 +81,8 @@ export default function DcaTwoDayPage() {
         <h1>California Adventure 2-Day Itinerary for Families (2026)</h1>
         <p className="hero-sub">
           Two days at DCA covers everything — Cars Land, Pixar Pier, Avengers Campus, Hollywood
-          Land, two nights of World of Color. Day 1 is marquee. Day 2 is the deep cuts plus
-          Grizzly River Run.
+          Land, two nights of World of Color. Day 1 is marquee. Day 2 is the deep cuts plus Grizzly
+          River Run.
         </p>
       </header>
 
@@ -97,20 +95,16 @@ export default function DcaTwoDayPage() {
             </div>
           }
         >
-          <ItineraryConfigurator
-            initialDayStates={initialDayStates}
-            allowDayCountChange={false}
-          />
+          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
         </Suspense>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
           <p>
             Read the <Link href="/lightning-lane">Lightning Lane Multi Pass math at DCA</Link>,
-            cross-check rides with the{' '}
-            <Link href="/rides">age-by-age Disneyland rides guide</Link>, mobile-order from the{' '}
-            <Link href="/food">DCA food spots worth your money</Link>, and pack with the{' '}
-            <Link href="/packing-list">Disneyland packing list for kids</Link>.
+            cross-check rides with the <Link href="/rides">age-by-age Disneyland rides guide</Link>,
+            mobile-order from the <Link href="/food">DCA food spots worth your money</Link>, and
+            pack with the <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
         </div>
       </section>

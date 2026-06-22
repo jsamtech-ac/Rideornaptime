@@ -7,9 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import ItineraryConfigurator, {
-  type DayConfig,
-} from '@/components/ItineraryConfigurator'
+import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/park-hopper-3-day/page.tsx'
 const PAGE_PATH = '/itineraries/park-hopper-3-day'
@@ -45,19 +43,19 @@ const faqs = [
   },
   {
     q: 'How do you book Lightning Lanes across both parks on a Park Hopper day?',
-    a: "You can only book a Lightning Lane in your second park if the first available return window is 11:00 AM or later — practically meaning you can book around 10:00 AM. Always Modify, never Cancel — Cancel resets your 2-hour clock from scratch.",
+    a: 'You can only book a Lightning Lane in your second park if the first available return window is 11:00 AM or later — practically meaning you can book around 10:00 AM. Always Modify, never Cancel — Cancel resets your 2-hour clock from scratch.',
   },
   {
     q: 'Which park do you start at each day on a 3-day Park Hopper?',
-    a: 'Start DCA on Day 1 for Radiator Springs Racers (saves $60–120). Day 2 starts at Disneyland for Fantasyland rope drop. Day 3 is the kid\'s pick — whatever they loved most.',
+    a: "Start DCA on Day 1 for Radiator Springs Racers (saves $60–120). Day 2 starts at Disneyland for Fantasyland rope drop. Day 3 is the kid's pick — whatever they loved most.",
   },
   {
     q: 'Should you do character breakfast on a 3-day Park Hopper trip?',
-    a: "Plaza Inn character breakfast (8:00 AM seating) is the perfect Day 3 anchor — Minnie + rotating Disney friends visit the table for 4–5 character meets without separate lines. Book 60 days out via the Disneyland app. It replaces rope drop on Day 3 and gives you a relaxed closing day.",
+    a: 'Plaza Inn character breakfast (8:00 AM seating) is the perfect Day 3 anchor — Minnie + rotating Disney friends visit the table for 4–5 character meets without separate lines. Book 60 days out via the Disneyland app. It replaces rope drop on Day 3 and gives you a relaxed closing day.',
   },
   {
     q: 'How do you split the nighttime shows across three Park Hopper nights?',
-    a: 'Day 1: World of Color at DCA. Day 2: Disneyland fireworks from Main Street for the full castle projection show. Day 3: Disneyland fireworks from Galaxy\'s Edge — same fireworks with John Williams music, way easier exit with tired kids.',
+    a: "Day 1: World of Color at DCA. Day 2: Disneyland fireworks from Main Street for the full castle projection show. Day 3: Disneyland fireworks from Galaxy's Edge — same fireworks with John Williams music, way easier exit with tired kids.",
   },
 ]
 
@@ -98,18 +96,14 @@ export default function ParkHopperThreeDayPage() {
             </div>
           }
         >
-          <ItineraryConfigurator
-            initialDayStates={initialDayStates}
-            allowDayCountChange={false}
-          />
+          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
         </Suspense>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
           <p>
-            Read{' '}
-            <Link href="/lightning-lane">Lightning Lane + Park Hopper rules</Link> before booking,
-            cross-check rides with the{' '}
+            Read <Link href="/lightning-lane">Lightning Lane + Park Hopper rules</Link> before
+            booking, cross-check rides with the{' '}
             <Link href="/rides">age-by-age Disneyland rides guide</Link>, mobile-order from the{' '}
             <Link href="/food">Disneyland food spots worth your money</Link>, and pack via the{' '}
             <Link href="/packing-list">Disneyland packing list for kids</Link>.

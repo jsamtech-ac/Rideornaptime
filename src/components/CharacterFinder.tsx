@@ -200,13 +200,7 @@ export default function CharacterFinder() {
   )
 }
 
-function CharacterCard({
-  character,
-  parkFilter,
-}: {
-  character: Character
-  parkFilter: ParkKey
-}) {
+function CharacterCard({ character, parkFilter }: { character: Character; parkFilter: ParkKey }) {
   const lineClass = `line-${character.expectedLine}`
   const locations =
     parkFilter === 'all'
@@ -256,7 +250,7 @@ interface RowEntry {
 function groupRowsByLand(
   chars: Character[],
   park: CharacterPark,
-  landOrder: string[],
+  landOrder: string[]
 ): { land: string; entries: RowEntry[] }[] {
   const byLand: Record<string, RowEntry[]> = {}
   for (const c of chars) {
@@ -341,10 +335,7 @@ function ParkBlock({
           {intros[land] && <p className="land-group-intro">{intros[land]}</p>}
           <ul className="land-group-list">
             {entries.map((r) => (
-              <li
-                key={`${r.character.id}-${r.location.spot}`}
-                className="land-group-row"
-              >
+              <li key={`${r.character.id}-${r.location.spot}`} className="land-group-row">
                 <div className="land-group-row-head">
                   <strong className="land-group-row-name">{r.character.name}</strong>
                   <span className={`character-finder-card-tag line-${r.character.expectedLine}`}>
@@ -358,9 +349,7 @@ function ParkBlock({
                 <div className="land-group-row-meta">
                   {RELIABILITY_LABEL[r.location.reliability]}
                 </div>
-                {r.character.notes && (
-                  <p className="land-group-row-note">{r.character.notes}</p>
-                )}
+                {r.character.notes && <p className="land-group-row-note">{r.character.notes}</p>}
               </li>
             ))}
           </ul>

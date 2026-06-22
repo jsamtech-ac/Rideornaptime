@@ -103,7 +103,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Stack Fantasyland: Dumbo, Small World, Alice',
-        body: 'Four rides in 60 minutes if you move. Dumbo (10 min wait now, 45+ by 10 AM), Small World (15 min, AC, 15-min ride is the reset button), Alice (10 min). Skip the Carrousel unless your kid demands it — Storybook Land eats 25 minutes you don\'t have yet.',
+        body: "Four rides in 60 minutes if you move. Dumbo (10 min wait now, 45+ by 10 AM), Small World (15 min, AC, 15-min ride is the reset button), Alice (10 min). Skip the Carrousel unless your kid demands it — Storybook Land eats 25 minutes you don't have yet.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world', 'alice-in-wonderland'],
       },
       {
@@ -139,7 +139,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: 'Use Lightning Lane: Jungle Cruise',
-        body: 'The dad jokes are the real ride. Little ones love the animals, bigger kids groan at the puns. Skip Indiana Jones next door unless your kid is 8+ — it\'s intense.',
+        body: "The dad jokes are the real ride. Little ones love the animals, bigger kids groan at the puns. Skip Indiana Jones next door unless your kid is 8+ — it's intense.",
         rideIds: ['jungle-cruise'],
       },
       {
@@ -165,7 +165,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 180,
         type: 'break',
         title: 'Nap break / hotel reset',
-        body: "Out of the park by 12:00, back at the hotel by 12:30. On-property and walkable Harbor Blvd hotels make this work — Uber back is $8–12 and worth every penny vs. dragging melted-down kids through three more hours. Book your next two Lightning Lanes from bed at 1:30 and 2:30.",
+        body: 'Out of the park by 12:00, back at the hotel by 12:30. On-property and walkable Harbor Blvd hotels make this work — Uber back is $8–12 and worth every penny vs. dragging melted-down kids through three more hours. Book your next two Lightning Lanes from bed at 1:30 and 2:30.',
       },
       {
         id: 'll-4',
@@ -264,7 +264,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Mickey & Minnie's Runaway Railway",
-        body: "The trackless ride is the wow of Day 1. Walk through the Toontown playground after — kids burn 15 minutes of energy while you sit.",
+        body: 'The trackless ride is the wow of Day 1. Walk through the Toontown playground after — kids burn 15 minutes of energy while you sit.',
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -273,7 +273,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Big Thunder Mountain',
-        body: "If you have a 40\"+ kid, this is Day 1's second LL. Under 40\"? Swap for Haunted Mansion — and use Rider Switch on Big Thunder during the afternoon.",
+        body: 'If you have a 40"+ kid, this is Day 1\'s second LL. Under 40"? Swap for Haunted Mansion — and use Rider Switch on Big Thunder during the afternoon.',
         llRideId: 'big-thunder-mountain-railroad',
       },
       {
@@ -282,7 +282,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Jungle Cruise standby in Adventureland',
-        body: "Pirates is closed for refurb — Jungle Cruise is your big Adventureland win today. 25–35 minute standby at 10:30. The dad jokes are the ride; little ones love the animals.",
+        body: 'Pirates is closed for refurb — Jungle Cruise is your big Adventureland win today. 25–35 minute standby at 10:30. The dad jokes are the ride; little ones love the animals.',
         rideIds: ['jungle-cruise'],
       },
       {
@@ -299,7 +299,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Lightning Lane: Big Thunder',
-        body: "Perfect first roller coaster — bumpy train, not scary. If your kid is too short, use Rider Switch: one parent rides, the other rides solo afterward through the LL entrance with the big kid for a free re-ride.",
+        body: 'Perfect first roller coaster — bumpy train, not scary. If your kid is too short, use Rider Switch: one parent rides, the other rides solo afterward through the LL entrance with the big kid for a free re-ride.',
         rideIds: ['big-thunder-mountain-railroad'],
       },
       {
@@ -316,7 +316,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Haunted Mansion from bed (for 3:45)',
-        body: "Tap from the hotel room. Haunted Mansion fits a 3:45 return window for a clean post-nap re-entry. With Pirates closed, this is the New Orleans Square anchor.",
+        body: 'Tap from the hotel room. Haunted Mansion fits a 3:45 return window for a clean post-nap re-entry. With Pirates closed, this is the New Orleans Square anchor.',
         llRideId: 'haunted-mansion',
       },
       {
@@ -364,7 +364,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'middle',
     title: 'Middle Day at Disneyland — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "The deep cuts: Snow White, Pinocchio, Mr. Toad, Storybook Land, Casey Jr., plus the character meets you skipped on Day 1. Less rushed, more breaks, more time for the kid to actually enjoy the park.",
+      'The deep cuts: Snow White, Pinocchio, Mr. Toad, Storybook Land, Casey Jr., plus the character meets you skipped on Day 1. Less rushed, more breaks, more time for the kid to actually enjoy the park.',
     blocks: [
       {
         id: 'arrive',
@@ -381,11 +381,7 @@ export const dayTemplates: DayTemplate[] = [
         type: 'rope-drop',
         title: "Rope drop Fantasyland's deep cuts",
         body: "Through the castle, hard right. Snow White's Enchanted Wish first — the new effects make the queen scenes mildly intense; brave 4+ kids love it. Then Pinocchio, then Mr. Toad's Wild Ride. Three back-to-back dark rides, all under 15 minutes of wait at rope drop.",
-        rideIds: [
-          'snow-whites-enchanted-wish',
-          'pinocchios-daring-journey',
-          'mr-toads-wild-ride',
-        ],
+        rideIds: ['snow-whites-enchanted-wish', 'pinocchios-daring-journey', 'mr-toads-wild-ride'],
       },
       {
         id: 'll-1',
@@ -402,7 +398,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Storybook Land + Casey Jr. — the slow magic',
-        body: "Casey Jr. and Storybook Land Canal Boats are the same story from two angles. A cast member narrates while you boat through miniature Disney villages. Quiet, slow, weirdly magical. Together they eat 60 minutes — worth it on a multi-day trip, skippable on a one-day blitz.",
+        body: 'Casey Jr. and Storybook Land Canal Boats are the same story from two angles. A cast member narrates while you boat through miniature Disney villages. Quiet, slow, weirdly magical. Together they eat 60 minutes — worth it on a multi-day trip, skippable on a one-day blitz.',
         rideIds: ['casey-jr-circus-train', 'storybook-land-canal-boats'],
       },
       {
@@ -437,7 +433,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Carnation Café sit-down on Main Street',
-        body: 'Middle-day = sit-down day. Carnation Café has full waiter service, a real menu, and a 30-minute reservation window that doesn\'t feel rushed. Book it the morning of via the Disneyland app — same-day openings are common.',
+        body: "Middle-day = sit-down day. Carnation Café has full waiter service, a real menu, and a 30-minute reservation window that doesn't feel rushed. Book it the morning of via the Disneyland app — same-day openings are common.",
       },
       {
         id: 'nap',
@@ -453,7 +449,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Jungle Cruise (for 4:00)',
-        body: "From the hotel. Jungle Cruise standby crawls in the afternoon — booking for 4:00 lines up with your post-nap return.",
+        body: 'From the hotel. Jungle Cruise standby crawls in the afternoon — booking for 4:00 lines up with your post-nap return.',
         llRideId: 'jungle-cruise',
       },
       {
@@ -462,7 +458,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Adventureland Treehouse walk-through',
-        body: "Walk-through tree with Swiss Family Robinson scenes. Lots of stairs — park the stroller at the base. No line, kids love it, parents get a break from queuing. Slot it in before the Jungle Cruise LL.",
+        body: 'Walk-through tree with Swiss Family Robinson scenes. Lots of stairs — park the stroller at the base. No line, kids love it, parents get a break from queuing. Slot it in before the Jungle Cruise LL.',
         rideIds: ['adventureland-treehouse'],
       },
       {
@@ -471,7 +467,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: 'Use Lightning Lane: Jungle Cruise',
-        body: 'Second Jungle Cruise ride of the trip — the script is randomized, so it\'s a different ride each time. Brave 6+ kids can keep going to Indiana Jones next; younger kids head back to Fantasyland.',
+        body: "Second Jungle Cruise ride of the trip — the script is randomized, so it's a different ride each time. Brave 6+ kids can keep going to Indiana Jones next; younger kids head back to Fantasyland.",
         rideIds: ['jungle-cruise'],
       },
       {
@@ -480,7 +476,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Beignets + dinner in New Orleans Square',
-        body: "Cafe Orleans for a real sit-down (beignets, gumbo bread bowl, Monte Cristo) or grab beignets at the Mint Julep Bar window and a quick-service plate elsewhere. Music from the Royal Street Bachelors makes this the most charming dinner spot in the park.",
+        body: 'Cafe Orleans for a real sit-down (beignets, gumbo bread bowl, Monte Cristo) or grab beignets at the Mint Julep Bar window and a quick-service plate elsewhere. Music from the Royal Street Bachelors makes this the most charming dinner spot in the park.',
       },
       {
         id: 'matterhorn',
@@ -510,7 +506,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at Disneyland — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Re-ride day: let the kid pick their three favorites, do a character breakfast, catch the afternoon parade, and watch fireworks from Main Street tonight for the full castle projection show.",
+      'Re-ride day: let the kid pick their three favorites, do a character breakfast, catch the afternoon parade, and watch fireworks from Main Street tonight for the full castle projection show.',
     blocks: [
       {
         id: 'breakfast',
@@ -518,7 +514,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 75,
         type: 'meal',
         title: 'Plaza Inn character breakfast — book 60 days out',
-        body: "Last-day character breakfast at Plaza Inn replaces rope drop. Minnie + rotating Disney friends rotate through your table — 4–5 character meets in one sitting, no separate lines. The first 8:00 AM seating gets you in the park before rope drop ends. Booking is mandatory.",
+        body: 'Last-day character breakfast at Plaza Inn replaces rope drop. Minnie + rotating Disney friends rotate through your table — 4–5 character meets in one sitting, no separate lines. The first 8:00 AM seating gets you in the park before rope drop ends. Booking is mandatory.',
       },
       {
         id: 'll-1',
@@ -543,7 +539,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: 'Use Lightning Lane: the favorite',
-        body: 'Whatever they picked. Then book the next LL — Mickey & Minnie\'s Runaway Railway is the right second pick if you haven\'t already.',
+        body: "Whatever they picked. Then book the next LL — Mickey & Minnie's Runaway Railway is the right second pick if you haven't already.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -561,7 +557,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'character',
         title: 'Mickey in Toontown',
-        body: "If your kid only wants Mickey, Toontown has the most reliable meet — line is shortest before 11:00. Hit it after the Plaza Inn breakfast for a less-rushed photo than the breakfast version.",
+        body: 'If your kid only wants Mickey, Toontown has the most reliable meet — line is shortest before 11:00. Hit it after the Plaza Inn breakfast for a less-rushed photo than the breakfast version.',
       },
       {
         id: 'mm-ride',
@@ -569,7 +565,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Mickey & Minnie's",
-        body: "Last ride before the nap window. Move directly toward the exit afterward — afternoon parade crowds will pin you in if you linger.",
+        body: 'Last ride before the nap window. Move directly toward the exit afterward — afternoon parade crowds will pin you in if you linger.',
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -628,7 +624,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'Castle fireworks from Main Street tonight',
-        body: "Final night — give them the full castle projection show. Stake out a curb on Main Street 20 minutes early near the Plaza Inn end (less crowded than the hub). After the show, walk against the exit crush by going through Adventureland instead of straight down Main Street.",
+        body: 'Final night — give them the full castle projection show. Stake out a curb on Main Street 20 minutes early near the Plaza Inn end (less crowded than the hub). After the show, walk against the exit crush by going through Adventureland instead of straight down Main Street.',
       },
     ],
   },
@@ -641,7 +637,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      "For families with 6–8 year olds who can skip the nap: rope drop the headliners, sit-down lunch instead of a hotel return, and a steady afternoon that still leaves you standing for fireworks.",
+      'For families with 6–8 year olds who can skip the nap: rope drop the headliners, sit-down lunch instead of a hotel return, and a steady afternoon that still leaves you standing for fireworks.',
     blocks: [
       {
         id: 'arrive',
@@ -666,7 +662,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Lightning Lane: Peter Pan's Flight",
-        body: 'Peter Pan for ~10:00. Mickey & Minnie\'s you\'re hitting rope drop standby — Peter Pan is the booking you need locked in.',
+        body: "Peter Pan for ~10:00. Mickey & Minnie's you're hitting rope drop standby — Peter Pan is the booking you need locked in.",
         llRideId: 'peter-pans-flight',
       },
       {
@@ -675,7 +671,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Fantasyland sweep: Dumbo + Small World',
-        body: 'After Mickey & Minnie\'s, walk south through the castle into Fantasyland. Dumbo (line grows fast), Small World (AC reset). Skip the deep cuts today — you only have one day.',
+        body: "After Mickey & Minnie's, walk south through the castle into Fantasyland. Dumbo (line grows fast), Small World (AC reset). Skip the deep cuts today — you only have one day.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world'],
       },
       {
@@ -684,7 +680,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Peter Pan's Flight",
-        body: "The crown jewel of Fantasyland. Re-book your next LL the moment you tap in — Big Thunder if your kid is 40\"+, otherwise Haunted Mansion.",
+        body: 'The crown jewel of Fantasyland. Re-book your next LL the moment you tap in — Big Thunder if your kid is 40"+, otherwise Haunted Mansion.',
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -693,7 +689,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Big Thunder Mountain',
-        body: "First coaster of the day. Book for 11:00 to slot between Fantasyland and lunch. Under 40\"? Book Haunted Mansion instead and use Rider Switch on Big Thunder later.",
+        body: 'First coaster of the day. Book for 11:00 to slot between Fantasyland and lunch. Under 40"? Book Haunted Mansion instead and use Rider Switch on Big Thunder later.',
         llRideId: 'big-thunder-mountain-railroad',
       },
       {
@@ -711,7 +707,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Lightning Lane: Big Thunder',
-        body: "Perfect first coaster — fast without being scary. Under 40\"? Use Rider Switch and one parent rides solo, then escorts the big kid through the LL entrance after.",
+        body: 'Perfect first coaster — fast without being scary. Under 40"? Use Rider Switch and one parent rides solo, then escorts the big kid through the LL entrance after.',
         rideIds: ['big-thunder-mountain-railroad'],
       },
       {
@@ -720,7 +716,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Carnation Café sit-down on Main Street',
-        body: "No-nap day = real sit-down at noon. Carnation Café has waiter service, a relaxed menu, and gives everyone 60 minutes of seated rest without leaving the park. Book the morning of via the app — same-day windows pop up.",
+        body: 'No-nap day = real sit-down at noon. Carnation Café has waiter service, a relaxed menu, and gives everyone 60 minutes of seated rest without leaving the park. Book the morning of via the app — same-day windows pop up.',
       },
       {
         id: 'll-3',
@@ -728,7 +724,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Haunted Mansion',
-        body: "Book Haunted Mansion for 2:30. NOLA Square is the natural after-lunch direction; this lines up before the afternoon parade window.",
+        body: 'Book Haunted Mansion for 2:30. NOLA Square is the natural after-lunch direction; this lines up before the afternoon parade window.',
         llRideId: 'haunted-mansion',
       },
       {
@@ -737,7 +733,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Use Lightning Lane: Haunted Mansion',
-        body: 'Know your kid. Brave 4+ love it; nervous kids do not. The stretching room is the test — if they laugh, they\'re fine; if they cry, you\'ve got an exit door before the Doom Buggies.',
+        body: "Know your kid. Brave 4+ love it; nervous kids do not. The stretching room is the test — if they laugh, they're fine; if they cry, you've got an exit door before the Doom Buggies.",
         rideIds: ['haunted-mansion'],
       },
       {
@@ -802,7 +798,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 at Disneyland — Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      "No-nap families with elementary kids: marquee headliners in the morning, a real sit-down at noon, character meets in the afternoon, and a measured pace that leaves something for Day 2.",
+      'No-nap families with elementary kids: marquee headliners in the morning, a real sit-down at noon, character meets in the afternoon, and a measured pace that leaves something for Day 2.',
     blocks: [
       {
         id: 'arrive',
@@ -817,7 +813,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '8:00 AM',
         durationMin: 30,
         type: 'rope-drop',
-        title: "Rope drop Toontown",
+        title: 'Rope drop Toontown',
         body: "Mickey & Minnie's Runaway Railway first — 10-minute wait now vs. 60+ by 10 AM. With multiple days, you can afford to start at Toontown today and rope-drop Fantasyland on Day 2.",
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
@@ -845,7 +841,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Peter Pan's Flight",
-        body: "Tap in, re-book the next LL the moment you do. Big Thunder if 40\"+ tall; otherwise Jungle Cruise.",
+        body: 'Tap in, re-book the next LL the moment you do. Big Thunder if 40"+ tall; otherwise Jungle Cruise.',
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -854,7 +850,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Big Thunder',
-        body: "For 11:00. Brave 6+ kids handle it easily — the perfect first coaster. Under 40\"? Book Jungle Cruise and use Rider Switch on Big Thunder later.",
+        body: 'For 11:00. Brave 6+ kids handle it easily — the perfect first coaster. Under 40"? Book Jungle Cruise and use Rider Switch on Big Thunder later.',
         llRideId: 'big-thunder-mountain-railroad',
       },
       {
@@ -881,7 +877,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Carnation Café — full sit-down',
-        body: "No-nap day means lunch is the rest. Carnation Café gives you 60 minutes seated with waiter service and a relaxed menu. Book same-day on the app.",
+        body: 'No-nap day means lunch is the rest. Carnation Café gives you 60 minutes seated with waiter service and a relaxed menu. Book same-day on the app.',
       },
       {
         id: 'll-3',
@@ -906,7 +902,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Use Lightning Lane: Haunted Mansion',
-        body: 'Know your kid. Day 1 is the test — if they handle the stretching room laughing, they\'re in for the rest of the trip.',
+        body: "Know your kid. Day 1 is the test — if they handle the stretching room laughing, they're in for the rest of the trip.",
         rideIds: ['haunted-mansion'],
       },
       {
@@ -962,7 +958,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'middle',
     title: 'Middle Day at Disneyland — Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      "Day 2 of 3 with kids past the nap stage: deep-cut Fantasyland dark rides, a sit-down lunch, character meets, and Matterhorn Single Rider in the evening.",
+      'Day 2 of 3 with kids past the nap stage: deep-cut Fantasyland dark rides, a sit-down lunch, character meets, and Matterhorn Single Rider in the evening.',
     blocks: [
       {
         id: 'rope-drop',
@@ -971,11 +967,7 @@ export const dayTemplates: DayTemplate[] = [
         type: 'rope-drop',
         title: 'Rope drop the Fantasyland dark rides',
         body: 'Through the castle, hard right. Snow White first (the queen scene is mildly intense), then Pinocchio, then Mr. Toad. Three back-to-back dark rides, all under 15-minute waits at rope drop. The one-day-blitz families miss all three.',
-        rideIds: [
-          'snow-whites-enchanted-wish',
-          'pinocchios-daring-journey',
-          'mr-toads-wild-ride',
-        ],
+        rideIds: ['snow-whites-enchanted-wish', 'pinocchios-daring-journey', 'mr-toads-wild-ride'],
       },
       {
         id: 'll-1',
@@ -1000,7 +992,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '10:00 AM',
         durationMin: 2,
         type: 'll-booking',
-        title: 'Book Lightning Lane: Tiana\'s Bayou Adventure',
+        title: "Book Lightning Lane: Tiana's Bayou Adventure",
         body: 'For ~12:30. Tiana\'s is 40" — re-check who in your party makes it. Use Rider Switch for non-riders. Gorgeous music; one big drop at the end.',
         llRideId: 'tianas-bayou-adventure',
       },
@@ -1036,7 +1028,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Cafe Orleans sit-down',
-        body: "Last day was Carnation Cafe; today is Cafe Orleans — beignets, gumbo bread bowl, the famous Monte Cristo sandwich. Book same-day via the app. NOLA Square is the right midday vibe.",
+        body: 'Last day was Carnation Cafe; today is Cafe Orleans — beignets, gumbo bread bowl, the famous Monte Cristo sandwich. Book same-day via the app. NOLA Square is the right midday vibe.',
       },
       {
         id: 'll-3',
@@ -1062,7 +1054,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Use LL + Tomorrowland standby',
-        body: "Use the booked LL, then add the other Tomorrowland headliner via standby (waits drop in the parade window). Astro Orbitor is skippable — line loads slow.",
+        body: 'Use the booked LL, then add the other Tomorrowland headliner via standby (waits drop in the parade window). Astro Orbitor is skippable — line loads slow.',
         rideIds: ['star-tours', 'finding-nemo-submarine-voyage'],
       },
       {
@@ -1070,8 +1062,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '4:30 PM',
         durationMin: 2,
         type: 'll-booking',
-        title: "Book Lightning Lane: Matterhorn",
-        body: "Matterhorn is 42\" — fine for most 7+ kids. Single Rider line is the free alternative if your party is fine splitting. Book LL for 6:00 PM.",
+        title: 'Book Lightning Lane: Matterhorn',
+        body: 'Matterhorn is 42" — fine for most 7+ kids. Single Rider line is the free alternative if your party is fine splitting. Book LL for 6:00 PM.',
         llRideId: 'matterhorn-bobsleds',
       },
       {
@@ -1088,7 +1080,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Use Lightning Lane: Matterhorn',
-        body: 'Rough, rattly, steeper than it looks — the abominable snowman jump-scare ends a lot of brave-kid runs. If they handled Big Thunder, they\'re ready.',
+        body: "Rough, rattly, steeper than it looks — the abominable snowman jump-scare ends a lot of brave-kid runs. If they handled Big Thunder, they're ready.",
         rideIds: ['matterhorn-bobsleds'],
       },
       {
@@ -1096,7 +1088,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '7:00 PM',
         durationMin: 90,
         type: 'ride',
-        title: 'Re-ride the kid\'s pick + evening Fantasyland sweep',
+        title: "Re-ride the kid's pick + evening Fantasyland sweep",
         body: 'Standby waits drop in the 7–8 PM evening window. Let the kid pick their re-ride. Peter Pan standby is usually 30–40 minutes by 7:30 — go again if they ask.',
       },
       {
@@ -1118,7 +1110,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at Disneyland — Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      "Close the trip without a nap: character breakfast at Plaza Inn, the kid picks the re-rides, parade in the afternoon, and the full castle fireworks show from Main Street tonight.",
+      'Close the trip without a nap: character breakfast at Plaza Inn, the kid picks the re-rides, parade in the afternoon, and the full castle fireworks show from Main Street tonight.',
     blocks: [
       {
         id: 'breakfast',
@@ -1133,8 +1125,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '8:30 AM',
         durationMin: 2,
         type: 'll-booking',
-        title: 'Book the kid\'s pick',
-        body: 'Day 3 is their choice. Whatever they loved most — Peter Pan, Mickey & Minnie\'s, Big Thunder — book it for 10:00.',
+        title: "Book the kid's pick",
+        body: "Day 3 is their choice. Whatever they loved most — Peter Pan, Mickey & Minnie's, Big Thunder — book it for 10:00.",
         llRideId: 'peter-pans-flight',
       },
       {
@@ -1220,7 +1212,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Big Thunder LL',
-        body: 'Last coaster of the trip. Use Rider Switch if there\'s a tall + short combo so the small kid gets a final standby Mark Twain or Casey Jr. with one parent.',
+        body: "Last coaster of the trip. Use Rider Switch if there's a tall + short combo so the small kid gets a final standby Mark Twain or Casey Jr. with one parent.",
         rideIds: ['big-thunder-mountain-railroad'],
       },
       {
@@ -1228,8 +1220,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '3:30 PM',
         durationMin: 2,
         type: 'll-booking',
-        title: 'Last LL: Haunted Mansion or Tiana\'s',
-        body: 'For 5:30 PM. Haunted Mansion if you skipped it; Tiana\'s for the final headliner. Either is a strong last LL spot.',
+        title: "Last LL: Haunted Mansion or Tiana's",
+        body: "For 5:30 PM. Haunted Mansion if you skipped it; Tiana's for the final headliner. Either is a strong last LL spot.",
         llRideId: 'haunted-mansion',
       },
       {
@@ -1283,7 +1275,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '8:00 AM',
         durationMin: 30,
         type: 'rope-drop',
-        title: "Rope drop Rise of the Resistance",
+        title: 'Rope drop Rise of the Resistance',
         body: "Use the Single Pass. Rise is the longest standby in the resort by 9 AM — by 11 AM it's a 2-hour wait. If you don't have the Single Pass, walk to Galaxy's Edge anyway for Millennium Falcon's Single Rider line (8-minute wait at 8:00).",
         rideIds: ['rise-of-the-resistance'],
       },
@@ -1319,7 +1311,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Peter Pan's Flight",
-        body: 'Tap in, immediately book Mickey & Minnie\'s for ~11:00. Re-book is a reflex on blitz days.',
+        body: "Tap in, immediately book Mickey & Minnie's for ~11:00. Re-book is a reflex on blitz days.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -1337,7 +1329,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Fantasyland stack: Dumbo, Small World, Alice',
-        body: 'Three rides in 45 minutes if you sprint. Dumbo (line is now 40+ min — eat that today), Small World, Alice. Skip the dark rides (Snow White / Pinocchio / Mr. Toad) — those don\'t fit a blitz.',
+        body: "Three rides in 45 minutes if you sprint. Dumbo (line is now 40+ min — eat that today), Small World, Alice. Skip the dark rides (Snow White / Pinocchio / Mr. Toad) — those don't fit a blitz.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world', 'alice-in-wonderland'],
       },
       {
@@ -1346,7 +1338,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Mickey & Minnie's",
-        body: 'Tap in, re-book Big Thunder for noon if it isn\'t already locked in.',
+        body: "Tap in, re-book Big Thunder for noon if it isn't already locked in.",
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -1390,7 +1382,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Haunted Mansion',
-        body: 'For 2:00 PM. Then immediately queue up for Tiana\'s standby in Critter Country.',
+        body: "For 2:00 PM. Then immediately queue up for Tiana's standby in Critter Country.",
         llRideId: 'haunted-mansion',
       },
       {
@@ -1461,7 +1453,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Lightning Lane: Star Tours',
-        body: 'Tap in, book Finding Nemo for 6:30 (or skip the booking if you\'re feeling done). Tomorrowland air conditioning is a gift at this point.',
+        body: "Tap in, book Finding Nemo for 6:30 (or skip the booking if you're feeling done). Tomorrowland air conditioning is a gift at this point.",
         rideIds: ['star-tours'],
       },
       {
@@ -1500,7 +1492,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'tip',
         title: 'Day 1 blitz arrival',
-        body: "Park by 7:00 for 8:00 open. Eat in the car. Rise Single Pass purchased the night before. With multiple days, you can afford one missed connection — but Day 1 sets the pace.",
+        body: 'Park by 7:00 for 8:00 open. Eat in the car. Rise Single Pass purchased the night before. With multiple days, you can afford one missed connection — but Day 1 sets the pace.',
       },
       {
         id: 'rope-drop',
@@ -1508,7 +1500,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'rope-drop',
         title: 'Rope drop Rise of the Resistance',
-        body: 'Single Pass. Rise standby is 90+ minutes by 10 AM — the Single Pass pays for itself before lunch. No Single Pass? Galaxy\'s Edge for Millennium Falcon\'s Single Rider line.',
+        body: "Single Pass. Rise standby is 90+ minutes by 10 AM — the Single Pass pays for itself before lunch. No Single Pass? Galaxy's Edge for Millennium Falcon's Single Rider line.",
         rideIds: ['rise-of-the-resistance'],
       },
       {
@@ -1535,7 +1527,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Peter Pan's Flight",
-        body: 'Tap in, book Mickey & Minnie\'s for 10:30. Re-book is a reflex.',
+        body: "Tap in, book Mickey & Minnie's for 10:30. Re-book is a reflex.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -1615,7 +1607,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Jungle Cruise',
-        body: 'For 3:00. Then walk to Tiana\'s Bayou Adventure standby — line drops in the 2:00–2:30 window.',
+        body: "For 3:00. Then walk to Tiana's Bayou Adventure standby — line drops in the 2:00–2:30 window.",
         llRideId: 'jungle-cruise',
       },
       {
@@ -1685,7 +1677,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'Castle fireworks from Main Street',
-        body: 'Day 1, full projection show. Stake out a curb on Main Street 25 minutes before. Galaxy\'s Edge fireworks are your Day 2 or 3 view.',
+        body: "Day 1, full projection show. Stake out a curb on Main Street 25 minutes before. Galaxy's Edge fireworks are your Day 2 or 3 view.",
       },
     ],
   },
@@ -1698,7 +1690,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at Disneyland — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      "Closing blitz: hit anything you missed, re-ride the favorites, character meet, parade, dinner moving, castle fireworks. 14 rides on the way out the door.",
+      'Closing blitz: hit anything you missed, re-ride the favorites, character meet, parade, dinner moving, castle fireworks. 14 rides on the way out the door.',
     blocks: [
       {
         id: 'arrive',
@@ -1706,7 +1698,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'tip',
         title: 'Last-day blitz arrival',
-        body: 'Park by 7:00 for 8:00 open. Last day = everything you missed. Make a list the night before so you\'re not deciding at rope drop.',
+        body: "Park by 7:00 for 8:00 open. Last day = everything you missed. Make a list the night before so you're not deciding at rope drop.",
       },
       {
         id: 'rope-drop',
@@ -1714,14 +1706,14 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'rope-drop',
         title: 'Rope drop whatever you missed',
-        body: 'Day 1 hit Rise. Day 2 hit Indy/Matterhorn standby. Day 3 rope-drop = whatever your kid loved most or anything you didn\'t reach. The point is rope drop is your last chance at 8 AM standby pricing.',
+        body: "Day 1 hit Rise. Day 2 hit Indy/Matterhorn standby. Day 3 rope-drop = whatever your kid loved most or anything you didn't reach. The point is rope drop is your last chance at 8 AM standby pricing.",
       },
       {
         id: 'll-1',
         time: '8:05 AM',
         durationMin: 2,
         type: 'll-booking',
-        title: 'Book the kid\'s pick',
+        title: "Book the kid's pick",
         body: 'Day 3 first LL = whatever they ask for. Last day prioritizes feel over coverage.',
         llRideId: 'peter-pans-flight',
       },
@@ -1739,7 +1731,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: 'Use Lightning Lane: their pick',
-        body: 'Tap in, book Mickey & Minnie\'s for 11:00 if they haven\'t already had it 3 times this trip.',
+        body: "Tap in, book Mickey & Minnie's for 11:00 if they haven't already had it 3 times this trip.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -1748,7 +1740,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Mickey & Minnie's again",
-        body: "For 11:00. Always a safe second LL on the last day.",
+        body: 'For 11:00. Always a safe second LL on the last day.',
         llRideId: 'mickey-and-minnies-runaway-railway',
       },
       {
@@ -1757,7 +1749,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'character',
         title: 'Last character meet — Toontown Mickey',
-        body: 'Toontown Mickey line is shortest before 11. One last photo. Move to Mickey & Minnie\'s LL next door right after.',
+        body: "Toontown Mickey line is shortest before 11. One last photo. Move to Mickey & Minnie's LL next door right after.",
       },
       {
         id: 'mm-ride',
@@ -1800,7 +1792,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Big Thunder LL',
-        body: 'Tap in, book Tiana\'s or Haunted Mansion for 2:00.',
+        body: "Tap in, book Tiana's or Haunted Mansion for 2:00.",
         rideIds: ['big-thunder-mountain-railroad'],
       },
       {
@@ -1809,7 +1801,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Tiana's Bayou Adventure",
-        body: "For 2:00 — last drop of the trip.",
+        body: 'For 2:00 — last drop of the trip.',
         llRideId: 'tianas-bayou-adventure',
       },
       {
@@ -1826,7 +1818,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: "Use Tiana's LL",
-        body: "Tap in, book Haunted Mansion or Jungle Cruise for 3:30.",
+        body: 'Tap in, book Haunted Mansion or Jungle Cruise for 3:30.',
         rideIds: ['tianas-bayou-adventure'],
       },
       {
@@ -1853,7 +1845,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Haunted Mansion LL',
-        body: 'Tap in, book Jungle Cruise for 5:00 if you haven\'t already.',
+        body: "Tap in, book Jungle Cruise for 5:00 if you haven't already.",
         rideIds: ['haunted-mansion'],
       },
       {
@@ -1889,7 +1881,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'meal',
         title: 'Galactic Grill or Ronto Wraps — last dinner',
-        body: 'Kids\' pick. If you\'re finishing in Galaxy\'s Edge for fireworks, grab Ronto Wraps. Otherwise Galactic Grill in Tomorrowland for the easy burger.',
+        body: "Kids' pick. If you're finishing in Galaxy's Edge for fireworks, grab Ronto Wraps. Otherwise Galactic Grill in Tomorrowland for the easy burger.",
       },
       {
         id: 'last-rides',
@@ -1919,7 +1911,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — No Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Skip the $136 Multi Pass. Rope drop hard, ride Fantasyland standby before the wall, nap from noon, and use Rider Switch + Single Rider lines to still close with the headliners.",
+      'Skip the $136 Multi Pass. Rope drop hard, ride Fantasyland standby before the wall, nap from noon, and use Rider Switch + Single Rider lines to still close with the headliners.',
     blocks: [
       {
         id: 'tradeoff',
@@ -1944,7 +1936,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 75,
         type: 'ride',
         title: 'Stack Fantasyland: 4 rides in 75 minutes',
-        body: 'Dumbo, Small World, Alice, Casey Jr. No-LL day means rope drop does 80% of the work. Skip the Carrousel (medium line, low payoff) and Storybook Land (25-minute time sink) — those don\'t fit a no-LL day.',
+        body: "Dumbo, Small World, Alice, Casey Jr. No-LL day means rope drop does 80% of the work. Skip the Carrousel (medium line, low payoff) and Storybook Land (25-minute time sink) — those don't fit a no-LL day.",
         rideIds: [
           'dumbo-the-flying-elephant',
           'its-a-small-world',
@@ -1958,7 +1950,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 50,
         type: 'ride',
         title: "Mickey & Minnie's Runaway Railway standby",
-        body: '35-minute standby at 9:45 vs. 60+ by 11 AM. Worth the wait — it\'s the most universally loved ride in the park. Skip the rest of Toontown (Roger Rabbit\'s closed for refurb anyway).',
+        body: "35-minute standby at 9:45 vs. 60+ by 11 AM. Worth the wait — it's the most universally loved ride in the park. Skip the rest of Toontown (Roger Rabbit's closed for refurb anyway).",
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -1992,7 +1984,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 50,
         type: 'ride',
         title: 'Big Thunder via Rider Switch',
-        body: "If you have a 40\"+ kid: standby is 50 minutes at 3:30. One parent rides standby with big kid. When done, ask cast member for Rider Switch — second parent rides via the LL entrance with the big kid for a free re-ride. Two rides for one wait.",
+        body: 'If you have a 40"+ kid: standby is 50 minutes at 3:30. One parent rides standby with big kid. When done, ask cast member for Rider Switch — second parent rides via the LL entrance with the big kid for a free re-ride. Two rides for one wait.',
         rideIds: ['big-thunder-mountain-railroad'],
       },
       {
@@ -2017,8 +2009,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '6:30 PM',
         durationMin: 90,
         type: 'ride',
-        title: 'Ride during parade — Pan or Mickey & Minnie\'s',
-        body: 'The 6:30 evening parade pulls 30% of guests to Main Street. Standby on Peter Pan and Mickey & Minnie\'s drops to 35–40 minutes. This is the second-best window of the day for marquee rides without LL.',
+        title: "Ride during parade — Pan or Mickey & Minnie's",
+        body: "The 6:30 evening parade pulls 30% of guests to Main Street. Standby on Peter Pan and Mickey & Minnie's drops to 35–40 minutes. This is the second-best window of the day for marquee rides without LL.",
         rideIds: ['peter-pans-flight', 'mickey-and-minnies-runaway-railway'],
       },
       {
@@ -2047,7 +2039,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: "Save $136, treat rope drop like a sport",
+        title: 'Save $136, treat rope drop like a sport',
         body: "You're saving $34/person on Multi Pass. The tradeoff is rope drop has to actually work — you can't sleep in. Be at the turnstile 45 minutes before the posted gate open. Eat at the hotel. Day 1 sets the rhythm for the whole trip.",
       },
       {
@@ -2100,7 +2092,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 180,
         type: 'break',
         title: 'Nap break / hotel reset',
-        body: 'Out of the park by 12:00. Day 1 nap matters more than any other on a no-LL trip — you\'re leaning on evening parade timing and rested kids who can do another 4-hour shift.',
+        body: "Out of the park by 12:00. Day 1 nap matters more than any other on a no-LL trip — you're leaning on evening parade timing and rested kids who can do another 4-hour shift.",
       },
       {
         id: 'big-thunder-rider-switch',
@@ -2108,7 +2100,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 50,
         type: 'ride',
         title: 'Big Thunder via Rider Switch',
-        body: "40\"+ kid: 45-minute standby. One parent rides with the big kid, then second parent rides via the LL entrance with the same big kid for a free re-ride. Two rides for one wait. Under 40\"? Sub in Haunted Mansion standby.",
+        body: '40"+ kid: 45-minute standby. One parent rides with the big kid, then second parent rides via the LL entrance with the same big kid for a free re-ride. Two rides for one wait. Under 40"? Sub in Haunted Mansion standby.',
         rideIds: ['big-thunder-mountain-railroad'],
       },
       {
@@ -2134,7 +2126,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 75,
         type: 'ride',
         title: 'Ride during the parade — second Peter Pan',
-        body: "Evening parade pulls 30% of guests to Main Street. Peter Pan standby drops to 35–40 minutes. Best second-Peter-Pan window of the day without LL. Re-ride whatever else they loved — Dumbo, Small World — while waits are down.",
+        body: 'Evening parade pulls 30% of guests to Main Street. Peter Pan standby drops to 35–40 minutes. Best second-Peter-Pan window of the day without LL. Re-ride whatever else they loved — Dumbo, Small World — while waits are down.',
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -2156,14 +2148,14 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — No Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      "Older kids (6–8), no nap, no Multi Pass: rope drop hard, sit-down lunch instead of nap, use Single Rider and Rider Switch liberally, evening parade-window rides.",
+      'Older kids (6–8), no nap, no Multi Pass: rope drop hard, sit-down lunch instead of nap, use Single Rider and Rider Switch liberally, evening parade-window rides.',
     blocks: [
       {
         id: 'tradeoff',
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: "Save $136 — rope drop is the price",
+        title: 'Save $136 — rope drop is the price',
         body: "You're saving $34/person on Multi Pass. No nap means a longer day, so rope drop has to be the morning anchor. Park 45 minutes before posted open. Eat at the hotel. Have the app ready for mobile orders even without LL.",
       },
       {
@@ -2190,7 +2182,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Fantasyland stack: Dumbo + Small World',
-        body: 'Two rides before 10 AM. Dumbo first (line grows fastest), then Small World. Skip Carrousel + Storybook Land — both eat time you don\'t have without LL.',
+        body: "Two rides before 10 AM. Dumbo first (line grows fastest), then Small World. Skip Carrousel + Storybook Land — both eat time you don't have without LL.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world'],
       },
       {
@@ -2289,15 +2281,15 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 at Disneyland — No Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      "Day 1 without LL or nap: rope drop is the foundation, Rider Switch and Single Rider lines do the work of Lightning Lane, sit-down lunch resets the day, and evening parade timing lets you re-ride the marquee.",
+      'Day 1 without LL or nap: rope drop is the foundation, Rider Switch and Single Rider lines do the work of Lightning Lane, sit-down lunch resets the day, and evening parade timing lets you re-ride the marquee.',
     blocks: [
       {
         id: 'tradeoff',
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: "No LL, no nap, multi-day — rope drop is everything",
-        body: 'Saving $34/person × number-of-days adds up fast on a multi-day trip. But Day 1 has to teach the rhythm. Park 45 minutes before open. Eat at the hotel. Today\'s job is hitting the four marquee rides without paying for them.',
+        title: 'No LL, no nap, multi-day — rope drop is everything',
+        body: "Saving $34/person × number-of-days adds up fast on a multi-day trip. But Day 1 has to teach the rhythm. Park 45 minutes before open. Eat at the hotel. Today's job is hitting the four marquee rides without paying for them.",
       },
       {
         id: 'rope-drop',
@@ -2323,7 +2315,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Fantasyland: Dumbo + Small World + Alice',
-        body: 'Three more rides before 10:15 if you move. Save the deep cuts for Day 2 — those don\'t fit without LL and you have multiple days.',
+        body: "Three more rides before 10:15 if you move. Save the deep cuts for Day 2 — those don't fit without LL and you have multiple days.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world', 'alice-in-wonderland'],
       },
       {
@@ -2392,7 +2384,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 90,
         type: 'ride',
         title: 'Evening parade-window re-rides',
-        body: 'Evening parade pulls crowds to Main Street. Standby drops on Peter Pan, Mickey & Minnie\'s, Big Thunder. Re-ride the marquee — best no-LL window of the day.',
+        body: "Evening parade pulls crowds to Main Street. Standby drops on Peter Pan, Mickey & Minnie's, Big Thunder. Re-ride the marquee — best no-LL window of the day.",
         rideIds: ['peter-pans-flight', 'mickey-and-minnies-runaway-railway'],
       },
       {
@@ -2401,7 +2393,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'Day 1 fireworks from Main Street',
-        body: 'Day 1 = full castle show. Curb on Main Street 25 minutes before. Galaxy\'s Edge view is your Day 2 or 3 option.',
+        body: "Day 1 = full castle show. Curb on Main Street 25 minutes before. Galaxy's Edge view is your Day 2 or 3 option.",
       },
     ],
   },
@@ -2432,7 +2424,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'rope-drop',
         title: 'Rope drop Radiator Springs Racers',
-        body: "Straight to Cars Land. RSR standby is 15–20 minutes at 8:00 vs. 75–90 by 11. This single move saves a family of 4 the $60–120 you'd otherwise spend on Single Pass. Kid under 40\"? One parent rides Single Rider while the other takes the kid to The Little Mermaid — walk-on, air-conditioned, 90 seconds away.",
+        body: 'Straight to Cars Land. RSR standby is 15–20 minutes at 8:00 vs. 75–90 by 11. This single move saves a family of 4 the $60–120 you\'d otherwise spend on Single Pass. Kid under 40"? One parent rides Single Rider while the other takes the kid to The Little Mermaid — walk-on, air-conditioned, 90 seconds away.',
         rideIds: ['radiator-springs-racers'],
       },
       {
@@ -2459,7 +2451,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: "Use Lightning Lane: Soarin' Across America",
-        body: "Hang-glider simulator over US landmarks — smells, breezes, the whole thing. Mild motion; some kids freak at the lift. Re-book Toy Story Midway Mania the moment you tap in.",
+        body: 'Hang-glider simulator over US landmarks — smells, breezes, the whole thing. Mild motion; some kids freak at the lift. Re-book Toy Story Midway Mania the moment you tap in.',
         rideIds: ['soarin-across-america'],
       },
       {
@@ -2510,7 +2502,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Lightning Lane: Toy Story Midway Mania',
-        body: "3D shooter dark ride — the most replayable thing at DCA. Re-book one more LL the moment you tap in. WEB SLINGERS if your kid is 6+ and not Spider-Man-averse, otherwise Monsters, Inc.",
+        body: '3D shooter dark ride — the most replayable thing at DCA. Re-book one more LL the moment you tap in. WEB SLINGERS if your kid is 6+ and not Spider-Man-averse, otherwise Monsters, Inc.',
         rideIds: ['toy-story-midway-mania'],
       },
       {
@@ -2519,7 +2511,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Monsters, Inc.',
-        body: "For 5:30 PM. Gentle ride, closing in 2027 — kids love it. WEB SLINGERS is the alternative for brave kids 6+; the flick-your-wrist web throwing is the wow.",
+        body: 'For 5:30 PM. Gentle ride, closing in 2027 — kids love it. WEB SLINGERS is the alternative for brave kids 6+; the flick-your-wrist web throwing is the wow.',
         llRideId: 'monsters-inc',
       },
       {
@@ -2562,7 +2554,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'World of Color from your virtual queue spot',
-        body: "Your virtual queue text comes through ~45 minutes before showtime with your viewing area. Show is typically 9:00 PM in summer. Walk to your assigned area 15 minutes early; bring rain ponchos for the front rows.",
+        body: 'Your virtual queue text comes through ~45 minutes before showtime with your viewing area. Show is typically 9:00 PM in summer. Walk to your assigned area 15 minutes early; bring rain ponchos for the front rows.',
       },
     ],
   },
@@ -2609,7 +2601,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 50,
         type: 'ride',
         title: "Mater's + Luigi's in Cars Land",
-        body: 'Two more rides while you\'re here. Mater\'s spins; Luigi\'s self-drives. Both 32" — most 4+ kids ride. Skip if your kid hated the RSR spin.',
+        body: "Two more rides while you're here. Mater's spins; Luigi's self-drives. Both 32\" — most 4+ kids ride. Skip if your kid hated the RSR spin.",
         rideIds: ['maters-junkyard-jamboree', 'luigis-rollickin-roadsters'],
       },
       {
@@ -2618,7 +2610,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: "Use Lightning Lane: Soarin'",
-        body: "Re-book Toy Story Midway Mania the moment you tap in.",
+        body: 'Re-book Toy Story Midway Mania the moment you tap in.',
         rideIds: ['soarin-across-america'],
       },
       {
@@ -2653,7 +2645,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Toy Story Midway Mania LL',
-        body: "Right after the WoC tap, walk to Pixar Pier for the booking. 3D shooter — kids ask to ride it again.",
+        body: 'Right after the WoC tap, walk to Pixar Pier for the booking. 3D shooter — kids ask to ride it again.',
         rideIds: ['toy-story-midway-mania'],
       },
       {
@@ -2687,7 +2679,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Avengers Campus + WEB SLINGERS',
-        body: 'Walk Avengers Campus first — Spider-Man drone shows, Doctor Strange demos, character roams. Use the LL for WEB SLINGERS. Skip Guardians: BREAKOUT! Single Pass on Day 1 — that\'s a Day 2 call.',
+        body: "Walk Avengers Campus first — Spider-Man drone shows, Doctor Strange demos, character roams. Use the LL for WEB SLINGERS. Skip Guardians: BREAKOUT! Single Pass on Day 1 — that's a Day 2 call.",
         rideIds: ['web-slingers'],
       },
       {
@@ -2696,7 +2688,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Lamplight Lounge or Boardwalk Pizza & Pasta',
-        body: "Lamplight if you booked 60 days out. Otherwise Boardwalk Pizza & Pasta — kid-friendly, sit-down, on Pixar Pier with views.",
+        body: 'Lamplight if you booked 60 days out. Otherwise Boardwalk Pizza & Pasta — kid-friendly, sit-down, on Pixar Pier with views.',
       },
       {
         id: 'cars-night',
@@ -2725,7 +2717,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at California Adventure — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Day 2 of 2: rides you missed on Day 1, Pixar Pier deep cuts, Grizzly River Run for hot afternoons, and World of Color one more time. Less marquee pressure.",
+      'Day 2 of 2: rides you missed on Day 1, Pixar Pier deep cuts, Grizzly River Run for hot afternoons, and World of Color one more time. Less marquee pressure.',
     blocks: [
       {
         id: 'arrive',
@@ -2750,7 +2742,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Soarin' again",
-        body: 'Soarin\' is the safest Day 2 first LL — it\'s short, family-loved, no marketing required. Book for 10:00 AM.',
+        body: "Soarin' is the safest Day 2 first LL — it's short, family-loved, no marketing required. Book for 10:00 AM.",
         llRideId: 'soarin-across-america',
       },
       {
@@ -2768,7 +2760,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: "Use Soarin' LL — second ride",
-        body: 'Kids ask to ride Soarin\' again all trip. This is the day. Re-book Toy Story Midway Mania next.',
+        body: "Kids ask to ride Soarin' again all trip. This is the day. Re-book Toy Story Midway Mania next.",
         rideIds: ['soarin-across-america'],
       },
       {
@@ -2785,7 +2777,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '10:30 AM',
         durationMin: 50,
         type: 'ride',
-        title: 'Grizzly River Run if it\'s warm',
+        title: "Grizzly River Run if it's warm",
         body: '42" minimum. You will get soaked — not damp, soaked. Pack a poncho or change of clothes in the stroller. Skip if it\'s under 70°F.',
         rideIds: ['grizzly-river-run'],
       },
@@ -2795,7 +2787,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Toy Story Midway Mania LL',
-        body: 'Re-ride or first ride if you didn\'t hit it Day 1. Then quick lunch.',
+        body: "Re-ride or first ride if you didn't hit it Day 1. Then quick lunch.",
         rideIds: ['toy-story-midway-mania'],
       },
       {
@@ -2820,7 +2812,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 180,
         type: 'break',
         title: 'Last DCA nap',
-        body: "Pack up the room during nap if checkout is tomorrow. Book one more LL at 3:00 from bed.",
+        body: 'Pack up the room during nap if checkout is tomorrow. Book one more LL at 3:00 from bed.',
       },
       {
         id: 'll-3',
@@ -2846,7 +2838,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Smokejumpers Grill in Grizzly Peak',
-        body: "Last DCA dinner = Smokejumpers Grill. Burgers and sandwiches, often less crowded than the Pixar Pier options. Sit on the patio with mountain views.",
+        body: 'Last DCA dinner = Smokejumpers Grill. Burgers and sandwiches, often less crowded than the Pixar Pier options. Sit on the patio with mountain views.',
       },
       {
         id: 'cars-night',
@@ -2875,7 +2867,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day California Adventure — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      "Built for families of older kids (7+) who want everything DCA can throw at them — Incredicoaster, Guardians: BREAKOUT!, plus the Multi Pass set. No nap, no margin.",
+      'Built for families of older kids (7+) who want everything DCA can throw at them — Incredicoaster, Guardians: BREAKOUT!, plus the Multi Pass set. No nap, no margin.',
     blocks: [
       {
         id: 'arrive',
@@ -2883,7 +2875,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'tip',
         title: 'DCA blitz arrival — fewer rides, faster pace',
-        body: "Blitz at DCA is a different beast than at Disneyland — there are fewer rides total. This template assumes kids 7+ who can also hit Incredicoaster (48\") and Guardians: BREAKOUT! (40\", intense drops). Buy the Guardians Single Pass the night before.",
+        body: 'Blitz at DCA is a different beast than at Disneyland — there are fewer rides total. This template assumes kids 7+ who can also hit Incredicoaster (48") and Guardians: BREAKOUT! (40", intense drops). Buy the Guardians Single Pass the night before.',
       },
       {
         id: 'rope-drop',
@@ -2900,7 +2892,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Soarin' for ~9:30",
-        body: 'First LL is Soarin\'. Re-book WEB SLINGERS the moment you tap into Soarin\'.',
+        body: "First LL is Soarin'. Re-book WEB SLINGERS the moment you tap into Soarin'.",
         llRideId: 'soarin-across-america',
       },
       {
@@ -2909,7 +2901,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: "Mater's + Luigi's stack",
-        body: 'Two Cars Land spinners back-to-back while you\'re already in Cars Land. Total wait under 30 minutes at 8:45.',
+        body: "Two Cars Land spinners back-to-back while you're already in Cars Land. Total wait under 30 minutes at 8:45.",
         rideIds: ['maters-junkyard-jamboree', 'luigis-rollickin-roadsters'],
       },
       {
@@ -2963,7 +2955,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Toy Story Midway Mania for 12:30',
-        body: 'Sets up your pre-Grizzly lunch. By now you\'ve done 6 marquee rides and it\'s not even noon.',
+        body: "Sets up your pre-Grizzly lunch. By now you've done 6 marquee rides and it's not even noon.",
         llRideId: 'toy-story-midway-mania',
       },
       {
@@ -2996,7 +2988,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '1:30 PM',
         durationMin: 2,
         type: 'll-booking',
-        title: "Book Monsters, Inc. for 3:00",
+        title: 'Book Monsters, Inc. for 3:00',
         body: 'Sets up a chill ride in the afternoon energy slump.',
         llRideId: 'monsters-inc',
       },
@@ -3024,7 +3016,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 75,
         type: 'ride',
         title: 'Pixar Pier sweep: Jellyfish, Golden Zephyr, Pal-A-Round',
-        body: 'Jumpin\' Jellyfish (mini drop tower), Golden Zephyr (vintage rockets), Pal-A-Round Ferris wheel for views. Pal-A-Round non-swinging unless you want a coaster experience.',
+        body: "Jumpin' Jellyfish (mini drop tower), Golden Zephyr (vintage rockets), Pal-A-Round Ferris wheel for views. Pal-A-Round non-swinging unless you want a coaster experience.",
         rideIds: ['jumpin-jellyfish', 'golden-zephyr', 'pixar-pal-a-round'],
       },
       {
@@ -3087,7 +3079,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Soarin' for 9:30",
-        body: 'Day 1 first LL is Soarin\'. Re-book WEB SLINGERS at the tap-in.',
+        body: "Day 1 first LL is Soarin'. Re-book WEB SLINGERS at the tap-in.",
         llRideId: 'soarin-across-america',
       },
       {
@@ -3096,7 +3088,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: "Mater's + Luigi's",
-        body: 'Two Cars Land spinners while you\'re here. Day 2 won\'t do these.',
+        body: "Two Cars Land spinners while you're here. Day 2 won't do these.",
         rideIds: ['maters-junkyard-jamboree', 'luigis-rollickin-roadsters'],
       },
       {
@@ -3158,7 +3150,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Toy Story Midway Mania LL',
-        body: 'Re-book Soarin\' again for 3:30 if you have the LL eligibility.',
+        body: "Re-book Soarin' again for 3:30 if you have the LL eligibility.",
         rideIds: ['toy-story-midway-mania'],
       },
       {
@@ -3184,7 +3176,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Walk Avengers Campus + character moments',
-        body: 'Doctor Strange demo every 30 min, Spider-Man drone show, character roams. Skip Guardians: BREAKOUT! — that\'s Day 2.',
+        body: "Doctor Strange demo every 30 min, Spider-Man drone show, character roams. Skip Guardians: BREAKOUT! — that's Day 2.",
       },
       {
         id: 'dinner',
@@ -3228,7 +3220,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: "Save $136 — DCA Multi Pass math",
+        title: 'Save $136 — DCA Multi Pass math',
         body: "Family of 4 × $34 = $136. DCA's Multi Pass covers exactly 3 useful rides for kids 2–8 — and one of those (WEB SLINGERS) is intense for under-6s. So you're really paying $136 for 2 line skips. Skip the pass, rope drop RSR, and you save more than the pass itself was going to save you.",
       },
       {
@@ -3255,7 +3247,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 40,
         type: 'ride',
         title: "Soarin' standby",
-        body: '25-min wait at 9:30. By 11 AM it\'s 45+. The make-or-break standby ride without Multi Pass — get here before 10.',
+        body: "25-min wait at 9:30. By 11 AM it's 45+. The make-or-break standby ride without Multi Pass — get here before 10.",
         rideIds: ['soarin-across-america'],
       },
       {
@@ -3264,7 +3256,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 40,
         type: 'ride',
         title: 'Toy Story Midway Mania standby',
-        body: '30-min wait at 10:30. Walk to Pixar Pier from Grizzly Peak. Once you\'re there, hit Jessie\'s Carousel walk-on after.',
+        body: "30-min wait at 10:30. Walk to Pixar Pier from Grizzly Peak. Once you're there, hit Jessie's Carousel walk-on after.",
         rideIds: ['toy-story-midway-mania', 'jessies-critter-carousel'],
       },
       {
@@ -3273,7 +3265,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 5,
         type: 'tip',
         title: 'Join World of Color virtual queue',
-        body: '12:00 PM in the app. Must be tapped into DCA. No LL, but this virtual queue is FREE — don\'t skip it.',
+        body: "12:00 PM in the app. Must be tapped into DCA. No LL, but this virtual queue is FREE — don't skip it.",
       },
       {
         id: 'lunch',
@@ -3289,7 +3281,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 180,
         type: 'break',
         title: 'Nap break',
-        body: 'Out by 12:45. With no LL bookings to maintain, this nap is pure rest. Pack a swap of clothes if you\'re doing Grizzly River Run later.',
+        body: "Out by 12:45. With no LL bookings to maintain, this nap is pure rest. Pack a swap of clothes if you're doing Grizzly River Run later.",
       },
       {
         id: 'monsters-mermaid',
@@ -3306,7 +3298,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'meal',
         title: 'Smokejumpers Grill or San Fransokyo',
-        body: "Smokejumpers Grill (Grizzly Peak) for burgers and patio seating. San Fransokyo for birria tacos. Both are quick service done right.",
+        body: 'Smokejumpers Grill (Grizzly Peak) for burgers and patio seating. San Fransokyo for birria tacos. Both are quick service done right.',
       },
       {
         id: 'pixar-pier',
@@ -3314,7 +3306,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Pixar Pier evening rides',
-        body: 'Jumpin\' Jellyfish (40", brave 6+ love it), Pixar Pal-A-Round (best DCA views), Jessie\'s Carousel re-ride if the toddler asks. Standby drops in the 6–8 PM window.',
+        body: "Jumpin' Jellyfish (40\", brave 6+ love it), Pixar Pal-A-Round (best DCA views), Jessie's Carousel re-ride if the toddler asks. Standby drops in the 6–8 PM window.",
         rideIds: ['jumpin-jellyfish', 'pixar-pal-a-round', 'jessies-critter-carousel'],
       },
       {
@@ -3323,7 +3315,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Cars Land neon walk',
-        body: "Cars Land at night is the visual moment of DCA. Walk Route 66, take photos. RSR re-ride is possible — standby drops to 30–40 min by 8 PM.",
+        body: 'Cars Land at night is the visual moment of DCA. Walk Route 66, take photos. RSR re-ride is possible — standby drops to 30–40 min by 8 PM.',
       },
       {
         id: 'world-of-color',
@@ -3353,7 +3345,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '7:15 AM',
         durationMin: 45,
         type: 'tip',
-        title: "Why start at DCA",
+        title: 'Why start at DCA',
         body: "RSR alone is the reason. Rope drop saves $60–120 in Single Pass costs and gets you a 15-minute wait instead of 90. Disneyland's Peter Pan you can hit via Lightning Lane after the hop. Hop windows open at 11:00 AM — you can't book a DL LL until ~11.",
       },
       {
@@ -3371,7 +3363,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book DCA Lightning Lane: Soarin'",
-        body: 'First LL while in DCA — Soarin\' for ~10:00. You can\'t book Disneyland LLs until 11 (hopper rule).',
+        body: "First LL while in DCA — Soarin' for ~10:00. You can't book Disneyland LLs until 11 (hopper rule).",
         llRideId: 'soarin-across-america',
       },
       {
@@ -3380,7 +3372,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: "Mater's + Luigi's",
-        body: 'Two Cars Land spinners while you\'re here. Walk-on at 8:45.',
+        body: "Two Cars Land spinners while you're here. Walk-on at 8:45.",
         rideIds: ['maters-junkyard-jamboree', 'luigis-rollickin-roadsters'],
       },
       {
@@ -3425,7 +3417,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book DL Lightning Lane: Peter Pan's Flight",
-        body: "Hop rule: first DL LL return must be 11:00 or later. Book Peter Pan for ~12:30 — gives you time to walk over after lunch.",
+        body: 'Hop rule: first DL LL return must be 11:00 or later. Book Peter Pan for ~12:30 — gives you time to walk over after lunch.',
         llRideId: 'peter-pans-flight',
       },
       {
@@ -3442,7 +3434,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 15,
         type: 'travel',
         title: 'Hop to Disneyland',
-        body: 'Walk through the esplanade to the Disneyland turnstiles. Tap your ticket — the hop is automatic since you\'ve already used DCA today. 8-minute walk if you don\'t dawdle.',
+        body: "Walk through the esplanade to the Disneyland turnstiles. Tap your ticket — the hop is automatic since you've already used DCA today. 8-minute walk if you don't dawdle.",
       },
       {
         id: 'peter-pan',
@@ -3450,7 +3442,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: "Use Lightning Lane: Peter Pan's Flight",
-        body: 'First Disneyland ride. Re-book Mickey & Minnie\'s the moment you tap in.',
+        body: "First Disneyland ride. Re-book Mickey & Minnie's the moment you tap in.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -3494,7 +3486,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Fantasyland standby: Dumbo + Small World',
-        body: 'Standby waits drop in the afternoon. Dumbo + Small World in 60 minutes total. Add Alice if there\'s time.',
+        body: "Standby waits drop in the afternoon. Dumbo + Small World in 60 minutes total. Add Alice if there's time.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world'],
       },
       {
@@ -3533,7 +3525,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 Park Hopper — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Day 1 of a multi-day hopper trip: start DCA for Radiator Springs Racers, hop to Disneyland for marquee Fantasyland rides, end with fireworks. Save second-tier rides for Day 2.",
+      'Day 1 of a multi-day hopper trip: start DCA for Radiator Springs Racers, hop to Disneyland for marquee Fantasyland rides, end with fireworks. Save second-tier rides for Day 2.',
     blocks: [
       {
         id: 'arrive',
@@ -3558,7 +3550,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Soarin' for 9:30",
-        body: 'First LL is Soarin\' — universal family ride and the obvious second pick after RSR.',
+        body: "First LL is Soarin' — universal family ride and the obvious second pick after RSR.",
         llRideId: 'soarin-across-america',
       },
       {
@@ -3567,7 +3559,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: "Mater's + Luigi's",
-        body: 'Two Cars Land spinners while you\'re here. Day 2 won\'t come back to Cars Land in the morning.',
+        body: "Two Cars Land spinners while you're here. Day 2 won't come back to Cars Land in the morning.",
         rideIds: ['maters-junkyard-jamboree', 'luigis-rollickin-roadsters'],
       },
       {
@@ -3611,8 +3603,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '11:05 AM',
         durationMin: 2,
         type: 'll-booking',
-        title: "Book DL Lightning Lane: Peter Pan",
-        body: "Hop rule: first DL LL return must be 11:00+. Peter Pan for 12:30.",
+        title: 'Book DL Lightning Lane: Peter Pan',
+        body: 'Hop rule: first DL LL return must be 11:00+. Peter Pan for 12:30.',
         llRideId: 'peter-pans-flight',
       },
       {
@@ -3637,7 +3629,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Peter Pan LL',
-        body: 'First DL ride. Re-book Mickey & Minnie\'s for 3:30 (post-nap window).',
+        body: "First DL ride. Re-book Mickey & Minnie's for 3:30 (post-nap window).",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -3689,7 +3681,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'Day 1 fireworks from Main Street',
-        body: 'Day 1 of multi-day = full castle projection show. Curb on Main Street 25 min before. Save the Galaxy\'s Edge view for Day 2.',
+        body: "Day 1 of multi-day = full castle projection show. Curb on Main Street 25 min before. Save the Galaxy's Edge view for Day 2.",
       },
     ],
   },
@@ -3710,15 +3702,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'tip',
         title: "Day 3 is the kid's pick",
-        body: 'Last hopper day = re-ride day. What did your family love most? Build the day around two or three favorites. If RSR was the hit, start at DCA again. If it\'s Peter Pan and Mickey & Minnie\'s, start at Disneyland.',
+        body: "Last hopper day = re-ride day. What did your family love most? Build the day around two or three favorites. If RSR was the hit, start at DCA again. If it's Peter Pan and Mickey & Minnie's, start at Disneyland.",
       },
       {
         id: 'rope-drop',
         time: '8:00 AM',
         durationMin: 30,
         type: 'rope-drop',
-        title: 'Rope drop the kid\'s pick',
-        body: 'Wherever they want. If split votes, the rope-drop math favors DCA for RSR (saves the most time). Disneyland for Peter Pan if it\'s the universal favorite.',
+        title: "Rope drop the kid's pick",
+        body: "Wherever they want. If split votes, the rope-drop math favors DCA for RSR (saves the most time). Disneyland for Peter Pan if it's the universal favorite.",
         rideIds: ['radiator-springs-racers', 'peter-pans-flight'],
       },
       {
@@ -3736,7 +3728,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Wander — pick three',
-        body: 'No schedule on Day 3. Let them lead. Carrousel three times, sure. Mater\'s for the fifth time, sure. Day 3 is the trip they remember.',
+        body: "No schedule on Day 3. Let them lead. Carrousel three times, sure. Mater's for the fifth time, sure. Day 3 is the trip they remember.",
       },
       {
         id: 'reride',
@@ -3753,7 +3745,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book second LL',
-        body: 'Mickey & Minnie\'s if Disneyland-started. Toy Story Midway Mania if DCA-started.',
+        body: "Mickey & Minnie's if Disneyland-started. Toy Story Midway Mania if DCA-started.",
         llRideId: 'mickey-and-minnies-runaway-railway',
       },
       {
@@ -3770,7 +3762,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book a Lightning Lane in the OTHER park',
-        body: 'Hop window opens at 11. Book a LL in the park you\'re going to hop to for ~1:30.',
+        body: "Hop window opens at 11. Book a LL in the park you're going to hop to for ~1:30.",
         llRideId: 'haunted-mansion',
       },
       {
@@ -3812,7 +3804,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Use second-park LL',
-        body: 'Haunted Mansion, Tiana\'s, or whatever you booked from the morning.',
+        body: "Haunted Mansion, Tiana's, or whatever you booked from the morning.",
         rideIds: ['haunted-mansion'],
       },
       {
@@ -3828,8 +3820,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '6:30 PM',
         durationMin: 60,
         type: 'meal',
-        title: 'Last hopper dinner — kid\'s pick',
-        body: 'Ronto Wraps (Galaxy\'s Edge) if you\'re ending at Disneyland. Lamplight Lounge (Pixar Pier) if you\'re ending at DCA and have the reservation.',
+        title: "Last hopper dinner — kid's pick",
+        body: "Ronto Wraps (Galaxy's Edge) if you're ending at Disneyland. Lamplight Lounge (Pixar Pier) if you're ending at DCA and have the reservation.",
       },
       {
         id: 'fireworks',
@@ -3837,7 +3829,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'Final fireworks — your call',
-        body: 'Main Street if you want the castle projection finale. Galaxy\'s Edge if you want the easy exit with a stroller. Either way, last night of the trip.',
+        body: "Main Street if you want the castle projection finale. Galaxy's Edge if you want the easy exit with a stroller. Either way, last night of the trip.",
       },
     ],
   },
@@ -3858,7 +3850,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'tip',
         title: 'Park Hopper blitz — no margin',
-        body: "16+ rides across two parks in one day. Park 60 minutes early. Rise of the Resistance Single Pass purchased the night before (for the afternoon Disneyland block). Built for families with kids 7+ who can keep up.",
+        body: '16+ rides across two parks in one day. Park 60 minutes early. Rise of the Resistance Single Pass purchased the night before (for the afternoon Disneyland block). Built for families with kids 7+ who can keep up.',
       },
       {
         id: 'rope-drop',
@@ -3962,8 +3954,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '1:00 PM',
         durationMin: 25,
         type: 'ride',
-        title: "Use Peter Pan LL",
-        body: 'Re-book Mickey & Minnie\'s the moment you tap in.',
+        title: 'Use Peter Pan LL',
+        body: "Re-book Mickey & Minnie's the moment you tap in.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -4034,7 +4026,7 @@ export const dayTemplates: DayTemplate[] = [
         time: '4:30 PM',
         durationMin: 50,
         type: 'ride',
-        title: 'Tiana\'s Bayou Adventure standby',
+        title: "Tiana's Bayou Adventure standby",
         body: '40 min wait at 4:30. Rider Switch for kids under 40".',
         rideIds: ['tianas-bayou-adventure'],
       },
@@ -4070,7 +4062,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: "Fireworks from Galaxy's Edge",
-        body: 'Easier exit after a 16+ ride day. Galaxy\'s Edge plaza, John Williams over the speakers.',
+        body: "Easier exit after a 16+ ride day. Galaxy's Edge plaza, John Williams over the speakers.",
       },
     ],
   },

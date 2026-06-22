@@ -13,7 +13,7 @@ interface Props {
 const DEFAULTS: Record<Partner, { headline: string; body: string; cta: string }> = {
   getawaytoday: {
     headline: 'Book Disneyland through Get Away Today',
-    body: "Authorized seller, real human concierges, and the promo code RIDETIME knocks $10 off any package.",
+    body: 'Authorized seller, real human concierges, and the promo code RIDETIME knocks $10 off any package.',
     cta: 'See ticket deals →',
   },
   undercovertourist: {
@@ -54,7 +54,10 @@ export default function AffiliateCTA({ partner, headline, body, cta, campaign }:
   const c = cta ?? d.cta
 
   return (
-    <aside className={`affiliate-cta affiliate-cta--${partner}`} aria-label={`${PARTNER_LABEL[partner]} affiliate offer`}>
+    <aside
+      className={`affiliate-cta affiliate-cta--${partner}`}
+      aria-label={`${PARTNER_LABEL[partner]} affiliate offer`}
+    >
       <div className="affiliate-cta-tag">Sponsored · {PARTNER_LABEL[partner]}</div>
       <h3 className="affiliate-cta-headline">{h}</h3>
       <p className="affiliate-cta-body">{p}</p>

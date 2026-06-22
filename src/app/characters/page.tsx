@@ -64,7 +64,7 @@ const faqsGeneral = [
   },
   {
     q: 'How early should you line up for Mickey at Disneyland?',
-    a: "If Mickey is the must-meet character of your trip, be in line at Town Square Theater by 9:05 AM right after park open. The line balloons to 60 minutes by 10 AM and stays that way until late afternoon. Late afternoon (3-5 PM) is the second-best window.",
+    a: 'If Mickey is the must-meet character of your trip, be in line at Town Square Theater by 9:05 AM right after park open. The line balloons to 60 minutes by 10 AM and stays that way until late afternoon. Late afternoon (3-5 PM) is the second-best window.',
   },
   {
     q: 'Are Mando and Grogu at Disneyland?',
@@ -76,7 +76,7 @@ const faqsGeneral = [
   },
   {
     q: 'Can you meet villains at Disneyland?',
-    a: "Outside of special events, almost never. Maleficent, Cruella, the Evil Queen, and Jack Sparrow only appear reliably at Oogie Boogie Bash (the separate-ticket Halloween party at DCA, mid-August through October) and occasionally at Disneyland After Dark hard-ticket nights. Captain Hook does roam Fantasyland in his standard outfit year-round.",
+    a: 'Outside of special events, almost never. Maleficent, Cruella, the Evil Queen, and Jack Sparrow only appear reliably at Oogie Boogie Bash (the separate-ticket Halloween party at DCA, mid-August through October) and occasionally at Disneyland After Dark hard-ticket nights. Captain Hook does roam Fantasyland in his standard outfit year-round.',
   },
   {
     q: 'Do Disneyland characters still sign autographs?',
@@ -84,7 +84,7 @@ const faqsGeneral = [
   },
   {
     q: 'How long are character meet-and-greet lines at Disneyland?',
-    a: "Tier-1 characters (Mickey at Town Square, Anna & Elsa, Royal Hall princesses, Jack & Sally during Halloween Time) run 30-90 minutes. Mid-tier characters (Spider-Man, Tiana, Mando & Grogu, Buzz Lightyear) typically 15-30 minutes. Roaming characters (Alice, Mad Hatter, Pocahontas, Woody & Jessie) are almost always walk-ups under 15 minutes.",
+    a: 'Tier-1 characters (Mickey at Town Square, Anna & Elsa, Royal Hall princesses, Jack & Sally during Halloween Time) run 30-90 minutes. Mid-tier characters (Spider-Man, Tiana, Mando & Grogu, Buzz Lightyear) typically 15-30 minutes. Roaming characters (Alice, Mad Hatter, Pocahontas, Woody & Jessie) are almost always walk-ups under 15 minutes.',
   },
 ]
 
@@ -178,7 +178,7 @@ const characterListItems = characters.flatMap((c) =>
   c.locations.map((loc) => ({
     name: c.name,
     description: `${loc.spot} · ${loc.land} · ${loc.park === 'DL' ? 'Disneyland Park' : 'Disney California Adventure'} · ${RELIABILITY_LABEL[loc.reliability]}`,
-  })),
+  }))
 )
 
 export default function CharactersPage() {
@@ -211,20 +211,32 @@ export default function CharactersPage() {
           <h1>Disneyland Character Meet-and-Greets: Where to Find Every Character (2026)</h1>
           <p className="hero-sub">
             Every character at Disneyland and DCA — where they meet, how long the line runs, and
-            whether they're worth it for kids ages 2-8. Search by name, browse by park, or filter
-            by your kid's age. Updated for Mando &amp; Grogu and the new Tiana placements.
+            whether they're worth it for kids ages 2-8. Search by name, browse by park, or filter by
+            your kid's age. Updated for Mando &amp; Grogu and the new Tiana placements.
           </p>
         </div>
       </header>
 
       <nav aria-label="On this page" className="jump-nav">
         <span className="jump-nav-label">Jump to</span>
-        <a className="jump-nav-chip" href="#find-character">🔍 Find a character</a>
-        <a className="jump-nav-chip" href="#plan">📱 Plan your meet</a>
-        <a className="jump-nav-chip" href="#dining">🍽 Character dining</a>
-        <a className="jump-nav-chip" href="#seasonal">🎃 Seasonal</a>
-        <a className="jump-nav-chip" href="#real-talk">😅 Real-talk tips</a>
-        <a className="jump-nav-chip" href="#faq">❓ FAQ</a>
+        <a className="jump-nav-chip" href="#find-character">
+          🔍 Find a character
+        </a>
+        <a className="jump-nav-chip" href="#plan">
+          📱 Plan your meet
+        </a>
+        <a className="jump-nav-chip" href="#dining">
+          🍽 Character dining
+        </a>
+        <a className="jump-nav-chip" href="#seasonal">
+          🎃 Seasonal
+        </a>
+        <a className="jump-nav-chip" href="#real-talk">
+          😅 Real-talk tips
+        </a>
+        <a className="jump-nav-chip" href="#faq">
+          ❓ FAQ
+        </a>
       </nav>
 
       {/* ────────────── SECTION 1: Find a character (search + by-location combined) ────────────── */}
@@ -312,10 +324,9 @@ export default function CharactersPage() {
           </div>
           <p>
             If you bought <Link href="/lightning-lane">Multi Pass</Link> ($34/person), every Disney
-            PhotoPass photo at every meet auto-attaches to your account. Free. Let the
-            photographer handle it so your kid actually looks at the character. Standalone
-            PhotoPass is $80/day or $260 unlimited — Multi Pass is the better value for most
-            families with kids 4+.
+            PhotoPass photo at every meet auto-attaches to your account. Free. Let the photographer
+            handle it so your kid actually looks at the character. Standalone PhotoPass is $80/day
+            or $260 unlimited — Multi Pass is the better value for most families with kids 4+.
           </p>
         </div>
       </section>
@@ -358,10 +369,10 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$55 adults / ~$32 kids.</strong> Gorgeous forest-themed room, calmer than
-            Plaza Inn. <strong>Characters:</strong> Chip &amp; Dale always, rotating princesses
-            (Belle and Snow White most common). No park ticket needed — great for arrival or
-            departure day. Breakfast only; lunch and dinner are regular service.
+            <strong>~$55 adults / ~$32 kids.</strong> Gorgeous forest-themed room, calmer than Plaza
+            Inn. <strong>Characters:</strong> Chip &amp; Dale always, rotating princesses (Belle and
+            Snow White most common). No park ticket needed — great for arrival or departure day.
+            Breakfast only; lunch and dinner are regular service.
           </p>
         </div>
 
@@ -375,8 +386,8 @@ export default function CharactersPage() {
           <p>
             <strong>~$60 adults / ~$35 kids.</strong> Loud, chaotic buffet — peak Disney energy.{' '}
             <strong>Characters:</strong> Goofy always, plus Pluto, Chip &amp; Dale, occasional
-            princesses. Food is fine, not great. Best for 4–8 year olds who live for the chaos.
-            Both breakfast and dinner are character meals.
+            princesses. Food is fine, not great. Best for 4–8 year olds who live for the chaos. Both
+            breakfast and dinner are character meals.
           </p>
         </div>
 
@@ -390,8 +401,8 @@ export default function CharactersPage() {
           <p>
             <strong>~$48 adults / ~$28 kids.</strong> Beach-themed, the quietest of the four.{' '}
             <strong>Characters:</strong> Mickey (safari outfit), Minnie, Daisy, Pluto. Mickey
-            himself reliably visits the table here — the only character breakfast where that's
-            true. Best pick for a nervous toddler.
+            himself reliably visits the table here — the only character breakfast where that's true.
+            Best pick for a nervous toddler.
           </p>
         </div>
 
@@ -407,9 +418,9 @@ export default function CharactersPage() {
         <div className="callout pro">
           <div className="callout-label">Booking window</div>
           <p>
-            <strong>60 days out, 6 AM Pacific exactly</strong> via the Disneyland app. Plaza Inn
-            and Storytellers fill in the first 10 minutes — set an alarm. Missed it? Check the app
-            daily for cancellations, they pop up constantly. See the full{' '}
+            <strong>60 days out, 6 AM Pacific exactly</strong> via the Disneyland app. Plaza Inn and
+            Storytellers fill in the first 10 minutes — set an alarm. Missed it? Check the app daily
+            for cancellations, they pop up constantly. See the full{' '}
             <Link href="/food">food strategy</Link> and the{' '}
             <Link href="/itineraries">3-day itinerary</Link> for where Plaza Inn slots in.
           </p>
@@ -476,10 +487,10 @@ export default function CharactersPage() {
             </div>
             <h3 className="seasonal-row-title">👻 Oogie Boogie Bash at DCA</h3>
             <p>
-              The only reliable way to meet <strong>Maleficent, Cruella, the Evil Queen, Oogie
-              Boogie</strong>, and other rare villains. Frightfully Fun Parade features villains
-              you literally can't meet any other time. Tickets drop in late June, Magic Key
-              pre-sale first — sells out on day one.
+              The only reliable way to meet{' '}
+              <strong>Maleficent, Cruella, the Evil Queen, Oogie Boogie</strong>, and other rare
+              villains. Frightfully Fun Parade features villains you literally can't meet any other
+              time. Tickets drop in late June, Magic Key pre-sale first — sells out on day one.
             </p>
           </article>
 
@@ -538,20 +549,19 @@ export default function CharactersPage() {
           <p>
             Your kid's tolerance is roughly <strong>their age in tens of minutes</strong>: a
             3-year-old can survive 30 min, a 5-year-old around 50. Past that, you're buying a
-            meltdown. If Anna &amp; Elsa posts at 90 and your kid is under 5,{' '}
-            <strong>abort</strong>. Come back at 4 PM (drops to 30–45) or rope-drop the next
-            morning.
+            meltdown. If Anna &amp; Elsa posts at 90 and your kid is under 5, <strong>abort</strong>
+            . Come back at 4 PM (drops to 30–45) or rope-drop the next morning.
           </p>
         </div>
 
         <div className="tip-card">
           <h3>Kids who freeze and can't talk</h3>
           <p>
-            About half of kids under 6 freeze when they finally face their favorite character.
-            They had a whole speech planned and now they can't say a word. <strong>This is
-            normal.</strong> Cast members and characters are pros — they'll fill the silence with
-            a hug or a silly pose. Don't push your kid to "talk to Mickey." The photo is still
-            magical and they'll replay the moment for weeks.
+            About half of kids under 6 freeze when they finally face their favorite character. They
+            had a whole speech planned and now they can't say a word.{' '}
+            <strong>This is normal.</strong> Cast members and characters are pros — they'll fill the
+            silence with a hug or a silly pose. Don't push your kid to "talk to Mickey." The photo
+            is still magical and they'll replay the moment for weeks.
           </p>
         </div>
 
@@ -560,8 +570,8 @@ export default function CharactersPage() {
           <p>
             Check the app <strong>the night before</strong> — schedules publish by 9 PM. If Mirabel
             isn't on tomorrow's list and your kid is in full Encanto mode, manage expectations at
-            the hotel, not at the turnstiles. "Mirabel isn't visiting today, but we'll see Anna
-            and Elsa — they're sisters too!" is a thousand times easier than tears at security.
+            the hotel, not at the turnstiles. "Mirabel isn't visiting today, but we'll see Anna and
+            Elsa — they're sisters too!" is a thousand times easier than tears at security.
           </p>
         </div>
 
@@ -569,9 +579,10 @@ export default function CharactersPage() {
           <h3>The post-meet emotional crash</h3>
           <p>
             After finally meeting their bullseye character, kids often crash hard 20 min later —
-            anticipation dump plus the realization it's over. <strong>Plan a low-stim activity
-            right after</strong>: a Dole Whip on a bench, the carousel, a 30-min hotel break.
-            Don't try to jump straight into Big Thunder Mountain after Anna &amp; Elsa.
+            anticipation dump plus the realization it's over.{' '}
+            <strong>Plan a low-stim activity right after</strong>: a Dole Whip on a bench, the
+            carousel, a 30-min hotel break. Don't try to jump straight into Big Thunder Mountain
+            after Anna &amp; Elsa.
           </p>
         </div>
 
@@ -600,9 +611,8 @@ export default function CharactersPage() {
               your kid spots Mickey from 15 feet away is the photo. Not the posed shot.
             </li>
             <li>
-              <strong>Skip the autograph book entirely</strong> if you want — a blank photo mat
-              that you frame later with the printed PhotoPass shot in the center is a better
-              keepsake.
+              <strong>Skip the autograph book entirely</strong> if you want — a blank photo mat that
+              you frame later with the printed PhotoPass shot in the center is a better keepsake.
             </li>
             <li>
               <strong>Magic Bands don't work at the California parks.</strong> You'll show your
@@ -637,8 +647,8 @@ export default function CharactersPage() {
           Quick character lookup
         </h3>
         <p className="section-intro" style={{ marginTop: 0 }}>
-          One-line answers for the most-asked "where can I meet…" questions. For full details on
-          any character, use the <a href="#find-character">Find a Character</a> search above.
+          One-line answers for the most-asked "where can I meet…" questions. For full details on any
+          character, use the <a href="#find-character">Find a Character</a> search above.
         </p>
 
         <div className="tip-card">

@@ -74,7 +74,7 @@ export const DCA_LAND_ORDER = [
 
 export const DL_LAND_INTROS: Record<string, string> = {
   'Main Street, U.S.A.':
-    "Town Square Theater is the headline Mickey meet — be in line by 9:05 AM or come back after 4 PM.",
+    'Town Square Theater is the headline Mickey meet — be in line by 9:05 AM or come back after 4 PM.',
   Fantasyland:
     'The roaming hotspot. Alice, Mad Hatter, Peter Pan, Captain Hook, Fairy Godmother — all walk-ups, no formal lines.',
   'Fantasyland (Fantasy Faire)':
@@ -82,25 +82,25 @@ export const DL_LAND_INTROS: Record<string, string> = {
   Adventureland:
     "Moana's spot is still settling in 2026. Tarzan and Indy moments are tied to the attractions, not formal meets.",
   Frontierland:
-    "Big Thunder Trail is a quiet character corner — Woody, Jessie, Pocahontas all roam. El Zocalo Park hosts Miguel and Mirabel.",
+    'Big Thunder Trail is a quiet character corner — Woody, Jessie, Pocahontas all roam. El Zocalo Park hosts Miguel and Mirabel.',
   'New Orleans Square':
     "Tiana has a regular presence here since Tiana's Bayou Adventure replaced Splash Mountain. Easier walk-up than Royal Hall.",
   'Critter Country': 'Chip & Dale roam near Hungry Bear Restaurant. Usually a walk-up.',
   "Star Wars: Galaxy's Edge":
     "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, Stormtroopers, and Mando & Grogu (live since May 22, 2026).",
   "Mickey's Toontown":
-    'The single densest character zone in the resort. Mickey & Minnie\'s Runaway Railway is here, and the playground has one exit so kids can run while you regroup.',
+    "The single densest character zone in the resort. Mickey & Minnie's Runaway Railway is here, and the playground has one exit so kids can run while you regroup.",
 }
 
 export const DCA_LAND_INTROS: Record<string, string> = {
   'Buena Vista Street':
     'Mostly atmosphere characters and cavalcade appearances. Not a destination meet area on most days.',
   'Hollywood Land':
-    "Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027).",
+    'Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027).',
   'Avengers Campus':
     "The Marvel lineup. Spider-Man's rooftop drop is the showstopper — set a reminder in the app and be in position 15 min early.",
   'Pixar Pier':
-    "The roam-heaviest area in the resort. Buzz, Joy & Sadness, Incredibles, and the Toy Story crew all rotate here.",
+    'The roam-heaviest area in the resort. Buzz, Joy & Sadness, Incredibles, and the Toy Story crew all rotate here.',
   'Paradise Gardens':
     'Seasonal meets — Mulan during Lunar New Year (Jan 23 – Feb 22), Miguel & Dante during Plaza de la Familia (Aug 21 – Nov 2).',
   'Cars Land':
@@ -132,7 +132,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'very-long',
     notes:
-      "If Mickey is the must-do, get in line at Town Square Theater by 9:05 AM. By 10 AM it balloons to 60 minutes and never recovers.",
+      'If Mickey is the must-do, get in line at Town Square Theater by 9:05 AM. By 10 AM it balloons to 60 minutes and never recovers.',
   },
   {
     id: 'minnie-mouse',
@@ -230,7 +230,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'great', age8: 'maybe' },
     expectedLine: 'short',
     notes:
-      "Easy walk-ups. Also a fixture at Storytellers Café character breakfast at the Grand Californian — if Chip & Dale are the bullseye, book that meal.",
+      'Easy walk-ups. Also a fixture at Storytellers Café character breakfast at the Grand Californian — if Chip & Dale are the bullseye, book that meal.',
   },
 
   // ─── PRINCESSES (DL) ──────────────────────────────────────────────────────
@@ -331,7 +331,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      "Mulan is rare year-round but reliable during Lunar New Year at DCA. If your kid is Mulan-obsessed, plan around January–February.",
+      'Mulan is rare year-round but reliable during Lunar New Year at DCA. If your kid is Mulan-obsessed, plan around January–February.',
   },
   {
     id: 'tiana',
@@ -389,7 +389,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'great', age8: 'maybe' },
     expectedLine: 'long',
     notes:
-      'Belle also appears in Storytellers Café\'s character breakfast at the Grand Californian — easier interaction than the Royal Hall line.',
+      "Belle also appears in Storytellers Café's character breakfast at the Grand Californian — easier interaction than the Royal Hall line.",
   },
   {
     id: 'moana',
@@ -399,7 +399,7 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: 'Adventureland',
-        spot: 'Aladdin\'s Oasis area, roaming',
+        spot: "Aladdin's Oasis area, roaming",
         reliability: 'rare',
       },
     ],
@@ -513,7 +513,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'very-long',
     notes:
-      "The most demanded character meet at the resort. Rope-drop DCA and go straight here — 20 min wait at 8:05 AM, 90 min by 10 AM. If you arrive mid-afternoon, abort and try after 4 PM when the line dips.",
+      'The most demanded character meet at the resort. Rope-drop DCA and go straight here — 20 min wait at 8:05 AM, 90 min by 10 AM. If you arrive mid-afternoon, abort and try after 4 PM when the line dips.',
   },
 
   // ─── PIXAR (mostly DCA) ───────────────────────────────────────────────────
@@ -560,8 +560,7 @@ export const characters: Character[] = [
     ],
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'short',
-    notes:
-      'Usually paired with Woody. Easy double-meet — bring a Sharpie because both will sign.',
+    notes: 'Usually paired with Woody. Easy double-meet — bring a Sharpie because both will sign.',
   },
   {
     id: 'buzz-lightyear',
@@ -612,7 +611,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      "Joy and Sadness meet as a pair — short, sweet, perfect after riding Emotional Whirlwind. Inside Out 2 made this one of the highest-demand Pixar meets.",
+      'Joy and Sadness meet as a pair — short, sweet, perfect after riding Emotional Whirlwind. Inside Out 2 made this one of the highest-demand Pixar meets.',
   },
   {
     id: 'mike-and-sulley',
@@ -694,7 +693,7 @@ export const characters: Character[] = [
   {
     id: 'rey',
     name: 'Rey',
-    franchise: "Star Wars",
+    franchise: 'Star Wars',
     locations: [
       {
         park: 'DL',
@@ -711,7 +710,7 @@ export const characters: Character[] = [
   {
     id: 'chewbacca',
     name: 'Chewbacca',
-    franchise: "Star Wars",
+    franchise: 'Star Wars',
     locations: [
       {
         park: 'DL',
@@ -723,12 +722,12 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
     expectedLine: 'medium',
     notes:
-      "Chewie is enormous and growls — for a 4-year-old, this is either the coolest thing ever or instant tears. The wait alone is 20–40 min most of the day.",
+      'Chewie is enormous and growls — for a 4-year-old, this is either the coolest thing ever or instant tears. The wait alone is 20–40 min most of the day.',
   },
   {
     id: 'stormtroopers',
     name: 'First Order Stormtroopers',
-    franchise: "Star Wars",
+    franchise: 'Star Wars',
     locations: [
       {
         park: 'DL',
@@ -745,7 +744,7 @@ export const characters: Character[] = [
   {
     id: 'kylo-ren',
     name: 'Kylo Ren',
-    franchise: "Star Wars",
+    franchise: 'Star Wars',
     locations: [
       {
         park: 'DL',
@@ -762,19 +761,19 @@ export const characters: Character[] = [
   {
     id: 'mando-and-grogu',
     name: 'The Mandalorian & Grogu',
-    franchise: "Star Wars",
+    franchise: 'Star Wars',
     locations: [
       {
         park: 'DL',
         land: "Star Wars: Galaxy's Edge",
-        spot: "Roaming, often near Smugglers Run (new overlay area)",
+        spot: 'Roaming, often near Smugglers Run (new overlay area)',
         reliability: 'roaming',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'long',
     notes:
-      "Brand-new since the Smugglers Run Mandalorian overlay launched May 22, 2026. Location pattern is still settling — check the Disneyland app the morning of your visit. Grogu is the star of the meet; Mando does the talking.",
+      'Brand-new since the Smugglers Run Mandalorian overlay launched May 22, 2026. Location pattern is still settling — check the Disneyland app the morning of your visit. Grogu is the star of the meet; Mando does the talking.',
   },
 
   // ─── MARVEL (Avengers Campus, DCA) ────────────────────────────────────────
@@ -933,7 +932,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'skip', age4: 'skip', age6: 'great', age8: 'must-meet' },
     expectedLine: 'long',
     notes:
-      "Maleficent is an Oogie Boogie Bash exclusive at DCA — you need the separate-ticket Halloween party to meet her. Tickets sell out; book the day they drop.",
+      'Maleficent is an Oogie Boogie Bash exclusive at DCA — you need the separate-ticket Halloween party to meet her. Tickets sell out; book the day they drop.',
   },
   {
     id: 'cruella',
@@ -984,7 +983,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
     expectedLine: 'long',
     notes:
-      "Jack Sparrow appearances are rare and unpredictable — usually only during 70th finale events, after-dark parties, or special promos. Treat any sighting as a bonus.",
+      'Jack Sparrow appearances are rare and unpredictable — usually only during 70th finale events, after-dark parties, or special promos. Treat any sighting as a bonus.',
   },
 
   // ─── NIGHTMARE BEFORE CHRISTMAS (Halloween Time only) ──────────────────────
@@ -1004,6 +1003,6 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'very-long',
     notes:
-      "Jack and Sally only meet during Halloween Time (and briefly during the Haunted Mansion Holiday window that bleeds into early January). The line is 60–90 min routinely — line up at park open or skip.",
+      'Jack and Sally only meet during Halloween Time (and briefly during the Haunted Mansion Holiday window that bleeds into early January). The line is 60–90 min routinely — line up at park open or skip.',
   },
 ]

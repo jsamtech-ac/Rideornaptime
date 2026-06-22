@@ -7,9 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import ItineraryConfigurator, {
-  type DayConfig,
-} from '@/components/ItineraryConfigurator'
+import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/dca-1-day/page.tsx'
 const PAGE_PATH = '/itineraries/dca-1-day'
@@ -39,11 +37,11 @@ const initialDayStates: DayConfig[] = [
 const faqs = [
   {
     q: 'Is one day enough for California Adventure?',
-    a: 'For most families with young kids, one full day at DCA covers it. The marquee rides — Radiator Springs Racers, Soarin\', Toy Story Midway Mania, Monsters Inc., Little Mermaid — fit comfortably in a day with a nap break. If your kids are 7+ and want Incredicoaster and Guardians: BREAKOUT!, two days makes more sense.',
+    a: "For most families with young kids, one full day at DCA covers it. The marquee rides — Radiator Springs Racers, Soarin', Toy Story Midway Mania, Monsters Inc., Little Mermaid — fit comfortably in a day with a nap break. If your kids are 7+ and want Incredicoaster and Guardians: BREAKOUT!, two days makes more sense.",
   },
   {
     q: 'Is DCA Lightning Lane Multi Pass worth it for a 1-day visit?',
-    a: 'It\'s the only Multi Pass at the resort that\'s genuinely debatable. DCA\'s pass only covers 3 useful rides for kids 2–8, and one (WEB SLINGERS) is intense for under-6. On a weekday it\'s often skippable; rope drop Radiator Springs Racers and you\'ve already saved $60–120 in Single Pass costs without needing Multi Pass at all.',
+    a: "It's the only Multi Pass at the resort that's genuinely debatable. DCA's pass only covers 3 useful rides for kids 2–8, and one (WEB SLINGERS) is intense for under-6. On a weekday it's often skippable; rope drop Radiator Springs Racers and you've already saved $60–120 in Single Pass costs without needing Multi Pass at all.",
   },
   {
     q: 'How do you join the World of Color virtual queue?',
@@ -51,11 +49,11 @@ const faqs = [
   },
   {
     q: 'Should you rope drop Radiator Springs Racers?',
-    a: "Yes. RSR standby is 15 minutes at 8:00 AM vs. 75–90 minutes by 11. This single move saves a family of 4 the $60–120 you'd otherwise spend on Single Pass. Kid under 40\"? One parent rides Single Rider while the other takes the kid to The Little Mermaid (walk-on, air-conditioned).",
+    a: 'Yes. RSR standby is 15 minutes at 8:00 AM vs. 75–90 minutes by 11. This single move saves a family of 4 the $60–120 you\'d otherwise spend on Single Pass. Kid under 40"? One parent rides Single Rider while the other takes the kid to The Little Mermaid (walk-on, air-conditioned).',
   },
   {
     q: 'When does Cars Land light up at night?',
-    a: 'Cars Land\'s neon comes on at sunset — typically 7:30–8:00 PM in summer. Walking Route 66 at night with the kids is one of the visual highlights of DCA. Time dinner so you\'re in Cars Land at sunset, then move toward your World of Color viewing area for the 9:00 PM show.',
+    a: "Cars Land's neon comes on at sunset — typically 7:30–8:00 PM in summer. Walking Route 66 at night with the kids is one of the visual highlights of DCA. Time dinner so you're in Cars Land at sunset, then move toward your World of Color viewing area for the 9:00 PM show.",
   },
 ]
 
@@ -82,8 +80,8 @@ export default function DcaOneDayPage() {
         <h1>California Adventure 1-Day Itinerary for Families (2026)</h1>
         <p className="hero-sub">
           One day at DCA with young kids works if you rope drop Radiator Springs Racers, do the
-          Multi Pass math honestly, and join the World of Color virtual queue at noon sharp.
-          Here's the plan.
+          Multi Pass math honestly, and join the World of Color virtual queue at noon sharp. Here's
+          the plan.
         </p>
       </header>
 
@@ -96,10 +94,7 @@ export default function DcaOneDayPage() {
             </div>
           }
         >
-          <ItineraryConfigurator
-            initialDayStates={initialDayStates}
-            allowDayCountChange={false}
-          />
+          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
         </Suspense>
 
         <div className="callout pro">

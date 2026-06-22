@@ -105,7 +105,7 @@ const sections = [
     icon: '🎢',
     title: 'Age-Based Ride Guide',
     summary:
-      "Is your 4-year-old ready for Pirates? Should your 2-year-old try Dumbo? A verdict on every major ride for ages 2, 4, 6, and 8 — from a real parent.",
+      'Is your 4-year-old ready for Pirates? Should your 2-year-old try Dumbo? A verdict on every major ride for ages 2, 4, 6, and 8 — from a real parent.',
     cta: "Filter by your kid's age →",
   },
   {
