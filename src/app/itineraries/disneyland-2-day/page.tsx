@@ -7,9 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import ItineraryConfigurator, {
-  type DayConfig,
-} from '@/components/ItineraryConfigurator'
+import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/disneyland-2-day/page.tsx'
 const PAGE_PATH = '/itineraries/disneyland-2-day'
@@ -40,7 +38,7 @@ const initialDayStates: DayConfig[] = [
 const faqs = [
   {
     q: 'Is two days enough for Disneyland with kids?',
-    a: 'Two days is the sweet spot for families with young kids. Day 1 hits the marquee rides (Peter Pan, Mickey & Minnie\'s Runaway Railway, Big Thunder, Haunted Mansion) plus a real midday nap. Day 2 picks up second-tier Fantasyland dark rides (Snow White, Pinocchio, Mr. Toad) plus character meets and the rides you missed.',
+    a: "Two days is the sweet spot for families with young kids. Day 1 hits the marquee rides (Peter Pan, Mickey & Minnie's Runaway Railway, Big Thunder, Haunted Mansion) plus a real midday nap. Day 2 picks up second-tier Fantasyland dark rides (Snow White, Pinocchio, Mr. Toad) plus character meets and the rides you missed.",
   },
   {
     q: 'Should we visit one park or two on a 2-day Disneyland trip?',
@@ -48,11 +46,11 @@ const faqs = [
   },
   {
     q: 'What time should we arrive at Disneyland each day?',
-    a: 'Day 1: park 45 minutes before posted open. Day 2: you\'ve earned 30 minutes — park 30 minutes early. Rope drop is the single most valuable hour of each day; you can ride 4 rides in the first 45 minutes that would take 2 hours later.',
+    a: "Day 1: park 45 minutes before posted open. Day 2: you've earned 30 minutes — park 30 minutes early. Rope drop is the single most valuable hour of each day; you can ride 4 rides in the first 45 minutes that would take 2 hours later.",
   },
   {
     q: 'Do we need Lightning Lane Multi Pass on both days?',
-    a: 'Yes on Day 1 — you\'ll burn through 6–8 Lightning Lane bookings on the marquee rides. Day 2 is closer to a coin flip; the second-tier Fantasyland dark rides are mostly standby-only. Weekday Day 2 with kids 2–4? You can skip it.',
+    a: "Yes on Day 1 — you'll burn through 6–8 Lightning Lane bookings on the marquee rides. Day 2 is closer to a coin flip; the second-tier Fantasyland dark rides are mostly standby-only. Weekday Day 2 with kids 2–4? You can skip it.",
   },
   {
     q: 'Where should we watch Disneyland fireworks on a 2-day trip?',
@@ -97,19 +95,16 @@ export default function DisneylandTwoDayPage() {
             </div>
           }
         >
-          <ItineraryConfigurator
-            initialDayStates={initialDayStates}
-            allowDayCountChange={false}
-          />
+          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
         </Suspense>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
           <p>
-            Dial in <Link href="/lightning-lane">Lightning Lane strategy</Link>, cross-check
-            heights with the <Link href="/rides">age-by-age Disneyland rides guide</Link>,
-            mobile-order from the <Link href="/food">Disneyland food spots worth your money</Link>,
-            and pack with the <Link href="/packing-list">Disneyland packing list for kids</Link>.
+            Dial in <Link href="/lightning-lane">Lightning Lane strategy</Link>, cross-check heights
+            with the <Link href="/rides">age-by-age Disneyland rides guide</Link>, mobile-order from
+            the <Link href="/food">Disneyland food spots worth your money</Link>, and pack with the{' '}
+            <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
         </div>
       </section>

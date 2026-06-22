@@ -68,8 +68,7 @@ function RideCard({ ride, dimmed }: { ride: Ride; dimmed: boolean }) {
         {(['age2', 'age4', 'age6', 'age8'] as const).map((age) => {
           const verdict = ride[age] as Verdict
           const symbol = verdict === 'must-do' ? '✓' : verdict === 'maybe' ? '~' : '✗'
-          const label =
-            verdict === 'must-do' ? 'must do' : verdict === 'maybe' ? 'maybe' : 'skip'
+          const label = verdict === 'must-do' ? 'must do' : verdict === 'maybe' ? 'maybe' : 'skip'
           return (
             <div
               key={age}

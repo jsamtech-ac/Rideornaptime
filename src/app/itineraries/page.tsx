@@ -65,14 +65,7 @@ export default function ItinerariesPage() {
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
-        <Image
-          src="/itineraries.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="hero-image"
-        />
+        <Image src="/itineraries.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
           <div className="hero-badge">🗓 Hour-by-Hour Plans</div>
           <h1>Disneyland Itineraries with Kids — Hour-by-Hour</h1>

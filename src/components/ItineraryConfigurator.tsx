@@ -397,8 +397,7 @@ function TimelineRow({ block }: { block: TimeBlock }) {
         <p className="plan-timeline-text">{block.body}</p>
         {llRide && (
           <div className="plan-timeline-ll">
-            <span aria-hidden="true">📱</span> Book Lightning Lane:{' '}
-            <strong>{llRide.name}</strong>
+            <span aria-hidden="true">📱</span> Book Lightning Lane: <strong>{llRide.name}</strong>
           </div>
         )}
       </div>

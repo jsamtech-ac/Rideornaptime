@@ -7,9 +7,7 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-import ItineraryConfigurator, {
-  type DayConfig,
-} from '@/components/ItineraryConfigurator'
+import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/park-hopper-2-day/page.tsx'
 const PAGE_PATH = '/itineraries/park-hopper-2-day'
@@ -43,20 +41,20 @@ const faqs = [
     a: 'Often yes. Park Hopper lets you start at DCA each morning for Radiator Springs Racers (the highest-value rope drop at the resort), then hop to Disneyland after lunch for Fantasyland and fireworks. Two parks in two days without dedicating a full day to either.',
   },
   {
-    q: "What time can you hop on a Park Hopper at Disneyland?",
-    a: 'You can\'t hop until 11:00 AM. The Lightning Lane wrinkle: you can\'t book a Multi Pass ride in your second park until your first available return window is 11:00 AM or later. Practically, that means you can book it around 10:00–10:30 AM and use it after the hop.',
+    q: 'What time can you hop on a Park Hopper at Disneyland?',
+    a: "You can't hop until 11:00 AM. The Lightning Lane wrinkle: you can't book a Multi Pass ride in your second park until your first available return window is 11:00 AM or later. Practically, that means you can book it around 10:00–10:30 AM and use it after the hop.",
   },
   {
     q: 'Which park should you start at on a Park Hopper day?',
-    a: 'Start at DCA for Radiator Springs Racers — rope drop saves $60–120 in Single Pass costs and gives you a 15-minute wait instead of 90. Disneyland\'s Peter Pan you can ride via Lightning Lane after the hop. The math favors DCA-first for almost every family.',
+    a: "Start at DCA for Radiator Springs Racers — rope drop saves $60–120 in Single Pass costs and gives you a 15-minute wait instead of 90. Disneyland's Peter Pan you can ride via Lightning Lane after the hop. The math favors DCA-first for almost every family.",
   },
   {
     q: 'Should we nap between parks on a Park Hopper trip?',
-    a: 'Yes — even more important on a hopper day because you\'re walking more between parks. Aim to be back at the hotel by 1:30 PM, return to the second park around 4:00 PM. Hopper days are long; the nap is the difference between fireworks and an early exit.',
+    a: "Yes — even more important on a hopper day because you're walking more between parks. Aim to be back at the hotel by 1:30 PM, return to the second park around 4:00 PM. Hopper days are long; the nap is the difference between fireworks and an early exit.",
   },
   {
     q: 'Where do you watch the nighttime shows on a Park Hopper day?',
-    a: 'Day 1: World of Color at DCA (join the virtual queue at 12:00 PM). Day 2: Disneyland fireworks — Main Street if you want the castle projection show, Galaxy\'s Edge for the easier exit with a stroller. Don\'t try to do both shows in one night.',
+    a: "Day 1: World of Color at DCA (join the virtual queue at 12:00 PM). Day 2: Disneyland fireworks — Main Street if you want the castle projection show, Galaxy's Edge for the easier exit with a stroller. Don't try to do both shows in one night.",
   },
 ]
 
@@ -97,20 +95,16 @@ export default function ParkHopperTwoDayPage() {
             </div>
           }
         >
-          <ItineraryConfigurator
-            initialDayStates={initialDayStates}
-            allowDayCountChange={false}
-          />
+          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
         </Suspense>
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
           <p>
-            Read up on{' '}
-            <Link href="/lightning-lane">Lightning Lane + Park Hopper rules</Link> before you go,
-            check the <Link href="/rides">age-by-age Disneyland rides guide</Link>, plan meals from
-            the <Link href="/food">Disneyland food spots worth your money</Link>, and pack with
-            the <Link href="/packing-list">Disneyland packing list for kids</Link>.
+            Read up on <Link href="/lightning-lane">Lightning Lane + Park Hopper rules</Link> before
+            you go, check the <Link href="/rides">age-by-age Disneyland rides guide</Link>, plan
+            meals from the <Link href="/food">Disneyland food spots worth your money</Link>, and
+            pack with the <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
         </div>
       </section>

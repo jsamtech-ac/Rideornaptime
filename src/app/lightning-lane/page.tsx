@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: 'Should I buy Lightning Lane Multi Pass the day before or the day of?',
-    a: "Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices hit $40–45/person.",
+    a: 'Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices hit $40–45/person.',
   },
 ]
 
@@ -447,9 +447,8 @@ export default function LightningLanePage() {
           <p>
             App installed and logged in. Everyone in your party linked to the reservation. Payment
             card saved. Multi Pass purchased the day before (not day-of — prices climb). Phone
-            charged — see our <Link href="/packing-list">Disneyland packing list for kids</Link>{' '}
-            for the right portable charger. This eliminates 30–60 seconds of friction at the Tip
-            Board.
+            charged — see our <Link href="/packing-list">Disneyland packing list for kids</Link> for
+            the right portable charger. This eliminates 30–60 seconds of friction at the Tip Board.
           </p>
         </div>
 
@@ -1032,8 +1031,8 @@ export default function LightningLanePage() {
           <div className="callout-label">Pair With</div>
           <p>
             Slot Lightning Lane bookings into your day with the{' '}
-            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link> so the 2-hour
-            clock actually lines up with what you'd be doing anyway.
+            <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link> so the 2-hour clock
+            actually lines up with what you'd be doing anyway.
           </p>
         </div>
       </section>

@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'Where should I stay for a first Disneyland visit with kids?',
-    a: 'Pick a hotel close enough to walk back midday — that\'s the single biggest trip-saver with kids. Downtown Disney hotels, Harbor Blvd "Good Neighbor" hotels, and the three on-site Disney hotels all qualify. A hotel 20 minutes by car? You won\'t actually use it for naps, and you\'ll regret it.',
+    a: "Pick a hotel close enough to walk back midday — that's the single biggest trip-saver with kids. Downtown Disney hotels, Harbor Blvd \"Good Neighbor\" hotels, and the three on-site Disney hotels all qualify. A hotel 20 minutes by car? You won't actually use it for naps, and you'll regret it.",
   },
   {
     q: 'Which Disneyland entrance is fastest with a stroller?',
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: 'What is the best way to order food at Disneyland?',
-    a: "Mobile-order every meal. Open the Disneyland app, order 30–45 minutes before you want to eat, pick a pickup window, walk up and grab it. You skip the 20-minute register line every single time. Plaza Inn, Jolly Holiday, Galactic Grill, and Cocina Cucamonga all support it.",
+    a: 'Mobile-order every meal. Open the Disneyland app, order 30–45 minutes before you want to eat, pick a pickup window, walk up and grab it. You skip the 20-minute register line every single time. Plaza Inn, Jolly Holiday, Galactic Grill, and Cocina Cucamonga all support it.',
   },
   {
     q: 'Should I bring a stroller for a 5-year-old at Disneyland?',
@@ -89,14 +89,7 @@ export default function FirstVisitPage() {
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
-        <Image
-          src="/firstvisit.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="hero-image"
-        />
+        <Image src="/firstvisit.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
           <div className="hero-badge">🏰 Start Here</div>
           <h1>Your First Visit to Disneyland: A Family Guide</h1>

@@ -247,8 +247,7 @@ export default function HiddenGemsPage() {
             the entrance for a return card. It lets them come back and ride without waiting in line
             once they hit the height requirement — whether that's later in the trip or on a future
             visit. Softens the disappointment and genuinely makes their day. Plan around heights
-            ahead of time with the{' '}
-            <Link href="/rides">age-by-age Disneyland rides guide</Link>.
+            ahead of time with the <Link href="/rides">age-by-age Disneyland rides guide</Link>.
           </p>
         </div>
 

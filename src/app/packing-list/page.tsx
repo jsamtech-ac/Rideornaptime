@@ -134,8 +134,8 @@ export default function PackingListPage() {
             our ranked stroller picks, the{' '}
             <Link href="/rides">age-by-age Disneyland rides for kids</Link> to preview which rides
             matter for your kid, and the{' '}
-            <Link href="/first-visit">Disneyland with kids: the first-time guide</Link> if it's
-            your first trip.
+            <Link href="/first-visit">Disneyland with kids: the first-time guide</Link> if it's your
+            first trip.
           </p>
         </div>
       </section>

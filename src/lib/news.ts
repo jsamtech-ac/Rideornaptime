@@ -62,9 +62,7 @@ function readPostFile(filename: string): NewsPost {
 export function getAllPosts(): NewsPost[] {
   if (!fs.existsSync(POSTS_DIR)) return []
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith('.mdx'))
-  return files
-    .map(readPostFile)
-    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+  return files.map(readPostFile).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
 }
 
 export function getAllPostMeta(): NewsPostMeta[] {
