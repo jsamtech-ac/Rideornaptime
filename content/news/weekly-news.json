@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-06-22",
-  "lastUpdated": "2026-06-22T18:35:16Z",
+  "weekOf": "2026-06-29",
+  "lastUpdated": "2026-06-29T16:56:28Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Pirates of the Caribbean reopens June 26 after nearly 2 months closed",
-      "tag": "🚨 Friday",
-      "link": "/news/disneyland-news-families-june-22-2026",
+      "headline": "July 4th fireworks return July 3, 4, 5 — watch from it's a small world",
+      "tag": "🎆 This Weekend",
+      "link": "/news/disneyland-news-families-june-29-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Autopia gas-powered cars must retire by February 2027 — ride it now",
-      "tag": "Act Soon",
-      "link": "/news/disneyland-news-families-june-22-2026",
+      "headline": "Soarin' Across America launches July 2 at DCA",
+      "tag": "✅ Debuts Thursday",
+      "link": "/news/disneyland-news-families-june-29-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Soarin' Across America debuts next week — friendlier for young kids",
-      "tag": "✅ Launches July 2",
-      "link": "/news/disneyland-news-families-june-22-2026",
+      "headline": "Pirates' new animatronic may be too intense for sensitive young kids",
+      "tag": "⚠️ Heads Up",
+      "link": "/news/disneyland-news-families-june-29-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "King Arthur Carrousel closing July 6-17, Matterhorn closed July 20-23",
-      "tag": "Heads Up",
-      "link": "/news/disneyland-news-families-june-22-2026",
+      "headline": "Disneyland unusually quiet this month — flex your dates if you can",
+      "tag": "📊 Crowd Alert",
+      "link": "/news/disneyland-news-families-june-29-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Oogie Boogie Bash tickets now available — Halloween dates likely gone",
-      "tag": "💰 On Sale",
-      "link": "/news/disneyland-news-families-june-22-2026",
+      "headline": "King Arthur Carrousel down July 6-17, Matterhorn down July 20-24",
+      "tag": "Closes Soon",
+      "link": "/news/disneyland-news-families-june-29-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-june-22-2026"
+  "currentPostSlug": "disneyland-news-families-june-29-2026"
 }
