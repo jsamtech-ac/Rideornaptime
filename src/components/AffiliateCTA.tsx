@@ -44,8 +44,8 @@ const PARTNER_IMAGE: Partial<
 > = {
   getawaytoday: {
     src: '/getaway.jpg',
-    width: 1080,
-    height: 1350,
+    width: 1920,
+    height: 1080,
     alt: 'Get Away Today — Disneyland authorized ticket seller, your vacation now for less',
   },
 }
@@ -89,7 +89,7 @@ export default function AffiliateCTA({ partner, headline, body, cta, campaign }:
             alt={image.alt}
             width={image.width}
             height={image.height}
-            sizes="(min-width: 768px) 360px, 100vw"
+            sizes="(min-width: 768px) 640px, 100vw"
           />
         </div>
       ) : null}

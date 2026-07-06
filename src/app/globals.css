@@ -2635,17 +2635,18 @@ body {
 }
 
 .affiliate-cta-image {
-  max-width: 320px;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   background: var(--white);
+  aspect-ratio: 16 / 9;
 }
 
 .affiliate-cta-image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .affiliate-cta-headline {
@@ -2664,7 +2665,9 @@ body {
   margin: 0;
 }
 
-.affiliate-cta-link {
+/* Scoped to .affiliate-cta so it wins over `.news-post-body a`
+   (which otherwise forces blue underlined text on the button). */
+.affiliate-cta .affiliate-cta-link {
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
@@ -2682,9 +2685,10 @@ body {
     background 0.15s ease;
 }
 
-.affiliate-cta-link:hover {
+.affiliate-cta .affiliate-cta-link:hover {
   transform: translateY(-1px);
   background: #000;
+  text-decoration: none;
 }
 
 /* ===== ITINERARY CONFIGURATOR ===== */
