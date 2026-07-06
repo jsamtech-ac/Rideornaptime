@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getAwayTodayUrl } from '@/lib/affiliate'
 
 type Partner = 'getawaytoday' | 'undercovertourist' | 'amazon'
@@ -28,6 +29,27 @@ const DEFAULTS: Record<Partner, { headline: string; body: string; cta: string }>
   },
 }
 
+// Partner images live in /public. Only list a partner here when its file
+// actually exists on disk — a partner omitted from this map renders text-only
+// (no <img> element at all, so there is never a broken-image icon).
+//
+// TODO (to add a partner image): drop the asset in /public, then add an entry
+// below with its real intrinsic dimensions, e.g.:
+//   undercovertourist: {
+//     src: '/undercover-tourist.jpg', width: 1200, height: 630,
+//     alt: 'Undercover Tourist — authorized Disneyland ticket reseller',
+//   },
+const PARTNER_IMAGE: Partial<
+  Record<Partner, { src: string; width: number; height: number; alt: string }>
+> = {
+  getawaytoday: {
+    src: '/getaway.jpg',
+    width: 1080,
+    height: 1350,
+    alt: 'Get Away Today — Disneyland authorized ticket seller, your vacation now for less',
+  },
+}
+
 function resolveHref(partner: Partner, campaign?: string): string {
   switch (partner) {
     case 'getawaytoday':
@@ -52,6 +74,7 @@ export default function AffiliateCTA({ partner, headline, body, cta, campaign }:
   const h = headline ?? d.headline
   const p = body ?? d.body
   const c = cta ?? d.cta
+  const image = PARTNER_IMAGE[partner]
 
   return (
     <aside
@@ -59,6 +82,17 @@ export default function AffiliateCTA({ partner, headline, body, cta, campaign }:
       aria-label={`${PARTNER_LABEL[partner]} affiliate offer`}
     >
       <div className="affiliate-cta-tag">Sponsored · {PARTNER_LABEL[partner]}</div>
+      {image ? (
+        <div className="affiliate-cta-image">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            sizes="(min-width: 768px) 360px, 100vw"
+          />
+        </div>
+      ) : null}
       <h3 className="affiliate-cta-headline">{h}</h3>
       <p className="affiliate-cta-body">{p}</p>
       <a

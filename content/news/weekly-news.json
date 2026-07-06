@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-06-29",
-  "lastUpdated": "2026-06-29T16:56:28Z",
+  "weekOf": "2026-07-06",
+  "lastUpdated": "2026-07-06T21:48:25Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "July 4th fireworks return July 3, 4, 5 — watch from it's a small world",
-      "tag": "🎆 This Weekend",
-      "link": "/news/disneyland-news-families-june-29-2026",
+      "headline": "King Arthur Carrousel closed July 6-16 — plan Fantasyland around it",
+      "tag": "⚠️ Closed Today",
+      "link": "/news/disneyland-news-families-july-6-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Soarin' Across America launches July 2 at DCA",
-      "tag": "✅ Debuts Thursday",
-      "link": "/news/disneyland-news-families-june-29-2026",
+      "headline": "Halloween Time starts August 21 — book late-August dates now",
+      "tag": "🎃 6 Weeks Out",
+      "link": "/news/disneyland-news-families-july-6-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Pirates' new animatronic may be too intense for sensitive young kids",
-      "tag": "⚠️ Heads Up",
-      "link": "/news/disneyland-news-families-june-29-2026",
+      "headline": "Matterhorn Bobsleds closed July 20-23 for a brief refurb",
+      "tag": "Heads Up",
+      "link": "/news/disneyland-news-families-july-6-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Disneyland unusually quiet this month — flex your dates if you can",
-      "tag": "📊 Crowd Alert",
-      "link": "/news/disneyland-news-families-june-29-2026",
+      "headline": "Disneyland turns 71 next week — small cavalcade moments expected",
+      "tag": "🎂 July 17",
+      "link": "/news/disneyland-news-families-july-6-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "King Arthur Carrousel down July 6-17, Matterhorn down July 20-24",
-      "tag": "Closes Soon",
-      "link": "/news/disneyland-news-families-june-29-2026",
+      "headline": "D23 Day at Disneyland on August 13 — wait to book fall trips",
+      "tag": "👀 Watch This",
+      "link": "/news/disneyland-news-families-july-6-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-june-29-2026"
+  "currentPostSlug": "disneyland-news-families-july-6-2026"
 }

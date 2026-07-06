@@ -2634,6 +2634,20 @@ body {
   color: var(--ink-muted);
 }
 
+.affiliate-cta-image {
+  max-width: 320px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+}
+
+.affiliate-cta-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .affiliate-cta-headline {
   font-family: var(--font-display);
   font-size: 1.1rem;
