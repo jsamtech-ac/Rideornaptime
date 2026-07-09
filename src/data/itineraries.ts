@@ -156,7 +156,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Haunted Mansion (for 3:30 PM)',
-        body: "Set this one up before you leave the park so it's ready when you come back. With Pirates closed for refurb, Haunted Mansion is the New Orleans Square headliner — book it for an after-nap return window.",
+        body: "Set this one up before you leave the park so it's ready when you come back. Haunted Mansion is the New Orleans Square headliner to book for an after-nap return window (Pirates, reopened June 2026, is the walk-right-on alternative next door).",
         llRideId: 'haunted-mansion',
       },
       {
@@ -282,7 +282,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Jungle Cruise standby in Adventureland',
-        body: 'Pirates is closed for refurb — Jungle Cruise is your big Adventureland win today. 25–35 minute standby at 10:30. The dad jokes are the ride; little ones love the animals.',
+        body: "Jungle Cruise is your big Adventureland win at this hour — 25–35 minute standby at 10:30. The dad jokes are the ride; little ones love the animals. (Pirates reopened June 2026 if you'd rather anchor next door in New Orleans Square.)",
         rideIds: ['jungle-cruise'],
       },
       {
@@ -698,7 +698,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Adventureland: Jungle Cruise standby',
-        body: 'With Pirates closed for refurb, Jungle Cruise is the Adventureland anchor. Standby is 25–35 minutes at 10:30. The Adventureland Treehouse is a free walk-through next door if you have 15 minutes.',
+        body: 'Jungle Cruise is the Adventureland anchor at this hour. Standby is 25–35 minutes at 10:30. The Adventureland Treehouse is a free walk-through next door if you have 15 minutes. (Pirates is back open as of June 2026 for a New Orleans Square detour.)',
         rideIds: ['jungle-cruise', 'adventureland-treehouse'],
       },
       {
@@ -1950,7 +1950,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 50,
         type: 'ride',
         title: "Mickey & Minnie's Runaway Railway standby",
-        body: "35-minute standby at 9:45 vs. 60+ by 11 AM. Worth the wait — it's the most universally loved ride in the park. Skip the rest of Toontown (Roger Rabbit's closed for refurb anyway).",
+        body: "35-minute standby at 9:45 vs. 60+ by 11 AM. Worth the wait — it's the most universally loved ride in the park. Roger Rabbit's reopened May 2026 and now spins automatically (lap-sit friendly), so add it if your toddler wants one more Toontown ride.",
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -2333,7 +2333,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 35,
         type: 'ride',
         title: 'Jungle Cruise standby',
-        body: '25–30 minute wait at 11:15. With Pirates closed for refurb, Jungle Cruise is your big Adventureland ride.',
+        body: '25–30 minute wait at 11:15. Jungle Cruise is your big Adventureland ride at this hour (Pirates reopened June 2026 if you want to add it in New Orleans Square).',
         rideIds: ['jungle-cruise'],
       },
       {
@@ -3346,7 +3346,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'tip',
         title: 'Why start at DCA',
-        body: "RSR alone is the reason. Rope drop saves $60–120 in Single Pass costs and gets you a 15-minute wait instead of 90. Disneyland's Peter Pan you can hit via Lightning Lane after the hop. Hop windows open at 11:00 AM — you can't book a DL LL until ~11.",
+        body: "RSR alone is the reason. Rope drop saves $60–120 in Single Pass costs and gets you a 15-minute wait instead of 90. Disneyland's Peter Pan you can hit via Lightning Lane after the hop. Since June 2026 there's no 11 AM gate — you can book a Disneyland LL the moment you tap into DCA, and hop whenever it suits your day.",
       },
       {
         id: 'rope-drop',
@@ -3363,7 +3363,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book DCA Lightning Lane: Soarin'",
-        body: "First LL while in DCA — Soarin' for ~10:00. You can't book Disneyland LLs until 11 (hopper rule).",
+        body: "First LL while in DCA — Soarin' for ~10:00. Since June 2026 you can also book Disneyland LLs right away, so line up a DL ride whenever it fits your hop.",
         llRideId: 'soarin-across-america',
       },
       {
@@ -3408,7 +3408,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use Toy Story Midway Mania LL',
-        body: 'Last DCA ride of the morning. After this, book your first Disneyland LL — hopper rule says first available return must be 11:00+.',
+        body: "Last DCA ride of the morning. Book your first Disneyland LL whenever you like — since June 2026 there's no 11 AM return-window gate on second-park bookings.",
         rideIds: ['toy-story-midway-mania'],
       },
       {
@@ -3417,7 +3417,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book DL Lightning Lane: Peter Pan's Flight",
-        body: 'Hop rule: first DL LL return must be 11:00 or later. Book Peter Pan for ~12:30 — gives you time to walk over after lunch.',
+        body: 'Book Peter Pan for ~12:30 — gives you time to walk over after lunch. (No more 11 AM gate on second-park LLs as of June 2026, so grab the window that fits your walk-over.)',
         llRideId: 'peter-pans-flight',
       },
       {
@@ -3604,7 +3604,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book DL Lightning Lane: Peter Pan',
-        body: 'Hop rule: first DL LL return must be 11:00+. Peter Pan for 12:30.',
+        body: 'No 11 AM gate on second-park LLs since June 2026 — book Peter Pan for 12:30 to line up with your walk-over.',
         llRideId: 'peter-pans-flight',
       },
       {
@@ -3912,7 +3912,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 25,
         type: 'ride',
         title: 'Use WEB SLINGERS LL',
-        body: 'Re-book Peter Pan in Disneyland the moment you tap in — hop rule says you can now.',
+        body: "Re-book Peter Pan in Disneyland the moment you tap in — since June 2026 there's no time gate on second-park LLs.",
         rideIds: ['web-slingers'],
       },
       {
@@ -3921,7 +3921,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book DL: Peter Pan's Flight",
-        body: 'For 12:45. Hop rule says first DL LL return must be 11:00+.',
+        body: 'For 12:45 — the old 11 AM second-park gate is gone as of June 2026, so pick the window that fits your hop.',
         llRideId: 'peter-pans-flight',
       },
       {

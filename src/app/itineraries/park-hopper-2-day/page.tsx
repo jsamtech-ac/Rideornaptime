@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: 'What time can you hop on a Park Hopper at Disneyland?',
-    a: "You can't hop until 11:00 AM. The Lightning Lane wrinkle: you can't book a Multi Pass ride in your second park until your first available return window is 11:00 AM or later. Practically, that means you can book it around 10:00–10:30 AM and use it after the hop.",
+    a: 'Any time of day. Disneyland dropped the old 11:00 AM hopping restriction on June 9, 2026 — you now just pick a starting park, and you can cross to the other whenever you like. The Lightning Lane bonus: you can also book a Multi Pass ride in your second park as soon as you scan into your first one, with no 11:00 AM return-window floor anymore.',
   },
   {
     q: 'Which park should you start at on a Park Hopper day?',

@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'What is the cheapest way to buy Disneyland tickets?',
-    a: "Authorized resellers like Undercover Tourist and Get Away Today consistently beat Disney's direct prices — especially on multi-day tickets. California residents can sometimes find 3-day park hoppers as low as $68/day vs. $85/day through Disney.",
+    a: "Authorized resellers like Undercover Tourist and Get Away Today consistently beat Disney's direct prices — especially on multi-day tickets. California residents should also watch for the limited-run resident ticket deal Disney typically releases early each year (the 2026 version was a 3-day Park Hopper for $249, about $83/day, sold Jan–May) — it sells out fast, so buy the week it drops.",
   },
   {
     q: 'How do I avoid paying for Disneyland parking?',
-    a: 'Park at Downtown Disney for free (first 3 hours; some restaurants validate longer) or stay at an off-site hotel on Harbor Blvd with walkable access or a free shuttle. The official garage is $35/day and adds up fast.',
+    a: "Park at Downtown Disney, where a $20+ purchase plus validation gets you 3 free hours (a table-service restaurant validates up to 5) — otherwise it's $10 the first hour and $14 each hour after. Or stay at an off-site hotel on Harbor Blvd with walkable access or a free shuttle. The official theme-park garage is $40/day and adds up fast.",
   },
   {
     q: 'Are Disney birthday buttons still free?',
@@ -120,8 +120,9 @@ export default function SavingMoneyPage() {
             </div>
           </div>
           <p>
-            The official Disneyland parking garage is $35/day. Downtown Disney offers free parking
-            for the first 3 hours (some restaurants validate for longer). If you're staying
+            The official Disneyland theme-park garages are $40/day. Downtown Disney parking runs $10
+            the first hour and $14 each additional hour — but a $20+ purchase plus validation earns
+            3 free hours, and a table-service restaurant validates up to 5. If you're staying
             off-site, check if your hotel offers a shuttle or walkable access to skip parking costs
             entirely.
           </p>

@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: 'Should I buy Lightning Lane Multi Pass the day before or the day of?',
-    a: 'Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices hit $40–45/person.',
+    a: 'Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices reach $40+/person.',
   },
 ]
 
@@ -284,9 +284,11 @@ export default function LightningLanePage() {
           <div className="callout-label">New: Hotel Guest Bonus LL</div>
           <p>
             Staying at a Disneyland Resort hotel? You get{' '}
-            <strong>one free Lightning Lane Multi Pass entry per person, per stay</strong> (new Jan
-            5, 2026). Spend it on a ride everyone can do — Peter Pan's Flight or Mickey &amp;
-            Minnie's Runaway Railway — so no one feels left out.
+            <strong>one free Lightning Lane entry per person, per stay</strong> (new Jan 5, 2026) —
+            a single entry for the whole stay, not one per day. It works only on Multi Pass–eligible
+            rides, so you can't burn it on a Single Pass headliner like Rise of the Resistance or
+            Radiator Springs Racers. Spend it on a ride everyone can do — Peter Pan's Flight or
+            Mickey &amp; Minnie's Runaway Railway — so no one feels left out.
           </p>
         </div>
 
@@ -300,7 +302,7 @@ export default function LightningLanePage() {
           <p>
             Starts at ~$34/person/day and climbs with demand and proximity to your visit.
             <strong> Buy the day before at the latest</strong> — day-of pricing is meaningfully
-            higher. Prices hit $40–45/person on peak weekends.
+            higher. Prices reach $40+/person on peak weekends.
           </p>
           <p>
             <strong>Kids under 3 ride free</strong> with their group — do not buy them a Multi Pass.
@@ -310,9 +312,9 @@ export default function LightningLanePage() {
         <div className="callout hot">
           <div className="callout-label">Heads Up</div>
           <p>
-            Buzz Lightyear Astro Blasters is closing April 2026 and Monsters, Inc. (DCA) is slated
-            to close in 2027. DCA's Multi Pass list is already short — three rides — and shrinks
-            further once Monsters is gone, which changes the math (see DCA section below).
+            Monsters, Inc. (DCA) is slated to close in 2027 to make way for an Avatar-themed land.
+            DCA's Multi Pass list is already short — three rides — and shrinks further once Monsters
+            is gone, which changes the math (see DCA section below).
           </p>
         </div>
       </section>
@@ -652,9 +654,10 @@ export default function LightningLanePage() {
           <div className="callout-label">World of Color Virtual Queue (FREE)</div>
           <p>
             Opens at <strong>12:00 PM</strong> in the Disneyland app. You must have entered DCA (or
-            Disneyland with a Park Hopper) to join. Kids 3+ each need their own virtual queue slot;
-            under 3 do not. Have the app open at 11:59 and hit refresh — slots can run out in under
-            a minute on busy days.
+            Disneyland with a Park Hopper) to join. Everyone in your party who needs a ticket (age
+            3+) must have valid admission and be added to your virtual queue group; under 3 do not.
+            Have the app open at 11:59 and hit refresh — slots can run out in under a minute on busy
+            days.
           </p>
           <p>
             Alternative guaranteed spot: <strong>dining package</strong> at Wine Country Trattoria
@@ -763,9 +766,9 @@ export default function LightningLanePage() {
             Racers). Book first Lightning Lane the moment you tap in.
           </p>
           <p>
-            <strong>10:30 AM</strong> — Book a Lightning Lane in Disneyland (your second park). You
-            can only do this when the ride's first available window is{' '}
-            <strong>11:00 AM or later</strong> — the park-hopper rule.
+            <strong>10:30 AM</strong> — Book a Lightning Lane in Disneyland (your second park).
+            Since June 2026 there's no time gate on this — you can pick a second-park ride as soon
+            as you've scanned into your first park, whatever the return window.
           </p>
           <p>
             <strong>12:00 PM</strong> — Leave for the hotel. Kids nap. You keep booking from your
@@ -793,9 +796,11 @@ export default function LightningLanePage() {
         <div className="callout warning">
           <div className="callout-label">Park Hopper Reality Check</div>
           <p>
-            You cannot book a Lightning Lane in your second park until its first available window is
-            11:00 AM or later. If you're trying to hop by 9 AM, you can't stack — hopping makes most
-            sense <em>after</em> your morning rope drop and first-park LL is done.
+            Good news for 2026: the old 11 AM rule is gone. As of June 9, 2026 you can physically
+            hop between parks at any time, and you can book a Lightning Lane in your second park the
+            moment you've scanned into your first one — no more waiting for an 11 AM return window.
+            Hopping still makes most sense <em>after</em> your morning rope drop, but you're no
+            longer boxed in by the clock.
           </p>
         </div>
       </section>
@@ -895,9 +900,9 @@ export default function LightningLanePage() {
         <div className="callout hot">
           <div className="callout-label">Skip: Premier Pass</div>
           <p>
-            $150–400+ per person. Built for adult sprinters doing every headliner in one day. With
-            kids 2–8 you physically cannot ride enough attractions to justify it. Multi Pass is the
-            right product for families, full stop.
+            Roughly $300–$449 per person (typically $349–$399). Built for adult sprinters doing
+            every headliner in one day. With kids 2–8 you physically cannot ride enough attractions
+            to justify it. Multi Pass is the right product for families, full stop.
           </p>
         </div>
 

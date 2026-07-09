@@ -325,8 +325,10 @@ export default function CharactersPage() {
           <p>
             If you bought <Link href="/lightning-lane">Multi Pass</Link> ($34/person), every Disney
             PhotoPass photo at every meet auto-attaches to your account. Free. Let the photographer
-            handle it so your kid actually looks at the character. Standalone PhotoPass is $80/day
-            or $260 unlimited — Multi Pass is the better value for most families with kids 4+.
+            handle it so your kid actually looks at the character. On its own, PhotoPass runs about
+            $24.99 for a single day of downloads or $78 for a one-week unlimited package — but since
+            it's bundled free with Multi Pass, that's the better value for most families with kids
+            4+.
           </p>
         </div>
       </section>
@@ -337,7 +339,7 @@ export default function CharactersPage() {
           <span className="section-icon">🍽</span>
           <h2>Character Dining: Worth It or Skip?</h2>
           <p className="section-intro">
-            One character meal per first trip is the right move. Here's how the four resort options
+            One character meal per first trip is the right move. Here's how the three resort options
             compare so you can pick the right one for your kid.
           </p>
         </div>
@@ -350,7 +352,7 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$50 adults / ~$30 kids.</strong> Bright Victorian dining room on Main Street.{' '}
+            <strong>~$55 adults / ~$33 kids.</strong> Bright Victorian dining room on Main Street.{' '}
             <strong>Characters:</strong> Minnie, Pooh, Tigger, Eeyore, Captain Hook, rotating cast.
           </p>
           <p>
@@ -369,7 +371,7 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$55 adults / ~$32 kids.</strong> Gorgeous forest-themed room, calmer than Plaza
+            <strong>~$59 adults / ~$36 kids.</strong> Gorgeous forest-themed room, calmer than Plaza
             Inn. <strong>Characters:</strong> Chip &amp; Dale always, rotating princesses (Belle and
             Snow White most common). No park ticket needed — great for arrival or departure day.
             Breakfast only; lunch and dinner are regular service.
@@ -384,25 +386,10 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$60 adults / ~$35 kids.</strong> Loud, chaotic buffet — peak Disney energy.{' '}
-            <strong>Characters:</strong> Goofy always, plus Pluto, Chip &amp; Dale, occasional
-            princesses. Food is fine, not great. Best for 4–8 year olds who live for the chaos. Both
-            breakfast and dinner are character meals.
-          </p>
-        </div>
-
-        <div className="tip-card">
-          <div className="tip-card-header">
-            <div className="tip-card-icon sky">🌊</div>
-            <div>
-              <h3>PCH Grill — Mickey's Tales of Adventure (Paradise Pier Hotel)</h3>
-            </div>
-          </div>
-          <p>
-            <strong>~$48 adults / ~$28 kids.</strong> Beach-themed, the quietest of the four.{' '}
-            <strong>Characters:</strong> Mickey (safari outfit), Minnie, Daisy, Pluto. Mickey
-            himself reliably visits the table here — the only character breakfast where that's true.
-            Best pick for a nervous toddler.
+            <strong>~$59 breakfast / ~$64 brunch adults, ~$36–39 kids.</strong> Loud, chaotic buffet
+            — peak Disney energy. <strong>Characters:</strong> Goofy always, plus Pluto, Chip &amp;
+            Dale, occasional princesses. Food is fine, not great. Best for 4–8 year olds who live
+            for the chaos. Both breakfast and dinner are character meals.
           </p>
         </div>
 
@@ -410,8 +397,8 @@ export default function CharactersPage() {
           <div className="callout-label">Pick one in 10 seconds</div>
           <p>
             Food matters most? <strong>Plaza Inn.</strong> Princess-obsessed kid?{' '}
-            <strong>Storytellers Café.</strong> Shy or nervous toddler? <strong>PCH Grill.</strong>{' '}
-            Chaos-loving 5+ year old? <strong>Goofy's Kitchen.</strong>
+            <strong>Storytellers Café.</strong> Chaos-loving 5+ year old?{' '}
+            <strong>Goofy's Kitchen.</strong>
           </p>
         </div>
 

@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: 'Is a Park Hopper ticket worth it for a first Disneyland visit?',
-    a: "Skip the Park Hopper for a 1-day trip — a single-day ticket only works at one park, and bouncing eats time. For 2+ day trips, the Park Hopper is worth it because it lets you move between Disneyland and DCA after 11 AM and use both parks' rope drop windows across the visit.",
+    a: "Skip the Park Hopper for a 1-day trip — a single-day ticket only works at one park, and bouncing eats time. For 2+ day trips, the Park Hopper is worth it because it lets you move between Disneyland and DCA at any time of day (the old 11 AM hopping restriction was dropped in June 2026) and use both parks' rope drop windows across the visit.",
   },
   {
     q: 'Where should I stay for a first Disneyland visit with kids?',
@@ -138,12 +138,12 @@ export default function FirstVisitPage() {
           </div>
           <p>
             A single-day ticket only works at one park. A <strong>Park Hopper</strong> lets you
-            bounce between both parks after 11 AM — worth it for 2+ day trips, skip it for a 1-day
-            trip.
+            bounce between both parks any time of day (the 11 AM restriction ended in June 2026) —
+            worth it for 2+ day trips, skip it for a 1-day trip.
           </p>
           <p>
-            <strong>Lightning Lane Multi Pass</strong> is a separate add-on ($30–40/person/day) that
-            lets you skip lines on a bunch of rides — almost always worth it with kids.{' '}
+            <strong>Lightning Lane Multi Pass</strong> is a separate add-on (~$34–40/person/day)
+            that lets you skip lines on a bunch of rides — almost always worth it with kids.{' '}
             <Link href="/lightning-lane">Full Lightning Lane breakdown →</Link>
           </p>
         </div>

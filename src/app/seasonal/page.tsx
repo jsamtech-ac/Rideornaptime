@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: 'What are the 2026 Oogie Boogie Bash dates and how much are tickets?',
-    a: "Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It's a separately-ticketed hard-ticket party (6pm–11pm). Based on 2025 pricing, tickets ran $139–$199 depending on date. Tickets typically drop in late June with a Magic Key pre-sale first. Popular dates sell out within days — book day-one of the on-sale window.",
+    a: "Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It's a separately-ticketed hard-ticket party (6pm–11pm). 2026 tickets run $139–$199 depending on date — $139 on select August nights, $159 the standard price for most September and October dates, up to $199 on peak Halloween-weekend nights. Tickets went on sale June 18, 2026 (with a Magic Key pre-sale first). Popular dates sell out within days — book day-one of the on-sale window.",
   },
   {
     q: 'When does Halloween Time start at Disneyland in 2026?',

@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: 'How do you book Lightning Lanes across both parks on a Park Hopper day?',
-    a: 'You can only book a Lightning Lane in your second park if the first available return window is 11:00 AM or later — practically meaning you can book around 10:00 AM. Always Modify, never Cancel — Cancel resets your 2-hour clock from scratch.',
+    a: 'As of June 9, 2026 you can book a Lightning Lane in your second park as soon as you scan into your first — the old "first return window must be 11:00 AM or later" gate is gone. Always Modify, never Cancel — Cancel resets your 2-hour clock from scratch.',
   },
   {
     q: 'Which park do you start at each day on a 3-day Park Hopper?',
