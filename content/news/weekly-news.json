@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-07-06",
-  "lastUpdated": "2026-07-06T21:48:25Z",
+  "weekOf": "2026-07-13",
+  "lastUpdated": "2026-07-16T16:33:43Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "King Arthur Carrousel closed July 6-16 — plan Fantasyland around it",
-      "tag": "⚠️ Closed Today",
-      "link": "/news/disneyland-news-families-july-6-2026",
+      "headline": "Disneyland crowds lowest in years — best summer window in a decade",
+      "tag": "📊 Book Now",
+      "link": "/news/disneyland-news-families-july-13-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Halloween Time starts August 21 — book late-August dates now",
-      "tag": "🎃 6 Weeks Out",
-      "link": "/news/disneyland-news-families-july-6-2026",
+      "headline": "Disneyland turns 71 on July 17 — King Arthur Carrousel reopens same day",
+      "tag": "🎂 Friday",
+      "link": "/news/disneyland-news-families-july-13-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Matterhorn Bobsleds closed July 20-23 for a brief refurb",
-      "tag": "Heads Up",
-      "link": "/news/disneyland-news-families-july-6-2026",
+      "headline": "Earl of Sandwich grand opening July 15 at Downtown Disney",
+      "tag": "🥪 Opens Wednesday",
+      "link": "/news/disneyland-news-families-july-13-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Disneyland turns 71 next week — small cavalcade moments expected",
-      "tag": "🎂 July 17",
-      "link": "/news/disneyland-news-families-july-6-2026",
+      "headline": "Matterhorn Bobsleds closed July 20-23 for brief refurb",
+      "tag": "⚠️ Heads Up",
+      "link": "/news/disneyland-news-families-july-13-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "D23 Day at Disneyland on August 13 — wait to book fall trips",
-      "tag": "👀 Watch This",
-      "link": "/news/disneyland-news-families-july-6-2026",
+      "headline": "D23 Day at Disneyland — wait to book fall trips",
+      "tag": "👀 August 13",
+      "link": "/news/disneyland-news-families-july-13-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-july-6-2026"
+  "currentPostSlug": "disneyland-news-families-july-13-2026"
 }
