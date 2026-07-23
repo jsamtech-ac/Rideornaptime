@@ -319,7 +319,6 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: '42" / 107 cm',
     heightInches: 42,
-    closing: 'Closed July 20-23, 2026 for a brief refurb',
     age2: 'skip',
     age4: 'skip',
     age6: 'maybe',

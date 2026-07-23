@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-07-13",
-  "lastUpdated": "2026-07-16T16:33:43Z",
+  "weekOf": "2026-07-20",
+  "lastUpdated": "2026-07-23T04:06:51Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Disneyland crowds lowest in years — best summer window in a decade",
-      "tag": "📊 Book Now",
-      "link": "/news/disneyland-news-families-july-13-2026",
+      "headline": "D23 Expo is 3 weeks out — wait to book fall trips",
+      "tag": "👀 August 14-16",
+      "link": "/news/disneyland-news-families-week-of-july-20-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Disneyland turns 71 on July 17 — King Arthur Carrousel reopens same day",
-      "tag": "🎂 Friday",
-      "link": "/news/disneyland-news-families-july-13-2026",
+      "headline": "Halloween Time starts August 21 — book late-August dates now",
+      "tag": "🎃 4 Weeks Away",
+      "link": "/news/disneyland-news-families-week-of-july-20-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Earl of Sandwich grand opening July 15 at Downtown Disney",
-      "tag": "🥪 Opens Wednesday",
-      "link": "/news/disneyland-news-families-july-13-2026",
+      "headline": "Matterhorn Bobsleds back July 24 after brief refurb",
+      "tag": "✅ Reopens Friday",
+      "link": "/news/disneyland-news-families-week-of-july-20-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Matterhorn Bobsleds closed July 20-23 for brief refurb",
-      "tag": "⚠️ Heads Up",
-      "link": "/news/disneyland-news-families-july-13-2026",
+      "headline": "Earl of Sandwich officially open at Downtown Disney",
+      "tag": "🥪 Now Open",
+      "link": "/news/disneyland-news-families-week-of-july-20-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "D23 Day at Disneyland — wait to book fall trips",
-      "tag": "👀 August 13",
-      "link": "/news/disneyland-news-families-july-13-2026",
+      "headline": "Anaheim Resident Ticket: $71/day valid through October 8",
+      "tag": "💰 Live Now",
+      "link": "/news/disneyland-news-families-week-of-july-20-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-july-13-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-july-20-2026"
 }
