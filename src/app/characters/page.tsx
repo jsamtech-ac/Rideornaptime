@@ -8,6 +8,7 @@ import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import CharacterFinder from '@/components/CharacterFinder'
 import DeferredMount from '@/components/DeferredMount'
+import NewsTicker from '@/components/NewsTicker'
 import { SITE_URL } from '@/lib/content'
 import { characters, RELIABILITY_LABEL } from '@/data/characters'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
@@ -216,6 +217,8 @@ export default function CharactersPage() {
           </p>
         </div>
       </header>
+
+      <NewsTicker variant="static" />
 
       <nav aria-label="On this page" className="jump-nav">
         <span className="jump-nav-label">Jump to</span>

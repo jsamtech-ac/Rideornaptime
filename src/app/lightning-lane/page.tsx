@@ -5,6 +5,7 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
+import NewsTicker from '@/components/NewsTicker'
 import { SITE_URL, RIDES, type Ride, type Verdict } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 
@@ -194,6 +195,8 @@ export default function LightningLanePage() {
           noon.
         </p>
       </header>
+
+      <NewsTicker variant="static" />
 
       {/* ===== SECTION 1: 60-SECOND VERDICT ===== */}
       <section className="section">
