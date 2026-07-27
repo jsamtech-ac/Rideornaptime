@@ -2407,6 +2407,30 @@ body {
   }
 }
 
+/* Static variant (guide pages) and reduced-motion share one layout: no marquee,
+   headlines wrap in place, no edge fade, no duplicated loop items. */
+.news-ticker--static .news-ticker-track {
+  animation: none;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.news-ticker--static .news-ticker-track li[aria-hidden='true'] {
+  display: none;
+}
+
+.news-ticker--static .news-ticker-track-wrap {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Three wrapped headlines is too tall on a phone. */
+@media (max-width: 480px) {
+  .news-ticker--static .news-ticker-item:nth-child(n + 3) {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .news-ticker-track {
     animation: none;

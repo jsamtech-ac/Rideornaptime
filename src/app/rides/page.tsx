@@ -9,6 +9,7 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
+import NewsTicker from '@/components/NewsTicker'
 import { RIDES, SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 
@@ -103,6 +104,8 @@ export default function RidesPage() {
           </p>
         </div>
       </header>
+
+      <NewsTicker variant="static" />
 
       <section className="section">
         <div className="section-header">
