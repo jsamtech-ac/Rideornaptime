@@ -1382,7 +1382,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Haunted Mansion',
-        body: "For 2:00 PM. Then immediately queue up for Tiana's standby in Critter Country.",
+        body: "For 2:00 PM. Then immediately queue up for Tiana's standby in Bayou Country.",
         llRideId: 'haunted-mansion',
       },
       {
@@ -2485,8 +2485,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '12:15 PM',
         durationMin: 45,
         type: 'meal',
-        title: 'Mobile-order Cocina Cucamonga or San Fransokyo',
-        body: "Cocina Cucamonga (Cars Land) for quick Mexican that's actually good. San Fransokyo Square for birria tacos and ramen — newer area, less hit by lunch rush. Order at 11:30 for the 12:15 window.",
+        title: 'Mobile-order Cocina Cucamonga (San Fransokyo Square)',
+        body: "Cocina Cucamonga sits in San Fransokyo Square and serves the birria tacos, street corn, and quick Mexican that's actually good — one of the best DCA quick-service spots, and less hammered by the lunch rush than the Cars Land counters. Order at 11:30 for the 12:15 window.",
       },
       {
         id: 'nap',
@@ -2679,7 +2679,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Avengers Campus + WEB SLINGERS',
-        body: "Walk Avengers Campus first — Spider-Man drone shows, Doctor Strange demos, character roams. Use the LL for WEB SLINGERS. Skip Guardians: BREAKOUT! Single Pass on Day 1 — that's a Day 2 call.",
+        body: 'Walk Avengers Campus first — Spider-Man drone shows, Doctor Strange demos, character roams. Use the LL for WEB SLINGERS. Skip Guardians: BREAKOUT! on Day 1 — save that Multi Pass booking for Day 2.',
         rideIds: ['web-slingers'],
       },
       {
@@ -2867,7 +2867,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day California Adventure — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      'Built for families of older kids (7+) who want everything DCA can throw at them — Incredicoaster, Guardians: BREAKOUT!, plus the Multi Pass set. No nap, no margin.',
+      'Built for families of older kids (7+) who want everything DCA can throw at them — Incredicoaster, Guardians: BREAKOUT!, and the full Multi Pass set. No nap, no margin.',
     blocks: [
       {
         id: 'arrive',
@@ -2875,7 +2875,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'tip',
         title: 'DCA blitz arrival — fewer rides, faster pace',
-        body: 'Blitz at DCA is a different beast than at Disneyland — there are fewer rides total. This template assumes kids 7+ who can also hit Incredicoaster (48") and Guardians: BREAKOUT! (40", intense drops). Buy the Guardians Single Pass the night before.',
+        body: 'Blitz at DCA is a different beast than at Disneyland — there are fewer rides total. This template assumes kids 7+ who can also hit Incredicoaster (48") and Guardians: BREAKOUT! (40", intense drops). Buy Multi Pass for the day — Guardians is a Multi Pass ride now — and grab the Radiator Springs Racers Single Pass the night before.',
       },
       {
         id: 'rope-drop',
@@ -2936,8 +2936,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '10:30 AM',
         durationMin: 25,
         type: 'ride',
-        title: 'Guardians: BREAKOUT! via Single Pass',
-        body: 'Drop tower with Star-Lord. 40" min. Loud, sudden drops, dark — only with kids who handle intensity. Single Pass purchased the night before makes this 15 minutes instead of a 60+ min standby.',
+        title: 'Guardians: BREAKOUT! via Multi Pass',
+        body: 'Drop tower with Star-Lord. 40" min. Loud, sudden drops, dark — only with kids who handle intensity. It\'s a Multi Pass ride now, so book it the moment your window opens to turn a 60+ min standby into about 15.',
         rideIds: ['guardians-of-the-galaxy-mission-breakout'],
       },
       {
@@ -3272,8 +3272,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '12:15 PM',
         durationMin: 45,
         type: 'meal',
-        title: 'Cocina Cucamonga in Cars Land',
-        body: 'Walk back through Cars Land for lunch — kids love the area. Mobile-order at 11:30 for 12:15.',
+        title: 'Cocina Cucamonga in San Fransokyo Square',
+        body: 'Head to San Fransokyo Square for lunch — kids love the waterfront area. Mobile-order at 11:30 for 12:15.',
       },
       {
         id: 'nap',

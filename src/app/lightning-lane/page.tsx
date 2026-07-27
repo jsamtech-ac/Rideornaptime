@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What's the best Lightning Lane strategy at Disney California Adventure?",
-    a: "DCA's Multi Pass only covers 2–3 rides — the math rarely works for families. Skip Multi Pass. Instead, rope-drop Radiator Springs Racers at 8 AM (15-minute wait vs 90 minutes later) and save $15–30/person on the Single Pass. Use the free World of Color Virtual Queue that opens at noon in the app.",
+    a: 'At DCA the one true must-do — Radiator Springs Racers — is a Single Pass, not on Multi Pass, and most of the ~9 rides Multi Pass does cover there are second-tier for little kids, so the math rarely works for families. Skip Multi Pass. Instead, rope-drop Radiator Springs Racers at 8 AM (15-minute wait vs 90 minutes later) and save $15–30/person on the Single Pass. Use the free World of Color Virtual Queue that opens at noon in the app.',
   },
   {
     q: 'Do kids under 3 need their own Lightning Lane?',
@@ -313,8 +313,9 @@ export default function LightningLanePage() {
           <div className="callout-label">Heads Up</div>
           <p>
             Monsters, Inc. (DCA) is slated to close in 2027 to make way for an Avatar-themed land.
-            DCA's Multi Pass list is already short — three rides — and shrinks further once Monsters
-            is gone, which changes the math (see DCA section below).
+            DCA's Multi Pass roster leans second-tier — the marquee Radiator Springs Racers is a
+            Single Pass — and it loses one more family ride once Monsters is gone, which changes the
+            math (see DCA section below).
           </p>
         </div>
       </section>
@@ -472,7 +473,8 @@ export default function LightningLanePage() {
             rope-dropping Toontown. Otherwise Peter Pan's Flight — the line only goes up from here.
             <br />
             <strong>DCA:</strong> Monsters, Inc. or Guardians of the Galaxy — Mission: BREAKOUT!,
-            depending on kid age. With only a handful of Multi Pass rides at DCA, windows fill fast.
+            depending on kid age. The most family-friendly DCA Multi Pass windows fill fast, so book
+            early.
           </p>
         </div>
 
@@ -588,7 +590,9 @@ export default function LightningLanePage() {
           <span className="section-icon">🌉</span>
           <h2>DCA Multi Pass: The Harder Math</h2>
           <p className="section-intro">
-            California Adventure's Multi Pass covers only 2–3 rides. Do the math before you buy.
+            California Adventure's marquee ride, Radiator Springs Racers, is a separate Single Pass
+            — and most of the Multi Pass rides there are second-tier for little kids. Do the math
+            before you buy.
           </p>
         </div>
 

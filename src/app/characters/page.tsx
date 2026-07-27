@@ -44,7 +44,7 @@ const faqsGeneral = [
   },
   {
     q: 'What is the best Disneyland character dining?',
-    a: "Plaza Inn character breakfast at Disneyland is the standout — Minnie and friends rotate through the table and Plaza Inn already serves the best food in the park. If your kid is princess-obsessed, Storytellers Café at the Grand Californian is the better fit because Belle and Snow White interact more deeply. Goofy's Kitchen at the Disneyland Hotel is the loudest, most kid-chaotic option. Book 60 days out via the Disneyland app.",
+    a: "Plaza Inn character breakfast at Disneyland is the standout — Minnie and friends rotate through the table and Plaza Inn already serves the best food in the park. If your kid is princess-obsessed, the actual princess meal is Disney Princess Breakfast Adventures at Napa Rose (Grand Californian) — several princesses visit your table, though it's a pricey splurge (~$150/guest). Storytellers Café is Mickey-and-pals, not princesses, despite the common mix-up. Goofy's Kitchen at the Disneyland Hotel is the loudest, most kid-chaotic option. Book 60 days out via the Disneyland app.",
   },
   {
     q: 'How do you find characters at Disneyland?',
@@ -60,7 +60,7 @@ const faqsGeneral = [
   },
   {
     q: 'Is character dining worth it at Disneyland?',
-    a: "Yes for at least one meal on a first trip. You meet 4-5 characters in one sitting with no separate lines and replace what would have been 5 separate 20-minute waits. Book Plaza Inn or Storytellers Café 60 days out via the Disneyland app. Skip character dining entirely if your kid is fully Frozen-obsessed — Anna and Elsa don't appear at any character meal.",
+    a: "Yes for at least one meal on a first trip. You meet 4-5 characters in one sitting with no separate lines and replace what would have been 5 separate 20-minute waits. Book Plaza Inn (or Napa Rose Princess Breakfast Adventures if you want princesses) 60 days out via the Disneyland app. Skip character dining entirely if your kid is fully Frozen-obsessed — Anna and Elsa don't appear at any character meal.",
   },
   {
     q: 'How early should you line up for Mickey at Disneyland?',
@@ -151,11 +151,11 @@ const faqsLookup = [
   },
   {
     q: 'Where can I meet Chip and Dale?',
-    a: 'Critter Country at Disneyland Park, or Storytellers Café character breakfast at the Grand Californian.',
+    a: 'Bayou Country at Disneyland Park (near the Hungry Bear Restaurant), or Storytellers Café character breakfast at the Grand Californian.',
   },
   {
     q: 'Where can I meet Belle?',
-    a: 'Royal Hall in Fantasyland, or Storytellers Café at Grand Californian (often present).',
+    a: 'Royal Hall at Fantasy Faire in Fantasyland; she also tells her story at the nearby Royal Theatre. (Not at Storytellers Café — that breakfast is Mickey and pals.)',
   },
   {
     q: 'Where can I meet Peter Pan?',
@@ -245,7 +245,7 @@ export default function CharactersPage() {
           <span className="section-icon">🔍</span>
           <h2>Find a Character</h2>
           <p className="section-intro">
-            All 48 characters across both parks. Search by name, filter by park or your kid's age,
+            Every character across both parks. Search by name, filter by park or your kid's age,
             then flip to <strong>By location</strong> to plan your walking route land-by-land. Every
             entry has a typical line length and a dad-tested note.
           </p>
@@ -339,7 +339,7 @@ export default function CharactersPage() {
           <span className="section-icon">🍽</span>
           <h2>Character Dining: Worth It or Skip?</h2>
           <p className="section-intro">
-            One character meal per first trip is the right move. Here's how the three resort options
+            One character meal per first trip is the right move. Here's how the four resort options
             compare so you can pick the right one for your kid.
           </p>
         </div>
@@ -359,7 +359,11 @@ export default function CharactersPage() {
             Plaza Inn already serves the best food in the park (the lunch fried chicken is
             legendary). 4–5 characters in one sitting replaces 5 separate 20-min lines.{' '}
             <strong>Book the 8:00 AM seating</strong> — best character access and you walk out onto
-            Main Street already inside the park for rope drop.
+            Main Street already inside the park for rope drop.{' '}
+            <em>
+              Heads-up: the Minnie &amp; Friends breakfast pauses from Aug 10 through late September
+              2026, so check the app if you're visiting late summer.
+            </em>
           </p>
         </div>
 
@@ -372,9 +376,26 @@ export default function CharactersPage() {
           </div>
           <p>
             <strong>~$59 adults / ~$36 kids.</strong> Gorgeous forest-themed room, calmer than Plaza
-            Inn. <strong>Characters:</strong> Chip &amp; Dale always, rotating princesses (Belle and
-            Snow White most common). No park ticket needed — great for arrival or departure day.
-            Breakfast only; lunch and dinner are regular service.
+            Inn. <strong>Characters:</strong> Mickey in his explorer outfit plus Chip &amp; Dale and
+            friends — <strong>no princesses here</strong>, despite a common mix-up. No park ticket
+            needed — great for arrival or departure day. Breakfast only; lunch and dinner are
+            regular service.
+          </p>
+        </div>
+
+        <div className="tip-card">
+          <div className="tip-card-header">
+            <div className="tip-card-icon castle">👑</div>
+            <div>
+              <h3>Disney Princess Breakfast Adventures — Napa Rose, Grand Californian</h3>
+            </div>
+          </div>
+          <p>
+            <strong>~$150 per guest (all ages).</strong> This is the actual princess meal — a
+            multi-course breakfast where several princesses (a rotating set such as Cinderella,
+            Aurora, Belle, Tiana, and Ariel) visit your table, plus a keepsake and craft. Pricey and
+            a splurge, but the only sit-down where princesses come to you. No park ticket needed.{' '}
+            <strong>Books out fast the moment the 60-day window opens.</strong>
           </p>
         </div>
 
@@ -397,7 +418,8 @@ export default function CharactersPage() {
           <div className="callout-label">Pick one in 10 seconds</div>
           <p>
             Food matters most? <strong>Plaza Inn.</strong> Princess-obsessed kid?{' '}
-            <strong>Storytellers Café.</strong> Chaos-loving 5+ year old?{' '}
+            <strong>Disney Princess Breakfast Adventures at Napa Rose.</strong> Want Mickey and pals
+            without a park ticket? <strong>Storytellers Café.</strong> Chaos-loving 5+ year old?{' '}
             <strong>Goofy's Kitchen.</strong>
           </p>
         </div>

@@ -58,7 +58,7 @@ export const DL_LAND_ORDER = [
   'Adventureland',
   'Frontierland',
   'New Orleans Square',
-  'Critter Country',
+  'Bayou Country',
   "Star Wars: Galaxy's Edge",
   "Mickey's Toontown",
 ]
@@ -66,6 +66,7 @@ export const DL_LAND_ORDER = [
 export const DCA_LAND_ORDER = [
   'Buena Vista Street',
   'Hollywood Land',
+  'San Fransokyo Square',
   'Avengers Campus',
   'Pixar Pier',
   'Paradise Gardens',
@@ -80,12 +81,12 @@ export const DL_LAND_INTROS: Record<string, string> = {
   'Fantasyland (Fantasy Faire)':
     'Royal Hall rotates 3 princesses per visit. Ask the cast member at the door which 3 are inside before joining.',
   Adventureland:
-    "Moana's spot is still settling in 2026. Tarzan and Indy moments are tied to the attractions, not formal meets.",
+    'Tarzan and Indy moments are tied to the attractions, not formal meets. Moana turns up here occasionally but has no fixed spot — check the app.',
   Frontierland:
     'Big Thunder Trail is a quiet character corner — Woody, Jessie, Pocahontas all roam. El Zocalo Park hosts Miguel and Mirabel.',
   'New Orleans Square':
     "Tiana has a regular presence here since Tiana's Bayou Adventure replaced Splash Mountain. Easier walk-up than Royal Hall.",
-  'Critter Country': 'Chip & Dale roam near Hungry Bear Restaurant. Usually a walk-up.',
+  'Bayou Country': 'Chip & Dale roam near Hungry Bear Restaurant. Usually a walk-up.',
   "Star Wars: Galaxy's Edge":
     "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, Stormtroopers, and Mando & Grogu (live since May 22, 2026).",
   "Mickey's Toontown":
@@ -97,6 +98,8 @@ export const DCA_LAND_INTROS: Record<string, string> = {
     'Mostly atmosphere characters and cavalcade appearances. Not a destination meet area on most days.',
   'Hollywood Land':
     'Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027).',
+  'San Fransokyo Square':
+    'The Zootopia trio — Judy Hopps, Nick Wilde, and Officer Clawhauser — meets along the waterfront here (new since late 2025). They roam the San Francisco Street stretch near Grizzly River Run; check the app for the current spot.',
   'Avengers Campus':
     "The Marvel lineup. Spider-Man's rooftop drop is the showstopper — set a reminder in the app and be in position 15 min early.",
   'Pixar Pier':
@@ -222,7 +225,7 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DL',
-        land: 'Critter Country',
+        land: 'Bayou Country',
         spot: 'Near Hungry Bear Restaurant, roaming',
         reliability: 'roaming',
       },
@@ -389,7 +392,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'great', age8: 'maybe' },
     expectedLine: 'long',
     notes:
-      "Belle also appears in Storytellers Café's character breakfast at the Grand Californian — easier interaction than the Royal Hall line.",
+      "For a calmer, guaranteed princess meal, book Disney Princess Breakfast Adventures at Napa Rose (Grand Californian) — Belle is part of the rotating princess lineup there. (She's not at Storytellers Café; that breakfast is Mickey and pals.)",
   },
   {
     id: 'moana',
@@ -398,15 +401,15 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DL',
-        land: 'Adventureland',
-        spot: "Aladdin's Oasis area, roaming",
+        land: 'Fantasyland',
+        spot: 'No fixed spot — roams; check the app',
         reliability: 'rare',
       },
     ],
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      "Moana's permanent meet location is still settling. Check the Disneyland app on your visit day — she's added to the roster but rotation is inconsistent.",
+      "Moana doesn't have a fixed meet location — she rotates in and out and sightings are inconsistent. Check the Disneyland app on your visit day rather than counting on a set spot.",
   },
 
   // ─── FANTASYLAND CHARACTERS ───────────────────────────────────────────────
@@ -514,6 +517,59 @@ export const characters: Character[] = [
     expectedLine: 'very-long',
     notes:
       'The most demanded character meet at the resort. Rope-drop DCA and go straight here — 20 min wait at 8:05 AM, 90 min by 10 AM. If you arrive mid-afternoon, abort and try after 4 PM when the line dips.',
+  },
+
+  // ─── ZOOTOPIA (DCA, new late 2025) ────────────────────────────────────────
+  {
+    id: 'judy-hopps',
+    name: 'Judy Hopps',
+    franchise: 'Zootopia',
+    locations: [
+      {
+        park: 'DCA',
+        land: 'San Fransokyo Square',
+        spot: 'Roams the San Francisco Street waterfront near Grizzly River Run',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'great' },
+    expectedLine: 'medium',
+    notes:
+      'New to DCA in late 2025 with the Zootopia 2 release. Judy and Nick Wilde roam the waterfront near Grizzly River Run — no posted schedule, so check the app. A big hit with kids who know the movie.',
+  },
+  {
+    id: 'nick-wilde',
+    name: 'Nick Wilde',
+    franchise: 'Zootopia',
+    locations: [
+      {
+        park: 'DCA',
+        land: 'San Fransokyo Square',
+        spot: 'Roams the San Francisco Street waterfront near Grizzly River Run',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'great' },
+    expectedLine: 'medium',
+    notes:
+      'Usually appears alongside Judy Hopps. Roaming, not a scheduled line — catch them as you pass through on the way to Grizzly River Run or Pixar Pier.',
+  },
+  {
+    id: 'officer-clawhauser',
+    name: 'Officer Clawhauser',
+    franchise: 'Zootopia',
+    locations: [
+      {
+        park: 'DCA',
+        land: 'San Fransokyo Square',
+        spot: 'San Francisco Street area (sporadic)',
+        reliability: 'rare',
+      },
+    ],
+    kidAppeal: { age2: 'maybe', age4: 'great', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      'The cheetah desk sergeant shows up sporadically in the Zootopia area — a fun bonus if you catch him, but not one to plan around.',
   },
 
   // ─── PIXAR (mostly DCA) ───────────────────────────────────────────────────
@@ -771,9 +827,9 @@ export const characters: Character[] = [
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'must-meet' },
-    expectedLine: 'long',
+    expectedLine: 'medium',
     notes:
-      'Brand-new since the Smugglers Run Mandalorian overlay launched May 22, 2026. Location pattern is still settling — check the Disneyland app the morning of your visit. Grogu is the star of the meet; Mando does the talking.',
+      "Brand-new since the Smugglers Run Mandalorian overlay launched May 22, 2026. This isn't a scheduled photo line — Din Djarin and Grogu roam Black Spire Outpost for brief, unscheduled encounters, so check the Disneyland app the morning of your visit and keep an eye out as you walk the land. Grogu is the star; Mando does the talking.",
   },
 
   // ─── MARVEL (Avengers Campus, DCA) ────────────────────────────────────────

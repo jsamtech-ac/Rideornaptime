@@ -119,6 +119,19 @@ export default function FoodPage() {
             through a Lightning Lane window.
           </p>
         </div>
+
+        <div className="callout pro">
+          <div className="callout-label">Downtown Disney (no park ticket needed)</div>
+          <p>
+            Eating in Downtown Disney is the money-and-sanity saver on arrival and departure days —
+            no ticket required, and it's a shorter walk than fighting the in-park lunch rush.{' '}
+            <strong>Earl of Sandwich</strong> (reopened summer 2026) is the top family pick: cheap,
+            fast, kid-friendly hot sandwiches. <strong>Bopo Go!</strong> does boba and quick snacks,
+            and <strong>Pearl's Roadside</strong> is casual barbecue. All three are counter-service
+            and stroller-easy. (The upstairs Gordon Ramsay spot, The Carnaby, is a grown-up
+            date-night option — not a young-kids meal.)
+          </p>
+        </div>
       </section>
 
       <TicketsCTA location="food" />
