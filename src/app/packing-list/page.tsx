@@ -122,7 +122,7 @@ export default function PackingListPage() {
           Disneyland Packing List for Kids · rideornaptime.com/packing-list
         </p>
 
-        <DeferredMount minHeight={800}>
+        <DeferredMount minHeight={1600}>
           <PackingChecklist />
         </DeferredMount>
 

@@ -998,6 +998,98 @@ body {
   color: var(--ink-soft);
 }
 
+/* ===== PACKING LIST PRODUCT TILES =====
+   One tile per affiliate product: square thumbnail + CTA, in a single tap target.
+   `inline-flex` also stops the checked-row line-through from bleeding into the tile. */
+.packing-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.packing-product {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  padding-right: var(--space-md);
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.packing-product:hover {
+  border-color: var(--sun);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Fixed square frame so every product reads at the same size regardless of the
+   source aspect ratio (these range from 373x961 to 1500x1500). */
+.packing-product-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.packing-product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.packing-product-cta {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--sun);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-soft);
+  transition: background-color 0.2s;
+}
+
+.packing-product:hover .packing-product-cta {
+  background: #d97706;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .packing-product,
+  .packing-product-cta {
+    transition: none;
+  }
+
+  .packing-product:hover {
+    transform: none;
+  }
+}
+
+/* Below this the two-product row (autograph book + markers) gets cramped —
+   let each tile take the full row instead of squeezing side by side. */
+@media (max-width: 480px) {
+  .packing-product {
+    width: 100%;
+  }
+
+  .packing-product-cta {
+    margin-left: auto;
+  }
+}
+
 /* ===== CALLOUT ===== */
 .callout {
   border-radius: var(--radius-lg);
@@ -3703,6 +3795,7 @@ body {
   .hero-badge,
   .callout,
   .affiliate-cta,
+  .packing-products,
   .no-print {
     display: none !important;
   }

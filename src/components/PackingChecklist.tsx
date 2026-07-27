@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PACKING_LIST, type PackingItem } from '@/lib/content'
 
 function ChecklistItem({ item }: { item: PackingItem }) {
@@ -18,20 +19,23 @@ function ChecklistItem({ item }: { item: PackingItem }) {
         <span>{item.why}</span>
 
         {item.affiliates && item.affiliates.length > 0 && (
-          <div
-            style={{ marginTop: '0.6rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}
-            onClick={(e) => e.stopPropagation()}
-          >
+          // Stop propagation so tapping a product doesn't also tick the row off.
+          <div className="packing-products" onClick={(e) => e.stopPropagation()}>
             {item.affiliates.map((a, i) => (
               <a
                 key={i}
                 href={a.href}
                 target="_blank"
-                rel="sponsored noopener noreferrer"
-                className="affiliate-cta"
+                rel="sponsored nofollow noopener noreferrer"
+                className="packing-product"
                 aria-label={`Check price on Amazon — ${a.label}`}
               >
-                Check Price on Amazon →
+                {a.image && (
+                  <span className="packing-product-thumb">
+                    <Image src={a.image} alt={a.label} width={72} height={72} />
+                  </span>
+                )}
+                <span className="packing-product-cta">Check Price on Amazon →</span>
               </a>
             ))}
           </div>

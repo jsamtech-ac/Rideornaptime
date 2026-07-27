@@ -40,7 +40,9 @@ export interface FoodSpot {
 export interface PackingItem {
   item: string
   why: string
-  affiliates?: { label: string; href: string }[]
+  /** `image` is a product shot in /public/packinglist-images, rendered in a square
+      thumbnail inside the affiliate link. Paths are root-relative. */
+  affiliates?: { label: string; href: string; image?: string }[]
   related?: { text: string; href: string }
 }
 
@@ -1021,14 +1023,22 @@ export const PACKING_LIST: PackingItem[] = [
     item: 'Portable phone charger (10,000+ mAh)',
     why: "You'll use the Disneyland app constantly — Lightning Lane, mobile orders, maps, wait times. Your phone will die by 2pm without this.",
     affiliates: [
-      { label: 'Anker 10,000mAh Power Bank (USB-C built in)', href: 'https://amzn.to/4mzwCPZ' },
+      {
+        label: 'Anker 10,000mAh Power Bank (USB-C built in)',
+        href: 'https://amzn.to/4mzwCPZ',
+        image: '/packinglist-images/powerbank.jpg',
+      },
     ],
   },
   {
     item: 'Stroller fan (clip-on)',
     why: 'Attaches to the stroller canopy. A lifesaver in summer when the pavement radiates heat.',
     affiliates: [
-      { label: 'AMACOOL Battery Stroller Fan (flexible tripod)', href: 'https://amzn.to/41xSIJd' },
+      {
+        label: 'AMACOOL Battery Stroller Fan (flexible tripod)',
+        href: 'https://amzn.to/41xSIJd',
+        image: '/packinglist-images/strollerfan.jpg',
+      },
     ],
     related: { text: 'See our top 6 stroller picks →', href: '/best-strollers' },
   },
@@ -1039,6 +1049,7 @@ export const PACKING_LIST: PackingItem[] = [
       {
         label: 'Simple Modern Kids Water Bottle (insulated, leak-proof)',
         href: 'https://amzn.to/4mzMNwX',
+        image: '/packinglist-images/kidswaterbottle.jpg',
       },
     ],
   },
@@ -1046,7 +1057,11 @@ export const PACKING_LIST: PackingItem[] = [
     item: 'Snack container + pre-packed snacks',
     why: "Goldfish, fruit pouches, granola bars. You're allowed to bring food in. A hangry toddler in a 45-min line is a disaster you can prevent.",
     affiliates: [
-      { label: 'Bentgo Kids Snack Container (leak-proof)', href: 'https://amzn.to/3QobLTK' },
+      {
+        label: 'Bentgo Kids Snack Container (leak-proof)',
+        href: 'https://amzn.to/3QobLTK',
+        image: '/packinglist-images/snackbox.jpg',
+      },
     ],
     related: { text: 'See our full park food strategy →', href: '/food' },
   },
@@ -1057,6 +1072,7 @@ export const PACKING_LIST: PackingItem[] = [
       {
         label: 'Neutrogena Sheer Zinc Kids Sunscreen Stick SPF 50',
         href: 'https://amzn.to/4vwmtaL',
+        image: '/packinglist-images/sunscreen.jpg',
       },
     ],
   },
@@ -1064,7 +1080,11 @@ export const PACKING_LIST: PackingItem[] = [
     item: 'Rain ponchos (disposable)',
     why: 'Park ponchos cost $15 each. Pack $1 ponchos from Amazon. Also useful for water rides at DCA.',
     affiliates: [
-      { label: 'SWOGAA Disposable Rain Ponchos — Family 6 Pack', href: 'https://amzn.to/4vyHn9q' },
+      {
+        label: 'SWOGAA Disposable Rain Ponchos — Family 6 Pack',
+        href: 'https://amzn.to/4vyHn9q',
+        image: '/packinglist-images/ponchos.jpg',
+      },
     ],
     related: { text: 'More ways to dodge the $15 park markup →', href: '/saving-money' },
   },
@@ -1087,6 +1107,7 @@ export const PACKING_LIST: PackingItem[] = [
       {
         label: 'Johnson & Johnson All-Purpose Travel First Aid Kit',
         href: 'https://amzn.to/4tP2a6O',
+        image: '/packinglist-images/firstaidkit.jpg',
       },
     ],
   },
@@ -1094,17 +1115,26 @@ export const PACKING_LIST: PackingItem[] = [
     item: "Moleskin or comfy shoes you've broken in",
     why: 'You will walk 8-12 miles. New shoes = blisters by noon. This is the #1 mistake families make.',
     affiliates: [
-      { label: "Dr. Scholl's Moleskin Plus Padding Roll", href: 'https://amzn.to/4vxBZmQ' },
+      {
+        label: "Dr. Scholl's Moleskin Plus Padding Roll",
+        href: 'https://amzn.to/4vxBZmQ',
+        image: '/packinglist-images/paddingroll.jpg',
+      },
     ],
   },
   {
     item: 'Autograph book + thick marker',
     why: "Characters in gloves can't grip a pen. Bring a fat Sharpie. Or skip the book and use the Disneyland app's PhotoPass — photos are included with Lightning Lane.",
     affiliates: [
-      { label: 'Disney Official Autograph Book', href: 'https://amzn.to/41xcjcq' },
+      {
+        label: 'Disney Official Autograph Book',
+        href: 'https://amzn.to/41xcjcq',
+        image: '/packinglist-images/autograph1.jpg',
+      },
       {
         label: 'Sharpie Chisel Tip Permanent Markers',
         href: 'https://www.amazon.com/dp/B00006IFI9?tag=rideornaptime-20',
+        image: '/packinglist-images/sharpie.jpg',
       },
     ],
   },
