@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-07-20",
-  "lastUpdated": "2026-07-23T04:06:51Z",
+  "weekOf": "2026-07-27",
+  "lastUpdated": "2026-07-27T16:53:02Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "D23 Expo is 3 weeks out — wait to book fall trips",
-      "tag": "👀 August 14-16",
-      "link": "/news/disneyland-news-families-week-of-july-20-2026",
+      "headline": "Disneyland raised food prices 5-11% — ticket hike likely October 7",
+      "tag": "🚨 Book Now",
+      "link": "/news/disneyland-news-families-week-of-july-27-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Halloween Time starts August 21 — book late-August dates now",
-      "tag": "🎃 4 Weeks Away",
-      "link": "/news/disneyland-news-families-week-of-july-20-2026",
+      "headline": "D23 Expo August 14-16 — wait to book any 2027 trips",
+      "tag": "👀 18 Days Out",
+      "link": "/news/disneyland-news-families-week-of-july-27-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Matterhorn Bobsleds back July 24 after brief refurb",
-      "tag": "✅ Reopens Friday",
-      "link": "/news/disneyland-news-families-week-of-july-20-2026",
+      "headline": "Halloween Time starts August 21 — late-August sweet spot filling up",
+      "tag": "🎃 25 Days Out",
+      "link": "/news/disneyland-news-families-week-of-july-27-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Earl of Sandwich officially open at Downtown Disney",
-      "tag": "🥪 Now Open",
-      "link": "/news/disneyland-news-families-week-of-july-20-2026",
+      "headline": "SoCal mid-90s to low-100s next 7-10 days — plan afternoon nap breaks",
+      "tag": "🥵 Heat Wave",
+      "link": "/news/disneyland-news-families-week-of-july-27-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Anaheim Resident Ticket: $71/day valid through October 8",
-      "tag": "💰 Live Now",
-      "link": "/news/disneyland-news-families-week-of-july-20-2026",
+      "headline": "Kids' Summer Tickets $50/day — 6 weeks left to book",
+      "tag": "💰 Ending Sept 7",
+      "link": "/news/disneyland-news-families-week-of-july-27-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-july-20-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-july-27-2026"
 }
