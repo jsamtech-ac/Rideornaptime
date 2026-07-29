@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import PackingChecklist from '@/components/PackingChecklist'
 import PrintButton from '@/components/PrintButton'
@@ -92,13 +93,16 @@ export default function PackingListPage() {
         description="A parent-tested packing list for a Disneyland day with kids ages 2–8."
         steps={PACKING_LIST.map((p) => ({ name: p.item, text: p.why }))}
       />
-      <header className="hero">
-        <div className="hero-badge">🎒 Pack Smart</div>
-        <h1>Disneyland Packing List for Kids</h1>
-        <p className="hero-sub">
-          Everything on this list costs under $15 and will save you money, time, or tears. Tap items
-          to check them off as you pack.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/packing.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">🎒 Pack Smart</div>
+          <h1>Disneyland Packing List for Kids</h1>
+          <p className="hero-sub">
+            Everything on this list costs under $15 and will save you money, time, or tears. Tap
+            items to check them off as you pack.
+          </p>
+        </div>
       </header>
 
       <section className="section">

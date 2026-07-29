@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -185,14 +186,17 @@ export default function LightningLanePage() {
         steps={riderSwitchSteps}
       />
 
-      <header className="hero">
-        <div className="hero-badge">⚡ Lightning Lane + Rope Drop</div>
-        <h1>Disneyland Lightning Lane &amp; Rope Drop Guide for Families (Ages 2–8)</h1>
-        <p className="hero-sub">
-          The actual playbook — what to book, when to arrive, who rides what, and where parents burn
-          money. Built around the reality that your kid might be 36 inches tall and need a nap at
-          noon.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/lightning.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">⚡ Lightning Lane + Rope Drop</div>
+          <h1>Disneyland Lightning Lane &amp; Rope Drop Guide for Families (Ages 2–8)</h1>
+          <p className="hero-sub">
+            The actual playbook — what to book, when to arrive, who rides what, and where parents
+            burn money. Built around the reality that your kid might be 36 inches tall and need a
+            nap at noon.
+          </p>
+        </div>
       </header>
 
       {/* ===== SECTION 1: 60-SECOND VERDICT ===== */}

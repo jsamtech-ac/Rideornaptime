@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -59,13 +60,16 @@ export default function HiddenGemsPage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">✨ Parent-Tested Secrets</div>
-        <h1>Disneyland Hidden Gems & Parent Survival Tips</h1>
-        <p className="hero-sub">
-          The stuff the blog posts miss — where real parents hide, where the good fireworks spots
-          are, and the tricks that save the day at 4 PM when everyone's melting down.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/hiddengems.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">✨ Parent-Tested Secrets</div>
+          <h1>Disneyland Hidden Gems & Parent Survival Tips</h1>
+          <p className="hero-sub">
+            The stuff the blog posts miss — where real parents hide, where the good fireworks spots
+            are, and the tricks that save the day at 4 PM when everyone's melting down.
+          </p>
+        </div>
       </header>
 
       <section className="section">

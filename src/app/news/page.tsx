@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import { SITE_URL } from '@/lib/content'
@@ -39,13 +40,16 @@ export default function NewsIndexPage() {
           { name: 'News', path: '/news' },
         ]}
       />
-      <header className="hero">
-        <div className="hero-badge">📰 Weekly Roundup</div>
-        <h1>Disneyland News for Families</h1>
-        <p className="hero-sub">
-          What actually changed this week — ride status, food, deals, what we're watching. Written
-          for families with kids 2–8. New every Sunday.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/news.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">📰 Weekly Roundup</div>
+          <h1>Disneyland News for Families</h1>
+          <p className="hero-sub">
+            What actually changed this week — ride status, food, deals, what we're watching. Written
+            for families with kids 2–8. New every Sunday.
+          </p>
+        </div>
       </header>
 
       <section className="section">

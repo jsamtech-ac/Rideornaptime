@@ -60,14 +60,17 @@ export default function FireworksPage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">🎆 Fireworks Viewing</div>
-        <h1>Best Disneyland Fireworks Viewing Spots for Families</h1>
-        <p className="hero-sub">
-          Main Street gets packed shoulder-to-shoulder an hour before showtime. With kids, it's
-          miserable. These are the two spots I actually use — with maps so you know exactly where to
-          stand.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/fireworks.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">🎆 Fireworks Viewing</div>
+          <h1>Best Disneyland Fireworks Viewing Spots for Families</h1>
+          <p className="hero-sub">
+            Main Street gets packed shoulder-to-shoulder an hour before showtime. With kids, it's
+            miserable. These are the two spots I actually use — with maps so you know exactly where
+            to stand.
+          </p>
+        </div>
       </header>
 
       <section className="section">

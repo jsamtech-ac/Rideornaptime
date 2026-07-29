@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -59,13 +60,16 @@ export default function FoodPage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">🍽 Food Strategy</div>
-        <h1>Where to Eat at Disneyland (From a Dad Who's Tried Everything)</h1>
-        <p className="hero-sub">
-          Mobile order everything. Seriously — open the Disneyland app 30 minutes before you want to
-          eat, order ahead, and skip the line. Here are the spots worth your time and money.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/food.png" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">🍽 Food Strategy</div>
+          <h1>Where to Eat at Disneyland (From a Dad Who's Tried Everything)</h1>
+          <p className="hero-sub">
+            Mobile order everything. Seriously — open the Disneyland app 30 minutes before you want
+            to eat, order ahead, and skip the line. Here are the spots worth your time and money.
+          </p>
+        </div>
       </header>
 
       <section className="section">

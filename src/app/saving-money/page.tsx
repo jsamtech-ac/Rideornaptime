@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
@@ -59,13 +60,16 @@ export default function SavingMoneyPage() {
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
       <FaqJsonLd items={faqs} />
-      <header className="hero">
-        <div className="hero-badge">💰 Save Real Money</div>
-        <h1>How to Save Money at Disneyland (Family Guide)</h1>
-        <p className="hero-sub">
-          Disneyland is expensive. These tips won't make it cheap, but they'll keep you from
-          bleeding money on things that don't matter.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/save.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">💰 Save Real Money</div>
+          <h1>How to Save Money at Disneyland (Family Guide)</h1>
+          <p className="hero-sub">
+            Disneyland is expensive. These tips won't make it cheap, but they'll keep you from
+            bleeding money on things that don't matter.
+          </p>
+        </div>
       </header>
 
       <section className="section">

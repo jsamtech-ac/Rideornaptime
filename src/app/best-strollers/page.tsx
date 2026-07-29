@@ -269,13 +269,16 @@ export default function BestStrollersPage() {
           description: `${p.tier} — ${p.category} stroller, ${p.price}. ${p.honest}`,
         }))}
       />
-      <header className="hero">
-        <div className="hero-badge">👶 Top 6 Strollers</div>
-        <h1>Best Strollers for Disneyland 2026</h1>
-        <p className="hero-sub">
-          Six real picks — three singles, three doubles, budget to best — from a parent who's pushed
-          strollers through Disneyland a few times before. Not a gear-blog listicle.
-        </p>
+      <header className="hero hero--home">
+        <Image src="/strollers.png" alt="" fill priority sizes="100vw" className="hero-image" />
+        <div className="hero-content">
+          <div className="hero-badge">👶 Top 6 Strollers</div>
+          <h1>Best Strollers for Disneyland 2026</h1>
+          <p className="hero-sub">
+            Six real picks — three singles, three doubles, budget to best — from a parent who's
+            pushed strollers through Disneyland a few times before. Not a gear-blog listicle.
+          </p>
+        </div>
       </header>
 
       <section className="section">
