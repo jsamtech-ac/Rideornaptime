@@ -8,7 +8,6 @@ import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import EventCTA from '@/components/EventCTA'
 import UpdatedBadge from '@/components/UpdatedBadge'
-import NewsTicker from '@/components/NewsTicker'
 import {
   SEASONS,
   EVENTS_2026,
@@ -160,8 +159,6 @@ export default function SeasonalPage() {
           <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
         </div>
       </header>
-
-      <NewsTicker variant="static" />
 
       <section className="section">
         <div className="section-header">

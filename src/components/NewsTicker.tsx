@@ -10,27 +10,15 @@ function formatUpdated(iso: string): string {
   })
 }
 
-/** How many headlines the static variant shows (the scrolling one shows all). */
-const STATIC_ITEM_LIMIT = 3
-
-interface NewsTickerProps {
-  /** 'scroll' is the home-page marquee; 'static' is the still row used on guide pages. */
-  variant?: 'scroll' | 'static'
-}
-
-export default function NewsTicker({ variant = 'scroll' }: NewsTickerProps = {}) {
+export default function NewsTicker() {
   const { lastUpdated, ticker } = getTickerData()
   if (!ticker.length) return null
 
   const formatted = formatUpdated(lastUpdated)
-  const isStatic = variant === 'static'
-  const items = isStatic ? ticker.slice(0, STATIC_ITEM_LIMIT) : ticker
+  const items = ticker
 
   return (
-    <aside
-      className={isStatic ? 'news-ticker news-ticker--static' : 'news-ticker'}
-      aria-label="This week's Disneyland news"
-    >
+    <aside className="news-ticker" aria-label="This week's Disneyland news">
       <div className="news-ticker-label">
         <span aria-hidden="true">📅</span>
         <span className="news-ticker-label-text">
@@ -48,16 +36,14 @@ export default function NewsTicker({ variant = 'scroll' }: NewsTickerProps = {})
               </Link>
             </li>
           ))}
-          {/* Duplicate set exists only so the marquee can loop seamlessly. */}
-          {!isStatic &&
-            items.map((item) => (
-              <li key={`b-${item.id}`} className="news-ticker-item" aria-hidden="true">
-                {item.tag && <span className="news-ticker-tag">{item.tag}</span>}
-                <Link href={item.link} tabIndex={-1} className="news-ticker-link">
-                  {item.headline}
-                </Link>
-              </li>
-            ))}
+          {items.map((item) => (
+            <li key={`b-${item.id}`} className="news-ticker-item" aria-hidden="true">
+              {item.tag && <span className="news-ticker-tag">{item.tag}</span>}
+              <Link href={item.link} tabIndex={-1} className="news-ticker-link">
+                {item.headline}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </aside>

@@ -2282,11 +2282,37 @@ body {
   align-items: stretch;
   width: 100%;
   background: var(--sun-glow);
-  border-top: 1px solid var(--sand-dark);
   border-bottom: 1px solid var(--sand-dark);
   font-family: var(--font-body);
   font-size: 0.92rem;
   overflow: hidden;
+  /* Rendered sitewide from layout.tsx, directly under the fixed 72px nav, so
+     it clears the nav itself. No border-top — the nav already has a matching
+     border-bottom and two would stack into a 2px rule. */
+  margin-top: 72px;
+}
+
+/* With the ticker above it, the hero no longer has to clear the nav. Scoped to
+   the sibling combinator on purpose: NewsTicker returns null when the ticker
+   feed is empty, and then these never apply and the hero's own padding still
+   clears the nav. */
+.news-ticker ~ .hero {
+  padding-top: var(--space-lg);
+}
+
+/* .hero--home overrides .hero's padding shorthand with a larger top value —
+   keep that difference instead of flattening it to the .hero figure. */
+.news-ticker ~ .hero--home {
+  padding-top: var(--space-xl);
+}
+
+.news-ticker ~ .hero::before {
+  top: 0;
+}
+
+/* News posts have no hero and clear the nav with their own offset. */
+.news-ticker ~ .news-post-breadcrumb {
+  padding-top: var(--space-md);
 }
 
 .news-ticker-label {
@@ -2404,30 +2430,6 @@ body {
   .news-ticker-tag {
     font-size: 0.65rem;
     padding: 2px 8px;
-  }
-}
-
-/* Static variant (guide pages) and reduced-motion share one layout: no marquee,
-   headlines wrap in place, no edge fade, no duplicated loop items. */
-.news-ticker--static .news-ticker-track {
-  animation: none;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.news-ticker--static .news-ticker-track li[aria-hidden='true'] {
-  display: none;
-}
-
-.news-ticker--static .news-ticker-track-wrap {
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-
-/* Three wrapped headlines is too tall on a phone. */
-@media (max-width: 480px) {
-  .news-ticker--static .news-ticker-item:nth-child(n + 3) {
-    display: none;
   }
 }
 

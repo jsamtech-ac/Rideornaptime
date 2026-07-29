@@ -5,7 +5,6 @@ import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import NewsTicker from '@/components/NewsTicker'
 import { SITE_URL } from '@/lib/content'
 import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 
@@ -70,8 +69,6 @@ export default function FireworksPage() {
           stand.
         </p>
       </header>
-
-      <NewsTicker variant="static" />
 
       <section className="section">
         <div className="callout" style={{ marginBottom: '1.5rem' }}>
