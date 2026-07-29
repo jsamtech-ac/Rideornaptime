@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import ScrollTop from '@/components/ScrollTop'
 import SiteJsonLd from '@/components/SiteJsonLd'
 import ConsentManager from '@/components/ConsentManager'
+import NewsTicker from '@/components/NewsTicker'
 import { SITE_URL } from '@/lib/content'
 import './globals.css'
 
@@ -128,6 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
         <Header />
+        <NewsTicker />
         {children}
         <Footer />
         <ScrollTop />
