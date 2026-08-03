@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-07-27",
-  "lastUpdated": "2026-07-27T16:53:02Z",
+  "weekOf": "2026-08-03",
+  "lastUpdated": "2026-08-03T20:55:42Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Disneyland raised food prices 5-11% — ticket hike likely October 7",
-      "tag": "🚨 Book Now",
-      "link": "/news/disneyland-news-families-week-of-july-27-2026",
+      "headline": "70th Anniversary wraps August 9 — 12-day parade gap before Halloween Time",
+      "tag": "🎂 Ends Sunday",
+      "link": "/news/disneyland-news-families-week-of-august-3-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "D23 Expo August 14-16 — wait to book any 2027 trips",
-      "tag": "👀 18 Days Out",
-      "link": "/news/disneyland-news-families-week-of-july-27-2026",
+      "headline": "D23 Day includes Disney Jr. Let's Play! Party at DCA — huge for young kids",
+      "tag": "👶 Aug 13",
+      "link": "/news/disneyland-news-families-week-of-august-3-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Halloween Time starts August 21 — late-August sweet spot filling up",
-      "tag": "🎃 25 Days Out",
-      "link": "/news/disneyland-news-families-week-of-july-27-2026",
+      "headline": "Haunted Mansion down Aug 8-20 for Nightmare overlay conversion",
+      "tag": "🎃 Closes Friday",
+      "link": "/news/disneyland-news-families-week-of-august-3-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "SoCal mid-90s to low-100s next 7-10 days — plan afternoon nap breaks",
-      "tag": "🥵 Heat Wave",
-      "link": "/news/disneyland-news-families-week-of-july-27-2026",
+      "headline": "Mark Twain, Tom Sawyer Island, and Mad Tea Party get closure dates",
+      "tag": "⚠️ New Closures",
+      "link": "/news/disneyland-news-families-week-of-august-3-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Kids' Summer Tickets $50/day — 6 weeks left to book",
-      "tag": "💰 Ending Sept 7",
-      "link": "/news/disneyland-news-families-week-of-july-27-2026",
+      "headline": "Kids' Summer Tickets expire September 7 — book now",
+      "tag": "💰 5 Weeks Left",
+      "link": "/news/disneyland-news-families-week-of-august-3-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-july-27-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-august-3-2026"
 }
