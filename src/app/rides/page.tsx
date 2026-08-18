@@ -1,18 +1,18 @@
-import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import RidesList from '@/components/RidesList'
-import DeferredMount from '@/components/DeferredMount'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { RIDES, SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/rides/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/rides')
 
 export const metadata: Metadata = {
   title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -68,12 +68,7 @@ const faqs = [
 export default function RidesPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Rides for Kids', path: '/rides' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/rides" />
       <ArticleJsonLd
         path="/rides"
         headline={'Disneyland Rides for Kids: Age-by-Age Guide (2026)'}
@@ -81,7 +76,7 @@ export default function RidesPage() {
           'Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
@@ -114,18 +109,7 @@ export default function RidesPage() {
           </p>
         </div>
 
-        <Suspense
-          fallback={
-            <div className="callout">
-              <div className="callout-label">Loading</div>
-              <p>Loading the ride matrix…</p>
-            </div>
-          }
-        >
-          <DeferredMount minHeight={900}>
-            <RidesList />
-          </DeferredMount>
-        </Suspense>
+        <RidesList />
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pro Tip</div>
@@ -156,6 +140,24 @@ export default function RidesPage() {
             <Link href="/seasonal">best months to visit Disneyland with kids</Link>. Crowd levels
             swing wildly month to month — the wrong week can double every wait time on this list.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about which rides suit which ages.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

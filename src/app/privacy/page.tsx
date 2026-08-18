@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import UpdatedBadge from '@/components/UpdatedBadge'
-import { SITE_URL, PRIVACY_LAST_REVIEWED } from '@/lib/content'
+import { SITE_URL } from '@/lib/content'
+import { lastUpdatedFor } from '@/lib/pages'
+
+// One git-derived value feeds the meta tag, the visible badge and the copy below.
+const UPDATED = lastUpdatedFor('/privacy')
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-22T00:00:00.000Z',
-    modifiedTime: `${PRIVACY_LAST_REVIEWED}T00:00:00.000Z`,
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
   robots: {
@@ -27,19 +31,9 @@ export const metadata: Metadata = {
 }
 
 export default function PrivacyPage() {
-  const reviewedFormatted = new Date(`${PRIVACY_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString(
-    'en-US',
-    { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }
-  )
-
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Privacy Policy', path: '/privacy' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/privacy" />
 
       <header className="hero">
         <div className="hero-badge">🔒 Privacy</div>
@@ -48,7 +42,7 @@ export default function PrivacyPage() {
           The short version: we collect what&apos;s needed to run this site, we don&apos;t sell
           anything, and you control the cookies.
         </p>
-        <UpdatedBadge date={PRIVACY_LAST_REVIEWED} label="Last updated" />
+        <UpdatedBadge date={UPDATED.date} label="Last updated" />
       </header>
 
       <section className="section">
@@ -276,7 +270,7 @@ export default function PrivacyPage() {
           <p>
             We review this page quarterly. Material changes (new processors, new data types, new
             rights) trigger a banner reset so you&apos;re re-prompted for consent. Minor edits
-            (typos, link updates) don&apos;t. Last reviewed: <strong>{reviewedFormatted}</strong>.
+            (typos, link updates) don&apos;t. Last reviewed: <strong>{UPDATED.long}</strong>.
           </p>
         </div>
       </section>

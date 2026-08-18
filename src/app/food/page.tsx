@@ -6,9 +6,11 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { FOOD_SPOTS, SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/food/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/food')
 
 export const metadata: Metadata = {
   title: 'Best Disneyland Food for Families (2026 — Dad-Tested)',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -44,12 +46,7 @@ const faqs = [
 export default function FoodPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Food & Snacks', path: '/food' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/food" />
       <ArticleJsonLd
         path="/food"
         headline={'Best Disneyland Food for Families (2026)'}
@@ -57,11 +54,11 @@ export default function FoodPage() {
           'What to eat at Disneyland with picky kids — quick-service picks, snacks worth the line, and sit-downs that actually work.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
-        <Image src="/food.png" alt="" fill priority sizes="100vw" className="hero-image" />
+        <Image src="/food.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
           <div className="hero-badge">🍽 Food Strategy</div>
           <h1>Where to Eat at Disneyland (From a Dad Who's Tried Everything)</h1>
@@ -135,6 +132,24 @@ export default function FoodPage() {
             and stroller-easy. (The upstairs Gordon Ramsay spot, The Carnaby, is a grown-up
             date-night option — not a young-kids meal.)
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about eating at the parks with kids.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

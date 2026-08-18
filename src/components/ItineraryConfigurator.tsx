@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import {
   findDayTemplate,
   type Park,
@@ -11,6 +11,7 @@ import {
   type TimeBlockType,
 } from '@/data/itineraries'
 import { findRideById } from '@/data/rides'
+import { useUrlStateOnMount } from '@/lib/useUrlState'
 
 export interface DayConfig {
   park: Park
@@ -128,20 +129,29 @@ export default function ItineraryConfigurator({
   allowDayCountChange = true,
 }: ItineraryConfiguratorProps = {}) {
   const router = useRouter()
-  const searchParams = useSearchParams()
   const usingInitialProps = initialDayStates !== undefined
 
-  const [days, setDays] = useState<DayConfig[]>(() => {
-    if (usingInitialProps && initialDayStates) return initialDayStates
-    return parseQuery(searchParams.get('days'))
+  // Initialises from the prop (identical on server and client — it travels in
+  // the RSC payload) or a constant default. Never from the URL: that would
+  // desync the server render from the first client render.
+  const [days, setDays] = useState<DayConfig[]>(() => initialDayStates ?? [DEFAULT_DAY])
+
+  // Apply ?days= once, after hydration, and only on the bare /itineraries page.
+  const hydrated = useUrlStateOnMount((params) => {
+    if (usingInitialProps) return
+    const raw = params.get('days')
+    // Guard: parseQuery(null) returns a fresh [DEFAULT_DAY], which would churn
+    // identity and fire a pointless sync on every clean load.
+    if (raw) setDays(parseQuery(raw))
   })
 
-  // Only sync to URL on the main /itineraries page (when no initialDayStates are passed)
+  // Only sync to URL on the main /itineraries page (when no initialDayStates are passed).
+  // Gated on `hydrated` so the mount commit cannot overwrite an incoming ?days=.
   useEffect(() => {
-    if (usingInitialProps) return
+    if (usingInitialProps || !hydrated) return
     const qs = serializeDays(days)
     router.replace(`?days=${qs}`, { scroll: false })
-  }, [days, router, usingInitialProps])
+  }, [days, router, usingInitialProps, hydrated])
 
   function setTripLength(target: number) {
     if (!allowDayCountChange) {
@@ -326,10 +336,12 @@ function DayCard({ day, index, total }: { day: DayConfig; index: number; total: 
     return (
       <div className="day-card">
         <div className="day-card-header">
-          <h3>
+          {/* h2: the day cards are the top-level sections under each itinerary
+              page's h1, which has no other h2 — h3 here skipped a level. */}
+          <h2>
             Day {index + 1}
             {total > 1 ? ` of ${total}` : ''} — {PARK_LABEL[day.park]}
-          </h3>
+          </h2>
         </div>
         <div className="callout warning">
           <div className="callout-label">Doesn't really work</div>
@@ -348,7 +360,7 @@ function DayCard({ day, index, total }: { day: DayConfig; index: number; total: 
   return (
     <div className="day-card">
       <div className="day-card-header">
-        <h3>{template.title}</h3>
+        <h2>{template.title}</h2>
         {template.oneSentenceSummary &&
           template.oneSentenceSummary !== 'TODO — populated in Session 2.' && (
             <p className="day-card-summary">{template.oneSentenceSummary}</p>

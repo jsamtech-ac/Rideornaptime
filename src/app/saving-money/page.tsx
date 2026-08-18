@@ -6,9 +6,11 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/saving-money/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/saving-money')
 
 export const metadata: Metadata = {
   title: 'How to Save Money at Disneyland (Family Guide 2026)',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -44,12 +46,7 @@ const faqs = [
 export default function SavingMoneyPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Saving Money', path: '/saving-money' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/saving-money" />
       <ArticleJsonLd
         path="/saving-money"
         headline={'How to Save Money at Disneyland (2026)'}
@@ -57,7 +54,7 @@ export default function SavingMoneyPage() {
           'Real tips from a parent on cutting Disneyland costs — tickets, food, hotels, and souvenirs without ruining the trip.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
@@ -172,6 +169,24 @@ export default function SavingMoneyPage() {
             park rental — see our{' '}
             <Link href="/best-strollers">best Disneyland strollers for families</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about cutting the cost of a trip.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

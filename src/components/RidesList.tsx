@@ -1,9 +1,10 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { RIDES, type Ride, type Verdict } from '@/lib/content'
 import AgeFilter, { type AgeBracket } from '@/components/AgeFilter'
+import { useUrlStateOnMount } from '@/lib/useUrlState'
 
 const AGE_FIELD: Record<AgeBracket, 'age2' | 'age4' | 'age6' | 'age8'> = {
   2: 'age2',
@@ -92,22 +93,33 @@ type ParkFilter = 'all' | 'DL' | 'DCA'
 
 export default function RidesList() {
   const router = useRouter()
-  const searchParams = useSearchParams()
 
   // Park filter stays in-memory (no URL state per brief — only ages + all are URL-synced)
   const [parkFilter, setParkFilter] = useState<ParkFilter>('all')
 
-  // URL-synced state
-  const [selectedAges, setSelectedAges] = useState<AgeBracket[]>(() =>
-    parseAgesParam(searchParams.get('ages'))
-  )
-  const [showAll, setShowAll] = useState<boolean>(() => searchParams.get('all') === '1')
+  // URL-synced state. These initialise to plain constants, NOT from the URL:
+  // the server render and the first client render must agree or hydration
+  // fails. Incoming URL state is applied just below, after mount.
+  const [selectedAges, setSelectedAges] = useState<AgeBracket[]>([])
+  const [showAll, setShowAll] = useState(false)
 
-  // Sync URL when filter state changes (shallow, no scroll, no reload)
+  // Apply ?ages= / ?all= once, after hydration. Note this reads the URL rather
+  // than subscribing to it — a soft navigation that only changes the query
+  // string would not re-filter. Nothing on the site links to such a URL.
+  const hydrated = useUrlStateOnMount((params) => {
+    const ages = parseAgesParam(params.get('ages'))
+    if (ages.length > 0) setSelectedAges(ages)
+    if (params.get('all') === '1') setShowAll(true)
+  })
+
+  // Sync URL when filter state changes (shallow, no scroll, no reload).
+  // Gated on `hydrated` so this cannot fire with default state on the mount
+  // commit and wipe an incoming query string.
   useEffect(() => {
+    if (!hydrated) return
     const qs = buildQueryString(selectedAges, showAll)
     router.replace(`/rides${qs}`, { scroll: false })
-  }, [selectedAges, showAll, router])
+  }, [selectedAges, showAll, hydrated, router])
 
   const handleAgesChange = useCallback((ages: AgeBracket[]) => setSelectedAges(ages), [])
   const handleShowAllToggle = useCallback((v: boolean) => setShowAll(v), [])

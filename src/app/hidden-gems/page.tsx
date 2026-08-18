@@ -6,9 +6,11 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/hidden-gems/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/hidden-gems')
 
 export const metadata: Metadata = {
   title: 'Disneyland Hidden Gems & Parent Survival Tips (2026)',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -44,12 +46,7 @@ const faqs = [
 export default function HiddenGemsPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Hidden Gems', path: '/hidden-gems' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/hidden-gems" />
       <ArticleJsonLd
         path="/hidden-gems"
         headline={'Disneyland Hidden Gems for Families (2026)'}
@@ -57,7 +54,7 @@ export default function HiddenGemsPage() {
           'Underrated Disneyland experiences families miss — quiet spots, sleeper rides, and moments kids love.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
@@ -261,6 +258,24 @@ export default function HiddenGemsPage() {
             Adding soon: best fireworks viewing spots, best places to sit and eat, and what to do
             when it rains. Got a hidden gem? <Link href="/">Back to the guide hub</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about the quieter corners of the parks.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

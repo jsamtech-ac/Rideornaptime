@@ -36,21 +36,17 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="footer-contact" aria-labelledby="footer-contact-heading">
-      <h2 id="footer-contact-heading" className="footer-contact-heading">
-        Got a tip or question? We&rsquo;d love to hear from you.
-      </h2>
-
+    <div className="contact-form-wrap">
       {status === 'success' ? (
-        <p className="footer-contact-success" role="status">
+        <p className="contact-form-success" role="status">
           Thanks! We&rsquo;ll get back to you soon.
         </p>
       ) : (
-        <form className="footer-contact-form" onSubmit={handleSubmit} noValidate>
-          <div className="footer-contact-field">
-            <label htmlFor="footer-contact-name">Name</label>
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <div className="contact-form-field">
+            <label htmlFor="contact-name">Name</label>
             <input
-              id="footer-contact-name"
+              id="contact-name"
               name="name"
               type="text"
               autoComplete="name"
@@ -62,10 +58,10 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="footer-contact-field">
-            <label htmlFor="footer-contact-email">Email</label>
+          <div className="contact-form-field">
+            <label htmlFor="contact-email">Email</label>
             <input
-              id="footer-contact-email"
+              id="contact-email"
               name="email"
               type="email"
               autoComplete="email"
@@ -77,12 +73,12 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="footer-contact-field">
-            <label htmlFor="footer-contact-message">Message</label>
+          <div className="contact-form-field">
+            <label htmlFor="contact-message">Message</label>
             <textarea
-              id="footer-contact-message"
+              id="contact-message"
               name="message"
-              rows={4}
+              rows={6}
               required
               maxLength={5000}
               value={message}
@@ -91,10 +87,10 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="footer-contact-hp" aria-hidden="true">
-            <label htmlFor="footer-contact-website">Website</label>
+          <div className="contact-form-hp" aria-hidden="true">
+            <label htmlFor="contact-website">Website</label>
             <input
-              id="footer-contact-website"
+              id="contact-website"
               name="website"
               type="text"
               tabIndex={-1}
@@ -104,26 +100,22 @@ export default function ContactForm() {
             />
           </div>
 
-          <p className="footer-contact-consent">
+          <p className="contact-form-consent">
             By submitting, you agree to our <Link href="/privacy">Privacy Policy</Link>. Messages
             are sent via Resend and retained so we can reply.
           </p>
 
-          <button
-            type="submit"
-            className="footer-contact-submit"
-            disabled={status === 'submitting'}
-          >
+          <button type="submit" className="contact-form-submit" disabled={status === 'submitting'}>
             {status === 'submitting' ? 'Sending...' : 'Send Message'}
           </button>
 
           {status === 'error' && (
-            <p className="footer-contact-error" role="alert">
+            <p className="contact-form-error" role="alert">
               {errorMsg || 'Something went wrong. Try again or email us directly.'}
             </p>
           )}
         </form>
       )}
-    </section>
+    </div>
   )
 }

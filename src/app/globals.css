@@ -3,6 +3,9 @@
   --sun: #f59e0b;
   --sun-light: #fde68a;
   --sun-glow: #fffbeb;
+  /* Accessible text variant — raw --sun on white is 2.15:1, well under AA.
+     Matches the existing --coral-ink / --mint-ink pattern. 5.02:1 on white. */
+  --sun-ink: #b45309;
   --sky: #0ea5e9;
   --sky-deep: #0369a1;
   --sky-light: #e0f2fe;
@@ -561,6 +564,86 @@ body {
   .hero--home h1 {
     font-size: 3rem;
   }
+}
+
+/* ===== HERO — COMPACT (homepage) =====
+   Viewport-relative so the hero never eats the whole first screen. The
+   min()/max() floor keeps it readable on very short landscape phones and stops
+   it ballooning on tall desktop monitors. */
+.hero--home.hero--compact {
+  min-height: max(40vh, 300px);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.hero--compact h1 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.hero--compact .hero-badge {
+  margin-bottom: var(--space-md);
+}
+
+.hero--compact .hero-tagline {
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .hero--home.hero--compact {
+    min-height: min(55vh, 620px);
+  }
+
+  .hero--compact h1 {
+    font-size: 2.75rem;
+  }
+}
+
+/* ===== HERO ACTION BUTTONS ===== */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.hero-btn.primary {
+  background: var(--sun);
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-btn.primary:hover {
+  background: #d97706;
+  transform: translateY(-1px);
+}
+
+.hero-btn.secondary {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-btn.secondary:hover {
+  background: var(--white);
+  transform: translateY(-1px);
 }
 
 /* ===== SECTIONS ===== */
@@ -1857,51 +1940,127 @@ body {
   margin-top: auto;
 }
 
-/* ===== FOOTER CONTACT FORM ===== */
-.footer-contact {
-  max-width: 520px;
-  margin: 0 auto var(--space-2xl);
+.hub-card-updated {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--sand);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ===== AUTHOR BYLINE STRIP ===== */
+.author-byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--sand);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
   text-align: left;
 }
 
-.footer-contact-heading {
+.author-byline-photo {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--sky-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-byline-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-byline-initials {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--sky-deep);
+}
+
+.author-byline-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.author-byline-credential {
+  margin: 2px 0 var(--space-xs);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.author-byline-link {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: var(--space-md);
-  line-height: 1.4;
+  font-size: 0.85rem;
+  color: var(--sky-deep);
+  text-decoration: none;
 }
 
-.footer-contact-form {
+.author-byline-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .author-byline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}
+
+/* ===== CONTACT FORM (/contact) =====
+   Lives on its own light-background route, not in the dark footer. */
+.contact-form-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
 }
 
-.footer-contact-field {
+.contact-form-field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
-.footer-contact-field label {
+.contact-form-field label {
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--ink-soft);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.footer-contact-field input,
-.footer-contact-field textarea {
+.contact-form-field input,
+.contact-form-field textarea {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--sand);
+  border: 1px solid var(--sand-dark);
   border-radius: var(--radius-sm);
   padding: var(--space-sm) var(--space-md);
   width: 100%;
@@ -1911,30 +2070,31 @@ body {
     background 0.15s ease;
 }
 
-.footer-contact-field textarea {
+.contact-form-field textarea {
   resize: vertical;
-  min-height: 96px;
+  min-height: 140px;
 }
 
-.footer-contact-field input::placeholder,
-.footer-contact-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+.contact-form-field input::placeholder,
+.contact-form-field textarea::placeholder {
+  color: var(--ink-muted);
 }
 
-.footer-contact-field input:focus,
-.footer-contact-field textarea:focus {
+.contact-form-field input:focus,
+.contact-form-field textarea:focus {
   outline: none;
   border-color: var(--sky);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--sky-light);
 }
 
-.footer-contact-field input:disabled,
-.footer-contact-field textarea:disabled {
+.contact-form-field input:disabled,
+.contact-form-field textarea:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.footer-contact-hp {
+.contact-form-hp {
   position: absolute;
   left: -10000px;
   width: 1px;
@@ -1942,20 +2102,61 @@ body {
   overflow: hidden;
 }
 
-.footer-contact-consent {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.8);
+.contact-form-consent {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
   line-height: 1.55;
-  margin-top: var(--space-xs);
 }
 
-.footer-contact-consent a {
-  color: var(--white);
+.contact-form-consent a {
+  color: var(--sky-deep);
   text-decoration: underline;
 }
 
-.footer-contact-consent a:hover {
+.contact-form-consent a:hover {
   text-decoration: none;
+}
+
+.contact-form-submit {
+  align-self: flex-start;
+  padding: var(--space-sm) var(--space-xl);
+  background: var(--sun);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.contact-form-submit:hover:not(:disabled) {
+  background: #d97706;
+  transform: translateY(-1px);
+}
+
+.contact-form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-form-success {
+  font-size: 1rem;
+  color: var(--mint-ink);
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--mint-light);
+  border: 1px solid var(--mint);
+  border-radius: var(--radius-md);
+}
+
+.contact-form-error {
+  font-size: 0.9rem;
+  color: var(--coral-ink);
+  margin: 0;
 }
 
 .footer-legal-links {
@@ -1974,55 +2175,6 @@ body {
 .footer-legal-links a:hover {
   text-decoration: underline;
   color: var(--white);
-}
-
-.footer-contact-submit {
-  align-self: flex-start;
-  margin-top: var(--space-xs);
-  padding: var(--space-sm) var(--space-lg);
-  background: var(--sun);
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    transform 0.15s ease;
-}
-
-.footer-contact-submit:hover:not(:disabled) {
-  background: #d97706;
-  transform: translateY(-1px);
-}
-
-.footer-contact-submit:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.footer-contact-success {
-  font-size: 0.95rem;
-  color: var(--white);
-  text-align: center;
-  padding: var(--space-md);
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  border-radius: var(--radius-md);
-}
-
-.footer-contact-error {
-  font-size: 0.85rem;
-  color: #fecaca;
-  margin-top: var(--space-xs);
-}
-
-@media (min-width: 768px) {
-  .footer-contact-heading {
-    font-size: 1.1rem;
-  }
 }
 
 /* ===== FOOTER LINKS ===== */
@@ -2292,26 +2444,26 @@ body {
   margin-top: 72px;
 }
 
-/* With the ticker above it, the hero no longer has to clear the nav. Scoped to
-   the sibling combinator on purpose: NewsTicker returns null when the ticker
-   feed is empty, and then these never apply and the hero's own padding still
-   clears the nav. */
-.news-ticker ~ .hero {
+/* With the ticker above it, the hero no longer has to clear the nav. Scoped
+   through the ticker's sibling <main> on purpose: NewsTicker returns null when
+   the ticker feed is empty, and then these never apply and the hero's own
+   padding still clears the nav. */
+.news-ticker ~ main .hero {
   padding-top: var(--space-lg);
 }
 
 /* .hero--home overrides .hero's padding shorthand with a larger top value —
    keep that difference instead of flattening it to the .hero figure. */
-.news-ticker ~ .hero--home {
+.news-ticker ~ main .hero--home {
   padding-top: var(--space-xl);
 }
 
-.news-ticker ~ .hero::before {
+.news-ticker ~ main .hero::before {
   top: 0;
 }
 
 /* News posts have no hero and clear the nav with their own offset. */
-.news-ticker ~ .news-post-breadcrumb {
+.news-ticker ~ main .news-post-breadcrumb {
   padding-top: var(--space-md);
 }
 
@@ -2367,10 +2519,18 @@ body {
   animation: news-ticker-scroll 60s linear infinite;
 }
 
+/* Pause on hover, on the region's own keyboard focus, and whenever any link
+   inside it is focused. */
 .news-ticker-track-wrap:hover .news-ticker-track,
 .news-ticker-track-wrap:active .news-ticker-track,
-.news-ticker-track:focus-within {
+.news-ticker-track-wrap:focus .news-ticker-track,
+.news-ticker-track-wrap:focus-within .news-ticker-track {
   animation-play-state: paused;
+}
+
+.news-ticker-track-wrap:focus-visible {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: -2px;
 }
 
 @keyframes news-ticker-scroll {
@@ -2510,7 +2670,7 @@ body {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--sun);
+  color: var(--sun-ink);
   margin-top: var(--space-xs);
 }
 
@@ -2671,19 +2831,34 @@ body {
   margin: var(--space-2xl) 0;
 }
 
-/* Table — rendered from GFM markdown. Block + overflow-x lets the table scroll horizontally on narrow screens without breaking column alignment. */
-.news-post-body table {
-  display: block;
+/* Table — rendered from GFM markdown, wrapped by ScrollableTable in the news
+   post route. The wrapper owns the horizontal scroll and carries tabindex=0 so
+   keyboard users can reach the off-screen columns; the table itself stays a
+   real table so column alignment is preserved. */
+.news-post-table-wrap {
   max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin-top: var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.news-post-table-wrap:focus-visible {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: 2px;
+}
+
+.news-post-body table {
+  /* min-width, not width: the table must be free to exceed the wrapper so
+     there is something to scroll; width: 100% would shrink it back and wrap
+     the cells instead. Top margin lives on the wrapper. */
+  min-width: 100%;
   border-collapse: collapse;
   background: var(--white);
   border: 1px solid var(--sand-dark);
   border-radius: var(--radius-md);
   font-size: 0.92rem;
   line-height: 1.5;
-  margin-top: var(--space-md);
 }
 
 .news-post-body thead {
@@ -2968,7 +3143,7 @@ body {
   box-shadow: var(--shadow-soft);
 }
 
-.day-card-header h3 {
+.day-card-header h2 {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
@@ -3713,28 +3888,20 @@ body {
   font-weight: 600;
 }
 
-/* ===== CONFIGURATOR PLACEHOLDER (reserves space to prevent CLS during hydration) ===== */
-.configurator-placeholder {
-  min-height: 1000px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: var(--space-xl);
-}
-
-@media (min-width: 768px) {
-  .configurator-placeholder {
-    min-height: 720px;
-  }
-}
-
 /* ===== PERF: skip rendering off-screen sections to cut main-thread layout cost =====
    content-visibility: auto lets the browser defer layout/paint for blocks not in
    the viewport. contain-intrinsic-size gives a placeholder height so scroll
-   anchoring stays stable. Long article pages (1,000+ DOM nodes) benefit most. */
-.section,
+   anchoring stays stable. Long article pages (1,000+ DOM nodes) benefit most.
+
+   .section and .callout are deliberately NOT in this list. Their real heights
+   vary wildly and are often far below the 320px placeholder — measured .callout
+   heights on /about are 119-165px — so the placeholder-to-real correction moved
+   the footer twice during load and produced CLS 0.179 on /about and 0.117 on
+   /contact. The repeated card lists below keep it: they are numerous, uniform,
+   and sized close to reality. Measured TBT across all 25 routes is 0-22ms
+   against a 200ms budget, so there is no main-thread cost here worth trading
+   layout stability for. */
 .tip-card,
-.callout,
 .ride-card,
 .character-finder-card,
 .land-group,
@@ -3838,9 +4005,7 @@ body {
 
   /* content-visibility: auto defers off-screen layout and can drop content from
      the printout — force it visible so the full plan / checklist renders. */
-  .section,
   .tip-card,
-  .callout,
   .ride-card,
   .character-finder-card,
   .land-group,

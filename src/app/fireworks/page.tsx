@@ -6,9 +6,11 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/fireworks/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/fireworks')
 
 export const metadata: Metadata = {
   title: "Best Disneyland Fireworks Viewing Spots (2026) — A Dad's Two Favorites",
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -44,12 +46,7 @@ const faqs = [
 export default function FireworksPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Fireworks', path: '/fireworks' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/fireworks" />
       <ArticleJsonLd
         path="/fireworks"
         headline={'Best Disneyland Fireworks Viewing Spots (2026)'}
@@ -57,7 +54,7 @@ export default function FireworksPage() {
           'Where to watch Disneyland fireworks with kids — the best viewing spots, timing, and what to do when the baby is asleep.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
@@ -101,8 +98,9 @@ export default function FireworksPage() {
             <Image
               src="/fireworks-galaxys-edge.jpg"
               alt="Map showing the fireworks viewing spot inside Star Wars: Galaxy's Edge at Disneyland"
-              width={800}
-              height={900}
+              width={746}
+              height={1024}
+              sizes="(max-width: 768px) 100vw, 672px"
               style={{ width: '100%', height: 'auto' }}
             />
           </div>
@@ -129,10 +127,11 @@ export default function FireworksPage() {
           </p>
           <div style={{ marginTop: '1rem', borderRadius: '12px', overflow: 'hidden' }}>
             <Image
-              src="/fireworks-small-world.jpg.png"
+              src="/fireworks-small-world.jpg"
               alt="Map showing the fireworks viewing spot in front of It's a Small World at Disneyland"
-              width={800}
-              height={900}
+              width={742}
+              height={1024}
+              sizes="(max-width: 768px) 100vw, 672px"
               style={{ width: '100%', height: 'auto' }}
             />
           </div>
@@ -155,6 +154,24 @@ export default function FireworksPage() {
             on the <Link href="/hidden-gems">Hidden Gems</Link> page, or head
             <Link href="/"> back to the guide hub</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about watching fireworks with young kids.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

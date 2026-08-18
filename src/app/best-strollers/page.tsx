@@ -6,10 +6,13 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
+import AffiliateLink from '@/components/AffiliateLink'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/best-strollers/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/best-strollers')
 
 export const metadata: Metadata = {
   title: 'Best Strollers for Disneyland 2026 — Budget to Best Picks for Families',
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -55,6 +58,14 @@ type Pick = {
   honest: string
   link: string
   image: string
+}
+
+/** Short, stable `affiliate_product` slug for GA4 — e.g. 'stroller-summer-infant-3dlite'. */
+function productSlug(name: string): string {
+  return `stroller-${name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')}`
 }
 
 const picks: Pick[] = [
@@ -193,10 +204,10 @@ function PickCard({ p }: { p: Pick }) {
         </div>
       </div>
 
-      <a
+      <AffiliateLink
         href={p.link}
-        target="_blank"
-        rel="sponsored noopener"
+        product={productSlug(p.name)}
+        placement="card"
         style={{
           display: 'block',
           marginTop: '1rem',
@@ -214,7 +225,7 @@ function PickCard({ p }: { p: Pick }) {
           sizes="(max-width: 768px) 90vw, 480px"
           style={{ maxWidth: '100%', height: 'auto', maxHeight: '260px', objectFit: 'contain' }}
         />
-      </a>
+      </AffiliateLink>
 
       <p style={{ marginTop: '0.75rem' }}>
         <strong>Key callouts:</strong>
@@ -229,15 +240,15 @@ function PickCard({ p }: { p: Pick }) {
         <strong>Honest take:</strong> {p.honest}
       </p>
 
-      <a
+      <AffiliateLink
         href={p.link}
-        target="_blank"
-        rel="sponsored noopener"
+        product={productSlug(p.name)}
+        placement="card"
         className="tickets-cta-btn primary"
         style={{ marginTop: '0.75rem', display: 'inline-block' }}
       >
         Check Price on Amazon →
-      </a>
+      </AffiliateLink>
     </div>
   )
 }
@@ -245,12 +256,7 @@ function PickCard({ p }: { p: Pick }) {
 export default function BestStrollersPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Best Strollers', path: '/best-strollers' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/best-strollers" />
       <ArticleJsonLd
         path="/best-strollers"
         headline={'Best Strollers for Disneyland (2026)'}
@@ -258,7 +264,7 @@ export default function BestStrollersPage() {
           'A parent-tested ranking of the best Disneyland strollers — single and double picks for long park days with kids 2–8.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
@@ -270,7 +276,7 @@ export default function BestStrollersPage() {
         }))}
       />
       <header className="hero hero--home">
-        <Image src="/strollers.png" alt="" fill priority sizes="100vw" className="hero-image" />
+        <Image src="/strollers.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
           <div className="hero-badge">👶 Top 6 Strollers</div>
           <h1>Best Strollers for Disneyland 2026</h1>
@@ -467,6 +473,24 @@ export default function BestStrollersPage() {
             stroller-pushing survival tricks in the{' '}
             <Link href="/hidden-gems">Disneyland hidden gems and parent survival tips</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about strollers at Disneyland.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

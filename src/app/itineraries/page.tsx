@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,12 +6,13 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 import ItineraryConfigurator from '@/components/ItineraryConfigurator'
-import DeferredMount from '@/components/DeferredMount'
 import PrintButton from '@/components/PrintButton'
 
-const PAGE_FILE = 'src/app/itineraries/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/itineraries')
 
 export const metadata: Metadata = {
   title: 'Disneyland Itineraries for Families — 1, 2 & 3 Day Plans with Kids (2026)',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -48,12 +48,7 @@ const faqs = [
 export default function ItinerariesPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Itineraries', path: '/itineraries' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/itineraries" />
       <ArticleJsonLd
         path="/itineraries"
         headline={'Disneyland Itineraries with Kids (2026)'}
@@ -61,7 +56,7 @@ export default function ItinerariesPage() {
           'Hour-by-hour Disneyland itineraries for families — 1-day, 2-day, and 3-day plans built around kids ages 2–8.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
@@ -83,20 +78,7 @@ export default function ItinerariesPage() {
           Your Disneyland Itinerary · rideornaptime.com/itineraries
         </p>
 
-        <Suspense
-          fallback={
-            <div className="configurator-placeholder">
-              <div className="callout">
-                <div className="callout-label">Loading</div>
-                <p>Loading your trip configurator…</p>
-              </div>
-            </div>
-          }
-        >
-          <DeferredMount minHeight={1000}>
-            <ItineraryConfigurator />
-          </DeferredMount>
-        </Suspense>
+        <ItineraryConfigurator />
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
@@ -110,6 +92,24 @@ export default function ItinerariesPage() {
             don't pack the night before — use the{' '}
             <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about planning a Disneyland day.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

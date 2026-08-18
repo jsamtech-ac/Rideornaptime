@@ -3,16 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PackingChecklist from '@/components/PackingChecklist'
 import PrintButton from '@/components/PrintButton'
-import DeferredMount from '@/components/DeferredMount'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { PACKING_LIST, SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/packing-list/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/packing-list')
 
 export const metadata: Metadata = {
   title: 'Disneyland Packing List for Kids (2026)',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -72,12 +73,7 @@ const faqs = [
 export default function PackingListPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Packing List', path: '/packing-list' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/packing-list" />
       <ArticleJsonLd
         path="/packing-list"
         headline={'Disneyland Packing List for Kids (2026)'}
@@ -85,7 +81,7 @@ export default function PackingListPage() {
           'The exact packing list a real parent uses for Disneyland with kids 2–8 — what to bring, what to skip, and why.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <HowToJsonLd
@@ -126,9 +122,7 @@ export default function PackingListPage() {
           Disneyland Packing List for Kids · rideornaptime.com/packing-list
         </p>
 
-        <DeferredMount minHeight={1600}>
-          <PackingChecklist />
-        </DeferredMount>
+        <PackingChecklist />
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
           <div className="callout-label">Pair With</div>
@@ -141,6 +135,24 @@ export default function PackingListPage() {
             <Link href="/first-visit">Disneyland with kids: the first-time guide</Link> if it's your
             first trip.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about packing for a park day.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

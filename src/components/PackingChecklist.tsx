@@ -3,7 +3,26 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import AffiliateLink from '@/components/AffiliateLink'
 import { PACKING_LIST, type PackingItem } from '@/lib/content'
+
+/**
+ * Turns a product label into the short, stable `affiliate_product` slug
+ * reported to GA4 — e.g. "Anker 10,000mAh Power Bank (USB-C built in)"
+ * becomes "anker-10-000mah-power-bank". Trailing detail is trimmed to keep the
+ * slug readable in GA4 reports.
+ */
+function productSlug(label: string): string {
+  return label
+    .toLowerCase()
+    .replace(/\(.*?\)/g, '')
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .split('-')
+    .slice(0, 5)
+    .join('-')
+}
 
 function ChecklistItem({ item }: { item: PackingItem }) {
   const [checked, setChecked] = useState(false)
@@ -22,11 +41,11 @@ function ChecklistItem({ item }: { item: PackingItem }) {
           // Stop propagation so tapping a product doesn't also tick the row off.
           <div className="packing-products" onClick={(e) => e.stopPropagation()}>
             {item.affiliates.map((a, i) => (
-              <a
+              <AffiliateLink
                 key={i}
                 href={a.href}
-                target="_blank"
-                rel="sponsored nofollow noopener noreferrer"
+                product={productSlug(a.label)}
+                placement="inline"
                 className="packing-product"
                 aria-label={`Check price on Amazon — ${a.label}`}
               >
@@ -36,7 +55,7 @@ function ChecklistItem({ item }: { item: PackingItem }) {
                   </span>
                 )}
                 <span className="packing-product-cta">Check Price on Amazon →</span>
-              </a>
+              </AffiliateLink>
             ))}
           </div>
         )}

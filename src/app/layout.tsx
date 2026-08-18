@@ -130,7 +130,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
         <Header />
         <NewsTicker />
-        {children}
+        {/* Every page's content needs to sit inside a main landmark — without
+            it screen-reader users get no "skip to main content" target and all
+            page content reports as outside any landmark. */}
+        <main id="main">{children}</main>
         <Footer />
         <ScrollTop />
         <ConsentManager />

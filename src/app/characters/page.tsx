@@ -7,12 +7,13 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import CharacterFinder from '@/components/CharacterFinder'
-import DeferredMount from '@/components/DeferredMount'
 import { SITE_URL } from '@/lib/content'
+import { lastUpdatedFor } from '@/lib/pages'
 import { characters, RELIABILITY_LABEL } from '@/data/characters'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 
-const PAGE_FILE = 'src/app/characters/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/characters')
 
 export const metadata: Metadata = {
   title: 'Disneyland Characters 2026: Where to Meet Every Character with Kids',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Ride or Naptime',
     locale: 'en_US',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -184,18 +185,13 @@ const characterListItems = characters.flatMap((c) =>
 export default function CharactersPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Characters', path: '/characters' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/characters" />
       <ArticleJsonLd
         path="/characters"
         headline="Disneyland Character Meet-and-Greets: Where to Find Every Character (2026)"
         description="Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqsAll} />
       <ItemListJsonLd
@@ -251,9 +247,7 @@ export default function CharactersPage() {
           </p>
         </div>
 
-        <DeferredMount minHeight={620}>
-          <CharacterFinder />
-        </DeferredMount>
+        <CharacterFinder />
       </section>
 
       {/* ────────────── SECTION 2: Plan your meet (consolidated essentials) ────────────── */}
@@ -435,7 +429,10 @@ export default function CharactersPage() {
           </p>
         </div>
 
-        <TicketsCTA location="characters_dining" />
+        <TicketsCTA
+          location="characters_dining"
+          label="Disneyland tickets affiliate offer — character dining"
+        />
       </section>
 
       {/* ────────────── SECTION 4: Seasonal characters (condensed) ────────────── */}

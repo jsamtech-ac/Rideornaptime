@@ -11,6 +11,12 @@ const root = process.cwd()
 const reportDir = resolve(root, 'qa-report')
 mkdirSync(reportDir, { recursive: true })
 
+// Port is configurable so a QA run never has to fight (or kill) an unrelated
+// dev server. Everything downstream — linkinator, playwright, lhci — reads the
+// same value via QA_PORT, so there is one place to change it.
+const PORT = Number(process.env.QA_PORT ?? 3000)
+const BASE_URL = `http://localhost:${PORT}`
+
 const COLOR = {
   reset: '\x1b[0m',
   red: '\x1b[31m',
@@ -80,20 +86,19 @@ const checks = [
     cmd: ['npx', ['next', 'build']],
   },
   {
+    id: 'dates',
+    label: 'Last-updated consistency',
+    severity: 'blocker',
+    cmd: ['node', ['scripts/qa/check-dates.mjs']],
+  },
+  {
     id: 'links',
     label: 'Link checker',
     severity: 'blocker',
     needsServer: true,
     cmd: [
       'npx',
-      [
-        'linkinator',
-        'http://localhost:3000',
-        '--config',
-        'linkinator.config.json',
-        '--format',
-        'json',
-      ],
+      ['linkinator', BASE_URL, '--config', 'linkinator.config.json', '--format', 'json'],
     ],
     output: 'qa-report/links.json',
   },
@@ -103,39 +108,57 @@ const checks = [
     severity: 'blocker',
     needsServer: true,
     cmd: ['npx', ['playwright', 'test', '--reporter=list,json']],
+    env: { QA_PORT: String(PORT), QA_BASE_URL: BASE_URL },
   },
   {
-    id: 'lhci',
-    label: 'Lighthouse CI',
+    id: 'lhci-desktop',
+    label: 'Lighthouse CI (desktop)',
     severity: 'warning',
     needsServer: true,
-    cmd: ['npx', ['lhci', 'autorun']],
+    cmd: ['npx', ['lhci', 'autorun', '--config=lighthouserc.js']],
+    env: { QA_PORT: String(PORT), QA_BASE_URL: BASE_URL },
+  },
+  {
+    id: 'lhci-mobile',
+    label: 'Lighthouse CI (mobile)',
+    severity: 'blocker',
+    needsServer: true,
+    cmd: ['npx', ['lhci', 'autorun', '--config=lighthouserc.mobile.js']],
+    env: { QA_PORT: String(PORT), QA_BASE_URL: BASE_URL },
   },
 ]
 
-async function killPort(port) {
-  // best-effort: kill whatever is on the port before we start
+/** PIDs currently listening on `port`, or [] if none / lsof is unavailable. */
+async function pidsOnPort(port) {
   try {
     const lsof = spawn('lsof', ['-ti', `:${port}`])
-    const pids = await new Promise((res) => {
+    return await new Promise((res) => {
       let out = ''
       lsof.stdout.on('data', (d) => (out += d.toString()))
       lsof.on('close', () => res(out.trim().split('\n').filter(Boolean)))
     })
-    for (const pid of pids) {
-      try {
-        process.kill(Number(pid), 'SIGKILL')
-        log(`  killed stale process on :${port} (pid ${pid})`, COLOR.yellow)
-      } catch {}
-    }
-    if (pids.length) await new Promise((r) => setTimeout(r, 500))
-  } catch {}
+  } catch {
+    return []
+  }
 }
 
 async function startServer() {
-  log('\n▶ starting next server (background)...', COLOR.cyan)
-  await killPort(3000)
-  const child = spawn('npx', ['next', 'dev', '-p', '3000'], {
+  log(`\n▶ starting next server on :${PORT} (background)...`, COLOR.cyan)
+
+  // Never SIGKILL an occupant. The port may belong to another project's dev
+  // server, and silently killing it is a far worse failure than stopping here.
+  const occupied = await pidsOnPort(PORT)
+  if (occupied.length) {
+    throw new Error(
+      `port ${PORT} is already in use by pid ${occupied.join(', ')}. ` +
+        `Stop that process, or run with a different port: QA_PORT=3100 npm run qa`
+    )
+  }
+
+  // `next start`, not `next dev`: Lighthouse must measure the production build.
+  // Against `next dev` the bundle is unminified and carries dev-only overhead,
+  // which made every performance number this gate ever produced meaningless.
+  const child = spawn('npx', ['next', 'start', '-p', String(PORT)], {
     cwd: root,
     shell: false,
     detached: false,
@@ -150,7 +173,7 @@ async function startServer() {
       throw new Error(`next server exited early (code ${child.exitCode}): ${lastErr}`)
     }
     try {
-      const r = await fetch('http://localhost:3000/', { signal: AbortSignal.timeout(2000) })
+      const r = await fetch(`${BASE_URL}/`, { signal: AbortSignal.timeout(2000) })
       if (r.status >= 200 && r.status < 400) {
         ready = true
         break
@@ -164,7 +187,7 @@ async function startServer() {
     child.kill()
     throw new Error(`next server did not become ready within 90s. last stderr: ${lastErr}`)
   }
-  log('  server ready on :3000', COLOR.green)
+  log(`  server ready on :${PORT} (production build)`, COLOR.green)
   return child
 }
 
@@ -174,7 +197,7 @@ async function main() {
 
   const fast = process.argv.includes('--fast') || process.env.SKIP_LHCI === '1'
   const skip = new Set()
-  if (fast) skip.add('lhci')
+  if (fast) (skip.add('lhci-desktop'), skip.add('lhci-mobile'))
 
   const activeChecks = checks.filter((c) => !skip.has(c.id))
   if (fast) {
@@ -199,7 +222,7 @@ async function main() {
       }
     }
 
-    const r = await run(check.cmd[0], check.cmd[1])
+    const r = await run(check.cmd[0], check.cmd[1], { env: check.env ?? {} })
     const passed = r.code === 0
     results.push({
       id: check.id,

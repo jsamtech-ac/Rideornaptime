@@ -7,9 +7,11 @@ import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import HowToJsonLd from '@/components/HowToJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL, RIDES, type Ride, type Verdict } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/lightning-lane/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/lightning-lane')
 
 export const metadata: Metadata = {
   title: 'Disneyland Lightning Lane & Rope Drop Guide (2026)',
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Ride or Naptime',
     locale: 'en_US',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -160,18 +162,13 @@ export default function LightningLanePage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Lightning Lane', path: '/lightning-lane' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/lightning-lane" />
       <ArticleJsonLd
         path="/lightning-lane"
         headline="Disneyland Lightning Lane & Rope Drop Guide (2026)"
         description="The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $136, Rider Switch tricks, and the 2026 rules that actually matter."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <HowToJsonLd
@@ -1047,6 +1044,24 @@ export default function LightningLanePage() {
             <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link> so the 2-hour clock
             actually lines up with what you'd be doing anyway.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about Lightning Lane and rope drop.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

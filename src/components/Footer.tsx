@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import { NAV_GROUPS } from '@/lib/content'
-import ContactForm from './ContactForm'
 
-const FOOTER_LINKS = NAV_GROUPS.flatMap((g) => g.items)
+const FOOTER_LINKS = [
+  ...NAV_GROUPS.flatMap((g) => g.items),
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+]
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <ContactForm />
       <div className="footer-brand">🎢 Ride or Naptime</div>
       <div className="footer-links">
         {FOOTER_LINKS.map((item) => (

@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
@@ -6,10 +5,12 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
-const PAGE_FILE = 'src/app/itineraries/dca-2-day/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/itineraries/dca-2-day')
 const PAGE_PATH = '/itineraries/dca-2-day'
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -61,19 +62,13 @@ const faqs = [
 export default function DcaTwoDayPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Itineraries', path: '/itineraries' },
-          { name: 'DCA 2-Day', path: PAGE_PATH },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/itineraries/dca-2-day" />
       <ArticleJsonLd
         path={PAGE_PATH}
         headline="California Adventure 2-Day Itinerary for Families (2026)"
         description="Two days at DCA with kids — Day 1 marquee headliners, Day 2 Pixar Pier deep cuts and World of Color."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -87,16 +82,7 @@ export default function DcaTwoDayPage() {
       </header>
 
       <section className="section">
-        <Suspense
-          fallback={
-            <div className="callout">
-              <div className="callout-label">Loading</div>
-              <p>Loading your trip configurator…</p>
-            </div>
-          }
-        >
-          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
-        </Suspense>
+        <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
@@ -106,6 +92,24 @@ export default function DcaTwoDayPage() {
             mobile-order from the <Link href="/food">DCA food spots worth your money</Link>, and
             pack with the <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about a two-day California Adventure plan.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

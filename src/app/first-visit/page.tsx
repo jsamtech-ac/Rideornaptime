@@ -6,9 +6,11 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 
-const PAGE_FILE = 'src/app/first-visit/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/first-visit')
 
 export const metadata: Metadata = {
   title: 'First Visit to Disneyland: A Family Guide (2026)',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -72,12 +74,7 @@ const faqs = [
 export default function FirstVisitPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'First Visit Guide', path: '/first-visit' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/first-visit" />
       <ArticleJsonLd
         path="/first-visit"
         headline={'First Visit to Disneyland with Kids (2026)'}
@@ -85,7 +82,7 @@ export default function FirstVisitPage() {
           "A first-timer's guide to Disneyland with kids — what to expect, what to book, and what every rookie parent gets wrong."
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
@@ -512,6 +509,24 @@ export default function FirstVisitPage() {
             <Link href="/packing-list">pack smart</Link> and{' '}
             <Link href="/seasonal">pick the right month</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions first-time families ask us most before their trip.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

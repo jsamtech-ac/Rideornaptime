@@ -3,7 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
+import AuthorByline from '@/components/AuthorByline'
 import { SITE_URL } from '@/lib/content'
+import { lastUpdatedFor, type PagePath } from '@/lib/pages'
 
 export const metadata: Metadata = {
   title: 'Ride or Naptime — The Disneyland Family Guide That Actually Helps',
@@ -34,7 +36,7 @@ const faqs = [
   },
 ]
 
-const sections = [
+const sections: { href: PagePath; icon: string; title: string; summary: string; cta: string }[] = [
   {
     href: '/first-visit',
     icon: '🏰',
@@ -134,11 +136,25 @@ const sections = [
 ]
 
 export default function Home() {
+  // Each hub card's freshness comes from the target page's own git history —
+  // the same value that feeds that page's article:modified_time. No new data entry.
+  const hubCards = sections.map((s) => ({ ...s, updated: lastUpdatedFor(s.href) }))
+
   return (
     <>
       <FaqJsonLd items={faqs} />
-      <header className="hero hero--home">
-        <Image src="/hero.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
+      <header className="hero hero--home hero--compact">
+        <Image
+          src="/hero.jpg"
+          alt=""
+          fill
+          priority
+          // Full-bleed at every viewport — .hero has no max-width — so the slot
+          // really is 100vw. (An earlier "1200px content ceiling" here was wrong;
+          // no such cap exists, and it under-declared the slot above 1200px.)
+          sizes="100vw"
+          className="hero-image"
+        />
         <div className="hero-content">
           <div className="hero-badge">🏰 Updated for 2026 Season</div>
           <h1>Disneyland with Kids: The Family Guide for Ages 2–8</h1>
@@ -146,11 +162,14 @@ export default function Home() {
             The Disneyland guide for families who don't have time for{' '}
             <span className="highlight">50 blog posts</span>.
           </p>
-          <p className="hero-sub">
-            Every tip you need — ride-by-ride ratings for ages 2–8, hour-by-hour itineraries built
-            around nap schedules, and food strategy from a dad who's done this a few times before.
-          </p>
-          <div className="hero-author">✍️ Written by a real parent, not a Disney influencer</div>
+          <div className="hero-actions">
+            <Link href="/first-visit" className="hero-btn primary">
+              First trip? Start here
+            </Link>
+            <Link href="/rides" className="hero-btn secondary">
+              Rides by my kid's age
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -159,19 +178,44 @@ export default function Home() {
           <span className="section-icon">📖</span>
           <h2>Start Here — The Guide Hub</h2>
           <p className="section-intro">
+            Every tip you need — ride-by-ride ratings for ages 2–8, hour-by-hour itineraries built
+            around nap schedules, and food strategy from a dad who's done this a few times before.
             Pick a topic. Every page is standalone, scannable, and built for the phone in your hand
             while you plan (or while you're already in line).
           </p>
         </div>
 
         <div className="hub-grid">
-          {sections.map((s) => (
+          {hubCards.map((s) => (
             <Link key={s.href} href={s.href} className="hub-card">
               <div className="hub-card-icon">{s.icon}</div>
               <h3>{s.title}</h3>
               <p>{s.summary}</p>
               <div className="hub-card-cta">{s.cta}</div>
+              <div className="hub-card-updated">
+                Updated <time dateTime={s.updated.date}>{s.updated.short}</time>
+              </div>
             </Link>
+          ))}
+        </div>
+
+        <AuthorByline />
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about doing Disneyland with young kids.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
           ))}
         </div>
       </section>

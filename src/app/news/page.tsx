@@ -34,12 +34,7 @@ export default function NewsIndexPage() {
 
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'News', path: '/news' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/news" />
       <header className="hero hero--home">
         <Image src="/news.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">

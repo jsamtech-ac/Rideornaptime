@@ -1,26 +1,28 @@
 import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
-const ROUTES = [
-  '/',
-  '/first-visit',
-  '/characters',
-  '/rides',
-  '/itineraries',
-  '/lightning-lane',
-  '/food',
-  '/packing-list',
-  '/seasonal',
-  '/saving-money',
-  '/hidden-gems',
-  '/fireworks',
-  '/best-strollers',
-]
+// Routes come from the same filesystem-derived source Lighthouse uses
+// (scripts/qa/routes.cjs), so a new page directory is audited automatically and
+// the two gates can never cover different route sets.
+const { allQaRoutes } = require('../../scripts/qa/routes.cjs') as {
+  allQaRoutes: () => string[]
+}
+
+const ROUTES: string[] = allQaRoutes()
 
 for (const route of ROUTES) {
   test(`a11y: ${route}`, async ({ page }, testInfo) => {
     await page.goto(route, { waitUntil: 'networkidle' })
 
+    // NOTE: this used to grow the viewport to the full document height to work
+    // around "axe false positives on tall pages". That diagnosis was wrong. The
+    // real cause was `content-visibility: auto` on .section/.callout: it skips
+    // layout for off-screen content, so axe's color-contrast hit-test found
+    // nothing at the element's centre point and substituted an unrelated
+    // background (the dark footer). Page height only correlated, because taller
+    // pages have more skipped content. With those two selectors removed from
+    // the content-visibility list, /characters (21,404px) reports zero
+    // violations at a normal viewport — so the workaround is gone.
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .analyze()

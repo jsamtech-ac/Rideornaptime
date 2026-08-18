@@ -6,35 +6,35 @@
       "id": "1",
       "headline": "Coco boat ride coming to DCA — no height requirement, built for young kids",
       "tag": "🚨 D23",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "href": "/news/disneyland-news-families-week-of-august-17-2026#coco-boat-ride",
       "priority": 1
     },
     {
       "id": "2",
       "headline": "Tomorrowland getting full reimagining — Avatar delayed as trade-off",
       "tag": "🎢 D23",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "href": "/news/disneyland-news-families-week-of-august-17-2026#tomorrowland-reimagining",
       "priority": 2
     },
     {
       "id": "3",
       "headline": "Halloween Time launches August 21 — Oogie Boogie Bash starts tomorrow",
       "tag": "🎃 Friday",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "href": "/news/disneyland-news-families-week-of-august-17-2026#halloween-time-starts-friday-this-weeks-trip-planning-impact",
       "priority": 3
     },
     {
       "id": "4",
       "headline": "Remember Dreams Come True fireworks, World of Color, Magic Happens all return",
       "tag": "✨ 2027",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "href": "/news/disneyland-news-families-week-of-august-17-2026#entertainment-returns-2027",
       "priority": 4
     },
     {
       "id": "5",
       "headline": "Tiana's Bayou Adventure confirmed for Disneyland November 15",
       "tag": "🎃 Nov 15",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "href": "/news/disneyland-news-families-week-of-august-17-2026#tianas-bayou-adventure",
       "priority": 5
     }
   ],

@@ -14,9 +14,12 @@
     "qa:format": "prettier --check .",
     "qa:format:fix": "prettier --write .",
     "qa:build": "next build",
+    "qa:dates": "node scripts/qa/check-dates.mjs",
     "qa:links": "linkinator http://localhost:3000 --config linkinator.config.json",
     "qa:a11y": "playwright test",
-    "qa:lhci": "lhci autorun"
+    "qa:lhci": "npm run qa:lhci:desktop && npm run qa:lhci:mobile",
+    "qa:lhci:desktop": "lhci autorun --config=lighthouserc.js",
+    "qa:lhci:mobile": "lhci autorun --config=lighthouserc.mobile.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -25,7 +28,8 @@
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "remark-gfm": "^4.0.1",
-    "resend": "^6.12.0"
+    "resend": "^6.12.0",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.1",

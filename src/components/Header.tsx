@@ -3,7 +3,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import AffiliateLink from '@/components/AffiliateLink'
 import { NAV_GROUPS, type NavGroup } from '@/lib/content'
+import { getAwayTodayUrl } from '@/lib/affiliate'
+
+const NAV_TICKETS_HREF = getAwayTodayUrl('navbar')
 
 function isGroupActive(group: NavGroup, pathname: string) {
   return group.items.some((item) => item.href === pathname)
@@ -117,14 +121,14 @@ export default function Header() {
           {NAV_GROUPS.map((group) => (
             <DesktopGroup key={group.label} group={group} pathname={pathname} />
           ))}
-          <a
-            href="https://www.getawaytoday.com?referrerid=9474&utm_source=rideornaptime&utm_medium=affiliate&utm_campaign=navbar"
-            target="_blank"
-            rel="sponsored noopener"
+          <AffiliateLink
+            href={NAV_TICKETS_HREF}
+            product="package-promo"
+            placement="navbar"
             className="nav-cta"
           >
             Buy Cheap Tix
-          </a>
+          </AffiliateLink>
         </div>
 
         <div className={`nav-mobile ${navOpen ? 'open' : ''}`}>
@@ -154,14 +158,22 @@ export default function Header() {
             </section>
           ))}
           <section className="nav-mobile-group">
-            <a
-              href="https://www.getawaytoday.com?referrerid=9474&utm_source=rideornaptime&utm_medium=affiliate&utm_campaign=navbar"
-              target="_blank"
-              rel="sponsored noopener"
+            <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>
+              <span className="nav-item-icon" aria-hidden="true">
+                ✉️
+              </span>
+              Contact
+            </Link>
+          </section>
+          <section className="nav-mobile-group">
+            <AffiliateLink
+              href={NAV_TICKETS_HREF}
+              product="package-promo"
+              placement="navbar"
               className="nav-cta nav-cta-mobile"
             >
               Buy Cheap Tix
-            </a>
+            </AffiliateLink>
           </section>
         </div>
       </div>

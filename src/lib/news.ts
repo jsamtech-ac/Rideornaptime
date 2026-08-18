@@ -25,7 +25,14 @@ export interface TickerItem {
   id: string
   headline: string
   tag?: string
-  link: string
+  /**
+   * This item's own destination. Point it at the section anchor the headline
+   * came from — e.g. `/news/<slug>#coco-boat-ride` — so each headline lands on
+   * the paragraph it summarises rather than the top of the roundup.
+   * Heading anchors are generated automatically (see `slugify` in the news post
+   * route); anything finer-grained needs a matching `<span id="...">` in the MDX.
+   */
+  href: string
   priority: number
 }
 

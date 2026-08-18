@@ -1,7 +1,8 @@
 import Image from 'next/image'
+import AffiliateLink, { type AffiliatePartner } from '@/components/AffiliateLink'
 import { getAwayTodayUrl } from '@/lib/affiliate'
 
-type Partner = 'getawaytoday' | 'undercovertourist' | 'amazon'
+type Partner = AffiliatePartner
 
 interface Props {
   partner: Partner
@@ -68,6 +69,13 @@ const PARTNER_LABEL: Record<Partner, string> = {
   amazon: 'Amazon',
 }
 
+// `affiliate_product` slug reported to GA4 for each partner's CTA block.
+const PARTNER_PRODUCT: Record<Partner, string> = {
+  getawaytoday: 'package-promo',
+  undercovertourist: 'ticket-compare',
+  amazon: 'amazon-storefront',
+}
+
 export default function AffiliateCTA({ partner, headline, body, cta, campaign }: Props) {
   const href = resolveHref(partner, campaign)
   const d = DEFAULTS[partner]
@@ -95,15 +103,16 @@ export default function AffiliateCTA({ partner, headline, body, cta, campaign }:
       ) : null}
       <h3 className="affiliate-cta-headline">{h}</h3>
       <p className="affiliate-cta-body">{p}</p>
-      <a
+      <AffiliateLink
         href={href}
-        target="_blank"
-        rel="sponsored noopener"
+        partner={partner}
+        product={PARTNER_PRODUCT[partner]}
+        placement="card"
         className="affiliate-cta-link"
         aria-label={`${h} (affiliate link, opens in a new tab)`}
       >
         {c}
-      </a>
+      </AffiliateLink>
     </aside>
   )
 }

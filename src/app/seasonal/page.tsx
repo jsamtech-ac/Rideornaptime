@@ -8,14 +8,12 @@ import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import EventCTA from '@/components/EventCTA'
 import UpdatedBadge from '@/components/UpdatedBadge'
-import {
-  SEASONS,
-  EVENTS_2026,
-  SEASONAL_LAST_REVIEWED,
-  SITE_URL,
-  type EventSlug,
-  type SeasonalEvent,
-} from '@/lib/content'
+import { SEASONS, EVENTS_2026, SITE_URL, type EventSlug, type SeasonalEvent } from '@/lib/content'
+import { lastUpdatedFor } from '@/lib/pages'
+
+// One git-derived value feeds the meta tag, the JSON-LD, the visible badge and
+// the FAQ copy below — they cannot drift apart.
+const UPDATED = lastUpdatedFor('/seasonal')
 
 const META_TITLE = 'Disneyland 2026 Events & Best Months to Visit with Kids'
 const META_DESCRIPTION =
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: `${SEASONAL_LAST_REVIEWED}T00:00:00.000Z`,
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -76,7 +74,7 @@ const faqs = [
   },
   {
     q: 'How often is this page updated?',
-    a: `This page is reviewed quarterly and before each major event window. It was last reviewed ${new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}. When Disney updates the 2026 calendar or confirms new dates, we refresh the event cards, dates, and month-by-month notes.`,
+    a: `This page is reviewed quarterly and before each major event window. It was last reviewed ${UPDATED.long}. When Disney updates the 2026 calendar or confirms new dates, we refresh the event cards, dates, and month-by-month notes.`,
   },
 ]
 
@@ -107,30 +105,15 @@ const DEEP_DIVE_SLUGS: EventSlug[] = [
 ]
 
 export default function SeasonalPage() {
-  const reviewedFormatted = new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString(
-    'en-US',
-    {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-      timeZone: 'UTC',
-    }
-  )
-
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Best Time to Visit', path: '/seasonal' },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/seasonal" />
       <ArticleJsonLd
         path="/seasonal"
         headline={META_TITLE}
         description={META_DESCRIPTION}
         datePublished="2026-04-15"
-        dateModified={SEASONAL_LAST_REVIEWED}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
@@ -156,7 +139,7 @@ export default function SeasonalPage() {
             Every seasonal event with exact 2026 dates, family-specific verdicts, and the crowd +
             weather truth for every month. The planner we wish we&apos;d had.
           </p>
-          <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
+          <UpdatedBadge date={UPDATED.date} />
         </div>
       </header>
 
@@ -414,7 +397,7 @@ export default function SeasonalPage() {
           <p>
             Dates come from the official Disneyland 2026 press calendar, cross-checked with Disney
             Parks Blog and Disney Tourist Blog. We review this page quarterly and before each major
-            event window. Last reviewed: <strong>{reviewedFormatted}</strong>. Always confirm on the
+            event window. Last reviewed: <strong>{UPDATED.long}</strong>. Always confirm on the
             official Disney site before booking.
           </p>
         </div>

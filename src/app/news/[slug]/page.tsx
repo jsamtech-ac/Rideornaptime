@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { isValidElement, type ReactNode } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -11,7 +12,72 @@ import { SITE_URL } from '@/lib/content'
 import { getAllPostMeta, getPostBySlug } from '@/lib/news'
 
 const mdxOptions = { mdxOptions: { remarkPlugins: [remarkGfm] } }
-const mdxComponents = { AffiliateCTA, TicketsCTA }
+
+/**
+ * Heading text -> URL fragment. Emoji and punctuation are dropped so
+ * "## 🎃 Halloween Time Starts Friday — This Week's Impact" becomes
+ * "halloween-time-starts-friday-this-weeks-impact".
+ *
+ * Done here rather than with rehype-slug to avoid a new dependency.
+ */
+function slugify(value: string): string {
+  return value
+    .normalize('NFKD')
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+/** Flattens an MDX heading's children back down to plain text for slugging. */
+function headingText(node: ReactNode): string {
+  if (node === null || node === undefined || typeof node === 'boolean') return ''
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(headingText).join('')
+  if (isValidElement(node)) {
+    return headingText((node.props as { children?: ReactNode }).children)
+  }
+  return ''
+}
+
+function Heading({ level, children }: { level: 2 | 3; children?: ReactNode }) {
+  const Tag = level === 2 ? 'h2' : 'h3'
+  const id = slugify(headingText(children))
+  return (
+    <Tag id={id} className="news-post-heading">
+      {children}
+    </Tag>
+  )
+}
+
+/**
+ * GFM tables scroll horizontally on narrow screens. A scrollable box with no
+ * focusable content inside is unreachable by keyboard — the off-screen columns
+ * simply cannot be read without a mouse or touch (axe
+ * `scrollable-region-focusable`). Wrapping it in a focusable, named region
+ * fixes that; the scrolling moves to the wrapper so the table itself can go
+ * back to normal table layout.
+ */
+function ScrollableTable(props: { children?: ReactNode }) {
+  return (
+    <div
+      className="news-post-table-wrap"
+      tabIndex={0}
+      role="region"
+      aria-label="Table — scroll horizontally to see all columns"
+    >
+      <table>{props.children}</table>
+    </div>
+  )
+}
+
+const mdxComponents = {
+  AffiliateCTA,
+  TicketsCTA,
+  h2: (props: { children?: ReactNode }) => <Heading level={2}>{props.children}</Heading>,
+  h3: (props: { children?: ReactNode }) => <Heading level={3}>{props.children}</Heading>,
+  table: ScrollableTable,
+}
 
 interface PageProps {
   params: { slug: string }

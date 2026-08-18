@@ -9,13 +9,14 @@
     "^mailto:",
     "^tel:",
     "^#",
-    "localhost:3000/api",
+    "localhost:[0-9]+/api",
     "linkedin.com",
     "twitter.com/intent",
     "getawaytoday.com",
     "amazon.com",
     "amzn.to",
-    "rideornaptime.com"
+    "rideornaptime.com",
+    "localhost:[0-9]+/_next/"
   ],
   "format": "json"
 }

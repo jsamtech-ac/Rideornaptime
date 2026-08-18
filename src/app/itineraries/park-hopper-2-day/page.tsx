@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
@@ -6,10 +5,12 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { lastUpdatedFor } from '@/lib/pages'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
-const PAGE_FILE = 'src/app/itineraries/park-hopper-2-day/page.tsx'
+// Single source of truth for this page's freshness — feeds the meta tag,
+// the JSON-LD dateModified and any visible "Updated" UI.
+const UPDATED = lastUpdatedFor('/itineraries/park-hopper-2-day')
 const PAGE_PATH = '/itineraries/park-hopper-2-day'
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: UPDATED.iso,
     authors: ['Ride or Naptime'],
   },
 }
@@ -61,19 +62,13 @@ const faqs = [
 export default function ParkHopperTwoDayPage() {
   return (
     <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'Itineraries', path: '/itineraries' },
-          { name: 'Park Hopper 2-Day', path: PAGE_PATH },
-        ]}
-      />
+      <BreadcrumbJsonLd path="/itineraries/park-hopper-2-day" />
       <ArticleJsonLd
         path={PAGE_PATH}
         headline="Disneyland Park Hopper 2-Day Itinerary for Families (2026)"
         description="Two-day Park Hopper plan: rope drop DCA, hop to Disneyland after lunch, fireworks at night."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={UPDATED.date}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -87,16 +82,7 @@ export default function ParkHopperTwoDayPage() {
       </header>
 
       <section className="section">
-        <Suspense
-          fallback={
-            <div className="callout">
-              <div className="callout-label">Loading</div>
-              <p>Loading your trip configurator…</p>
-            </div>
-          }
-        >
-          <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
-        </Suspense>
+        <ItineraryConfigurator initialDayStates={initialDayStates} allowDayCountChange={false} />
 
         <div className="callout pro">
           <div className="callout-label">Pair With</div>
@@ -106,6 +92,24 @@ export default function ParkHopperTwoDayPage() {
             meals from the <Link href="/food">Disneyland food spots worth your money</Link>, and
             pack with the <Link href="/packing-list">Disneyland packing list for kids</Link>.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <span className="section-icon">❓</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <p className="section-intro">
+          The questions families ask us most about a two-day Park Hopper plan.
+        </p>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <details key={i} className="faq-item">
+              <summary className="faq-q">{f.q}</summary>
+              <p className="faq-a">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
