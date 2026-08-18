@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import FaqJsonLd from '@/components/FaqJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import AuthorByline from '@/components/AuthorByline'
 import { SITE_URL } from '@/lib/content'
 import { lastUpdatedFor, type PagePath } from '@/lib/pages'
 
@@ -198,8 +197,6 @@ export default function Home() {
             </Link>
           ))}
         </div>
-
-        <AuthorByline />
       </section>
 
       <section className="section">

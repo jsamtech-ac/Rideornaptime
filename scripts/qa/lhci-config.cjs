@@ -50,12 +50,12 @@ const MOBILE = {
 //                 slow-4G. The floor is render-blocking CSS + 103KB of preloaded
 //                 fonts, not images: /privacy has a TEXT LCP element and still
 //                 lands at 2.56s. Promote to error once the font payload is cut.
-//   CLS   warn  — the only breach is /about at 0.143, which does not reproduce
-//                 in Chrome under identical emulation (cold cache, 4x CPU, same
-//                 throttling) and is perfectly correlated with page height: only
-//                 the two pages under ~2.5 viewports tall register any shift at
-//                 all. Treated as a Lighthouse short-page measurement artifact.
-//                 Promote to error if a shift is ever reproduced outside LHCI.
+//   CLS   warn  — currently 0.000 on every route, after removing .section and
+//                 .callout from the content-visibility list in globals.css (their
+//                 intrinsic-size placeholders were shoving the footer during
+//                 load). Safe to promote to error now that it passes with full
+//                 headroom; left at warn only to avoid coupling that change to
+//                 an unrelated commit.
 const SEVERITY = { lcp: 'warn', tbt: 'error', cls: 'warn' }
 
 /**

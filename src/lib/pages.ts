@@ -155,11 +155,6 @@ export const PAGES = {
     file: 'src/app/contact/page.tsx',
     lastUpdated: '2026-08-17',
   },
-  '/about': {
-    name: 'About',
-    file: 'src/app/about/page.tsx',
-    lastUpdated: '2026-08-17',
-  },
 } satisfies Record<string, PageEntry>
 
 export type PagePath = keyof typeof PAGES

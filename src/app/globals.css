@@ -1949,77 +1949,6 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* ===== AUTHOR BYLINE STRIP ===== */
-.author-byline {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
-  padding: var(--space-md) var(--space-lg);
-  background: var(--sand);
-  border: 1px solid var(--sand-dark);
-  border-radius: var(--radius-lg);
-  text-align: left;
-}
-
-.author-byline-photo {
-  flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  background: var(--sky-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.author-byline-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.author-byline-initials {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--sky-deep);
-}
-
-.author-byline-name {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  color: var(--ink);
-}
-
-.author-byline-credential {
-  margin: 2px 0 var(--space-xs);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--ink-soft);
-}
-
-.author-byline-link {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--sky-deep);
-  text-decoration: none;
-}
-
-.author-byline-link:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 480px) {
-  .author-byline {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
-  }
-}
-
 /* ===== CONTACT FORM (/contact) =====
    Lives on its own light-background route, not in the dark footer. */
 .contact-form-wrap {
@@ -3895,12 +3824,14 @@ body {
 
    .section and .callout are deliberately NOT in this list. Their real heights
    vary wildly and are often far below the 320px placeholder — measured .callout
-   heights on /about are 119-165px — so the placeholder-to-real correction moved
-   the footer twice during load and produced CLS 0.179 on /about and 0.117 on
-   /contact. The repeated card lists below keep it: they are numerous, uniform,
-   and sized close to reality. Measured TBT across all 25 routes is 0-22ms
-   against a 200ms budget, so there is no main-thread cost here worth trading
-   layout stability for. */
+   heights on short pages are 119-165px — so the placeholder-to-real correction
+   moved the footer twice during load and produced CLS of 0.12-0.18 on the
+   shortest routes. It also broke axe's colour-contrast checks, which hit-test
+   an element's centre point and found nothing where layout had been skipped.
+   The repeated card lists below keep it: they are numerous, uniform, and sized
+   close to reality. Measured TBT across every route is well under the 200ms
+   budget, so there is no main-thread cost here worth trading layout stability
+   for. */
 .tip-card,
 .ride-card,
 .character-finder-card,
