@@ -55,11 +55,13 @@ export const DL_LAND_ORDER = [
   'Main Street, U.S.A.',
   'Fantasyland',
   'Fantasyland (Fantasy Faire)',
+  'Fantasyland (Fantasyland Theatre)',
   'Adventureland',
   'Frontierland',
   'New Orleans Square',
   'Bayou Country',
   "Star Wars: Galaxy's Edge",
+  'Tomorrowland',
   "Mickey's Toontown",
 ]
 
@@ -88,7 +90,11 @@ export const DL_LAND_INTROS: Record<string, string> = {
     "Tiana has a regular presence here since Tiana's Bayou Adventure replaced Splash Mountain. Easier walk-up than Royal Hall.",
   'Bayou Country': 'Chip & Dale roam near Hungry Bear Restaurant. Usually a walk-up.',
   "Star Wars: Galaxy's Edge":
-    "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, Stormtroopers, and Mando & Grogu (live since May 22, 2026).",
+    "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, R2-D2, Ahsoka, Stormtroopers, and Mando & Grogu. Eras are kept apart on purpose — original-trilogy and sequel-era characters won't appear together. Kylo Ren moved out to Star Wars Launch Bay in April 2026.",
+  Tomorrowland:
+    "Star Wars Launch Bay is the indoor, air-conditioned character stop nobody talks about — Chewbacca and (since April 2026) Kylo Ren, usually a far shorter line than Galaxy's Edge. On a 95° August afternoon this is the play. Darth Vader no longer meets here.",
+  'Fantasyland (Fantasyland Theatre)':
+    "Bluey's Best Day Ever runs here through 2026. Note there is no formal meet — Bluey and Bingo come close to the audience during the show instead.",
   "Mickey's Toontown":
     "The single densest character zone in the resort. Mickey & Minnie's Runaway Railway is here, and the playground has one exit so kids can run while you regroup.",
 }
@@ -774,11 +780,17 @@ export const characters: Character[] = [
         spot: 'Black Spire Outpost near the Millennium Falcon',
         reliability: 'scheduled',
       },
+      {
+        park: 'DL',
+        land: 'Tomorrowland',
+        spot: 'Star Wars Launch Bay',
+        reliability: 'scheduled',
+      },
     ],
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
     expectedLine: 'medium',
     notes:
-      'Chewie is enormous and growls — for a 4-year-old, this is either the coolest thing ever or instant tears. The wait alone is 20–40 min most of the day.',
+      "Chewie is enormous and growls — for a 4-year-old, this is either the coolest thing ever or instant tears. The Galaxy's Edge wait runs 20-40 min most of the day; the Star Wars Launch Bay line in Tomorrowland is usually shorter and, more to the point, indoors and air-conditioned. On a hot August afternoon, take Launch Bay.",
   },
   {
     id: 'stormtroopers',
@@ -804,15 +816,15 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DL',
-        land: "Star Wars: Galaxy's Edge",
-        spot: 'Sporadic dramatic encounters, First Order side',
-        reliability: 'rare',
+        land: 'Tomorrowland',
+        spot: 'Star Wars Launch Bay',
+        reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'skip', age4: 'skip', age6: 'maybe', age8: 'great' },
     expectedLine: 'short',
     notes:
-      'Kylo storms through, lightsaber drawn, sometimes chasing Stormtroopers. Not a photo line — a moment. Watch from a distance with younger kids.',
+      "Moved out of Galaxy's Edge in April 2026 — Kylo now meets indoors at Star Wars Launch Bay in Tomorrowland, which turned him from a sporadic roaming moment into a photo you can actually plan on. Air-conditioned and usually a short line. Still intense for little kids; watch from a distance first if yours is under 6.",
   },
   {
     id: 'mando-and-grogu',
@@ -822,14 +834,14 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: "Star Wars: Galaxy's Edge",
-        spot: 'Roaming, often near Smugglers Run (new overlay area)',
+        spot: 'Roaming Black Spire Outpost, often near Smugglers Run',
         reliability: 'roaming',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'medium',
     notes:
-      "Brand-new since the Smugglers Run Mandalorian overlay launched May 22, 2026. This isn't a scheduled photo line — Din Djarin and Grogu roam Black Spire Outpost for brief, unscheduled encounters, so check the Disneyland app the morning of your visit and keep an eye out as you walk the land. Grogu is the star; Mando does the talking.",
+      "Not new, despite how often that gets written — Din Djarin and Grogu have met guests in Black Spire Outpost since late 2022. What changed in 2026 is the Millennium Falcon: Smugglers Run overlay (May 22), which is a ride story, not a character debut. This isn't a scheduled photo line: they roam for brief, unscheduled encounters, so check the Disneyland app the morning of your visit and keep an eye out as you walk the land. Grogu is the star; Mando does the talking.",
   },
 
   // ─── MARVEL (Avengers Campus, DCA) ────────────────────────────────────────
@@ -1044,6 +1056,75 @@ export const characters: Character[] = [
 
   // ─── NIGHTMARE BEFORE CHRISTMAS (Halloween Time only) ──────────────────────
   {
+    id: 'bluey-and-bingo',
+    name: 'Bluey & Bingo',
+    franchise: 'Bluey',
+    locations: [
+      {
+        park: 'DL',
+        land: 'Fantasyland (Fantasyland Theatre)',
+        spot: "Bluey's Best Day Ever show — no formal meet line",
+        typicalTimes: 'Show times posted daily in the Disneyland app',
+        reliability: 'scheduled',
+      },
+    ],
+    kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      "Read this before you promise your 3-year-old a Bluey hug: there is NO formal meet and greet. Bluey and Bingo appear inside Bluey's Best Day Ever at the Fantasyland Theatre and come down closer to the audience during parts of the show, which is where your photo comes from. Sit close, on an aisle, and have the camera ready — that is the whole strategy. Parents who show up expecting a queue-and-hug line leave disappointed, and nobody warns them.",
+  },
+  {
+    id: 'r2-d2',
+    name: 'R2-D2',
+    franchise: 'Star Wars',
+    locations: [
+      {
+        park: 'DL',
+        land: "Star Wars: Galaxy's Edge",
+        spot: 'Black Spire Outpost, roaming with a handler',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'great', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      "Added to the Galaxy's Edge roster in the April 2026 refresh alongside the other original-trilogy characters. R2 is the friendliest Star Wars option for little kids by a mile — droid-sized, beeps instead of looming, no mask to be scared of.",
+  },
+  {
+    id: 'ahsoka',
+    name: 'Ahsoka Tano',
+    franchise: 'Star Wars',
+    locations: [
+      {
+        park: 'DL',
+        land: "Star Wars: Galaxy's Edge",
+        spot: 'Black Spire Outpost',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'skip', age4: 'skip', age6: 'maybe', age8: 'great' },
+    expectedLine: 'short',
+    notes:
+      "Part of the April 2026 Galaxy's Edge roster expansion. Best for kids who know her from Rebels or the live-action series — she means nothing to a kid who only knows the films.",
+  },
+  {
+    id: 'bdx-droids',
+    name: 'BDX Droids',
+    franchise: 'Star Wars',
+    locations: [
+      {
+        park: 'DL',
+        land: "Star Wars: Galaxy's Edge",
+        spot: 'Black Spire Outpost, roaming',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
+    expectedLine: 'short',
+    notes:
+      "Returned to Galaxy's Edge on May 22, 2026. The free-roaming droids that chirp, dance and interact — closer to a puppet show than a meet, and one of the few Star Wars encounters that lands for a 4-year-old. No line: you either cross paths with them or you do not.",
+  },
+  {
     id: 'jack-and-sally',
     name: 'Jack Skellington & Sally',
     franchise: 'Nightmare Before Christmas',
@@ -1051,14 +1132,15 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: 'New Orleans Square',
-        spot: 'Near Haunted Mansion Holiday',
-        typicalTimes: 'Aug 21 – Oct 31 (Halloween Time) and select holiday dates',
+        spot: 'Near the Royal Street Veranda',
+        typicalTimes:
+          'From ~11 AM through the afternoon, Aug 21 – Oct 31 (Halloween Time) and select holiday dates',
         reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'very-long',
     notes:
-      'Jack and Sally only meet during Halloween Time (and briefly during the Haunted Mansion Holiday window that bleeds into early January). The line is 60–90 min routinely — line up at park open or skip.',
+      'Jack and Sally only meet during Halloween Time (and briefly during the Haunted Mansion Holiday window that bleeds into early January). Do not rope-drop them: they typically come out around 11 AM and stay through the afternoon, so an 8 AM sprint is wasted effort. The line runs 60-90 min once they are out. Jack got a redesign in 2025 — rounder head, much closer to the film version.',
   },
 ]

@@ -113,7 +113,13 @@ export const PAGES = {
   '/characters': {
     name: 'Characters',
     file: 'src/app/characters/page.tsx',
-    lastUpdated: '2026-07-28',
+    lastUpdated: '2026-08-18',
+  },
+  '/characters/bluey-disneyland': {
+    name: 'Bluey at Disneyland',
+    file: 'src/app/characters/bluey-disneyland/page.tsx',
+    lastUpdated: '2026-08-18',
+    parent: '/characters',
   },
   '/food': {
     name: 'Food & Snacks',

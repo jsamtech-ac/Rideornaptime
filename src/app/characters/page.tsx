@@ -10,15 +10,28 @@ import CharacterFinder from '@/components/CharacterFinder'
 import { SITE_URL } from '@/lib/content'
 import { lastUpdatedFor } from '@/lib/pages'
 import { characters, RELIABILITY_LABEL } from '@/data/characters'
+import {
+  STATUS_LABEL,
+  currentNote,
+  sortedSeasonalEvents,
+  statusFor,
+  type SeasonalStatus,
+} from '@/data/seasonal'
 
 // Single source of truth for this page's freshness — feeds the meta tag,
 // the JSON-LD dateModified and any visible "Updated" UI.
 const UPDATED = lastUpdatedFor('/characters')
 
+// The seasonal status chips are derived from today's date. A purely static
+// build would freeze them at deploy time, so Halloween Time would still read
+// "Coming up" on Nov 1 until someone happened to push. Revalidating daily lets
+// the page correct itself with no code change and no deploy.
+export const revalidate = 86400
+
 export const metadata: Metadata = {
   title: 'Disneyland Characters 2026: Where to Meet Every Character with Kids',
   description:
-    'Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8. Plus Mando & Grogu.',
+    'Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8. Includes Bluey at Fantasyland Theatre and the 2026 Star Wars roster changes.',
   alternates: { canonical: `${SITE_URL}/characters` },
   openGraph: {
     url: `${SITE_URL}/characters`,
@@ -53,7 +66,7 @@ const faqsGeneral = [
   },
   {
     q: 'What characters are at Disneyland in 2026?',
-    a: "The Fab Five (Mickey, Minnie, Donald, Goofy, Pluto), every major princess including Tiana in New Orleans Square, Frozen's Anna and Elsa at DCA, the full Pixar lineup at Pixar Pier, Star Wars characters in Galaxy's Edge including the brand-new Mando and Grogu (live since May 22, 2026 with the Smugglers Run overlay), Marvel heroes at Avengers Campus including Spider-Man, Doctor Strange, Captain America, and Black Panther, plus Miguel and Mirabel at El Zocalo Park. Villains like Maleficent only come out for Oogie Boogie Bash.",
+    a: "The Fab Five (Mickey, Minnie, Donald, Goofy, Pluto), every major princess including Tiana in New Orleans Square, Frozen's Anna and Elsa at DCA, the full Pixar lineup at Pixar Pier, Star Wars characters across Galaxy's Edge and Star Wars Launch Bay — Rey, Chewbacca, R2-D2, Ahsoka, Stormtroopers, Mando and Grogu, and Kylo Ren — plus Marvel heroes at Avengers Campus including Spider-Man, Doctor Strange, Captain America, and Black Panther, and Miguel and Mirabel at El Zocalo Park. New for 2026: Bluey and Bingo appear in Bluey's Best Day Ever at the Fantasyland Theatre. Villains are mostly an Oogie Boogie Bash thing, except during Halloween Time.",
   },
   {
     q: 'Where can you meet Anna and Elsa at Disneyland?',
@@ -69,7 +82,7 @@ const faqsGeneral = [
   },
   {
     q: 'Are Mando and Grogu at Disneyland?',
-    a: "Yes — they debuted at Star Wars: Galaxy's Edge on May 22, 2026 alongside the new Mandalorian overlay on Smugglers Run. They roam Black Spire Outpost. The exact rotation is still settling, so check the Disneyland app the morning of your visit for current locations and times.",
+    a: "Yes, and they have been since late 2022 — this one gets reported wrong constantly. Din Djarin and Grogu roam Black Spire Outpost in Star Wars: Galaxy's Edge at Disneyland Park. What was new on May 22, 2026 was the Millennium Falcon: Smugglers Run overlay built around them, which is a ride storyline, not a character debut. There is no scheduled photo line for them — check the Disneyland app the morning of your visit and keep your eyes open as you walk the land.",
   },
   {
     q: 'What characters are at Avengers Campus?',
@@ -77,7 +90,15 @@ const faqsGeneral = [
   },
   {
     q: 'Can you meet villains at Disneyland?',
-    a: 'Outside of special events, almost never. Maleficent, Cruella, the Evil Queen, and Jack Sparrow only appear reliably at Oogie Boogie Bash (the separate-ticket Halloween party at DCA, mid-August through October) and occasionally at Disneyland After Dark hard-ticket nights. Captain Hook does roam Fantasyland in his standard outfit year-round.',
+    a: 'Most of the year, almost never — Maleficent, Cruella, the Evil Queen, and Jack Sparrow appear reliably only at Oogie Boogie Bash (the separate-ticket Halloween party at DCA) and occasionally at Disneyland After Dark hard-ticket nights. Halloween Time is the exception: from Aug 21 to Oct 31, 2026 Disney puts villains out in Fantasyland on a regular park ticket, no party ticket required. That window is by far the cheapest way to get a villain photo. Captain Hook roams Fantasyland in his standard outfit year-round.',
+  },
+  {
+    q: 'Is there a Bluey meet and greet at Disneyland?',
+    a: "No — and this is the single most misunderstood thing on this page. Bluey's Best Day Ever opened March 22, 2026 at the Fantasyland Theatre in Disneyland Park, but there is no formal meet and greet and no queue. Bluey and Bingo come down closer to the audience during parts of the show, which is where your photo comes from. Sit close and on an aisle, and have your camera out before it starts. If your kid is expecting to line up and hug Bluey, tell them beforehand — that conversation goes much better at the hotel than at the theatre.",
+  },
+  {
+    q: 'What is Star Wars Launch Bay and is it worth it?',
+    a: "Star Wars Launch Bay is an indoor, air-conditioned character venue in Tomorrowland at Disneyland Park, and it is the most underrated character stop in the resort. Chewbacca meets here, and since April 2026 so does Kylo Ren, who moved over from Galaxy's Edge. Lines are typically much shorter than the same characters draw in Galaxy's Edge. On a 95-degree August afternoon, this is where you go. Note that Darth Vader no longer meets here.",
   },
   {
     q: 'Do Disneyland characters still sign autographs?',
@@ -116,7 +137,7 @@ const faqsLookup = [
   },
   {
     q: 'Where can I meet Mando and Grogu?',
-    a: "Star Wars: Galaxy's Edge at Disneyland Park — roaming since the Smugglers Run overlay launched May 22, 2026.",
+    a: "Star Wars: Galaxy's Edge at Disneyland Park — roaming Black Spire Outpost, as they have since late 2022.",
   },
   {
     q: 'Where can I meet Mickey, Donald, Goofy, and Pluto together?',
@@ -144,7 +165,7 @@ const faqsLookup = [
   },
   {
     q: 'Where can I meet Jack Skellington?',
-    a: 'Near Haunted Mansion Holiday in New Orleans Square — Halloween Time only (Aug 21 – Oct 31, 2026).',
+    a: 'New Orleans Square near the Royal Street Veranda, Halloween Time only (Aug 21 – Oct 31, 2026). They come out around 11 AM — do not rope-drop for them.',
   },
   {
     q: 'Where can I meet Maleficent?',
@@ -170,6 +191,98 @@ const faqsLookup = [
     q: 'Where can I meet Doctor Strange?',
     a: 'The Ancient Sanctum in Avengers Campus at Disney California Adventure.',
   },
+  {
+    q: 'Where can I meet Tinker Bell at Disneyland?',
+    a: 'Pixie Hollow in Fantasyland, just off the castle hub — recently refurbished, indoor and shaded, and reliably one of the shortest lines in the park. Strong pick for a 3-year-old.',
+  },
+  {
+    q: 'Where can I meet Bluey and Bingo?',
+    a: "Fantasyland Theatre at Disneyland Park, inside Bluey's Best Day Ever — no formal meet line; they come close to the audience during the show.",
+  },
+  {
+    q: 'Where can I meet Kylo Ren?',
+    a: "Star Wars Launch Bay in Tomorrowland at Disneyland Park — he moved there from Galaxy's Edge in April 2026.",
+  },
+  {
+    q: 'Where can I meet Chewbacca?',
+    a: "Two spots at Disneyland Park: Black Spire Outpost in Galaxy's Edge, or Star Wars Launch Bay in Tomorrowland. Launch Bay is indoor and usually shorter.",
+  },
+  {
+    q: 'Where can I meet R2-D2?',
+    a: "Star Wars: Galaxy's Edge at Disneyland Park — roaming Black Spire Outpost with a handler.",
+  },
+  {
+    q: 'Where can I meet the BDX droids?',
+    a: "Star Wars: Galaxy's Edge at Disneyland Park — free-roaming since they returned May 22, 2026. No line; you either cross paths or you don't.",
+  },
+  {
+    q: 'Where can I meet Ahsoka Tano?',
+    a: "Star Wars: Galaxy's Edge at Disneyland Park — Black Spire Outpost, added in the April 2026 roster refresh.",
+  },
+  {
+    q: 'Where can I meet Rey?',
+    a: "Black Spire Outpost in Star Wars: Galaxy's Edge at Disneyland Park, Resistance side near the X-Wing.",
+  },
+  {
+    q: 'Where can I meet Stormtroopers?',
+    a: "They patrol the First Order side of Black Spire Outpost in Galaxy's Edge at Disneyland Park.",
+  },
+  {
+    q: 'Can you meet characters at the Disneyland gates before opening?',
+    a: 'Sometimes, yes — Belle, Cinderella, Ariel and Mulan have all been seen greeting guests at the main entrance before rope drop. It is not scheduled and not guaranteed, but it is a genuinely free bonus meet if you arrive early.',
+  },
+  {
+    q: 'Where can I meet Ariel at Disneyland?',
+    a: 'The live-action Ariel appears along the promenade at Disneyland Park. No fixed queue — check the app the day you visit.',
+  },
+  {
+    q: 'Where can I meet Pocahontas?',
+    a: 'Big Thunder Trail near the Rivers of America in Frontierland at Disneyland Park — roaming, usually a walk-up.',
+  },
+  {
+    q: 'Where else can I meet Tiana besides New Orleans Square?',
+    a: 'She also appears near the Mark Twain Riverboat at Disneyland Park, in addition to her regular New Orleans Square spot.',
+  },
+  {
+    q: 'Where can I meet Clarabelle Cow?',
+    a: "Storytellers Cafe at the Grand Californian, during Clarabelle's Enchanted Halloween Dinner — Halloween Time evenings only.",
+  },
+  {
+    q: 'Where can I meet Alice and the Mad Hatter?',
+    a: 'Around the Mad Tea Party in Fantasyland at Disneyland Park — roaming walk-ups, rarely more than 15 minutes.',
+  },
+  {
+    q: 'Where can I meet the Fairy Godmother?',
+    a: 'Castle Courtyard near Bibbidi Bobbidi Boutique in Fantasyland at Disneyland Park.',
+  },
+  {
+    q: 'Where can I meet Judy Hopps and Nick Wilde?',
+    a: 'San Fransokyo Square at Disney California Adventure — they roam the waterfront stretch near Grizzly River Run.',
+  },
+  {
+    q: 'Where can I meet Joy and Sadness?',
+    a: 'Pixar Pier at Disney California Adventure, near Inside Out Emotional Whirlwind.',
+  },
+  {
+    q: 'Where can I meet Snow White?',
+    a: "Royal Hall at Fantasy Faire, or near Snow White's Wishing Well in Fantasyland at Disneyland Park.",
+  },
+  {
+    q: 'Where can I meet Mike and Sulley?',
+    a: 'Hollywood Land at Disney California Adventure, near the Monsters, Inc. attraction.',
+  },
+  {
+    q: 'Where can I meet Aurora or Rapunzel?',
+    a: 'Royal Hall at Fantasy Faire in Fantasyland, Disneyland Park — three princesses rotate per visit, so ask the cast member at the door who is inside before you queue.',
+  },
+  {
+    q: 'Where can I meet Ant-Man and the Wasp?',
+    a: 'Avengers Campus at Disney California Adventure, around the Pym Test Kitchen area.',
+  },
+  {
+    q: 'Where can I meet Cruella or the Evil Queen?',
+    a: 'Oogie Boogie Bash at DCA only — they work the villains trick-or-treat trails. Not available on a regular park ticket.',
+  },
 ]
 
 const faqsAll = [...faqsGeneral, ...faqsLookup]
@@ -182,7 +295,19 @@ const characterListItems = characters.flatMap((c) =>
   }))
 )
 
+// Status chips are computed per request rather than baked in at build time, so
+// the page tells the truth on Nov 1 without anyone shipping a code change.
+const STATUS_CLASS: Record<SeasonalStatus, string> = {
+  active: 'seasonal-status is-active',
+  upcoming: 'seasonal-status is-upcoming',
+  ended: 'seasonal-status is-ended',
+}
+
 export default function CharactersPage() {
+  const seasonalEvents = sortedSeasonalEvents()
+  const plazaInnPause = currentNote('plaza-inn-pause')
+  const hauntedMansionNote = currentNote('haunted-mansion-conversion')
+
   return (
     <>
       <BreadcrumbJsonLd path="/characters" />
@@ -208,7 +333,13 @@ export default function CharactersPage() {
           <p className="hero-sub">
             Every character at Disneyland and DCA — where they meet, how long the line runs, and
             whether they're worth it for kids ages 2-8. Search by name, browse by park, or filter by
-            your kid's age. Updated for Mando &amp; Grogu and the new Tiana placements.
+            your kid's age. Updated for Bluey at the Fantasyland Theatre, the April 2026 Star Wars
+            roster shuffle, and Halloween Time.
+          </p>
+          <p className="hero-verified">
+            Last verified <time dateTime={UPDATED.date}>{UPDATED.long}</time> — dates, locations and
+            prices on this page are checked against Disney&rsquo;s published schedule, not copied
+            forward.
           </p>
         </div>
       </header>
@@ -220,6 +351,12 @@ export default function CharactersPage() {
         </a>
         <a className="jump-nav-chip" href="#plan">
           📱 Plan your meet
+        </a>
+        <a className="jump-nav-chip" href="#bluey">
+          🐶 Bluey
+        </a>
+        <a className="jump-nav-chip" href="#launch-bay">
+          🚀 Launch Bay
         </a>
         <a className="jump-nav-chip" href="#dining">
           🍽 Character dining
@@ -327,6 +464,89 @@ export default function CharactersPage() {
         </div>
       </section>
 
+      {/* ────────────── SECTION 2.5: Bluey (no formal meet — the parent-critical bit) ────────────── */}
+      <section className="section" id="bluey">
+        <div className="section-header">
+          <span className="section-icon">🐶</span>
+          <h2>Bluey at Disneyland: Read This Before You Promise Anything</h2>
+          <p className="section-intro">
+            The newest character addition for the 2–6 crowd, and the one most likely to cause a
+            meltdown if nobody explains how it actually works.
+          </p>
+        </div>
+
+        <div className="callout warning">
+          <div className="callout-label">There is no Bluey meet and greet</div>
+          <p>
+            This is the part that catches parents out. There is{' '}
+            <strong>no formal meet, no queue, and no photo line</strong> for Bluey and Bingo.
+            Instead they come down closer to the audience during segments of{' '}
+            <strong>Bluey&rsquo;s Best Day Ever</strong>, and that proximity is where your photo
+            comes from. If your 3-year-old has been promised a hug in a line, have that conversation
+            at the hotel — not at the theatre doors.
+          </p>
+        </div>
+
+        <div className="tip-card">
+          <h3>What the show actually is</h3>
+          <p>
+            <strong>Bluey&rsquo;s Best Day Ever</strong> opened <strong>March 22, 2026</strong> and
+            runs through the year at the <strong>Fantasyland Theatre</strong> in Disneyland Park,
+            which has been transformed into Bluey&rsquo;s school. Expect{' '}
+            <strong>The Grannies</strong>, dancing with <strong>Chattermax</strong>, and
+            Bluey-inspired food next door at <strong>Troubadour Tavern</strong>. It&rsquo;s included
+            with park admission.
+          </p>
+          <p>
+            <strong>The strategy is seating, not queuing.</strong> Get there early enough to sit
+            close and on an aisle, and have the camera out before it starts — you will not get a
+            second run at it. Showtimes post daily in the Disneyland app.
+          </p>
+          <p>
+            Full breakdown, including how it compares to a real meet:{' '}
+            <Link href="/characters/bluey-disneyland">
+              our guide to Bluey&rsquo;s Best Day Ever at Disneyland
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      {/* ────────────── SECTION 2.6: Star Wars Launch Bay ────────────── */}
+      <section className="section" id="launch-bay">
+        <div className="section-header">
+          <span className="section-icon">🚀</span>
+          <h2>Star Wars Launch Bay: The Air-Conditioned One Nobody Mentions</h2>
+          <p className="section-intro">
+            Indoor, shaded, usually a short line, and in Tomorrowland rather than Galaxy&rsquo;s
+            Edge. In August this is the single best character-planning move on this page.
+          </p>
+        </div>
+
+        <div className="tip-card">
+          <h3>Who meets there, and what changed in 2026</h3>
+          <p>
+            <strong>Chewbacca</strong> and — since <strong>April 2026</strong> —{' '}
+            <strong>Kylo Ren</strong>, who moved over from Galaxy&rsquo;s Edge. That shift turned
+            Kylo from a sporadic roaming moment into a photo you can actually plan on.{' '}
+            <strong>Darth Vader no longer meets here.</strong>
+          </p>
+          <p>
+            The Galaxy&rsquo;s Edge roster changed in the same refresh:{' '}
+            <strong>Vi Moradi stopped appearing</strong> as of April 29, 2026, and original-trilogy
+            characters were added alongside the existing lineup — Rey, Chewbacca, R2-D2, The
+            Mandalorian, Grogu, Ahsoka and Stormtroopers. Disney keeps the eras separate on purpose,
+            so <strong>you won&rsquo;t see characters from different timelines together</strong>.
+            The <strong>BDX droids returned May 22, 2026</strong> and free-roam the land.
+          </p>
+          <p>
+            <strong>Dad math:</strong> same Chewbacca, half the wait, and you&rsquo;re standing in
+            air conditioning instead of on black pavement in Black Spire. If your kid just wants the
+            photo, take Launch Bay and spend the saved hour on a ride.
+          </p>
+        </div>
+      </section>
+
       {/* ────────────── SECTION 3: Character Dining ────────────── */}
       <section className="section" id="dining">
         <div className="section-header">
@@ -352,12 +572,18 @@ export default function CharactersPage() {
           <p>
             Plaza Inn already serves the best food in the park (the lunch fried chicken is
             legendary). 4–5 characters in one sitting replaces 5 separate 20-min lines.{' '}
-            <strong>Book the 8:00 AM seating</strong> — best character access and you walk out onto
-            Main Street already inside the park for rope drop.{' '}
-            <em>
-              Heads-up: the Minnie &amp; Friends breakfast pauses from Aug 10 through late September
-              2026, so check the app if you're visiting late summer.
-            </em>
+            <strong>Book the 8:00 AM seating</strong> — best character access, and the part most
+            people miss: a character-dining reservation at or before park opening normally gets you
+            in through the dedicated character-dining turnstiles on the{' '}
+            <strong>left side of the main entrance</strong>. That is effectively early park entry,
+            and it is worth more than the meal.
+            {plazaInnPause && (
+              <>
+                {' '}
+                <em>{plazaInnPause.text}</em> That early-entry perk is unavailable while the
+                character dining is paused.
+              </>
+            )}
           </p>
         </div>
 
@@ -372,8 +598,11 @@ export default function CharactersPage() {
             <strong>~$59 adults / ~$36 kids.</strong> Gorgeous forest-themed room, calmer than Plaza
             Inn. <strong>Characters:</strong> Mickey in his explorer outfit plus Chip &amp; Dale and
             friends — <strong>no princesses here</strong>, despite a common mix-up. No park ticket
-            needed — great for arrival or departure day. Breakfast only; lunch and dinner are
-            regular service.
+            needed — great for arrival or departure day. Breakfast is the year-round character meal.{' '}
+            <strong>Seasonal:</strong> during Halloween Time it also hosts{' '}
+            <strong>Clarabelle&rsquo;s Enchanted Halloween Dinner</strong> in the evenings, with
+            Clarabelle and friends in seasonal outfits — the only character dinner on this list that
+            does not need a park ticket. Outside those two, lunch and dinner are regular service.
           </p>
         </div>
 
@@ -415,6 +644,14 @@ export default function CharactersPage() {
             <strong>Disney Princess Breakfast Adventures at Napa Rose.</strong> Want Mickey and pals
             without a park ticket? <strong>Storytellers Café.</strong> Chaos-loving 5+ year old?{' '}
             <strong>Goofy's Kitchen.</strong>
+            {plazaInnPause && (
+              <>
+                {' '}
+                <strong>Visiting while Plaza Inn is paused?</strong> Every remaining option is a
+                hotel meal — Storytellers Café, Napa Rose, or Goofy&rsquo;s Kitchen — and none of
+                the three needs a park ticket, so you can book one for an arrival or departure day.
+              </>
+            )}
           </p>
         </div>
 
@@ -442,77 +679,39 @@ export default function CharactersPage() {
           <h2>Seasonal Characters: What's Only Out Briefly</h2>
           <p className="section-intro">
             Some of the best meets at the resort only exist for a few weeks per year. Here's the
-            full 2026 calendar at a glance.
+            full 2026 calendar at a glance — what's running today first, then what's coming, then
+            what has already wrapped. Every date below drives the status chip automatically, so this
+            list is never stale.
           </p>
         </div>
 
+        {hauntedMansionNote && (
+          <div className="callout warning">
+            <div className="callout-label">{hauntedMansionNote.label}</div>
+            <p>{hauntedMansionNote.text}</p>
+          </div>
+        )}
+
         <div className="seasonal-list">
-          <article className="seasonal-row">
-            <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Jan 23 – Feb 22, 2026</span>
-              <span className="seasonal-row-cost">Included with park admission</span>
-            </div>
-            <h3 className="seasonal-row-title">🐉 Lunar New Year at DCA</h3>
-            <p>
-              <strong>Mulan</strong> anchors the Paradise Gardens procession with{' '}
-              <strong>Mushu</strong>. The one consistent window to meet Mulan, who's rare in Royal
-              Hall the rest of the year.
-            </p>
-          </article>
-
-          <article className="seasonal-row">
-            <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Aug 21 – Nov 2, 2026</span>
-              <span className="seasonal-row-cost">Included with park admission</span>
-            </div>
-            <h3 className="seasonal-row-title">💀 Plaza de la Familia at DCA</h3>
-            <p>
-              <strong>Miguel and Dante</strong> (from Coco) meet near Paradise Gardens during the
-              Día de los Muertos celebration. Beautiful 25-minute musical storytelling set — kids
-              who love Coco will sit through the whole thing.
-            </p>
-          </article>
-
-          <article className="seasonal-row">
-            <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Aug 21 – Oct 31, 2026</span>
-              <span className="seasonal-row-cost">Included with park admission</span>
-            </div>
-            <h3 className="seasonal-row-title">🎃 Halloween Time at Disneyland</h3>
-            <p>
-              Fab Five in Halloween costumes all day. The standout:{' '}
-              <strong>Jack &amp; Sally meet near Haunted Mansion Holiday</strong> — their only
-              regular-park appearance of the year. Wait 60–90 min or skip.
-            </p>
-          </article>
-
-          <article className="seasonal-row">
-            <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Aug 18 – Oct 31 select nights</span>
-              <span className="seasonal-row-cost">Separate ticket — ~$139–$199</span>
-            </div>
-            <h3 className="seasonal-row-title">👻 Oogie Boogie Bash at DCA</h3>
-            <p>
-              The only reliable way to meet{' '}
-              <strong>Maleficent, Cruella, the Evil Queen, Oogie Boogie</strong>, and other rare
-              villains. Frightfully Fun Parade features villains you literally can't meet any other
-              time. Tickets drop in late June, Magic Key pre-sale first — sells out on day one.
-            </p>
-          </article>
-
-          <article className="seasonal-row">
-            <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Nov 18, 2026 – early Jan 2027</span>
-              <span className="seasonal-row-cost">Included with park admission</span>
-            </div>
-            <h3 className="seasonal-row-title">🎄 Holidays at the Disneyland Resort</h3>
-            <p>
-              Santa Goofy in Toontown, toy soldiers on Main Street, Fab Five in holiday attire at
-              Town Square. The <strong>¡Viva Navidad! street party</strong> in DCA's Paradise
-              Gardens with Donald, Daisy, Panchito, and José is one of the best character
-              experiences of the year — no line required.
-            </p>
-          </article>
+          {seasonalEvents.map((event) => {
+            const status = statusFor(event)
+            return (
+              <article
+                key={event.id}
+                className={`seasonal-row${status === 'ended' ? ' is-past' : ''}`}
+              >
+                <div className="seasonal-row-meta">
+                  <span className={STATUS_CLASS[status]}>{STATUS_LABEL[status]}</span>
+                  <span className="seasonal-row-dates">{event.dateLabel}</span>
+                  <span className="seasonal-row-cost">{event.cost}</span>
+                </div>
+                <h3 className="seasonal-row-title">
+                  {event.emoji} {event.title}
+                </h3>
+                <p>{event.body}</p>
+              </article>
+            )
+          })}
         </div>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
@@ -621,9 +820,13 @@ export default function CharactersPage() {
               you frame later with the printed PhotoPass shot in the center is a better keepsake.
             </li>
             <li>
-              <strong>Magic Bands don't work at the California parks.</strong> You'll show your
-              ticket on your phone or a paper card at every entry. (Different from Walt Disney
-              World.)
+              <strong>MagicBand+ does work at Disneyland</strong> — park entry, Lightning Lane
+              check-in, and linking PhotoPass shots to your account, same as a phone. The catch:{' '}
+              <strong>only MagicBand+</strong>. The original MagicBand and MagicBand 2 from Walt
+              Disney World can&rsquo;t be linked to the Disneyland app at all. Since April 2026
+              Disney has been winding down on-property MagicBand+ sales as inventory clears, so buy
+              online before your trip rather than counting on finding one in the parks — support for
+              bands you already own stays in place.
             </li>
           </ul>
         </div>

@@ -646,6 +646,80 @@ body {
   transform: translateY(-1px);
 }
 
+/* "Last verified" — content-accuracy date, distinct from the news ticker's
+   "Updated" recency stamp. Deliberately quiet: it is a trust signal, not a
+   headline. */
+.hero-verified {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  max-width: 520px;
+  margin: var(--space-sm) auto 0;
+  line-height: 1.5;
+}
+
+.hero--home .hero-verified {
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Seasonal status chips. Driven by dates in src/data/seasonal.tsx, so these
+   flip on their own — no code change on Nov 1. */
+.seasonal-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.seasonal-status.is-active {
+  background: var(--mint-light);
+  color: var(--mint-ink);
+}
+
+.seasonal-status.is-upcoming {
+  background: var(--sky-light);
+  color: var(--sky-deep);
+}
+
+/* --ink-muted on --sand-dark is only 3.88:1, so the ended chip uses --ink-soft
+   (8.31:1). De-emphasis here comes from the flat grey fill, not from a lighter
+   text colour. */
+.seasonal-status.is-ended {
+  background: var(--sand-dark);
+  color: var(--ink-soft);
+}
+
+/* Past events stay listed — the section bills itself as the full-year calendar,
+   and these are annual, so a reader planning next year still wants them. They
+   are just visibly de-emphasised so nothing reads as current when it isn't.
+   Deliberately NOT `opacity`: a blanket opacity multiplies every nested text
+   colour and dropped this whole block under AA (measured 2.12-3.55:1). The
+   de-emphasis is a muted background plus the struck-through title instead, so
+   every string inside keeps its own compliant contrast. */
+.seasonal-row.is-past {
+  background: var(--sand);
+  border-color: var(--sand-dark);
+}
+
+/* The sand background costs a little contrast (--ink-muted goes 4.65:1 -> 4.42:1
+   against it), so the muted meta text steps up to --ink-soft inside past rows. */
+.seasonal-row.is-past .seasonal-row-dates,
+.seasonal-row.is-past .seasonal-row-cost {
+  color: var(--ink-soft);
+}
+
+.seasonal-row.is-past .seasonal-row-title {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-muted);
+  text-decoration-thickness: 1px;
+}
+
 /* ===== SECTIONS ===== */
 .section {
   padding: var(--space-xl) var(--space-md);
