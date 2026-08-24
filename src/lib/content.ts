@@ -594,7 +594,6 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: 'Any height',
     heightInches: null,
-    closing: 'Closed Aug 8-20; returns Aug 21 as Holiday overlay',
     age2: 'skip',
     age4: 'maybe',
     age6: 'must-do',

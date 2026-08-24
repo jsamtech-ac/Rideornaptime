@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-08-17",
-  "lastUpdated": "2026-08-17T16:35:02Z",
+  "weekOf": "2026-08-24",
+  "lastUpdated": "2026-08-24T17:51:23Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Coco boat ride coming to DCA — no height requirement, built for young kids",
-      "tag": "🚨 D23",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "headline": "Halloween Time is active — best family crowd window opens this week",
+      "tag": "🎃 Live Now",
+      "link": "/news/disneyland-news-families-week-of-august-24-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Tomorrowland getting full reimagining — Avatar delayed as trade-off",
-      "tag": "🎢 D23",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "headline": "Minnie & Friends Breakfast at Plaza Inn closed through late September",
+      "tag": "⚠️ Heads Up",
+      "link": "/news/disneyland-news-families-week-of-august-24-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Halloween Time launches August 21 — Oogie Boogie Bash starts tomorrow",
-      "tag": "🎃 Friday",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "headline": "Disneyland Hotel discount through September 8 — real savings",
+      "tag": "🏨 30% Off",
+      "link": "/news/disneyland-news-families-week-of-august-24-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Remember Dreams Come True fireworks, World of Color, Magic Happens all return",
-      "tag": "✨ 2027",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "headline": "Kids' Summer Tickets 2 weeks left — $50/day for ages 3-9",
+      "tag": "💰 Ends Sept 7",
+      "link": "/news/disneyland-news-families-week-of-august-24-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Tiana's Bayou Adventure confirmed for Disneyland November 15",
-      "tag": "🎃 Nov 15",
-      "link": "/news/disneyland-news-families-week-of-august-17-2026",
+      "headline": "$104 September weekday tickets on 10 specific dates",
+      "tag": "📅 Sept Deal",
+      "link": "/news/disneyland-news-families-week-of-august-24-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-august-17-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-august-24-2026"
 }
