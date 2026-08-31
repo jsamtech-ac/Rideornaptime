@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-08-24",
-  "lastUpdated": "2026-08-24T17:51:23Z",
+  "weekOf": "2026-08-31",
+  "lastUpdated": "2026-08-31T17:48:42Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Halloween Time is active — best family crowd window opens this week",
-      "tag": "🎃 Live Now",
-      "link": "/news/disneyland-news-families-week-of-august-24-2026",
+      "headline": "2027 Disneyland packages open — lock in prices before October 7 hike",
+      "tag": "🚨 Book Now",
+      "link": "/news/disneyland-news-families-week-of-august-31-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Minnie & Friends Breakfast at Plaza Inn closed through late September",
-      "tag": "⚠️ Heads Up",
-      "link": "/news/disneyland-news-families-week-of-august-24-2026",
+      "headline": "Holidays at Disneyland full lineup — Santa moves to Toontown Trolley Barn",
+      "tag": "🎄 Nov 13",
+      "link": "/news/disneyland-news-families-week-of-august-31-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Disneyland Hotel discount through September 8 — real savings",
-      "tag": "🏨 30% Off",
-      "link": "/news/disneyland-news-families-week-of-august-24-2026",
+      "headline": "Silly Symphony Swings back after 4 months down",
+      "tag": "✅ Reopened",
+      "link": "/news/disneyland-news-families-week-of-august-31-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Kids' Summer Tickets 2 weeks left — $50/day for ages 3-9",
-      "tag": "💰 Ends Sept 7",
-      "link": "/news/disneyland-news-families-week-of-august-24-2026",
+      "headline": "Kids' Summer Tickets expire September 7 — final call",
+      "tag": "💰 1 Week Left",
+      "link": "/news/disneyland-news-families-week-of-august-31-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "$104 September weekday tickets on 10 specific dates",
-      "tag": "📅 Sept Deal",
-      "link": "/news/disneyland-news-families-week-of-august-24-2026",
+      "headline": "Halloween Time one week in — Plaza de la Familia is the family gem",
+      "tag": "🎃 Update",
+      "link": "/news/disneyland-news-families-week-of-august-31-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-august-24-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-august-31-2026"
 }
