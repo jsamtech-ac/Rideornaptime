@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-08-31",
-  "lastUpdated": "2026-08-31T17:48:42Z",
+  "weekOf": "2026-09-07",
+  "lastUpdated": "2026-09-08T04:31:15Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "2027 Disneyland packages open — lock in prices before October 7 hike",
-      "tag": "🚨 Book Now",
-      "link": "/news/disneyland-news-families-week-of-august-31-2026",
+      "headline": "10 Tier 0 weekdays in September — cheapest tickets of the season",
+      "tag": "💰 Best Value",
+      "link": "/news/disneyland-news-families-week-of-september-7-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Holidays at Disneyland full lineup — Santa moves to Toontown Trolley Barn",
-      "tag": "🎄 Nov 13",
-      "link": "/news/disneyland-news-families-week-of-august-31-2026",
+      "headline": "Kids' Summer Tickets expire today — deal ends 9/7",
+      "tag": "⏰ Last Day",
+      "link": "/news/disneyland-news-families-week-of-september-7-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Silly Symphony Swings back after 4 months down",
-      "tag": "✅ Reopened",
-      "link": "/news/disneyland-news-families-week-of-august-31-2026",
+      "headline": "Anzellan droidsmiths coming to Droid Depot — walk-up Star Wars for young kids",
+      "tag": "⭐ New",
+      "link": "/news/disneyland-news-families-week-of-september-7-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Kids' Summer Tickets expire September 7 — final call",
-      "tag": "💰 1 Week Left",
-      "link": "/news/disneyland-news-families-week-of-august-31-2026",
+      "headline": "October 7 ticket price hike expected — lock in prices now",
+      "tag": "🚨 30 Days Out",
+      "link": "/news/disneyland-news-families-week-of-september-7-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Halloween Time one week in — Plaza de la Familia is the family gem",
-      "tag": "🎃 Update",
-      "link": "/news/disneyland-news-families-week-of-august-31-2026",
+      "headline": "Oogie Boogie Bash almost sold out — last chance for 2026 tickets",
+      "tag": "🎃 Nearly Gone",
+      "link": "/news/disneyland-news-families-week-of-september-7-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-august-31-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-september-7-2026"
 }
