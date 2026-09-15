@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-09-07",
-  "lastUpdated": "2026-09-08T04:31:15Z",
+  "weekOf": "2026-09-14",
+  "lastUpdated": "2026-09-15T16:48:03Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "10 Tier 0 weekdays in September — cheapest tickets of the season",
-      "tag": "💰 Best Value",
-      "link": "/news/disneyland-news-families-week-of-september-7-2026",
+      "headline": "Mad Tea Party down indefinitely — no reopen date announced",
+      "tag": "⚠️ Closes Today",
+      "link": "/news/disneyland-news-families-week-of-september-14-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Kids' Summer Tickets expire today — deal ends 9/7",
-      "tag": "⏰ Last Day",
-      "link": "/news/disneyland-news-families-week-of-september-7-2026",
+      "headline": "Pixar Place Hotel pool fully closed through September 25",
+      "tag": "🏨 Hotel Alert",
+      "link": "/news/disneyland-news-families-week-of-september-14-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Anzellan droidsmiths coming to Droid Depot — walk-up Star Wars for young kids",
-      "tag": "⭐ New",
-      "link": "/news/disneyland-news-families-week-of-september-7-2026",
+      "headline": "Minnie & Friends Breakfast back at Plaza Inn — book now",
+      "tag": "✅ Returns Sept 20",
+      "link": "/news/disneyland-news-families-week-of-september-14-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "October 7 ticket price hike expected — lock in prices now",
-      "tag": "🚨 30 Days Out",
-      "link": "/news/disneyland-news-families-week-of-september-7-2026",
+      "headline": "Oogie Boogie Bash gone for 2026 — D23 Gold event Sept 27 last option",
+      "tag": "🎃 Sold Out",
+      "link": "/news/disneyland-news-families-week-of-september-14-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Oogie Boogie Bash almost sold out — last chance for 2026 tickets",
-      "tag": "🎃 Nearly Gone",
-      "link": "/news/disneyland-news-families-week-of-september-7-2026",
+      "headline": "October 7 ticket price hike expected — lock in prices now",
+      "tag": "🚨 23 Days Out",
+      "link": "/news/disneyland-news-families-week-of-september-14-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-september-7-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-september-14-2026"
 }
