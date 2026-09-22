@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-09-14",
-  "lastUpdated": "2026-09-15T16:48:03Z",
+  "weekOf": "2026-09-21",
+  "lastUpdated": "2026-09-22T05:36:22Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Mad Tea Party down indefinitely — no reopen date announced",
-      "tag": "⚠️ Closes Today",
-      "link": "/news/disneyland-news-families-week-of-september-14-2026",
+      "headline": "Bluey's Best Day Ever cuts to 5 days a week. Check app the morning of visit",
+      "tag": "⚠️ Sept 28",
+      "link": "/news/disneyland-news-families-week-of-september-21-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Pixar Place Hotel pool fully closed through September 25",
-      "tag": "🏨 Hotel Alert",
-      "link": "/news/disneyland-news-families-week-of-september-14-2026",
+      "headline": "Get Away Today Adults at Kids Prices deal expires September 22",
+      "tag": "💰 Ends Tomorrow",
+      "link": "/news/disneyland-news-families-week-of-september-21-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Minnie & Friends Breakfast back at Plaza Inn — book now",
-      "tag": "✅ Returns Sept 20",
-      "link": "/news/disneyland-news-families-week-of-september-14-2026",
+      "headline": "October 7 ticket price hike expected. Book before then to lock in",
+      "tag": "🚨 16 Days Out",
+      "link": "/news/disneyland-news-families-week-of-september-21-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Oogie Boogie Bash gone for 2026 — D23 Gold event Sept 27 last option",
-      "tag": "🎃 Sold Out",
-      "link": "/news/disneyland-news-families-week-of-september-14-2026",
+      "headline": "Minnie & Friends Breakfast at Plaza Inn returned September 20",
+      "tag": "✅ Back",
+      "link": "/news/disneyland-news-families-week-of-september-21-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "October 7 ticket price hike expected — lock in prices now",
-      "tag": "🚨 23 Days Out",
-      "link": "/news/disneyland-news-families-week-of-september-14-2026",
+      "headline": "Tomorrowland rides Autopia and Nemo Sub potentially at risk. Ride now",
+      "tag": "👀 Watch This",
+      "link": "/news/disneyland-news-families-week-of-september-21-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-september-14-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-september-21-2026"
 }
