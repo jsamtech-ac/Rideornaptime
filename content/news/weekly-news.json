@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-09-21",
-  "lastUpdated": "2026-09-22T05:36:22Z",
+  "weekOf": "2026-09-28",
+  "lastUpdated": "2026-09-28T06:15:19Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Bluey's Best Day Ever cuts to 5 days a week. Check app the morning of visit",
-      "tag": "⚠️ Sept 28",
-      "link": "/news/disneyland-news-families-week-of-september-21-2026",
+      "headline": "October 7 ticket price hike expected. Book before then",
+      "tag": "🚨 9 Days Out",
+      "link": "/news/disneyland-news-families-week-of-september-28-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Get Away Today Adults at Kids Prices deal expires September 22",
-      "tag": "💰 Ends Tomorrow",
-      "link": "/news/disneyland-news-families-week-of-september-21-2026",
+      "headline": "Monsters Inc. closes in 2027 for Avatar land. Ride while you can",
+      "tag": "⚠️ Last Chance",
+      "link": "/news/disneyland-news-families-week-of-september-28-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "October 7 ticket price hike expected. Book before then to lock in",
-      "tag": "🚨 16 Days Out",
-      "link": "/news/disneyland-news-families-week-of-september-21-2026",
+      "headline": "Coco ride details revealed. No height requirement, opening 2028-2029",
+      "tag": "🎨 New Details",
+      "link": "/news/disneyland-news-families-week-of-september-28-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Minnie & Friends Breakfast at Plaza Inn returned September 20",
-      "tag": "✅ Back",
-      "link": "/news/disneyland-news-families-week-of-september-21-2026",
+      "headline": "Bluey's Best Day Ever expanded to Thursday-Monday, not cut",
+      "tag": "✅ Correction",
+      "link": "/news/disneyland-news-families-week-of-september-28-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Tomorrowland rides Autopia and Nemo Sub potentially at risk. Ride now",
-      "tag": "👀 Watch This",
-      "link": "/news/disneyland-news-families-week-of-september-21-2026",
+      "headline": "Halloween Time entering final month. Crowds climb weekly from here",
+      "tag": "🎃 Week 6",
+      "link": "/news/disneyland-news-families-week-of-september-28-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-september-21-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-september-28-2026"
 }

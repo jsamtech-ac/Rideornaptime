@@ -788,7 +788,7 @@ export const RIDES: Ride[] = [
     park: 'DCA',
     height: 'Any height',
     heightInches: null,
-    closing: 'Closing in 2027 (to make way for an Avatar-themed land)',
+    closing: 'Last chance — closing in 2027 for the Avatar (Pandora) land',
     age2: 'must-do',
     age4: 'must-do',
     age6: 'must-do',
