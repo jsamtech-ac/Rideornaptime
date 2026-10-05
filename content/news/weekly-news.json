@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-09-28",
-  "lastUpdated": "2026-09-28T06:15:19Z",
+  "weekOf": "2026-10-05",
+  "lastUpdated": "2026-10-05T05:22:46Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "October 7 ticket price hike expected. Book before then",
-      "tag": "🚨 9 Days Out",
-      "link": "/news/disneyland-news-families-week-of-september-28-2026",
+      "headline": "October 7 ticket price hike expected. Buy tickets by Tuesday night",
+      "tag": "🚨 2 Days Out",
+      "link": "/news/disneyland-news-families-week-of-october-5-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Monsters Inc. closes in 2027 for Avatar land. Ride while you can",
-      "tag": "⚠️ Last Chance",
-      "link": "/news/disneyland-news-families-week-of-september-28-2026",
+      "headline": "$329.99 2-Day Park Hopper with Lightning Lane. Saves $233",
+      "tag": "💰 Costco Deal",
+      "link": "/news/disneyland-news-families-week-of-october-5-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Coco ride details revealed. No height requirement, opening 2028-2029",
-      "tag": "🎨 New Details",
-      "link": "/news/disneyland-news-families-week-of-september-28-2026",
+      "headline": "7 October perks for Disneyland Hotel guests. Mostly unadvertised",
+      "tag": "🏨 Hotel Perks",
+      "link": "/news/disneyland-news-families-week-of-october-5-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Bluey's Best Day Ever expanded to Thursday-Monday, not cut",
-      "tag": "✅ Correction",
-      "link": "/news/disneyland-news-families-week-of-september-28-2026",
+      "headline": "Winnie the Pooh Hunny Bee Sipper pulled from parks. Defective straw",
+      "tag": "⚠️ Recall",
+      "link": "/news/disneyland-news-families-week-of-october-5-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Halloween Time entering final month. Crowds climb weekly from here",
-      "tag": "🎃 Week 6",
-      "link": "/news/disneyland-news-families-week-of-september-28-2026",
+      "headline": "Monsters Inc. 25th anniversary pins drop. Ride closes in 2027",
+      "tag": "📌 Last Chance",
+      "link": "/news/disneyland-news-families-week-of-october-5-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-september-28-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-october-5-2026"
 }
