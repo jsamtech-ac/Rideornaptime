@@ -256,10 +256,11 @@ export default function HiddenGemsPage() {
         </div>
 
         <div className="callout pro" style={{ marginTop: '1.5rem' }}>
-          <div className="callout-label">More Coming</div>
+          <div className="callout-label">Keep Going</div>
           <p>
-            Adding soon: best fireworks viewing spots, best places to sit and eat, and what to do
-            when it rains. Got a hidden gem? <Link href="/">Back to the guide hub</Link>.
+            Want a calm spot for the nighttime show? See our{' '}
+            <Link href="/fireworks">fireworks viewing spots</Link>. Coming soon: best places to sit
+            and eat, and what to do when it rains. <Link href="/">Back to the guide hub</Link>.
           </p>
         </div>
       </section>

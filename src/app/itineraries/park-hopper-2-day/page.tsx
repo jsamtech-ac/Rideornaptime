@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: 'Where do you watch the nighttime shows on a Park Hopper day?',
-    a: "Day 1: World of Color at DCA (join the virtual queue at 12:00 PM). Day 2: Disneyland fireworks — Main Street if you want the castle projection show, Galaxy's Edge for the easier exit with a stroller. Don't try to do both shows in one night.",
+    a: "Day 1: World of Color at DCA (join the virtual queue at 12:00 PM; check the app for showtimes). Day 2: Disneyland fireworks if the app calendar shows a show that night — they're seasonal right now, not nightly — from Main Street for the castle view or Galaxy's Edge for the easier exit with a stroller. No fireworks on your Disneyland night? Swap the order and give DCA the second night. Don't try to do both shows in one night.",
   },
 ]
 

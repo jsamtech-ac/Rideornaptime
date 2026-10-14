@@ -17,9 +17,9 @@ import {
   type SeasonalEvent,
 } from '@/lib/content'
 
-const META_TITLE = 'Disneyland 2026 Events & Best Months to Visit with Kids'
+const META_TITLE = 'Disneyland 2026–2027 Events & Best Months to Visit with Kids'
 const META_DESCRIPTION =
-  'The 2026 Disneyland family planner: every seasonal event (Food & Wine, Halloween Time, Oogie Boogie Bash, Holidays) with exact dates and when to book.'
+  'The Disneyland family planner for late 2026 and 2027: Holidays, Lunar New Year, Food & Wine, the 2027 fireworks and parade returns, Halloween Time — with dates and when to book.'
 
 export const metadata: Metadata = {
   title: META_TITLE,
@@ -39,20 +39,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'When is the best time to go to Disneyland with kids in 2026?',
-    a: 'Late September and October weekdays are the sweet spot — Halloween Time decor is fully up, Oogie Boogie Bash runs select nights, and crowds are among the lowest of the year now that schools are back. Honorable mentions: early May (pre-summer warmth, weekdays), late April (after spring break), and Jan 5–20 (the post-holiday lull with the 70th finale still running).',
+    q: 'When is the best time to go to Disneyland with kids in 2026 and 2027?',
+    a: 'Late September and October weekdays are the sweet spot — Halloween Time decor is fully up, Oogie Boogie Bash runs select nights, and crowds are among the lowest of the year now that schools are back. Honorable mentions: early May (pre-summer warmth, weekdays), late April (after spring break), and Jan 5–21 (the post-holiday lull). If nighttime shows matter to you, aim for February 2027 or later, when Remember… Dreams Come True and World of Color return.',
   },
   {
-    q: 'What months should I avoid Disneyland in 2026?',
-    a: "July (peak heat plus peak summer crowds), early-to-mid August before schools restart, all of March (rolling spring break across the US), Thanksgiving week (Nov 23–29), and especially Dec 20 through Jan 1 — the parks regularly hit capacity and phase-close entry. Presidents' Day weekend (Feb 14–16) is a stealth-crowded week too. Late August can actually be a sweet spot once most districts are back in session.",
+    q: 'What months should I avoid Disneyland?',
+    a: "July (peak heat plus peak summer crowds), early-to-mid August before schools restart, all of March (rolling spring break across the US), Thanksgiving week (Nov 23–29), and especially Dec 20 through Jan 1 — the parks regularly hit capacity and phase-close entry. Presidents' Day weekend (Feb 13–15, 2027) is a stealth-crowded week too. Late August can actually be a sweet spot once most districts are back in session.",
   },
   {
     q: 'What are the 2026 Oogie Boogie Bash dates and how much are tickets?',
-    a: "Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It's a separately-ticketed hard-ticket party (6pm–11pm). 2026 tickets run $139–$199 depending on date — $139 on select August nights, $159 the standard price for most September and October dates, up to $199 on peak Halloween-weekend nights. Tickets went on sale June 18, 2026 (with a Magic Key pre-sale first). Popular dates sell out within days — book day-one of the on-sale window.",
+    a: "Oogie Boogie Bash runs 33 select nights from Aug 18 to Oct 31, 2026 at Disney California Adventure. It's a separately-ticketed hard-ticket party (6pm–11pm). 2026 tickets run $139–$199 depending on date — $139 on select August nights, $159 the standard price for most September and October dates, up to $199 on peak Halloween-weekend nights. Tickets went on sale June 18, 2026 (with a Magic Key pre-sale first), and every October night sold out. 2027 dates aren't announced yet — expect an early-summer on-sale and book day one.",
   },
   {
     q: 'When does Halloween Time start at Disneyland in 2026?',
-    a: "Halloween Time runs Aug 21 through Oct 31, 2026 and is included with park admission — no separate ticket needed. You'll get the Haunted Mansion Holiday overlay, the giant Mickey jack-o'-lantern on Main Street, Cars Land Haul-O-Ween, pumpkin beignets, and Space Mountain Ghost Galaxy. Mid-September weekdays are the highest-value window.",
+    a: "Halloween Time runs Aug 21 through Oct 31, 2026 and is included with park admission — no separate ticket needed. You'll get the Haunted Mansion Holiday overlay, the giant Mickey jack-o'-lantern on Main Street, Cars Land Haul-O-Ween, pumpkin beignets, the Mickey & Friends Halloween Cavalcade, Space Mountain Ghost Galaxy, and Halloween Screams fireworks on Fridays through Sundays. Mid-September weekdays are the highest-value window.",
   },
   {
     q: 'When does the Disneyland holiday season start in 2026?',
@@ -60,15 +60,15 @@ const faqs = [
   },
   {
     q: "What is Bluey's Best Day Ever at Disneyland?",
-    a: "A new live show debuting March 22, 2026 at Fantasyland Theatre. Bluey and Bingo appear with a live cast for musical numbers, Keepy Uppy, and a walk-through Gnome Village and Fairy Garden play space. Included with park admission. It's an absolute must for ages 2–6 who watch the show.",
+    a: "A live show that opened March 22, 2026 at Fantasyland Theatre. Bluey and Bingo appear with a live cast for musical numbers, Keepy Uppy, and a walk-through Gnome Village and Fairy Garden play space. Included with park admission, and it now runs Thursday through Monday (dark Tuesdays and Wednesdays). It's an absolute must for ages 2–6 who watch the show.",
   },
   {
     q: 'Is the Food & Wine Festival at Disneyland good for kids?',
-    a: 'Yes — it\'s included with DCA admission, and food is à la carte at small-plate booths ($7–$12). There\'s a "Jr. Chef" booth each year with kid-focused bites. The festival runs March 6 – April 27, 2026. It overlaps with spring break mid-March to mid-April, so aim for the first week of March or the last week of April.',
+    a: "Yes — it's included with DCA admission, and food is à la carte at small-plate booths ($7–$12). There's a \"Jr. Chef\" booth each year with kid-focused bites. The 2026 festival ran March 6 – April 27; 2027 dates aren't announced yet. It overlaps with spring break, so aim for the first week of March or the last week of April.",
   },
   {
-    q: 'Is the 70th anniversary still running in 2026?',
-    a: 'Yes, but it ends August 9, 2026. Tapestry of Happiness (projections on "it\'s a small world"), Paint the Night parade, and World of Color — Happiness all retire at that point. If you want to catch the 70th nighttime shows, book a trip before early August.',
+    q: 'Are there fireworks and parades at Disneyland right now?',
+    a: 'Only seasonally. The 70th anniversary ended Aug 9, 2026, and Paint the Night and Wondrous Journeys ended Aug 20. Through Oct 31 there are Halloween Screams fireworks (Fridays–Sundays) and a Halloween cavalcade; Nov 13 – Jan 6 brings Believe… in Holiday Magic and the A Christmas Fantasy parade. In February 2027, Remember… Dreams Come True and World of Color return, and the Magic Happens parade comes back in summer 2027.',
   },
   {
     q: 'Is September really the best-kept secret for Disneyland?',
@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: 'How often is this page updated?',
-    a: `This page is reviewed quarterly and before each major event window. It was last reviewed ${new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}. When Disney updates the 2026 calendar or confirms new dates, we refresh the event cards, dates, and month-by-month notes.`,
+    a: `This page is reviewed quarterly and before each major event window. It was last reviewed ${new Date(`${SEASONAL_LAST_REVIEWED}T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}. When Disney confirms new dates for 2027, we refresh the event cards, dates, and month-by-month notes.`,
   },
 ]
 
@@ -93,17 +93,17 @@ const VERDICT_LABEL: Record<SeasonalEvent['familyVerdict'], string> = {
 }
 
 const DEEP_DIVE_SLUGS: EventSlug[] = [
-  'disneyland-70th',
-  'lunar-new-year',
-  'celebrate-gospel',
-  'food-and-wine',
   'bluey',
-  'after-dark',
   'halloween-time',
   'oogie-boogie-bash',
   'plaza-de-la-familia',
   'holidays',
   'festival-of-holidays',
+  'lunar-new-year',
+  'nighttime-returns',
+  'after-dark',
+  'food-and-wine',
+  'magic-happens',
 ]
 
 export default function SeasonalPage() {
@@ -135,7 +135,7 @@ export default function SeasonalPage() {
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
         path="/seasonal"
-        name="Disneyland 2026 Seasonal Events"
+        name="Disneyland 2026–2027 Seasonal Events"
         items={[...EVENTS_2026]
           .sort((a, b) => a.start.localeCompare(b.start))
           .map((e) => ({
@@ -150,10 +150,10 @@ export default function SeasonalPage() {
       <header className="hero hero--home">
         <Image src="/seasonal.jpg" alt="" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-content">
-          <div className="hero-badge">📅 2026 Planner</div>
-          <h1>Disneyland 2026: Events, Crowds & Best Months to Visit</h1>
+          <div className="hero-badge">📅 2026–2027 Planner</div>
+          <h1>Disneyland 2026–2027: Events, Crowds & Best Months to Visit</h1>
           <p className="hero-sub">
-            Every seasonal event with exact 2026 dates, family-specific verdicts, and the crowd +
+            Every seasonal event from now through 2027, family-specific verdicts, and the crowd +
             weather truth for every month. The planner we wish we&apos;d had.
           </p>
           <UpdatedBadge date={SEASONAL_LAST_REVIEWED} />
@@ -163,10 +163,10 @@ export default function SeasonalPage() {
       <section className="section">
         <div className="section-header">
           <span className="section-icon">🎯</span>
-          <h2>The 2026 Picture</h2>
+          <h2>The Big Picture</h2>
         </div>
         <p className="section-intro">
-          Before the month-by-month grind, here&apos;s the big-picture read on the year.
+          Before the month-by-month grind, here&apos;s the big-picture read on the next 12 months.
         </p>
 
         <div className="tip-card">
@@ -176,9 +176,9 @@ export default function SeasonalPage() {
           </div>
           <p>
             <strong>Late September and October weekdays</strong> — lowest crowds of the year paired
-            with full Halloween Time decor. Runner-ups: <strong>Jan 5–20</strong> (post-holiday
-            lull, 70th finale still running), <strong>late April</strong> (after spring break, Food
-            &amp; Wine in full swing), and <strong>early May weekdays</strong>.
+            with full Halloween Time decor. Runner-ups: <strong>Jan 5–21</strong> (post-holiday
+            lull), <strong>late April</strong> (after spring break, Food &amp; Wine in full swing),
+            and <strong>early May weekdays</strong>.
           </p>
         </div>
 
@@ -191,7 +191,7 @@ export default function SeasonalPage() {
             <strong>All of March</strong> (rolling US spring break), <strong>July</strong> (peak
             heat + peak crowds), and <strong>Dec 20 – Jan 1</strong> — the parks regularly hit
             capacity and stop letting people in. Also watch out for{' '}
-            <strong>Presidents&apos; Day weekend (Feb 14–16)</strong> and{' '}
+            <strong>Presidents&apos; Day weekend (Feb 13–15, 2027)</strong> and{' '}
             <strong>Thanksgiving week (Nov 23–29)</strong>.
           </p>
         </div>
@@ -199,14 +199,14 @@ export default function SeasonalPage() {
         <div className="tip-card">
           <div className="tip-card-header">
             <div className="tip-card-icon sky">✨</div>
-            <h3>What&apos;s new in 2026</h3>
+            <h3>What&apos;s next</h3>
           </div>
           <p>
-            <strong>Bluey&apos;s Best Day Ever!</strong> debuts March 22 at Fantasyland Theatre.{' '}
-            <strong>Oogie Boogie Bash expands to 33 nights</strong> (Aug 18 – Oct 31). The{' '}
-            <strong>Disneyland 70th Celebration wraps Aug 9</strong> — last chance for Paint the
-            Night, Tapestry of Happiness, and World of Color — Happiness.{' '}
-            <strong>Holidays start Nov 13</strong> and run through Jan 6, 2027.
+            <strong>Holidays start Nov 13</strong> and run through Jan 6, 2027, with Santa in a new
+            Toontown spot. In <strong>February 2027</strong>, Remember… Dreams Come True and World
+            of Color return (the 70th-anniversary shows ended in August).{' '}
+            <strong>Magic Happens</strong> is back in summer 2027. Bluey&apos;s Best Day Ever! keeps
+            running Thursday–Monday.
           </p>
         </div>
       </section>
@@ -214,10 +214,11 @@ export default function SeasonalPage() {
       <section className="section">
         <div className="section-header">
           <span className="section-icon">🗓️</span>
-          <h2>2026 Event Timeline</h2>
+          <h2>Event Timeline: Now Through 2027</h2>
         </div>
         <p className="section-intro">
-          Every seasonal event at the Disneyland Resort in 2026, in chronological order. Click any
+          Every seasonal event at the Disneyland Resort from now through 2027, in chronological
+          order. Dates marked TBA follow the 2026 pattern until Disney announces them. Click any
           event for the deep-dive below.
         </p>
 
@@ -334,7 +335,8 @@ export default function SeasonalPage() {
           <h2>Month-by-Month Breakdown</h2>
         </div>
         <p className="section-intro">
-          Crowds, weather, and active events for every month of 2026 — the real planning view.
+          Crowds, weather, and active events for each month's next occurrence (Nov–Dec 2026, then
+          2027) — the real planning view.
         </p>
 
         <div className="season-grid">
@@ -411,9 +413,9 @@ export default function SeasonalPage() {
         <div className="callout warning">
           <div className="callout-label">How we keep this fresh</div>
           <p>
-            Dates come from the official Disneyland 2026 press calendar, cross-checked with Disney
-            Parks Blog and Disney Tourist Blog. We review this page quarterly and before each major
-            event window. Last reviewed: <strong>{reviewedFormatted}</strong>. Always confirm on the
+            Dates come from official Disneyland press releases, cross-checked with Disney Parks Blog
+            and Disney Tourist Blog. We review this page quarterly and before each major event
+            window. Last reviewed: <strong>{reviewedFormatted}</strong>. Always confirm on the
             official Disney site before booking.
           </p>
         </div>
@@ -424,7 +426,7 @@ export default function SeasonalPage() {
           <span className="section-icon">❓</span>
           <h2>Frequently Asked Questions</h2>
         </div>
-        <p className="section-intro">The 2026 Disneyland questions families ask us most often.</p>
+        <p className="section-intro">The Disneyland timing questions families ask us most often.</p>
         <div className="faq-list">
           {faqs.map((f, i) => (
             <details key={i} className="faq-item">

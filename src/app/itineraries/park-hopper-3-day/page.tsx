@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'How do you split the nighttime shows across three Park Hopper nights?',
-    a: "Day 1: World of Color at DCA. Day 2: Disneyland fireworks from Main Street for the full castle projection show. Day 3: Disneyland fireworks from Galaxy's Edge — same fireworks with John Williams music, way easier exit with tired kids.",
+    a: "Day 1: World of Color at DCA. Days 2 and 3: Disneyland fireworks — but only on nights the app calendar shows a show (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027). First show night from Main Street for the castle view, the next from Galaxy's Edge for an easier exit with tired kids. Only one fireworks night? Give the other evening to World of Color.",
   },
 ]
 
@@ -83,7 +83,7 @@ export default function ParkHopperThreeDayPage() {
         <p className="hero-sub">
           Three Park Hopper days is the most flexible trip you can plan. Day 1 marquee. Day 2 deep
           cuts. Day 3 is the kid's pick — character breakfast, re-rides, and the castle fireworks
-          finale.
+          finale on a show night.
         </p>
       </header>
 

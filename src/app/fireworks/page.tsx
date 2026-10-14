@@ -11,13 +11,13 @@ import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
 const PAGE_FILE = 'src/app/fireworks/page.tsx'
 
 export const metadata: Metadata = {
-  title: "Best Disneyland Fireworks Viewing Spots (2026) — A Dad's Two Favorites",
+  title: "Disneyland Fireworks 2026–2027: Best Viewing Spots & What's Showing",
   description:
     "Skip the Main Street crush. My two favorite Disneyland fireworks spots — Star Wars: Galaxy's Edge and It's a Small World — with maps showing exactly where to stand.",
   alternates: { canonical: `${SITE_URL}/fireworks` },
   openGraph: {
     url: `${SITE_URL}/fireworks`,
-    title: 'Best Disneyland Fireworks Viewing Spots (2026)',
+    title: "Disneyland Fireworks 2026–2027: Best Viewing Spots & What's Showing",
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
@@ -33,11 +33,15 @@ const faqs = [
   },
   {
     q: 'Are Disneyland fireworks on every night?',
-    a: 'No — fireworks do not run every night. The schedule changes by season and weather. Always check the official Disneyland calendar or the Disneyland app the day of your visit before building your evening plan around them.',
+    a: 'No. Right now fireworks are seasonal: Halloween Screams runs Fridays through Sundays through Oct 31, 2026 (some nights are projection-only), and Believe… in Holiday Magic runs during the holidays, Nov 13, 2026 – Jan 6, 2027. Remember… Dreams Come True returns in February 2027. Weather can cancel any show, so check the Disneyland app the day of your visit.',
+  },
+  {
+    q: 'What fireworks show is playing at Disneyland right now?',
+    a: "Through Oct 31, 2026: Halloween Screams (Fri–Sun). From Nov 13, 2026 to Jan 6, 2027: Believe… in Holiday Magic, with snow on Main Street. From February 2027: Remember… Dreams Come True, with new projections on Main Street, the it's a small world facade, and the Rivers of America. The 70th-anniversary Wondrous Journeys show ended Aug 20, 2026.",
   },
   {
     q: "Do you see the castle projections from Galaxy's Edge or Small World?",
-    a: "No. You trade the castle projections for a much calmer viewing experience. If you have 3 days, do Galaxy's Edge or Small World twice and save Main Street for your last night for the full projection show.",
+    a: "From Galaxy's Edge, no — you trade the castle projections for a much calmer viewing experience. Small World is changing: when Remember… Dreams Come True returns in February 2027, the small world facade itself becomes a projection screen, so that plaza turns into a real show spot (and gets busier). If you have 3 days, mix the calm spots and save Main Street for your last night.",
   },
 ]
 
@@ -52,7 +56,7 @@ export default function FireworksPage() {
       />
       <ArticleJsonLd
         path="/fireworks"
-        headline={'Best Disneyland Fireworks Viewing Spots (2026)'}
+        headline={"Disneyland Fireworks 2026–2027: Best Viewing Spots & What's Showing"}
         description={
           'Where to watch Disneyland fireworks with kids — the best viewing spots, timing, and what to do when the baby is asleep.'
         }
@@ -80,6 +84,33 @@ export default function FireworksPage() {
             Fireworks don't run every night — the schedule shifts with the season, events, and
             weather. Before you plan your evening around them, check the official Disneyland
             calendar or the Disneyland app the day you visit to confirm they're actually on.
+          </p>
+        </div>
+
+        <div className="section-header">
+          <span className="section-icon">🗓️</span>
+          <h2>What's Showing (Late 2026 – 2027)</h2>
+        </div>
+
+        <div className="tip-card">
+          <p>
+            <strong>Through Oct 31, 2026 — Halloween Screams.</strong> Fridays through Sundays only,
+            and some nights run projections without fireworks. Villain-heavy and loud — great for
+            6+, a lot for nervous toddlers.
+          </p>
+          <p>
+            <strong>Nov 13, 2026 – Jan 6, 2027 — Believe… in Holiday Magic.</strong> The gentle one:
+            carols, a short show, and snow falling on Main Street afterward. The best
+            first-fireworks show for little kids.
+          </p>
+          <p>
+            <strong>Early January – February 2027 — the quiet stretch.</strong> Expect few or no
+            fireworks between the holiday show ending and the new lineup starting.
+          </p>
+          <p>
+            <strong>From February 2027 — Remember… Dreams Come True.</strong> The classic returns
+            with new projections on Main Street, the it's a small world facade, and the Rivers of
+            America. Exact start date TBA.
           </p>
         </div>
 
@@ -138,7 +169,10 @@ export default function FireworksPage() {
           </div>
           <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', opacity: 0.8 }}>
             📍 Stand in the plaza in front of the Small World facade (pink marker). Arrive 15–20
-            minutes early and you'll have your pick of spots.
+            minutes early and you'll have your pick of spots. Heads up for 2027: once Remember…
+            Dreams Come True returns, the facade gets its own projections — great show, bigger
+            crowd, so arrive 30+ minutes early. (Small World is also closed Oct 30 – Nov 12 for its
+            holiday overlay, though the plaza stays open.)
           </p>
         </div>
 
@@ -146,14 +180,34 @@ export default function FireworksPage() {
           <div className="callout-label">Pro move</div>
           <p>
             If you're doing 3 days, watch from Galaxy's Edge or Small World twice, then save Main
-            Street for your last night — you'll appreciate the full castle projection show more
-            after the calmer viewings, and you won't feel like you missed anything.
+            Street for your last night — you'll appreciate the full castle projections more after
+            the calmer viewings, and you won't feel like you missed anything.
           </p>
           <p style={{ marginTop: '0.75rem' }}>
             Slot fireworks into the evening with the{' '}
             <Link href="/itineraries">hour-by-hour Disneyland itineraries</Link>. More survival tips
             on the <Link href="/hidden-gems">Hidden Gems</Link> page, or head
             <Link href="/"> back to the guide hub</Link>.
+          </p>
+        </div>
+
+        <div className="section-header" style={{ marginTop: '2.5rem' }}>
+          <span className="section-icon">🐉</span>
+          <h2>Fantasmic! and World of Color</h2>
+        </div>
+
+        <div className="tip-card">
+          <p>
+            <strong>Fantasmic! (Disneyland, Rivers of America)</strong> currently runs weekends only
+            (Friday–Sunday) and has been missing some effects. The dragon and fire scenes scare a
+            lot of under-5s — sit toward the back of the viewing area so you can slip out.
+          </p>
+          <p>
+            <strong>World of Color (DCA, Paradise Bay)</strong> is World of Color – ONE through Oct
+            31, then <strong>World of Color – Season of Light</strong> for the holidays (Nov 13 –
+            Jan 6). An updated version of the original returns in February 2027. Get a spot through
+            the free virtual queue in the Disneyland app, or book a dining package. Front rows get
+            wet — bring a poncho for the kids.
           </p>
         </div>
       </section>

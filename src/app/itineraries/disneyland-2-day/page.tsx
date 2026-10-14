@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'What time should we arrive at Disneyland each day?',
-    a: "Day 1: park 45 minutes before posted open. Day 2: you've earned 30 minutes — park 30 minutes early. Rope drop is the single most valuable hour of each day; you can ride 4 rides in the first 45 minutes that would take 2 hours later.",
+    a: 'Day 1: park 45 minutes before posted open. Day 2: same rule — 45 minutes early, even if the rest of the morning is slower. Rope drop is the single most valuable hour of each day; you can ride 4 rides in the first 45 minutes that would take 2 hours later.',
   },
   {
     q: 'Do we need Lightning Lane Multi Pass on both days?',
@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: 'Where should we watch Disneyland fireworks on a 2-day trip?',
-    a: "Day 1: from Main Street for the full castle projection show. Day 2: from Star Wars: Galaxy's Edge — same fireworks with John Williams music, way less crowded, easier exit. The two viewing experiences are genuinely different.",
+    a: "Check the app calendar first — fireworks are seasonal right now, not nightly (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027). If both nights have a show: Day 1 from Main Street for the castle view, Day 2 from Star Wars: Galaxy's Edge — way less crowded, easier exit. If only one night does, take Main Street.",
   },
 ]
 
@@ -71,7 +71,7 @@ export default function DisneylandTwoDayPage() {
       <ArticleJsonLd
         path={PAGE_PATH}
         headline="Disneyland 2-Day Itinerary for Families (2026)"
-        description="Two days at Disneyland with kids — marquee rides, deep cuts, naps, parades, fireworks."
+        description="Two days at Disneyland with kids — marquee rides, deep cuts, naps, and nighttime shows."
         datePublished="2026-04-15"
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
@@ -82,7 +82,7 @@ export default function DisneylandTwoDayPage() {
         <p className="hero-sub">
           Two days at Disneyland is the sweet spot with young kids. Day 1 is for the headliners
           everyone-can-do. Day 2 is for the second-tier rides one-day visitors miss. Both days
-          include a real nap and end with fireworks.
+          include a real nap and end with fireworks when they're on the calendar.
         </p>
       </header>
 
