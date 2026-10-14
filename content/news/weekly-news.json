@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-10-05",
-  "lastUpdated": "2026-10-05T05:22:46Z",
+  "weekOf": "2026-10-12",
+  "lastUpdated": "2026-10-14T16:37:42Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "October 7 ticket price hike expected. Buy tickets by Tuesday night",
-      "tag": "🚨 2 Days Out",
-      "link": "/news/disneyland-news-families-week-of-october-5-2026",
+      "headline": "October 6 ticket hike landed. Lower and higher tiers unchanged",
+      "tag": "💡 Smaller Than Expected",
+      "link": "/news/disneyland-news-families-week-of-october-12-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "$329.99 2-Day Park Hopper with Lightning Lane. Saves $233",
-      "tag": "💰 Costco Deal",
-      "link": "/news/disneyland-news-families-week-of-october-5-2026",
+      "headline": "Get Away Today still has pre-hike pricing. Real last-chance window",
+      "tag": "💰 Through Oct 19",
+      "link": "/news/disneyland-news-families-week-of-october-12-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "7 October perks for Disneyland Hotel guests. Mostly unadvertised",
-      "tag": "🏨 Hotel Perks",
-      "link": "/news/disneyland-news-families-week-of-october-5-2026",
+      "headline": "Halloween Time ends October 31. Crowds climb every weekend from here",
+      "tag": "🎃 17 Days Left",
+      "link": "/news/disneyland-news-families-week-of-october-12-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Winnie the Pooh Hunny Bee Sipper pulled from parks. Defective straw",
-      "tag": "⚠️ Recall",
-      "link": "/news/disneyland-news-families-week-of-october-5-2026",
+      "headline": "Late 2027 tickets released at higher rates. No lock-in available",
+      "tag": "⚠️ 2027 Pricing",
+      "link": "/news/disneyland-news-families-week-of-october-12-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Monsters Inc. 25th anniversary pins drop. Ride closes in 2027",
-      "tag": "📌 Last Chance",
-      "link": "/news/disneyland-news-families-week-of-october-5-2026",
+      "headline": "Explore Magic Key at $999 added. Enchant Key discontinued",
+      "tag": "🔑 New Tier",
+      "link": "/news/disneyland-news-families-week-of-october-12-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-october-5-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-october-12-2026"
 }
