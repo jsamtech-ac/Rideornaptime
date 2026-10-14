@@ -1276,7 +1276,7 @@ export const EVENTS_2026: SeasonalEvent[] = [
     familyVerdict: 'worth-it',
     theme: 'castle',
     whatItIs:
-      "Separately-ticketed hard-ticket Halloween party at DCA, 6pm–11pm. Trick-or-treat trails, villains cavalcade, rare character meets (Oogie Boogie himself, villains you never see in the regular park), and — new for 2026 — Madame Leota's Swinging Wake in place of the retired Frightfully Fun Parade.",
+      "Separately-ticketed hard-ticket Halloween party at DCA, 6pm–11pm. Trick-or-treat trails, villains cavalcade, rare character meets (Oogie Boogie himself, villains you never see in the regular park), and — new for 2026 — Madame Leota's Swinging Wake in place of the Frightfully Fun Parade (paused for 2026 while Coco construction blocks the route).",
     kidNotes:
       'Best for ages 5+. Costumes are encouraged — kids can wear them inside the park (adults have rules, check the app). Expect to walk 3–5 miles in 5 hours; bring snacks for early-evening hunger before the candy stations open. Sells out early — book day-one of the on-sale window.',
     ctaCampaign: 'event_oogieboogie',

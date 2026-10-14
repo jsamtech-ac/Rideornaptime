@@ -105,7 +105,7 @@ export default function FoodPage() {
           <div className="callout-label">Character Dining</div>
           <p>
             If your kids want to meet characters, book a character breakfast at Plaza Inn or
-            Storyteller Cafe (Grand Californian Hotel). You'll meet multiple characters during the
+            Storytellers Café (Grand Californian Hotel). You'll meet multiple characters during the
             meal without standing in separate 30-minute lines. Book in advance — but people cancel
             within 24 hours, so keep checking the app if nothing's available. Full character
             locations and timing in the{' '}

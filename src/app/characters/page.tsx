@@ -9,15 +9,13 @@ import TicketsCTA from '@/components/TicketsCTA'
 import CharacterFinder from '@/components/CharacterFinder'
 import DeferredMount from '@/components/DeferredMount'
 import { SITE_URL } from '@/lib/content'
-import { characters, RELIABILITY_LABEL } from '@/data/characters'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-
-const PAGE_FILE = 'src/app/characters/page.tsx'
+import UpdatedBadge from '@/components/UpdatedBadge'
+import { characters, CHARACTERS_LAST_REVIEWED, RELIABILITY_LABEL } from '@/data/characters'
 
 export const metadata: Metadata = {
   title: 'Disneyland Characters 2026: Where to Meet Every Character with Kids',
   description:
-    'Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8. Plus Mando & Grogu.',
+    'Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8. Plus Bluey, Santa, and the new Star Wars lineup.',
   alternates: { canonical: `${SITE_URL}/characters` },
   openGraph: {
     url: `${SITE_URL}/characters`,
@@ -28,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Ride or Naptime',
     locale: 'en_US',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: `${CHARACTERS_LAST_REVIEWED}T00:00:00.000Z`,
     authors: ['Ride or Naptime'],
   },
 }
@@ -44,7 +42,7 @@ const faqsGeneral = [
   },
   {
     q: 'What is the best Disneyland character dining?',
-    a: "Plaza Inn character breakfast at Disneyland is the standout — Minnie and friends rotate through the table and Plaza Inn already serves the best food in the park. If your kid is princess-obsessed, the actual princess meal is Disney Princess Breakfast Adventures at Napa Rose (Grand Californian) — several princesses visit your table, though it's a pricey splurge (~$150/guest). Storytellers Café is Mickey-and-pals, not princesses, despite the common mix-up. Goofy's Kitchen at the Disneyland Hotel is the loudest, most kid-chaotic option. Book 60 days out via the Disneyland app.",
+    a: "Plaza Inn character breakfast at Disneyland is the standout — Minnie and friends rotate through the table and Plaza Inn already serves the best food in the park. If your kid is princess-obsessed, the actual princess meal is Disney Princess Breakfast Adventures at the Grand Californian — several princesses visit your table, though it's a pricey splurge ($149/guest, Thursday–Monday). Storytellers Café is Mickey-and-pals (with seasonal themes like Daisy's Holiday Pajama Party), not princesses, despite the common mix-up. Goofy's Kitchen at the Disneyland Hotel is the loudest, most kid-chaotic option. Book 60 days out via the Disneyland app.",
   },
   {
     q: 'How do you find characters at Disneyland?',
@@ -52,7 +50,7 @@ const faqsGeneral = [
   },
   {
     q: 'What characters are at Disneyland in 2026?',
-    a: "The Fab Five (Mickey, Minnie, Donald, Goofy, Pluto), every major princess including Tiana in New Orleans Square, Frozen's Anna and Elsa at DCA, the full Pixar lineup at Pixar Pier, Star Wars characters in Galaxy's Edge including the brand-new Mando and Grogu (live since May 22, 2026 with the Smugglers Run overlay), Marvel heroes at Avengers Campus including Spider-Man, Doctor Strange, Captain America, and Black Panther, plus Miguel and Mirabel at El Zocalo Park. Villains like Maleficent only come out for Oogie Boogie Bash.",
+    a: "The Fab Five (Mickey, Minnie, Donald, Goofy, Pluto), every major princess including Tiana in New Orleans Square, Frozen's Anna and Elsa at DCA, the full Pixar lineup at Pixar Pier, Star Wars characters in Galaxy's Edge including Mando and Grogu plus — new since April 29, 2026 — Luke, Leia, Han, and Darth Vader (Kylo Ren now meets at Star Wars Launch Bay in Tomorrowland), Marvel heroes at Avengers Campus including Spider-Man, Doctor Strange, and Black Panther, Bluey and Bingo at the Fantasyland Theatre, plus Miguel and Mirabel at El Zocalo Park. Villains like Maleficent only come out for Oogie Boogie Bash.",
   },
   {
     q: 'Where can you meet Anna and Elsa at Disneyland?',
@@ -60,7 +58,7 @@ const faqsGeneral = [
   },
   {
     q: 'Is character dining worth it at Disneyland?',
-    a: "Yes for at least one meal on a first trip. You meet 4-5 characters in one sitting with no separate lines and replace what would have been 5 separate 20-minute waits. Book Plaza Inn (or Napa Rose Princess Breakfast Adventures if you want princesses) 60 days out via the Disneyland app. Skip character dining entirely if your kid is fully Frozen-obsessed — Anna and Elsa don't appear at any character meal.",
+    a: "Yes for at least one meal on a first trip. You meet 4-5 characters in one sitting with no separate lines and replace what would have been 5 separate 20-minute waits. Book Plaza Inn (or Disney Princess Breakfast Adventures if you want princesses) 60 days out via the Disneyland app. Skip character dining entirely if your kid is fully Frozen-obsessed — Anna and Elsa don't appear at any character meal.",
   },
   {
     q: 'How early should you line up for Mickey at Disneyland?',
@@ -68,11 +66,11 @@ const faqsGeneral = [
   },
   {
     q: 'Are Mando and Grogu at Disneyland?',
-    a: "Yes — they debuted at Star Wars: Galaxy's Edge on May 22, 2026 alongside the new Mandalorian overlay on Smugglers Run. They roam Black Spire Outpost. The exact rotation is still settling, so check the Disneyland app the morning of your visit for current locations and times.",
+    a: "Yes — Din Djarin and Grogu roam Black Spire Outpost in Star Wars: Galaxy's Edge, often near Ronto Roasters, for brief unscheduled encounters (not a photo line). They also star in the Smugglers Run mission added May 22, 2026. Check the Disneyland app the morning of your visit.",
   },
   {
     q: 'What characters are at Avengers Campus?',
-    a: "Spider-Man (with the famous rooftop drop scheduled multiple times daily), Doctor Strange (in the Ancient Sanctum), Captain America, Black Panther, Black Widow, Iron Man, Loki, and Ant-Man and the Wasp near Pym Test Kitchen. Spider-Man's drop is the showstopper — set a reminder for the next scheduled drop and get into position 15 minutes early.",
+    a: "Spider-Man (with the famous rooftop drop scheduled multiple times daily), Doctor Strange (in the Ancient Sanctum), Black Panther, Black Widow, Iron Man, Loki, and Ant-Man and the Wasp near Pym Test Kitchen. Captain America has been rare in 2026, so don't count on him. Spider-Man's drop is the showstopper — set a reminder for the next scheduled drop and get into position 15 minutes early.",
   },
   {
     q: 'Can you meet villains at Disneyland?',
@@ -80,7 +78,7 @@ const faqsGeneral = [
   },
   {
     q: 'Do Disneyland characters still sign autographs?',
-    a: "Yes — most will sign an autograph book. Bring a fat Sharpie or thick marker; characters in giant gloves can't grip a ballpoint pen. Or skip the book entirely and use PhotoPass photos as your keepsake — they're included with Lightning Lane Multi Pass.",
+    a: "Yes — most will sign an autograph book. Bring a fat Sharpie or thick marker; characters in giant gloves can't grip a ballpoint pen. Or skip the book entirely and use PhotoPass photos as your keepsake — same-day downloads are included with Lightning Lane Multi Pass.",
   },
   {
     q: 'How long are character meet-and-greet lines at Disneyland?',
@@ -91,7 +89,7 @@ const faqsGeneral = [
 const faqsLookup = [
   {
     q: 'Where can I meet Mickey at Disneyland?',
-    a: 'Town Square Theater, Main Street, U.S.A., Disneyland Park — scheduled all day.',
+    a: 'Town Square Theater, Main Street, U.S.A., Disneyland Park — scheduled all day. He also greets on Buena Vista Street at DCA.',
   },
   {
     q: 'Where can I meet Minnie at Disneyland?',
@@ -111,11 +109,11 @@ const faqsLookup = [
   },
   {
     q: 'Where can I meet Tiana?',
-    a: "New Orleans Square at Disneyland Park, near Tiana's Bayou Adventure.",
+    a: "New Orleans Square at Disneyland Park, near Tiana's Palace and the Riverboat landing.",
   },
   {
     q: 'Where can I meet Mando and Grogu?',
-    a: "Star Wars: Galaxy's Edge at Disneyland Park — roaming since the Smugglers Run overlay launched May 22, 2026.",
+    a: "Star Wars: Galaxy's Edge at Disneyland Park — roaming Black Spire Outpost, often near Ronto Roasters. Brief encounters, not a photo line.",
   },
   {
     q: 'Where can I meet Mickey, Donald, Goofy, and Pluto together?',
@@ -135,7 +133,7 @@ const faqsLookup = [
   },
   {
     q: 'Where can I meet Captain America and Black Panther?',
-    a: 'Avengers Campus at Disney California Adventure.',
+    a: 'Avengers Campus at Disney California Adventure. Black Panther meets regularly; Captain America appearances have been rare in 2026.',
   },
   {
     q: 'Where can I meet Mike and Sulley?',
@@ -143,15 +141,15 @@ const faqsLookup = [
   },
   {
     q: 'Where can I meet Jack Skellington?',
-    a: 'Near Haunted Mansion Holiday in New Orleans Square — Halloween Time only (Aug 21 – Oct 31, 2026).',
+    a: 'Royal Courtyard near Haunted Mansion Holiday in New Orleans Square — Halloween Time only (Aug 21 – Oct 31, 2026).',
   },
   {
     q: 'Where can I meet Maleficent?',
-    a: 'Oogie Boogie Bash at DCA only (separate-ticket Halloween party, Aug 18 – Oct 31 select nights).',
+    a: 'Oogie Boogie Bash at DCA only (separate-ticket Halloween party, select nights Aug 18 – Oct 31; 2026 is sold out).',
   },
   {
     q: 'Where can I meet Chip and Dale?',
-    a: 'Bayou Country at Disneyland Park (near the Hungry Bear Restaurant), or Storytellers Café character breakfast at the Grand Californian.',
+    a: 'Bayou Country at Disneyland Park (near the Hungry Bear Restaurant), or Storytellers Café character dining at the Grand Californian.',
   },
   {
     q: 'Where can I meet Belle?',
@@ -168,6 +166,26 @@ const faqsLookup = [
   {
     q: 'Where can I meet Doctor Strange?',
     a: 'The Ancient Sanctum in Avengers Campus at Disney California Adventure.',
+  },
+  {
+    q: 'Where can I meet Kylo Ren?',
+    a: "Star Wars Launch Bay in Tomorrowland at Disneyland Park (across from Autopia) — he moved there from Galaxy's Edge on April 29, 2026. Set times are in the app.",
+  },
+  {
+    q: 'Where can I meet Bluey?',
+    a: "Fantasyland Theatre at Disneyland Park — Bluey's Best Day Ever! show and play area, Thursday through Monday (dark Tuesdays and Wednesdays).",
+  },
+  {
+    q: 'Where can I meet Santa at Disneyland?',
+    a: 'Toontown Trolley Barn at Disneyland Park (new for 2026) and Redwood Creek Challenge Trail at DCA, Nov 13 – Dec 24, 2026.',
+  },
+  {
+    q: 'Where can I meet Judy Hopps and Nick Wilde?',
+    a: 'Hollywood Backlot in Hollywood Land at DCA, near the Studio Store kiosk — scheduled times in the app.',
+  },
+  {
+    q: 'Where can I meet Baymax?',
+    a: 'Outside the Hamada Bot Shop in San Fransokyo Square at DCA.',
   },
 ]
 
@@ -195,7 +213,7 @@ export default function CharactersPage() {
         headline="Disneyland Character Meet-and-Greets: Where to Find Every Character (2026)"
         description="Complete 2026 guide to character meet-and-greets at Disneyland and DCA. Every location, every line wait, every character worth meeting with kids ages 2-8."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={CHARACTERS_LAST_REVIEWED}
       />
       <FaqJsonLd items={faqsAll} />
       <ItemListJsonLd
@@ -212,8 +230,10 @@ export default function CharactersPage() {
           <p className="hero-sub">
             Every character at Disneyland and DCA — where they meet, how long the line runs, and
             whether they're worth it for kids ages 2-8. Search by name, browse by park, or filter by
-            your kid's age. Updated for Mando &amp; Grogu and the new Tiana placements.
+            your kid's age. Updated for Kylo Ren's move to Launch Bay, the original-trilogy heroes
+            in Galaxy's Edge, Bluey, and Santa's new Toontown spot.
           </p>
+          <UpdatedBadge date={CHARACTERS_LAST_REVIEWED} label="Character spots checked" />
         </div>
       </header>
 
@@ -352,18 +372,15 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$55 adults / ~$33 kids.</strong> Bright Victorian dining room on Main Street.{' '}
-            <strong>Characters:</strong> Minnie, Pooh, Tigger, Eeyore, Captain Hook, rotating cast.
+            <strong>~$58 adults / ~$35 kids.</strong> Bright Victorian dining room on Main Street.{' '}
+            <strong>Characters:</strong> Minnie &amp; Friends — Minnie plus a rotating cast (Pooh
+            and pals are regulars).
           </p>
           <p>
             Plaza Inn already serves the best food in the park (the lunch fried chicken is
             legendary). 4–5 characters in one sitting replaces 5 separate 20-min lines.{' '}
             <strong>Book the 8:00 AM seating</strong> — best character access and you walk out onto
             Main Street already inside the park for rope drop.{' '}
-            <em>
-              Heads-up: the Minnie &amp; Friends breakfast pauses from Aug 10 through late September
-              2026, so check the app if you're visiting late summer.
-            </em>
           </p>
         </div>
 
@@ -375,11 +392,13 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$59 adults / ~$36 kids.</strong> Gorgeous forest-themed room, calmer than Plaza
-            Inn. <strong>Characters:</strong> Mickey in his explorer outfit plus Chip &amp; Dale and
-            friends — <strong>no princesses here</strong>, despite a common mix-up. No park ticket
-            needed — great for arrival or departure day. Breakfast only; lunch and dinner are
-            regular service.
+            <strong>~$72 breakfast / ~$86 dinner adults, ~$41–46 kids (seasonal pricing).</strong>{' '}
+            Gorgeous forest-themed room, calmer than Plaza Inn. <strong>Characters:</strong> Mickey
+            and pals — <strong>no princesses here</strong>, despite a common mix-up. The theme
+            changes by season: Mickey's Autumn Adventures breakfast runs through Nov 15, then the
+            holidays bring <strong>Daisy's Holiday Pajama Party</strong> (breakfast/brunch) and{' '}
+            <strong>Mickey's Christmas Carol Feast</strong> (dinner). No park ticket needed — great
+            for arrival or departure day.
           </p>
         </div>
 
@@ -387,14 +406,15 @@ export default function CharactersPage() {
           <div className="tip-card-header">
             <div className="tip-card-icon castle">👑</div>
             <div>
-              <h3>Disney Princess Breakfast Adventures — Napa Rose, Grand Californian</h3>
+              <h3>Disney Princess Breakfast Adventures — Grand Californian Hotel</h3>
             </div>
           </div>
           <p>
-            <strong>~$150 per guest (all ages).</strong> This is the actual princess meal — a
-            multi-course breakfast where several princesses (a rotating set such as Cinderella,
-            Aurora, Belle, Tiana, and Ariel) visit your table, plus a keepsake and craft. Pricey and
-            a splurge, but the only sit-down where princesses come to you. No park ticket needed.{' '}
+            <strong>$149 per guest (ages 3+), Thursday–Monday.</strong> This is the actual princess
+            meal — a multi-course breakfast in the hotel's Trillium Room where several princesses (a
+            rotating set such as Cinderella, Aurora, Belle, and Tiana) visit your table. The old
+            gift bag has been trimmed to a commemorative button. Pricey and a splurge, but the only
+            sit-down where princesses come to you. No park ticket needed.{' '}
             <strong>Books out fast the moment the 60-day window opens.</strong>
           </p>
         </div>
@@ -407,10 +427,11 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            <strong>~$59 breakfast / ~$64 brunch adults, ~$36–39 kids.</strong> Loud, chaotic buffet
-            — peak Disney energy. <strong>Characters:</strong> Goofy always, plus Pluto, Chip &amp;
-            Dale, occasional princesses. Food is fine, not great. Best for 4–8 year olds who live
-            for the chaos. Both breakfast and dinner are character meals.
+            <strong>~$67 brunch / ~$76 dinner adults, ~$38 kids brunch</strong> (18% gratuity added
+            automatically; Halloween and holiday versions cost more). Loud, chaotic buffet — peak
+            Disney energy. <strong>Characters:</strong> Goofy always, plus Pluto, Chip &amp; Dale,
+            occasional princesses. Food is fine, not great. Best for 4–8 year olds who live for the
+            chaos. Both brunch and dinner are character meals.
           </p>
         </div>
 
@@ -418,9 +439,9 @@ export default function CharactersPage() {
           <div className="callout-label">Pick one in 10 seconds</div>
           <p>
             Food matters most? <strong>Plaza Inn.</strong> Princess-obsessed kid?{' '}
-            <strong>Disney Princess Breakfast Adventures at Napa Rose.</strong> Want Mickey and pals
-            without a park ticket? <strong>Storytellers Café.</strong> Chaos-loving 5+ year old?{' '}
-            <strong>Goofy's Kitchen.</strong>
+            <strong>Disney Princess Breakfast Adventures at the Grand Californian.</strong> Want
+            Mickey and pals without a park ticket? <strong>Storytellers Café.</strong> Chaos-loving
+            5+ year old? <strong>Goofy's Kitchen.</strong>
           </p>
         </div>
 
@@ -452,14 +473,15 @@ export default function CharactersPage() {
         <div className="seasonal-list">
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Jan 23 – Feb 22, 2026</span>
+              <span className="seasonal-row-dates">Early 2027 — dates TBA</span>
               <span className="seasonal-row-cost">Included with park admission</span>
             </div>
             <h3 className="seasonal-row-title">🐉 Lunar New Year at DCA</h3>
             <p>
               <strong>Mulan</strong> anchors the Paradise Gardens procession with{' '}
               <strong>Mushu</strong>. The one consistent window to meet Mulan, who's rare in Royal
-              Hall the rest of the year.
+              Hall the rest of the year. The 2026 celebration ran Jan 23 – Feb 22; Lunar New Year
+              2027 falls on Feb 6, so expect a similar window.
             </p>
           </article>
 
@@ -484,22 +506,25 @@ export default function CharactersPage() {
             <h3 className="seasonal-row-title">🎃 Halloween Time at Disneyland</h3>
             <p>
               Fab Five in Halloween costumes all day. The standout:{' '}
-              <strong>Jack &amp; Sally meet near Haunted Mansion Holiday</strong> — their only
-              regular-park appearance of the year. Wait 60–90 min or skip.
+              <strong>
+                Jack &amp; Sally meet in the Royal Courtyard by Haunted Mansion Holiday
+              </strong>{' '}
+              — their only regular-park appearance of the year. Wait 60–90 min or skip.
             </p>
           </article>
 
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
               <span className="seasonal-row-dates">Aug 18 – Oct 31 select nights</span>
-              <span className="seasonal-row-cost">Separate ticket — ~$139–$199</span>
+              <span className="seasonal-row-cost">Separate ticket — $139–$199 (2026 sold out)</span>
             </div>
             <h3 className="seasonal-row-title">👻 Oogie Boogie Bash at DCA</h3>
             <p>
               The only reliable way to meet{' '}
               <strong>Maleficent, Cruella, the Evil Queen, Oogie Boogie</strong>, and other rare
-              villains. Frightfully Fun Parade features villains you literally can't meet any other
-              time. Tickets drop in late June, Magic Key pre-sale first — sells out on day one.
+              villains. In 2026 the Frightfully Fun Parade is paused (Coco construction blocks the
+              route) and Madame Leota's Swinging Wake street party takes its place. Tickets went on
+              sale June 18, Magic Key pre-sale first — October nights sold out.
             </p>
           </article>
 
@@ -510,10 +535,12 @@ export default function CharactersPage() {
             </div>
             <h3 className="seasonal-row-title">🎄 Holidays at the Disneyland Resort</h3>
             <p>
-              Santa Goofy in Toontown, toy soldiers on Main Street, Fab Five in holiday attire at
-              Town Square. The <strong>¡Viva Navidad! street party</strong> in DCA's Paradise
-              Gardens with Donald, Daisy, Panchito, and José is one of the best character
-              experiences of the year — no line required.
+              <strong>Santa moves to the Toontown Trolley Barn</strong> this year (plus Redwood
+              Creek Challenge Trail at DCA, Nov 13 – Dec 24), and the Fab Five get new holiday
+              outfits. At DCA, Mirabel hosts <strong>Mirabel's Gifts of the Season</strong>, and the{' '}
+              <strong>¡Viva Navidad! street party</strong> with Donald, Daisy, Panchito, and José
+              returns on select days. Storytellers Café switches to Daisy's Holiday Pajama Party
+              breakfast.
             </p>
           </article>
         </div>
