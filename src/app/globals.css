@@ -2083,6 +2083,24 @@ body {
   font-weight: 600;
 }
 
+.ride-closed {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: var(--coral-light);
+  color: var(--coral-ink);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+.ride-note {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0.5rem 0 0;
+}
+
 /* ===== TICKETS CTA (affiliate block) ===== */
 .tickets-section {
   padding: var(--space-lg) var(--space-md) var(--space-xl);

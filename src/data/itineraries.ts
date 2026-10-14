@@ -380,7 +380,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'rope-drop',
         title: "Rope drop Fantasyland's deep cuts",
-        body: "Through the castle, hard right. Snow White's Enchanted Wish first — the new effects make the queen scenes mildly intense; brave 4+ kids love it. Then Pinocchio, then Mr. Toad's Wild Ride. Three back-to-back dark rides, all under 15 minutes of wait at rope drop.",
+        body: "Through the castle, hard right. Snow White's Enchanted Wish first — the queen scenes are mildly intense; brave 4+ kids love it. Then Pinocchio, then Mr. Toad's Wild Ride. Three back-to-back dark rides, all under 15 minutes of wait at rope drop.",
         rideIds: ['snow-whites-enchanted-wish', 'pinocchios-daring-journey', 'mr-toads-wild-ride'],
       },
       {

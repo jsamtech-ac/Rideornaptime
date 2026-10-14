@@ -9,10 +9,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import ItemListJsonLd from '@/components/ItemListJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
-import { RIDES, SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
-
-const PAGE_FILE = 'src/app/rides/page.tsx'
+import UpdatedBadge from '@/components/UpdatedBadge'
+import { RIDES, RIDES_LAST_REVIEWED, SITE_URL } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Disneyland Rides for Kids: Age-by-Age Guide (2026)',
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: `${RIDES_LAST_REVIEWED}T00:00:00.000Z`,
     authors: ['Ride or Naptime'],
   },
 }
@@ -94,7 +92,7 @@ export default function RidesPage() {
           'Age-based ride ratings for Disneyland & DCA — which rides are worth it for ages 2, 4, 6, and 8. Honest takes from a real parent.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={RIDES_LAST_REVIEWED}
       />
       <FaqJsonLd items={faqs} />
       <ItemListJsonLd
@@ -102,7 +100,7 @@ export default function RidesPage() {
         name="Disneyland rides ranked for kids"
         items={RIDES.map((r) => ({
           name: r.name,
-          description: `${r.land} — ${r.take}`,
+          description: `${r.land} — ${r.take}${r.closed && r.closureNote ? ` Status: ${r.closureNote}` : ''}`,
         }))}
       />
       <header className="hero hero--home">
@@ -114,6 +112,7 @@ export default function RidesPage() {
             Forget height requirements — here's whether each ride is actually worth your time at
             ages 2, 4, 6, and 8. Honest opinions from a real parent, not a marketing team.
           </p>
+          <UpdatedBadge date={RIDES_LAST_REVIEWED} label="Ride statuses checked" />
         </div>
       </header>
 
