@@ -148,10 +148,11 @@ export default function HiddenGemsPage() {
             </div>
           </div>
           <p>
-            Check the Disneyland app map for character locations and times. The princess
-            meet-and-greet by the castle is the best single stop. Anna and Elsa have their own
-            meet-and-greet at DCA. Toontown for Mickey and friends. Or just walk around — you'll
-            bump into characters constantly. Where each crew actually lives in the{' '}
+            Check the Disneyland app map for character locations and times. Royal Hall in Fantasy
+            Faire (just left of the castle) is the best single stop — one line, several princesses.
+            Anna and Elsa have their own meet-and-greet at DCA. Town Square Theater for Mickey,
+            Toontown for his friends. Or just walk around — you'll bump into characters constantly.
+            Where each crew actually lives in the{' '}
             <Link href="/characters">Disneyland character meet-and-greets guide</Link>.
           </p>
         </div>

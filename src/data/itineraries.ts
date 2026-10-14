@@ -1012,7 +1012,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'character',
         title: "Princess Royal Hall or Galaxy's Edge characters",
-        body: "Princess-obsessed kids: Royal Hall in Fantasy Faire (3 princesses in one line). Star Wars fans: walk Galaxy's Edge for roaming Rey/Kylo/Vader/stormtrooper patrols — no line, just bump into them.",
+        body: "Princess-obsessed kids: Royal Hall in Fantasy Faire (3 princesses in one line). Star Wars fans: walk Galaxy's Edge for roaming Rey, Chewie, Luke, Leia, Vader, and stormtrooper patrols — no line, just bump into them.",
       },
       {
         id: 'tianas',

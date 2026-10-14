@@ -1,3 +1,6 @@
+/** Bump whenever character locations, dining, or seasonal dates are re-checked. */
+export const CHARACTERS_LAST_REVIEWED = '2026-10-14'
+
 export type CharacterPark = 'DL' | 'DCA'
 
 export type Reliability = 'scheduled' | 'roaming' | 'rare'
@@ -60,6 +63,7 @@ export const DL_LAND_ORDER = [
   'New Orleans Square',
   'Bayou Country',
   "Star Wars: Galaxy's Edge",
+  'Tomorrowland',
   "Mickey's Toontown",
 ]
 
@@ -70,6 +74,7 @@ export const DCA_LAND_ORDER = [
   'Avengers Campus',
   'Pixar Pier',
   'Paradise Gardens',
+  'Grizzly Peak',
   'Cars Land',
 ]
 
@@ -79,35 +84,40 @@ export const DL_LAND_INTROS: Record<string, string> = {
   Fantasyland:
     'The roaming hotspot. Alice, Mad Hatter, Peter Pan, Captain Hook, Fairy Godmother — all walk-ups, no formal lines.',
   'Fantasyland (Fantasy Faire)':
-    'Royal Hall rotates 3 princesses per visit. Ask the cast member at the door which 3 are inside before joining.',
+    "Royal Hall's core lineup is usually Cinderella, Belle, Snow White, and Aurora, with Ariel, Rapunzel, Tiana, Jasmine, Mulan, and Elena rotating in. Ask the cast member at the door who's inside before joining.",
   Adventureland:
-    'Tarzan and Indy moments are tied to the attractions, not formal meets. Moana turns up here occasionally but has no fixed spot — check the app.',
+    'Jasmine and Aladdin roam near the Bazaar and Enchanted Tiki Room. Moana turns up occasionally but has no fixed spot — check the app.',
   Frontierland:
     'Big Thunder Trail is a quiet character corner — Woody, Jessie, Pocahontas all roam. El Zocalo Park hosts Miguel and Mirabel.',
   'New Orleans Square':
-    "Tiana has a regular presence here since Tiana's Bayou Adventure replaced Splash Mountain. Easier walk-up than Royal Hall.",
-  'Bayou Country': 'Chip & Dale roam near Hungry Bear Restaurant. Usually a walk-up.',
+    "Tiana meets here near Tiana's Palace and the Riverboat landing — usually an easier walk-up than Royal Hall.",
+  'Bayou Country':
+    'Chip & Dale roam near Hungry Bear Restaurant, and Pooh and pals turn up near The Many Adventures of Winnie the Pooh. Usually walk-ups.',
   "Star Wars: Galaxy's Edge":
-    "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, Stormtroopers, and Mando & Grogu (live since May 22, 2026).",
+    "Moments and patrols, not photo lines. Walk the land and you'll cross paths with Rey, Chewbacca, Stormtroopers, Mando & Grogu, and — since April 29, 2026 — Luke, Leia, Han, and Darth Vader. Kylo Ren moved to Star Wars Launch Bay in Tomorrowland.",
+  Tomorrowland:
+    "Star Wars Launch Bay (across from Autopia) hosts the Kylo Ren meet on a posted schedule — a real photo op, unlike the Galaxy's Edge encounters.",
   "Mickey's Toontown":
     "The single densest character zone in the resort. Mickey & Minnie's Runaway Railway is here, and the playground has one exit so kids can run while you regroup.",
 }
 
 export const DCA_LAND_INTROS: Record<string, string> = {
   'Buena Vista Street':
-    'Mostly atmosphere characters and cavalcade appearances. Not a destination meet area on most days.',
+    'Mickey and friends greet guests along Buena Vista Street on a rotating basis — a good DCA backup if Town Square Theater is slammed.',
   'Hollywood Land':
-    'Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027).',
+    'Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027), and the Zootopia crew has been meeting on the Hollywood Backlot near the Studio Store since Nov 2025.',
   'San Fransokyo Square':
-    'The Zootopia trio — Judy Hopps, Nick Wilde, and Officer Clawhauser — meets along the waterfront here (new since late 2025). They roam the San Francisco Street stretch near Grizzly River Run; check the app for the current spot.',
+    'Baymax and Hiro greet outside the Hamada Bot Shop — one of the friendliest big-character meets for little kids. Check the app for times.',
   'Avengers Campus':
     "The Marvel lineup. Spider-Man's rooftop drop is the showstopper — set a reminder in the app and be in position 15 min early.",
   'Pixar Pier':
     'The roam-heaviest area in the resort. Buzz, Joy & Sadness, Incredibles, and the Toy Story crew all rotate here.',
   'Paradise Gardens':
-    'Seasonal meets — Mulan during Lunar New Year (Jan 23 – Feb 22), Miguel & Dante during Plaza de la Familia (Aug 21 – Nov 2).',
+    'Seasonal meets — Miguel & Dante during Plaza de la Familia (Aug 21 – Nov 2, 2026), Mirabel during the Festival of Holidays, and Mulan during Lunar New Year (2027 dates not yet announced).',
+  'Grizzly Peak':
+    "Santa's Holiday Visit takes over Redwood Creek Challenge Trail from Nov 13 – Dec 24, 2026 — usually a shorter line than Santa at Disneyland.",
   'Cars Land':
-    'Mostly themed atmosphere — Lightning McQueen and Mater appear rarely. The land itself is the meet.',
+    'Lightning McQueen and Mater make short, unscheduled appearances (in costume during Halloween Time). The land itself is the meet.',
 }
 
 export const characters: Character[] = [
@@ -129,6 +139,12 @@ export const characters: Character[] = [
         land: "Mickey's Toontown",
         spot: "Mickey & Minnie's Runaway Railway exit area",
         typicalTimes: 'Intermittent throughout the day',
+        reliability: 'roaming',
+      },
+      {
+        park: 'DCA',
+        land: 'Buena Vista Street',
+        spot: 'Rotating Fab Five greetings along Buena Vista Street',
         reliability: 'roaming',
       },
     ],
@@ -169,7 +185,7 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: "Mickey's Toontown",
-        spot: "Donald's Boat dock area, roaming",
+        spot: "Near Donald's Duck Pond, roaming",
         reliability: 'roaming',
       },
     ],
@@ -177,6 +193,29 @@ export const characters: Character[] = [
     expectedLine: 'medium',
     notes:
       'Donald is one of the funniest characters to meet — he mimes a tantrum if you ask for autographs in a bad order. Worth bringing a fat Sharpie for.',
+  },
+  {
+    id: 'daisy-duck',
+    name: 'Daisy Duck',
+    franchise: 'Classic',
+    locations: [
+      {
+        park: 'DL',
+        land: "Mickey's Toontown",
+        spot: 'Roaming Toontown, often near CenTOONial Park',
+        reliability: 'roaming',
+      },
+      {
+        park: 'DL',
+        land: 'Main Street, U.S.A.',
+        spot: 'Town Square greetings with the Fab Five',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      "Daisy is a reliable walk-up and great with shy kids — she loves showing off her outfit. She's also the host of Daisy's Holiday Pajama Party breakfast at Storytellers Café during the holidays.",
   },
   {
     id: 'goofy',
@@ -219,6 +258,23 @@ export const characters: Character[] = [
       'Pluto is the friendliest big-costume character for nervous toddlers — he greets gently and lets kids pet him like a dog.',
   },
   {
+    id: 'clarabelle-cow',
+    name: 'Clarabelle Cow',
+    franchise: 'Classic',
+    locations: [
+      {
+        park: 'DL',
+        land: 'Main Street, U.S.A.',
+        spot: 'Town Square, occasional',
+        reliability: 'rare',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'great', age6: 'maybe', age8: 'skip' },
+    expectedLine: 'short',
+    notes:
+      "A rare park sighting, but she hosts Clarabelle's Enchanted Halloween Dinner at Storytellers Café during Halloween Time — that's the reliable way to meet her.",
+  },
+  {
     id: 'chip-and-dale',
     name: 'Chip & Dale',
     franchise: 'Classic',
@@ -233,7 +289,24 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'great', age8: 'maybe' },
     expectedLine: 'short',
     notes:
-      'Easy walk-ups. Also a fixture at Storytellers Café character breakfast at the Grand Californian — if Chip & Dale are the bullseye, book that meal.',
+      'Easy walk-ups. They also show up at Storytellers Café character dining at the Grand Californian (the theme changes seasonally) — if Chip & Dale are the bullseye, check that meal.',
+  },
+  {
+    id: 'pooh-and-friends',
+    name: 'Winnie the Pooh, Tigger & Eeyore',
+    franchise: 'Classic',
+    locations: [
+      {
+        park: 'DL',
+        land: 'Bayou Country',
+        spot: 'Near The Many Adventures of Winnie the Pooh',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      'Soft, slow-moving, and toddler-proof — Pooh is the best first meet for a nervous 2-year-old. They also visit tables at the Plaza Inn character breakfast on Main Street.',
   },
 
   // ─── PRINCESSES (DL) ──────────────────────────────────────────────────────
@@ -303,14 +376,14 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: 'Fantasyland (Fantasy Faire)',
-        spot: 'Royal Hall',
+        spot: 'Royal Hall (rotating)',
         reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'long',
     notes:
-      'Rapunzel is in the front of the rotation more often than not — she has wide appeal across ages because the Tangled fanbase spans 2 to 12.',
+      "Rapunzel rotates into Royal Hall rather than being there every day, so ask the cast member at the door before you join. Worth it when she's in — the Tangled fanbase spans 2 to 12.",
   },
   {
     id: 'mulan',
@@ -327,14 +400,14 @@ export const characters: Character[] = [
         park: 'DCA',
         land: 'Paradise Gardens',
         spot: 'Lunar New Year Procession (seasonal)',
-        typicalTimes: 'Jan 23 – Feb 22 only',
+        typicalTimes: 'Lunar New Year only — 2027 dates not yet announced',
         reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      'Mulan is rare year-round but reliable during Lunar New Year at DCA. If your kid is Mulan-obsessed, plan around January–February.',
+      'Mulan is rare year-round but reliable during Lunar New Year at DCA. If your kid is Mulan-obsessed, plan around Lunar New Year (Feb 6, 2027 — Disney usually runs the celebration for about a month around it).',
   },
   {
     id: 'tiana',
@@ -344,7 +417,7 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: 'New Orleans Square',
-        spot: "Near Tiana's Bayou Adventure / French Market",
+        spot: "Near Tiana's Palace and the Riverboat landing",
         typicalTimes: 'Multiple slots throughout the day',
         reliability: 'scheduled',
       },
@@ -352,7 +425,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      "Since Tiana's Bayou Adventure replaced Splash Mountain, Tiana has a regular presence in New Orleans Square. Way easier walk-up than Royal Hall.",
+      "Tiana has a regular spot in New Orleans Square, a short walk from Tiana's Bayou Adventure next door in Bayou Country. Way easier walk-up than Royal Hall.",
   },
   {
     id: 'pocahontas',
@@ -392,7 +465,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'great', age8: 'maybe' },
     expectedLine: 'long',
     notes:
-      "For a calmer, guaranteed princess meal, book Disney Princess Breakfast Adventures at Napa Rose (Grand Californian) — Belle is part of the rotating princess lineup there. (She's not at Storytellers Café; that breakfast is Mickey and pals.)",
+      "For a calmer, guaranteed princess meal, book Disney Princess Breakfast Adventures at the Grand Californian — Belle is part of the rotating princess lineup there. (She's not at Storytellers Café; that meal is Mickey and pals.)",
   },
   {
     id: 'moana',
@@ -410,6 +483,23 @@ export const characters: Character[] = [
     expectedLine: 'medium',
     notes:
       "Moana doesn't have a fixed meet location — she rotates in and out and sightings are inconsistent. Check the Disneyland app on your visit day rather than counting on a set spot.",
+  },
+  {
+    id: 'jasmine-and-aladdin',
+    name: 'Jasmine & Aladdin',
+    franchise: 'Princesses',
+    locations: [
+      {
+        park: 'DL',
+        land: 'Adventureland',
+        spot: 'Near the Adventureland Bazaar / Enchanted Tiki Room',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      'Usually a walk-up, and a nice princess meet without the Royal Hall line. Jasmine also rotates into Royal Hall on some days.',
   },
 
   // ─── FANTASYLAND CHARACTERS ───────────────────────────────────────────────
@@ -498,6 +588,41 @@ export const characters: Character[] = [
     notes:
       "The gentlest big-character meet at the resort. If your toddler is scared of Mickey's size, start here.",
   },
+  {
+    id: 'mary-poppins-and-bert',
+    name: 'Mary Poppins & Bert',
+    franchise: 'Classic',
+    locations: [
+      {
+        park: 'DL',
+        land: 'Main Street, U.S.A.',
+        spot: 'Near Jolly Holiday Bakery Cafe and the castle hub',
+        reliability: 'rare',
+      },
+    ],
+    kidAppeal: { age2: 'maybe', age4: 'great', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      'Practically perfect in every way — and sporadic. A bonus if you spot them on the way to breakfast at Jolly Holiday, not one to plan around.',
+  },
+  {
+    id: 'bluey-and-bingo',
+    name: 'Bluey & Bingo',
+    franchise: 'Bluey',
+    locations: [
+      {
+        park: 'DL',
+        land: 'Fantasyland',
+        spot: "Fantasyland Theatre — Bluey's Best Day Ever! show and play area",
+        typicalTimes: 'Thursday–Monday (dark Tuesday & Wednesday)',
+        reliability: 'scheduled',
+      },
+    ],
+    kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'great', age8: 'maybe' },
+    expectedLine: 'medium',
+    notes:
+      "Not a classic photo line — it's a short live show plus a dance party and activity area with Bluey and Bingo. A top pick for 2–5 year olds. Check the app for showtimes, and remember it's dark Tuesdays and Wednesdays.",
+  },
 
   // ─── FROZEN (DCA) ─────────────────────────────────────────────────────────
   {
@@ -527,15 +652,15 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DCA',
-        land: 'San Fransokyo Square',
-        spot: 'Roams the San Francisco Street waterfront near Grizzly River Run',
-        reliability: 'roaming',
+        land: 'Hollywood Land',
+        spot: 'Hollywood Backlot, near the Studio Store kiosk',
+        reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      'New to DCA in late 2025 with the Zootopia 2 release. Judy and Nick Wilde roam the waterfront near Grizzly River Run — no posted schedule, so check the app. A big hit with kids who know the movie.',
+      'Debuted Nov 24, 2025 for Zootopia 2. Judy and Nick meet together at set times on the Hollywood Backlot — check the app, since movie-promo meets can wind down without much notice. A big hit with kids who know the movie.',
   },
   {
     id: 'nick-wilde',
@@ -544,15 +669,15 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DCA',
-        land: 'San Fransokyo Square',
-        spot: 'Roams the San Francisco Street waterfront near Grizzly River Run',
-        reliability: 'roaming',
+        land: 'Hollywood Land',
+        spot: 'Hollywood Backlot, near the Studio Store kiosk',
+        reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
     notes:
-      'Usually appears alongside Judy Hopps. Roaming, not a scheduled line — catch them as you pass through on the way to Grizzly River Run or Pixar Pier.',
+      'Meets alongside Judy Hopps on the Hollywood Backlot. Pair it with Anna & Elsa or Monsters, Inc. — they are all steps apart.',
   },
   {
     id: 'officer-clawhauser',
@@ -561,15 +686,32 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DCA',
-        land: 'San Fransokyo Square',
-        spot: 'San Francisco Street area (sporadic)',
+        land: 'Hollywood Land',
+        spot: 'Hollywood Backlot (sporadic)',
         reliability: 'rare',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'great', age8: 'maybe' },
     expectedLine: 'short',
     notes:
-      'The cheetah desk sergeant shows up sporadically in the Zootopia area — a fun bonus if you catch him, but not one to plan around.',
+      'The cheetah desk sergeant was billed as a limited-time meet when the Zootopia crew debuted — a fun bonus if you catch him, but not one to plan around.',
+  },
+  {
+    id: 'baymax-and-hiro',
+    name: 'Baymax & Hiro',
+    franchise: 'Disney Animation',
+    locations: [
+      {
+        park: 'DCA',
+        land: 'San Fransokyo Square',
+        spot: 'Outside the Hamada Bot Shop',
+        reliability: 'scheduled',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
+    expectedLine: 'short',
+    notes:
+      'Baymax gives the gentlest hugs at the resort — a great first big-character meet. Lines are usually short; check the app for times.',
   },
 
   // ─── PIXAR (mostly DCA) ───────────────────────────────────────────────────
@@ -704,6 +846,23 @@ export const characters: Character[] = [
       "When they're out, Dug is the highlight — the costume is incredible and he 'talks' through cast member voicing. Pure walk-up when you spot them.",
   },
   {
+    id: 'lightning-mcqueen-and-mater',
+    name: 'Lightning McQueen & Mater',
+    franchise: 'Pixar — Cars',
+    locations: [
+      {
+        park: 'DCA',
+        land: 'Cars Land',
+        spot: 'Short appearances along Route 66 (sometimes with Cruz and Red)',
+        reliability: 'rare',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'great', age8: 'maybe' },
+    expectedLine: 'short',
+    notes:
+      'Life-size talking cars — a huge moment for Cars-obsessed preschoolers. Appearances are brief and unscheduled, so treat a sighting as a bonus while you ride Mater and Luigi.',
+  },
+  {
     id: 'miguel',
     name: 'Miguel (Coco)',
     franchise: 'Pixar — Coco',
@@ -718,7 +877,7 @@ export const characters: Character[] = [
       {
         park: 'DCA',
         land: 'Paradise Gardens',
-        spot: 'Plaza de la Familia (seasonal Aug–Nov)',
+        spot: 'Plaza de la Familia (Aug 21 – Nov 2, 2026)',
         reliability: 'scheduled',
       },
     ],
@@ -738,6 +897,12 @@ export const characters: Character[] = [
         spot: 'El Zocalo Park',
         reliability: 'scheduled',
       },
+      {
+        park: 'DCA',
+        land: 'Paradise Gardens',
+        spot: "Festival of Holidays — Mirabel's Gifts of the Season (from Nov 13, 2026)",
+        reliability: 'scheduled',
+      },
     ],
     kidAppeal: { age2: 'must-meet', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'medium',
@@ -755,7 +920,7 @@ export const characters: Character[] = [
         park: 'DL',
         land: "Star Wars: Galaxy's Edge",
         spot: 'Black Spire Outpost (Resistance side, near the X-Wing)',
-        reliability: 'scheduled',
+        reliability: 'roaming',
       },
     ],
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
@@ -772,13 +937,13 @@ export const characters: Character[] = [
         park: 'DL',
         land: "Star Wars: Galaxy's Edge",
         spot: 'Black Spire Outpost near the Millennium Falcon',
-        reliability: 'scheduled',
+        reliability: 'roaming',
       },
     ],
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
     expectedLine: 'medium',
     notes:
-      'Chewie is enormous and growls — for a 4-year-old, this is either the coolest thing ever or instant tears. The wait alone is 20–40 min most of the day.',
+      "Chewie is enormous and growls — for a 4-year-old, this is either the coolest thing ever or instant tears. Galaxy's Edge encounters are roaming moments, not posted lines — catch him when you see him.",
   },
   {
     id: 'stormtroopers',
@@ -804,15 +969,33 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DL',
-        land: "Star Wars: Galaxy's Edge",
-        spot: 'Sporadic dramatic encounters, First Order side',
-        reliability: 'rare',
+        land: 'Tomorrowland',
+        spot: 'Star Wars Launch Bay (across from Autopia)',
+        typicalTimes: 'Set times in the Disneyland app',
+        reliability: 'scheduled',
       },
     ],
-    kidAppeal: { age2: 'skip', age4: 'skip', age6: 'maybe', age8: 'great' },
+    kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
+    expectedLine: 'medium',
+    notes:
+      "Kylo moved out of Galaxy's Edge to Star Wars Launch Bay on April 29, 2026, and it's now a proper scheduled photo meet. He stays in character (intimidating), so preview him with younger kids first. Disney Visa cardmembers get a separate meet window.",
+  },
+  {
+    id: 'luke-leia-han-vader',
+    name: 'Luke, Leia, Han & Darth Vader',
+    franchise: 'Star Wars',
+    locations: [
+      {
+        park: 'DL',
+        land: "Star Wars: Galaxy's Edge",
+        spot: 'Roaming Black Spire Outpost',
+        reliability: 'roaming',
+      },
+    ],
+    kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
     expectedLine: 'short',
     notes:
-      'Kylo storms through, lightsaber drawn, sometimes chasing Stormtroopers. Not a photo line — a moment. Watch from a distance with younger kids.',
+      "New since April 29, 2026 — Galaxy's Edge expanded its story to the original trilogy. These are brief roaming encounters, not photo lines. Vader is genuinely scary for under-6s; Leia and Luke are the friendliest of the group.",
   },
   {
     id: 'mando-and-grogu',
@@ -822,14 +1005,14 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: "Star Wars: Galaxy's Edge",
-        spot: 'Roaming, often near Smugglers Run (new overlay area)',
+        spot: 'Roaming Black Spire Outpost, often near Ronto Roasters',
         reliability: 'roaming',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'medium',
     notes:
-      "Brand-new since the Smugglers Run Mandalorian overlay launched May 22, 2026. This isn't a scheduled photo line — Din Djarin and Grogu roam Black Spire Outpost for brief, unscheduled encounters, so check the Disneyland app the morning of your visit and keep an eye out as you walk the land. Grogu is the star; Mando does the talking.",
+      "Mando and Grogu also star in the Smugglers Run mission added May 22, 2026. This isn't a scheduled photo line — Din Djarin and Grogu roam Black Spire Outpost for brief, unscheduled encounters, so check the Disneyland app the morning of your visit and keep an eye out as you walk the land. Grogu is the star; Mando does the talking.",
   },
 
   // ─── MARVEL (Avengers Campus, DCA) ────────────────────────────────────────
@@ -894,13 +1077,13 @@ export const characters: Character[] = [
         park: 'DCA',
         land: 'Avengers Campus',
         spot: 'Avengers HQ courtyard',
-        reliability: 'scheduled',
+        reliability: 'rare',
       },
     ],
     kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'medium',
     notes:
-      "Cap is the most kid-friendly Avenger — patient, gentle, great at posing with the shield. Sam Wilson's Cap shares the role with Steve Rogers' Cap depending on day.",
+      "Cap is the most kid-friendly Avenger when he's out — patient, gentle, great at posing with the shield. Sam Wilson's Cap hasn't been reported on Avengers Campus since late January 2026, so treat any sighting as a bonus and check the app.",
   },
   {
     id: 'black-panther',
@@ -979,16 +1162,16 @@ export const characters: Character[] = [
     locations: [
       {
         park: 'DCA',
-        land: 'Various (Oogie Boogie Bash)',
-        spot: 'Frightfully Fun Parade + roaming',
-        typicalTimes: 'Aug 18 – Oct 31 hard-ticket nights only',
+        land: 'Oogie Boogie Bash',
+        spot: "Villains trail + Madame Leota's Swinging Wake street party",
+        typicalTimes: 'Select Bash nights, Aug 18 – Oct 31, 2026',
         reliability: 'rare',
       },
     ],
     kidAppeal: { age2: 'skip', age4: 'skip', age6: 'great', age8: 'must-meet' },
     expectedLine: 'long',
     notes:
-      'Maleficent is an Oogie Boogie Bash exclusive at DCA — you need the separate-ticket Halloween party to meet her. Tickets sell out; book the day they drop.',
+      'Maleficent is an Oogie Boogie Bash exclusive at DCA — you need the separate-ticket Halloween party to meet her. 2026 nights are sold out; tickets usually go on sale in early summer, and they sell out fast.',
   },
   {
     id: 'cruella',
@@ -999,6 +1182,7 @@ export const characters: Character[] = [
         park: 'DCA',
         land: 'Oogie Boogie Bash',
         spot: 'Themed trick-or-treat trail',
+        typicalTimes: 'Select Bash nights, Aug 18 – Oct 31, 2026',
         reliability: 'rare',
       },
     ],
@@ -1016,6 +1200,7 @@ export const characters: Character[] = [
         park: 'DCA',
         land: 'Oogie Boogie Bash',
         spot: 'Villains trick-or-treat trail',
+        typicalTimes: 'Select Bash nights, Aug 18 – Oct 31, 2026',
         reliability: 'rare',
       },
     ],
@@ -1039,7 +1224,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'great', age8: 'must-meet' },
     expectedLine: 'long',
     notes:
-      'Jack Sparrow appearances are rare and unpredictable — usually only during 70th finale events, after-dark parties, or special promos. Treat any sighting as a bonus.',
+      'Jack Sparrow appearances are rare and unpredictable — usually only during special events, after-hours parties, or promos. Treat any sighting as a bonus.',
   },
 
   // ─── NIGHTMARE BEFORE CHRISTMAS (Halloween Time only) ──────────────────────
@@ -1051,14 +1236,41 @@ export const characters: Character[] = [
       {
         park: 'DL',
         land: 'New Orleans Square',
-        spot: 'Near Haunted Mansion Holiday',
-        typicalTimes: 'Aug 21 – Oct 31 (Halloween Time) and select holiday dates',
+        spot: 'Royal Courtyard, near Haunted Mansion Holiday',
+        typicalTimes: 'Halloween Time only — Aug 21 – Oct 31, 2026',
         reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'skip', age4: 'maybe', age6: 'must-meet', age8: 'must-meet' },
     expectedLine: 'very-long',
     notes:
-      'Jack and Sally only meet during Halloween Time (and briefly during the Haunted Mansion Holiday window that bleeds into early January). The line is 60–90 min routinely — line up at park open or skip.',
+      'Jack and Sally meet during Halloween Time only (Haunted Mansion Holiday itself keeps running through early January). The line is 60–90 min routinely — line up at park open or skip.',
+  },
+
+  // ─── HOLIDAYS (Nov 13 – Dec 24, 2026) ─────────────────────────────────────
+  {
+    id: 'santa-claus',
+    name: 'Santa Claus',
+    franchise: 'Holidays',
+    locations: [
+      {
+        park: 'DL',
+        land: "Mickey's Toontown",
+        spot: 'Toontown Trolley Barn (new location for 2026)',
+        typicalTimes: 'Nov 13 – Dec 24, 2026',
+        reliability: 'scheduled',
+      },
+      {
+        park: 'DCA',
+        land: 'Grizzly Peak',
+        spot: "Redwood Creek Challenge Trail — Santa's Holiday Visit",
+        typicalTimes: 'Nov 13 – Dec 24, 2026',
+        reliability: 'scheduled',
+      },
+    ],
+    kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
+    expectedLine: 'long',
+    notes:
+      'Santa moved to the Toontown Trolley Barn this year — easy to pair with a Runaway Railway ride. The DCA Santa at Redwood Creek is usually the shorter line. Go on a weekday morning in November for the best wait.',
   },
 ]
