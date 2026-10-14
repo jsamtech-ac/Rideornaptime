@@ -108,6 +108,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { href: '/first-visit', label: 'First Visit', icon: '🏰' },
       { href: '/itineraries', label: 'Itineraries', icon: '🗓' },
+      { href: '/holidays', label: 'Holidays 2026', icon: '🎄' },
       { href: '/seasonal', label: 'Seasonal', icon: '🌤' },
       { href: '/lightning-lane', label: 'Lightning Lane', icon: '⚡' },
       { href: '/saving-money', label: 'Save Money', icon: '💰' },
@@ -1242,6 +1243,8 @@ export const PACKING_LIST: PackingItem[] = [
 /** Bump whenever ride statuses, LL tiers, or closures in RIDES are re-checked. */
 export const RIDES_LAST_REVIEWED = '2026-10-14'
 export const SEASONAL_LAST_REVIEWED = '2026-10-14'
+/** Bump whenever the /holidays guide's dates, shows, or deals are re-checked. */
+export const HOLIDAYS_LAST_REVIEWED = '2026-10-14'
 
 export const PRIVACY_LAST_REVIEWED = '2026-04-22'
 

@@ -47,6 +47,15 @@
   --shadow-md: 0 4px 16px rgba(28, 25, 23, 0.08);
   --shadow-lg: 0 8px 32px rgba(28, 25, 23, 0.1);
   --shadow-glow: 0 0 24px rgba(245, 158, 11, 0.15);
+
+  /* Holiday guide accents */
+  --holiday-night: #0f1b3d;
+  --holiday-plum: #3b1d5e;
+  --holiday-red: #c8102e;
+  --holiday-red-light: #fdecee;
+  --holiday-green: #166534;
+  --holiday-green-light: #e9f7ee;
+  --holiday-gold: #d4a017;
 }
 
 *,
@@ -3903,4 +3912,552 @@ body {
     page-break-inside: avoid;
     box-shadow: none !important;
   }
+}
+
+/* ===== HOLIDAYS GUIDE ===== */
+.hero--holiday {
+  padding: calc(72px + var(--space-xl)) var(--space-md) var(--space-2xl);
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(212, 160, 23, 0.35) 0%, transparent 55%),
+    linear-gradient(180deg, var(--holiday-night) 0%, var(--holiday-plum) 70%, #5b2a6e 100%);
+}
+
+.hero--holiday::before {
+  /* string lights along the top edge */
+  content: '';
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 22px;
+  transform: none;
+  background:
+    radial-gradient(circle at 12px 11px, #ff4d6d 0 5px, transparent 6px) 0 0 / 96px 22px repeat-x,
+    radial-gradient(circle at 36px 11px, #ffd166 0 5px, transparent 6px) 0 0 / 96px 22px repeat-x,
+    radial-gradient(circle at 60px 11px, #4ade80 0 5px, transparent 6px) 0 0 / 96px 22px repeat-x,
+    radial-gradient(circle at 84px 11px, #60a5fa 0 5px, transparent 6px) 0 0 / 96px 22px repeat-x;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero--holiday::after {
+  /* snowfall */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 80px 120px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(3px 3px at 150px 60px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 210px 170px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(3px 3px at 260px 20px, rgba(255, 255, 255, 0.85), transparent);
+  background-size: 300px 220px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero--holiday::after {
+    animation: holiday-snow 14s linear infinite;
+  }
+}
+
+@keyframes holiday-snow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 220px;
+  }
+}
+
+.hero--holiday .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero--holiday .hero-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  backdrop-filter: blur(4px);
+}
+
+.hero--holiday h1 {
+  color: var(--white);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+
+.hero--holiday h1 .highlight {
+  color: var(--sun-light);
+}
+
+.hero--holiday .hero-sub {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.holiday-dates-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: var(--white);
+  color: var(--holiday-red);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.holiday-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+  max-width: 720px;
+  margin: calc(-1 * var(--space-xl)) auto 0;
+  padding: 0 var(--space-md);
+  position: relative;
+  z-index: 3;
+}
+
+.holiday-stat {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  border-top: 4px solid var(--holiday-red);
+}
+
+.holiday-stat:nth-child(2) {
+  border-top-color: var(--holiday-gold);
+}
+
+.holiday-stat:nth-child(3) {
+  border-top-color: var(--holiday-green);
+}
+
+.holiday-stat:nth-child(4) {
+  border-top-color: var(--castle);
+}
+
+.holiday-stat-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+.holiday-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+.holiday-stat-note {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+@media (min-width: 768px) {
+  .holiday-stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.holiday-new-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 600px) {
+  .holiday-new-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.holiday-new-card {
+  position: relative;
+  background: linear-gradient(160deg, var(--white) 0%, var(--sun-glow) 100%);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.holiday-new-card .holiday-new-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.holiday-new-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--space-xs);
+}
+
+.holiday-new-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.holiday-new-tag {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  background: var(--holiday-red);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.holiday-park-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: var(--space-xl) 0 var(--space-md);
+}
+
+.holiday-park-heading::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--holiday-red) 0 10px,
+    var(--white) 10px 14px,
+    var(--holiday-green) 14px 24px,
+    var(--white) 24px 28px
+  );
+  border-radius: 2px;
+}
+
+.holiday-item {
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-left: 5px solid var(--holiday-green);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.holiday-item.red {
+  border-left-color: var(--holiday-red);
+}
+
+.holiday-item.gold {
+  border-left-color: var(--holiday-gold);
+}
+
+.holiday-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.holiday-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.holiday-item p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.holiday-fit {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--holiday-green-light);
+  color: var(--holiday-green);
+}
+
+.holiday-fit.caution {
+  background: var(--sun-glow);
+  color: #92400e;
+}
+
+.holiday-fit.big-kids {
+  background: var(--holiday-red-light);
+  color: var(--holiday-red);
+}
+
+.holiday-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--space-md);
+}
+
+.holiday-cal-row {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.holiday-cal-dates {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.holiday-cal-bar {
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.holiday-cal-bar strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.holiday-cal-bar.best {
+  background: #d1fae5;
+  border-left: 4px solid var(--mint);
+}
+
+.holiday-cal-bar.ok {
+  background: #fef3c7;
+  border-left: 4px solid var(--sun);
+}
+
+.holiday-cal-bar.busy {
+  background: #ffe4e6;
+  border-left: 4px solid var(--coral);
+}
+
+.holiday-cal-bar.avoid {
+  background: #fecdd3;
+  border-left: 4px solid var(--holiday-red);
+}
+
+.holiday-cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  margin-top: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.holiday-cal-legend span::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+
+.holiday-cal-legend .best::before {
+  background: var(--mint);
+}
+
+.holiday-cal-legend .ok::before {
+  background: var(--sun);
+}
+
+.holiday-cal-legend .busy::before {
+  background: var(--coral);
+}
+
+.holiday-cal-legend .avoid::before {
+  background: var(--holiday-red);
+}
+
+.holiday-day {
+  list-style: none;
+  position: relative;
+  margin-top: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+.holiday-day::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--holiday-red),
+    var(--holiday-green),
+    var(--holiday-gold)
+  );
+}
+
+.holiday-day li {
+  position: relative;
+  padding: 0 0 var(--space-md) var(--space-sm);
+}
+
+.holiday-day li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-lg) + 2px);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--holiday-red);
+}
+
+.holiday-day li:nth-child(even)::before {
+  border-color: var(--holiday-green);
+}
+
+.holiday-day-time {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--holiday-red);
+}
+
+.holiday-day li:nth-child(even) .holiday-day-time {
+  color: var(--holiday-green);
+}
+
+.holiday-day-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.holiday-day p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
+/* Homepage feature banner */
+.home-feature {
+  display: block;
+  max-width: 720px;
+  margin: var(--space-xl) auto 0;
+  padding: 0 var(--space-md);
+  text-decoration: none;
+}
+
+.home-feature-inner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  background:
+    radial-gradient(2px 2px at 30px 20px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 140px 70px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(3px 3px at 260px 30px, rgba(255, 255, 255, 0.7), transparent),
+    linear-gradient(
+      120deg,
+      var(--holiday-night) 0%,
+      var(--holiday-plum) 60%,
+      var(--holiday-red) 130%
+    );
+  box-shadow: var(--shadow-lg);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-feature:hover .home-feature-inner,
+.home-feature:focus-visible .home-feature-inner {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(15, 27, 61, 0.35);
+}
+
+.home-feature-emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+  flex: none;
+}
+
+.home-feature-kicker {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sun-light);
+}
+
+.home-feature-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 2px 0 4px;
+}
+
+.home-feature-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.home-feature-cta {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--sun-light);
 }
