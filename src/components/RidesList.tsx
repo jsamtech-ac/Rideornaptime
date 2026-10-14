@@ -61,6 +61,7 @@ function RideCard({ ride, dimmed }: { ride: Ride; dimmed: boolean }) {
         </div>
         <div className="ride-meta">
           <span className="ride-height">📏 {ride.height}</span>
+          {ride.closed && <span className="ride-closed">⛔ Closed now</span>}
           {ride.closing && <span className="ride-closing">⚠ {ride.closing}</span>}
         </div>
       </div>
@@ -84,6 +85,12 @@ function RideCard({ ride, dimmed }: { ride: Ride; dimmed: boolean }) {
         })}
       </div>
       <p className="ride-take">{ride.take}</p>
+      {ride.closed && ride.closureNote && (
+        <p className="ride-note">
+          <strong>Status:</strong> {ride.closureNote}
+        </p>
+      )}
+      {ride.notes && <p className="ride-note">{ride.notes}</p>}
     </div>
   )
 }

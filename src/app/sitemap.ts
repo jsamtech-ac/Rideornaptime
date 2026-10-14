@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL, SEASONAL_LAST_REVIEWED } from '@/lib/content'
+import { SITE_URL, SEASONAL_LAST_REVIEWED, RIDES_LAST_REVIEWED } from '@/lib/content'
 import { getLastModifiedDate } from '@/lib/getLastModified'
 import { getAllPostMeta } from '@/lib/news'
 
@@ -40,7 +40,7 @@ const staticRoutes: StaticRoute[] = [
   { path: '/seasonal', file: 'src/app/seasonal/page.tsx', lastModified: SEASONAL_LAST_REVIEWED },
   { path: '/lightning-lane', file: 'src/app/lightning-lane/page.tsx' },
   { path: '/saving-money', file: 'src/app/saving-money/page.tsx' },
-  { path: '/rides', file: 'src/app/rides/page.tsx' },
+  { path: '/rides', file: 'src/app/rides/page.tsx', lastModified: RIDES_LAST_REVIEWED },
   { path: '/characters', file: 'src/app/characters/page.tsx' },
   { path: '/food', file: 'src/app/food/page.tsx' },
   { path: '/packing-list', file: 'src/app/packing-list/page.tsx' },
