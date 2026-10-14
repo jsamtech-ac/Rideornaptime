@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Which park should you start at on a Park Hopper day?',
-    a: "Start at DCA for Radiator Springs Racers — rope drop saves $60–120 in Single Pass costs and gives you a 15-minute wait instead of 90. Disneyland's Peter Pan you can ride via Lightning Lane after the hop. The math favors DCA-first for almost every family.",
+    a: "Start at DCA for Radiator Springs Racers — rope drop saves $60–120 in Single Pass costs and gives you a 15-minute wait instead of 90. Book Disneyland Multi Pass rides like Runaway Railway for after the hop (Peter Pan isn't on Lightning Lane — catch it in the last hour before close). The math favors DCA-first for almost every family.",
   },
   {
     q: 'Should we nap between parks on a Park Hopper trip?',

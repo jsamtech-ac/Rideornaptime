@@ -14,7 +14,7 @@ const PAGE_FILE = 'src/app/lightning-lane/page.tsx'
 export const metadata: Metadata = {
   title: 'Disneyland Lightning Lane & Rope Drop Guide (2026)',
   description:
-    'The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $136, Rider Switch tricks, and the 2026 rules that actually matter.',
+    'The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $140, Rider Switch tricks, and the 2026 rules that actually matter.',
   alternates: { canonical: `${SITE_URL}/lightning-lane` },
   openGraph: {
     url: `${SITE_URL}/lightning-lane`,
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Is Lightning Lane Multi Pass worth it for families with toddlers?',
-    a: "On a weekday with kids ages 2–3, usually no. Most Multi Pass rides are the bigger headliners your toddler can't ride, and the Fantasyland classics they love (Peter Pan is the exception) aren't included. Rope-drop Fantasyland at 8 AM and you'll knock out 4 rides in 45 minutes for free. On weekends or with a 4+ year old, Multi Pass is worth the $34/person.",
+    a: "On a weekday with kids ages 2–3, usually no. Most Multi Pass rides are the bigger headliners your toddler can't ride, and the Fantasyland classics they love — Peter Pan, Dumbo, Alice — aren't included (Small World is the exception). Rope-drop Fantasyland at 8 AM and you'll knock out 4 rides in 45 minutes for free. On weekends or with a 4+ year old, Multi Pass is worth the ~$35/person.",
   },
   {
     q: 'What should I rope drop at Disneyland with kids?',
-    a: "Toddlers (ages 2–4): head straight to Fantasyland through the castle for Peter Pan first, then Dumbo, Small World, and Alice. Elementary kids (5–8): Toontown for Mickey & Minnie's Runaway Railway, then backtrack to Fantasyland. Brave 6–8 year olds: Frontierland for Big Thunder, then New Orleans Square for Pirates and Haunted Mansion before 10 AM.",
+    a: "Toddlers (ages 2–4): head straight to Fantasyland through the castle for Peter Pan first, then Dumbo, Small World, and Alice. Elementary kids (5–8): Toontown for Mickey & Minnie's Runaway Railway, then backtrack to Fantasyland. Brave 6–8 year olds: Frontierland for Big Thunder, then New Orleans Square for Pirates (no Lightning Lane, so mornings are your window) and Haunted Mansion before 10 AM.",
   },
   {
     q: "What's the best Lightning Lane strategy at Disney California Adventure?",
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "What's the hotel guest Lightning Lane bonus?",
-    a: "Starting January 5, 2026, guests checked into a Disneyland Resort hotel get one free Lightning Lane Multi Pass entry per person, per stay. Spend it on a ride your whole family can do — Peter Pan's Flight or Mickey & Minnie's Runaway Railway are the safest picks.",
+    a: "Starting January 5, 2026, guests checked into a Disneyland Resort hotel get one free Lightning Lane Multi Pass entry per person, per stay. Spend it on a ride your whole family can do — Mickey & Minnie's Runaway Railway or Roger Rabbit's Car Toon Spin (now any height) are the safest picks.",
   },
   {
     q: 'Should I buy Single Pass for Radiator Springs Racers?',
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: 'Should I buy Lightning Lane Multi Pass the day before or the day of?',
-    a: 'Buy the day before. Multi Pass pricing is variable — it starts around $34/person/day and climbs with demand and proximity to your visit. Day-of pricing is meaningfully higher, and on peak weekends prices reach $40+/person.',
+    a: 'Buy the day before. Multi Pass pricing is variable — since October 6, 2026 it starts around $35/person/day bought in advance and from $38 on the day, climbing with demand. On peak weekends prices reach $40+/person.',
   },
 ]
 
@@ -92,7 +92,7 @@ const ropeDropSteps = [
   },
   {
     name: 'Head straight to your age-appropriate priority ride',
-    text: "Toddlers ages 2–4 head through the castle to Fantasyland for Peter Pan's Flight first, then Dumbo, Small World, and Alice. Elementary kids ages 5–8 go to Toontown for Mickey & Minnie's Runaway Railway. Brave kids ages 6–8 hit Big Thunder Mountain in Frontierland, then Pirates and Haunted Mansion before 10 AM. At DCA, go straight to Radiator Springs Racers.",
+    text: "Toddlers ages 2–4 head through the castle to Fantasyland for Peter Pan's Flight first, then Dumbo, Small World, and Alice. Elementary kids ages 5–8 go to Toontown for Mickey & Minnie's Runaway Railway. Brave kids ages 6–8 hit Big Thunder Mountain in Frontierland, then Pirates (not on Lightning Lane) and Haunted Mansion before 10 AM. At DCA, go straight to Radiator Springs Racers.",
   },
   {
     name: 'Book your first Lightning Lane the moment you tap in',
@@ -142,16 +142,16 @@ function verdictCell(v: Verdict) {
 }
 
 const bookItCall: Record<string, string> = {
-  "Peter Pan's Flight": 'Book first if not rope-dropping',
   "Mickey & Minnie's Runaway Railway": 'Rope drop it, or book',
   'Haunted Mansion': 'Book midday',
-  'Jungle Cruise': 'Book if line > 30 min',
-  'Pirates of the Caribbean': 'Book if line > 30 min',
   'Big Thunder Mountain Railroad': 'Book — Rider Switch for shorter kids',
   'Space Mountain': 'Book — Rider Switch for non-riders',
   "Tiana's Bayou Adventure": 'Book — Rider Switch if under 40"',
   'Buzz Lightyear Astro Blasters': 'Book only if line > 30 min',
-  'Finding Nemo Submarine Voyage': 'Book only if line > 30 min',
+  "It's a Small World": 'Book for a hot afternoon',
+  "Roger Rabbit's Car Toon Spin": 'Book if standby > 25 min',
+  'Matterhorn Bobsleds': 'Book — or free Single Rider',
+  'Indiana Jones Adventure': 'Closed — return TBD',
   Autopia: 'Skip — bad payoff',
 }
 
@@ -169,7 +169,7 @@ export default function LightningLanePage() {
       <ArticleJsonLd
         path="/lightning-lane"
         headline="Disneyland Lightning Lane & Rope Drop Guide (2026)"
-        description="The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $136, Rider Switch tricks, and the 2026 rules that actually matter."
+        description="The family playbook for ages 2–8: what to rope drop, when Multi Pass is worth $140, Rider Switch tricks, and the 2026 rules that actually matter."
         datePublished="2026-04-15"
         dateModified={getLastModifiedDate(PAGE_FILE)}
       />
@@ -226,7 +226,8 @@ export default function LightningLanePage() {
           </p>
           <p>
             <strong>Weekends &amp; holidays:</strong> flip the call. Lines hit 40+ minutes for
-            everything by 10 AM. Multi Pass pays for itself on Peter Pan's Flight alone.
+            everything by 10 AM. Multi Pass pays for itself on Runaway Railway, Small World, and
+            Buzz alone.
           </p>
         </div>
 
@@ -238,9 +239,11 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Sweet spot. Now they can ride Peter Pan, Pirates, Jungle Cruise, Haunted Mansion (if
-            brave), Runaway Railway, Buzz, and Finding Nemo — all on Multi Pass. You'll clear 6–8
-            Lightning Lane rides in a day. Worth the $34/person.
+            Sweet spot. Now they can ride Runaway Railway, Buzz, Roger Rabbit, Small World, Haunted
+            Mansion (if brave), and Autopia — all on Multi Pass. Peter Pan, Pirates, Jungle Cruise,
+            and Finding Nemo are <strong>not</strong> on Lightning Lane, so rope-drop Peter Pan and
+            catch the others early or late. You'll clear 5–7 Lightning Lane rides in a day. Worth
+            the ~$35/person.
           </p>
           <p>
             <strong>Don't buy Single Pass.</strong> Rise of the Resistance is intense for this age;
@@ -256,10 +259,11 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Big Thunder, Space Mountain, Indy, Matterhorn, Tiana's — all unlocked. Multi Pass is a
-            must. Add a Single Pass for <strong>Radiator Springs Racers</strong> if you're at DCA on
-            a weekend or arriving after 9 AM. Rope drop Toontown (Runaway Railway) or Frontierland
-            (Big Thunder) depending on your kid's bravery.
+            Big Thunder, Space Mountain, Matterhorn, Tiana's, Star Tours — all unlocked (Indiana
+            Jones is closed for refurbishment, return TBD). Multi Pass is a must. Add a Single Pass
+            for <strong>Radiator Springs Racers</strong> if you're at DCA on a weekend or arriving
+            after 9 AM. Rope drop Toontown (Runaway Railway) or Frontierland (Big Thunder) depending
+            on your kid's bravery.
           </p>
         </div>
       </section>
@@ -291,8 +295,8 @@ export default function LightningLanePage() {
             <strong>one free Lightning Lane entry per person, per stay</strong> (new Jan 5, 2026) —
             a single entry for the whole stay, not one per day. It works only on Multi Pass–eligible
             rides, so you can't burn it on a Single Pass headliner like Rise of the Resistance or
-            Radiator Springs Racers. Spend it on a ride everyone can do — Peter Pan's Flight or
-            Mickey &amp; Minnie's Runaway Railway — so no one feels left out.
+            Radiator Springs Racers. Spend it on a ride everyone can do — Mickey &amp; Minnie's
+            Runaway Railway or Roger Rabbit's Car Toon Spin — so no one feels left out.
           </p>
         </div>
 
@@ -304,7 +308,8 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Starts at ~$34/person/day and climbs with demand and proximity to your visit.
+            Starts at ~$35/person/day bought in advance (from $38 day-of, as of October 6, 2026) and
+            climbs with demand.
             <strong> Buy the day before at the latest</strong> — day-of pricing is meaningfully
             higher. Prices reach $40+/person on peak weekends.
           </p>
@@ -364,9 +369,10 @@ export default function LightningLanePage() {
           </div>
           <p>
             Head straight through the castle to Fantasyland.{' '}
-            <strong>Peter Pan's Flight first</strong> — the line hits 60+ minutes by 10 AM and never
-            drops. Then Dumbo (90-second ride, absurd lines later), then Small World, then Alice.
-            Four rides in the first 45 minutes, all toddler-friendly, all for free.
+            <strong>Peter Pan's Flight first</strong> — it's not on Lightning Lane, and the line
+            hits 60+ minutes by 10 AM and never drops. Then Dumbo (90-second ride, absurd lines
+            later), then Small World, then Alice. Four rides in the first 45 minutes, all
+            toddler-friendly, all for free.
           </p>
           <p>
             If the line for Peter Pan is already 20+ at rope drop, flip the order: Dumbo first, loop
@@ -398,9 +404,10 @@ export default function LightningLanePage() {
           <p>
             Frontierland → <strong>Big Thunder Mountain</strong> first (Tiana's Bayou Adventure is
             also great here, but its standby moves faster than Big Thunder's). Then walk to New
-            Orleans Square for <strong>Pirates</strong> and <strong>Haunted Mansion</strong> before
-            10 AM. That's three MP-worthy rides knocked out in the first hour for free — which
-            leaves your Multi Pass bookings for the afternoon crunch.
+            Orleans Square for <strong>Pirates</strong> (no Lightning Lane, so this is its best
+            window) and <strong>Haunted Mansion</strong> before 10 AM. That's three big rides
+            knocked out in the first hour for free — which leaves your Multi Pass bookings for the
+            afternoon crunch.
           </p>
         </div>
 
@@ -420,7 +427,7 @@ export default function LightningLanePage() {
           <p>
             If your kid is under 40" (can't ride), one parent rope-drops RSR solo via Single Rider
             line while the other takes the kid to <strong>The Little Mermaid</strong> — a walk-on,
-            air-conditioned ride 90 seconds away. Reconvene at Pixar Pier.
+            air-conditioned ride in Paradise Gardens. Reconvene at Pixar Pier.
           </p>
         </div>
 
@@ -474,7 +481,8 @@ export default function LightningLanePage() {
             <strong>First-book priorities:</strong>
             <br />
             <strong>Disneyland:</strong> Mickey &amp; Minnie's Runaway Railway if you're not
-            rope-dropping Toontown. Otherwise Peter Pan's Flight — the line only goes up from here.
+            rope-dropping Toontown. Otherwise Big Thunder (6+) or Buzz Lightyear (little kids).
+            Peter Pan isn't on Lightning Lane — rope-drop it instead.
             <br />
             <strong>DCA:</strong> Monsters, Inc. or Guardians of the Galaxy — Mission: BREAKOUT!,
             depending on kid age. The most family-friendly DCA Multi Pass windows fill fast, so book
@@ -580,11 +588,11 @@ export default function LightningLanePage() {
         </div>
 
         <p className="footnote">
-          <strong>Also on Multi Pass but not on our age matrix:</strong> Matterhorn Bobsleds (42"),
-          Indiana Jones Adventure (46"), and Roger Rabbit's Car Toon Spin (no height). Matterhorn
-          and Indy are ages 7+ calls — both offer Single Rider lines as a free alternative. Roger
-          Rabbit is a spinning dark ride — fine for ages 4+, book if standby exceeds 25 minutes.
-          Full age-by-age calls on rides are in the <Link href="/rides">rides guide</Link>.
+          <strong>Not on Lightning Lane at all:</strong> Peter Pan's Flight, Pirates of the
+          Caribbean, Jungle Cruise, Finding Nemo Submarine Voyage, and the Fantasyland classics —
+          rope drop or standby only. Indiana Jones Adventure is on Multi Pass but closed for
+          refurbishment (return TBD). Full age-by-age calls on rides are in the{' '}
+          <Link href="/rides">rides guide</Link>.
         </p>
       </section>
 
@@ -603,7 +611,7 @@ export default function LightningLanePage() {
         <div className="callout hot">
           <div className="callout-label">The Uncomfortable Truth</div>
           <p>
-            Family of 4 × $34 = <strong>$136</strong> for maybe 3 rides saved. That's ~$45 per
+            Family of 4 × $35 = <strong>$140</strong> for maybe 3 rides saved. That's ~$45 per
             ride-skip, for rides with standby waits that are often under 40 minutes on a weekday.
             Many families should skip DCA Multi Pass entirely.
           </p>
@@ -632,7 +640,7 @@ export default function LightningLanePage() {
           </div>
           <p>
             Weekday visits with kids 2–5. You're arriving after noon. You only plan a half-day at
-            DCA. Rope-drop RSR, standby the rest, and take the $136 you saved to dinner at Lamplight
+            DCA. Rope-drop RSR, standby the rest, and take the $140 you saved to dinner at Lamplight
             Lounge instead.
           </p>
         </div>
@@ -733,9 +741,9 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Big Thunder, Space Mountain, Indiana Jones, Matterhorn, Tiana's Bayou Adventure,
-            Radiator Springs Racers, and Incredicoaster. Anything with a 40"+ height requirement and
-            a non-rider in your party. Less useful on Fantasyland staples your whole family can
+            Big Thunder, Space Mountain, Matterhorn, Tiana's Bayou Adventure, Star Tours, Radiator
+            Springs Racers, and Incredicoaster. Anything with a 40"+ height requirement and a
+            non-rider in your party. Less useful on Fantasyland staples your whole family can
             already ride together.
           </p>
         </div>
@@ -832,8 +840,8 @@ export default function LightningLanePage() {
           </div>
           <p>
             Free. You get split from your party and slotted into odd single seats. Available at:
-            <strong> Matterhorn Bobsleds</strong> (DL), <strong>Indiana Jones Adventure</strong>
-            (DL), <strong>Radiator Springs Racers</strong> (DCA), and sometimes Incredicoaster,
+            <strong> Matterhorn Bobsleds</strong> (DL), <strong>Radiator Springs Racers</strong>
+            (DCA), Indiana Jones Adventure (DL, once it reopens), and sometimes Incredicoaster,
             Grizzly River Run, and Web Slingers (DCA). Ask a cast member if it's open that day — it
             comes and goes.
           </p>
@@ -854,9 +862,9 @@ export default function LightningLanePage() {
           <p>
             One free Multi Pass entry per person, per stay. Spend it on a ride your{' '}
             <em>whole family</em>
-            can do so no one feels left out — Peter Pan's Flight or Mickey &amp; Minnie's Runaway
-            Railway are the safest picks. Don't burn it on Big Thunder if your 3-year-old has to sit
-            out.
+            can do so no one feels left out — Mickey &amp; Minnie's Runaway Railway or Roger
+            Rabbit's Car Toon Spin are the safest picks. Don't burn it on Big Thunder if your
+            3-year-old has to sit out.
           </p>
         </div>
 
@@ -868,9 +876,9 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            Wait times drop 30–50% during Magic Happens (afternoon parade) and during nighttime
-            spectaculars. If your kids don't care about the parade, this is pure alpha — Fantasyland
-            becomes a ghost town for 25 minutes.
+            Wait times drop 30–50% during parades and cavalcades (Magic Happens returns in summer
+            2027) and during nighttime spectaculars. If your kids don't care about the parade, this
+            is pure alpha — Fantasyland becomes a ghost town for 25 minutes.
           </p>
           <p>
             For fireworks, watching from Galaxy's Edge (they play John Williams music) lets you ride
@@ -917,9 +925,10 @@ export default function LightningLanePage() {
         <div className="callout hot">
           <div className="callout-label">Skip: Single Pass for rides your kid can't ride</div>
           <p>
-            Rise of the Resistance has no height requirement but is <em>intense</em> for under-6s —
-            blaster effects, lurching motion, stormtrooper scenes. Radiator Springs Racers requires
-            40". Buying a Single Pass for a kid who can't or won't ride is setting money on fire.
+            Rise of the Resistance requires 40" and is <em>intense</em> for under-6s even when they
+            measure tall enough — blaster effects, lurching motion, stormtrooper scenes. Radiator
+            Springs Racers requires 40". Buying a Single Pass for a kid who can't or won't ride is
+            setting money on fire.
           </p>
         </div>
 
@@ -927,7 +936,7 @@ export default function LightningLanePage() {
           <div className="callout-label">Skip: DCA Multi Pass on a half-day</div>
           <p>
             Arriving at DCA at 3 PM? Most Lightning Lane windows are gone and you only have 2–3 MP
-            rides to pick from to begin with. Save the $136 and standby.
+            rides to pick from to begin with. Save the $140 and standby.
           </p>
         </div>
 
@@ -959,7 +968,7 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            <strong>Cost:</strong> $34 × 4 = $136 Multi Pass.
+            <strong>Cost:</strong> $35 × 4 = $140 Multi Pass.
             <br />
             <strong>Value:</strong> 7–8 Lightning Lane rides across a full day. Each saves 30–45
             minutes of line time = <strong>~4 hours saved</strong>. That's the difference between a
@@ -975,11 +984,11 @@ export default function LightningLanePage() {
             </div>
           </div>
           <p>
-            <strong>Cost:</strong> $136 Multi Pass for 3 eligible rides (2 after Monsters closes).
+            <strong>Cost:</strong> $140 Multi Pass for 3 eligible rides (2 after Monsters closes).
             Radiator Springs Racers isn't included; it's a separate Single Pass.
             <br />
             <strong>Better play:</strong> Rope drop RSR ($0). Standby Monsters, Inc. and Toy Story
-            Midway Mania (each ~25–40 min on a weekday). Spend the $136 on dinner at Lamplight
+            Midway Mania (each ~25–40 min on a weekday). Spend the $140 on dinner at Lamplight
             Lounge and a Cars Land churro run.
           </p>
         </div>
