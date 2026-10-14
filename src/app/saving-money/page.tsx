@@ -28,6 +28,10 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    q: 'How much are Disneyland tickets right now?',
+    a: 'Since Oct 6, 2026, a 1-day, 1-park ticket runs $104 on the cheapest days up to $224 on peak days (tiers: $104, $134, $154, $174, $189, $199, $224). Kids under 3 are free. Lightning Lane Multi Pass is extra — about $35 per person bought in advance, $38+ on the day.',
+  },
+  {
     q: 'What is the cheapest way to buy Disneyland tickets?',
     a: "Authorized resellers like Undercover Tourist and Get Away Today consistently beat Disney's direct prices — especially on multi-day tickets. California residents should also watch for the limited-run resident ticket deal Disney typically releases early each year (the 2026 version was a 3-day Park Hopper for $249, about $83/day, sold Jan–May) — it sells out fast, so buy the week it drops.",
   },
@@ -80,6 +84,37 @@ export default function SavingMoneyPage() {
 
         <div className="tip-card">
           <div className="tip-card-header">
+            <div className="tip-card-icon sun">🎟️</div>
+            <div>
+              <h3>What tickets cost now (prices from Oct 6, 2026)</h3>
+            </div>
+          </div>
+          <p>
+            <strong>1-day, 1-park tickets</strong> are date-based: <strong>$104</strong> on the
+            cheapest days, then $134, $154, $174, $189, $199, up to <strong>$224</strong> on peak
+            days. The Oct 6 increase only hit the middle tiers (+$5); the $104 and $224 tiers and
+            most multi-day tickets didn&apos;t change. <strong>Kids under 3 are free.</strong>
+          </p>
+          <p>
+            <strong>Pick a $104 day if you can</strong> — the cheapest tier shows up on select
+            weekdays (November 2026 has several). Lightning Lane Multi Pass is about $35/person
+            bought in advance, $38+ day-of.
+          </p>
+          <p>
+            <strong>Magic Key</strong> (annual pass) prices held steady: Inspire $1,899, Believe
+            $1,474, the new <strong>Explore Key at $999</strong> (it replaced Enchant), and Imagine
+            $599 for SoCal residents.
+          </p>
+          <p>
+            <strong>Deals running now</strong> (check dates before you book): Costco&apos;s 2-Day
+            Park Hopper bundle with Lightning Lane Multi Pass and a dining card ($329.99, valid
+            through Dec 18, 2026); up to 20% off Disneyland Resort hotels Sunday–Thursday through
+            Dec 18 (book by Dec 15); and military tickets at $104 adult / $98 child.
+          </p>
+        </div>
+
+        <div className="tip-card">
+          <div className="tip-card-header">
             <div className="tip-card-icon sun">🎟</div>
             <div>
               <h3>Buy tickets from authorized resellers, not Disney</h3>
@@ -87,9 +122,10 @@ export default function SavingMoneyPage() {
           </div>
           <p>
             Authorized Disney ticket sellers like Undercover Tourist and Get Away Today consistently
-            beat Disney's direct prices, especially on multi-day tickets. California residents can
-            get 3-day park hoppers for as low as $68/day through these sellers vs $85/day through
-            Disney directly.
+            beat Disney's direct prices, especially on multi-day tickets. California residents
+            should also watch for the resident ticket offer Disney usually releases early in the
+            year (the 2026 version was a 3-day Park Hopper for $249) — 2027 offers haven't been
+            announced yet.
           </p>
           <p>
             Always check for current deals before buying direct from Disney — the savings add up

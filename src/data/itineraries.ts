@@ -69,7 +69,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Rope drop Fantasyland, knock out Peter Pan and Mickey & Minnie's before the wall hits, nap from noon to 3, come back for the second wave, and close with fireworks from Galaxy's Edge.",
+      "Rope drop Fantasyland, knock out Peter Pan and Mickey & Minnie's before the wall hits, nap from noon to 3, come back for the second wave, and close at Galaxy's Edge for fireworks on nights there's a show.",
     blocks: [
       {
         id: 'arrive',
@@ -182,7 +182,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Use Lightning Lane: Haunted Mansion',
-        body: 'Know your kid before you commit. If they handle mild spooky, a brave 4-year-old will love it. If not, the stretching room alone ends the day. Crowds thin during the afternoon parade — keep moving while everyone else lines Main Street.',
+        body: 'Know your kid before you commit. If they handle mild spooky, a brave 4-year-old will love it. If not, the stretching room alone ends the day. Seasonal parade or cavalcade on today? Check the app — while it runs, keep moving while everyone else lines Main Street.',
         rideIds: ['haunted-mansion'],
       },
       {
@@ -199,7 +199,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 75,
         type: 'ride',
         title: 'Re-rides: Peter Pan again + Toontown playground',
-        body: "Peter Pan has no Lightning Lane, so a second ride means standby. It's still 45+ at dinnertime — if it's posted under 40, go; otherwise come back during the fireworks or the last hour before close, when it's at its lowest. Then drop the kids at the Toontown playground (one exit, you can sit) for 20 minutes of running.",
+        body: "Peter Pan has no Lightning Lane, so a second ride means standby. It's still 45+ at dinnertime — if it's posted under 40, go; otherwise come back during the fireworks (on a show night) or the last hour before close, when it's at its lowest. Then drop the kids at the Toontown playground (one exit, you can sit) for 20 minutes of running.",
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -207,8 +207,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '8:45 PM',
         durationMin: 45,
         type: 'show',
-        title: "Fireworks from Star Wars: Galaxy's Edge",
-        body: "Skip the Main Street crush. Walk into Galaxy's Edge by 8:50, post up in the open plaza — same fireworks with John Williams music piped in over the speakers, way less crowded, easier exit with a stroller. You give up the castle projections; you keep your sanity.",
+        title: "Fireworks from Galaxy's Edge — on show nights",
+        body: "Fireworks aren't nightly right now, so check the Disneyland app calendar before you plan around them (Halloween Screams runs Fri–Sun through Oct 31, and some nights are projection-only; Believe… in Holiday Magic takes over Nov 13 – Jan 6). On a show night, skip the Main Street crush: walk into Galaxy's Edge by 8:50 and post up in the open plaza — way less crowded, easier exit with a stroller. You give up the castle projections; you keep your sanity. No show tonight? That's your Peter Pan window.",
       },
     ],
   },
@@ -221,7 +221,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 at Disneyland — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Foundation day: the four marquee rides everyone-can-do — Peter Pan, Mickey & Minnie's, Big Thunder (if tall), Jungle Cruise — plus a full nap and fireworks. Save Main Street castle projections for your last night.",
+      "Foundation day: the four marquee rides everyone-can-do — Peter Pan, Mickey & Minnie's, Big Thunder (if tall), Jungle Cruise — plus a full nap and fireworks if tonight's a show night. Save Main Street castle views for your last show night.",
     blocks: [
       {
         id: 'arrive',
@@ -350,8 +350,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Fireworks from Main Street tonight',
-        body: "It's Day 1 — give the kids the full castle projection show from the Main Street hub. Watch the 'less-crowded Galaxy's Edge view' for the last night. Stake out a curb spot by 8:40, sit down, breathe.",
+        title: 'Fireworks from Main Street tonight (if scheduled)',
+        body: "It's Day 1 — if the app calendar shows fireworks tonight (they're seasonal, not nightly: Halloween Screams runs Fri–Sun through Oct 31; Believe… in Holiday Magic takes over Nov 13 – Jan 6), give the kids the full castle view from the Main Street hub. Save the less-crowded Galaxy's Edge view for a later night. Stake out a curb spot by 8:40, sit down, breathe.",
       },
     ],
   },
@@ -368,11 +368,11 @@ export const dayTemplates: DayTemplate[] = [
     blocks: [
       {
         id: 'arrive',
-        time: '7:45 AM',
-        durationMin: 30,
+        time: '7:15 AM',
+        durationMin: 45,
         type: 'tip',
         title: 'A slightly slower start on Day 2',
-        body: "Day 2 you've earned 30 extra minutes. Park by 7:30 for an 8:00 open. Eat breakfast at the hotel. Today is about the second-tier Fantasyland dark rides the one-day visitors miss.",
+        body: 'Day 2 you can ease off the hustle — but not the clock. Still be at the gates 45 minutes before open (by 7:15 for an 8:00 open). Eat breakfast at the hotel. Today is about the second-tier Fantasyland dark rides the one-day visitors miss.',
       },
       {
         id: 'rope-drop',
@@ -492,8 +492,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge",
-        body: "Last middle-night fireworks should be the easy view. Walk into Galaxy's Edge by 8:50 — open plaza, room for the stroller, John Williams music. You saw the castle show on Day 1 and you'll see it again on Day 3 if it's running.",
+        title: "Fireworks from Galaxy's Edge — if there's a show",
+        body: "Middle-night fireworks should be the easy view — on nights there are fireworks. Check the app calendar first; right now they're seasonal, not nightly. Walk into Galaxy's Edge by 8:50 — open plaza, room for the stroller. You saw the castle on Day 1 and you'll catch it again on Day 3 if there's a show.",
       },
     ],
   },
@@ -506,7 +506,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at Disneyland — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      'Re-ride day: let the kid pick their three favorites, do a character breakfast, catch the afternoon parade, and watch fireworks from Main Street tonight for the full castle projection show.',
+      "Re-ride day: let the kid pick their three favorites, do a character breakfast, catch a seasonal parade if one's running, and finish on Main Street for the castle show if tonight's a fireworks night.",
     blocks: [
       {
         id: 'breakfast',
@@ -549,7 +549,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Mickey & Minnie's Runaway Railway",
-        body: "Second LL on the last day always goes to Mickey & Minnie's — kids ask for it again all trip. Book for 11:30 to clear before the afternoon parade.",
+        body: "Second LL on the last day always goes to Mickey & Minnie's — kids ask for it again all trip. Book for 11:30 so you're out of Toontown before the midday crush.",
         llRideId: 'mickey-and-minnies-runaway-railway',
       },
       {
@@ -566,7 +566,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Mickey & Minnie's",
-        body: 'Last ride before the nap window. Move directly toward the exit afterward — afternoon parade crowds will pin you in if you linger.',
+        body: 'Last ride before the nap window. Move directly toward the exit afterward — Main Street gets sticky by noon, and if a seasonal parade is stepping off, its crowds will pin you in.',
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -583,7 +583,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Big Thunder one more time (for 4:00)',
-        body: 'If you have a tall-enough kid, Big Thunder is the right last-afternoon LL. Otherwise Haunted Mansion. Set it for 4:00 to land between the parade and dinner.',
+        body: 'If you have a tall-enough kid, Big Thunder is the right last-afternoon LL. Otherwise Haunted Mansion. Set it for 4:00 to land after any afternoon parade and before dinner.',
         llRideId: 'big-thunder-mountain-railroad',
       },
       {
@@ -591,8 +591,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '3:30 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Magic Happens parade — find a Main Street curb',
-        body: "Last day = parade day. Magic Happens runs in the afternoon (check the app for today's time; it varies seasonally). Find a curb on Main Street 25 minutes before. Skip if you have a kid who can't sit through a parade.",
+        title: "Parade or cavalcade? Check today's schedule",
+        body: "There's no daily parade right now — Magic Happens returns summer 2027. But if a seasonal one is running (Mickey & Friends Halloween Cavalcade through Oct 31; A Christmas Fantasy Nov 13 – Jan 6), last day is the day for it: check the app for times and find a Main Street curb 25 minutes before. Nothing on today? Take this half hour slow — a churro and a bench count.",
       },
       {
         id: 'final-rides',
@@ -617,15 +617,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 75,
         type: 'ride',
         title: 'Last-rides loop — whatever they ask for',
-        body: "Whatever the kid wants, one more time. Standby waits drop in the 7–8 PM window before fireworks. Peter Pan stays stubborn until the fireworks start — if it's the must-ride, get in line the moment the show begins (or in the last hour before close). Last shot.",
+        body: "Whatever the kid wants, one more time. Standby waits drop in the 7–8 PM dinner lull. Peter Pan stays stubborn until late — if it's the must-ride, get in line the moment tonight's fireworks start (on a show night) or in the last hour before close. Last shot.",
       },
       {
         id: 'fireworks',
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Castle fireworks from Main Street tonight',
-        body: 'Final night — give them the full castle projection show. Stake out a curb on Main Street 20 minutes early near the Plaza Inn end (less crowded than the hub). After the show, walk against the exit crush by going through Adventureland instead of straight down Main Street.',
+        title: "Castle fireworks from Main Street — if they're on tonight",
+        body: 'Final night — if the calendar shows fireworks, give them the castle show. Check the Disneyland app: Halloween Screams runs Fri–Sun through Oct 31 (some nights projection-only), Believe… in Holiday Magic Nov 13 – Jan 6, and Remember… Dreams Come True returns Feb 2027. Stake out a curb 20 minutes early near the Plaza Inn end (less crowded than the hub). After the show, walk against the exit crush by going through Adventureland instead of straight down Main Street.',
       },
     ],
   },
@@ -638,7 +638,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      'For families with 6–8 year olds who can skip the nap: rope drop the headliners, sit-down lunch instead of a hotel return, and a steady afternoon that still leaves you standing for fireworks.',
+      'For families with 6–8 year olds who can skip the nap: rope drop the headliners, sit-down lunch instead of a hotel return, and a steady afternoon that still leaves you standing for the evening.',
     blocks: [
       {
         id: 'arrive',
@@ -725,7 +725,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Lightning Lane: Haunted Mansion',
-        body: 'Book Haunted Mansion for 2:30. NOLA Square is the natural after-lunch direction; this lines up before the afternoon parade window.',
+        body: 'Book Haunted Mansion for 2:30. NOLA Square is the natural after-lunch direction; this lands before the mid-afternoon slump.',
         llRideId: 'haunted-mansion',
       },
       {
@@ -751,8 +751,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '3:30 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Catch Magic Happens parade if running',
-        body: "Magic Happens runs in the afternoon — check the app for today's time, it varies seasonally. Stake out a curb on Main Street 20 minutes before. Skip it if your kids would rather keep riding.",
+        title: "Seasonal parade, if one's running",
+        body: "No regular daily parade right now (Magic Happens is back summer 2027). During Halloween Time the Mickey & Friends cavalcade rolls through; from Nov 13 it's A Christmas Fantasy. Check the app for today's times and grab a Main Street curb 20 minutes before — or skip it and keep riding while everyone else lines the route.",
       },
       {
         id: 'tomorrowland',
@@ -760,7 +760,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Use LL + Tomorrowland sweep',
-        body: "Star Tours or Buzz via LL, then Finding Nemo standby — it isn't on Lightning Lane, but waits drop after the parade. Astro Orbitor only if your kid is begging — line loads slow for a 90-second spinner.",
+        body: "Star Tours or Buzz via LL, then Finding Nemo standby — it isn't on Lightning Lane, but waits usually ease off by late afternoon. Astro Orbitor only if your kid is begging — line loads slow for a 90-second spinner.",
         rideIds: ['star-tours', 'finding-nemo-submarine-voyage'],
       },
       {
@@ -785,8 +785,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge",
-        body: "Stay in Galaxy's Edge — same fireworks with John Williams music over the speakers, way less crowded, easier exit. You give up castle projections; you trade them for sanity on a long no-nap day.",
+        title: "Galaxy's Edge for fireworks (show nights)",
+        body: "Fireworks aren't nightly right now — check the app calendar (Halloween Screams runs Fri–Sun through Oct 31; Believe… in Holiday Magic takes over Nov 13 – Jan 6). On a show night, stay in Galaxy's Edge: way less crowded, easier exit. You give up castle projections; you trade them for sanity on a long no-nap day. No show? One more Millennium Falcon run, then beat the exit rush.",
       },
     ],
   },
@@ -912,7 +912,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Tomorrowland: Star Tours or Buzz Lightyear',
-        body: 'Star Tours for kids 6+ who handle motion (40" required). Buzz Lightyear for everyone else. Book for 4:30 to land in the post-parade window.',
+        body: 'Star Tours for kids 6+ who handle motion (40" required). Buzz Lightyear for everyone else. Book for 4:30 to land in the late-afternoon lull.',
         llRideId: 'star-tours',
       },
       {
@@ -920,8 +920,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '3:30 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Magic Happens parade if running today',
-        body: "Magic Happens runs afternoon — check the app for today's time. Day 1, you have multiple days for fireworks; this is the right day to bank the parade.",
+        title: 'Holiday parade or cavalcade, if running',
+        body: 'Day 1 is the right day to bank a parade — if there is one. Magic Happens is off until summer 2027, so check the app: the Halloween Cavalcade runs through Oct 31 and A Christmas Fantasy from Nov 13 – Jan 6. No parade today? Use the half hour for a snack and a shady bench.',
       },
       {
         id: 'tomorrowland',
@@ -929,7 +929,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Use Tomorrowland LL + standby loop',
-        body: "Use the booked LL, then Finding Nemo standby — it isn't on Lightning Lane, but waits drop after the parade and the subs are air-conditioned.",
+        body: "Use the booked LL, then Finding Nemo standby — it isn't on Lightning Lane, but waits ease off late in the afternoon and the subs are air-conditioned.",
         rideIds: ['star-tours', 'finding-nemo-submarine-voyage'],
       },
       {
@@ -945,8 +945,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Castle fireworks tonight — you have a Day 2',
-        body: "Day 1 gets the full castle projection show from Main Street. Stake out a curb 25 minutes early near the Plaza Inn side (less crowded than the hub). Save the calmer Galaxy's Edge view for a later night.",
+        title: 'Castle fireworks tonight — if scheduled',
+        body: "Day 1 gets the castle show from Main Street if the calendar has one tonight — fireworks aren't nightly right now, so check the app (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic from Nov 13). Stake out a curb 25 minutes early near the Plaza Inn side (less crowded than the hub). Save the calmer Galaxy's Edge view for a later show night.",
       },
     ],
   },
@@ -1055,7 +1055,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Use LL + Tomorrowland standby',
-        body: "Use the booked LL, then Finding Nemo standby for the AC + relaxation — it isn't on Lightning Lane, but waits drop in the parade window. Astro Orbitor is skippable — line loads slow.",
+        body: "Use the booked LL, then Finding Nemo standby for the AC + relaxation — it isn't on Lightning Lane, but waits drop as the afternoon wears on. Astro Orbitor is skippable — line loads slow.",
         rideIds: ['star-tours', 'finding-nemo-submarine-voyage'],
       },
       {
@@ -1090,15 +1090,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 90,
         type: 'ride',
         title: "Re-ride the kid's pick + evening Fantasyland sweep",
-        body: "Standby waits drop in the 7–8 PM evening window. Let the kid pick their re-ride. Want Peter Pan again? It has no Lightning Lane — the line is shortest once the fireworks start, so hop in then if they'd rather fly than watch.",
+        body: "Standby waits drop in the 7–8 PM evening window. Let the kid pick their re-ride. Want Peter Pan again? It has no Lightning Lane — the line is shortest while fireworks are running (on show nights) or in the last hour before close, so hop in then if they'd rather fly than watch.",
       },
       {
         id: 'fireworks',
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge tonight",
-        body: "Day 1 was castle projections. Tonight is the easy view — Galaxy's Edge plaza, John Williams over the speakers, less crowded, stroller-friendly. Save the castle finale for Day 3.",
+        title: "Galaxy's Edge fireworks view (if there's a show)",
+        body: "If Day 1 got the castle view, tonight is the easy one — Galaxy's Edge plaza, less crowded, stroller-friendly. Fireworks are seasonal right now, so check the app calendar first. Save the castle finale for Day 3 if it's a show night.",
       },
     ],
   },
@@ -1111,7 +1111,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at Disneyland — Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      'Close the trip without a nap: character breakfast at Plaza Inn, the kid picks the re-rides, parade in the afternoon, and the full castle fireworks show from Main Street tonight.',
+      "Close the trip without a nap: character breakfast at Plaza Inn, the kid picks the re-rides, a seasonal parade if one's running, and castle fireworks from Main Street if tonight's a show night.",
     blocks: [
       {
         id: 'breakfast',
@@ -1154,7 +1154,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book Lightning Lane: Mickey & Minnie's",
-        body: 'Last-day second LL almost always goes here. Book for 11:30 to clear before the parade window.',
+        body: 'Last-day second LL almost always goes here. Book for 11:30 to clear out before the midday crush.',
         llRideId: 'mickey-and-minnies-runaway-railway',
       },
       {
@@ -1163,7 +1163,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'character',
         title: 'Mickey in Toontown',
-        body: 'Toontown has the most reliable Mickey meet — line is shortest before 11:00. Hit it before the parade pulls Toontown traffic back to Main Street.',
+        body: 'Toontown has the most reliable Mickey meet — line is shortest before 11:00. Hit it before the late-morning crowds roll in.',
       },
       {
         id: 'mm-ride',
@@ -1171,7 +1171,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 20,
         type: 'ride',
         title: "Use Lightning Lane: Mickey & Minnie's",
-        body: 'Second ride of the trip on the trackless system. Then walk against the parade crowds back toward Adventureland.',
+        body: 'Second ride of the trip on the trackless system. Then head back across the park toward Frontierland for lunch.',
         rideIds: ['mickey-and-minnies-runaway-railway'],
       },
       {
@@ -1188,7 +1188,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book Big Thunder one more time',
-        body: "If you have a tall-enough kid, last Big Thunder ride goes for 3:00 PM — sets up the after-parade Frontierland window. Otherwise it's a small world for one last sing-along.",
+        body: "If you have a tall-enough kid, last Big Thunder ride goes for 3:00 PM — sets up a mid-afternoon Frontierland window. Otherwise it's a small world for one last sing-along.",
         llRideId: 'big-thunder-mountain-railroad',
       },
       {
@@ -1205,8 +1205,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '2:30 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Magic Happens parade',
-        body: "Last day = parade day. Check the app for today's time. Stake out a Main Street curb 25 minutes before. The Plaza Inn end is less crowded than the hub.",
+        title: "Last-day parade — if there's one today",
+        body: "Check the app first: Magic Happens doesn't return until summer 2027, so you're looking for a seasonal one (Halloween Cavalcade through Oct 31, A Christmas Fantasy Nov 13 – Jan 6). If it's on, stake out a Main Street curb 25 minutes before — the Plaza Inn end is less crowded than the hub. If not, take a snack break in the shade and save your legs.",
       },
       {
         id: 'big-thunder',
@@ -1240,7 +1240,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 90,
         type: 'ride',
         title: 'Use last LL + final re-rides',
-        body: "Use the booked LL, then let the kids pick the last 2–3 rides. Peter Pan one more time is usually the answer — no Lightning Lane, so it's standby. If you're skipping the show, the line is at its shortest during the fireworks and the last hour before close.",
+        body: "Use the booked LL, then let the kids pick the last 2–3 rides. Peter Pan one more time is usually the answer — no Lightning Lane, so it's standby. On a fireworks night, the line is shortest while the show runs; otherwise aim for the last hour before close.",
         rideIds: ['haunted-mansion', 'peter-pans-flight'],
       },
       {
@@ -1248,8 +1248,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Castle fireworks from Main Street',
-        body: 'Final night = full castle projection show. Stake out a curb 20 minutes before near the Plaza Inn end of Main Street (less crush than the hub). After the show, exit through Adventureland or NOLA Square — Main Street is gridlocked.',
+        title: 'Castle fireworks from Main Street (show nights)',
+        body: "Final night = castle show, if one's on. Check the app calendar — fireworks run seasonally (Halloween Screams Fri–Sun through Oct 31, Believe… in Holiday Magic Nov 13 – Jan 6, Remember… Dreams Come True back in Feb 2027). Stake out a curb 20 minutes before near the Plaza Inn end of Main Street (less crush than the hub). After the show, exit through Adventureland or NOLA Square — Main Street is gridlocked.",
       },
     ],
   },
@@ -1262,7 +1262,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      "Kids 7+ only: 14–16 rides in one day. Rope drop Rise of the Resistance, stack Lightning Lanes hard, grab-and-go meals, no nap, end at Galaxy's Edge fireworks for a fast exit.",
+      "Kids 7+ only: 14–16 rides in one day. Rope drop Rise of the Resistance, stack Lightning Lanes hard, grab-and-go meals, no nap, end at Galaxy's Edge (fireworks on show nights) for a fast exit.",
     blocks: [
       {
         id: 'arrive',
@@ -1331,7 +1331,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'ride',
         title: 'Fantasyland stack: Dumbo, Small World, Alice',
-        body: "Three rides in 45 minutes if you sprint. Dumbo (line is now 40+ min — eat that today), Small World, Alice. Skip the dark rides (Snow White / Pinocchio / Mr. Toad) — those don't fit a blitz. Peter Pan has no Lightning Lane and runs 45+ by now; if it's non-negotiable, ride it during the fireworks tonight when the line is shortest.",
+        body: "Three rides in 45 minutes if you sprint. Dumbo (line is now 40+ min — eat that today), Small World, Alice. Skip the dark rides (Snow White / Pinocchio / Mr. Toad) — those don't fit a blitz. Peter Pan has no Lightning Lane and runs 45+ by now; if it's non-negotiable, ride it late tonight — during the fireworks if there's a show, otherwise the last hour before close.",
         rideIds: ['dumbo-the-flying-elephant', 'its-a-small-world', 'alice-in-wonderland'],
       },
       {
@@ -1472,8 +1472,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '8:45 PM',
         durationMin: 45,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge — fast exit",
-        body: "Blitz days end at Galaxy's Edge — same fireworks with John Williams music, way less crowded, and the exit through Frontierland to the gate is 5 minutes faster than Main Street. You've done 14+ rides today. Sit down and breathe. Peter Pan holdouts: skip the show and ride it standby instead — the fireworks window is its shortest line of the day.",
+        title: "Galaxy's Edge finish — fast exit",
+        body: "Blitz days end at Galaxy's Edge. On a fireworks night (check the app — they're seasonal, not nightly), it's way less crowded than Main Street and the exit through Frontierland to the gate is 5 minutes faster. You've done 14+ rides today. Sit down and breathe. Peter Pan holdouts: skip the show and ride it standby — the fireworks window is its shortest line of the day; no show means the last hour before close.",
       },
     ],
   },
@@ -1486,7 +1486,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 at Disneyland — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      "Multi-day blitz Day 1: rope drop Rise of the Resistance, Peter Pan standby + Mickey & Minnie's via LL by 11 AM, stack Frontierland and New Orleans Square in the afternoon, fireworks from the castle.",
+      "Multi-day blitz Day 1: rope drop Rise of the Resistance, Peter Pan standby + Mickey & Minnie's via LL by 11 AM, stack Frontierland and New Orleans Square in the afternoon, castle fireworks if it's a show night.",
     blocks: [
       {
         id: 'arrive',
@@ -1671,15 +1671,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'meal',
         title: 'Quick dinner — Galactic Grill or Plaza Inn',
-        body: 'Mobile-ordered. 30 minutes max. Then Adventureland before the fireworks: Jungle Cruise and Pirates have no Lightning Lane, but after dark is when their waits dip under 30.',
+        body: 'Mobile-ordered. 30 minutes max. Then Adventureland as it gets dark: Jungle Cruise and Pirates have no Lightning Lane, but after dark is when their waits dip under 30.',
       },
       {
         id: 'fireworks',
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Castle fireworks from Main Street',
-        body: "Day 1, full projection show. Stake out a curb on Main Street 25 minutes before. Galaxy's Edge fireworks are your Day 2 or 3 view.",
+        title: 'Castle fireworks from Main Street (if scheduled)',
+        body: "Day 1, castle view — if there's a show. Fireworks are seasonal right now (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic from Nov 13), so check the app calendar. Stake out a curb on Main Street 25 minutes before. Galaxy's Edge is your Day 2 or 3 view.",
       },
     ],
   },
@@ -1692,7 +1692,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day at Disneyland — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      'Closing blitz: hit anything you missed, re-ride the favorites, character meet, parade, dinner moving, castle fireworks. 14 rides on the way out the door.',
+      "Closing blitz: hit anything you missed, re-ride the favorites, character meet, a seasonal parade if one's running, dinner moving, castle fireworks on a show night. 14 rides on the way out the door.",
     blocks: [
       {
         id: 'arrive',
@@ -1812,8 +1812,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '1:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Magic Happens parade',
-        body: 'Last day = parade is the right pace break. Stake a curb 20 minutes before. The Plaza Inn end is less crowded.',
+        title: "Pace break: parade if one's running",
+        body: 'Magic Happens is out until summer 2027, but a seasonal parade or cavalcade (Halloween through Oct 31, A Christmas Fantasy from Nov 13) makes a great last-day pace break. Check the app for times and stake a curb 20 minutes before — the Plaza Inn end is less crowded. No parade? Grab a snack and sit for 20 anyway.',
       },
       {
         id: 'tianas',
@@ -1884,7 +1884,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'meal',
         title: 'Galactic Grill or Ronto Wraps — last dinner',
-        body: "Kids' pick. If you're finishing in Galaxy's Edge for fireworks, grab Ronto Wraps. Otherwise Galactic Grill in Tomorrowland for the easy burger.",
+        body: "Kids' pick. If you're finishing in Galaxy's Edge tonight, grab Ronto Wraps. Otherwise Galactic Grill in Tomorrowland for the easy burger.",
       },
       {
         id: 'last-rides',
@@ -1900,8 +1900,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Castle fireworks from Main Street',
-        body: 'Final night = full projection show. Stake the Plaza Inn end of Main Street 20 minutes before. Exit through Adventureland after, not Main Street.',
+        title: 'Castle fireworks from Main Street — check the calendar',
+        body: "Final night = castle show if one's scheduled (fireworks aren't nightly — Halloween Screams Fri–Sun through Oct 31, Believe… in Holiday Magic Nov 13 – Jan 6). Stake the Plaza Inn end of Main Street 20 minutes before. Exit through Adventureland after, not Main Street.",
       },
     ],
   },
@@ -1914,15 +1914,15 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — No Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      'Skip the $136 Multi Pass. Rope drop hard, ride Fantasyland standby before the wall, nap from noon, and use Rider Switch + Single Rider lines to still close with the headliners.',
+      'Skip the $140 Multi Pass. Rope drop hard, ride Fantasyland standby before the wall, nap from noon, and use Rider Switch + Single Rider lines to still close with the headliners.',
     blocks: [
       {
         id: 'tradeoff',
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: "You're saving $136 — rope drop is the price",
-        body: "Family of 4 × $34 = $136 skipped. You'll ride fewer headliners and rope drop hard. This works if your kid is mostly into Fantasyland — Multi Pass mostly buys you the big rides toddlers can't do anyway. Park 45 minutes before posted open, gates 8:00 AM, you in line at the turnstile by 7:45.",
+        title: "You're saving $140+ — rope drop is the price",
+        body: "Family of 4 × $35 = $140 skipped (more if you'd buy day-of at $38+). You'll ride fewer headliners and rope drop hard. This works if your kid is mostly into Fantasyland — Multi Pass mostly buys you the big rides toddlers can't do anyway. Park 45 minutes before posted open, gates 8:00 AM, you in line at the turnstile by 7:15.",
       },
       {
         id: 'rope-drop',
@@ -1996,7 +1996,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 40,
         type: 'ride',
         title: 'Haunted Mansion standby',
-        body: 'Crowds thin during the afternoon parade — 30-minute standby at 4:30 vs. 50+ at other times. Pair it with Pirates next door if its standby is under 30.',
+        body: 'Late afternoon is a soft spot — often a 30-minute standby at 4:30 vs. 50+ at peak, and shorter still if a seasonal parade is pulling people to Main Street. Pair it with Pirates next door if its standby is under 30.',
         rideIds: ['haunted-mansion'],
       },
       {
@@ -2005,15 +2005,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'meal',
         title: 'Bengal BBQ skewers',
-        body: "Mobile-order at 4:45. Eat at the tables behind the cart. You\'ve got one more big ride window before fireworks.",
+        body: "Mobile-order at 4:45. Eat at the tables behind the cart. You've got one more big ride window before dark.",
       },
       {
         id: 'parade-rides',
         time: '6:30 PM',
         durationMin: 90,
         type: 'ride',
-        title: "Ride during parade — Pan or Mickey & Minnie's",
-        body: "The 6:30 evening parade pulls 30% of guests to Main Street. Standby on Peter Pan and Mickey & Minnie's drops to 35–40 minutes. This is the second-best window of the day for marquee rides without LL.",
+        title: "Evening lull rides — Pan or Mickey & Minnie's",
+        body: "The dinner hour pulls a chunk of guests out of line, and on nights with a seasonal parade or fireworks, even more head to Main Street. Standby on Peter Pan and Mickey & Minnie's can dip to 35–40 minutes. This is the second-best window of the day for marquee rides without LL.",
         rideIds: ['peter-pans-flight', 'mickey-and-minnies-runaway-railway'],
       },
       {
@@ -2021,8 +2021,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge",
-        body: "Skip the Main Street crush. Galaxy's Edge same fireworks, John Williams music, way less crowded. After a no-LL day, the easier exit is the reward.",
+        title: "Fireworks from Galaxy's Edge — show nights",
+        body: "Fireworks are seasonal right now, so check the app calendar first. On a show night, skip the Main Street crush: Galaxy's Edge is way less crowded, and after a no-LL day the easier exit is the reward. No show? Use the last hour for one final standby re-ride.",
       },
     ],
   },
@@ -2035,15 +2035,15 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 at Disneyland — No Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Day 1 without LL: aggressive rope drop, full nap, evening rides during the parade window. You'll get the marquee rides — Peter Pan, Mickey & Minnie's, Big Thunder via Rider Switch — without paying $34 a head.",
+      "Day 1 without LL: aggressive rope drop, full nap, evening rides in the dinner-hour lull. You'll get the marquee rides — Peter Pan, Mickey & Minnie's, Big Thunder via Rider Switch — without paying $35+ a head.",
     blocks: [
       {
         id: 'tradeoff',
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: 'Save $136, treat rope drop like a sport',
-        body: "You're saving $34/person on Multi Pass. The tradeoff is rope drop has to actually work — you can't sleep in. Be at the turnstile 45 minutes before the posted gate open. Eat at the hotel. Day 1 sets the rhythm for the whole trip.",
+        title: 'Save $140, treat rope drop like a sport',
+        body: "You're saving $35+/person on Multi Pass ($38+ if you'd have bought it day-of). The tradeoff is rope drop has to actually work — you can't sleep in. Be at the turnstile 45 minutes before the posted gate open. Eat at the hotel. Day 1 sets the rhythm for the whole trip.",
       },
       {
         id: 'rope-drop',
@@ -2095,7 +2095,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 180,
         type: 'break',
         title: 'Nap break / hotel reset',
-        body: "Out of the park by 12:00. Day 1 nap matters more than any other on a no-LL trip — you're leaning on evening parade timing and rested kids who can do another 4-hour shift.",
+        body: "Out of the park by 12:00. Day 1 nap matters more than any other on a no-LL trip — you're leaning on the evening lull and rested kids who can do another 4-hour shift.",
       },
       {
         id: 'big-thunder-rider-switch',
@@ -2112,7 +2112,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 50,
         type: 'ride',
         title: 'Haunted Mansion standby',
-        body: 'Crowds thin during the afternoon parade (4:00–4:30) — 30-minute standby at 4:30 vs. 50 minutes any other time. Pair it with Pirates next door if its standby is under 30.',
+        body: 'Late afternoon is the soft spot — often a 30-minute standby at 4:30 vs. 50 minutes at peak (shorter still if a seasonal parade is running). Pair it with Pirates next door if its standby is under 30.',
         rideIds: ['haunted-mansion'],
       },
       {
@@ -2121,15 +2121,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'meal',
         title: 'Bengal BBQ',
-        body: 'Mobile-order at 4:45. Skewers, fast, on the move. Setting up for the evening parade window.',
+        body: 'Mobile-order at 4:45. Skewers, fast, on the move. Setting up for the evening lull.',
       },
       {
         id: 'evening-rides',
         time: '6:30 PM',
         durationMin: 75,
         type: 'ride',
-        title: 'Ride during the parade — second Peter Pan',
-        body: 'Evening parade pulls 30% of guests to Main Street. Peter Pan standby drops to 35–40 minutes. Best second-Peter-Pan window of the day without LL. Re-ride whatever else they loved — Dumbo, Small World — while waits are down.',
+        title: 'Evening lull — second Peter Pan',
+        body: 'Dinner hour thins the lines, and nights with a seasonal parade or fireworks thin them even more. Peter Pan standby can drop to 35–40 minutes. Best second-Peter-Pan window of the day without LL. Re-ride whatever else they loved — Dumbo, Small World — while waits are down.',
         rideIds: ['peter-pans-flight'],
       },
       {
@@ -2137,8 +2137,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Day 1 fireworks from Main Street',
-        body: "Day 1 = full castle projection show. Stake out a curb on Main Street 25 minutes before. Save Galaxy's Edge view for Day 2 or 3.",
+        title: 'Day 1 fireworks from Main Street — if scheduled',
+        body: "If the app calendar shows fireworks tonight (they're seasonal — Halloween Screams Fri–Sun through Oct 31, Believe… in Holiday Magic from Nov 13), Day 1 gets the castle view. Stake out a curb on Main Street 25 minutes before. Save Galaxy's Edge view for Day 2 or 3.",
       },
     ],
   },
@@ -2151,15 +2151,15 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Disneyland — No Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      'Older kids (6–8), no nap, no Multi Pass: rope drop hard, sit-down lunch instead of nap, use Single Rider and Rider Switch liberally, evening parade-window rides.',
+      'Older kids (6–8), no nap, no Multi Pass: rope drop hard, sit-down lunch instead of nap, use Single Rider and Rider Switch liberally, evening re-rides in the dinner-hour lull.',
     blocks: [
       {
         id: 'tradeoff',
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: 'Save $136 — rope drop is the price',
-        body: "You're saving $34/person on Multi Pass. No nap means a longer day, so rope drop has to be the morning anchor. Park 45 minutes before posted open. Eat at the hotel. Have the app ready for mobile orders even without LL.",
+        title: 'Save $140 — rope drop is the price',
+        body: "You're saving $35+/person on Multi Pass. No nap means a longer day, so rope drop has to be the morning anchor. Park 45 minutes before posted open. Eat at the hotel. Have the app ready for mobile orders even without LL.",
       },
       {
         id: 'rope-drop',
@@ -2237,8 +2237,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '3:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Magic Happens parade — sit and rest',
-        body: 'No-nap day, the parade IS your rest. Stake out a curb on Main Street 20 minutes before. Skip if your kids would rather keep riding — but on a no-nap day, this is the right pause.',
+        title: 'Sit-and-rest break (parade if there is one)',
+        body: "No-nap day, this half hour IS your rest. If a seasonal parade or cavalcade is running (check the app — Magic Happens isn't back until summer 2027), grab a Main Street curb 20 minutes before and let it come to you. No parade? Mark Twain Riverboat is the same idea on water: 14 minutes, seated, breeze.",
       },
       {
         id: 'tomorrowland',
@@ -2262,16 +2262,16 @@ export const dayTemplates: DayTemplate[] = [
         time: '6:30 PM',
         durationMin: 90,
         type: 'ride',
-        title: 'Evening parade-window re-rides',
-        body: "Evening parade pulls crowds to Main Street. Standby drops on Peter Pan, Mickey & Minnie's, Big Thunder. This is the best no-LL window of the entire day — re-ride the favorites.",
+        title: 'Evening re-rides in the dinner lull',
+        body: "Dinner hour pulls people out of line — and if there's a seasonal parade or fireworks tonight, Main Street pulls even more. Standby drops on Peter Pan, Mickey & Minnie's, Big Thunder. This is the best no-LL window of the entire day — re-ride the favorites.",
       },
       {
         id: 'fireworks',
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge",
-        body: "Easier exit after a long no-nap day. Galaxy's Edge plaza, John Williams music, less crowd. Walk to the gate through Frontierland to skip the Main Street crush.",
+        title: "Fireworks from Galaxy's Edge — if they're on",
+        body: "Check the app calendar — fireworks aren't nightly right now. On a show night, the Galaxy's Edge plaza is the easier view after a long no-nap day: less crowd, and you walk to the gate through Frontierland to skip the Main Street crush.",
       },
     ],
   },
@@ -2284,7 +2284,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 at Disneyland — No Lightning Lane, No Nap, Relaxed Pace',
     oneSentenceSummary:
-      'Day 1 without LL or nap: rope drop is the foundation, Rider Switch and Single Rider lines do the work of Lightning Lane, sit-down lunch resets the day, and evening parade timing lets you re-ride the marquee.',
+      'Day 1 without LL or nap: rope drop is the foundation, Rider Switch and Single Rider lines do the work of Lightning Lane, sit-down lunch resets the day, and the evening lull lets you re-ride the marquee.',
     blocks: [
       {
         id: 'tradeoff',
@@ -2292,7 +2292,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'tip',
         title: 'No LL, no nap, multi-day — rope drop is everything',
-        body: "Saving $34/person × number-of-days adds up fast on a multi-day trip. But Day 1 has to teach the rhythm. Park 45 minutes before open. Eat at the hotel. Today's job is hitting the four marquee rides without paying for them.",
+        body: "Saving $35+/person × number-of-days adds up fast on a multi-day trip. But Day 1 has to teach the rhythm. Park 45 minutes before open. Eat at the hotel. Today's job is hitting the four marquee rides without paying for them.",
       },
       {
         id: 'rope-drop',
@@ -2353,7 +2353,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'ride',
         title: 'Matterhorn Single Rider line',
-        body: '42" minimum. Single Rider line is the free LL. Family of 4 splits across bobsleds. Move fast in the 1:00–2:00 window before the parade pulls crowds.',
+        body: '42" minimum. Single Rider line is the free LL. Family of 4 splits across bobsleds. Move fast in the 1:00–2:00 window before the afternoon crowds peak.',
         rideIds: ['matterhorn-bobsleds'],
       },
       {
@@ -2370,8 +2370,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '3:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Magic Happens parade — the rest break',
-        body: 'No-nap day, the parade IS the break. Curb on Main Street 20 minutes before, sit down, breathe.',
+        title: 'The 3 PM rest break',
+        body: 'No-nap day, this is the break. Seasonal parade on today (check the app — Halloween Cavalcade through Oct 31, A Christmas Fantasy from Nov 13)? Curb on Main Street 20 minutes before, sit down, breathe. No parade? Find shade in Adventureland and do the same thing without the floats.',
       },
       {
         id: 'dinner',
@@ -2379,15 +2379,15 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'meal',
         title: 'Bengal BBQ',
-        body: 'Mobile-order at 4:15. Skewers and on the move toward the evening parade window.',
+        body: 'Mobile-order at 4:15. Skewers and on the move toward the evening lull.',
       },
       {
         id: 'evening-rides',
         time: '6:30 PM',
         durationMin: 90,
         type: 'ride',
-        title: 'Evening parade-window re-rides',
-        body: "Evening parade pulls crowds to Main Street. Standby drops on Peter Pan, Mickey & Minnie's, Big Thunder. Re-ride the marquee — best no-LL window of the day.",
+        title: 'Evening re-rides — the best no-LL window',
+        body: "As dinner hour (and any seasonal parade or fireworks) pulls crowds off the rides, standby drops on Peter Pan, Mickey & Minnie's, Big Thunder. Re-ride the marquee — best no-LL window of the day.",
         rideIds: ['peter-pans-flight', 'mickey-and-minnies-runaway-railway'],
       },
       {
@@ -2395,8 +2395,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Day 1 fireworks from Main Street',
-        body: "Day 1 = full castle show. Curb on Main Street 25 minutes before. Galaxy's Edge view is your Day 2 or 3 option.",
+        title: 'Day 1 fireworks from Main Street (if on tonight)',
+        body: "Day 1 = castle show, on nights there is one — check the app calendar (Believe… in Holiday Magic runs Nov 13 – Jan 6; Remember… Dreams Come True returns Feb 2027). Curb on Main Street 25 minutes before. Galaxy's Edge view is your Day 2 or 3 option.",
       },
     ],
   },
@@ -2549,7 +2549,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: 'Cars Land at night — re-ride RSR if standby is reasonable',
-        body: "Cars Land's neon at sunset is the best 15 minutes of the trip — walk Route 66 with the kids before fireworks. RSR standby drops to 30–40 minutes around 8 PM; re-ride if the kids ask.",
+        body: "Cars Land's neon at sunset is the best 15 minutes of the trip — walk Route 66 with the kids before World of Color. RSR standby drops to 30–40 minutes around 8 PM; re-ride if the kids ask.",
       },
       {
         id: 'world-of-color',
@@ -2557,7 +2557,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'World of Color from your virtual queue spot',
-        body: 'Your virtual queue text comes through ~45 minutes before showtime with your viewing area. Show is typically 9:00 PM in summer. Walk to your assigned area 15 minutes early; bring rain ponchos for the front rows.',
+        body: "Your virtual queue text comes through ~45 minutes before showtime with your viewing area. Check the app for tonight's showtimes — and which version is playing (World of Color – ONE through Oct 31; World of Color – Season of Light Nov 13 – Jan 6; an updated original returns Feb 2027). Walk to your assigned area 15 minutes early; bring rain ponchos for the front rows.",
       },
     ],
   },
@@ -2707,7 +2707,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 30,
         type: 'show',
         title: 'World of Color',
-        body: 'From your virtual queue area. Bring rain ponchos for the front rows. Show typically 9:00 PM in summer.',
+        body: 'From your virtual queue area. Bring rain ponchos for the front rows. Showtimes shift by season, so check the app (Season of Light runs Nov 13 – Jan 6).',
       },
     ],
   },
@@ -2724,11 +2724,11 @@ export const dayTemplates: DayTemplate[] = [
     blocks: [
       {
         id: 'arrive',
-        time: '8:00 AM',
-        durationMin: 30,
+        time: '7:15 AM',
+        durationMin: 45,
         type: 'tip',
-        title: 'Day 2 DCA — slower start',
-        body: "Day 2 you earned 30 minutes. Park 30 min early. Day 2 is for the rides you didn't get to or the ones the kids want to ride again.",
+        title: 'Day 2 DCA — easier pace, same arrival',
+        body: "Day 2 you can ease off the hustle, but still be at the gates 45 minutes before open. Day 2 is for the rides you didn't get to or the ones the kids want to ride again.",
       },
       {
         id: 'rope-drop',
@@ -3170,7 +3170,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 60,
         type: 'ride',
         title: "Pal-A-Round + Jumpin' Jellyfish",
-        body: "Pal-A-Round on Pixar Pier, then Jumpin' Jellyfish next door in Paradise Gardens Park — two rides before the parade rush. Pal-A-Round non-swinging cabin unless you want a coaster.",
+        body: "Pal-A-Round on Pixar Pier, then Jumpin' Jellyfish next door in Paradise Gardens Park — two rides before the afternoon rush. Pal-A-Round non-swinging cabin unless you want a coaster.",
         rideIds: ['pixar-pal-a-round', 'jumpin-jellyfish'],
       },
       {
@@ -3216,15 +3216,15 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day California Adventure — No Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "The math: DCA's Multi Pass only covers 3 rides and one is intense for under-6s. Skip it, rope drop Radiator Springs Racers, standby Soarin', save $136 — this works.",
+      "The math: DCA's Multi Pass only covers 3 rides and one is intense for under-6s. Skip it, rope drop Radiator Springs Racers, standby Soarin', save $140 — this works.",
     blocks: [
       {
         id: 'tradeoff',
         time: '7:00 AM',
         durationMin: 30,
         type: 'tip',
-        title: 'Save $136 — DCA Multi Pass math',
-        body: "Family of 4 × $34 = $136. DCA's Multi Pass covers exactly 3 useful rides for kids 2–8 — and one of those (WEB SLINGERS) is intense for under-6s. So you're really paying $136 for 2 line skips. Skip the pass, rope drop RSR, and you save more than the pass itself was going to save you.",
+        title: 'Save $140 — DCA Multi Pass math',
+        body: "Family of 4 × $35 = $140 ($152+ day-of). DCA's Multi Pass covers exactly 3 useful rides for kids 2–8 — and one of those (WEB SLINGERS) is intense for under-6s. So you're really paying $140 for 2 line skips. Skip the pass, rope drop RSR, and you save more than the pass itself was going to save you.",
       },
       {
         id: 'rope-drop',
@@ -3341,7 +3341,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Park Hopper — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Rope drop DCA for Radiator Springs Racers, knock out Soarin' and Toy Story Midway Mania, hop to Disneyland after lunch for Fantasyland and fireworks. The math-driven 1-day hopper.",
+      "Rope drop DCA for Radiator Springs Racers, knock out Soarin' and Toy Story Midway Mania, hop to Disneyland after lunch for Fantasyland and the evening (fireworks on show nights). The math-driven 1-day hopper.",
     blocks: [
       {
         id: 'arrive',
@@ -3349,7 +3349,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 45,
         type: 'tip',
         title: 'Why start at DCA',
-        body: "RSR alone is the reason. Rope drop saves $60–120 in Single Pass costs and gets you a 15-minute wait instead of 90. Disneyland's Peter Pan has no Lightning Lane, so it gets the late-night standby slot after the fireworks. Since June 2026 there's no 11 AM gate — you can book a Disneyland LL the moment you tap into DCA, and hop whenever it suits your day.",
+        body: "RSR alone is the reason. Rope drop saves $60–120 in Single Pass costs and gets you a 15-minute wait instead of 90. Disneyland's Peter Pan has no Lightning Lane, so it gets the late-night standby slot. Since June 2026 there's no 11 AM gate — you can book a Disneyland LL the moment you tap into DCA, and hop whenever it suits your day.",
       },
       {
         id: 'rope-drop',
@@ -3514,8 +3514,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge",
-        body: "Hopper days end with Disneyland fireworks. Galaxy's Edge is the easy view — same fireworks with John Williams music, less crowd, easier exit with a stroller.",
+        title: "Fireworks from Galaxy's Edge (show nights)",
+        body: "On nights with Disneyland fireworks — check the app calendar; right now they're seasonal, not nightly — Galaxy's Edge is the easy view: less crowd, easier exit with a stroller. No show tonight? Head straight for Peter Pan.",
       },
       {
         id: 'peter-pan-late',
@@ -3523,7 +3523,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 40,
         type: 'ride',
         title: "Peter Pan's Flight standby — last hour",
-        body: 'Peter Pan has no Lightning Lane, and its line finally drops after the fireworks as families stream for the exits. Still have a wide-awake napper? Walk into Fantasyland and fly. (Want it even shorter? Skip the show and ride during the fireworks.)',
+        body: 'Peter Pan has no Lightning Lane, and its line finally drops in the last hour as families stream for the exits. Still have a wide-awake napper? Walk into Fantasyland and fly. (Fireworks night? Skip the show and ride during it for the shortest line.)',
         rideIds: ['peter-pans-flight'],
       },
     ],
@@ -3537,7 +3537,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'first',
     title: 'Day 1 Park Hopper — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      'Day 1 of a multi-day hopper trip: start DCA for Radiator Springs Racers, hop to Disneyland for marquee Fantasyland rides, end with fireworks. Save second-tier rides for Day 2.',
+      "Day 1 of a multi-day hopper trip: start DCA for Radiator Springs Racers, hop to Disneyland for marquee Fantasyland rides, end with castle fireworks if there's a show. Save second-tier rides for Day 2.",
     blocks: [
       {
         id: 'arrive',
@@ -3616,7 +3616,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: "Book DL Lightning Lane: it's a small world",
-        body: "No 11 AM gate on second-park LLs since June 2026 — book small world for 12:45 to line up with your walk-over. (Peter Pan isn't on Lightning Lane; it gets the after-fireworks standby slot tonight.)",
+        body: "No 11 AM gate on second-park LLs since June 2026 — book small world for 12:45 to line up with your walk-over. (Peter Pan isn't on Lightning Lane; it gets the late-night standby slot tonight.)",
         llRideId: 'its-a-small-world',
       },
       {
@@ -3692,8 +3692,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Day 1 fireworks from Main Street',
-        body: "Day 1 of multi-day = full castle projection show. Curb on Main Street 25 min before. Save the Galaxy's Edge view for Day 2.",
+        title: 'Day 1 fireworks from Main Street (if scheduled)',
+        body: "Day 1 of multi-day = castle view, on a night the app calendar shows fireworks (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic from Nov 13). Curb on Main Street 25 min before. Save the Galaxy's Edge view for Day 2.",
       },
       {
         id: 'peter-pan-late',
@@ -3701,7 +3701,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 40,
         type: 'ride',
         title: "Peter Pan's Flight standby — last hour",
-        body: 'Peter Pan has no Lightning Lane, and its line finally drops after the fireworks while Main Street jams up with exiting families. Walk through the castle into Fantasyland and fly. Too tired tonight? Rope drop it on Day 2.',
+        body: 'Peter Pan has no Lightning Lane, and its line finally drops late in the evening while Main Street jams up with exiting families. Walk through the castle into Fantasyland and fly. Too tired tonight? Rope drop it on Day 2.',
         rideIds: ['peter-pans-flight'],
       },
     ],
@@ -3715,7 +3715,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'last',
     title: 'Last Day Park Hopper — Lightning Lane, Nap Break, Relaxed Pace',
     oneSentenceSummary:
-      "Final hopper day: re-rides + anything missed + closing show. Less marquee pressure, more 'what does the family want to do.' End with fireworks from Galaxy's Edge if it's calmer, Main Street if you want the castle finale.",
+      "Final hopper day: re-rides + anything missed + closing show. Less marquee pressure, more 'what does the family want to do.' On a fireworks night, end at Galaxy's Edge if you want calm, Main Street if you want the castle finale.",
     blocks: [
       {
         id: 'kids-pick',
@@ -3783,7 +3783,7 @@ export const dayTemplates: DayTemplate[] = [
         durationMin: 2,
         type: 'll-booking',
         title: 'Book a Lightning Lane in the OTHER park',
-        body: "Hop window opens at 11. Book a LL in the park you're going to hop to for ~1:30.",
+        body: "No 11 AM gate on second-park LLs anymore — book one in the park you're hopping to for ~1:30.",
         llRideId: 'haunted-mansion',
       },
       {
@@ -3849,8 +3849,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: 'Final fireworks — your call',
-        body: "Main Street if you want the castle projection finale. Galaxy's Edge if you want the easy exit with a stroller. Either way, last night of the trip.",
+        title: 'Final night show — your call',
+        body: "Check the app calendar first — fireworks are seasonal right now (Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027, with projections on Main Street, the small world facade, and the Rivers of America). On a show night: Main Street for the castle finale, Galaxy's Edge for the easy exit with a stroller. Ending in DCA? World of Color is your closer. Either way, last night of the trip.",
       },
     ],
   },
@@ -3863,7 +3863,7 @@ export const dayTemplates: DayTemplate[] = [
     phase: 'only',
     title: '1-Day Park Hopper — Lightning Lane, Blitz Pace',
     oneSentenceSummary:
-      "Maximum density: rope drop DCA at 8, hit RSR + Soarin' + Toy Story Midway Mania + WEB SLINGERS by 1 PM, hop to Disneyland, hit 8–10 more rides, end with fireworks. Built for older kids who can hang.",
+      "Maximum density: rope drop DCA at 8, hit RSR + Soarin' + Toy Story Midway Mania + WEB SLINGERS by 1 PM, hop to Disneyland, hit 8–10 more rides, end with fireworks if it's a show night. Built for older kids who can hang.",
     blocks: [
       {
         id: 'arrive',
@@ -4082,8 +4082,8 @@ export const dayTemplates: DayTemplate[] = [
         time: '9:00 PM',
         durationMin: 30,
         type: 'show',
-        title: "Fireworks from Galaxy's Edge",
-        body: "Easier exit after a 16+ ride day. Galaxy's Edge plaza, John Williams over the speakers. Peter Pan holdouts: skip the show and ride it standby during the fireworks — it has no Lightning Lane, and this is its shortest line of the day.",
+        title: "Galaxy's Edge finish (fireworks on show nights)",
+        body: "Easier exit after a 16+ ride day. If the app calendar shows fireworks tonight, watch from the Galaxy's Edge plaza. Peter Pan holdouts: skip the show and ride it standby during the fireworks — it has no Lightning Lane, and that's its shortest line of the day. No show? The last hour before close works almost as well.",
       },
     ],
   },

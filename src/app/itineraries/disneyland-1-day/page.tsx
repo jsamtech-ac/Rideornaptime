@@ -49,11 +49,11 @@ const faqs = [
   },
   {
     q: 'Should we take a midday break on a 1-day Disneyland trip?',
-    a: 'Yes — even on a 1-day trip. Leave the park from roughly 12:30 to 3:00 PM for a nap or hotel pool. Without the break, kids melt down by 4 PM and you miss the fireworks. Book your next 2 Lightning Lanes from the hotel during the break.',
+    a: 'Yes — even on a 1-day trip. Leave the park from roughly 12:30 to 3:00 PM for a nap or hotel pool. Without the break, kids melt down by 4 PM and you miss the evening — including the fireworks, on nights there is a show. Book your next 2 Lightning Lanes from the hotel during the break.',
   },
   {
     q: "Where's the best place to watch Disneyland fireworks with kids on a 1-day visit?",
-    a: "Star Wars: Galaxy's Edge — same fireworks with John Williams music piped in over the speakers, way less crowded than Main Street, and an easier exit with a stroller. You give up the castle projection show; you keep your sanity on a long day.",
+    a: "First, check the Disneyland app calendar — fireworks aren't nightly right now. Halloween Screams runs Fri–Sun through Oct 31, Believe… in Holiday Magic runs Nov 13 – Jan 6, and Remember… Dreams Come True returns in Feb 2027. On a show night, Star Wars: Galaxy's Edge is the move with young kids: way less crowded than Main Street and an easier exit with a stroller. You give up the castle projections; you keep your sanity on a long day.",
   },
 ]
 

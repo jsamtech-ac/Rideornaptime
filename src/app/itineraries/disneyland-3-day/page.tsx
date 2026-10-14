@@ -39,7 +39,7 @@ const initialDayStates: DayConfig[] = [
 const faqs = [
   {
     q: 'Is three days too much for Disneyland with kids?',
-    a: 'Three days is the luxury plan, and worth it if you can swing it. Day 1 hits the marquee headliners. Day 2 picks up the second-tier Fantasyland dark rides (Snow White, Pinocchio, Mr. Toad, Storybook Land) plus character meets. Day 3 is the flex day — re-rides of kid favorites, parade, character breakfast, and the castle fireworks finale.',
+    a: 'Three days is the luxury plan, and worth it if you can swing it. Day 1 hits the marquee headliners. Day 2 picks up the second-tier Fantasyland dark rides (Snow White, Pinocchio, Mr. Toad, Storybook Land) plus character meets. Day 3 is the flex day — re-rides of kid favorites, a seasonal parade if one is running, character breakfast, and the castle fireworks finale on a show night.',
   },
   {
     q: "What's a character breakfast and is it worth it for a 3-day trip?",
@@ -51,11 +51,11 @@ const faqs = [
   },
   {
     q: 'How should we split fireworks viewing across three nights?',
-    a: "Day 1: full castle projection show from Main Street. Day 2: easier view from Galaxy's Edge with John Williams music. Day 3: castle again from Main Street as the closing send-off. The two viewing experiences are genuinely different — do both.",
+    a: "Fireworks aren't nightly right now, so check the app calendar for which of your nights have a show (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027). First show night: castle view from Main Street. Next: the easier Galaxy's Edge view. Last: castle again as the send-off. Heads-up for 2027: Remember… also projects onto the it's a small world facade, so that mall becomes a show surface, not a quiet side view.",
   },
   {
     q: 'Are three full park days too much for young kids?',
-    a: 'Yes, if you skip the midday naps. No, if you take them seriously. Out of the park 12:30–3:30 PM every day, with a real hotel reset. Kids running on naps can do 8 PM fireworks three nights in a row. Kids who skip the nap break down by 4 PM Day 2.',
+    a: 'Yes, if you skip the midday naps. No, if you take them seriously. Out of the park 12:30–3:30 PM every day, with a real hotel reset. Kids running on naps can handle late evenings three nights in a row. Kids who skip the nap break down by 4 PM Day 2.',
   },
 ]
 
@@ -83,7 +83,7 @@ export default function DisneylandThreeDayPage() {
         <p className="hero-sub">
           Three days is the luxury Disneyland plan. Day 1 builds the foundation. Day 2 hits the deep
           cuts. Day 3 is the kid's pick — re-rides, character breakfast, and the castle fireworks
-          finale.
+          finale on a show night.
         </p>
       </header>
 

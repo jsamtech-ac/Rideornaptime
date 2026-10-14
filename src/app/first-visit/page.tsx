@@ -284,12 +284,14 @@ export default function FirstVisitPage() {
           <div className="tip-card-header">
             <div className="tip-card-icon sun">⏰</div>
             <div>
-              <h3>Arrive 30 minutes before the posted opening</h3>
+              <h3>Be at the gates 45 minutes before the posted opening</h3>
             </div>
           </div>
           <p>
             This is called "rope drop." The first hour of the day has the shortest lines of the
-            entire day — you can ride 3–4 headliners in the time that later means one.
+            entire day — you can ride 3–4 headliners in the time that later means one. Parking, the
+            tram, and security eat 30–45 minutes on their own, so if the park opens at 8:00 AM, aim
+            to park by 7:00.
           </p>
           <p>
             Eat breakfast <em>before</em> you arrive (or grab it in Downtown Disney on the walk in).

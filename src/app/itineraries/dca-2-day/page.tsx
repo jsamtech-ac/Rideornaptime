@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: 'Can you do World of Color two nights in a row?',
-    a: 'Yes — join the virtual queue at 12:00 PM each day. Show typically plays 9:00 PM with a second show at 10:15 on busy nights. Front-row areas get soaked; bring rain ponchos.',
+    a: 'Yes — join the virtual queue at 12:00 PM each day. Showtimes and the version playing change by season — World of Color – ONE through Oct 31, World of Color – Season of Light Nov 13 – Jan 6, and an updated original from Feb 2027 — so check the app. Front-row areas get soaked; bring rain ponchos.',
   },
 ]
 

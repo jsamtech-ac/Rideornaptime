@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: 'What time should I arrive at Disneyland?',
-    a: 'Be in line 30 minutes before the official opening time. Rope-drop gets you 60-90 minutes of short lines before the crowds build. Eat breakfast before you arrive.',
+    a: 'Be at the gates 45 minutes before the official opening time. Rope-drop gets you 60-90 minutes of short lines before the crowds build. Eat breakfast before you arrive.',
   },
   {
     q: 'Should we take a midday break at Disneyland?',

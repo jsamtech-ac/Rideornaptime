@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: 'When does Cars Land light up at night?',
-    a: "Cars Land's neon comes on at sunset — typically 7:30–8:00 PM in summer. Walking Route 66 at night with the kids is one of the visual highlights of DCA. Time dinner so you're in Cars Land at sunset, then move toward your World of Color viewing area for the 9:00 PM show.",
+    a: "Cars Land's neon comes on at sunset — typically 7:30–8:00 PM in summer. Walking Route 66 at night with the kids is one of the visual highlights of DCA. Time dinner so you're in Cars Land at sunset, then move toward your World of Color viewing area for showtime (check the app — times and the version playing shift by season).",
   },
 ]
 

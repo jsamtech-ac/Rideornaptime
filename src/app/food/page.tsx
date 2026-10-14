@@ -130,10 +130,11 @@ export default function FoodPage() {
             Eating in Downtown Disney is the money-and-sanity saver on arrival and departure days —
             no ticket required, and it's a shorter walk than fighting the in-park lunch rush.{' '}
             <strong>Earl of Sandwich</strong> (reopened summer 2026) is the top family pick: cheap,
-            fast, kid-friendly hot sandwiches. <strong>Bopo Go!</strong> does boba and quick snacks,
-            and <strong>Pearl's Roadside</strong> is casual barbecue. All three are counter-service
-            and stroller-easy. (The upstairs Gordon Ramsay spot, The Carnaby, is a grown-up
-            date-night option — not a young-kids meal.)
+            fast, kid-friendly hot sandwiches, and <strong>Pearl's Roadside</strong> is casual
+            barbecue. Both are counter-service and stroller-easy. (Bopo Go!, the announced boba
+            spot, still hadn't opened as of mid-October 2026 — check before you count on it.) (The
+            upstairs Gordon Ramsay spot, The Carnaby, is a grown-up date-night option — not a
+            young-kids meal.)
           </p>
         </div>
       </section>

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Is Disneyland worth it with a 2-year-old?',
-    a: "Yes — if you plan around naps. Toddlers love Dumbo, It's a Small World, Buzz Lightyear, Runaway Railway, and Monsters Inc. The key is a non-negotiable midday break and a realistic 5-hour day, not a 12-hour sprint.",
+    a: "Yes — if you plan around naps. Toddlers love Dumbo, It's a Small World, Runaway Railway, the Toontown play areas, and Monsters, Inc. (ride it before it closes in 2027). The key is a non-negotiable midday break and a realistic 5-hour day, not a 12-hour sprint.",
   },
   {
     q: 'How many days at Disneyland with kids is best?',
@@ -72,7 +72,7 @@ const sections = [
     icon: '🗓',
     title: 'Hour-by-Hour Itineraries',
     summary:
-      'Three plans — 1-day blitz, 2-day relaxed, 3-day complete — built around nap schedules, meal timing, and the midday break that saves your trip.',
+      'Seven plans — Disneyland, California Adventure, and Park Hopper, from a 1-day blitz to a 3-day complete trip — built around nap schedules, meal timing, and the midday break that saves your trip.',
     cta: 'Plan your day →',
   },
   {
