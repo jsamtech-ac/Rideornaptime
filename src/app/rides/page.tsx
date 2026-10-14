@@ -30,14 +30,27 @@ export const metadata: Metadata = {
   },
 }
 
+const openRides = RIDES.filter((r) => !r.closed)
+const listNames = (rides: typeof RIDES) => {
+  const names = rides.map((r) => r.name)
+  return names.length < 2 ? names.join('') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`
+}
+
+const toddlerRides = openRides.filter((r) => r.age2 === 'must-do')
+const noHeightDlRides = openRides.filter((r) => r.park === 'DL' && r.heightInches == null)
+const everyAgeRides = openRides.filter(
+  (r) =>
+    r.age2 === 'must-do' && r.age4 === 'must-do' && r.age6 === 'must-do' && r.age8 === 'must-do'
+)
+
 const faqs = [
   {
     q: 'What Disneyland rides are best for toddlers (age 2)?',
-    a: "Dumbo, It's a Small World, Buzz Lightyear Astro Blasters, Mickey & Minnie's Runaway Railway, Monsters Inc., The Little Mermaid, and Inside Out Emotional Whirlwind. None have height requirements and all are gentle.",
+    a: `Our must-dos at age 2 across both parks: ${listNames(toddlerRides)}. None have height requirements and all are gentle.`,
   },
   {
     q: 'What is the best first roller coaster for kids at Disneyland?',
-    a: 'Big Thunder Mountain Railroad. The 40" height requirement fits most 6-year-olds, and it\'s fast without being scary — more like a bumpy train ride than a real coaster.',
+    a: "Chip 'n' Dale's GADGETcoaster in Toontown is the true starter coaster — 35\" minimum and under a minute long. Next step up is Big Thunder Mountain Railroad: the 40\" requirement fits most 6-year-olds, and it's fast without being scary — more like a bumpy train ride than a real coaster.",
   },
   {
     q: 'Which Disneyland rides should I skip with young kids?',
@@ -45,11 +58,11 @@ const faqs = [
   },
   {
     q: 'Which Disneyland rides have no height requirement?',
-    a: "Dumbo, It's a Small World, King Arthur Carrousel, Mad Tea Party, Peter Pan's Flight, Alice in Wonderland, Casey Jr., Pirates of the Caribbean, Haunted Mansion, Buzz Lightyear Astro Blasters, Finding Nemo Submarine Voyage, and Mickey & Minnie's Runaway Railway. All listed as \"Any height\" on the ride matrix.",
+    a: `${listNames(noHeightDlRides)}. All listed as "Any height" on the ride matrix (rides currently closed for refurbishment are left off).`,
   },
   {
     q: "What's the best Disneyland ride for any age, from 2 to 8?",
-    a: "Peter Pan's Flight. It's the only ride rated must-do across every age bracket from 2 to 8. The catch: the line hits 60+ minutes by 10 AM and rarely drops, so rope-drop it first or book a Lightning Lane.",
+    a: `${listNames(everyAgeRides)} — the only rides we rate must-do across every age bracket from 2 to 8. Peter Pan's catch: it's not on Lightning Lane and the line hits 60+ minutes by 10 AM, so rope-drop it first. Runaway Railway is on Multi Pass.`,
   },
   {
     q: 'Should I watch Disneyland ride videos with my kids before the trip?',

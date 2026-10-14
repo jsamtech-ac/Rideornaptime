@@ -169,8 +169,8 @@ export default function HiddenGemsPage() {
             recover while the kids get a break from walking. Bonus: the ride passes through the
             Grand Canyon and Primeval World dioramas.{' '}
             <em>
-              Note: the Monorail is currently closed for refurbishment, so the train is your best
-              loop-around-the-park option.
+              Want a second sit-down ride? The Monorail (Tomorrowland ↔ Downtown Disney) reopened
+              May 1, 2026 after its spring refurbishment.
             </em>
           </p>
         </div>

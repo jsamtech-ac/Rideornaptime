@@ -323,7 +323,7 @@ export default function CharactersPage() {
             </div>
           </div>
           <p>
-            If you bought <Link href="/lightning-lane">Multi Pass</Link> ($34/person), every Disney
+            If you bought <Link href="/lightning-lane">Multi Pass</Link> (~$35/person), every Disney
             PhotoPass photo at every meet auto-attaches to your account. Free. Let the photographer
             handle it so your kid actually looks at the character. On its own, PhotoPass runs about
             $24.99 for a single day of downloads or $78 for a one-week unlimited package — but since
@@ -505,7 +505,7 @@ export default function CharactersPage() {
 
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Nov 18, 2026 – early Jan 2027</span>
+              <span className="seasonal-row-dates">Nov 13, 2026 – Jan 6, 2027</span>
               <span className="seasonal-row-cost">Included with park admission</span>
             </div>
             <h3 className="seasonal-row-title">🎄 Holidays at the Disneyland Resort</h3>
@@ -624,9 +624,9 @@ export default function CharactersPage() {
               you frame later with the printed PhotoPass shot in the center is a better keepsake.
             </li>
             <li>
-              <strong>Magic Bands don't work at the California parks.</strong> You'll show your
-              ticket on your phone or a paper card at every entry. (Different from Walt Disney
-              World.)
+              <strong>MagicBand+ works at Disneyland Resort</strong> — link it to your ticket in the
+              app and use it for park entry, Lightning Lane, and PhotoPass taps, so a kid can wear
+              the ticket instead of you juggling phones at every character spot.
             </li>
           </ul>
         </div>

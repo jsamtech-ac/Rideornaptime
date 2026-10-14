@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'When does the Disneyland holiday season start in 2026?',
-    a: 'Holidays at the Disneyland Resort begin Nov 18, 2026 and run through early January 2027. Note: the 2026 holiday window is about 4 days shorter than the 2024 and 2025 windows. The best-value holiday week is Nov 18–22 (decor up, pre-Thanksgiving crowds). Avoid Dec 20 through Jan 1 — the parks will phase-close.',
+    a: 'Holidays at the Disneyland Resort run Nov 13, 2026 through Jan 6, 2027. The best-value holiday window is the weekdays of Nov 16–19 (decor up, before Thanksgiving crowds). Avoid Dec 20 through Jan 1 — the parks will phase-close.',
   },
   {
     q: "What is Bluey's Best Day Ever at Disneyland?",
@@ -205,9 +205,8 @@ export default function SeasonalPage() {
             <strong>Bluey&apos;s Best Day Ever!</strong> debuts March 22 at Fantasyland Theatre.{' '}
             <strong>Oogie Boogie Bash expands to 33 nights</strong> (Aug 18 – Oct 31). The{' '}
             <strong>Disneyland 70th Celebration wraps Aug 9</strong> — last chance for Paint the
-            Night, Tapestry of Happiness, and World of Color — Happiness. The{' '}
-            <strong>2026 holiday window is compressed</strong> (starts Nov 18, about 4 days shorter
-            than the 2024 and 2025 windows).
+            Night, Tapestry of Happiness, and World of Color — Happiness.{' '}
+            <strong>Holidays start Nov 13</strong> and run through Jan 6, 2027.
           </p>
         </div>
       </section>

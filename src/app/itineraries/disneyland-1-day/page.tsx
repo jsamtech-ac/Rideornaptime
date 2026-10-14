@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: 'Do you need Lightning Lane Multi Pass for a 1-day Disneyland trip?',
-    a: "On a 1-day trip with kids, Multi Pass almost always pays off — $34/person buys you 7–8 line skips on rides like Peter Pan, Mickey & Minnie's Runaway Railway, Big Thunder, and Haunted Mansion. The exception is a quiet weekday with kids under 4 — most of the rides they love are standby-only anyway.",
+    a: "On a 1-day trip with kids, Multi Pass almost always pays off — about $35/person (bought in advance) buys you 6–8 line skips on rides like Mickey & Minnie's Runaway Railway, Big Thunder, Haunted Mansion, and Buzz Lightyear. Peter Pan isn't on Lightning Lane, so rope-drop it. The exception is a quiet weekday with kids under 4 — most of the rides they love are standby-only anyway.",
   },
   {
     q: 'Should we take a midday break on a 1-day Disneyland trip?',

@@ -142,7 +142,7 @@ export default function FirstVisitPage() {
             worth it for 2+ day trips, skip it for a 1-day trip.
           </p>
           <p>
-            <strong>Lightning Lane Multi Pass</strong> is a separate add-on (~$34–40/person/day)
+            <strong>Lightning Lane Multi Pass</strong> is a separate add-on (~$35–40+/person/day)
             that lets you skip lines on a bunch of rides — almost always worth it with kids.{' '}
             <Link href="/lightning-lane">Full Lightning Lane breakdown →</Link>
           </p>
@@ -234,11 +234,12 @@ export default function FirstVisitPage() {
           </div>
           <p>
             Multi Pass lets you book skip-the-line return times for 7–8 popular rides. With young
-            kids, it pays for itself the first time you skip a 50-minute Peter Pan line.
+            kids, it pays for itself the first time you skip a 50-minute Runaway Railway line.
+            (Peter Pan isn't on it — rope-drop that one.)
           </p>
           <p>
-            Buy it the morning of your visit (7 AM same-day) via the app — it can sell out, so book
-            early. <Link href="/lightning-lane">How to actually use it →</Link>
+            Buy it the day before your visit in the app — it's cheaper in advance than day-of, and
+            it can sell out. <Link href="/lightning-lane">How to actually use it →</Link>
           </p>
         </div>
 
