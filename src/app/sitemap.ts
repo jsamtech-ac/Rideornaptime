@@ -1,5 +1,11 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL, SEASONAL_LAST_REVIEWED, RIDES_LAST_REVIEWED } from '@/lib/content'
+import {
+  SITE_URL,
+  SEASONAL_LAST_REVIEWED,
+  RIDES_LAST_REVIEWED,
+  HOLIDAYS_LAST_REVIEWED,
+} from '@/lib/content'
+import { CHARACTERS_LAST_REVIEWED } from '@/data/characters'
 import { getLastModifiedDate } from '@/lib/getLastModified'
 import { getAllPostMeta } from '@/lib/news'
 
@@ -38,10 +44,15 @@ const staticRoutes: StaticRoute[] = [
     file: 'src/app/itineraries/park-hopper-3-day/page.tsx',
   },
   { path: '/seasonal', file: 'src/app/seasonal/page.tsx', lastModified: SEASONAL_LAST_REVIEWED },
+  { path: '/holidays', file: 'src/app/holidays/page.tsx', lastModified: HOLIDAYS_LAST_REVIEWED },
   { path: '/lightning-lane', file: 'src/app/lightning-lane/page.tsx' },
   { path: '/saving-money', file: 'src/app/saving-money/page.tsx' },
   { path: '/rides', file: 'src/app/rides/page.tsx', lastModified: RIDES_LAST_REVIEWED },
-  { path: '/characters', file: 'src/app/characters/page.tsx' },
+  {
+    path: '/characters',
+    file: 'src/app/characters/page.tsx',
+    lastModified: CHARACTERS_LAST_REVIEWED,
+  },
   { path: '/food', file: 'src/app/food/page.tsx' },
   { path: '/packing-list', file: 'src/app/packing-list/page.tsx' },
   { path: '/hidden-gems', file: 'src/app/hidden-gems/page.tsx' },

@@ -36,6 +36,14 @@ const faqs = [
 
 const sections = [
   {
+    href: '/holidays',
+    icon: '🎄',
+    title: 'Holidays at Disneyland 2026',
+    summary:
+      "Nov 13 – Jan 6: Santa's new Toontown spot, small world Holiday, snow on Main Street, a week-by-week crowd calendar, and a toddler game plan.",
+    cta: 'Plan a holiday trip →',
+  },
+  {
     href: '/first-visit',
     icon: '🏰',
     title: 'Your First Visit to Disneyland',
@@ -153,6 +161,22 @@ export default function Home() {
           <div className="hero-author">✍️ Written by a real parent, not a Disney influencer</div>
         </div>
       </header>
+
+      <Link href="/holidays" className="home-feature">
+        <div className="home-feature-inner">
+          <span className="home-feature-emoji" aria-hidden="true">
+            🎄
+          </span>
+          <div>
+            <div className="home-feature-kicker">New · Holiday season starts Nov 13</div>
+            <div className="home-feature-title">Holidays at Disneyland 2026 with Kids</div>
+            <p className="home-feature-text">
+              Santa&apos;s new spot, the best (and worst) weeks to go, and a nap-friendly game plan.
+            </p>
+            <span className="home-feature-cta">Read the holiday guide →</span>
+          </div>
+        </div>
+      </Link>
 
       <section className="section">
         <div className="section-header">

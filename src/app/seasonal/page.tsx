@@ -203,10 +203,10 @@ export default function SeasonalPage() {
           </div>
           <p>
             <strong>Holidays start Nov 13</strong> and run through Jan 6, 2027, with Santa in a new
-            Toontown spot. In <strong>February 2027</strong>, Remember… Dreams Come True and World
-            of Color return (the 70th-anniversary shows ended in August).{' '}
-            <strong>Magic Happens</strong> is back in summer 2027. Bluey&apos;s Best Day Ever! keeps
-            running Thursday–Monday.
+            Toontown spot — see our <Link href="/holidays">Holidays 2026 guide</Link>. In{' '}
+            <strong>February 2027</strong>, Remember… Dreams Come True and World of Color return
+            (the 70th-anniversary shows ended in August). <strong>Magic Happens</strong> is back in
+            summer 2027. Bluey&apos;s Best Day Ever! keeps running Thursday–Monday.
           </p>
         </div>
       </section>
