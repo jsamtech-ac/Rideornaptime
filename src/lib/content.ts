@@ -565,9 +565,7 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: '46" / 117 cm',
     heightInches: 46,
-    closed: true,
-    closureNote:
-      'Closed since Sept 8, 2026. Signage says "Temple Tours Will Begin Again This Fall" — Disney hasn\'t announced a date.',
+    closing: 'Back in regular rotation Oct 22, 2026 after a fall refurb',
     age2: 'skip',
     age4: 'skip',
     age6: 'skip',

@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-10-12",
-  "lastUpdated": "2026-10-14T16:37:42Z",
+  "weekOf": "2026-10-19",
+  "lastUpdated": "2026-10-20T05:10:46Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "October 6 ticket hike landed. Lower and higher tiers unchanged",
-      "tag": "💡 Smaller Than Expected",
-      "link": "/news/disneyland-news-families-week-of-october-12-2026",
+      "headline": "Get Away Today pre-hike pricing ends tonight. Last chance to lock in",
+      "tag": "⏰ Today Only",
+      "link": "/news/disneyland-news-families-week-of-october-19-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Get Away Today still has pre-hike pricing. Real last-chance window",
-      "tag": "💰 Through Oct 19",
-      "link": "/news/disneyland-news-families-week-of-october-12-2026",
+      "headline": "Indiana Jones Adventure back October 22 after refurb",
+      "tag": "✅ Returns Thursday",
+      "link": "/news/disneyland-news-families-week-of-october-19-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Halloween Time ends October 31. Crowds climb every weekend from here",
-      "tag": "🎃 17 Days Left",
-      "link": "/news/disneyland-news-families-week-of-october-12-2026",
+      "headline": "it's a small world closes Oct 30, back Nov 13 as Holiday overlay",
+      "tag": "⚠️ Oct 30-Nov 12",
+      "link": "/news/disneyland-news-families-week-of-october-19-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Late 2027 tickets released at higher rates. No lock-in available",
-      "tag": "⚠️ 2027 Pricing",
-      "link": "/news/disneyland-news-families-week-of-october-12-2026",
+      "headline": "Halloween Time final push. October 26-31 is crowded",
+      "tag": "🎃 12 Days Left",
+      "link": "/news/disneyland-news-families-week-of-october-19-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Explore Magic Key at $999 added. Enchant Key discontinued",
-      "tag": "🔑 New Tier",
-      "link": "/news/disneyland-news-families-week-of-october-12-2026",
+      "headline": "Snow installation on Sleeping Beauty Castle began October 12",
+      "tag": "❄️ Starting Already",
+      "link": "/news/disneyland-news-families-week-of-october-19-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-october-12-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-october-19-2026"
 }
