@@ -86,7 +86,7 @@ const faqsGeneral = [
   },
 ]
 
-const faqsLookup = [
+const faqsLookup: { q: string; a: string; link?: { href: string; label: string } }[] = [
   {
     q: 'Where can I meet Mickey at Disneyland?',
     a: 'Town Square Theater, Main Street, U.S.A., Disneyland Park — scheduled all day. He also greets on Buena Vista Street at DCA.',
@@ -174,6 +174,7 @@ const faqsLookup = [
   {
     q: 'Where can I meet Bluey?',
     a: "Fantasyland Theatre at Disneyland Park — Bluey's Best Day Ever! show and play area, Thursday through Monday (dark Tuesdays and Wednesdays).",
+    link: { href: '/bluey-at-disneyland', label: 'Full Bluey guide here' },
   },
   {
     q: 'Where can I meet Santa at Disneyland?',
@@ -692,6 +693,12 @@ export default function CharactersPage() {
             {faqsLookup.map((item) => (
               <li key={item.q}>
                 <strong>{item.q}</strong> {item.a}
+                {item.link ? (
+                  <>
+                    {' '}
+                    <Link href={item.link.href}>{item.link.label} →</Link>
+                  </>
+                ) : null}
               </li>
             ))}
           </ul>

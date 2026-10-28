@@ -206,7 +206,8 @@ export default function SeasonalPage() {
             Toontown spot — see our <Link href="/holidays">Holidays 2026 guide</Link>. In{' '}
             <strong>February 2027</strong>, Remember… Dreams Come True and World of Color return
             (the 70th-anniversary shows ended in August). <strong>Magic Happens</strong> is back in
-            summer 2027. Bluey&apos;s Best Day Ever! keeps running Thursday–Monday.
+            summer 2027. <Link href="/bluey-at-disneyland">Bluey&apos;s Best Day Ever!</Link> keeps
+            running Thursday–Monday.
           </p>
         </div>
       </section>

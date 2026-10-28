@@ -53,6 +53,7 @@ const staticRoutes: StaticRoute[] = [
     file: 'src/app/characters/page.tsx',
     lastModified: CHARACTERS_LAST_REVIEWED,
   },
+  { path: '/bluey-at-disneyland', file: 'src/app/bluey-at-disneyland/page.tsx' },
   { path: '/food', file: 'src/app/food/page.tsx' },
   { path: '/packing-list', file: 'src/app/packing-list/page.tsx' },
   { path: '/hidden-gems', file: 'src/app/hidden-gems/page.tsx' },

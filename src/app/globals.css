@@ -572,6 +572,17 @@ body {
   }
 }
 
+/* Photo credit tucked into the bottom-right corner of an image hero. */
+.hero-credit {
+  position: absolute;
+  right: var(--space-md);
+  bottom: var(--space-sm);
+  z-index: 2;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* ===== SECTIONS ===== */
 .section {
   padding: var(--space-xl) var(--space-md);
@@ -3199,11 +3210,20 @@ body {
   flex-wrap: wrap;
   gap: var(--space-sm);
   align-items: center;
-  margin: var(--space-md) 0 var(--space-xl);
+  justify-content: center;
+  width: calc(100% - 2 * var(--space-md));
+  max-width: calc(720px - 2 * var(--space-md));
+  margin: var(--space-md) auto var(--space-xl);
   padding: var(--space-md) var(--space-lg);
   background: var(--sand);
   border: 1px solid var(--sand-dark);
   border-radius: var(--radius-lg);
+}
+
+/* Inside a .section the padding already provides the gutter. */
+.section .jump-nav {
+  width: auto;
+  max-width: none;
 }
 
 .jump-nav-label {

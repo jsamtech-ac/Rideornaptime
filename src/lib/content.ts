@@ -119,6 +119,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { href: '/rides', label: 'Rides', icon: '🎢' },
       { href: '/characters', label: 'Characters', icon: '🐭' },
+      { href: '/bluey-at-disneyland', label: 'Bluey', icon: '🐶' },
       { href: '/food', label: 'Food', icon: '🍽' },
       { href: '/packing-list', label: 'Packing', icon: '🎒' },
     ],
