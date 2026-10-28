@@ -565,7 +565,8 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: '46" / 117 cm',
     heightInches: 46,
-    closing: 'Back in regular rotation Oct 22, 2026 after a fall refurb',
+    closing:
+      'Back in regular rotation Oct 22, 2026 — fall refurb improved the temple doors (more reliable, higher throughput)',
     age2: 'skip',
     age4: 'skip',
     age6: 'skip',
