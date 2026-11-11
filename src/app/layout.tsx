@@ -14,6 +14,7 @@ const fredoka = Fredoka({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
+  fallback: ['ui-rounded', 'system-ui', 'sans-serif'],
   variable: '--font-fredoka',
 })
 
@@ -22,6 +23,7 @@ const dmSans = DM_Sans({
   weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
   display: 'swap',
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
   variable: '--font-dm-sans',
 })
 
