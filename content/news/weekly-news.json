@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-10-26",
-  "lastUpdated": "2026-10-28T16:43:11Z",
+  "weekOf": "2026-11-09",
+  "lastUpdated": "2026-11-11T04:41:24Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Halloween Time ends October 31. Thursday is the best remaining day",
-      "tag": "🎃 3 Days Left",
-      "link": "/news/disneyland-news-families-week-of-october-26-2026",
+      "headline": "Holidays at Disneyland Resort launches November 13. Full lineup live",
+      "tag": "🎄 Opens Friday",
+      "link": "/news/disneyland-news-families-week-of-november-9-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "it's a small world down Oct 30, back Nov 13 as Holiday overlay",
-      "tag": "⚠️ Closes Friday",
-      "link": "/news/disneyland-news-families-week-of-october-26-2026",
+      "headline": "Santa arrives at Toontown Trolley Barn. Better for young kids than DCA",
+      "tag": "🎅 New Spot",
+      "link": "/news/disneyland-news-families-week-of-november-9-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Indiana Jones Adventure back with improved temple doors",
-      "tag": "✅ Running Better",
-      "link": "/news/disneyland-news-families-week-of-october-26-2026",
+      "headline": "Tiana's Bayou at Disneyland already open since 2024. Not a Nov 15 opening",
+      "tag": "✍️ Correction",
+      "link": "/news/disneyland-news-families-week-of-november-9-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Holidays at Disneyland Resort opens November 13. Full lineup confirmed",
-      "tag": "🎄 16 Days Out",
-      "link": "/news/disneyland-news-families-week-of-october-26-2026",
+      "headline": "it's a small world reopens Nov 13, not Nov 29. Correction from prior posts",
+      "tag": "🔄 Short Closure",
+      "link": "/news/disneyland-news-families-week-of-november-9-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Haunted Mansion Holiday 25th anniversary lenticular card series started",
-      "tag": "🏰 Magic Key",
-      "link": "/news/disneyland-news-families-week-of-october-26-2026",
+      "headline": "Shorter weekday hours in November except Thanksgiving week",
+      "tag": "📅 Hours Alert",
+      "link": "/news/disneyland-news-families-week-of-november-9-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-october-26-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-november-9-2026"
 }
