@@ -7,7 +7,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModified, getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
+import UpdatedBadge from '@/components/UpdatedBadge'
 import ItineraryConfigurator from '@/components/ItineraryConfigurator'
 import DeferredMount from '@/components/DeferredMount'
 import PrintButton from '@/components/PrintButton'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: getLastModified(PAGE_FILE, ITINERARY_DATA_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -61,7 +62,7 @@ export default function ItinerariesPage() {
           'Hour-by-hour Disneyland itineraries for families — 1-day, 2-day, and 3-day plans built around kids ages 2–8.'
         }
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero hero--home">
@@ -73,6 +74,10 @@ export default function ItinerariesPage() {
             Three plans built around nap schedules and meltdown prevention. The #1 mistake families
             make is trying to do everything — these plans tell you exactly what to skip.
           </p>
+          <UpdatedBadge
+            date={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
+            label="Plan checked"
+          />
         </div>
       </header>
 

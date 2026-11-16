@@ -6,7 +6,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModified, getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
+import UpdatedBadge from '@/components/UpdatedBadge'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/disneyland-2-day/page.tsx'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: getLastModified(PAGE_FILE, ITINERARY_DATA_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -54,7 +55,7 @@ const faqs = [
   },
   {
     q: 'Where should we watch Disneyland fireworks on a 2-day trip?',
-    a: "Check the app calendar first — fireworks are seasonal right now, not nightly (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027). If both nights have a show: Day 1 from Main Street for the castle view, Day 2 from Star Wars: Galaxy's Edge — way less crowded, easier exit. If only one night does, take Main Street.",
+    a: "Through Jan 6, Believe… in Holiday Magic runs nightly. After that, fireworks are seasonal (Remember… Dreams Come True from Feb 2027), so check the app calendar. If both nights have a show: Day 1 from Main Street for the castle view, Day 2 from Star Wars: Galaxy's Edge — way less crowded, easier exit. If only one night does, take Main Street.",
   },
 ]
 
@@ -73,7 +74,7 @@ export default function DisneylandTwoDayPage() {
         headline="Disneyland 2-Day Itinerary for Families (2026)"
         description="Two days at Disneyland with kids — marquee rides, deep cuts, naps, and nighttime shows."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -84,6 +85,10 @@ export default function DisneylandTwoDayPage() {
           everyone-can-do. Day 2 is for the second-tier rides one-day visitors miss. Both days
           include a real nap and end with fireworks when they're on the calendar.
         </p>
+        <UpdatedBadge
+          date={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
+          label="Plan checked"
+        />
       </header>
 
       <section className="section">

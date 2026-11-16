@@ -6,7 +6,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModified, getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
+import UpdatedBadge from '@/components/UpdatedBadge'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/disneyland-1-day/page.tsx'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: getLastModified(PAGE_FILE, ITINERARY_DATA_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -53,7 +54,7 @@ const faqs = [
   },
   {
     q: "Where's the best place to watch Disneyland fireworks with kids on a 1-day visit?",
-    a: "First, check the Disneyland app calendar — fireworks aren't nightly right now. Halloween Screams runs Fri–Sun through Oct 31, Believe… in Holiday Magic runs Nov 13 – Jan 6, and Remember… Dreams Come True returns in Feb 2027. On a show night, Star Wars: Galaxy's Edge is the move with young kids: way less crowded than Main Street and an easier exit with a stroller. You give up the castle projections; you keep your sanity on a long day.",
+    a: "Through Jan 6, Believe… in Holiday Magic runs nightly. After that, fireworks go seasonal again (Remember… Dreams Come True returns in Feb 2027), so check the Disneyland app calendar. On a show night, Star Wars: Galaxy's Edge is the move with young kids: way less crowded than Main Street and an easier exit with a stroller. You give up the castle projections; you keep your sanity on a long day.",
   },
 ]
 
@@ -72,7 +73,7 @@ export default function DisneylandOneDayPage() {
         headline="Disneyland 1-Day Itinerary for Families with Kids (2026)"
         description="One day at Disneyland with kids — rope drop, Lightning Lane, nap, and fireworks, hour-by-hour."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -83,6 +84,10 @@ export default function DisneylandOneDayPage() {
           Lightning Lane the second you tap in, and accept that some headliners aren't getting
           ridden. Here's the plan.
         </p>
+        <UpdatedBadge
+          date={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
+          label="Plan checked"
+        />
       </header>
 
       <section className="section">
