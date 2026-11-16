@@ -141,11 +141,11 @@ const faqsLookup: { q: string; a: string; link?: { href: string; label: string }
   },
   {
     q: 'Where can I meet Jack Skellington?',
-    a: 'Royal Courtyard near Haunted Mansion Holiday in New Orleans Square — Halloween Time only (Aug 21 – Oct 31, 2026).',
+    a: 'Royal Courtyard near Haunted Mansion Holiday in New Orleans Square — Halloween Time only. The 2026 run ended Oct 31; expect it back in late Aug 2027.',
   },
   {
     q: 'Where can I meet Maleficent?',
-    a: 'Oogie Boogie Bash at DCA only (separate-ticket Halloween party, select nights Aug 18 – Oct 31; 2026 is sold out).',
+    a: 'Oogie Boogie Bash at DCA only (separate-ticket Halloween party on select nights from mid-August through Oct 31). The 2026 season is over; 2027 tickets usually go on sale in early summer.',
   },
   {
     q: 'Where can I meet Chip and Dale?',
@@ -232,7 +232,8 @@ export default function CharactersPage() {
             Every character at Disneyland and DCA — where they meet, how long the line runs, and
             whether they're worth it for kids ages 2-8. Search by name, browse by park, or filter by
             your kid's age. Updated for Kylo Ren's move to Launch Bay, the original-trilogy heroes
-            in Galaxy's Edge, Bluey, and Santa's new Toontown spot.
+            in Galaxy's Edge, Bluey, Santa's new Toontown spot, and the holiday lineup (Fantastic
+            Four, Mirabel, Miguel).
           </p>
           <UpdatedBadge date={CHARACTERS_LAST_REVIEWED} label="Character spots checked" />
         </div>
@@ -467,11 +468,30 @@ export default function CharactersPage() {
           <h2>Seasonal Characters: What's Only Out Briefly</h2>
           <p className="section-intro">
             Some of the best meets at the resort only exist for a few weeks per year. Here's the
-            full 2026 calendar at a glance.
+            calendar at a glance, starting with what's on right now.
           </p>
         </div>
 
         <div className="seasonal-list">
+          <article className="seasonal-row">
+            <div className="seasonal-row-meta">
+              <span className="seasonal-row-dates">Happening now · Nov 13, 2026 – Jan 6, 2027</span>
+              <span className="seasonal-row-cost">Included with park admission</span>
+            </div>
+            <h3 className="seasonal-row-title">🎄 Holidays at the Disneyland Resort</h3>
+            <p>
+              <strong>Santa moves to the Toontown Trolley Barn</strong> this year (plus Redwood
+              Creek Challenge Trail at DCA, Nov 13 – Dec 24), and the Fab Five get new alpine
+              holiday outfits. At DCA, Mirabel hosts <strong>Mirabel's Gifts of the Season</strong>{' '}
+              in Paradise Gardens, <strong>Miguel</strong> joins the mariachi band on Buena Vista
+              Street, and the <strong>¡Viva Navidad!</strong> Three Caballeros street party runs on
+              select days. New from Nov 20: the <strong>Fantastic Four</strong> at Avengers Campus
+              and a meet with <strong>Billie Doe from Hexed</strong> (location in the app). Holiday
+              character dining (Daisy's Holiday Pajama Party, Mickey's Christmas Carol Feast,
+              Goofy's Kitchen) runs Nov 16 – Jan 3.
+            </p>
+          </article>
+
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
               <span className="seasonal-row-dates">Early 2027 — dates TBA</span>
@@ -488,7 +508,9 @@ export default function CharactersPage() {
 
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Aug 21 – Nov 2, 2026</span>
+              <span className="seasonal-row-dates">
+                Returns late Aug 2027 (2026 ran Aug 21 – Nov 2)
+              </span>
               <span className="seasonal-row-cost">Included with park admission</span>
             </div>
             <h3 className="seasonal-row-title">💀 Plaza de la Familia at DCA</h3>
@@ -501,7 +523,9 @@ export default function CharactersPage() {
 
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Aug 21 – Oct 31, 2026</span>
+              <span className="seasonal-row-dates">
+                Returns late Aug 2027 (2026 ran Aug 21 – Oct 31)
+              </span>
               <span className="seasonal-row-cost">Included with park admission</span>
             </div>
             <h3 className="seasonal-row-title">🎃 Halloween Time at Disneyland</h3>
@@ -516,32 +540,19 @@ export default function CharactersPage() {
 
           <article className="seasonal-row">
             <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Aug 18 – Oct 31 select nights</span>
-              <span className="seasonal-row-cost">Separate ticket — $139–$199 (2026 sold out)</span>
+              <span className="seasonal-row-dates">
+                Returns Aug 2027, select nights (dates TBA)
+              </span>
+              <span className="seasonal-row-cost">Separate ticket — $139–$199 in 2026</span>
             </div>
             <h3 className="seasonal-row-title">👻 Oogie Boogie Bash at DCA</h3>
             <p>
               The only reliable way to meet{' '}
               <strong>Maleficent, Cruella, the Evil Queen, Oogie Boogie</strong>, and other rare
               villains. In 2026 the Frightfully Fun Parade is paused (Coco construction blocks the
-              route) and Madame Leota's Swinging Wake street party takes its place. Tickets went on
-              sale June 18, Magic Key pre-sale first — October nights sold out.
-            </p>
-          </article>
-
-          <article className="seasonal-row">
-            <div className="seasonal-row-meta">
-              <span className="seasonal-row-dates">Nov 13, 2026 – Jan 6, 2027</span>
-              <span className="seasonal-row-cost">Included with park admission</span>
-            </div>
-            <h3 className="seasonal-row-title">🎄 Holidays at the Disneyland Resort</h3>
-            <p>
-              <strong>Santa moves to the Toontown Trolley Barn</strong> this year (plus Redwood
-              Creek Challenge Trail at DCA, Nov 13 – Dec 24), and the Fab Five get new holiday
-              outfits. At DCA, Mirabel hosts <strong>Mirabel's Gifts of the Season</strong>, and the{' '}
-              <strong>¡Viva Navidad! street party</strong> with Donald, Daisy, Panchito, and José
-              returns on select days. Storytellers Café switches to Daisy's Holiday Pajama Party
-              breakfast.
+              route) and Madame Leota's Swinging Wake street party takes its place. 2026 tickets
+              went on sale June 18 (Magic Key pre-sale first) and October nights sold out. Expect a
+              similar early-summer sale for 2027.
             </p>
           </article>
         </div>

@@ -196,12 +196,11 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: 'Any height',
     heightInches: null,
-    closing: 'Back from refurb Oct 16, 2026 (new lanterns)',
     age2: 'must-do',
     age4: 'must-do',
     age6: 'must-do',
     age8: 'maybe',
-    take: "The spinning cups never get old for little kids. Let them control the wheel — they'll giggle through the whole thing. Skip if anyone in your group gets motion sick.",
+    take: "The spinning cups never get old for little kids. Let them control the wheel — they'll giggle through the whole thing. Skip if anyone in your group gets motion sick. Freshly refurbished (new lanterns) as of Oct 2026.",
     llType: 'standby',
     averageStandbyMin: { earlyMorning: 5, midMorning: 20, afternoon: 25, evening: 15 },
     riderSwitchUseful: false,
@@ -356,7 +355,8 @@ export const RIDES: Ride[] = [
     land: 'Tomorrowland · Disneyland',
     park: 'DL',
     height: '32" with adult / 54" to drive alone',
-    closing: 'Gas cars retire by Feb 1, 2027 — expect a closure for the switch to electric',
+    closing:
+      'Gas cars retire by Feb 1, 2027 — expect a closure for the switch to electric (dates not yet announced)',
     heightInches: 32,
     age2: 'skip',
     age4: 'skip',
@@ -566,13 +566,11 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: '46" / 117 cm',
     heightInches: 46,
-    closing:
-      'Back in regular rotation Oct 22, 2026 — fall refurb improved the temple doors (more reliable, higher throughput)',
     age2: 'skip',
     age4: 'skip',
     age6: 'skip',
     age8: 'maybe',
-    take: 'Intense for first-time riders — fast jeep with sudden jolts, dim lighting, a giant boulder. 8+ only, and only if they like a little adrenaline.',
+    take: 'Intense for first-time riders — fast jeep with sudden jolts, dim lighting, a giant boulder. 8+ only, and only if they like a little adrenaline. Back since Oct 22, 2026 with more reliable temple doors and higher capacity, so waits run a bit lower than before.',
     llType: 'MP',
     averageStandbyMin: { earlyMorning: 25, midMorning: 55, afternoon: 65, evening: 45 },
     riderSwitchUseful: true,
@@ -647,7 +645,8 @@ export const RIDES: Ride[] = [
     park: 'DL',
     height: 'Any height',
     heightInches: null,
-    closing: 'Holiday overlay through early Jan; closed Jan 8 – Feb 4, 2027',
+    closing:
+      'Holiday overlay through Jan 6; expect a ~2-week closure in Jan 2027 to remove it (dates not yet announced)',
     age2: 'skip',
     age4: 'maybe',
     age6: 'must-do',
@@ -1241,7 +1240,7 @@ export const PACKING_LIST: PackingItem[] = [
 ]
 
 /** Bump whenever ride statuses, LL tiers, or closures in RIDES are re-checked. */
-export const RIDES_LAST_REVIEWED = '2026-10-14'
+export const RIDES_LAST_REVIEWED = '2026-11-15'
 export const SEASONAL_LAST_REVIEWED = '2026-10-14'
 /** Bump whenever the /holidays guide's dates, shows, or deals are re-checked. */
 export const HOLIDAYS_LAST_REVIEWED = '2026-10-14'
