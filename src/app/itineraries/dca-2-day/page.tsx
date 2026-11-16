@@ -6,7 +6,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModified, getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
+import UpdatedBadge from '@/components/UpdatedBadge'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/dca-2-day/page.tsx'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: getLastModified(PAGE_FILE, ITINERARY_DATA_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -54,7 +55,7 @@ const faqs = [
   },
   {
     q: 'Can you do World of Color two nights in a row?',
-    a: 'Yes — join the virtual queue at 12:00 PM each day. Showtimes and the version playing change by season — World of Color – ONE through Oct 31, World of Color – Season of Light Nov 13 – Jan 6, and an updated original from Feb 2027 — so check the app. Front-row areas get soaked; bring rain ponchos.',
+    a: 'Yes — join the virtual queue at 12:00 PM each day. Showtimes and the version playing change by season — World of Color – Season of Light through Jan 6 (usually 9:00 and 10:15 PM), then an updated original from Feb 2027 — so check the app. Front-row areas get soaked; bring rain ponchos.',
   },
 ]
 
@@ -73,7 +74,7 @@ export default function DcaTwoDayPage() {
         headline="California Adventure 2-Day Itinerary for Families (2026)"
         description="Two days at DCA with kids — Day 1 marquee headliners, Day 2 Pixar Pier deep cuts and World of Color."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -84,6 +85,10 @@ export default function DcaTwoDayPage() {
           Land, two nights of World of Color. Day 1 is marquee. Day 2 is the deep cuts plus Grizzly
           River Run.
         </p>
+        <UpdatedBadge
+          date={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
+          label="Plan checked"
+        />
       </header>
 
       <section className="section">

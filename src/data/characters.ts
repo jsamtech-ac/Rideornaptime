@@ -1,5 +1,5 @@
 /** Bump whenever character locations, dining, or seasonal dates are re-checked. */
-export const CHARACTERS_LAST_REVIEWED = '2026-10-14'
+export const CHARACTERS_LAST_REVIEWED = '2026-11-15'
 
 export type CharacterPark = 'DL' | 'DCA'
 
@@ -103,17 +103,17 @@ export const DL_LAND_INTROS: Record<string, string> = {
 
 export const DCA_LAND_INTROS: Record<string, string> = {
   'Buena Vista Street':
-    'Mickey and friends greet guests along Buena Vista Street on a rotating basis — a good DCA backup if Town Square Theater is slammed.',
+    'Mickey and friends greet guests along Buena Vista Street on a rotating basis — a good DCA backup if Town Square Theater is slammed. Through Jan 6, Miguel joins Mariachi Alegría de Disneyland for holiday songs here on select days.',
   'Hollywood Land':
     'Anna & Elsa Royal Welcome is here — the most demanded meet at the resort. Mike & Sulley meet near the Monsters, Inc. attraction (closing 2027), and the Zootopia crew has been meeting on the Hollywood Backlot near the Studio Store since Nov 2025.',
   'San Fransokyo Square':
     'Baymax and Hiro greet outside the Hamada Bot Shop — one of the friendliest big-character meets for little kids. Check the app for times.',
   'Avengers Campus':
-    "The Marvel lineup. Spider-Man's rooftop drop is the showstopper — set a reminder in the app and be in position 15 min early.",
+    "The Marvel lineup. Spider-Man's rooftop drop is the showstopper — set a reminder in the app and be in position 15 min early. New from Nov 20, 2026: the Fantastic Four make limited-time appearances near Avengers HQ. Through Jan 6, the Guardians of the Galaxy Awesome Dance Off! Holiday Edition (Star-Lord and Deadpool) plays out front of Mission: Breakout.",
   'Pixar Pier':
     'The roam-heaviest area in the resort. Buzz, Joy & Sadness, Incredibles, and the Toy Story crew all rotate here.',
   'Paradise Gardens':
-    'Seasonal meets — Miguel & Dante during Plaza de la Familia (Aug 21 – Nov 2, 2026), Mirabel during the Festival of Holidays, and Mulan during Lunar New Year (2027 dates not yet announced).',
+    "Seasonal meets. Right now (through Jan 6) Mirabel hosts Mirabel's Gifts of the Season during the Festival of Holidays on select days. Next is Mulan during Lunar New Year (2027 dates not yet announced), then Miguel & Dante at Plaza de la Familia during Halloween Time (returns late Aug 2027).",
   'Grizzly Peak':
     "Santa's Holiday Visit takes over Redwood Creek Challenge Trail from Nov 13 – Dec 24, 2026 — usually a shorter line than Santa at Disneyland.",
   'Cars Land':
@@ -215,7 +215,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'great', age8: 'maybe' },
     expectedLine: 'short',
     notes:
-      "Daisy is a reliable walk-up and great with shy kids — she loves showing off her outfit. She's also the host of Daisy's Holiday Pajama Party breakfast at Storytellers Café during the holidays.",
+      "Daisy is a reliable walk-up and great with shy kids — she loves showing off her outfit. She's also the host of Daisy's Holiday Pajama Party at Storytellers Café (Nov 16, 2026 – Jan 3, 2027): kids come in pajamas, Donald, Chip 'n Dale, and Pluto join in, and it's built for the 2–6 crowd. Book it early.",
   },
   {
     id: 'goofy',
@@ -272,7 +272,7 @@ export const characters: Character[] = [
     kidAppeal: { age2: 'great', age4: 'great', age6: 'maybe', age8: 'skip' },
     expectedLine: 'short',
     notes:
-      "A rare park sighting, but she hosts Clarabelle's Enchanted Halloween Dinner at Storytellers Café during Halloween Time — that's the reliable way to meet her.",
+      "A rare park sighting, so character dining is the reliable way to meet her. Right now she's at Mickey's Christmas Carol Feast at Storytellers Café (Nov 16, 2026 – Jan 3, 2027, with Mickey, Minnie, Goofy, and Scrooge). During Halloween Time she hosts Clarabelle's Enchanted Halloween Dinner there.",
   },
   {
     id: 'chip-and-dale',
@@ -876,15 +876,16 @@ export const characters: Character[] = [
       },
       {
         park: 'DCA',
-        land: 'Paradise Gardens',
-        spot: 'Plaza de la Familia (Aug 21 – Nov 2, 2026)',
+        land: 'Buena Vista Street',
+        spot: 'A Musical Christmas with Mariachi Alegría de Disneyland & Miguel! (moves into the Disney Theater in Hollywood Land if it rains)',
+        typicalTimes: 'Select days, Nov 13, 2026 – Jan 6, 2027 — check the app',
         reliability: 'scheduled',
       },
     ],
     kidAppeal: { age2: 'great', age4: 'must-meet', age6: 'must-meet', age8: 'great' },
     expectedLine: 'short',
     notes:
-      'Miguel at El Zocalo is a hidden gem — short line, beautiful little plaza, and the meet itself is unhurried. Dante appears with him during Plaza de la Familia.',
+      'Miguel at El Zocalo is a hidden gem — short line, beautiful little plaza, and the meet itself is unhurried. Through Jan 6 he also joins the mariachi band for holiday songs on Buena Vista Street at DCA. During Halloween Time, he and Dante meet at Plaza de la Familia (returns late Aug 2027).',
   },
   {
     id: 'mirabel',
@@ -900,7 +901,8 @@ export const characters: Character[] = [
       {
         park: 'DCA',
         land: 'Paradise Gardens',
-        spot: "Festival of Holidays — Mirabel's Gifts of the Season (from Nov 13, 2026)",
+        spot: "Mirabel's Gifts of the Season (Festival of Holidays)",
+        typicalTimes: 'Select days, Nov 13, 2026 – Jan 6, 2027 — check the app',
         reliability: 'scheduled',
       },
     ],
@@ -1152,6 +1154,24 @@ export const characters: Character[] = [
     expectedLine: 'medium',
     notes:
       'Pair the meet with eating at Pym Test Kitchen (the giant pretzel is genuinely good). The meet itself is short and easy.',
+  },
+  {
+    id: 'fantastic-four',
+    name: 'Fantastic Four',
+    franchise: 'Marvel',
+    locations: [
+      {
+        park: 'DCA',
+        land: 'Avengers Campus',
+        spot: 'Mobile lab near Avengers Headquarters',
+        typicalTimes: 'Select times from Nov 20, 2026 (limited time) — check the app',
+        reliability: 'scheduled',
+      },
+    ],
+    kidAppeal: { age2: 'maybe', age4: 'great', age6: 'must-meet', age8: 'must-meet' },
+    expectedLine: 'medium',
+    notes:
+      "New for Nov 20, 2026, and their first time in Avengers Campus: The Thing, Mister Fantastic, Invisible Woman, Human Torch, and the robot H.E.R.B.I.E. It's a limited-time run with no end date announced, so check the app and catch it while it's here. The Thing is the big hit with little kids.",
   },
 
   // ─── VILLAINS (rare, event-driven) ────────────────────────────────────────

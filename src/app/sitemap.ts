@@ -6,7 +6,7 @@ import {
   HOLIDAYS_LAST_REVIEWED,
 } from '@/lib/content'
 import { CHARACTERS_LAST_REVIEWED } from '@/data/characters'
-import { getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
 import { getAllPostMeta } from '@/lib/news'
 
 const PILLARS = new Set(['/lightning-lane', '/rides', '/first-visit', '/itineraries'])
@@ -73,7 +73,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map(({ path, file, lastModified }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: lastModified ?? getLastModifiedDate(file),
+    lastModified:
+      lastModified ??
+      (path.startsWith('/itineraries')
+        ? getLastModifiedDate(file, ITINERARY_DATA_FILE)
+        : getLastModifiedDate(file)),
     changeFrequency: 'monthly',
     priority: priorityFor(path),
   }))

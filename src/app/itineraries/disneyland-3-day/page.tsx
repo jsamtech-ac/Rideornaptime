@@ -6,7 +6,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModified, getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
+import UpdatedBadge from '@/components/UpdatedBadge'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/disneyland-3-day/page.tsx'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: getLastModified(PAGE_FILE, ITINERARY_DATA_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -51,7 +52,7 @@ const faqs = [
   },
   {
     q: 'How should we split fireworks viewing across three nights?',
-    a: "Fireworks aren't nightly right now, so check the app calendar for which of your nights have a show (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027). First show night: castle view from Main Street. Next: the easier Galaxy's Edge view. Last: castle again as the send-off. Heads-up for 2027: Remember… also projects onto the it's a small world facade, so that mall becomes a show surface, not a quiet side view.",
+    a: "Through Jan 6, Believe… in Holiday Magic runs nightly. After that, fireworks are seasonal (Remember… Dreams Come True from Feb 2027), so check the app calendar for which of your nights have a show. First show night: castle view from Main Street. Next: the easier Galaxy's Edge view. Last: castle again as the send-off. Heads-up for 2027: Remember… also projects onto the it's a small world facade, so that mall becomes a show surface, not a quiet side view.",
   },
   {
     q: 'Are three full park days too much for young kids?',
@@ -74,7 +75,7 @@ export default function DisneylandThreeDayPage() {
         headline="Disneyland 3-Day Itinerary for Families (2026)"
         description="Three days at Disneyland with kids — marquee Day 1, deep cuts Day 2, re-rides and fireworks Day 3."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -85,6 +86,10 @@ export default function DisneylandThreeDayPage() {
           cuts. Day 3 is the kid's pick — re-rides, character breakfast, and the castle fireworks
           finale on a show night.
         </p>
+        <UpdatedBadge
+          date={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
+          label="Plan checked"
+        />
       </header>
 
       <section className="section">

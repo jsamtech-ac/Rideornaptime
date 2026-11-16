@@ -6,7 +6,8 @@ import ArticleJsonLd from '@/components/ArticleJsonLd'
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd'
 import TicketsCTA from '@/components/TicketsCTA'
 import { SITE_URL } from '@/lib/content'
-import { getLastModified, getLastModifiedDate } from '@/lib/getLastModified'
+import { getLastModified, getLastModifiedDate, ITINERARY_DATA_FILE } from '@/lib/getLastModified'
+import UpdatedBadge from '@/components/UpdatedBadge'
 import ItineraryConfigurator, { type DayConfig } from '@/components/ItineraryConfigurator'
 
 const PAGE_FILE = 'src/app/itineraries/park-hopper-3-day/page.tsx'
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     siteName: 'Ride or Naptime',
     publishedTime: '2026-04-15T00:00:00.000Z',
-    modifiedTime: getLastModified(PAGE_FILE),
+    modifiedTime: getLastModified(PAGE_FILE, ITINERARY_DATA_FILE),
     authors: ['Ride or Naptime'],
   },
 }
@@ -55,7 +56,7 @@ const faqs = [
   },
   {
     q: 'How do you split the nighttime shows across three Park Hopper nights?',
-    a: "Day 1: World of Color at DCA. Days 2 and 3: Disneyland fireworks — but only on nights the app calendar shows a show (Halloween Screams Fri–Sun through Oct 31; Believe… in Holiday Magic Nov 13 – Jan 6; Remember… Dreams Come True from Feb 2027). First show night from Main Street for the castle view, the next from Galaxy's Edge for an easier exit with tired kids. Only one fireworks night? Give the other evening to World of Color.",
+    a: "Day 1: World of Color at DCA. Days 2 and 3: Disneyland fireworks — but only on nights the app calendar shows a show (Believe… in Holiday Magic runs nightly through Jan 6; after that it's seasonal, with Remember… Dreams Come True from Feb 2027). First show night from Main Street for the castle view, the next from Galaxy's Edge for an easier exit with tired kids. Only one fireworks night? Give the other evening to World of Color.",
   },
 ]
 
@@ -74,7 +75,7 @@ export default function ParkHopperThreeDayPage() {
         headline="Disneyland Park Hopper 3-Day Itinerary for Families (2026)"
         description="Three-day Park Hopper plan: marquee, deep cuts, re-rides, World of Color, and castle fireworks finale."
         datePublished="2026-04-15"
-        dateModified={getLastModifiedDate(PAGE_FILE)}
+        dateModified={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
       />
       <FaqJsonLd items={faqs} />
       <header className="hero">
@@ -85,6 +86,10 @@ export default function ParkHopperThreeDayPage() {
           cuts. Day 3 is the kid's pick — character breakfast, re-rides, and the castle fireworks
           finale on a show night.
         </p>
+        <UpdatedBadge
+          date={getLastModifiedDate(PAGE_FILE, ITINERARY_DATA_FILE)}
+          label="Plan checked"
+        />
       </header>
 
       <section className="section">
