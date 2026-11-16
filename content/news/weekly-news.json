@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-11-09",
-  "lastUpdated": "2026-11-11T04:41:24Z",
+  "weekOf": "2026-11-15",
+  "lastUpdated": "2026-11-16T05:17:48Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Holidays at Disneyland Resort launches November 13. Full lineup live",
-      "tag": "🎄 Opens Friday",
-      "link": "/news/disneyland-news-families-week-of-november-9-2026",
+      "headline": "Holidays at Disneyland fully open after November 13 launch",
+      "tag": "🎄 Live Now",
+      "link": "/news/disneyland-news-families-week-of-november-15-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "Santa arrives at Toontown Trolley Barn. Better for young kids than DCA",
-      "tag": "🎅 New Spot",
-      "link": "/news/disneyland-news-families-week-of-november-9-2026",
+      "headline": "World of Color Season of Light returns at DCA. Get virtual queue",
+      "tag": "✨ Back After 2 Years",
+      "link": "/news/disneyland-news-families-week-of-november-15-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Tiana's Bayou at Disneyland already open since 2024. Not a Nov 15 opening",
-      "tag": "✍️ Correction",
-      "link": "/news/disneyland-news-families-week-of-november-9-2026",
+      "headline": "Santa at Toontown Trolley Barn drawing shorter lines than DCA",
+      "tag": "🎅 Working",
+      "link": "/news/disneyland-news-families-week-of-november-15-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "it's a small world reopens Nov 13, not Nov 29. Correction from prior posts",
-      "tag": "🔄 Short Closure",
-      "link": "/news/disneyland-news-families-week-of-november-9-2026",
+      "headline": "Thanksgiving week crowds forecast 8 to 9 out of 10. Shift if you can",
+      "tag": "⚠️ 8 Days Out",
+      "link": "/news/disneyland-news-families-week-of-november-15-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "Shorter weekday hours in November except Thanksgiving week",
-      "tag": "📅 Hours Alert",
-      "link": "/news/disneyland-news-families-week-of-november-9-2026",
+      "headline": "November rain hit opening day. Monorail got stuck. Prep accordingly",
+      "tag": "☔ Pack Ponchos",
+      "link": "/news/disneyland-news-families-week-of-november-15-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-november-9-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-november-15-2026"
 }
