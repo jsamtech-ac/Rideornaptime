@@ -39,7 +39,16 @@ jobs:
         run: npm run qa:format
 
       - name: Production build
-        run: npm run build
+        # next/font fetches Google Fonts at build time and that fetch fails
+        # intermittently on CI runners; retry so a network blip doesn't block a post.
+        run: |
+          for attempt in 1 2 3; do
+            npm run build && exit 0
+            echo "Build attempt $attempt failed; retrying in 20s"
+            rm -rf .next
+            sleep 20
+          done
+          exit 1
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
