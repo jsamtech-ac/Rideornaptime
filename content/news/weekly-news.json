@@ -1,42 +1,42 @@
 {
-  "weekOf": "2026-11-15",
-  "lastUpdated": "2026-11-16T05:17:48Z",
+  "weekOf": "2026-11-23",
+  "lastUpdated": "2026-11-27T04:58:39Z",
   "ticker": [
     {
       "id": "1",
-      "headline": "Holidays at Disneyland fully open after November 13 launch",
-      "tag": "🎄 Live Now",
-      "link": "/news/disneyland-news-families-week-of-november-15-2026",
+      "headline": "Black Friday November 27 is the single worst crowd day of the season",
+      "tag": "⚠️ Worst Day",
+      "link": "/news/disneyland-news-families-week-of-november-23-2026",
       "priority": 1
     },
     {
       "id": "2",
-      "headline": "World of Color Season of Light returns at DCA. Get virtual queue",
-      "tag": "✨ Back After 2 Years",
-      "link": "/news/disneyland-news-families-week-of-november-15-2026",
+      "headline": "Black Friday through Cyber Monday is the top 2027 ticket deal window",
+      "tag": "💰 Best Deals",
+      "link": "/news/disneyland-news-families-week-of-november-23-2026",
       "priority": 2
     },
     {
       "id": "3",
-      "headline": "Santa at Toontown Trolley Barn drawing shorter lines than DCA",
-      "tag": "🎅 Working",
-      "link": "/news/disneyland-news-families-week-of-november-15-2026",
+      "headline": "December 1 to 13 is the low-crowd Holidays sweet spot. Book it",
+      "tag": "✨ Sweet Spot",
+      "link": "/news/disneyland-news-families-week-of-november-23-2026",
       "priority": 3
     },
     {
       "id": "4",
-      "headline": "Thanksgiving week crowds forecast 8 to 9 out of 10. Shift if you can",
-      "tag": "⚠️ 8 Days Out",
-      "link": "/news/disneyland-news-families-week-of-november-15-2026",
+      "headline": "Candlelight Processional returns for two nights on Main Street",
+      "tag": "🕯️ Dec 5 & 6",
+      "link": "/news/disneyland-news-families-week-of-november-23-2026",
       "priority": 4
     },
     {
       "id": "5",
-      "headline": "November rain hit opening day. Monorail got stuck. Prep accordingly",
-      "tag": "☔ Pack Ponchos",
-      "link": "/news/disneyland-news-families-week-of-november-15-2026",
+      "headline": "December 19 to January 3 is the full Magic Key blockout. Worst crowds",
+      "tag": "🚫 Avoid",
+      "link": "/news/disneyland-news-families-week-of-november-23-2026",
       "priority": 5
     }
   ],
-  "currentPostSlug": "disneyland-news-families-week-of-november-15-2026"
+  "currentPostSlug": "disneyland-news-families-week-of-november-23-2026"
 }
