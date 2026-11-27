@@ -20,12 +20,12 @@ const ROUTES = [
 for (const route of ROUTES) {
   test(`a11y: ${route}`, async ({ page }, testInfo) => {
     await page.goto(route, { waitUntil: 'networkidle' })
-    // Let DeferredMount sections mount and layout settle before axe measures
-    // colors; otherwise it reads backgrounds from where elements used to be.
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
-    await page.waitForTimeout(800)
-    await page.evaluate(() => window.scrollTo(0, 0))
-    await page.waitForTimeout(400)
+    // globals.css uses content-visibility: auto on sections. Off-screen sections
+    // keep a placeholder height until scrolled to, so axe would measure colors
+    // against whatever happens to sit at their stale coordinates (the footer).
+    // Render everything for the audit.
+    await page.addStyleTag({ content: '* { content-visibility: visible !important; }' })
+    await page.waitForTimeout(500)
 
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
