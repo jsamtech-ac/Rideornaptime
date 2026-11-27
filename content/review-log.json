@@ -1,0 +1,4 @@
+{
+  "about": "Audit trail for automated reviews. Each scheduled run appends one entry. CI requires an entry dated today for any automated PR, and every bumped *_LAST_REVIEWED date must be listed here with its sources.",
+  "runs": []
+}

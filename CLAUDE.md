@@ -42,3 +42,11 @@ Tests: **no unit-test runner** (no Jest/Vitest). Only Playwright a11y/E2E in
 - Path alias `@/*` → `src/*`.
 - Only env var is `RESEND_API_KEY` (in `.env.local`, uncommitted); GTM/GA IDs are hardcoded in `src/app/layout.tsx`.
 - `main` is PR-only; Vercel auto-deploys it. `next.config.js` uses `output: 'standalone'` and redirects www → apex.
+
+## Automation (scheduled, auto-merged)
+
+- Sunday: `.claude/skills/weekly-roundup` publishes the news roundup. Monday: `.claude/skills/content-audit` fact-checks Rides, Characters, Itineraries plus a rotating pair of pages and stamps review dates.
+- Both work on `auto/*` branches, open a PR and enable auto-merge. `.github/workflows/content-checks.yml` is the gate: content guard, types, lint, Prettier, build, and Playwright mobile render/a11y checks.
+- `scripts/automation/check-content.mjs` (`npm run qa:content`) is the content guard. On `auto/*` branches (or `AUTOMATION=1`) it locks styling/layout/components/config, blocks import/export/class/inline-style changes, caps churn on the protected pages, and requires review-date bumps plus a `content/review-log.json` entry with sources.
+- Review dates: `RIDES_LAST_REVIEWED`, `SEASONAL_LAST_REVIEWED`, `HOLIDAYS_LAST_REVIEWED` (content.ts), `CHARACTERS_LAST_REVIEWED` (characters.ts), `ITINERARIES_LAST_REVIEWED` (itineraries.ts; bumping it also moves the git-based "Plan checked" badge), `BLUEY_LAST_REVIEWED` (bluey page).
+- Items the automation can't verify go to the "Needs Ashu" GitHub issue.

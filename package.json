@@ -16,7 +16,8 @@
     "qa:build": "next build",
     "qa:links": "linkinator http://localhost:3000 --config linkinator.config.json",
     "qa:a11y": "playwright test",
-    "qa:lhci": "lhci autorun"
+    "qa:lhci": "lhci autorun",
+    "qa:content": "node scripts/automation/check-content.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

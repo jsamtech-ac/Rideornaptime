@@ -58,6 +58,13 @@ function stub(
   }
 }
 
+/**
+ * Bump whenever the itinerary plans are re-checked against current park hours, closures and
+ * Lightning Lane rules, even if nothing changed. Editing this file also moves the "Plan checked"
+ * badge, which reads the file's last commit date.
+ */
+export const ITINERARIES_LAST_REVIEWED = '2026-11-15'
+
 export const dayTemplates: DayTemplate[] = [
   // ===== Disneyland (15) — populated in Session 2A =====
   {
