@@ -16,7 +16,7 @@ git fetch origin main && git checkout -B auto/news-$RUN_DATE origin/main
 npm ci
 ```
 
-Check for open automated PRs first: `gh pr list --state open --search "head:auto/"`. If last week's roundup PR is still open, do not touch it. Note it in your final summary and continue.
+Check for open automated PRs first: `gh api 'repos/jsamtech-ac/rideornaptime/pulls?state=open' --jq '.[] | select(.head.ref | startswith("auto/")) | "\(.number) \(.head.ref)"'`. If last week's roundup PR is still open, do not touch it. Note it in your final summary and continue.
 
 Read before writing:
 
@@ -111,22 +111,21 @@ Fix every FAIL. Warnings about missing heroImage files are known and fine. `npm 
 
 ## 7. Publish
 
+GitHub GraphQL is blocked in these sessions, so don't use `gh pr create`/`gh pr merge`/`gh pr checks`. Use the scripts, which use the REST API:
+
 ```bash
 git add content/ src/lib/content.ts src/data/
 git commit -m "news: weekly roundup for week of <Month D, YYYY>"
-git push -u origin auto/news-$RUN_DATE
-gh pr create --base main --title "news: weekly roundup, week of <Month D, YYYY>" --body-file <body.md>
-gh pr merge --auto --squash --delete-branch
-gh pr checks --watch
+scripts/automation/publish-pr.sh "news: weekly roundup, week of <Month D, YYYY>" /tmp/pr-body.md
 ```
 
-PR body: 3 to 5 line summary of the lead stories, the ride/character data changes, the source list, and the needs-Ashu list.
+It pushes, opens the PR, enables auto-merge, waits for CI and confirms the merge. PR body: 3 to 5 line summary of the lead stories, the ride/character data changes, the source list, and the needs-Ashu list.
 
-If checks fail: read `gh run view --log-failed`, fix, push. Up to two fix attempts. If it still fails, or the fix would require touching a locked file, stop: `gh pr merge --disable-auto`, add label `needs-ashu` (create it if missing), comment what failed, and say so in your final message.
+If it exits 1 (checks failed): get the failing job log via the REST calls it prints, fix, commit, and run it again. Up to two fix attempts. If it still fails, or the fix would require touching a locked file, run `scripts/automation/block-pr.sh <pr> "<why>"` and say so in your final message.
 
 ## 8. Needs-Ashu inbox
 
-If you have any needs-Ashu items, add a comment to the open issue titled "Needs Ashu" (create it once if it doesn't exist, label `needs-ashu`) with the date, the post link, and the items as checkboxes.
+If you have any needs-Ashu items, write them to a markdown file (heading with the date and post link, items as `- [ ]` checkboxes) and run `scripts/automation/needs-ashu.sh <file>`.
 
 ## 9. Final message
 

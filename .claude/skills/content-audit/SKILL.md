@@ -111,19 +111,18 @@ npm run qa:types
 npm run qa:lint
 git add -A src content
 git commit -m "content: weekly audit $RUN_DATE (<pages>)"
-git push -u origin auto/audit-$RUN_DATE
-gh pr create --base main --title "content: weekly audit $RUN_DATE" --body-file <body.md>
-gh pr merge --auto --squash --delete-branch
-gh pr checks --watch
+scripts/automation/publish-pr.sh "content: weekly audit $RUN_DATE" /tmp/pr-body.md
 ```
+
+GitHub GraphQL is blocked in these sessions, so don't use `gh pr create`/`gh pr merge`/`gh pr checks`; the script uses the REST API, opens the PR, enables auto-merge, waits for CI and confirms the merge.
 
 `npm run build` may fail locally only because Google Fonts is unreachable from the sandbox; CI builds for real. PR body: changes by page, sources, needs-Ashu list.
 
 If nothing at all needed changing, still open the PR. The date stamps and log entry are the deliverable.
 
-If checks fail: `gh run view --log-failed`, fix, push, up to two attempts. Still failing, or the fix needs a locked file: `gh pr merge --disable-auto`, label `needs-ashu`, comment why, and stop.
+If it exits 1: pull the failing job log with the REST calls it prints, fix, commit, rerun. Up to two attempts. Still failing, or the fix needs a locked file: `scripts/automation/block-pr.sh <pr> "<why>"` and stop.
 
-Add any needs-Ashu items as a dated comment with checkboxes on the open "Needs Ashu" issue (create it once if missing, label `needs-ashu`).
+Write any needs-Ashu items to a markdown file (dated heading, `- [ ]` items) and run `scripts/automation/needs-ashu.sh <file>`.
 
 ## 7. Final message
 
