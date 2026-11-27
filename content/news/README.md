@@ -12,6 +12,8 @@ content/news/
   README.md                 ← this file
 ```
 
+> **Automated:** a scheduled task runs `.claude/skills/weekly-roundup` every Sunday and auto-merges once CI passes. The manual steps below still work for one-off posts.
+
 ## Sunday publishing — three steps
 
 ### 1. Write the new post

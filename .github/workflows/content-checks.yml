@@ -1,0 +1,65 @@
+name: Content checks
+
+# Gate for every PR into main. Automated PRs (branches starting with auto/)
+# get the strict content guard; auto-merge only fires when this job passes.
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: content-checks-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04 # Playwright 1.59 has no Chromium build for 26.04 yet
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Content guard (files, dates, MDX, ticker, affiliate IDs)
+        run: node scripts/automation/check-content.mjs --base origin/main
+
+      - name: Typecheck
+        run: npm run qa:types
+
+      - name: Lint
+        run: npm run qa:lint
+
+      - name: Formatting
+        run: npm run qa:format
+
+      - name: Production build
+        # next/font/google fails to parse Google's responses on GitHub runners
+        # (Vercel is fine), so CI serves the same fonts from local copies.
+        env:
+          NEXT_FONT_GOOGLE_MOCKED_RESPONSES: ${{ github.workspace }}/scripts/automation/mock-google-fonts.cjs
+        run: npm run build || (rm -rf .next && sleep 15 && npm run build)
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Render checks (mobile layout, a11y, news post)
+        run: |
+          npx next start -p 3000 > /tmp/next.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://localhost:3000 > /dev/null && break; sleep 1; done
+          # CI is unset so Playwright reuses the production server above
+          # instead of launching the dev server from playwright.config.ts.
+          CI= npx playwright test --project=chromium-mobile --reporter=list
+
+      - name: Upload Playwright traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: test-results/
+          retention-days: 7
