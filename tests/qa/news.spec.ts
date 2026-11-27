@@ -14,10 +14,10 @@ test(`news post renders cleanly: ${route}`, async ({ page }) => {
   expect(response?.status(), `${route} did not return 200`).toBe(200)
 
   await expect(page.locator('h1')).toHaveCount(1)
-  expect(await page.locator('article h2, main h2').count()).toBeGreaterThanOrEqual(3)
+  expect(await page.locator('.news-post h2').count()).toBeGreaterThanOrEqual(3)
 
   // Raw MDX leaking into the page means a component or table failed to parse.
-  const text = await page.locator('main').innerText()
+  const text = await page.locator('.news-post').innerText()
   expect(text).not.toMatch(/<\/?(AffiliateCTA|TicketsCTA)\b/)
   expect(text).not.toMatch(/^\s*\|.*\|\s*$/m)
   expect(text).not.toMatch(/^#{1,6} /m)
